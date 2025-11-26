@@ -74,8 +74,8 @@ const PathCanvas = () => {
   // Fork appears after 1 second of walking
   // At 2 pixels per frame * 60 fps = 120 pixels/second
   // Plus canvas width to ensure it scrolls into view from the right
-  // Using 1200 pixels = ~10 seconds to scroll into view from right edge
-  const forkPositionRef = useRef(1200); // When fork appears (in pixels from start)
+  // Using 900 pixels = ~7-8 seconds to scroll into view from right edge
+  const forkPositionRef = useRef(900); // When fork appears (in pixels from start)
 
 
   useEffect(() => {
@@ -162,12 +162,19 @@ const PathCanvas = () => {
       // Define horizon line (eye level) - positioned in upper third
       const horizonY = height * 0.35;
       
-      // Draw sky (above horizon)
+      // Draw sky (upper portion - navy to light blue)
       const skyGradient = ctx.createLinearGradient(0, 0, 0, horizonY);
-      skyGradient.addColorStop(0, '#87CEEB'); // Sky blue at top
-      skyGradient.addColorStop(1, '#B0D4E3'); // Lighter blue near horizon
+      skyGradient.addColorStop(0, '#1e3a5f'); // Navy blue at top
+      skyGradient.addColorStop(1, '#87CEEB'); // Light blue at horizon
       ctx.fillStyle = skyGradient;
       ctx.fillRect(0, 0, width, horizonY);
+      
+      // Draw grass base background (below horizon to bottom)
+      const grassBaseGradient = ctx.createLinearGradient(0, horizonY, 0, height);
+      grassBaseGradient.addColorStop(0, '#9DBF9E'); // Light green at top
+      grassBaseGradient.addColorStop(1, '#7A9A5C'); // Darker green at bottom
+      ctx.fillStyle = grassBaseGradient;
+      ctx.fillRect(0, horizonY, width, height - horizonY);
       
       // Draw mountains at the horizon (tiled horizontally with parallax)
       if (mountainsImage) {
@@ -230,8 +237,8 @@ const PathCanvas = () => {
         // Calculate how many tiles needed
         const trees2TilesNeeded = Math.ceil(width / trees2Width) + 2;
         
-        // Position distant trees - moved up 40 pixels from previous position
-        const trees2Y = horizonY - 10;
+        // Position distant trees
+        const trees2Y = horizonY - 15;
         
         // Draw trees2 tiles horizontally
         for (let i = -1; i < trees2TilesNeeded; i++) {
@@ -240,28 +247,24 @@ const PathCanvas = () => {
         }
       }
       
-      // Define path area - moved down and made larger
-      const pathTop = height * 0.55; // Where path starts (behind) - moved down from 0.5
-      const pathBottom = height * 0.75; // Where path ends (in front) - moved down from 0.55
+      // Define path area - moved down 60 pixels
+      const pathTop = height * 0.55 + 60; // Where path starts (behind)
+      const pathBottom = height * 0.75 + 60; // Where path ends (in front)
       const pathHeight = pathBottom - pathTop;
       
-      // Draw grass in the path area first (so it appears behind transparent path)
+      // Draw grass for entire area (path + foreground) - single unified tile
       if (grassImage) {
         const tileWidth = grassImage.width;
-        const tileHeight = grassImage.height;
         const scrollOffset = offsetRef.current % tileWidth;
         
-        // Draw grass tiles in the path area
-        const pathAreaHeight = pathHeight;
+        // Draw grass tiles - repeat horizontally, stretch vertically from pathTop to bottom
+        const totalGrassHeight = height - pathTop;
         const tilesX = Math.ceil(width / tileWidth) + 1;
-        const tilesY = Math.ceil(pathAreaHeight / tileHeight) + 1;
         
-        for (let row = 0; row < tilesY; row++) {
-          for (let col = -1; col < tilesX; col++) {
-            const x = col * tileWidth - scrollOffset;
-            const y = pathTop + row * tileHeight;
-            ctx.drawImage(grassImage, x, y, tileWidth, tileHeight);
-          }
+        for (let col = -1; col < tilesX; col++) {
+          const x = col * tileWidth - scrollOffset;
+          const y = pathTop;
+          ctx.drawImage(grassImage, x, y, tileWidth, totalGrassHeight);
         }
       }
       
@@ -276,8 +279,8 @@ const PathCanvas = () => {
         // Calculate how many tiles needed
         const bushesTilesNeeded = Math.ceil(width / bushesWidth) + 2;
         
-        // Position bushes just above the path - moved up 10 pixels
-        const bushesY = pathTop - bushesHeight * 0.5 - 10; // Overlap slightly with path area
+        // Position bushes just above the path - moved up 30 pixels
+        const bushesY = pathTop - bushesHeight * 0.5 - 30; // Overlap slightly with path area
         
         // Draw bushes tiles horizontally
         for (let i = -1; i < bushesTilesNeeded; i++) {
@@ -294,6 +297,10 @@ const PathCanvas = () => {
       // Calculate current scroll position and fork position
       const scrollPos = offsetRef.current;
       const forkScreenX = forkPositionRef.current - scrollPos;
+      
+      // Check if fork is fully visible on screen (entire tile visible)
+      const forkTileSize = 240;
+      const forkFullyVisible = forkScreenX >= 0 && (forkScreenX + forkTileSize) <= width;
       
       // Check if fork is 200 pixels from the right edge
       // This gives the user time to choose before the fork reaches them
@@ -327,42 +334,12 @@ const PathCanvas = () => {
           } else if (tileWorldX >= forkPositionRef.current && tileWorldX < forkPositionRef.current + tileSize && !selectedPath) {
             // Draw fork tile at the fork position - only if no path has been selected yet
             ctx.drawImage(pathForkImage, tileX, pathTop, tileSize, pathHeight);
-          } else {
-            // After fork or if path selected - draw straight path tiles
+          } else if (selectedPath) {
+            // After fork AND path selected - draw straight path tiles
             ctx.drawImage(pathImage, tileX, pathTop, tileSize, pathHeight);
           }
+          // If no path selected and after fork, don't draw anything (prevents path from appearing to right of fork)
         }
-      }
-      
-      // Draw foreground grass (in front of path)
-      if (grassImage) {
-        // Use tiled grass image with scrolling effect
-        const grassHeight = height - pathBottom;
-        const tileWidth = grassImage.width;
-        const tileHeight = grassImage.height;
-        
-        // Calculate how many tiles we need (with extra for scrolling)
-        const tilesX = Math.ceil(width / tileWidth) + 1;
-        const tilesY = Math.ceil(grassHeight / tileHeight) + 1;
-        
-        // Apply the offset for scrolling animation (right to left)
-        const scrollOffset = offsetRef.current % tileWidth;
-        
-        // Draw tiles
-        for (let row = 0; row < tilesY; row++) {
-          for (let col = -1; col < tilesX; col++) {
-            const x = col * tileWidth - scrollOffset;
-            const y = pathBottom + row * tileHeight;
-            ctx.drawImage(grassImage, x, y, tileWidth, tileHeight);
-          }
-        }
-      } else {
-        // Fallback: solid color if image not loaded
-        const foregroundGrassGradient = ctx.createLinearGradient(0, pathBottom, 0, height);
-        foregroundGrassGradient.addColorStop(0, '#7CB342');
-        foregroundGrassGradient.addColorStop(1, '#558B2F');
-        ctx.fillStyle = foregroundGrassGradient;
-        ctx.fillRect(0, pathBottom, width, height - pathBottom);
       }
       
       // Draw foreground trees (trees1) with parallax - in front of grass
@@ -392,7 +369,7 @@ const PathCanvas = () => {
         
         // Draw checkpoint emoji if it's visible on screen
         if (checkpointScreenX < width && checkpointScreenX > 0) {
-          const checkpointY = pathTop + (pathBottom - pathTop) * 0.5 - 50; // Moved up 50 pixels
+          const checkpointY = pathTop + (pathBottom - pathTop) * 0.5 - 15; // Positioned on the path
           const checkpointSize = 60;
           
           // Initialize fade-in start time if not set
@@ -489,9 +466,24 @@ const PathCanvas = () => {
     };
 
     const animate = () => {
-      // Update scroll offset (move right to left) only if not paused
-      if (!isPaused) {
-        offsetRef.current += 2; // Adjust speed as needed
+      // Calculate if fork is fully visible on screen
+      const canvas = canvasRef.current;
+      if (canvas) {
+        const scrollPos = offsetRef.current;
+        const forkScreenX = forkPositionRef.current - scrollPos;
+        const forkTileSize = 240;
+        const forkFullyVisible = forkScreenX >= 0 && (forkScreenX + forkTileSize) <= canvas.width;
+        
+        // Update scroll offset (move right to left) only if not paused
+        // AND if fork is not fully visible yet (or path has been selected)
+        if (!isPaused && (!forkFullyVisible || selectedPath)) {
+          offsetRef.current += 2; // Adjust speed as needed
+        }
+      } else {
+        // Fallback if canvas not available
+        if (!isPaused) {
+          offsetRef.current += 2;
+        }
       }
       
       drawScene();
@@ -589,8 +581,8 @@ const PathCanvas = () => {
           lower: shuffled[1] || 'shopping'
         });
         
-        // Position next fork further ahead
-        forkPositionRef.current = offsetRef.current + 2000;
+        // Position next fork further ahead - reduced wait time
+        forkPositionRef.current = offsetRef.current + 1000;
         
         // Reset checkpoint position for after next fork
         checkpointPositionRef.current = forkPositionRef.current + 1500;
