@@ -10,9 +10,10 @@ const PathCanvas = () => {
   const [trees1Image, setTrees1Image] = useState(null); // Foreground trees
   const [trees2Image, setTrees2Image] = useState(null); // Distant trees
   const [trees3Image, setTrees3Image] = useState(null); // Very distant trees (between mountains and trees2)
+  const [bushesImage, setBushesImage] = useState(null); // Bushes behind path
+  const [walkerSpriteSheet, setWalkerSpriteSheet] = useState(null); // Walker sprite sheet
   const offsetRef = useRef(0);
   const animationFrameRef = useRef(null);
-  const lastFrameTimeRef = useRef(0);
   const [isPaused, setIsPaused] = useState(false);
   const [showChoice, setShowChoice] = useState(false);
   const [selectedPath, setSelectedPath] = useState(null);
@@ -21,6 +22,25 @@ const PathCanvas = () => {
   const [questionAnswered, setQuestionAnswered] = useState(false);
   const [totalPoints, setTotalPoints] = useState(0);
   const [firstAttempt, setFirstAttempt] = useState(true);
+  
+  // Walker sprite animation state
+  const walkerFrameRef = useRef(0); // Current frame index
+  const walkerFrameCounterRef = useRef(0); // Counter for frame timing
+  const [isVictoryAnimation, setIsVictoryAnimation] = useState(false); // Toggle between walk/victory
+  const victoryAnimationCounterRef = useRef(0); // How long to show victory animation
+  
+  // Sprite sheet configuration
+  const spriteConfig = {
+    width: 1800,           // Total sprite sheet width
+    height: 740,           // Total sprite sheet height
+    rows: 2,               // 2 rows (walking, victory)
+    cols: 6,               // 6 sprites per row
+    frameWidth: 300,       // Each sprite is 300px wide (1800 / 6 = 300)
+    frameHeight: 370,      // 740 / 2 = 370px per frame
+    walkingRow: 0,         // First row is walking animation
+    victoryRow: 1,         // Second row is victory animation
+    totalFrames: 6,        // 6 frames per animation
+  };
   
   // Checkpoint cycling - track how many checkpoints answered in current category
   const [checkpointsAnswered, setCheckpointsAnswered] = useState(0);
@@ -39,7 +59,7 @@ const PathCanvas = () => {
   
   // Learning checkpoint configuration
   const checkpointPositionRef = useRef(3500); // Position of first checkpoint after fork
-  const checkpointSpacing = 1200; // Distance between checkpoints
+  const checkpointSpacing = 600; // Distance between checkpoints (~5 seconds at 120 px/sec)
   
   // Path configuration
   const pathSegments = useRef([
@@ -48,9 +68,9 @@ const PathCanvas = () => {
   ]);
   
   // Fork appears after 1 second of walking
-  // At 2 pixels per frame * 30 fps = 60 pixels/second
+  // At 2 pixels per frame * 60 fps = 120 pixels/second
   // Plus canvas width to ensure it scrolls into view from the right
-  // Using 1200 pixels = ~20 seconds to scroll into view from right edge
+  // Using 1200 pixels = ~10 seconds to scroll into view from right edge
   const forkPositionRef = useRef(1200); // When fork appears (in pixels from start)
 
 
@@ -103,6 +123,20 @@ const PathCanvas = () => {
     trees3.onload = () => {
       setTrees3Image(trees3);
     };
+    
+    // Load bushes image (behind path)
+    const bushes = new Image();
+    bushes.src = '/src/assets/images/bushes.png';
+    bushes.onload = () => {
+      setBushesImage(bushes);
+    };
+    
+    // Load walker sprite sheet
+    const walker = new Image();
+    walker.src = '/src/assets/images/walker.png';
+    walker.onload = () => {
+      setWalkerSpriteSheet(walker);
+    };
   }, []);
 
   useEffect(() => {
@@ -152,7 +186,15 @@ const PathCanvas = () => {
         }
       }
       
+      // Draw distant grass (between horizon and path) - extended to cover area above path
+      const distantGrassGradient = ctx.createLinearGradient(0, horizonY, 0, height * 0.55);
+      distantGrassGradient.addColorStop(0, '#6B8E23'); // Olive drab (distant)
+      distantGrassGradient.addColorStop(1, '#7CB342'); // Lighter green
+      ctx.fillStyle = distantGrassGradient;
+      ctx.fillRect(0, horizonY, width, height * 0.55 - horizonY); // Fill from horizon to path top
+      
       // Draw very distant trees (trees3) with parallax - between mountains and trees2
+      // Drawn after grass so it appears in front
       if (trees3Image) {
         const trees3Width = trees3Image.width;
         const trees3Height = trees3Image.height;
@@ -163,8 +205,8 @@ const PathCanvas = () => {
         // Calculate how many tiles needed
         const trees3TilesNeeded = Math.ceil(width / trees3Width) + 2;
         
-        // Position very distant trees at horizon
-        const trees3Y = horizonY - trees3Height * 0.3; // Slightly overlap with mountains
+        // Position very distant trees at horizon - moved up additional 10 pixels
+        const trees3Y = horizonY - trees3Height * 0.3 - 10; // Slightly overlap with mountains
         
         // Draw trees3 tiles horizontally
         for (let i = -1; i < trees3TilesNeeded; i++) {
@@ -172,13 +214,6 @@ const PathCanvas = () => {
           ctx.drawImage(trees3Image, x, trees3Y, trees3Width, trees3Height);
         }
       }
-      
-      // Draw distant grass (between horizon and path)
-      const distantGrassGradient = ctx.createLinearGradient(0, horizonY, 0, height * 0.5);
-      distantGrassGradient.addColorStop(0, '#6B8E23'); // Olive drab (distant)
-      distantGrassGradient.addColorStop(1, '#7CB342'); // Lighter green
-      ctx.fillStyle = distantGrassGradient;
-      ctx.fillRect(0, horizonY, width, height * 0.15);
       
       // Draw distant trees (trees2) with parallax
       if (trees2Image) {
@@ -191,8 +226,8 @@ const PathCanvas = () => {
         // Calculate how many tiles needed
         const trees2TilesNeeded = Math.ceil(width / trees2Width) + 2;
         
-        // Position distant trees just below horizon
-        const trees2Y = horizonY;
+        // Position distant trees - moved up 50 pixels from previous position
+        const trees2Y = horizonY + 50;
         
         // Draw trees2 tiles horizontally
         for (let i = -1; i < trees2TilesNeeded; i++) {
@@ -201,9 +236,9 @@ const PathCanvas = () => {
         }
       }
       
-      // Define path area
-      const pathTop = height * 0.5; // Where path starts (behind)
-      const pathBottom = height * 0.55; // Where path ends (in front)
+      // Define path area - moved down and made larger
+      const pathTop = height * 0.55; // Where path starts (behind) - moved down from 0.5
+      const pathBottom = height * 0.75; // Where path ends (in front) - moved down from 0.55
       const pathHeight = pathBottom - pathTop;
       
       // Draw grass in the path area first (so it appears behind transparent path)
@@ -223,6 +258,27 @@ const PathCanvas = () => {
             const y = pathTop + row * tileHeight;
             ctx.drawImage(grassImage, x, y, tileWidth, tileHeight);
           }
+        }
+      }
+      
+      // Draw bushes with parallax - after grass so bushes appear in front
+      if (bushesImage) {
+        const bushesWidth = bushesImage.width;
+        const bushesHeight = bushesImage.height;
+        
+        // Parallax effect - bushes move at 0.8x speed (slower than path/grass)
+        const bushesScrollOffset = (offsetRef.current * 0.8) % bushesWidth;
+        
+        // Calculate how many tiles needed
+        const bushesTilesNeeded = Math.ceil(width / bushesWidth) + 2;
+        
+        // Position bushes just above the path - moved up 10 pixels
+        const bushesY = pathTop - bushesHeight * 0.5 - 10; // Overlap slightly with path area
+        
+        // Draw bushes tiles horizontally
+        for (let i = -1; i < bushesTilesNeeded; i++) {
+          const x = i * bushesWidth - bushesScrollOffset;
+          ctx.drawImage(bushesImage, x, bushesY, bushesWidth, bushesHeight);
         }
       }
       
@@ -264,12 +320,11 @@ const PathCanvas = () => {
           if (tileWorldX < forkPositionRef.current) {
             // Draw straight path tile
             ctx.drawImage(pathImage, tileX, pathTop, tileSize, pathHeight);
-          } else if (tileWorldX >= forkPositionRef.current && tileWorldX < forkPositionRef.current + tileSize) {
-            // Draw fork tile at the fork position
+          } else if (tileWorldX >= forkPositionRef.current && tileWorldX < forkPositionRef.current + tileSize && !selectedPath) {
+            // Draw fork tile at the fork position - only if no path has been selected yet
             ctx.drawImage(pathForkImage, tileX, pathTop, tileSize, pathHeight);
           } else {
-            // After fork - could draw continuation or different path tiles
-            // For now, continue with straight tiles
+            // After fork or if path selected - draw straight path tiles
             ctx.drawImage(pathImage, tileX, pathTop, tileSize, pathHeight);
           }
         }
@@ -333,7 +388,7 @@ const PathCanvas = () => {
         
         // Draw checkpoint emoji if it's visible on screen
         if (checkpointScreenX < width && checkpointScreenX > 0) {
-          const checkpointY = pathTop + (pathBottom - pathTop) * 0.5;
+          const checkpointY = pathTop + (pathBottom - pathTop) * 0.5 - 50; // Moved up 50 pixels
           const checkpointSize = 60;
           
           ctx.font = `${checkpointSize}px Arial`;
@@ -354,34 +409,76 @@ const PathCanvas = () => {
         }
       }
       
-      // Draw walking person emoji on the path
+      // Draw walking person using sprite sheet animation
       // Position roughly in the middle-left of the path (personX already defined above)
-      const personY = pathTop + (pathBottom - pathTop) * 0.5; // Middle of the path vertically
+      const personY = pathTop + (pathBottom - pathTop) * 0.5 - 50; // Middle of the path vertically, moved up 50 pixels
       
-      // Calculate size based on position (larger = closer to viewer)
-      const personSize = 40 + (personY - pathTop) / (pathBottom - pathTop) * 40; // 40-80px based on depth
-      
-      ctx.font = `${personSize}px Arial`;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText('🚶🏾‍➡️', personX, personY);
-    };
-
-    const animate = (currentTime) => {
-      // Throttle to 30 FPS (33.33ms per frame)
-      const fps = 30;
-      const frameDuration = 1000 / fps;
-      
-      if (currentTime - lastFrameTimeRef.current >= frameDuration) {
-        // Update scroll offset (move right to left) only if not paused
+      if (walkerSpriteSheet) {
+        // Update animation frame
         if (!isPaused) {
-          offsetRef.current += 2; // Adjust speed as needed
+          walkerFrameCounterRef.current++;
+          
+          // Change frame every 8 loops for smooth animation
+          if (walkerFrameCounterRef.current % 8 === 0) {
+            if (isVictoryAnimation) {
+              // Victory animation
+              walkerFrameRef.current = (walkerFrameRef.current + 1) % spriteConfig.totalFrames;
+              
+              // Count how many frames of victory animation have played
+              victoryAnimationCounterRef.current++;
+              
+              // After playing all 6 frames of victory animation, switch back to walking
+              if (victoryAnimationCounterRef.current >= spriteConfig.totalFrames) {
+                setIsVictoryAnimation(false);
+                victoryAnimationCounterRef.current = 0;
+                walkerFrameRef.current = 0;
+              }
+            } else {
+              // Walking animation
+              walkerFrameRef.current = (walkerFrameRef.current + 1) % spriteConfig.totalFrames;
+            }
+          }
         }
         
-        drawScene();
-        lastFrameTimeRef.current = currentTime;
+        // Calculate which row to use (walking or victory)
+        const currentRow = isVictoryAnimation ? spriteConfig.victoryRow : spriteConfig.walkingRow;
+        
+        // Calculate source position in sprite sheet
+        const sourceX = walkerFrameRef.current * spriteConfig.frameWidth;
+        const sourceY = currentRow * spriteConfig.frameHeight;
+        
+        // Calculate size to draw on canvas (scaled appropriately)
+        const drawWidth = 80;  // Adjust size as needed
+        const drawHeight = (spriteConfig.frameHeight / spriteConfig.frameWidth) * drawWidth;
+        
+        // Draw the current frame from sprite sheet
+        ctx.drawImage(
+          walkerSpriteSheet,
+          sourceX, sourceY,                    // Source position in sprite sheet
+          spriteConfig.frameWidth,             // Source width
+          spriteConfig.frameHeight,            // Source height
+          personX - drawWidth / 2,             // Destination X (centered)
+          personY - drawHeight / 2,            // Destination Y (centered)
+          drawWidth,                           // Destination width
+          drawHeight                           // Destination height
+        );
+      } else {
+        // Fallback to emoji if sprite sheet not loaded yet
+        const personSize = 40 + (personY - pathTop) / (pathBottom - pathTop) * 40;
+        ctx.font = `${personSize}px Arial`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('🚶🏾‍➡️', personX, personY);
+      }
+    };
+
+    const animate = () => {
+      // Update scroll offset (move right to left) only if not paused
+      if (!isPaused) {
+        offsetRef.current += 2; // Adjust speed as needed
       }
       
+      drawScene();
       animationFrameRef.current = requestAnimationFrame(animate);
     };
 
@@ -397,7 +494,7 @@ const PathCanvas = () => {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [grassImage, pathImage, pathForkImage, mountainsImage, trees1Image, trees2Image, trees3Image, isPaused, showChoice, showQuestion, selectedPath, questionAnswered]);
+  }, [grassImage, pathImage, pathForkImage, mountainsImage, trees1Image, trees2Image, trees3Image, bushesImage, walkerSpriteSheet, isPaused, showChoice, showQuestion, selectedPath, questionAnswered, isVictoryAnimation]);
 
   // Helper function to load a new question for the current checkpoint
   const loadNewQuestion = (category) => {
@@ -442,6 +539,11 @@ const PathCanvas = () => {
       if (firstAttempt) {
         setTotalPoints(prevPoints => prevPoints + currentQuestion.points);
       }
+      
+      // Trigger victory animation
+      setIsVictoryAnimation(true);
+      walkerFrameRef.current = 0; // Start victory animation from first frame
+      victoryAnimationCounterRef.current = 0;
       
       // Increment checkpoint counter
       const newCheckpointsAnswered = checkpointsAnswered + 1;
