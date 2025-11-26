@@ -29,6 +29,10 @@ const PathCanvas = () => {
   const [isVictoryAnimation, setIsVictoryAnimation] = useState(false); // Toggle between walk/victory
   const victoryAnimationCounterRef = useRef(0); // How long to show victory animation
   
+  // Checkpoint fade-in animation
+  const checkpointFadeStartTimeRef = useRef(null); // Track when checkpoint starts fading in
+  const checkpointFadeDuration = 500; // 500ms fade-in duration
+  
   // Sprite sheet configuration
   const spriteConfig = {
     width: 1800,           // Total sprite sheet width
@@ -147,7 +151,7 @@ const PathCanvas = () => {
     
     // Set canvas size
     const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
+      canvas.width = canvas.parentElement.clientWidth;
       canvas.height = window.innerHeight;
     };
 
@@ -391,6 +395,17 @@ const PathCanvas = () => {
           const checkpointY = pathTop + (pathBottom - pathTop) * 0.5 - 50; // Moved up 50 pixels
           const checkpointSize = 60;
           
+          // Initialize fade-in start time if not set
+          if (checkpointFadeStartTimeRef.current === null) {
+            checkpointFadeStartTimeRef.current = Date.now();
+          }
+          
+          // Calculate fade-in opacity
+          const fadeElapsed = Date.now() - checkpointFadeStartTimeRef.current;
+          const fadeOpacity = Math.min(fadeElapsed / checkpointFadeDuration, 1);
+          
+          ctx.save();
+          ctx.globalAlpha = fadeOpacity;
           ctx.font = `${checkpointSize}px Arial`;
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
@@ -398,6 +413,7 @@ const PathCanvas = () => {
           // Display the current question's emoji (should always be loaded now)
           const emojiToDisplay = currentQuestion ? currentQuestion.emoji : '❓';
           ctx.fillText(emojiToDisplay, checkpointScreenX, checkpointY);
+          ctx.restore();
         }
         
         // Check if checkpoint is just to the right of the person - trigger question dialog
@@ -525,6 +541,9 @@ const PathCanvas = () => {
       checkpointPositionRef.current = offsetRef.current + 1000;
     }
     
+    // Reset fade-in timer for new checkpoint
+    checkpointFadeStartTimeRef.current = null;
+    
     // Load the first question immediately so the correct emoji appears
     const category = forkCategories[choice];
     loadNewQuestion(category);
@@ -579,6 +598,9 @@ const PathCanvas = () => {
         // Move to next checkpoint in the same category
         checkpointPositionRef.current += checkpointSpacing;
         setQuestionAnswered(false); // Ready for next checkpoint
+        
+        // Reset fade-in timer for new checkpoint
+        checkpointFadeStartTimeRef.current = null;
         
         // Load the next question immediately for the next checkpoint
         const category = forkCategories[selectedPath];
@@ -722,8 +744,12 @@ const PathCanvas = () => {
           borderRadius: '15px',
           boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
           zIndex: 10,
+          animation: 'fadeIn 0.5s ease-out',
         }}>
-          <div style={{ fontSize: '60px' }}>
+          <div style={{ 
+            fontSize: '60px',
+            animation: 'fadeInScale 0.6s ease-out',
+          }}>
             {currentQuestion.emoji}
           </div>
           
