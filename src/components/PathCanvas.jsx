@@ -226,8 +226,8 @@ const PathCanvas = () => {
         // Calculate how many tiles needed
         const trees2TilesNeeded = Math.ceil(width / trees2Width) + 2;
         
-        // Position distant trees - moved up 50 pixels from previous position
-        const trees2Y = horizonY + 50;
+        // Position distant trees - moved up 40 pixels from previous position
+        const trees2Y = horizonY - 10;
         
         // Draw trees2 tiles horizontally
         for (let i = -1; i < trees2TilesNeeded; i++) {
