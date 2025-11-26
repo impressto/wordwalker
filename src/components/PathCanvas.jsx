@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { getRandomQuestionByCategory, shuffleOptions, getAllCategoryIds, getCategoryById } from '../config/questions';
 
 const PathCanvas = () => {
   const canvasRef = useRef(null);
@@ -11,8 +12,34 @@ const PathCanvas = () => {
   const [trees3Image, setTrees3Image] = useState(null); // Very distant trees (between mountains and trees2)
   const offsetRef = useRef(0);
   const animationFrameRef = useRef(null);
+  const lastFrameTimeRef = useRef(0);
   const [isPaused, setIsPaused] = useState(false);
   const [showChoice, setShowChoice] = useState(false);
+  const [selectedPath, setSelectedPath] = useState(null);
+  const [showQuestion, setShowQuestion] = useState(false);
+  const [currentQuestion, setCurrentQuestion] = useState(null);
+  const [questionAnswered, setQuestionAnswered] = useState(false);
+  const [totalPoints, setTotalPoints] = useState(0);
+  const [firstAttempt, setFirstAttempt] = useState(true);
+  
+  // Checkpoint cycling - track how many checkpoints answered in current category
+  const [checkpointsAnswered, setCheckpointsAnswered] = useState(0);
+  const checkpointsPerCategory = 4; // Number of checkpoints before next fork
+  
+  // Fork path categories - randomly select 2 different categories for each fork
+  const [forkCategories, setForkCategories] = useState(() => {
+    const allCategories = getAllCategoryIds();
+    // Shuffle and pick first 2 categories
+    const shuffled = [...allCategories].sort(() => Math.random() - 0.5);
+    return {
+      upper: shuffled[0] || 'food',
+      lower: shuffled[1] || 'shopping'
+    };
+  });
+  
+  // Learning checkpoint configuration
+  const checkpointPositionRef = useRef(3500); // Position of first checkpoint after fork
+  const checkpointSpacing = 1200; // Distance between checkpoints
   
   // Path configuration
   const pathSegments = useRef([
@@ -20,10 +47,12 @@ const PathCanvas = () => {
     { type: 'fork', startX: 800, length: 400, branches: ['upper', 'lower'] }
   ]);
   
-  // Fork appears further away - will take several seconds to scroll into view
-  // At 2 pixels per frame * 60 fps = 120 pixels/second
-  // 2000 pixels = ~16-17 seconds before fork appears
-  const forkPositionRef = useRef(2000); // When fork appears (in pixels from start)
+  // Fork appears after 1 second of walking
+  // At 2 pixels per frame * 30 fps = 60 pixels/second
+  // Plus canvas width to ensure it scrolls into view from the right
+  // Using 1200 pixels = ~20 seconds to scroll into view from right edge
+  const forkPositionRef = useRef(1200); // When fork appears (in pixels from start)
+
 
   useEffect(() => {
     // Load grass image
@@ -209,7 +238,7 @@ const PathCanvas = () => {
       // Check if fork is 200 pixels from the right edge
       // This gives the user time to choose before the fork reaches them
       const forkDistance = width - forkScreenX;
-      const shouldShowChoice = forkDistance >= 200 && forkScreenX < width;
+      const shouldShowChoice = forkDistance >= 200 && forkScreenX < width && !selectedPath;
       
       if (shouldShowChoice && !isPaused && !showChoice) {
         setIsPaused(true);
@@ -298,6 +327,33 @@ const PathCanvas = () => {
         }
       }
       
+      // Draw learning checkpoint (emoji on path) if path has been selected and not answered
+      if (selectedPath && !questionAnswered) {
+        const checkpointScreenX = checkpointPositionRef.current - scrollPos;
+        
+        // Draw checkpoint emoji if it's visible on screen
+        if (checkpointScreenX < width && checkpointScreenX > 0) {
+          const checkpointY = pathTop + (pathBottom - pathTop) * 0.5;
+          const checkpointSize = 60;
+          
+          ctx.font = `${checkpointSize}px Arial`;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          
+          // Display the current question's emoji (should always be loaded now)
+          const emojiToDisplay = currentQuestion ? currentQuestion.emoji : '❓';
+          ctx.fillText(emojiToDisplay, checkpointScreenX, checkpointY);
+        }
+        
+        // Check if checkpoint is just to the right of the person - trigger question dialog
+        // Show question when checkpoint is within ~100px to the right of person
+        const distanceFromPerson = checkpointScreenX - personX;
+        if (distanceFromPerson <= 100 && distanceFromPerson > 0 && !showQuestion && currentQuestion) {
+          setIsPaused(true);
+          setShowQuestion(true);
+        }
+      }
+      
       // Draw walking person emoji on the path
       // Position roughly in the middle-left of the path (personX already defined above)
       const personY = pathTop + (pathBottom - pathTop) * 0.5; // Middle of the path vertically
@@ -311,13 +367,21 @@ const PathCanvas = () => {
       ctx.fillText('🚶🏾‍➡️', personX, personY);
     };
 
-    const animate = () => {
-      // Update scroll offset (move right to left) only if not paused
-      if (!isPaused) {
-        offsetRef.current += 2; // Adjust speed as needed
+    const animate = (currentTime) => {
+      // Throttle to 30 FPS (33.33ms per frame)
+      const fps = 30;
+      const frameDuration = 1000 / fps;
+      
+      if (currentTime - lastFrameTimeRef.current >= frameDuration) {
+        // Update scroll offset (move right to left) only if not paused
+        if (!isPaused) {
+          offsetRef.current += 2; // Adjust speed as needed
+        }
+        
+        drawScene();
+        lastFrameTimeRef.current = currentTime;
       }
       
-      drawScene();
       animationFrameRef.current = requestAnimationFrame(animate);
     };
 
@@ -333,20 +397,140 @@ const PathCanvas = () => {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [grassImage, pathImage, pathForkImage, mountainsImage, trees1Image, trees2Image, trees3Image, isPaused, showChoice]);
+  }, [grassImage, pathImage, pathForkImage, mountainsImage, trees1Image, trees2Image, trees3Image, isPaused, showChoice, showQuestion, selectedPath, questionAnswered]);
+
+  // Helper function to load a new question for the current checkpoint
+  const loadNewQuestion = (category) => {
+    const question = getRandomQuestionByCategory(category);
+    if (question) {
+      const shuffledOptions = shuffleOptions(question.options);
+      setCurrentQuestion({
+        ...question,
+        options: shuffledOptions
+      });
+    }
+  };
 
   const handlePathChoice = (choice) => {
     console.log(`User chose: ${choice} path`);
+    setSelectedPath(choice);
     setShowChoice(false);
     setIsPaused(false);
+    setCheckpointsAnswered(0); // Reset checkpoint counter for new category
     
-    // Reset for next fork (in a real app, this would continue to next segment)
-    // For now, we'll just continue the animation
-    forkPositionRef.current += 1200; // Set next fork position further ahead
+    // Position the first checkpoint immediately visible on the right side of screen
+    // offsetRef.current is current scroll position, add canvas width * 0.8 to place it on right
+    const canvas = canvasRef.current;
+    if (canvas) {
+      checkpointPositionRef.current = offsetRef.current + canvas.width * 0.85;
+    } else {
+      // Fallback if canvas not available
+      checkpointPositionRef.current = offsetRef.current + 1000;
+    }
+    
+    // Load the first question immediately so the correct emoji appears
+    const category = forkCategories[choice];
+    loadNewQuestion(category);
+  };
+
+
+  const handleAnswerChoice = (answer) => {
+    if (!currentQuestion) return;
+    
+    if (answer === currentQuestion.correctAnswer) {
+      // Correct answer - award points based on the question's point value
+      if (firstAttempt) {
+        setTotalPoints(prevPoints => prevPoints + currentQuestion.points);
+      }
+      
+      // Increment checkpoint counter
+      const newCheckpointsAnswered = checkpointsAnswered + 1;
+      setCheckpointsAnswered(newCheckpointsAnswered);
+      
+      setQuestionAnswered(true);
+      setShowQuestion(false);
+      setIsPaused(false);
+      setFirstAttempt(true); // Reset for next question
+      
+      // Check if we've completed all checkpoints for this category
+      if (newCheckpointsAnswered >= checkpointsPerCategory) {
+        // Reset for next fork
+        setCheckpointsAnswered(0);
+        setSelectedPath(null);
+        setQuestionAnswered(false);
+        setCurrentQuestion(null); // Clear current question
+        
+        // Generate new random categories for the next fork
+        const allCategories = getAllCategoryIds();
+        const shuffled = [...allCategories].sort(() => Math.random() - 0.5);
+        setForkCategories({
+          upper: shuffled[0] || 'food',
+          lower: shuffled[1] || 'shopping'
+        });
+        
+        // Position next fork further ahead
+        forkPositionRef.current = offsetRef.current + 2000;
+        
+        // Reset checkpoint position for after next fork
+        checkpointPositionRef.current = forkPositionRef.current + 1500;
+      } else {
+        // Move to next checkpoint in the same category
+        checkpointPositionRef.current += checkpointSpacing;
+        setQuestionAnswered(false); // Ready for next checkpoint
+        
+        // Load the next question immediately for the next checkpoint
+        const category = forkCategories[selectedPath];
+        loadNewQuestion(category);
+      }
+    } else {
+      // Wrong answer - can try again but won't get points
+      setFirstAttempt(false);
+      // Could add visual feedback here (shake animation, error message, etc.)
+    }
   };
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
+      {/* Points and Progress Display */}
+      <div style={{
+        position: 'absolute',
+        top: '20px',
+        right: '20px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '10px',
+        zIndex: 20,
+      }}>
+        <div style={{
+          padding: '10px 20px',
+          backgroundColor: 'rgba(255, 255, 255, 0.9)',
+          borderRadius: '8px',
+          boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+          fontSize: '20px',
+          fontWeight: 'bold',
+        }}>
+          Points: {totalPoints}
+        </div>
+        
+        {selectedPath && (
+          <div style={{
+            padding: '10px 20px',
+            backgroundColor: 'rgba(33, 150, 243, 0.9)',
+            borderRadius: '8px',
+            boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+            fontSize: '16px',
+            fontWeight: 'bold',
+            color: 'white',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '8px',
+          }}>
+            <span>{getCategoryById(forkCategories[selectedPath])?.emoji}</span>
+            <span>{checkpointsAnswered}/{checkpointsPerCategory}</span>
+          </div>
+        )}
+      </div>
+
       <canvas
         ref={canvasRef}
         style={{
@@ -382,11 +566,16 @@ const PathCanvas = () => {
               cursor: 'pointer',
               boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
               transition: 'all 0.2s',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
             }}
             onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
             onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
           >
-            ↑ Upper Path (Food)
+            <span>↑</span>
+            <span>{getCategoryById(forkCategories.upper)?.emoji}</span>
+            <span>{getCategoryById(forkCategories.upper)?.displayName}</span>
           </button>
           
           <button
@@ -402,12 +591,94 @@ const PathCanvas = () => {
               cursor: 'pointer',
               boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
               transition: 'all 0.2s',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
             }}
             onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
             onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
           >
-            ↓ Lower Path (Shopping)
+            <span>↓</span>
+            <span>{getCategoryById(forkCategories.lower)?.emoji}</span>
+            <span>{getCategoryById(forkCategories.lower)?.displayName}</span>
           </button>
+        </div>
+      )}
+
+      {showQuestion && currentQuestion && (
+        <div style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '20px',
+          backgroundColor: 'rgba(255, 255, 255, 0.95)',
+          padding: '30px',
+          borderRadius: '15px',
+          boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
+          zIndex: 10,
+        }}>
+          <div style={{ fontSize: '60px' }}>
+            {currentQuestion.emoji}
+          </div>
+          
+          <div style={{
+            fontSize: '24px',
+            fontWeight: 'bold',
+            marginBottom: '10px',
+          }}>
+            {currentQuestion.question}
+          </div>
+          
+          <div style={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '10px',
+            width: '100%',
+          }}>
+            {currentQuestion.options.map((option, index) => (
+              <button
+                key={index}
+                onClick={() => handleAnswerChoice(option)}
+                style={{
+                  padding: '12px 24px',
+                  fontSize: '18px',
+                  fontWeight: 'bold',
+                  backgroundColor: '#2196F3',
+                  color: 'white',
+                  border: 'none',
+                  borderRadius: '8px',
+                  cursor: 'pointer',
+                  boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                  transition: 'all 0.2s',
+                }}
+                onMouseEnter={(e) => {
+                  e.target.style.transform = 'scale(1.05)';
+                  e.target.style.backgroundColor = '#1976D2';
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.transform = 'scale(1)';
+                  e.target.style.backgroundColor = '#2196F3';
+                }}
+              >
+                {option}
+              </button>
+            ))}
+          </div>
+          
+          {!firstAttempt && (
+            <div style={{
+              color: '#d32f2f',
+              fontSize: '16px',
+              fontWeight: 'bold',
+              marginTop: '10px',
+            }}>
+              Try again! (No points for incorrect answers)
+            </div>
+          )}
         </div>
       )}
     </div>
