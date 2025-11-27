@@ -499,7 +499,8 @@ const PathCanvas = () => {
       
       if (walkerSpriteSheet) {
         // Update animation frame
-        if (!isPaused) {
+        // Allow animation to continue during victory animation even when paused
+        if (!isPaused || isVictoryAnimation) {
           walkerFrameCounterRef.current++;
           
           // Change frame every 8 loops for smooth animation
