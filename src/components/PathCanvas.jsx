@@ -100,65 +100,68 @@ const PathCanvas = () => {
   }, []);
 
   useEffect(() => {
+    // Get base path for assets (handles subdirectory deployments)
+    const basePath = import.meta.env.BASE_URL || '/';
+    
     // Load grass image
     const grass = new Image();
-    grass.src = '/images/grass.png';
+    grass.src = `${basePath}images/grass.png`;
     grass.onload = () => {
       setGrassImage(grass);
     };
     
     // Load path image
     const path = new Image();
-    path.src = '/images/path.png';
+    path.src = `${basePath}images/path.png`;
     path.onload = () => {
       setPathImage(path);
     };
     
     // Load path fork image
     const pathFork = new Image();
-    pathFork.src = '/images/path-fork.png';
+    pathFork.src = `${basePath}images/path-fork.png`;
     pathFork.onload = () => {
       setPathForkImage(pathFork);
     };
     
     // Load mountains image
     const mountains = new Image();
-    mountains.src = '/images/mountains.png';
+    mountains.src = `${basePath}images/mountains.png`;
     mountains.onload = () => {
       setMountainsImage(mountains);
     };
     
     // Load trees1 image (foreground trees)
     const trees1 = new Image();
-    trees1.src = '/images/trees1.png';
+    trees1.src = `${basePath}images/trees1.png`;
     trees1.onload = () => {
       setTrees1Image(trees1);
     };
     
     // Load trees2 image (distant trees)
     const trees2 = new Image();
-    trees2.src = '/images/trees2.png';
+    trees2.src = `${basePath}images/trees2.png`;
     trees2.onload = () => {
       setTrees2Image(trees2);
     };
     
     // Load trees3 image (very distant trees - between mountains and trees2)
     const trees3 = new Image();
-    trees3.src = '/images/trees3.png';
+    trees3.src = `${basePath}images/trees3.png`;
     trees3.onload = () => {
       setTrees3Image(trees3);
     };
     
     // Load bushes image (behind path)
     const bushes = new Image();
-    bushes.src = '/images/bushes.png';
+    bushes.src = `${basePath}images/bushes.png`;
     bushes.onload = () => {
       setBushesImage(bushes);
     };
     
     // Load walker sprite sheet
     const walker = new Image();
-    walker.src = '/images/walker.png';
+    walker.src = `${basePath}images/walker.png`;
     walker.onload = () => {
       setWalkerSpriteSheet(walker);
     };
@@ -708,7 +711,7 @@ const PathCanvas = () => {
         zIndex: 30,
       }}>
         <img 
-          src="/images/top-logo.png" 
+          src={`${import.meta.env.BASE_URL || '/'}images/top-logo.png`}
           alt="WordWalk Logo"
           style={{
             maxWidth: '200px',

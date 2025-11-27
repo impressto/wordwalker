@@ -1,7 +1,9 @@
 class SoundManager {
   constructor() {
     // Audio files in public/audio folder
-    this.baseUrl = '/audio/';
+    // Use Vite's base URL for proper subdirectory support
+    const baseUrl = import.meta.env.BASE_URL || '/';
+    this.baseUrl = `${baseUrl}audio/`;
     this.fileFormat = 'mp3';
     this.masterVolume = 1;
     this.audioUnlocked = false;
@@ -9,7 +11,7 @@ class SoundManager {
     
     // Preloaded audio buffers for instant playback
     this.preloadedSounds = {};
-    this.soundsToPreload = ['correct', 'wrong', 'streak', 'victory', 'choice'];
+    this.soundsToPreload = ['correct', 'wrong', 'streak', 'choice'];
 
     const AudioContext = window.AudioContext || window.webkitAudioContext;
     this.audioContext = new AudioContext();
@@ -210,10 +212,10 @@ class SoundManager {
   }
 
   /**
-   * Play the victory animation sound
+   * Play the victory animation sound (disabled)
    */
   playVictory() {
-    this.play('victory');
+    // Victory sound disabled
   }
 
   /**

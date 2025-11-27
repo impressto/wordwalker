@@ -18,7 +18,7 @@ export default defineConfig({
     },
     extensions: ['.js', '.jsx', '.json'],
   },
-  base: './', // Use relative paths for built assets
+  base: '/wordwalker/dist/', // Use subdirectory path for deployment with dist folder
   publicDir: 'public', // Ensure public directory is copied to dist
   server: {
     port: 3000,
