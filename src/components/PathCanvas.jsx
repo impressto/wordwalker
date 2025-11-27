@@ -665,9 +665,11 @@ const PathCanvas = () => {
           setQuestionAnswered(false);
           setCurrentQuestion(null); // Clear current question
           
-          // Generate new random categories for the next fork
+          // Generate new random categories for the next fork, excluding the just-completed category
           const allCategories = getAllCategoryIds();
-          const shuffled = [...allCategories].sort(() => Math.random() - 0.5);
+          const currentCategory = forkCategories[selectedPath];
+          const availableCategories = allCategories.filter(cat => cat !== currentCategory);
+          const shuffled = [...availableCategories].sort(() => Math.random() - 0.5);
           setForkCategories({
             upper: shuffled[0] || 'food',
             lower: shuffled[1] || 'shopping'
