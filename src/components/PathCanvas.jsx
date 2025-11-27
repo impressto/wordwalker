@@ -1,6 +1,94 @@
 import { useEffect, useRef, useState } from 'react';
 import { getRandomQuestionByCategory, shuffleOptions, getAllCategoryIds, getCategoryById } from '../config/questions';
 
+// Simple Spanish to English translation map for common words
+const translations = {
+  // Food
+  'sandía': 'watermelon',
+  'plátano': 'banana',
+  'manzana': 'apple',
+  'naranja': 'orange',
+  'cereza': 'cherry',
+  'pera': 'pear',
+  'limón': 'lemon',
+  'mango': 'mango',
+  'uvas': 'grapes',
+  'fresa': 'strawberry',
+  'piña': 'pineapple',
+  'melocotón': 'peach',
+  'kiwi': 'kiwi',
+  'coco': 'coconut',
+  'aguacate': 'avocado',
+  'papaya': 'papaya',
+  'granada': 'pomegranate',
+  'melón': 'melon',
+  'ciruela': 'plum',
+  'frambuesa': 'raspberry',
+  // Shopping
+  'camisa': 'shirt',
+  'pantalones': 'pants',
+  'zapatos': 'shoes',
+  'vestido': 'dress',
+  'chaqueta': 'jacket',
+  'sombrero': 'hat',
+  'calcetines': 'socks',
+  'falda': 'skirt',
+  'abrigo': 'coat',
+  'bufanda': 'scarf',
+  'guantes': 'gloves',
+  'cinturón': 'belt',
+  'corbata': 'tie',
+  'bolso': 'bag/purse',
+  'cartera': 'wallet',
+  'gafas': 'glasses',
+  'reloj': 'watch',
+  'anillo': 'ring',
+  'collar': 'necklace',
+  'pulsera': 'bracelet',
+  // Entertainment
+  'película': 'movie',
+  'música': 'music',
+  'libro': 'book',
+  'juego': 'game',
+  'deporte': 'sport',
+  'arte': 'art',
+  'baile': 'dance',
+  'teatro': 'theater',
+  'concierto': 'concert',
+  'parque': 'park',
+  'playa': 'beach',
+  'montaña': 'mountain',
+  'museo': 'museum',
+  'galería': 'gallery',
+  'cine': 'cinema',
+  'fiesta': 'party',
+  'fotografía': 'photography',
+  'pintura': 'painting',
+  'escultura': 'sculpture',
+  'jardín': 'garden',
+  // Accommodation
+  'hotel': 'hotel',
+  'hostal': 'hostel',
+  'apartamento': 'apartment',
+  'casa': 'house',
+  'cabaña': 'cabin',
+  'villa': 'villa',
+  'habitación': 'room',
+  'suite': 'suite',
+  'recepción': 'reception',
+  'llave': 'key',
+  'cama': 'bed',
+  'ducha': 'shower',
+  'toalla': 'towel',
+  'almohada': 'pillow',
+  'manta': 'blanket',
+  'aire acondicionado': 'air conditioning',
+  'calefacción': 'heating',
+  'wifi': 'wifi',
+  'piscina': 'pool',
+  'ascensor': 'elevator',
+};
+
 const PathCanvas = () => {
   const canvasRef = useRef(null);
   const [grassImage, setGrassImage] = useState(null);
@@ -22,6 +110,7 @@ const PathCanvas = () => {
   const [questionAnswered, setQuestionAnswered] = useState(false);
   const [totalPoints, setTotalPoints] = useState(0);
   const [firstAttempt, setFirstAttempt] = useState(true);
+  const [showTranslation, setShowTranslation] = useState(false); // Show English translation after correct answer
   
   // Walker sprite animation state
   const walkerFrameRef = useRef(0); // Current frame index
@@ -163,18 +252,20 @@ const PathCanvas = () => {
       const horizonY = height * 0.35;
       
       // Draw sky (upper portion - navy to light blue)
-      const skyGradient = ctx.createLinearGradient(0, 0, 0, horizonY);
-      skyGradient.addColorStop(0, '#1e3a5f'); // Navy blue at top
-      skyGradient.addColorStop(1, '#87CEEB'); // Light blue at horizon
+      // Sky ends 20 pixels above the bottom of the mountains
+      const skyBottom = horizonY - 20;
+      const skyGradient = ctx.createLinearGradient(0, 0, 0, skyBottom);
+      skyGradient.addColorStop(0, '#3b6499ff'); // Navy blue at top
+      skyGradient.addColorStop(1, '#87CEEB'); // Light blue at bottom
       ctx.fillStyle = skyGradient;
-      ctx.fillRect(0, 0, width, horizonY);
+      ctx.fillRect(0, 0, width, skyBottom);
       
-      // Draw grass base background (below horizon to bottom)
-      const grassBaseGradient = ctx.createLinearGradient(0, horizonY, 0, height);
-      grassBaseGradient.addColorStop(0, '#9DBF9E'); // Light green at top
-      grassBaseGradient.addColorStop(1, '#7A9A5C'); // Darker green at bottom
+      // Draw grass base background (below sky to bottom)
+      const grassBaseGradient = ctx.createLinearGradient(0, skyBottom, 0, height);
+      grassBaseGradient.addColorStop(0, '#6B8E23'); // Olive drab at top
+      grassBaseGradient.addColorStop(1, '#3B5323'); // Dark green at bottom
       ctx.fillStyle = grassBaseGradient;
-      ctx.fillRect(0, horizonY, width, height - horizonY);
+      ctx.fillRect(0, skyBottom, width, height - skyBottom);
       
       // Draw mountains at the horizon (tiled horizontally with parallax)
       if (mountainsImage) {
@@ -216,8 +307,8 @@ const PathCanvas = () => {
         // Calculate how many tiles needed
         const trees3TilesNeeded = Math.ceil(width / trees3Width) + 2;
         
-        // Position very distant trees at horizon - moved up additional 10 pixels
-        const trees3Y = horizonY - trees3Height * 0.3 - 10; // Slightly overlap with mountains
+        // Position very distant trees at horizon - moved up additional 30 pixels
+        const trees3Y = horizonY - trees3Height * 0.3 - 30; // Slightly overlap with mountains
         
         // Draw trees3 tiles horizontally
         for (let i = -1; i < trees3TilesNeeded; i++) {
@@ -247,9 +338,9 @@ const PathCanvas = () => {
         }
       }
       
-      // Define path area - moved down 60 pixels
-      const pathTop = height * 0.55 + 60; // Where path starts (behind)
-      const pathBottom = height * 0.75 + 60; // Where path ends (in front)
+      // Define path area - moved down 90 pixels
+      const pathTop = height * 0.55 + 90; // Where path starts (behind)
+      const pathBottom = height * 0.75 + 90; // Where path ends (in front)
       const pathHeight = pathBottom - pathTop;
       
       // Draw grass for entire area (path + foreground) - single unified tile
@@ -279,8 +370,8 @@ const PathCanvas = () => {
         // Calculate how many tiles needed
         const bushesTilesNeeded = Math.ceil(width / bushesWidth) + 2;
         
-        // Position bushes just above the path - moved up 30 pixels
-        const bushesY = pathTop - bushesHeight * 0.5 - 30; // Overlap slightly with path area
+        // Position bushes just above the path - moved up 20 pixels
+        const bushesY = pathTop - bushesHeight * 0.5 - 20; // Overlap slightly with path area
         
         // Draw bushes tiles horizontally
         for (let i = -1; i < bushesTilesNeeded; i++) {
@@ -369,7 +460,7 @@ const PathCanvas = () => {
         
         // Draw checkpoint emoji if it's visible on screen
         if (checkpointScreenX < width && checkpointScreenX > 0) {
-          const checkpointY = pathTop + (pathBottom - pathTop) * 0.5 - 15; // Positioned on the path
+          const checkpointY = pathTop + (pathBottom - pathTop) * 0.5 - 25; // Positioned on the path, moved up 10 pixels
           const checkpointSize = 60;
           
           // Initialize fade-in start time if not set
@@ -444,6 +535,16 @@ const PathCanvas = () => {
         const drawWidth = 80;  // Adjust size as needed
         const drawHeight = (spriteConfig.frameHeight / spriteConfig.frameWidth) * drawWidth;
         
+        // Add bounce effect during victory animation
+        let bounceOffset = 0;
+        if (isVictoryAnimation) {
+          // Create a bounce up and down based on current frame
+          // Frames 0-2: jump up (0 -> -10 pixels)
+          // Frames 3-5: come down (-10 -> 0 pixels)
+          const bounceProgress = walkerFrameRef.current / (spriteConfig.totalFrames - 1);
+          bounceOffset = -10 * Math.sin(bounceProgress * Math.PI); // Smooth sine wave bounce
+        }
+        
         // Draw the current frame from sprite sheet
         ctx.drawImage(
           walkerSpriteSheet,
@@ -451,7 +552,7 @@ const PathCanvas = () => {
           spriteConfig.frameWidth,             // Source width
           spriteConfig.frameHeight,            // Source height
           personX - drawWidth / 2,             // Destination X (centered)
-          personY - drawHeight / 2,            // Destination Y (centered)
+          personY - drawHeight / 2 + bounceOffset, // Destination Y (centered + bounce)
           drawWidth,                           // Destination width
           drawHeight                           // Destination height
         );
@@ -472,11 +573,14 @@ const PathCanvas = () => {
         const scrollPos = offsetRef.current;
         const forkScreenX = forkPositionRef.current - scrollPos;
         const forkTileSize = 240;
-        const forkFullyVisible = forkScreenX >= 0 && (forkScreenX + forkTileSize) <= canvas.width;
+        
+        // Check if choice dialog should be shown (fork is 200px from right edge)
+        const forkDistance = canvas.width - forkScreenX;
+        const shouldStopForChoice = forkDistance >= 200 && forkScreenX < canvas.width && !selectedPath;
         
         // Update scroll offset (move right to left) only if not paused
-        // AND if fork is not fully visible yet (or path has been selected)
-        if (!isPaused && (!forkFullyVisible || selectedPath)) {
+        // Stop when choice dialog should show OR if path has been selected (then continue normally)
+        if (!isPaused && (!shouldStopForChoice || selectedPath)) {
           offsetRef.current += 2; // Adjust speed as needed
         }
       } else {
@@ -546,7 +650,10 @@ const PathCanvas = () => {
     if (!currentQuestion) return;
     
     if (answer === currentQuestion.correctAnswer) {
-      // Correct answer - award points based on the question's point value
+      // Correct answer - show translation and pause
+      setShowTranslation(true);
+      
+      // Award points based on the question's point value
       if (firstAttempt) {
         setTotalPoints(prevPoints => prevPoints + currentQuestion.points);
       }
@@ -556,48 +663,54 @@ const PathCanvas = () => {
       walkerFrameRef.current = 0; // Start victory animation from first frame
       victoryAnimationCounterRef.current = 0;
       
-      // Increment checkpoint counter
-      const newCheckpointsAnswered = checkpointsAnswered + 1;
-      setCheckpointsAnswered(newCheckpointsAnswered);
-      
-      setQuestionAnswered(true);
-      setShowQuestion(false);
-      setIsPaused(false);
-      setFirstAttempt(true); // Reset for next question
-      
-      // Check if we've completed all checkpoints for this category
-      if (newCheckpointsAnswered >= checkpointsPerCategory) {
-        // Reset for next fork
-        setCheckpointsAnswered(0);
-        setSelectedPath(null);
-        setQuestionAnswered(false);
-        setCurrentQuestion(null); // Clear current question
+      // Pause for 2 seconds to show the translation, then continue
+      setTimeout(() => {
+        setShowTranslation(false);
         
-        // Generate new random categories for the next fork
-        const allCategories = getAllCategoryIds();
-        const shuffled = [...allCategories].sort(() => Math.random() - 0.5);
-        setForkCategories({
-          upper: shuffled[0] || 'food',
-          lower: shuffled[1] || 'shopping'
-        });
+        // Increment checkpoint counter
+        const newCheckpointsAnswered = checkpointsAnswered + 1;
+        setCheckpointsAnswered(newCheckpointsAnswered);
         
-        // Position next fork further ahead - reduced wait time
-        forkPositionRef.current = offsetRef.current + 1000;
+        setQuestionAnswered(true);
+        setShowQuestion(false);
+        setIsPaused(false);
+        setFirstAttempt(true); // Reset for next question
         
-        // Reset checkpoint position for after next fork
-        checkpointPositionRef.current = forkPositionRef.current + 1500;
-      } else {
-        // Move to next checkpoint in the same category
-        checkpointPositionRef.current += checkpointSpacing;
-        setQuestionAnswered(false); // Ready for next checkpoint
-        
-        // Reset fade-in timer for new checkpoint
-        checkpointFadeStartTimeRef.current = null;
-        
-        // Load the next question immediately for the next checkpoint
-        const category = forkCategories[selectedPath];
-        loadNewQuestion(category);
-      }
+        // Check if we've completed all checkpoints for this category
+        if (newCheckpointsAnswered >= checkpointsPerCategory) {
+          // Reset for next fork
+          setCheckpointsAnswered(0);
+          setSelectedPath(null);
+          setQuestionAnswered(false);
+          setCurrentQuestion(null); // Clear current question
+          
+          // Generate new random categories for the next fork
+          const allCategories = getAllCategoryIds();
+          const shuffled = [...allCategories].sort(() => Math.random() - 0.5);
+          setForkCategories({
+            upper: shuffled[0] || 'food',
+            lower: shuffled[1] || 'shopping'
+          });
+          
+          // Position next fork further ahead - account for stop margin so it doesn't come too far into view
+          // Adding extra distance (100px stopMargin) to compensate for the stopping point
+          forkPositionRef.current = offsetRef.current + 1100;
+          
+          // Reset checkpoint position for after next fork
+          checkpointPositionRef.current = forkPositionRef.current + 1500;
+        } else {
+          // Move to next checkpoint in the same category
+          checkpointPositionRef.current += checkpointSpacing;
+          setQuestionAnswered(false); // Ready for next checkpoint
+          
+          // Reset fade-in timer for new checkpoint
+          checkpointFadeStartTimeRef.current = null;
+          
+          // Load the next question immediately for the next checkpoint
+          const category = forkCategories[selectedPath];
+          loadNewQuestion(category);
+        }
+      }, 2000); // 2 second pause to show translation
     } else {
       // Wrong answer - can try again but won't get points
       setFirstAttempt(false);
@@ -607,22 +720,43 @@ const PathCanvas = () => {
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
+      {/* Top Logo */}
+      <div style={{
+        position: 'absolute',
+        top: '10px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        zIndex: 30,
+      }}>
+        <img 
+          src="/src/assets/images/top-logo.png" 
+          alt="WordWalk Logo"
+          style={{
+            maxWidth: '200px',
+            height: 'auto',
+            display: 'block',
+          }}
+        />
+      </div>
+
       {/* Points and Progress Display */}
       <div style={{
         position: 'absolute',
-        top: '20px',
-        right: '20px',
+        bottom: '20px',
+        left: '50%',
+        transform: 'translateX(-50%)',
         display: 'flex',
-        flexDirection: 'column',
-        gap: '10px',
+        flexDirection: 'row',
+        gap: '15px',
         zIndex: 20,
+        alignItems: 'center',
       }}>
         <div style={{
           padding: '10px 20px',
           backgroundColor: 'rgba(255, 255, 255, 0.9)',
           borderRadius: '8px',
           boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
-          fontSize: '20px',
+          fontSize: '18px',
           fontWeight: 'bold',
         }}>
           Points: {totalPoints}
@@ -661,7 +795,7 @@ const PathCanvas = () => {
       {showChoice && (
         <div style={{
           position: 'absolute',
-          top: '50%',
+          top: 'calc(50% - 10px)',
           left: '50%',
           transform: 'translate(-50%, -50%)',
           display: 'flex',
@@ -724,7 +858,7 @@ const PathCanvas = () => {
       {showQuestion && currentQuestion && (
         <div style={{
           position: 'absolute',
-          top: '50%',
+          top: 'calc(35% + 15px)',
           left: '50%',
           transform: 'translate(-50%, -50%)',
           display: 'flex',
@@ -763,25 +897,31 @@ const PathCanvas = () => {
               <button
                 key={index}
                 onClick={() => handleAnswerChoice(option)}
+                disabled={showTranslation}
                 style={{
                   padding: '12px 24px',
                   fontSize: '18px',
                   fontWeight: 'bold',
-                  backgroundColor: '#2196F3',
+                  backgroundColor: showTranslation ? '#cccccc' : '#2196F3',
                   color: 'white',
                   border: 'none',
                   borderRadius: '8px',
-                  cursor: 'pointer',
+                  cursor: showTranslation ? 'not-allowed' : 'pointer',
                   boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
                   transition: 'all 0.2s',
+                  opacity: showTranslation ? 0.6 : 1,
                 }}
                 onMouseEnter={(e) => {
-                  e.target.style.transform = 'scale(1.05)';
-                  e.target.style.backgroundColor = '#1976D2';
+                  if (!showTranslation) {
+                    e.target.style.transform = 'scale(1.05)';
+                    e.target.style.backgroundColor = '#1976D2';
+                  }
                 }}
                 onMouseLeave={(e) => {
-                  e.target.style.transform = 'scale(1)';
-                  e.target.style.backgroundColor = '#2196F3';
+                  if (!showTranslation) {
+                    e.target.style.transform = 'scale(1)';
+                    e.target.style.backgroundColor = '#2196F3';
+                  }
                 }}
               >
                 {option}
@@ -799,6 +939,51 @@ const PathCanvas = () => {
               Try again! (No points for incorrect answers)
             </div>
           )}
+        </div>
+      )}
+
+      {/* Translation overlay - shows English translation after correct answer */}
+      {showTranslation && currentQuestion && (
+        <div style={{
+          position: 'absolute',
+          top: 'calc(35% + 15px)',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '15px',
+          backgroundColor: 'rgba(76, 175, 80, 0.95)',
+          padding: '40px',
+          borderRadius: '15px',
+          boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
+          zIndex: 11,
+          animation: 'fadeIn 0.3s ease-out',
+        }}>
+          <div style={{
+            fontSize: '50px',
+            marginBottom: '10px',
+          }}>
+            ✅
+          </div>
+          
+          <div style={{
+            fontSize: '28px',
+            fontWeight: 'bold',
+            color: 'white',
+            textAlign: 'center',
+          }}>
+            {currentQuestion.correctAnswer} = {translations[currentQuestion.correctAnswer] || currentQuestion.correctAnswer}
+          </div>
+          
+          <div style={{
+            fontSize: '16px',
+            color: 'white',
+            marginTop: '10px',
+            fontStyle: 'italic',
+          }}>
+            +{currentQuestion.points} points!
+          </div>
         </div>
       )}
     </div>
