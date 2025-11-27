@@ -19,26 +19,26 @@ $version = $packageJson['version'] ?? '1.0.0';
     <meta property="og:url" content="https://impressto.ca/wordwalker/" />
     <meta property="og:title" content="WordWalker - Learn Spanish Vocabulary" />
     <meta property="og:description" content="Learn Spanish vocabulary while walking through beautiful landscapes! An educational language learning game." />
-    <meta property="og:image" content="https://impressto.ca/wordwalker/images/word-walker.jpg" />
+    <meta property="og:image" content="https://impressto.ca/wordwalker/dist/images/word-walker.jpg" />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://impressto.ca/wordwalker/" />
     <meta property="twitter:title" content="WordWalker - Learn Spanish Vocabulary" />
     <meta property="twitter:description" content="Learn Spanish vocabulary while walking through beautiful landscapes! An educational language learning game." />
-    <meta property="twitter:image" content="https://impressto.ca/wordwalker/images/word-walker.jpg" />
+    <meta property="twitter:image" content="https://impressto.ca/wordwalker/dist/images/word-walker.jpg" />
     
     <!-- PWA Manifest -->
     <link rel="manifest" href="dist/manifest.json" />
-    <link rel="icon" type="image/png" sizes="192x192" href="images/icon-192x192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="images/icon-512x512.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="dist/images/icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="dist/images/icon-512x512.png" />
     
     <!-- Apple Mobile Web App -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen" />
     <meta name="apple-mobile-web-app-title" content="WordWalker" />
-    <link rel="apple-touch-icon" sizes="192x192" href="images/icon-192x192.png" />
-    <link rel="apple-touch-icon" sizes="512x512" href="images/icon-512x512.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="dist/images/icon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="512x512" href="dist/images/icon-512x512.png" />
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -120,7 +120,7 @@ $version = $packageJson['version'] ?? '1.0.0';
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('dist/service-worker.js')
+                navigator.serviceWorker.register('service-worker.js')
                     .then(registration => {
                         console.log('✅ Service Worker registered:', registration.scope);
                         

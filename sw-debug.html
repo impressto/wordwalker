@@ -78,6 +78,10 @@
 <body>
     <h1>🔍 Service Worker Debug Tool - WordWalker</h1>
     <p>Use this page to debug the WordWalker PWA service worker and offline functionality</p>
+    <div class="status info" style="margin: 10px 0;">
+        ℹ️ If no service worker is registered, click <strong>"Register Service Worker"</strong> below, 
+        or visit the <a href="/wordwalker/" style="color: #58a6ff;">main app</a> first.
+    </div>
 
     <h2>📊 Service Worker Status</h2>
     <div id="swStatus"></div>
@@ -172,21 +176,24 @@
         async function registerSW() {
             try {
                 log('Attempting to register service worker...', 'sw');
-                const registration = await navigator.serviceWorker.register('/wordwalker/dist/service-worker.js', {
-                    scope: '/wordwalker/'
-                });
+                log('Service Worker URL: service-worker.js', 'sw');
+                log('Scope: /wordwalker/', 'sw');
+                
+                const registration = await navigator.serviceWorker.register('service-worker.js');
                 log('✅ Service worker registered successfully', 'sw');
+                log(`Registration scope: ${registration.scope}`, 'sw');
                 console.log('Registration:', registration);
                 
-                // Wait a bit for installation to complete
-                await new Promise(resolve => setTimeout(resolve, 1000));
+                // Wait for installation to complete
+                await new Promise(resolve => setTimeout(resolve, 2000));
                 
                 await checkSWStatus();
                 await listCaches();
                 await checkCriticalFiles();
             } catch (error) {
                 log(`❌ Registration failed: ${error.message}`, 'error');
-                console.error(error);
+                log(`Error details: ${error.stack}`, 'error');
+                console.error('Full error:', error);
             }
         }
 
