@@ -87,7 +87,7 @@ const PathCanvas = () => {
   
   // Learning checkpoint configuration
   const checkpointPositionRef = useRef(3500); // Position of first checkpoint after fork
-  const checkpointSpacing = 600; // Distance between checkpoints (~5 seconds at 120 px/sec)
+  const checkpointSpacing = 400; // Distance between checkpoints (~3 seconds at 120 px/sec)
   
   // Path configuration
   const pathSegments = useRef([
