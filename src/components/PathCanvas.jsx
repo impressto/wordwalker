@@ -460,10 +460,10 @@ const PathCanvas = () => {
         let bounceOffset = 0;
         if (isVictoryAnimation) {
           // Create a bounce up and down based on current frame
-          // Frames 0-2: jump up (0 -> -10 pixels)
-          // Frames 3-5: come down (-10 -> 0 pixels)
+          // Frames 0-2: jump up (0 -> -20 pixels)
+          // Frames 3-5: come down (-20 -> 0 pixels)
           const bounceProgress = walkerFrameRef.current / (spriteConfig.totalFrames - 1);
-          bounceOffset = -10 * Math.sin(bounceProgress * Math.PI); // Smooth sine wave bounce
+          bounceOffset = -20 * Math.sin(bounceProgress * Math.PI); // Smooth sine wave bounce
         }
         
         // Draw the current frame from sprite sheet
