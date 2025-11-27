@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { getRandomQuestionByCategory, shuffleOptions, getAllCategoryIds, getCategoryById } from '../config/questions';
 import { translations } from '../config/translations';
+import SoundManager from '../soundManager';
 import ScoreDisplay from './ScoreDisplay';
 import PathChoiceDialog from './PathChoiceDialog';
 import QuestionDialog from './QuestionDialog';
@@ -86,67 +87,78 @@ const PathCanvas = () => {
   // Using 900 pixels = ~7-8 seconds to scroll into view from right edge
   const forkPositionRef = useRef(900); // When fork appears (in pixels from start)
 
+  // Initialize sound manager
+  const soundManagerRef = useRef(null);
+  useEffect(() => {
+    soundManagerRef.current = new SoundManager();
+    return () => {
+      // Cleanup sound manager when component unmounts
+      if (soundManagerRef.current) {
+        soundManagerRef.current.stopBackgroundMusic();
+      }
+    };
+  }, []);
 
   useEffect(() => {
     // Load grass image
     const grass = new Image();
-    grass.src = '/src/assets/images/grass.png';
+    grass.src = '/images/grass.png';
     grass.onload = () => {
       setGrassImage(grass);
     };
     
     // Load path image
     const path = new Image();
-    path.src = '/src/assets/images/path.png';
+    path.src = '/images/path.png';
     path.onload = () => {
       setPathImage(path);
     };
     
     // Load path fork image
     const pathFork = new Image();
-    pathFork.src = '/src/assets/images/path-fork.png';
+    pathFork.src = '/images/path-fork.png';
     pathFork.onload = () => {
       setPathForkImage(pathFork);
     };
     
     // Load mountains image
     const mountains = new Image();
-    mountains.src = '/src/assets/images/mountains.png';
+    mountains.src = '/images/mountains.png';
     mountains.onload = () => {
       setMountainsImage(mountains);
     };
     
     // Load trees1 image (foreground trees)
     const trees1 = new Image();
-    trees1.src = '/src/assets/images/trees1.png';
+    trees1.src = '/images/trees1.png';
     trees1.onload = () => {
       setTrees1Image(trees1);
     };
     
     // Load trees2 image (distant trees)
     const trees2 = new Image();
-    trees2.src = '/src/assets/images/trees2.png';
+    trees2.src = '/images/trees2.png';
     trees2.onload = () => {
       setTrees2Image(trees2);
     };
     
     // Load trees3 image (very distant trees - between mountains and trees2)
     const trees3 = new Image();
-    trees3.src = '/src/assets/images/trees3.png';
+    trees3.src = '/images/trees3.png';
     trees3.onload = () => {
       setTrees3Image(trees3);
     };
     
     // Load bushes image (behind path)
     const bushes = new Image();
-    bushes.src = '/src/assets/images/bushes.png';
+    bushes.src = '/images/bushes.png';
     bushes.onload = () => {
       setBushesImage(bushes);
     };
     
     // Load walker sprite sheet
     const walker = new Image();
-    walker.src = '/src/assets/images/walker.png';
+    walker.src = '/images/walker.png';
     walker.onload = () => {
       setWalkerSpriteSheet(walker);
     };
@@ -543,6 +555,12 @@ const PathCanvas = () => {
 
   const handlePathChoice = (choice) => {
     console.log(`User chose: ${choice} path`);
+    
+    // Play choice sound
+    if (soundManagerRef.current) {
+      soundManagerRef.current.playChoice();
+    }
+    
     setSelectedPath(choice);
     setShowChoice(false);
     setIsPaused(false);
@@ -571,13 +589,18 @@ const PathCanvas = () => {
     if (!currentQuestion) return;
     
     if (answer === currentQuestion.correctAnswer) {
-      // Correct answer - show translation and pause
+      // Show translation and pause
       setShowTranslation(true);
       
       // Increment streak for correct answer on first attempt
       let newStreak = streak;
       let streakBonus = 0;
       if (firstAttempt) {
+        // Play correct sound only on first attempt
+        if (soundManagerRef.current) {
+          soundManagerRef.current.playCorrect();
+        }
+        
         newStreak = streak + 1;
         setStreak(newStreak);
         
@@ -590,6 +613,11 @@ const PathCanvas = () => {
           setTotalPoints(prevPoints => prevPoints + streakBonus);
           setShowStreakBonus(true);
           
+          // Play streak bonus sound
+          if (soundManagerRef.current) {
+            soundManagerRef.current.playStreak();
+          }
+          
           // Hide streak bonus after 1.5 seconds
           setTimeout(() => {
             setShowStreakBonus(false);
@@ -601,6 +629,11 @@ const PathCanvas = () => {
       setIsVictoryAnimation(true);
       walkerFrameRef.current = 0; // Start victory animation from first frame
       victoryAnimationCounterRef.current = 0;
+      
+      // Play victory sound
+      if (soundManagerRef.current) {
+        soundManagerRef.current.playVictory();
+      }
       
       // Pause for 2 seconds to show the translation, then continue
       setTimeout(() => {
@@ -651,7 +684,11 @@ const PathCanvas = () => {
         }
       }, 2000); // 2 second pause to show translation
     } else {
-      // Wrong answer - reset streak and allow retry
+      // Wrong answer - play wrong sound, reset streak and allow retry
+      if (soundManagerRef.current) {
+        soundManagerRef.current.playWrong();
+      }
+      
       if (firstAttempt) {
         setStreak(0); // Reset streak on first wrong answer
       }
@@ -671,7 +708,7 @@ const PathCanvas = () => {
         zIndex: 30,
       }}>
         <img 
-          src="/src/assets/images/top-logo.png" 
+          src="/images/top-logo.png" 
           alt="WordWalk Logo"
           style={{
             maxWidth: '200px',
