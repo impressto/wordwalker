@@ -1,6 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { getRandomQuestionByCategory, shuffleOptions, getAllCategoryIds, getCategoryById } from '../config/questions';
 import { translations } from '../config/translations';
+import ScoreDisplay from './ScoreDisplay';
+import PathChoiceDialog from './PathChoiceDialog';
+import QuestionDialog from './QuestionDialog';
+import TranslationOverlay from './TranslationOverlay';
+import StreakBonusNotification from './StreakBonusNotification';
 
 const PathCanvas = () => {
   const canvasRef = useRef(null);
@@ -24,6 +29,8 @@ const PathCanvas = () => {
   const [totalPoints, setTotalPoints] = useState(0);
   const [firstAttempt, setFirstAttempt] = useState(true);
   const [showTranslation, setShowTranslation] = useState(false); // Show English translation after correct answer
+  const [streak, setStreak] = useState(0); // Track consecutive correct answers
+  const [showStreakBonus, setShowStreakBonus] = useState(false); // Show streak bonus notification
   
   // Walker sprite animation state
   const walkerFrameRef = useRef(0); // Current frame index
@@ -567,9 +574,27 @@ const PathCanvas = () => {
       // Correct answer - show translation and pause
       setShowTranslation(true);
       
-      // Award points based on the question's point value
+      // Increment streak for correct answer on first attempt
+      let newStreak = streak;
+      let streakBonus = 0;
       if (firstAttempt) {
+        newStreak = streak + 1;
+        setStreak(newStreak);
+        
+        // Award base points
         setTotalPoints(prevPoints => prevPoints + currentQuestion.points);
+        
+        // Award streak bonus every 3 correct answers in a row
+        if (newStreak > 0 && newStreak % 3 === 0) {
+          streakBonus = 50; // Bonus points for 3-streak
+          setTotalPoints(prevPoints => prevPoints + streakBonus);
+          setShowStreakBonus(true);
+          
+          // Hide streak bonus after 1.5 seconds
+          setTimeout(() => {
+            setShowStreakBonus(false);
+          }, 1500);
+        }
       }
       
       // Trigger victory animation
@@ -626,7 +651,10 @@ const PathCanvas = () => {
         }
       }, 2000); // 2 second pause to show translation
     } else {
-      // Wrong answer - can try again but won't get points
+      // Wrong answer - reset streak and allow retry
+      if (firstAttempt) {
+        setStreak(0); // Reset streak on first wrong answer
+      }
       setFirstAttempt(false);
       // Could add visual feedback here (shake animation, error message, etc.)
     }
@@ -653,47 +681,16 @@ const PathCanvas = () => {
         />
       </div>
 
-      {/* Points and Progress Display */}
-      <div style={{
-        position: 'absolute',
-        bottom: '20px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        display: 'flex',
-        flexDirection: 'row',
-        gap: '15px',
-        zIndex: 20,
-        alignItems: 'center',
-      }}>
-        <div style={{
-          padding: '10px 20px',
-          backgroundColor: 'rgba(255, 255, 255, 0.9)',
-          borderRadius: '8px',
-          boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
-          fontSize: '18px',
-          fontWeight: 'bold',
-        }}>
-          Points: {totalPoints}
-        </div>
-        
-        {selectedPath && (
-          <div style={{
-            padding: '10px 20px',
-            backgroundColor: 'rgba(33, 150, 243, 0.9)',
-            borderRadius: '8px',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
-            fontSize: '16px',
-            fontWeight: 'bold',
-            color: 'white',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '8px',
-          }}>
-            <span>{getCategoryById(forkCategories[selectedPath])?.emoji}</span>
-            <span>{checkpointsAnswered}/{checkpointsPerCategory}</span>
-          </div>
-        )}
-      </div>
+      {/* Score Display Component */}
+      <ScoreDisplay
+        totalPoints={totalPoints}
+        streak={streak}
+        selectedPath={selectedPath}
+        forkCategories={forkCategories}
+        checkpointsAnswered={checkpointsAnswered}
+        checkpointsPerCategory={checkpointsPerCategory}
+        getCategoryById={getCategoryById}
+      />
 
       <canvas
         ref={canvasRef}
@@ -706,199 +703,37 @@ const PathCanvas = () => {
         }}
       />
       
+      {/* Path Choice Dialog Component */}
       {showChoice && (
-        <div style={{
-          position: 'absolute',
-          top: 'calc(50% - 10px)',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: '20px',
-          zIndex: 10,
-        }}>
-          <button
-            onClick={() => handlePathChoice('upper')}
-            style={{
-              padding: '15px 30px',
-              fontSize: '18px',
-              fontWeight: 'bold',
-              backgroundColor: '#7CB342',
-              color: 'white',
-              border: 'none',
-              borderRadius: '10px',
-              cursor: 'pointer',
-              boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
-              transition: 'all 0.2s',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '10px',
-            }}
-            onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
-            onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-          >
-            <span>↑</span>
-            <span>{getCategoryById(forkCategories.upper)?.emoji}</span>
-            <span>{getCategoryById(forkCategories.upper)?.displayName}</span>
-          </button>
-          
-          <button
-            onClick={() => handlePathChoice('lower')}
-            style={{
-              padding: '15px 30px',
-              fontSize: '18px',
-              fontWeight: 'bold',
-              backgroundColor: '#558B2F',
-              color: 'white',
-              border: 'none',
-              borderRadius: '10px',
-              cursor: 'pointer',
-              boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
-              transition: 'all 0.2s',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '10px',
-            }}
-            onMouseEnter={(e) => e.target.style.transform = 'scale(1.05)'}
-            onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-          >
-            <span>↓</span>
-            <span>{getCategoryById(forkCategories.lower)?.emoji}</span>
-            <span>{getCategoryById(forkCategories.lower)?.displayName}</span>
-          </button>
-        </div>
+        <PathChoiceDialog
+          forkCategories={forkCategories}
+          getCategoryById={getCategoryById}
+          onPathChoice={handlePathChoice}
+        />
       )}
 
+      {/* Question Dialog Component */}
       {showQuestion && currentQuestion && (
-        <div style={{
-          position: 'absolute',
-          top: 'calc(35% + 15px)',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '20px',
-          backgroundColor: 'rgba(255, 255, 255, 0.95)',
-          padding: '30px',
-          borderRadius: '15px',
-          boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
-          zIndex: 10,
-          animation: 'fadeIn 0.5s ease-out',
-        }}>
-          <div style={{ 
-            fontSize: '60px',
-            animation: 'fadeInScale 0.6s ease-out',
-          }}>
-            {currentQuestion.emoji}
-          </div>
-          
-          <div style={{
-            fontSize: '24px',
-            fontWeight: 'bold',
-            marginBottom: '10px',
-          }}>
-            {currentQuestion.question}
-          </div>
-          
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '10px',
-            width: '100%',
-          }}>
-            {currentQuestion.options.map((option, index) => (
-              <button
-                key={index}
-                onClick={() => handleAnswerChoice(option)}
-                disabled={showTranslation}
-                style={{
-                  padding: '12px 24px',
-                  fontSize: '18px',
-                  fontWeight: 'bold',
-                  backgroundColor: showTranslation ? '#cccccc' : '#2196F3',
-                  color: 'white',
-                  border: 'none',
-                  borderRadius: '8px',
-                  cursor: showTranslation ? 'not-allowed' : 'pointer',
-                  boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
-                  transition: 'all 0.2s',
-                  opacity: showTranslation ? 0.6 : 1,
-                }}
-                onMouseEnter={(e) => {
-                  if (!showTranslation) {
-                    e.target.style.transform = 'scale(1.05)';
-                    e.target.style.backgroundColor = '#1976D2';
-                  }
-                }}
-                onMouseLeave={(e) => {
-                  if (!showTranslation) {
-                    e.target.style.transform = 'scale(1)';
-                    e.target.style.backgroundColor = '#2196F3';
-                  }
-                }}
-              >
-                {option}
-              </button>
-            ))}
-          </div>
-          
-          {!firstAttempt && (
-            <div style={{
-              color: '#d32f2f',
-              fontSize: '16px',
-              fontWeight: 'bold',
-              marginTop: '10px',
-            }}>
-              Try again! (No points for incorrect answers)
-            </div>
-          )}
-        </div>
+        <QuestionDialog
+          currentQuestion={currentQuestion}
+          showTranslation={showTranslation}
+          firstAttempt={firstAttempt}
+          onAnswerChoice={handleAnswerChoice}
+        />
       )}
 
-      {/* Translation overlay - shows English translation after correct answer */}
+      {/* Translation Overlay Component */}
       {showTranslation && currentQuestion && (
-        <div style={{
-          position: 'absolute',
-          top: 'calc(35% + 15px)',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '15px',
-          backgroundColor: 'rgba(76, 175, 80, 0.95)',
-          padding: '40px',
-          borderRadius: '15px',
-          boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
-          zIndex: 11,
-          animation: 'fadeIn 0.3s ease-out',
-        }}>
-          <div style={{
-            fontSize: '50px',
-            marginBottom: '10px',
-          }}>
-            ✅
-          </div>
-          
-          <div style={{
-            fontSize: '28px',
-            fontWeight: 'bold',
-            color: 'white',
-            textAlign: 'center',
-          }}>
-            {currentQuestion.correctAnswer} = {translations[currentQuestion.correctAnswer] || currentQuestion.correctAnswer}
-          </div>
-          
-          <div style={{
-            fontSize: '16px',
-            color: 'white',
-            marginTop: '10px',
-            fontStyle: 'italic',
-          }}>
-            +{currentQuestion.points} points!
-          </div>
-        </div>
+        <TranslationOverlay currentQuestion={currentQuestion} />
+      )}
+
+      {/* Streak Bonus Notification Component */}
+      {showStreakBonus && (
+        <StreakBonusNotification streak={streak} />
+      )}
+      {/* Streak Bonus Notification Component */}
+      {showStreakBonus && (
+        <StreakBonusNotification streak={streak} />
       )}
     </div>
   );
