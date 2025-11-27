@@ -106,6 +106,20 @@
     </div>
 
     <script>
+        // Register Service Worker on page load
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', async () => {
+                try {
+                    const registration = await navigator.serviceWorker.register('dist/service-worker.js', {
+                        scope: '/wordwalker/'
+                    });
+                    console.log('Service Worker registered:', registration);
+                } catch (error) {
+                    console.error('Service Worker registration failed:', error);
+                }
+            });
+        }
+
         // Check Service Worker
         async function checkServiceWorker() {
             const statusDiv = document.getElementById('sw-status');
