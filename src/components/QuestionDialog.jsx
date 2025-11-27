@@ -3,8 +3,11 @@
  * Displays the question modal with emoji, question text, and answer options
  */
 
-const QuestionDialog = ({ currentQuestion, showTranslation, firstAttempt, onAnswerChoice }) => {
+const QuestionDialog = ({ currentQuestion, showTranslation, showHint, firstAttempt, onAnswerChoice }) => {
   if (!currentQuestion) return null;
+
+  // Get the hint from the question object, or fallback to a generic hint
+  const hint = currentQuestion.hint || 'Think about the question carefully';
 
   return (
     <div style={{
@@ -82,12 +85,33 @@ const QuestionDialog = ({ currentQuestion, showTranslation, firstAttempt, onAnsw
       
       {!firstAttempt && (
         <div style={{
-          color: '#d32f2f',
-          fontSize: '16px',
-          fontWeight: 'bold',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '8px',
           marginTop: '10px',
         }}>
-          Try again! (No points for incorrect answers)
+          <div style={{
+            color: '#d32f2f',
+            fontSize: '16px',
+            fontWeight: 'bold',
+          }}>
+            Try again! (No points for incorrect answers)
+          </div>
+          {showHint && (
+            <div style={{
+              color: '#1976D2',
+              fontSize: '18px',
+              fontWeight: 'bold',
+              backgroundColor: '#E3F2FD',
+              padding: '8px 16px',
+              borderRadius: '8px',
+              border: '2px solid #2196F3',
+              animation: 'fadeInScale 0.4s ease-out',
+            }}>
+              💡 Hint: "{hint}"
+            </div>
+          )}
         </div>
       )}
     </div>

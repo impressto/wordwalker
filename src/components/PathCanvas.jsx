@@ -30,6 +30,7 @@ const PathCanvas = () => {
   const [totalPoints, setTotalPoints] = useState(0);
   const [firstAttempt, setFirstAttempt] = useState(true);
   const [showTranslation, setShowTranslation] = useState(false); // Show English translation after correct answer
+  const [showHint, setShowHint] = useState(false); // Show hint after wrong answer
   const [streak, setStreak] = useState(0); // Track consecutive correct answers
   const [showStreakBonus, setShowStreakBonus] = useState(false); // Show streak bonus notification
   
@@ -558,6 +559,8 @@ const PathCanvas = () => {
       });
       // Add this question ID to the used set
       setUsedQuestionIds(prev => new Set([...prev, question.id]));
+      // Reset hint when loading new question
+      setShowHint(false);
     }
   };
 
@@ -600,6 +603,7 @@ const PathCanvas = () => {
     if (answer === currentQuestion.correctAnswer) {
       // Show translation and pause
       setShowTranslation(true);
+      setShowHint(false); // Clear hint on correct answer
       
       // Increment streak for correct answer on first attempt
       let newStreak = streak;
@@ -695,7 +699,7 @@ const PathCanvas = () => {
         }
       }, 2000); // 2 second pause to show translation
     } else {
-      // Wrong answer - play wrong sound, reset streak and allow retry
+      // Wrong answer - play wrong sound, reset streak, show hint, and allow retry
       if (soundManagerRef.current) {
         soundManagerRef.current.playWrong();
       }
@@ -704,6 +708,7 @@ const PathCanvas = () => {
         setStreak(0); // Reset streak on first wrong answer
       }
       setFirstAttempt(false);
+      setShowHint(true); // Show hint after wrong answer
       // Could add visual feedback here (shake animation, error message, etc.)
     }
   };
@@ -765,6 +770,7 @@ const PathCanvas = () => {
         <QuestionDialog
           currentQuestion={currentQuestion}
           showTranslation={showTranslation}
+          showHint={showHint}
           firstAttempt={firstAttempt}
           onAnswerChoice={handleAnswerChoice}
         />
