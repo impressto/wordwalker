@@ -75,14 +75,16 @@ const PathCanvas = () => {
   // Track used question IDs to prevent duplicates within a category walk
   const [usedQuestionIds, setUsedQuestionIds] = useState(new Set());
   
-  // Fork path categories - randomly select 2 different categories for each fork
+  // Fork path categories - randomly select 4 different categories for each fork
   const [forkCategories, setForkCategories] = useState(() => {
     const allCategories = getAllCategoryIds();
-    // Shuffle and pick first 2 categories
+    // Shuffle and pick first 4 categories
     const shuffled = [...allCategories].sort(() => Math.random() - 0.5);
     return {
-      upper: shuffled[0] || 'food',
-      lower: shuffled[1] || 'shopping'
+      choice1: shuffled[0] || 'food',
+      choice2: shuffled[1] || 'shopping',
+      choice3: shuffled[2] || 'entertainment',
+      choice4: shuffled[3] || 'accommodation'
     };
   });
   
@@ -754,8 +756,10 @@ const PathCanvas = () => {
           const availableCategories = allCategories.filter(cat => cat !== currentCategory);
           const shuffled = [...availableCategories].sort(() => Math.random() - 0.5);
           setForkCategories({
-            upper: shuffled[0] || 'food',
-            lower: shuffled[1] || 'shopping'
+            choice1: shuffled[0] || 'food',
+            choice2: shuffled[1] || 'shopping',
+            choice3: shuffled[2] || 'entertainment',
+            choice4: shuffled[3] || 'accommodation'
           });
           
           // Position next fork further ahead - account for stop margin so it doesn't come too far into view
