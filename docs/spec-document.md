@@ -1,16 +1,16 @@
-# WordWalk - Specification Document
+# WordWalker - Specification Document
 
 > **🤖 AI Coding Agent Notice:** This is a LIVING DOCUMENT that should be updated whenever project changes are made. When implementing new features, fixing bugs, or making architectural changes, please update the relevant sections of this specification to maintain accuracy and completeness. This ensures the documentation stays synchronized with the actual codebase and helps future development efforts.
 
-*Comprehensive technical specification for WordWalk*  
+*Comprehensive technical specification for WordWalker*  
 *Last Updated: November 26, 2025*  
 *Version: 0.1.0*  
 *Status: Draft*
 
 ## 📋 Project Overview
 
-**Project Name:** WordWalk  
-**Description:** WordWalk is a gamified language learning application that visualizes the learning journey as an interactive walking path. Users navigate through branching topics (food, shopping, entertainment, etc.) on a canvas-based interface, making language learning engaging and visually intuitive. The app emphasizes visual exploration and discovery through a path-based navigation system.
+**Project Name:** WordWalker  
+**Description:** WordWalker is a gamified language learning application that visualizes the learning journey as an interactive walking path. Users navigate through branching topics (food, shopping, entertainment, etc.) on a canvas-based interface, making language learning engaging and visually intuitive. The app emphasizes visual exploration and discovery through a path-based navigation system.
 
 **Target Users:** 
 - Language learners (beginners to intermediate level)

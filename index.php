@@ -12,19 +12,19 @@ $version = $packageJson['version'] ?? '1.0.0';
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover" />
     <meta name="theme-color" content="#4CAF50" />
     <meta name="description" content="Learn Spanish vocabulary while walking through beautiful landscapes!" />
-    <meta name="keywords" content="WordWalk, Spanish, learning, vocabulary, educational game, language" />
+    <meta name="keywords" content="WordWalker, Spanish, learning, vocabulary, educational game, language" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://impressto.ca/wordwalk/" />
-    <meta property="og:title" content="WordWalk - Learn Spanish Vocabulary" />
+    <meta property="og:url" content="https://impressto.ca/wordwalker/" />
+    <meta property="og:title" content="WordWalker - Learn Spanish Vocabulary" />
     <meta property="og:description" content="Learn Spanish vocabulary while walking through beautiful landscapes! An educational language learning game." />
     <meta property="og:image" content="https://impressto.ca/images/games/wordwalk-logo.jpg" />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://impressto.ca/wordwalk/" />
-    <meta property="twitter:title" content="WordWalk - Learn Spanish Vocabulary" />
+    <meta property="twitter:url" content="https://impressto.ca/wordwalker/" />
+    <meta property="twitter:title" content="WordWalker - Learn Spanish Vocabulary" />
     <meta property="twitter:description" content="Learn Spanish vocabulary while walking through beautiful landscapes! An educational language learning game." />
     <meta property="twitter:image" content="https://impressto.ca/images/games/wordwalk-logo.jpg" />
     
@@ -35,14 +35,14 @@ $version = $packageJson['version'] ?? '1.0.0';
     <!-- Apple Mobile Web App -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-fullscreen" />
-    <meta name="apple-mobile-web-app-title" content="WordWalk" />
+    <meta name="apple-mobile-web-app-title" content="WordWalker" />
     <link rel="apple-touch-icon" href="dist/icon.png" />
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     
-    <title>WordWalk - Learn Spanish Vocabulary</title>
+    <title>WordWalker - Learn Spanish Vocabulary</title>
     <link rel="stylesheet" href="dist/assets/index.css?v=<?php echo $version; ?>">
     
     <style>

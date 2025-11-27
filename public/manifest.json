@@ -1,6 +1,6 @@
 {
-  "name": "WordWalk - Learn Spanish",
-  "short_name": "WordWalk",
+  "name": "WordWalker - Learn Spanish",
+  "short_name": "WordWalker",
   "description": "Learn Spanish vocabulary while walking through beautiful landscapes",
   "start_url": "./",
   "display": "fullscreen",
