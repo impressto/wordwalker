@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { getRandomQuestionByCategory, shuffleOptions, getAllCategoryIds, getCategoryById } from '../config/questions';
+import { getRandomQuestionByCategory, getRandomUnusedQuestionByCategory, shuffleOptions, getAllCategoryIds, getCategoryById } from '../config/questions';
 import { translations } from '../config/translations';
 import SoundManager from '../soundManager';
 import ScoreDisplay from './ScoreDisplay';
@@ -58,7 +58,10 @@ const PathCanvas = () => {
   
   // Checkpoint cycling - track how many checkpoints answered in current category
   const [checkpointsAnswered, setCheckpointsAnswered] = useState(0);
-  const checkpointsPerCategory = 4; // Number of checkpoints before next fork
+  const checkpointsPerCategory = 10; // Number of checkpoints before next fork
+  
+  // Track used question IDs to prevent duplicates within a category walk
+  const [usedQuestionIds, setUsedQuestionIds] = useState(new Set());
   
   // Fork path categories - randomly select 2 different categories for each fork
   const [forkCategories, setForkCategories] = useState(() => {
@@ -82,10 +85,10 @@ const PathCanvas = () => {
   ]);
   
   // Fork appears after 1 second of walking
-  // At 2 pixels per frame * 60 fps = 120 pixels/second
+  // At 3 pixels per frame * 60 fps = 180 pixels/second
   // Plus canvas width to ensure it scrolls into view from the right
-  // Using 900 pixels = ~7-8 seconds to scroll into view from right edge
-  const forkPositionRef = useRef(900); // When fork appears (in pixels from start)
+  // Using 400 pixels = ~2-3 seconds to scroll into view from right edge
+  const forkPositionRef = useRef(400); // When fork appears (in pixels from start)
 
   // Initialize sound manager
   const soundManagerRef = useRef(null);
@@ -517,12 +520,12 @@ const PathCanvas = () => {
         // Update scroll offset (move right to left) only if not paused
         // Stop when choice dialog should show OR if path has been selected (then continue normally)
         if (!isPaused && (!shouldStopForChoice || selectedPath)) {
-          offsetRef.current += 2; // Adjust speed as needed
+          offsetRef.current += 3; // Adjust speed as needed (increased from 2 to 3)
         }
       } else {
         // Fallback if canvas not available
         if (!isPaused) {
-          offsetRef.current += 2;
+          offsetRef.current += 3;
         }
       }
       
@@ -546,13 +549,15 @@ const PathCanvas = () => {
 
   // Helper function to load a new question for the current checkpoint
   const loadNewQuestion = (category) => {
-    const question = getRandomQuestionByCategory(category);
+    const question = getRandomUnusedQuestionByCategory(category, usedQuestionIds);
     if (question) {
       const shuffledOptions = shuffleOptions(question.options);
       setCurrentQuestion({
         ...question,
         options: shuffledOptions
       });
+      // Add this question ID to the used set
+      setUsedQuestionIds(prev => new Set([...prev, question.id]));
     }
   };
 
@@ -568,6 +573,7 @@ const PathCanvas = () => {
     setShowChoice(false);
     setIsPaused(false);
     setCheckpointsAnswered(0); // Reset checkpoint counter for new category
+    setUsedQuestionIds(new Set()); // Reset used questions for new category
     
     // Position the first checkpoint immediately visible on the right side of screen
     // offsetRef.current is current scroll position, add canvas width * 0.8 to place it on right
@@ -669,7 +675,7 @@ const PathCanvas = () => {
           
           // Position next fork further ahead - account for stop margin so it doesn't come too far into view
           // Adding extra distance (100px stopMargin) to compensate for the stopping point
-          forkPositionRef.current = offsetRef.current + 1100;
+          forkPositionRef.current = offsetRef.current + 600;
           
           // Reset checkpoint position for after next fork
           checkpointPositionRef.current = forkPositionRef.current + 1500;
