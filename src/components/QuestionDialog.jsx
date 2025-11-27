@@ -3,7 +3,7 @@
  * Displays the question modal with emoji, question text, and answer options
  */
 
-const QuestionDialog = ({ currentQuestion, showTranslation, showHint, firstAttempt, onAnswerChoice }) => {
+const QuestionDialog = ({ currentQuestion, showTranslation, showHint, firstAttempt, incorrectAnswers = [], onAnswerChoice }) => {
   if (!currentQuestion) return null;
 
   // Get the hint from the question object, or fallback to a generic hint
@@ -49,42 +49,50 @@ const QuestionDialog = ({ currentQuestion, showTranslation, showHint, firstAttem
         gap: '10px',
         width: '100%',
       }}>
-        {currentQuestion.options.map((option, index) => (
-          <button
-            key={index}
-            id={`question-option-${index}`}
-            className="question-option-button"
-            onClick={() => onAnswerChoice(option)}
-            disabled={showTranslation}
-            style={{
-              padding: '12px 24px',
-              fontSize: '18px',
-              fontWeight: 'bold',
-              backgroundColor: showTranslation ? '#cccccc' : '#2196F3',
-              color: 'white',
-              border: 'none',
-              borderRadius: '8px',
-              cursor: showTranslation ? 'not-allowed' : 'pointer',
-              boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
-              transition: 'all 0.2s',
-              opacity: showTranslation ? 0.6 : 1,
-            }}
-            onMouseEnter={(e) => {
-              if (!showTranslation) {
-                e.target.style.transform = 'scale(1.05)';
-                e.target.style.backgroundColor = '#1976D2';
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (!showTranslation) {
-                e.target.style.transform = 'scale(1)';
-                e.target.style.backgroundColor = '#2196F3';
-              }
-            }}
-          >
-            {option}
-          </button>
-        ))}
+        {currentQuestion.options.map((option, index) => {
+          const isIncorrect = incorrectAnswers.includes(option);
+          const isDisabled = showTranslation || isIncorrect;
+          
+          return (
+            <button
+              key={index}
+              id={`question-option-${index}`}
+              className="question-option-button"
+              onClick={() => onAnswerChoice(option)}
+              disabled={isDisabled}
+              style={{
+                padding: '12px 24px',
+                fontSize: '18px',
+                fontWeight: 'bold',
+                backgroundColor: isIncorrect ? '#d32f2f' : (showTranslation ? '#cccccc' : '#2196F3'),
+                color: 'white',
+                border: 'none',
+                borderRadius: '8px',
+                cursor: isDisabled ? 'not-allowed' : 'pointer',
+                boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+                transition: 'all 0.2s',
+                opacity: isDisabled ? 0.5 : 1,
+                textDecoration: isIncorrect ? 'line-through' : 'none',
+              }}
+              onMouseEnter={(e) => {
+                if (!isDisabled) {
+                  e.target.style.transform = 'scale(1.05)';
+                  e.target.style.backgroundColor = '#1976D2';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (!isDisabled) {
+                  e.target.style.transform = 'scale(1)';
+                  e.target.style.backgroundColor = '#2196F3';
+                } else if (isIncorrect) {
+                  e.target.style.backgroundColor = '#d32f2f';
+                }
+              }}
+            >
+              {option}
+            </button>
+          );
+        })}
       </div>
       
       {!firstAttempt && (

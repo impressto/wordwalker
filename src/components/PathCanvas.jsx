@@ -31,6 +31,7 @@ const PathCanvas = () => {
   const [questionAnswered, setQuestionAnswered] = useState(false);
   const [totalPoints, setTotalPoints] = useState(0);
   const [firstAttempt, setFirstAttempt] = useState(true);
+  const [incorrectAnswers, setIncorrectAnswers] = useState([]); // Track incorrect answer attempts
   const [showTranslation, setShowTranslation] = useState(false); // Show English translation after correct answer
   const [showHint, setShowHint] = useState(false); // Show hint after wrong answer
   const [streak, setStreak] = useState(0); // Track consecutive correct answers
@@ -667,6 +668,11 @@ const PathCanvas = () => {
   const handleAnswerChoice = (answer) => {
     if (!currentQuestion) return;
     
+    // Skip if this answer was already tried and was incorrect
+    if (incorrectAnswers.includes(answer)) {
+      return;
+    }
+    
     if (answer === currentQuestion.correctAnswer) {
       // Show translation and pause
       setShowTranslation(true);
@@ -684,7 +690,7 @@ const PathCanvas = () => {
         newStreak = streak + 1;
         setStreak(newStreak);
         
-        // Award base points
+        // Award base points only on first attempt
         setTotalPoints(prevPoints => prevPoints + currentQuestion.points);
         
         // Award streak bonus every 5 correct answers in a row
@@ -702,6 +708,11 @@ const PathCanvas = () => {
           setTimeout(() => {
             setShowStreakBonus(false);
           }, 2500);
+        }
+      } else {
+        // Correct answer on retry - no points, but play a softer sound
+        if (soundManagerRef.current) {
+          soundManagerRef.current.playCorrect();
         }
       }
       
@@ -727,6 +738,7 @@ const PathCanvas = () => {
         setShowQuestion(false);
         setIsPaused(false);
         setFirstAttempt(true); // Reset for next question
+        setIncorrectAnswers([]); // Reset incorrect answers for next question
         
         // Check if we've completed all checkpoints for this category
         if (newCheckpointsAnswered >= checkpointsPerCategory) {
@@ -766,7 +778,9 @@ const PathCanvas = () => {
         }
       }, 2000); // 2 second pause to show translation
     } else {
-      // Wrong answer - play wrong sound, reset streak, show hint, and allow retry
+      // Wrong answer - track it, play wrong sound, reset streak on first attempt, show hint
+      setIncorrectAnswers(prev => [...prev, answer]);
+      
       if (soundManagerRef.current) {
         soundManagerRef.current.playWrong();
       }
@@ -776,7 +790,6 @@ const PathCanvas = () => {
       }
       setFirstAttempt(false);
       setShowHint(true); // Show hint after wrong answer
-      // Could add visual feedback here (shake animation, error message, etc.)
     }
   };
 
@@ -920,6 +933,7 @@ const PathCanvas = () => {
           showTranslation={showTranslation}
           showHint={showHint}
           firstAttempt={firstAttempt}
+          incorrectAnswers={incorrectAnswers}
           onAnswerChoice={handleAnswerChoice}
         />
       )}
