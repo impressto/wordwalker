@@ -16,7 +16,7 @@ const ScoreDisplay = ({ totalPoints, streak, selectedPath, forkCategories, check
       zIndex: 20,
       alignItems: 'center',
     }}>
-      {/* Points Display */}
+      {/* Points and Streak Combined Display */}
       <div style={{
         padding: '10px 20px',
         backgroundColor: 'rgba(255, 255, 255, 0.9)',
@@ -24,27 +24,25 @@ const ScoreDisplay = ({ totalPoints, streak, selectedPath, forkCategories, check
         boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
         fontSize: '18px',
         fontWeight: 'bold',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '15px',
       }}>
-        Points: {totalPoints}
+        <span>Points: {totalPoints}</span>
+        {streak > 0 && (
+          <>
+            <span style={{ color: '#ccc' }}>|</span>
+            <span style={{ 
+              color: streak >= 3 ? '#ff9800' : '#ffc107',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '5px',
+            }}>
+              🔥 {streak} Streak
+            </span>
+          </>
+        )}
       </div>
-      
-      {/* Streak Display */}
-      {streak > 0 && (
-        <div style={{
-          padding: '10px 20px',
-          backgroundColor: streak >= 3 ? 'rgba(255, 152, 0, 0.9)' : 'rgba(255, 193, 7, 0.9)',
-          borderRadius: '8px',
-          boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
-          fontSize: '18px',
-          fontWeight: 'bold',
-          color: 'white',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '5px',
-        }}>
-          🔥 {streak} Streak
-        </div>
-      )}
       
       {/* Category Progress */}
       {selectedPath && (

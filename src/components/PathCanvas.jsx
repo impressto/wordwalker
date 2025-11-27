@@ -445,8 +445,8 @@ const PathCanvas = () => {
         if (!isPaused || isVictoryAnimation) {
           walkerFrameCounterRef.current++;
           
-          // Change frame every 8 loops for smooth animation
-          if (walkerFrameCounterRef.current % 8 === 0) {
+          // Change frame every 5 loops for faster walking animation
+          if (walkerFrameCounterRef.current % 5 === 0) {
             if (isVictoryAnimation) {
               // Victory animation
               walkerFrameRef.current = (walkerFrameRef.current + 1) % spriteConfig.totalFrames;
