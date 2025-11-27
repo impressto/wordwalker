@@ -1,15 +1,18 @@
 // Service Worker for WordWalker PWA
-const CACHE_NAME = 'wordwalker-v1.0.6';
+const CACHE_NAME = 'wordwalker-v1.0.7';
 const ASSETS_CACHE = 'wordwalker-assets-v1';
 const AUDIO_CACHE = 'wordwalker-audio-v1';
 const IMAGE_CACHE = 'wordwalker-images-v1';
 
 // Core app files - must be cached for offline functionality
 const CORE_ASSETS = [
-  '/wordwalker/dist/',
-  '/wordwalker/dist/index.html',
+  '/wordwalker/',
   '/wordwalker/index.php',
+  '/wordwalker/dist/index.html',
   '/wordwalker/dist/manifest.json',
+  '/wordwalker/dist/assets/index.js',
+  '/wordwalker/dist/assets/vendor.js',
+  '/wordwalker/dist/assets/index.css',
 ];
 
 // Assets that will be cached as they're requested
@@ -139,7 +142,9 @@ self.addEventListener('fetch', event => {
             
             // Return offline page or fallback for navigation requests
             if (request.destination === 'document') {
-              return caches.match('/wordwalker/dist/index.html');
+              // Try to return the cached app instead of offline page
+              return caches.match('/wordwalker/index.php')
+                .then(cached => cached || caches.match('/wordwalker/dist/offline.html'));
             }
             
             // For other requests, just fail gracefully
