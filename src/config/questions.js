@@ -9773,7 +9773,7 @@ export const questions = [
   {
     id: 'beach_016',
     emoji: '🏊',
-    question: 'What are you doing?',
+    question: '¿Qué estás haciendo?',
     options: ['nadar', 'correr', 'volar'],
     correctAnswer: 'nadar',
     hint: 'This is a water activity',
@@ -9784,7 +9784,7 @@ export const questions = [
   {
     id: 'beach_017',
     emoji: '🏄',
-    question: 'What sport is this?',
+    question: '¿Qué deporte es?',
     options: ['surfear', 'esquiar', 'patinar'],
     correctAnswer: 'surfear',
     hint: 'Riding waves on a board',
@@ -9795,7 +9795,7 @@ export const questions = [
   {
     id: 'beach_018',
     emoji: '🤿',
-    question: 'What activity is this?',
+    question: '¿Qué actividad es?',
     options: ['bucear', 'pescar', 'remar'],
     correctAnswer: 'bucear',
     hint: 'Exploring underwater',
@@ -9817,7 +9817,7 @@ export const questions = [
   {
     id: 'beach_020',
     emoji: '🚤',
-    question: 'What type of boat is this?',
+    question: '¿Qué tipo de barco es?',
     options: ['lancha', 'bote de remos', 'canoa'],
     correctAnswer: 'lancha',
     hint: 'Fast motorboat',
@@ -9839,7 +9839,7 @@ export const questions = [
   {
     id: 'beach_022',
     emoji: '🎣',
-    question: 'What activity is this?',
+    question: '¿Qué actividad es?',
     options: ['pescar', 'navegar', 'zambullirse'],
     correctAnswer: 'pescar',
     hint: 'Catching fish',
@@ -9861,7 +9861,7 @@ export const questions = [
   {
     id: 'beach_024',
     emoji: '🐠',
-    question: 'What is this?',
+    question: '¿Qué es esto?',
     options: ['pez tropical', 'medusa', 'coral'],
     correctAnswer: 'pez tropical',
     hint: 'Colorful ocean fish',
@@ -9883,7 +9883,7 @@ export const questions = [
   {
     id: 'beach_026',
     emoji: '🐬',
-    question: 'What marine animal is this?',
+    question: '¿Qué animal marino es?',
     options: ['delfín', 'ballena', 'orca'],
     correctAnswer: 'delfín',
     hint: 'Intelligent and friendly',
@@ -9905,7 +9905,7 @@ export const questions = [
   {
     id: 'beach_028',
     emoji: '🦀',
-    question: 'What is this creature?',
+    question: '¿Qué criatura es?',
     options: ['cangrejo', 'langosta', 'camarón'],
     correctAnswer: 'cangrejo',
     hint: 'Walks sideways on the beach',
@@ -9927,7 +9927,7 @@ export const questions = [
   {
     id: 'beach_030',
     emoji: '🦑',
-    question: 'What sea creature is this?',
+    question: '¿Qué criatura marina es?',
     options: ['calamar', 'pulpo', 'medusa'],
     correctAnswer: 'calamar',
     hint: 'Has tentacles and ink',
@@ -9949,7 +9949,7 @@ export const questions = [
   {
     id: 'beach_032',
     emoji: '🪼',
-    question: 'What is this?',
+    question: '¿Qué es esto?',
     options: ['medusa', 'coral', 'alga'],
     correctAnswer: 'medusa',
     hint: 'Can sting you in the water',
@@ -9971,7 +9971,7 @@ export const questions = [
   {
     id: 'beach_034',
     emoji: '🐚',
-    question: 'What do you find on the beach?',
+    question: '¿Qué encuentras en la playa?',
     options: ['concha', 'piedra', 'alga'],
     correctAnswer: 'concha',
     hint: 'Former home of a sea creature',
@@ -9995,7 +9995,7 @@ export const questions = [
   {
     id: 'beach_036',
     emoji: '🏖️',
-    question: 'What is this?',
+    question: '¿Qué es esto?',
     options: ['sombrilla de playa', 'paraguas', 'tienda de campaña'],
     correctAnswer: 'sombrilla de playa',
     hint: 'Provides shade at the beach',
@@ -10017,7 +10017,7 @@ export const questions = [
   {
     id: 'beach_038',
     emoji: '🩳',
-    question: 'What are these?',
+    question: '¿Qué son estos?',
     options: ['bañador', 'shorts', 'pantalones cortos'],
     correctAnswer: 'bañador',
     hint: 'Men\'s swimming attire',
@@ -10039,7 +10039,7 @@ export const questions = [
   {
     id: 'beach_040',
     emoji: '🧴',
-    question: 'What beach essential is this?',
+    question: '¿Qué esencial de playa es esto?',
     options: ['protector solar', 'loción', 'champú'],
     correctAnswer: 'protector solar',
     hint: 'Protects skin from UV rays',
@@ -10061,7 +10061,7 @@ export const questions = [
   {
     id: 'beach_042',
     emoji: '🧊',
-    question: 'What do you use in a cooler?',
+    question: '¿Qué usas en una hielera?',
     options: ['hielo', 'agua', 'arena'],
     correctAnswer: 'hielo',
     hint: 'Keeps drinks cold',
@@ -10083,7 +10083,7 @@ export const questions = [
   {
     id: 'beach_044',
     emoji: '🪣',
-    question: 'What do kids use to build sandcastles?',
+    question: '¿Qué usan los niños para hacer castillos de arena?',
     options: ['cubo', 'pala', 'rastrillo'],
     correctAnswer: 'cubo',
     hint: 'Bucket for sand',
@@ -10105,7 +10105,7 @@ export const questions = [
   {
     id: 'beach_046',
     emoji: '🎭',
-    question: 'What do you use in the water?',
+    question: '¿Qué usas en el agua?',
     options: ['máscara de buceo', 'sombrero', 'gorra'],
     correctAnswer: 'máscara de buceo',
     hint: 'Helps you see underwater',
@@ -10127,7 +10127,7 @@ export const questions = [
   {
     id: 'beach_048',
     emoji: '🛟',
-    question: 'What safety device is this?',
+    question: '¿Qué dispositivo de seguridad es?',
     options: ['salvavidas', 'flotador', 'chaleco'],
     correctAnswer: 'salvavidas',
     hint: 'Life preserver or lifeguard',
@@ -10149,7 +10149,7 @@ export const questions = [
   {
     id: 'beach_050',
     emoji: '🏐',
-    question: 'What beach sport uses this ball?',
+    question: '¿Qué deporte de playa usa esta pelota?',
     options: ['voleibol de playa', 'fútbol', 'básquetbol'],
     correctAnswer: 'voleibol de playa',
     hint: 'Played over a net on sand',
@@ -10171,7 +10171,7 @@ export const questions = [
   {
     id: 'beach_052',
     emoji: '🪁',
-    question: 'What do you fly on a windy beach?',
+    question: '¿Qué vuelas en una playa ventosa?',
     options: ['cometa', 'avión', 'globo'],
     correctAnswer: 'cometa',
     hint: 'Kite on a string',
@@ -10193,7 +10193,7 @@ export const questions = [
   {
     id: 'beach_054',
     emoji: '🎒',
-    question: 'What do you carry your things in?',
+    question: '¿En qué llevas tus cosas?',
     options: ['mochila', 'bolsa', 'maleta'],
     correctAnswer: 'mochila',
     hint: 'Backpack',
@@ -10217,7 +10217,7 @@ export const questions = [
   {
     id: 'beach_056',
     emoji: '☀️',
-    question: 'What shines in the sky?',
+    question: '¿Qué brilla en el cielo?',
     options: ['sol', 'luna', 'estrella'],
     correctAnswer: 'sol',
     hint: 'Provides daylight',
@@ -10239,7 +10239,7 @@ export const questions = [
   {
     id: 'beach_058',
     emoji: '⭐',
-    question: 'What do you see in the night sky?',
+    question: '¿Qué ves en el cielo nocturno?',
     options: ['estrella', 'sol', 'luna'],
     correctAnswer: 'estrella',
     hint: 'Twinkles at night',
@@ -10261,7 +10261,7 @@ export const questions = [
   {
     id: 'beach_060',
     emoji: '🌤️',
-    question: 'What weather is this?',
+    question: '¿Qué clima es?',
     options: ['parcialmente nublado', 'lluvioso', 'tormentoso'],
     correctAnswer: 'parcialmente nublado',
     hint: 'Sun and clouds together',
@@ -10283,7 +10283,7 @@ export const questions = [
   {
     id: 'beach_062',
     emoji: '🌧️',
-    question: 'What weather is this?',
+    question: '¿Qué clima es?',
     options: ['lluvia', 'nieve', 'granizo'],
     correctAnswer: 'lluvia',
     hint: 'Water falling from clouds',
@@ -10305,7 +10305,7 @@ export const questions = [
   {
     id: 'beach_064',
     emoji: '🌈',
-    question: 'What appears after rain?',
+    question: '¿Qué aparece después de la lluvia?',
     options: ['arcoíris', 'nube', 'sol'],
     correctAnswer: 'arcoíris',
     hint: 'Colorful arc in the sky',
@@ -10327,7 +10327,7 @@ export const questions = [
   {
     id: 'beach_066',
     emoji: '🏝️',
-    question: 'What is this?',
+    question: '¿Qué es esto?',
     options: ['isla', 'playa', 'costa'],
     correctAnswer: 'isla',
     hint: 'Land surrounded by water',
@@ -10349,7 +10349,7 @@ export const questions = [
   {
     id: 'beach_068',
     emoji: '🏔️',
-    question: 'What is this?',
+    question: '¿Qué es esto?',
     options: ['montaña', 'colina', 'volcán'],
     correctAnswer: 'montaña',
     hint: 'Very tall landform',
@@ -10371,7 +10371,7 @@ export const questions = [
   {
     id: 'beach_070',
     emoji: '🏞️',
-    question: 'What is this natural area?',
+    question: '¿Qué área natural es?',
     options: ['parque nacional', 'ciudad', 'pueblo'],
     correctAnswer: 'parque nacional',
     hint: 'Protected nature area',
@@ -10393,7 +10393,7 @@ export const questions = [
   {
     id: 'beach_072',
     emoji: '🌳',
-    question: 'What is this?',
+    question: '¿Qué es esto?',
     options: ['árbol', 'arbusto', 'planta'],
     correctAnswer: 'árbol',
     hint: 'Large plant with trunk',
@@ -10415,7 +10415,7 @@ export const questions = [
   {
     id: 'beach_074',
     emoji: '🌻',
-    question: 'What flower is this?',
+    question: '¿Qué flor es?',
     options: ['girasol', 'rosa', 'tulipán'],
     correctAnswer: 'girasol',
     hint: 'Follows the sun',
@@ -10439,7 +10439,7 @@ export const questions = [
   {
     id: 'beach_076',
     emoji: '🚶',
-    question: 'What are you doing?',
+    question: '¿Qué estás haciendo?',
     options: ['caminar', 'correr', 'saltar'],
     correctAnswer: 'caminar',
     hint: 'Walking activity',
@@ -10461,7 +10461,7 @@ export const questions = [
   {
     id: 'beach_078',
     emoji: '🚴',
-    question: 'What activity is this?',
+    question: '¿Qué actividad es?',
     options: ['andar en bicicleta', 'correr', 'patinar'],
     correctAnswer: 'andar en bicicleta',
     hint: 'Riding a bike',
@@ -10483,7 +10483,7 @@ export const questions = [
   {
     id: 'beach_080',
     emoji: '⛷️',
-    question: 'What winter sport is this?',
+    question: '¿Qué deporte de invierno es?',
     options: ['esquiar', 'patinar', 'surfear'],
     correctAnswer: 'esquiar',
     hint: 'Sliding down snowy slopes',
@@ -10505,7 +10505,7 @@ export const questions = [
   {
     id: 'beach_082',
     emoji: '🧗',
-    question: 'What are you doing?',
+    question: '¿Qué estás haciendo?',
     options: ['escalar', 'caminar', 'saltar'],
     correctAnswer: 'escalar',
     hint: 'Climbing up',
@@ -10527,7 +10527,7 @@ export const questions = [
   {
     id: 'beach_084',
     emoji: '🎾',
-    question: 'What sport is this?',
+    question: '¿Qué deporte es?',
     options: ['tenis', 'bádminton', 'pádel'],
     correctAnswer: 'tenis',
     hint: 'Racket sport with yellow ball',
@@ -10549,7 +10549,7 @@ export const questions = [
   {
     id: 'beach_086',
     emoji: '⚽',
-    question: 'What sport is this?',
+    question: '¿Qué deporte es?',
     options: ['fútbol', 'básquetbol', 'rugby'],
     correctAnswer: 'fútbol',
     hint: 'World\'s most popular sport',
@@ -10571,7 +10571,7 @@ export const questions = [
   {
     id: 'beach_088',
     emoji: '⚾',
-    question: 'What sport is this?',
+    question: '¿Qué deporte es?',
     options: ['béisbol', 'cricket', 'softball'],
     correctAnswer: 'béisbol',
     hint: 'America\'s pastime',
@@ -10593,7 +10593,7 @@ export const questions = [
   {
     id: 'beach_090',
     emoji: '🎱',
-    question: 'What game is this?',
+    question: '¿Qué juego es?',
     options: ['billar', 'bolos', 'golf'],
     correctAnswer: 'billar',
     hint: 'Pool or billiards',
@@ -10615,7 +10615,7 @@ export const questions = [
   {
     id: 'beach_092',
     emoji: '🎯',
-    question: 'What is this?',
+    question: '¿Qué es esto?',
     options: ['dardos', 'tiro con arco', 'blanco'],
     correctAnswer: 'dardos',
     hint: 'Throw at a target',
@@ -10637,7 +10637,7 @@ export const questions = [
   {
     id: 'beach_094',
     emoji: '🥊',
-    question: 'What sport is this?',
+    question: '¿Qué deporte es?',
     options: ['boxeo', 'lucha', 'karate'],
     correctAnswer: 'boxeo',
     hint: 'Fighting with gloves',
@@ -10659,7 +10659,7 @@ export const questions = [
   {
     id: 'beach_096',
     emoji: '🥋',
-    question: 'What martial art is this?',
+    question: '¿Qué arte marcial es?',
     options: ['karate', 'judo', 'taekwondo'],
     correctAnswer: 'karate',
     hint: 'Japanese martial art',
@@ -10681,7 +10681,7 @@ export const questions = [
   {
     id: 'beach_098',
     emoji: '🤸',
-    question: 'What activity is this?',
+    question: '¿Qué actividad es?',
     options: ['gimnasia', 'yoga', 'baile'],
     correctAnswer: 'gimnasia',
     hint: 'Gymnastics or acrobatics',
@@ -10703,7 +10703,7 @@ export const questions = [
   {
     id: 'beach_100',
     emoji: '🎪',
-    question: 'What entertainment is this?',
+    question: '¿Qué entretenimiento es?',
     options: ['circo', 'teatro', 'concierto'],
     correctAnswer: 'circo',
     hint: 'Acrobats and clowns perform here',
