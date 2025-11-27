@@ -1274,5 +1274,64 @@ export const translations = {
   'circo': 'circus',
   'teatro': 'theater',
   'concierto': 'concert',
+
+  // Greetings & Conversations - Basic Greetings
+  'buenos días': 'good morning',
+  'buenas tardes': 'good afternoon',
+  'buenas noches': 'good night',
+  'hola': 'hello',
+  'adiós': 'goodbye',
+  'hasta luego': 'see you later',
+  'hasta mañana': 'see you tomorrow',
+  '¿cómo estás?': 'how are you?',
+  'estoy bien': 'I am fine',
+
+  // Greetings & Conversations - Politeness & Courtesy
+  'por favor': 'please',
+  'gracias': 'thank you',
+  'de nada': 'you are welcome',
+  'perdón': 'excuse me',
+  'lo siento': 'I am sorry',
+  'mucho gusto': 'nice to meet you',
+  'muchas gracias': 'thank you very much',
+  'igualmente': 'likewise',
+  'con permiso': 'with permission',
+  'buena suerte': 'good luck',
+
+  // Greetings & Conversations - Common Questions
+  '¿cómo te llamas?': 'what is your name?',
+  'me llamo': 'my name is',
+  '¿de dónde eres?': 'where are you from?',
+  'soy de': 'I am from',
+  '¿qué tal?': 'what\'s up?',
+  '¿cuántos años tienes?': 'how old are you?',
+  'tengo 25 años': 'I am 25 years old',
+  '¿hablas español?': 'do you speak Spanish?',
+  '¿hablas inglés?': 'do you speak English?',
+  'no entiendo': 'I don\'t understand',
+
+  // Greetings & Conversations - Conversation Basics
+  'sí': 'yes',
+  'no': 'no',
+  'tal vez': 'maybe',
+  'vale': 'okay',
+  'claro': 'of course',
+  '¿qué hora es?': 'what time is it?',
+  '¿qué día es hoy?': 'what day is today?',
+  'no sé': 'I don\'t know',
+  'ayuda': 'help',
+  'espera': 'wait',
+
+  // Greetings & Conversations - Special Occasions
+  'felicidades': 'congratulations',
+  'feliz cumpleaños': 'happy birthday',
+  'feliz navidad': 'merry Christmas',
+  'feliz año nuevo': 'happy new year',
+  'buen viaje': 'have a good trip',
+  'buen provecho': 'enjoy your meal',
+  'que te mejores': 'get well soon',
+  'te quiero': 'I love you',
+  'te amo': 'I love you',
+  'te extraño': 'I miss you',
 };
 
