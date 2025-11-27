@@ -940,7 +940,10 @@ const PathCanvas = () => {
 
       {/* Translation Overlay Component */}
       {showTranslation && currentQuestion && (
-        <TranslationOverlay currentQuestion={currentQuestion} />
+        <TranslationOverlay 
+          currentQuestion={currentQuestion} 
+          firstAttempt={firstAttempt}
+        />
       )}
 
       {/* Streak Bonus Notification Component */}

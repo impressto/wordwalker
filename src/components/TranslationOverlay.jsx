@@ -5,7 +5,7 @@
 
 import { translations } from '../config/translations';
 
-const TranslationOverlay = ({ currentQuestion }) => {
+const TranslationOverlay = ({ currentQuestion, firstAttempt = true }) => {
   if (!currentQuestion) return null;
 
   // Get the English translation
@@ -50,14 +50,16 @@ const TranslationOverlay = ({ currentQuestion }) => {
         {wordsAreSame ? spanishWord : `${spanishWord} = ${englishTranslation}`}
       </div>
       
-      <div id="translation-points" style={{
-        fontSize: '16px',
-        color: 'white',
-        marginTop: '10px',
-        fontStyle: 'italic',
-      }}>
-        +{currentQuestion.points} points!
-      </div>
+      {firstAttempt && (
+        <div id="translation-points" style={{
+          fontSize: '16px',
+          color: 'white',
+          marginTop: '10px',
+          fontStyle: 'italic',
+        }}>
+          +{currentQuestion.points} points!
+        </div>
+      )}
     </div>
   );
 };
