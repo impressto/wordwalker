@@ -1,5 +1,5 @@
 // Service Worker for WordWalker PWA
-const CACHE_NAME = 'wordwalker-v1.0.7';
+const CACHE_NAME = 'wordwalker-v1.0.10';
 const ASSETS_CACHE = 'wordwalker-assets-v1';
 const AUDIO_CACHE = 'wordwalker-audio-v1';
 const IMAGE_CACHE = 'wordwalker-images-v1';
@@ -13,6 +13,19 @@ const CORE_ASSETS = [
   '/wordwalker/dist/assets/index.js',
   '/wordwalker/dist/assets/vendor.js',
   '/wordwalker/dist/assets/index.css',
+  // Essential images for the app to function
+  '/wordwalker/dist/images/walker.png',
+  '/wordwalker/dist/images/path.png',
+  '/wordwalker/dist/images/grass.png',
+  '/wordwalker/dist/images/mountains.png',
+  '/wordwalker/dist/images/bushes.png',
+  '/wordwalker/dist/images/trees1.png',
+  '/wordwalker/dist/images/trees2.png',
+  '/wordwalker/dist/images/trees3.png',
+  '/wordwalker/dist/images/fork.png',
+  '/wordwalker/dist/images/path-fork.png',
+  '/wordwalker/dist/images/icon-192x192.png',
+  '/wordwalker/dist/images/icon-512x512.png',
 ];
 
 // Assets that will be cached as they're requested
@@ -138,13 +151,29 @@ self.addEventListener('fetch', event => {
             return response;
           })
           .catch(error => {
-            console.error('[Service Worker] Fetch failed:', error);
+            console.error('[Service Worker] Fetch failed for:', url, error);
             
             // Return offline page or fallback for navigation requests
-            if (request.destination === 'document') {
-              // Try to return the cached app instead of offline page
+            if (request.destination === 'document' || request.mode === 'navigate') {
+              console.log('[Service Worker] Returning cached app for navigation request');
+              // Try multiple cache keys in order of preference
               return caches.match('/wordwalker/index.php')
-                .then(cached => cached || caches.match('/wordwalker/dist/offline.html'));
+                .then(cached => {
+                  if (cached) return cached;
+                  return caches.match('/wordwalker/');
+                })
+                .then(cached => {
+                  if (cached) return cached;
+                  return caches.match('/wordwalker/dist/index.html');
+                })
+                .then(cached => {
+                  if (cached) {
+                    console.log('[Service Worker] Returning cached HTML');
+                    return cached;
+                  }
+                  console.log('[Service Worker] No cached HTML found, returning offline page');
+                  return caches.match('/wordwalker/dist/offline.html');
+                });
             }
             
             // For other requests, just fail gracefully

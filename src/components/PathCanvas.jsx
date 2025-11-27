@@ -142,14 +142,16 @@ const PathCanvas = () => {
       const effectiveVolume = soundEnabled ? volume : 0;
       soundManagerRef.current.setMasterVolume(effectiveVolume);
       
-      // Start or stop background music based on sound state
-      if (soundEnabled && volume > 0) {
-        soundManagerRef.current.startBackgroundMusic();
-      } else {
-        soundManagerRef.current.stopBackgroundMusic();
+      // Only start/stop background music if audio has been initialized by user interaction
+      if (audioInitialized) {
+        if (soundEnabled && volume > 0) {
+          soundManagerRef.current.startBackgroundMusic();
+        } else {
+          soundManagerRef.current.stopBackgroundMusic();
+        }
       }
     }
-  }, [soundEnabled, volume]);
+  }, [soundEnabled, volume, audioInitialized]);
 
   // Save volume to localStorage when it changes
   useEffect(() => {
@@ -549,14 +551,8 @@ const PathCanvas = () => {
           drawWidth,                           // Destination width
           drawHeight                           // Destination height
         );
-      } else {
-        // Fallback to emoji if sprite sheet not loaded yet
-        const personSize = 40 + (personY - pathTop) / (pathBottom - pathTop) * 40;
-        ctx.font = `${personSize}px Arial`;
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText('🚶🏾‍➡️', personX, personY);
       }
+      // Note: No fallback emoji - wait for sprite sheet to load for cleaner appearance
     };
 
     const animate = () => {
