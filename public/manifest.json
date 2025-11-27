@@ -2,7 +2,7 @@
   "name": "WordWalker - Learn Spanish Vocabulary",
   "short_name": "WordWalker",
   "description": "Learn Spanish vocabulary while walking through beautiful landscapes. An interactive educational language learning game.",
-  "start_url": "/wordwalker/dist/",
+  "start_url": "/wordwalker/",
   "scope": "/wordwalker/",
   "display": "fullscreen",
   "orientation": "portrait",
