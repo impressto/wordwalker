@@ -7,6 +7,7 @@ import PathChoiceDialog from './PathChoiceDialog';
 import QuestionDialog from './QuestionDialog';
 import TranslationOverlay from './TranslationOverlay';
 import StreakBonusNotification from './StreakBonusNotification';
+import SearchDialog from './SearchDialog';
 
 const PathCanvas = () => {
   const canvasRef = useRef(null);
@@ -33,6 +34,8 @@ const PathCanvas = () => {
   const [showHint, setShowHint] = useState(false); // Show hint after wrong answer
   const [streak, setStreak] = useState(0); // Track consecutive correct answers
   const [showStreakBonus, setShowStreakBonus] = useState(false); // Show streak bonus notification
+  const [showSearch, setShowSearch] = useState(false); // Show search dialog
+  const [isSearchPaused, setIsSearchPaused] = useState(false); // Track if paused by search
   
   // Walker sprite animation state
   const walkerFrameRef = useRef(0); // Current frame index
@@ -597,6 +600,24 @@ const PathCanvas = () => {
   };
 
 
+  const handleSearchClick = () => {
+    // Pause the game if it's not already paused by something else
+    if (!isPaused) {
+      setIsPaused(true);
+      setIsSearchPaused(true);
+    }
+    setShowSearch(true);
+  };
+
+  const handleSearchClose = () => {
+    setShowSearch(false);
+    // Only resume if we were the ones who paused it
+    if (isSearchPaused) {
+      setIsPaused(false);
+      setIsSearchPaused(false);
+    }
+  };
+
   const handleAnswerChoice = (answer) => {
     if (!currentQuestion) return;
     
@@ -734,6 +755,39 @@ const PathCanvas = () => {
         />
       </div>
 
+      {/* Search Button - Top Right */}
+      <button
+        onClick={handleSearchClick}
+        style={{
+          position: 'absolute',
+          top: '20px',
+          right: '20px',
+          zIndex: 30,
+          background: '#4CAF50',
+          border: 'none',
+          borderRadius: '50%',
+          width: '56px',
+          height: '56px',
+          fontSize: '28px',
+          cursor: 'pointer',
+          boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          transition: 'all 0.2s',
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = 'scale(1.1)';
+          e.currentTarget.style.boxShadow = '0 6px 12px rgba(0,0,0,0.3)';
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = 'scale(1)';
+          e.currentTarget.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+        }}
+      >
+        🔍
+      </button>
+
       {/* Score Display Component */}
       <ScoreDisplay
         totalPoints={totalPoints}
@@ -785,10 +839,12 @@ const PathCanvas = () => {
       {showStreakBonus && (
         <StreakBonusNotification streak={streak} />
       )}
-      {/* Streak Bonus Notification Component */}
-      {showStreakBonus && (
-        <StreakBonusNotification streak={streak} />
-      )}
+
+      {/* Search Dialog Component */}
+      <SearchDialog
+        isOpen={showSearch}
+        onClose={handleSearchClose}
+      />
     </div>
   );
 };
