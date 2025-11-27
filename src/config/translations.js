@@ -1405,6 +1405,28 @@ export const translations = {
   'mes': 'month',
   'año': 'year',
 
+  // Numbers, Colors & Time - Colors
+  'rojo': 'red',
+  'azul': 'blue',
+  'verde': 'green',
+  'amarillo': 'yellow',
+  'naranja': 'orange',
+  'morado': 'purple',
+  'rosa': 'pink',
+  'negro': 'black',
+  'blanco': 'white',
+  'gris': 'gray',
+  'marrón': 'brown',
+  'color': 'color',
+  'arcoíris': 'rainbow',
+  'arco iris': 'rainbow',
+  'colores': 'colors',
+  'claro': 'light',
+  'oscuro': 'dark',
+  'brillante': 'bright',
+  'tono': 'tone',
+  'sombra': 'shade',
+
   // Grammar - Subject Pronouns
   'yo': 'I',
   'tú': 'you (informal)',

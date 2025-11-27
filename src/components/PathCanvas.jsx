@@ -386,14 +386,8 @@ const PathCanvas = () => {
       const scrollPos = offsetRef.current;
       const forkScreenX = forkPositionRef.current - scrollPos;
       
-      // Check if fork is fully visible on screen (entire tile visible)
-      const forkTileSize = 240;
-      const forkFullyVisible = forkScreenX >= 0 && (forkScreenX + forkTileSize) <= width;
-      
-      // Check if fork is 200 pixels from the right edge
-      // This gives the user time to choose before the fork reaches them
-      const forkDistance = width - forkScreenX;
-      const shouldShowChoice = forkDistance >= 200 && forkScreenX < width && !selectedPath;
+      // Show choice when fork's left edge reaches the screen
+      const shouldShowChoice = forkScreenX <= width && forkScreenX > 0 && !selectedPath;
       
       if (shouldShowChoice && !isPaused && !showChoice) {
         setIsPaused(true);
@@ -411,22 +405,25 @@ const PathCanvas = () => {
         // Draw straight path tiles before fork
         for (let i = -1; i < tilesNeeded; i++) {
           const tileX = i * tileSize - pathScrollOffset;
-          const tileCenterX = tileX + tileSize / 2;
           
-          // Check if this tile position is before the fork
-          const tileWorldX = scrollPos + tileCenterX;
+          // Calculate the world position for the left edge of this tile
+          const tileWorldStartX = scrollPos + tileX;
+          const tileWorldEndX = tileWorldStartX + tileSize;
           
-          if (tileWorldX < forkPositionRef.current) {
-            // Draw straight path tile
+          // Determine which tile should show the fork - the tile that contains the fork position
+          const forkPosition = forkPositionRef.current;
+          
+          if (tileWorldEndX <= forkPosition) {
+            // Tile is completely before the fork - draw straight path
             ctx.drawImage(pathImage, tileX, pathTop, tileSize, pathHeight);
-          } else if (tileWorldX >= forkPositionRef.current && tileWorldX < forkPositionRef.current + tileSize && !selectedPath) {
-            // Draw fork tile at the fork position - only if no path has been selected yet
+          } else if (tileWorldStartX <= forkPosition && tileWorldEndX > forkPosition && !selectedPath) {
+            // This tile contains the fork position and no path selected - draw fork
             ctx.drawImage(pathForkImage, tileX, pathTop, tileSize, pathHeight);
           } else if (selectedPath) {
-            // After fork AND path selected - draw straight path tiles
+            // Path selected - draw straight path tiles everywhere
             ctx.drawImage(pathImage, tileX, pathTop, tileSize, pathHeight);
           }
-          // If no path selected and after fork, don't draw anything (prevents path from appearing to right of fork)
+          // If no path selected and tile is after fork, don't draw anything (fork extends off screen)
         }
       }
       
@@ -566,9 +563,9 @@ const PathCanvas = () => {
         const forkScreenX = forkPositionRef.current - scrollPos;
         const forkTileSize = 240;
         
-        // Check if choice dialog should be shown (fork is 200px from right edge)
-        const forkDistance = canvas.width - forkScreenX;
-        const shouldStopForChoice = forkDistance >= 200 && forkScreenX < canvas.width && !selectedPath;
+        // Check if choice dialog should be shown
+        // Stop when fork's LEFT edge reaches the screen, ensuring the right edge never comes into view
+        const shouldStopForChoice = forkScreenX <= canvas.width && forkScreenX > 0 && !selectedPath;
         
         // Update scroll offset (move right to left) only if not paused
         // Stop when choice dialog should show OR if path has been selected (then continue normally)
