@@ -19,8 +19,30 @@ const StreakBonusNotification = ({ streak }) => {
       borderRadius: '15px',
       boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
       zIndex: 12,
-      animation: 'fadeInScale 0.4s ease-out',
+      animation: 'streakFadeInOut 2.5s ease-in-out',
     }}>
+      <style>
+        {`
+          @keyframes streakFadeInOut {
+            0% {
+              opacity: 0;
+              transform: translate(-50%, -50%) scale(0.8);
+            }
+            20% {
+              opacity: 1;
+              transform: translate(-50%, -50%) scale(1);
+            }
+            80% {
+              opacity: 1;
+              transform: translate(-50%, -50%) scale(1);
+            }
+            100% {
+              opacity: 0;
+              transform: translate(-50%, -50%) scale(0.8);
+            }
+          }
+        `}
+      </style>
       <div style={{
         fontSize: '60px',
       }}>

@@ -1,12 +1,16 @@
 {
-  "name": "WordWalker - Learn Spanish",
+  "name": "WordWalker - Learn Spanish Vocabulary",
   "short_name": "WordWalker",
-  "description": "Learn Spanish vocabulary while walking through beautiful landscapes",
-  "start_url": "./",
+  "description": "Learn Spanish vocabulary while walking through beautiful landscapes. An interactive educational language learning game.",
+  "start_url": "/wordwalker/dist/",
+  "scope": "/wordwalker/",
   "display": "fullscreen",
   "orientation": "portrait",
-  "background_color": "#87CEEB",
+  "background_color": "#000000",
   "theme_color": "#4CAF50",
+  "categories": ["education", "games", "lifestyle"],
+  "lang": "en-US",
+  "dir": "ltr",
   "icons": [
     {
       "src": "icon-192x192.png",
@@ -20,5 +24,8 @@
       "type": "image/png",
       "purpose": "any maskable"
     }
-  ]
+  ],
+  "screenshots": [],
+  "shortcuts": [],
+  "prefer_related_applications": false
 }

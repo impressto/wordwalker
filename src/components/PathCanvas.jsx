@@ -8,6 +8,7 @@ import QuestionDialog from './QuestionDialog';
 import TranslationOverlay from './TranslationOverlay';
 import StreakBonusNotification from './StreakBonusNotification';
 import SearchDialog from './SearchDialog';
+import InstallPrompt from './InstallPrompt';
 
 const PathCanvas = () => {
   const canvasRef = useRef(null);
@@ -36,6 +37,12 @@ const PathCanvas = () => {
   const [showStreakBonus, setShowStreakBonus] = useState(false); // Show streak bonus notification
   const [showSearch, setShowSearch] = useState(false); // Show search dialog
   const [isSearchPaused, setIsSearchPaused] = useState(false); // Track if paused by search
+  
+  // Volume control state
+  const [soundEnabled, setSoundEnabled] = useState(true);
+  const [volume, setVolume] = useState(() => {
+    return parseFloat(localStorage.getItem('wordwalker-volume') || '0.7');
+  });
   
   // Walker sprite animation state
   const walkerFrameRef = useRef(0); // Current frame index
@@ -96,6 +103,8 @@ const PathCanvas = () => {
 
   // Initialize sound manager
   const soundManagerRef = useRef(null);
+  const [audioInitialized, setAudioInitialized] = useState(false);
+  
   useEffect(() => {
     soundManagerRef.current = new SoundManager();
     return () => {
@@ -105,6 +114,47 @@ const PathCanvas = () => {
       }
     };
   }, []);
+
+  // Initialize audio on first user interaction
+  useEffect(() => {
+    const initializeAudio = () => {
+      if (!audioInitialized && soundManagerRef.current && soundEnabled && volume > 0) {
+        soundManagerRef.current.startBackgroundMusic();
+        setAudioInitialized(true);
+      }
+    };
+
+    // Listen for first user interaction to start background music
+    document.addEventListener('click', initializeAudio, { once: true });
+    document.addEventListener('touchstart', initializeAudio, { once: true });
+    document.addEventListener('keydown', initializeAudio, { once: true });
+
+    return () => {
+      document.removeEventListener('click', initializeAudio);
+      document.removeEventListener('touchstart', initializeAudio);
+      document.removeEventListener('keydown', initializeAudio);
+    };
+  }, [audioInitialized, soundEnabled, volume]);
+
+  // Update sound manager volume when sound is toggled or volume changes
+  useEffect(() => {
+    if (soundManagerRef.current) {
+      const effectiveVolume = soundEnabled ? volume : 0;
+      soundManagerRef.current.setMasterVolume(effectiveVolume);
+      
+      // Start or stop background music based on sound state
+      if (soundEnabled && volume > 0) {
+        soundManagerRef.current.startBackgroundMusic();
+      } else {
+        soundManagerRef.current.stopBackgroundMusic();
+      }
+    }
+  }, [soundEnabled, volume]);
+
+  // Save volume to localStorage when it changes
+  useEffect(() => {
+    localStorage.setItem('wordwalker-volume', volume.toString());
+  }, [volume]);
 
   useEffect(() => {
     // Get base path for assets (handles subdirectory deployments)
@@ -641,9 +691,9 @@ const PathCanvas = () => {
         // Award base points
         setTotalPoints(prevPoints => prevPoints + currentQuestion.points);
         
-        // Award streak bonus every 3 correct answers in a row
-        if (newStreak > 0 && newStreak % 3 === 0) {
-          streakBonus = 50; // Bonus points for 3-streak
+        // Award streak bonus every 5 correct answers in a row
+        if (newStreak > 0 && newStreak % 5 === 0) {
+          streakBonus = 50; // Bonus points for 5-streak
           setTotalPoints(prevPoints => prevPoints + streakBonus);
           setShowStreakBonus(true);
           
@@ -652,10 +702,10 @@ const PathCanvas = () => {
             soundManagerRef.current.playStreak();
           }
           
-          // Hide streak bonus after 1.5 seconds
+          // Hide streak bonus after 2.5 seconds (accounts for fade in/out)
           setTimeout(() => {
             setShowStreakBonus(false);
-          }, 1500);
+          }, 2500);
         }
       }
       
@@ -736,6 +786,54 @@ const PathCanvas = () => {
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
+      {/* Volume Control - Top Left */}
+      <div style={{
+        position: 'absolute',
+        top: '20px',
+        left: '20px',
+        zIndex: 30,
+        display: 'flex',
+        alignItems: 'center',
+        gap: '8px',
+        background: 'rgba(0, 0, 0, 0.7)',
+        padding: '10px 15px',
+        borderRadius: '25px',
+        boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
+      }}>
+        <button 
+          onClick={() => setSoundEnabled(!soundEnabled)} 
+          style={{
+            background: 'none',
+            border: 'none',
+            cursor: 'pointer',
+            fontSize: '24px',
+            padding: '0',
+            lineHeight: '1',
+            filter: 'drop-shadow(0 2px 2px rgba(0,0,0,0.3))',
+          }}
+          title={soundEnabled ? 'Sound On' : 'Sound Off'}
+        >
+          {soundEnabled ? (volume > 0.5 ? '🔊' : volume > 0 ? '🔉' : '🔈') : '🔇'}
+        </button>
+        <input
+          type="range"
+          min="0"
+          max="1"
+          step="0.1"
+          value={volume}
+          onChange={(e) => setVolume(parseFloat(e.target.value))}
+          disabled={!soundEnabled}
+          style={{
+            width: '80px',
+            height: '4px',
+            cursor: soundEnabled ? 'pointer' : 'not-allowed',
+            opacity: soundEnabled ? 1 : 0.5,
+            accentColor: '#4CAF50',
+          }}
+          title={`Volume: ${Math.round(volume * 100)}%`}
+        />
+      </div>
+
       {/* Top Logo */}
       <div style={{
         position: 'absolute',
@@ -845,6 +943,9 @@ const PathCanvas = () => {
         isOpen={showSearch}
         onClose={handleSearchClose}
       />
+
+      {/* Install PWA Prompt */}
+      <InstallPrompt />
     </div>
   );
 };
