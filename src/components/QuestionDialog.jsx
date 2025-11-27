@@ -10,7 +10,7 @@ const QuestionDialog = ({ currentQuestion, showTranslation, showHint, firstAttem
   const hint = currentQuestion.hint || 'Think about the question carefully';
 
   return (
-    <div style={{
+    <div id="question-dialog" style={{
       position: 'absolute',
       top: 'calc(35% + 15px)',
       left: '50%',
@@ -25,15 +25,17 @@ const QuestionDialog = ({ currentQuestion, showTranslation, showHint, firstAttem
       boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
       zIndex: 10,
       animation: 'fadeIn 0.5s ease-out',
+      minWidth: '320px',
+      maxWidth: '90vw',
     }}>
-      <div style={{ 
+      <div id="question-emoji" style={{ 
         fontSize: '60px',
         animation: 'fadeInScale 0.6s ease-out',
       }}>
         {currentQuestion.emoji}
       </div>
       
-      <div style={{
+      <div id="question-text" style={{
         fontSize: '24px',
         fontWeight: 'bold',
         marginBottom: '10px',
@@ -41,7 +43,7 @@ const QuestionDialog = ({ currentQuestion, showTranslation, showHint, firstAttem
         {currentQuestion.question}
       </div>
       
-      <div style={{
+      <div id="question-options" style={{
         display: 'flex',
         flexDirection: 'column',
         gap: '10px',
@@ -50,6 +52,8 @@ const QuestionDialog = ({ currentQuestion, showTranslation, showHint, firstAttem
         {currentQuestion.options.map((option, index) => (
           <button
             key={index}
+            id={`question-option-${index}`}
+            className="question-option-button"
             onClick={() => onAnswerChoice(option)}
             disabled={showTranslation}
             style={{
@@ -84,14 +88,14 @@ const QuestionDialog = ({ currentQuestion, showTranslation, showHint, firstAttem
       </div>
       
       {!firstAttempt && (
-        <div style={{
+        <div id="question-feedback" style={{
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           gap: '8px',
           marginTop: '10px',
         }}>
-          <div style={{
+          <div id="question-incorrect-message" style={{
             color: '#d32f2f',
             fontSize: '16px',
             fontWeight: 'bold',
@@ -99,7 +103,7 @@ const QuestionDialog = ({ currentQuestion, showTranslation, showHint, firstAttem
             Try again! (No points for incorrect answers)
           </div>
           {showHint && (
-            <div style={{
+            <div id="question-hint" style={{
               color: '#1976D2',
               fontSize: '18px',
               fontWeight: 'bold',

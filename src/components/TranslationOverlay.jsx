@@ -8,8 +8,15 @@ import { translations } from '../config/translations';
 const TranslationOverlay = ({ currentQuestion }) => {
   if (!currentQuestion) return null;
 
+  // Get the English translation
+  const englishTranslation = translations[currentQuestion.correctAnswer] || currentQuestion.correctAnswer;
+  const spanishWord = currentQuestion.correctAnswer;
+  
+  // Check if Spanish and English are the same (case-insensitive)
+  const wordsAreSame = spanishWord.toLowerCase() === englishTranslation.toLowerCase();
+
   return (
-    <div style={{
+    <div id="translation-overlay" style={{
       position: 'absolute',
       top: 'calc(35% + 15px)',
       left: '50%',
@@ -24,24 +31,26 @@ const TranslationOverlay = ({ currentQuestion }) => {
       boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
       zIndex: 11,
       animation: 'fadeIn 0.3s ease-out',
+      minWidth: '280px',
+      maxWidth: '90vw',
     }}>
-      <div style={{
+      <div id="translation-checkmark" style={{
         fontSize: '50px',
         marginBottom: '10px',
       }}>
         ✅
       </div>
       
-      <div style={{
+      <div id="translation-text" style={{
         fontSize: '28px',
         fontWeight: 'bold',
         color: 'white',
         textAlign: 'center',
       }}>
-        {currentQuestion.correctAnswer} = {translations[currentQuestion.correctAnswer] || currentQuestion.correctAnswer}
+        {wordsAreSame ? spanishWord : `${spanishWord} = ${englishTranslation}`}
       </div>
       
-      <div style={{
+      <div id="translation-points" style={{
         fontSize: '16px',
         color: 'white',
         marginTop: '10px',
