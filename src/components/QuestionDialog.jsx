@@ -23,7 +23,7 @@ const QuestionDialog = ({ currentQuestion, showTranslation, showHint, firstAttem
       padding: '30px',
       borderRadius: '15px',
       boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
-      zIndex: 10,
+      zIndex: 30,
       animation: 'fadeIn 0.5s ease-out',
       minWidth: '320px',
       maxWidth: '90vw',
