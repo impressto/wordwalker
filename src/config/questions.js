@@ -11281,6 +11281,52 @@ export const questions = [
     difficulty: 'medium',
   },
 
+  // Additional Conversation Phrases (4 questions)
+  {
+    id: 'greetings_51',
+    emoji: '❓',
+    question: '¿Cómo dices "I have a question for you"?',
+    options: ['tengo una pregunta para ti', 'tengo una pregunta por ti', 'tengo pregunta para ti'],
+    correctAnswer: 'tengo una pregunta para ti',
+    hint: 'I have a question for you - "tengo" (I have), "pregunta" (question), "para ti" (for you informal)',
+    points: 10,
+    category: 'greetings',
+    difficulty: 'medium',
+  },
+  {
+    id: 'greetings_52',
+    emoji: '🛑',
+    question: '¿Cómo dices "that is enough"?',
+    options: ['eso es suficiente', 'es suficiente', 'basta'],
+    correctAnswer: 'eso es suficiente',
+    hint: 'That is enough - "eso" (that), "suficiente" (enough/sufficient), "basta" is stronger "enough!"',
+    points: 10,
+    category: 'greetings',
+    difficulty: 'medium',
+  },
+  {
+    id: 'greetings_53',
+    emoji: '🏨',
+    question: '¿Cómo dices "we are staying here for two weeks"?',
+    options: ['nos quedamos aquí por dos semanas', 'estamos quedando aquí por dos semanas', 'quedamos aquí dos semanas'],
+    correctAnswer: 'nos quedamos aquí por dos semanas',
+    hint: 'We are staying here for two weeks - "quedarse" (to stay), "por dos semanas" (for two weeks), useful for hotels',
+    points: 15,
+    category: 'greetings',
+    difficulty: 'medium',
+  },
+  {
+    id: 'greetings_54',
+    emoji: '💡',
+    question: '¿Cómo dices "the answer is..." (___)?',
+    options: ['la respuesta es', 'la respuesta está', 'el respuesto es'],
+    correctAnswer: 'la respuesta es',
+    hint: 'The answer is - "respuesta" is feminine (la), use "ser" (es) not "estar", "el" would be wrong gender',
+    points: 10,
+    category: 'greetings',
+    difficulty: 'medium',
+  },
+
   // NUMBERS, DATES & TIME CATEGORY - 60 questions
   // Basic Numbers 0-10 (10 questions)
   {
