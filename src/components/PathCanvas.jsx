@@ -48,6 +48,9 @@ const PathCanvas = () => {
   // Walker sprite animation state
   const walkerFrameRef = useRef(0); // Current frame index
   const walkerFrameCounterRef = useRef(0); // Counter for frame timing
+  
+  // Streak diamond glow animation state
+  const diamondGlowRef = useRef(0); // Glow animation progress (0 to 1)
   const [isVictoryAnimation, setIsVictoryAnimation] = useState(false); // Toggle between walk/victory
   const victoryAnimationCounterRef = useRef(0); // How long to show victory animation
   
@@ -234,6 +237,65 @@ const PathCanvas = () => {
     if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
+    
+    // Helper function to draw the streak diamond with glow effect
+    const drawStreakDiamond = (x, y, size, glowIntensity, streak) => {
+      // Determine diamond color based on streak level
+      let diamondColor;
+      if (streak > 20) {
+        diamondColor = '#FFFFFF'; // White
+      } else if (streak > 10) {
+        diamondColor = '#FFD700'; // Yellow/Gold
+      } else if (streak > 5) {
+        diamondColor = '#00FF7F'; // Green
+      } else {
+        diamondColor = '#87CEEB'; // Light blue
+      }
+      
+      ctx.save();
+      
+      // Draw outer glow layers (multiple layers for better glow effect)
+      const glowLayers = 5;
+      for (let i = glowLayers; i > 0; i--) {
+        const layerSize = size + (i * 8 * glowIntensity);
+        const layerAlpha = (glowIntensity * 0.15) / i;
+        
+        ctx.globalAlpha = layerAlpha;
+        ctx.fillStyle = diamondColor;
+        ctx.beginPath();
+        ctx.moveTo(x, y - layerSize / 2);
+        ctx.lineTo(x + layerSize / 2, y);
+        ctx.lineTo(x, y + layerSize / 2);
+        ctx.lineTo(x - layerSize / 2, y);
+        ctx.closePath();
+        ctx.fill();
+      }
+      
+      // Draw main diamond with higher opacity
+      ctx.globalAlpha = 0.7 + (glowIntensity * 0.3);
+      ctx.fillStyle = diamondColor;
+      ctx.beginPath();
+      ctx.moveTo(x, y - size / 2);
+      ctx.lineTo(x + size / 2, y);
+      ctx.lineTo(x, y + size / 2);
+      ctx.lineTo(x - size / 2, y);
+      ctx.closePath();
+      ctx.fill();
+      
+      // Add inner highlight for sparkle effect
+      ctx.globalAlpha = 0.9 * glowIntensity;
+      ctx.fillStyle = '#FFFFFF';
+      const highlightSize = size * 0.4;
+      ctx.beginPath();
+      ctx.moveTo(x, y - highlightSize / 2);
+      ctx.lineTo(x + highlightSize / 2, y);
+      ctx.lineTo(x, y + highlightSize / 2);
+      ctx.lineTo(x - highlightSize / 2, y);
+      ctx.closePath();
+      ctx.fill();
+      
+      ctx.restore();
+    };
     
     // Set canvas size
     const resizeCanvas = () => {
@@ -490,6 +552,24 @@ const PathCanvas = () => {
       // Draw walking person using sprite sheet animation
       // Position roughly in the middle-left of the path (personX already defined above)
       const personY = pathTop + (pathBottom - pathTop) * 0.5 - 50; // Middle of the path vertically, moved up 50 pixels
+      
+      // Draw streak diamond behind the walker if streak is active
+      if (streak > 0) {
+        // Update diamond glow animation (smooth fade in/out)
+        if (!isPaused || isVictoryAnimation) {
+          diamondGlowRef.current += 0.02; // Speed of glow animation
+        }
+        
+        // Calculate glow intensity using sine wave for smooth pulsing (0 to 1)
+        const glowIntensity = (Math.sin(diamondGlowRef.current) + 1) / 2;
+        
+        // Position diamond behind and to the left of the walker
+        const diamondX = personX - 35; // 35 pixels to the left of walker
+        const diamondY = personY;
+        const diamondSize = 25; // Base size of diamond
+        
+        drawStreakDiamond(diamondX, diamondY, diamondSize, glowIntensity, streak);
+      }
       
       if (walkerSpriteSheet) {
         // Update animation frame
