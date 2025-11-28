@@ -33,10 +33,20 @@ const gameSettings = {
   - Points awarded when the streak threshold is reached
   - Adjust this to test different bonus amounts
 
+- **`animationDuration`** (default: 2500)
+  - Duration in milliseconds of the CSS fade-in/out animation
+  - Controls how long the streak modal takes to fade in and out
+  - Should be <= notificationDuration
+
 - **`notificationDuration`** (default: 4000)
   - Duration in milliseconds to display the streak bonus notification
-  - 4000ms = 4 seconds
-  - Adjust if you need more/less time to observe the modal
+  - Must be >= animationDuration to ensure complete fade-out
+  - The modal is fully visible for: notificationDuration - animationDuration
+
+- **`pausePadding`** (default: 500)
+  - Additional pause in milliseconds after the notification disappears
+  - Ensures smooth transition before game animation resumes
+  - Total pause = notificationDuration + pausePadding when streak bonus shows
 
 ### Testing Workflow
 

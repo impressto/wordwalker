@@ -8,13 +8,21 @@ const gameSettings = {
   streak: {
     // Number of consecutive correct answers required to trigger streak bonus
     // Set to a lower number (e.g., 2 or 3) for easier testing
-    bonusThreshold: 5,
+    bonusThreshold: 2,
     
     // Bonus points awarded when streak threshold is reached
     bonusPoints: 50,
     
+    // Duration (in milliseconds) of the CSS fade-in/out animation
+    animationDuration: 2500,
+    
     // Duration (in milliseconds) to display the streak bonus notification
+    // Should be >= animationDuration to ensure complete fade-out
     notificationDuration: 4000,
+    
+    // Additional pause after notification for smooth transition
+    // This is added to notificationDuration when pausing game animation
+    pausePadding: 500,
   },
   
   // Question Settings
