@@ -1895,7 +1895,7 @@ export const questions = [
   {
     id: 'shopping_002',
     emoji: '👟',
-    question: '¿Qué es esto?',
+    question: '¿Qué calzado es este?',
     options: ['el zapato', 'el tenis', 'la zapatilla'],
     correctAnswer: 'el zapato',
     hint: 'Footwear - "zapato" is masculine singular, "zapatos" for the pair',
@@ -1906,7 +1906,7 @@ export const questions = [
   {
     id: 'shopping_003',
     emoji: '👜',
-    question: '¿Qué es esto?',
+    question: '¿Qué accesorio es este?',
     options: ['la bolsa', 'el bolso', 'la cartera'],
     correctAnswer: 'la bolsa',
     hint: 'Bag - "bolsa" in Latin America, "bolso" in Spain for purse/handbag',
@@ -1961,7 +1961,7 @@ export const questions = [
   {
     id: 'shopping_008',
     emoji: '🎩',
-    question: '¿Qué es esto?',
+    question: '¿Cómo se llama este accesorio para la cabeza?',
     options: ['el sombrero', 'la gorra', 'el gorro'],
     correctAnswer: 'el sombrero',
     hint: 'Protects your head from sun',
@@ -1983,7 +1983,7 @@ export const questions = [
   {
     id: 'shopping_010',
     emoji: '🧣',
-    question: '¿Qué es esto?',
+    question: '¿Qué prenda usas para el cuello?',
     options: ['la bufanda', 'la chalina', 'el chal'],
     correctAnswer: 'la bufanda',
     hint: 'Wraps around neck for warmth',
@@ -1994,7 +1994,7 @@ export const questions = [
   {
     id: 'shopping_011',
     emoji: '👔',
-    question: '¿Qué es esto?',
+    question: '¿Qué accesorio formal llevas con traje?',
     options: ['la corbata', 'la pajarita', 'el pañuelo'],
     correctAnswer: 'la corbata',
     hint: 'Formal neck accessory for suits',
@@ -2038,7 +2038,7 @@ export const questions = [
   {
     id: 'shopping_015',
     emoji: '🎒',
-    question: '¿Qué es esto?',
+    question: '¿Qué bolsa llevas en la espalda?',
     options: ['la mochila', 'el morral', 'el macuto'],
     correctAnswer: 'la mochila',
     hint: 'Bag you wear on your back',
@@ -2049,7 +2049,7 @@ export const questions = [
   {
     id: 'shopping_016',
     emoji: '⌚',
-    question: '¿Qué es esto?',
+    question: '¿Qué usas para ver la hora?',
     options: ['el reloj', 'el cronómetro', 'el cronógrafo'],
     correctAnswer: 'el reloj',
     hint: 'Tells you what time it is',
@@ -2060,7 +2060,7 @@ export const questions = [
   {
     id: 'shopping_017',
     emoji: '💍',
-    question: '¿Qué es esto?',
+    question: '¿Qué joya llevas en el dedo?',
     options: ['el anillo', 'la sortija', 'el aro'],
     correctAnswer: 'el anillo',
     hint: 'Jewelry for your finger',
@@ -2071,7 +2071,7 @@ export const questions = [
   {
     id: 'shopping_018',
     emoji: '🧢',
-    question: '¿Qué es esto?',
+    question: '¿Qué tipo de sombrero deportivo es este?',
     options: ['la gorra', 'la visera', 'el casquete'],
     correctAnswer: 'la gorra',
     hint: 'Baseball cap - "gorra" has a visor, "sombrero" has a brim all around',
@@ -3546,7 +3546,7 @@ export const questions = [
   {
     id: 'entertainment_001',
     emoji: '🎬',
-    question: '¿Qué es esto?',
+    question: '¿Dónde vas a ver películas?',
     options: ['el cine', 'el teatro', 'el auditorio'],
     correctAnswer: 'el cine',
     hint: 'Movie theater - "cine" from cinema, watch films on big screen',
@@ -3557,7 +3557,7 @@ export const questions = [
   {
     id: 'entertainment_002',
     emoji: '🎮',
-    question: '¿Qué es esto?',
+    question: '¿Qué juegas en la consola?',
     options: ['el videojuego', 'el juego electrónico', 'el juego de consola'],
     correctAnswer: 'el videojuego',
     hint: 'Video game - electronic entertainment, "consola" for game console',
@@ -3601,7 +3601,7 @@ export const questions = [
   {
     id: 'entertainment_006',
     emoji: '🎵',
-    question: '¿Qué es esto?',
+    question: '¿Qué escuchas en tus auriculares?',
     options: ['la música', 'la melodía', 'la canción'],
     correctAnswer: 'la música',
     hint: 'Music - universal language, "música" from Greek "mousike" (art of Muses)',
@@ -3612,7 +3612,7 @@ export const questions = [
   {
     id: 'entertainment_007',
     emoji: '📺',
-    question: '¿Qué es esto?',
+    question: '¿En qué aparato ves tus programas favoritos?',
     options: ['la televisión', 'la tele', 'el televisor'],
     correctAnswer: 'la televisión',
     hint: 'Television - "tele" (far) + "visión" (seeing), broadcast entertainment',
@@ -3623,7 +3623,7 @@ export const questions = [
   {
     id: 'entertainment_008',
     emoji: '🎭',
-    question: '¿Qué es esto?',
+    question: '¿Dónde ves obras con actores en vivo?',
     options: ['el teatro', 'la obra de teatro', 'el drama'],
     correctAnswer: 'el teatro',
     hint: 'Theater - live performances with actors, "teatro" from Greek "theatron"',
@@ -3667,7 +3667,7 @@ export const questions = [
   {
     id: 'entertainment_012',
     emoji: '🎤',
-    question: '¿Qué es esto?',
+    question: '¿Qué usas para amplificar tu voz?',
     options: ['el micrófono', 'el micro', 'el amplificador'],
     correctAnswer: 'el micrófono',
     hint: 'Microphone - amplifies voice, "micro" (small) + "phone" (sound)',
@@ -3678,7 +3678,7 @@ export const questions = [
   {
     id: 'entertainment_013',
     emoji: '🎪',
-    question: '¿Qué es esto?',
+    question: '¿Dónde ves acróbatas y payasos?',
     options: ['el circo', 'el carnaval', 'la feria'],
     correctAnswer: 'el circo',
     hint: 'Circus - acrobats, clowns, animals performing under tent',
@@ -5210,7 +5210,7 @@ export const questions = [
   {
     id: 'accommodation_001',
     emoji: '🏨',
-    question: '¿Qué es esto?',
+    question: '¿Dónde te hospedas cuando viajas?',
     options: ['hotel', 'hostal', 'posada'],
     correctAnswer: 'hotel',
     hint: 'Hotel - lodging for travelers, from French "hôtel"',
@@ -5221,7 +5221,7 @@ export const questions = [
   {
     id: 'accommodation_002',
     emoji: '🛏️',
-    question: '¿Qué es esto?',
+    question: '¿Dónde duermes en el hotel?',
     options: ['cama', 'el catre', 'la litera'],
     correctAnswer: 'cama',
     hint: 'Bed - furniture for sleeping, hotel rooms have "cama individual" or "doble"',
@@ -5232,7 +5232,7 @@ export const questions = [
   {
     id: 'accommodation_003',
     emoji: '🔑',
-    question: '¿Qué es esto?',
+    question: '¿Qué usas para abrir la puerta de tu habitación?',
     options: ['llave', 'la llave maestra', 'el llavero'],
     correctAnswer: 'llave',
     hint: 'Key - opens locks, from Latin "clavis", modern hotels use key cards',
@@ -5243,7 +5243,7 @@ export const questions = [
   {
     id: 'accommodation_004',
     emoji: '🚪',
-    question: '¿Qué es esto?',
+    question: '¿Por dónde entras a la habitación?',
     options: ['puerta', 'la entrada', 'el portal'],
     correctAnswer: 'puerta',
     hint: 'Door - entrance to room, "puerta" from Latin "porta"',
@@ -5254,7 +5254,7 @@ export const questions = [
   {
     id: 'accommodation_005',
     emoji: '🪟',
-    question: '¿Qué es esto?',
+    question: '¿Por dónde entra la luz del sol?',
     options: ['ventana', 'el ventanal', 'la claraboya'],
     correctAnswer: 'ventana',
     hint: 'Window - lets in light and air, "ventana" from Latin "ventus" (wind)',
@@ -5265,7 +5265,7 @@ export const questions = [
   {
     id: 'accommodation_006',
     emoji: '🛁',
-    question: '¿Qué es esto?',
+    question: '¿Dónde te bañas con agua acumulada?',
     options: ['bañera', 'la tina', 'la bañadera'],
     correctAnswer: 'bañera',
     hint: 'Bathtub - fill with water for bath, "tina" also used in Latin America',
@@ -5276,7 +5276,7 @@ export const questions = [
   {
     id: 'accommodation_007',
     emoji: '🚿',
-    question: '¿Qué es esto?',
+    question: '¿Dónde te bañas de pie?',
     options: ['ducha', 'la regadera', 'la ducha de mano'],
     correctAnswer: 'ducha',
     hint: 'Shower - spray of water for washing, "regadera" in Mexico',
@@ -5287,7 +5287,7 @@ export const questions = [
   {
     id: 'accommodation_008',
     emoji: '🪑',
-    question: '¿Qué es esto?',
+    question: '¿En qué te sientas?',
     options: ['silla', 'el asiento', 'el taburete'],
     options: ['silla', 'el asiento', 'el taburete'],
     correctAnswer: 'silla',
@@ -5299,7 +5299,7 @@ export const questions = [
   {
     id: 'accommodation_009',
     emoji: '🛋️',
-    question: '¿Qué es esto?',
+    question: '¿En qué mueble te relajas en la sala?',
     options: ['sofá', 'el sillón', 'el diván'],
     correctAnswer: 'sofá',
     hint: 'Sofa/couch - comfortable seating for multiple people',
@@ -5310,7 +5310,7 @@ export const questions = [
   {
     id: 'accommodation_010',
     emoji: '🪞',
-    question: '¿Qué es esto?',
+    question: '¿Dónde ves tu reflejo?',
     options: ['espejo', 'el espejo de mano', 'el espejo de cuerpo entero'],
     correctAnswer: 'espejo',
     hint: 'Mirror - reflects your image, "espejo" from Latin "speculum"',
@@ -5321,7 +5321,7 @@ export const questions = [
   {
     id: 'accommodation_011',
     emoji: '🕯️',
-    question: '¿Qué es esto?',
+    question: '¿Qué enciendes para dar luz romántica?',
     options: ['una vela', 'el cirio', 'la candela'],
     correctAnswer: 'una vela',
     hint: 'Candle - wax with flame for light, emergency or romantic lighting',
@@ -5332,7 +5332,7 @@ export const questions = [
   {
     id: 'accommodation_012',
     emoji: '💡',
-    question: '¿Qué es esto?',
+    question: '¿Qué pones en la lámpara para dar luz?',
     options: ['un foco', 'la bombilla', 'el bombillo'],
     correctAnswer: 'un foco',
     hint: 'Light bulb - "foco" in Latin America, "bombilla" in Spain',
@@ -5343,7 +5343,7 @@ export const questions = [
   {
     id: 'accommodation_013',
     emoji: '🧹',
-    question: '¿Qué es esto?',
+    question: '¿Con qué barres el piso?',
     options: ['una escoba', 'el cepillo', 'la escobilla'],
     correctAnswer: 'una escoba',
     hint: 'Broom - sweeps floors with bristles, housekeeping tool',
@@ -5354,7 +5354,7 @@ export const questions = [
   {
     id: 'accommodation_014',
     emoji: '🧺',
-    question: '¿Qué es esto?',
+    question: '¿Dónde pones la ropa sucia?',
     options: ['una cesta', 'una canasta', 'un cesto'],
     correctAnswer: 'una cesta',
     hint: 'Basket - woven container, "canasta" also used for basket',
@@ -5365,7 +5365,7 @@ export const questions = [
   {
     id: 'accommodation_015',
     emoji: '🧴',
-    question: '¿Qué es esto?',
+    question: '¿Con qué te lavas las manos?',
     options: ['el jabón', 'el jabón líquido', 'la pastilla de jabón'],
     correctAnswer: 'el jabón',
     hint: 'Soap - cleans body and hands, hotels provide small bars',
@@ -5376,7 +5376,7 @@ export const questions = [
   {
     id: 'accommodation_016',
     emoji: '🧻',
-    question: '¿Qué es esto?',
+    question: '¿Qué papel usas en el baño?',
     options: ['el papel higiénico', 'el papel de baño', 'el papel sanitario'],
     correctAnswer: 'el papel higiénico',
     hint: 'Toilet paper - bathroom essential, "papel de baño" also used',
@@ -5387,7 +5387,7 @@ export const questions = [
   {
     id: 'accommodation_017',
     emoji: '🧼',
-    question: '¿Qué es esto?',
+    question: '¿Con qué te lavas en la ducha?',
     options: ['el jabón', 'el jabón de tocador', 'el jabonera'],
     correctAnswer: 'el jabón',
     hint: 'Soap - for washing, "jabón" from Arabic "sabun"',
@@ -5409,7 +5409,7 @@ export const questions = [
   {
     id: 'accommodation_019',
     emoji: '🏡',
-    question: '¿Qué es esto?',
+    question: '¿Dónde vive una familia?',
     options: ['la casa', 'el hogar', 'la vivienda'],
     correctAnswer: 'la casa',
     hint: 'House - private dwelling, "hogar" means home',
@@ -5420,7 +5420,7 @@ export const questions = [
   {
     id: 'accommodation_020',
     emoji: '🏢',
-    question: '¿Qué es esto?',
+    question: '¿Qué estructura tiene muchos pisos?',
     options: ['el edificio', 'el rascacielos', 'la construcción'],
     correctAnswer: 'el edificio',
     hint: 'Building - multi-story structure, "edificio" from Latin "aedificium"',
@@ -6934,7 +6934,7 @@ export const questions = [
   {
     id: 'transportation_001',
     emoji: '🚕',
-    question: '¿Qué es esto?',
+    question: '¿Qué vehículo pagas para llevarte a tu destino?',
     options: ['el taxi', 'el cab', 'el libre'],
     correctAnswer: 'el taxi',
     hint: 'Taxi - paid car service, yellow in many countries, hail on street',
@@ -6945,7 +6945,7 @@ export const questions = [
   {
     id: 'transportation_002',
     emoji: '🚌',
-    question: '¿Qué es esto?',
+    question: '¿En qué transporte público grande viajas en la ciudad?',
     options: ['el autobús', 'el camión', 'la guagua'],
     correctAnswer: 'el autobús',
     hint: 'Bus - large public vehicle, "camión" in Mexico, "guagua" in Caribbean',
@@ -6956,7 +6956,7 @@ export const questions = [
   {
     id: 'transportation_003',
     emoji: '🚂',
-    question: '¿Qué es esto?',
+    question: '¿Qué viaja por rieles o vías?',
     options: ['el tren', 'el ferrocarril', 'la locomotora'],
     correctAnswer: 'el tren',
     hint: 'Train - runs on rails, "ferrocarril" is railway system',
@@ -6967,7 +6967,7 @@ export const questions = [
   {
     id: 'transportation_004',
     emoji: '✈️',
-    question: '¿Qué es esto?',
+    question: '¿En qué vuelas a otro país?',
     options: ['el avión', 'el aeroplano', 'la aeronave'],
     correctAnswer: 'el avión',
     hint: 'Airplane - flies at high altitude, fastest way to travel long distances',
@@ -6978,7 +6978,7 @@ export const questions = [
   {
     id: 'transportation_005',
     emoji: '🚇',
-    question: '¿Qué es esto?',
+    question: '¿Qué tren viaja bajo tierra?',
     options: ['el metro', 'el subterráneo', 'el subte'],
     correctAnswer: 'el metro',
     hint: 'Subway/metro - underground train, "subte" in Argentina',
@@ -6989,7 +6989,7 @@ export const questions = [
   {
     id: 'transportation_006',
     emoji: '🚗',
-    question: '¿Qué es esto?',
+    question: '¿En qué vehículo privado manejas?',
     options: ['el coche', 'el carro', 'el auto'],
     correctAnswer: 'el coche',
     hint: 'Car - private vehicle, "carro" in Latin America, "auto" also used',
@@ -7000,7 +7000,7 @@ export const questions = [
   {
     id: 'transportation_007',
     emoji: '🛵',
-    question: '¿Qué es esto?',
+    question: '¿Qué vehículo de dos ruedas tiene motor?',
     options: ['la moto', 'la motocicleta', 'el motociclo'],
     correctAnswer: 'la moto',
     hint: 'Motorcycle - motor-powered two-wheeler, "motocicleta" is full term',
@@ -7011,7 +7011,7 @@ export const questions = [
   {
     id: 'transportation_008',
     emoji: '🚲',
-    question: '¿Qué es esto?',
+    question: '¿Qué pedaleas para moverte?',
     options: ['la bicicleta', 'la bici', 'el velocípedo'],
     correctAnswer: 'la bicicleta',
     hint: 'Bicycle - pedal-powered two wheels, "bici" for short',
@@ -7022,7 +7022,7 @@ export const questions = [
   {
     id: 'transportation_009',
     emoji: '⛴️',
-    question: '¿Qué es esto?',
+    question: '¿En qué navegas por el agua?',
     options: ['el barco', 'el buque', 'la embarcación'],
     correctAnswer: 'el barco',
     hint: 'Boat/ship - water vessel, "buque" for large ship, "nave" for vessel',
@@ -7033,7 +7033,7 @@ export const questions = [
   {
     id: 'transportation_010',
     emoji: '🎫',
-    question: '¿Qué es esto?',
+    question: '¿Qué compras para viajar en transporte público?',
     options: ['el boleto', 'el billete', 'el pasaje'],
     correctAnswer: 'el boleto',
     hint: 'Ticket - for transport, "billete" in Spain, "pasaje" for long trips',
@@ -7044,7 +7044,7 @@ export const questions = [
   {
     id: 'transportation_011',
     emoji: '🚏',
-    question: '¿Qué es esto?',
+    question: '¿Dónde esperas el autobús?',
     options: ['la parada de autobús', 'la parada', 'el paradero'],
     correctAnswer: 'la parada de autobús',
     hint: 'Bus stop - designated waiting area, marked with sign and shelter',
@@ -7055,7 +7055,7 @@ export const questions = [
   {
     id: 'transportation_012',
     emoji: '🛂',
-    question: '¿Qué es esto?',
+    question: '¿Qué documento necesitas para viajar internacionalmente?',
     options: ['el pasaporte', 'el pasaporte internacional', 'los papeles'],
     correctAnswer: 'el pasaporte',
     hint: 'Passport - travel document for international travel, shows nationality',
@@ -7066,7 +7066,7 @@ export const questions = [
   {
     id: 'transportation_013',
     emoji: '🧳',
-    question: '¿Qué es esto?',
+    question: '¿Dónde guardas tu ropa cuando viajas?',
     options: ['la maleta', 'la valija', 'el equipaje'],
     correctAnswer: 'la maleta',
     hint: 'Suitcase - for packing clothes when traveling, check or carry-on',
@@ -7077,7 +7077,7 @@ export const questions = [
   {
     id: 'transportation_014',
     emoji: '🎒',
-    question: '¿Qué es esto?',
+    question: '¿Qué llevas en la espalda cuando viajas ligero?',
     options: ['la mochila', 'el morral', 'el macuto'],
     correctAnswer: 'la mochila',
     hint: 'Backpack - bag worn on back, practical for hands-free travel',
@@ -7088,7 +7088,7 @@ export const questions = [
   {
     id: 'transportation_015',
     emoji: '🚦',
-    question: '¿Qué es esto?',
+    question: '¿Qué controla el tráfico con luces de colores?',
     options: ['el semáforo', 'el disco', 'el faro'],
     correctAnswer: 'el semáforo',
     hint: 'Traffic light - controls traffic with red, yellow, green signals',
@@ -8638,7 +8638,7 @@ export const questions = [
   {
     id: 'directions_005',
     emoji: '🗺️',
-    question: '¿Qué es esto?',
+    question: '¿Qué consultas para orientarte en la ciudad?',
     options: ['el mapa', 'el plano', 'la carta'],
     correctAnswer: 'el mapa',
     hint: 'Map - shows geography and locations, from Latin "mappa mundi" (world cloth)',
@@ -8649,7 +8649,7 @@ export const questions = [
   {
     id: 'directions_006',
     emoji: '🧭',
-    question: '¿Qué es esto?',
+    question: '¿Qué instrumento siempre apunta al norte?',
     options: ['la brújula', 'el compás', 'la compass'],
     correctAnswer: 'la brújula',
     hint: 'Compass - points north with magnetic needle, essential navigation tool',
@@ -8660,7 +8660,7 @@ export const questions = [
   {
     id: 'directions_007',
     emoji: '🏛️',
-    question: '¿Qué es esto?',
+    question: '¿Dónde ves arte e historia?',
     options: ['el museo', 'el museo de arte', 'la galería'],
     correctAnswer: 'el museo',
     hint: 'Museum - displays art and history, from Greek "mouseion" (temple of muses)',
@@ -8671,7 +8671,7 @@ export const questions = [
   {
     id: 'directions_008',
     emoji: '⛪',
-    question: '¿Qué es esto?',
+    question: '¿Dónde vas a rezar o a misa?',
     options: ['la iglesia', 'el templo', 'la capilla'],
     correctAnswer: 'la iglesia',
     hint: 'Church - place of worship, from Greek "ekklesia" (assembly)',
@@ -8682,7 +8682,7 @@ export const questions = [
   {
     id: 'directions_009',
     emoji: '🏦',
-    question: '¿Qué es esto?',
+    question: '¿Dónde depositas o retiras dinero?',
     options: ['el banco', 'la sucursal', 'la institución financiera'],
     correctAnswer: 'el banco',
     hint: 'Bank - financial institution for money, also means "bench" in Spanish',
@@ -8693,7 +8693,7 @@ export const questions = [
   {
     id: 'directions_010',
     emoji: '🏪',
-    question: '¿Qué es esto?',
+    question: '¿Dónde compras productos?',
     options: ['la tienda', 'el comercio', 'el negocio'],
     correctAnswer: 'la tienda',
     hint: 'Store - where you buy goods, "tienda de abarrotes" is grocery store',
@@ -8704,7 +8704,7 @@ export const questions = [
   {
     id: 'directions_011',
     emoji: '🏥',
-    question: '¿Qué es esto?',
+    question: '¿Dónde van los enfermos graves?',
     options: ['el hospital', 'el centro médico', 'la clínica'],
     correctAnswer: 'el hospital',
     hint: 'Hospital - medical facility for serious care, from Latin "hospes" (guest)',
@@ -8748,7 +8748,7 @@ export const questions = [
   {
     id: 'directions_015',
     emoji: '🌉',
-    question: '¿Qué es esto?',
+    question: '¿Qué estructura cruza un río o valle?',
     options: ['el puente', 'el viaducto', 'el paso elevado'],
     correctAnswer: 'el puente',
     hint: 'Bridge - crosses over water or valley, landmark for giving directions',
@@ -9150,7 +9150,7 @@ export const questions = [
   {
     id: 'emergencies_001',
     emoji: '🚑',
-    question: '¿Qué es esto?',
+    question: '¿Qué vehículo lleva a los enfermos al hospital?',
     options: ['la ambulancia', 'el vehículo de emergencia', 'el coche de urgencias'],
     correctAnswer: 'la ambulancia',
     hint: 'Ambulance - emergency medical vehicle, from Latin "ambulare" (to walk)',
@@ -9161,7 +9161,7 @@ export const questions = [
   {
     id: 'emergencies_002',
     emoji: '🚨',
-    question: '¿Qué es esto?',
+    question: '¿Qué situación requiere ayuda inmediata?',
     options: ['la emergencia', 'la urgencia', 'la crisis'],
     correctAnswer: 'la emergencia',
     hint: 'Emergency - urgent situation requiring immediate action, dial 112 (Europe) or 911 (Americas)',
@@ -9183,7 +9183,7 @@ export const questions = [
   {
     id: 'emergencies_004',
     emoji: '🚒',
-    question: '¿Qué es esto?',
+    question: '¿Qué vehículo apaga incendios?',
     options: ['el camión de bomberos', 'el carro de bomberos', 'la autobomba'],
     correctAnswer: 'el camión de bomberos',
     hint: 'Fire truck - carries water and equipment, "bomberos" from "bomba" (pump)',
@@ -9216,7 +9216,7 @@ export const questions = [
   {
     id: 'emergencies_007',
     emoji: '💊',
-    question: '¿Qué es esto?',
+    question: '¿Qué tomas cuando estás enfermo?',
     options: ['la medicina', 'el medicamento', 'el remedio'],
     correctAnswer: 'la medicina',
     hint: 'Medicine - drug for treatment, "medicamento" more formal, "remedio" for remedy',
@@ -9249,7 +9249,7 @@ export const questions = [
   {
     id: 'emergencies_010',
     emoji: '🩹',
-    question: '¿Qué es esto?',
+    question: '¿Con qué cubres una herida?',
     options: ['el vendaje', 'la venda', 'el apósito'],
     correctAnswer: 'el vendaje',
     hint: 'Bandage - wraps wound, "venda" is the strip material itself',
@@ -9260,7 +9260,7 @@ export const questions = [
   {
     id: 'emergencies_011',
     emoji: '💉',
-    question: '¿Qué es esto?',
+    question: '¿Qué te ponen con una aguja?',
     options: ['la inyección', 'la vacuna', 'la jeringa'],
     correctAnswer: 'la inyección',
     hint: 'Injection - shot with needle, "vacuna" is vaccine type',
@@ -9271,7 +9271,7 @@ export const questions = [
   {
     id: 'emergencies_012',
     emoji: '🌡️',
-    question: '¿Qué es esto?',
+    question: '¿Con qué mides la fiebre?',
     options: ['el termómetro', 'el medidor de temperatura', 'el termómetro clínico'],
     correctAnswer: 'el termómetro',
     hint: 'Thermometer - measures temperature, from Greek "therme" (heat) + "metron" (measure)',
@@ -9293,7 +9293,7 @@ export const questions = [
   {
     id: 'emergencies_014',
     emoji: '🩺',
-    question: '¿Qué es esto?',
+    question: '¿Con qué escucha el doctor tu corazón?',
     options: ['el estetoscopio', 'el fonendoscopio', 'el estetoscope'],
     correctAnswer: 'el estetoscopio',
     hint: 'Stethoscope - listens to heart/lungs, from Greek "stethos" (chest) + "skopein" (examine)',
@@ -9304,7 +9304,7 @@ export const questions = [
   {
     id: 'emergencies_015',
     emoji: '🧴',
-    question: '¿Qué es esto?',
+    question: '¿Qué usas para matar gérmenes?',
     options: ['el desinfectante', 'el antiséptico', 'el sanitizante'],
     correctAnswer: 'el desinfectante',
     hint: 'Disinfectant - kills germs, alcohol gel common type',
@@ -9750,7 +9750,7 @@ export const questions = [
   {
     id: 'beach_005',
     emoji: '☀️',
-    question: '¿Qué es esto?',
+    question: '¿Qué brilla en el cielo y da calor?',
     options: ['el sol', 'el astro rey', 'el sol ardiente'],
     correctAnswer: 'el sol',
     hint: 'Sun - provides light and heat, "tomar el sol" means sunbathe',
@@ -9761,7 +9761,7 @@ export const questions = [
   {
     id: 'beach_006',
     emoji: '🌊',
-    question: '¿Qué es esto?',
+    question: '¿Qué forma el mar cuando se mueve?',
     options: ['la ola', 'la onda', 'el oleaje'],
     correctAnswer: 'la ola',
     hint: 'Wave - moving water, surfers love big waves, from Latin "unda"',
@@ -9783,7 +9783,7 @@ export const questions = [
   {
     id: 'beach_008',
     emoji: '⛱️',
-    question: '¿Qué es esto?',
+    question: '¿Qué usas para dar sombra en la playa?',
     options: ['la sombrilla', 'el parasol', 'la sombrilla de playa'],
     correctAnswer: 'la sombrilla',
     hint: 'Beach umbrella - provides shade, "paraguas" for rain',
@@ -9805,7 +9805,7 @@ export const questions = [
   {
     id: 'beach_010',
     emoji: '🕶️',
-    question: '¿Qué es esto?',
+    question: '¿Qué proteges tus ojos del sol con esto?',
     options: ['las gafas de sol', 'los lentes de sol', 'los anteojos de sol'],
     correctAnswer: 'las gafas de sol',
     hint: 'Sunglasses - protect eyes from UV rays, "lentes de sol" in Latin America',
@@ -9838,7 +9838,7 @@ export const questions = [
   {
     id: 'beach_013',
     emoji: '🐚',
-    question: '¿Qué es esto?',
+    question: '¿Qué coleccionas en la arena?',
     options: ['la concha', 'la concha marina', 'el caracol marino'],
     correctAnswer: 'la concha',
     hint: 'Seashell - former mollusk home, beautiful to collect on beach',
@@ -9906,7 +9906,7 @@ export const questions = [
   {
     id: 'beach_019',
     emoji: '⛵',
-    question: '¿Qué es esto?',
+    question: '¿Qué barco usa el viento para moverse?',
     options: ['el velero', 'el bote de vela', 'la embarcación de vela'],
     correctAnswer: 'el velero',
     hint: 'Sailboat - wind-powered vessel, "vela" is sail, eco-friendly navigation',
@@ -9961,7 +9961,7 @@ export const questions = [
   {
     id: 'beach_024',
     emoji: '🐠',
-    question: '¿Qué es esto?',
+    question: '¿Qué pez colorido vive en aguas cálidas?',
     options: ['el pez tropical', 'el pez de colores', 'el pez exótico'],
     correctAnswer: 'el pez tropical',
     hint: 'Tropical fish - colorful warm-water fish, beautiful in coral reefs',
@@ -10049,7 +10049,7 @@ export const questions = [
   {
     id: 'beach_032',
     emoji: '🪼',
-    question: '¿Qué es esto?',
+    question: '¿Qué animal marino puede picar?',
     options: ['la medusa', 'la aguamala', 'la aguaviva'],
     correctAnswer: 'la medusa',
     hint: 'Jellyfish - can sting, gelatinous body, "aguamala" in some regions',
@@ -10082,7 +10082,7 @@ export const questions = [
   {
     id: 'beach_035',
     emoji: '🌊',
-    question: '¿Qué es esto?',
+    question: '¿Qué montan los surfistas?',
     options: ['la ola', 'la onda', 'el oleaje'],
     correctAnswer: 'la ola',
     hint: 'Wave - moving water ridge, surfers ride them, "oleaje" is surf',
@@ -10095,7 +10095,7 @@ export const questions = [
   {
     id: 'beach_036',
     emoji: '🏖️',
-    question: '¿Qué es esto?',
+    question: '¿Qué pones en la arena para dar sombra?',
     options: ['la sombrilla de playa', 'el parasol', 'la sombrilla playera'],
     correctAnswer: 'la sombrilla de playa',
     hint: 'Provides shade at the beach',
@@ -10416,7 +10416,7 @@ export const questions = [
   {
     id: 'beach_065',
     emoji: '💨',
-    question: '¿Qué es esto?',
+    question: '¿Qué mueve las hojas de los árboles?',
     options: ['el viento', 'la brisa', 'el aire'],
     correctAnswer: 'el viento',
     hint: 'Wind - moving air, "brisa" is gentle breeze',
@@ -10427,7 +10427,7 @@ export const questions = [
   {
     id: 'beach_066',
     emoji: '🏝️',
-    question: '¿Qué es esto?',
+    question: '¿Qué tierra está rodeada de agua?',
     options: ['la isla', 'el islote', 'el atolón'],
     correctAnswer: 'la isla',
     hint: 'Island - land completely surrounded by water, tropical paradises',
@@ -10449,7 +10449,7 @@ export const questions = [
   {
     id: 'beach_068',
     emoji: '🏔️',
-    question: '¿Qué es esto?',
+    question: '¿Qué elevación es muy alta?',
     options: ['la montaña', 'el monte', 'la sierra'],
     correctAnswer: 'la montaña',
     hint: 'Mountain - very tall landform, from Latin "montanea" (mountainous)',
@@ -10460,7 +10460,7 @@ export const questions = [
   {
     id: 'beach_069',
     emoji: '🌋',
-    question: '¿Qué es esto?',
+    question: '¿Qué montaña arroja lava?',
     options: ['el volcán', 'el volcán activo', 'el cráter'],
     correctAnswer: 'el volcán',
     hint: 'Volcano - mountain that can erupt with lava, from Vulcan (fire god)',
@@ -10493,7 +10493,7 @@ export const questions = [
   {
     id: 'beach_072',
     emoji: '🌳',
-    question: '¿Qué es esto?',
+    question: '¿Qué planta grande tiene tronco y ramas?',
     options: ['el árbol', 'el árbol frondoso', 'el árbol de hojas'],
     correctAnswer: 'el árbol',
     hint: 'Tree - large plant with trunk and branches, provides shade',
@@ -10504,7 +10504,7 @@ export const questions = [
   {
     id: 'beach_073',
     emoji: '🌺',
-    question: '¿Qué es esto?',
+    question: '¿Qué flor crece en climas cálidos?',
     options: ['la flor tropical', 'la hibisco', 'la flor exótica'],
     correctAnswer: 'la flor tropical',
     hint: 'Tropical flower - hibiscus common, bright colors in warm climates',
@@ -10715,7 +10715,7 @@ export const questions = [
   {
     id: 'beach_092',
     emoji: '🎯',
-    question: '¿Qué es esto?',
+    question: '¿Qué lanzas al tablero circular?',
     options: ['los dardos', 'el juego de dardos', 'la diana'],
     correctAnswer: 'los dardos',
     hint: 'Darts - throw pointed missiles at circular board target',
