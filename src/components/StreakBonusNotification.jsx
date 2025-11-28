@@ -3,6 +3,8 @@
  * Displays a celebration notification when the user achieves a streak milestone
  */
 
+import gameSettings from '../config/gameSettings';
+
 const StreakBonusNotification = ({ streak }) => {
   return (
     <div style={{
@@ -63,7 +65,7 @@ const StreakBonusNotification = ({ streak }) => {
         color: 'white',
         fontWeight: 'bold',
       }}>
-        +50 BONUS POINTS!
+        +{gameSettings.streak.bonusPoints} BONUS POINTS!
       </div>
     </div>
   );

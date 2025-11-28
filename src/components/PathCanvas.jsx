@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { getRandomQuestionByCategory, getRandomUnusedQuestionByCategory, shuffleOptions, getAllCategoryIds, getCategoryById } from '../config/questions';
 import { translations } from '../config/translations';
+import gameSettings from '../config/gameSettings';
 import SoundManager from '../soundManager';
 import ScoreDisplay from './ScoreDisplay';
 import PathChoiceDialog from './PathChoiceDialog';
@@ -818,9 +819,9 @@ const PathCanvas = () => {
         // Award base points only on first attempt
         setTotalPoints(prevPoints => prevPoints + currentQuestion.points);
         
-        // Award streak bonus every 5 correct answers in a row
-        if (newStreak > 0 && newStreak % 5 === 0) {
-          streakBonus = 50; // Bonus points for 5-streak
+        // Award streak bonus every N correct answers in a row (configurable)
+        if (newStreak > 0 && newStreak % gameSettings.streak.bonusThreshold === 0) {
+          streakBonus = gameSettings.streak.bonusPoints;
           setTotalPoints(prevPoints => prevPoints + streakBonus);
           setShowStreakBonus(true);
           
@@ -829,10 +830,10 @@ const PathCanvas = () => {
             soundManagerRef.current.playStreak();
           }
           
-          // Hide streak bonus after 4 seconds (longer to be readable)
+          // Hide streak bonus after configured duration
           setTimeout(() => {
             setShowStreakBonus(false);
-          }, 4000);
+          }, gameSettings.streak.notificationDuration);
         }
       } else {
         // Correct answer on retry - no points, but play a softer sound
