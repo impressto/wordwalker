@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "ca.impressto.twa",
+        "sha256_cert_fingerprints": ["99:7C:FB:52:04:30:27:6C:8D:6D:67:42:BF:D2:AB:06:18:3E:FD:3C:44:85:54:00:70:E7:EB:56:76:60:B5:0F"]
+      }
+    }]

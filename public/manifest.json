@@ -1,7 +1,7 @@
 {
   "name": "WordWalker - Learn Spanish Vocabulary",
   "short_name": "WordWalker",
-  "id": "/wordwalker/",
+  "id": "/?app=wordwalker",
   "description": "Learn Spanish vocabulary while walking through beautiful landscapes. An interactive educational language learning game.",
   "start_url": "/wordwalker/",
   "scope": "/wordwalker/",
@@ -24,6 +24,12 @@
     {
       "src": "images/icon-512x512.png",
       "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/logoscreen.png",
+      "sizes": "1024x1024",
       "type": "image/png",
       "purpose": "any maskable"
     }
