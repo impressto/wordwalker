@@ -21,7 +21,7 @@ const PathCanvas = () => {
   const [trees3Image, setTrees3Image] = useState(null); // Very distant trees (between mountains and trees2)
   const [bushesImage, setBushesImage] = useState(null); // Bushes behind path
   const [walkerSpriteSheet, setWalkerSpriteSheet] = useState(null); // Walker sprite sheet
-  const offsetRef = useRef(0);
+  const offsetRef = useRef(-300); // Start scrolled back so fork appears more centered initially
   const animationFrameRef = useRef(null);
   const [isPaused, setIsPaused] = useState(false);
   const [showChoice, setShowChoice] = useState(false);
