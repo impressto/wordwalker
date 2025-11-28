@@ -167,59 +167,61 @@ const PathCanvas = () => {
   useEffect(() => {
     // Get base path for assets (handles subdirectory deployments)
     const basePath = import.meta.env.BASE_URL || '/';
+    // Theme path - can be changed later based on category
+    const themePath = `${basePath}images/themes/default/`;
     
     // Load parallax-layer2 image (grass)
     const parallaxLayer2 = new Image();
-    parallaxLayer2.src = `${basePath}images/parallax-layer2.png`;
+    parallaxLayer2.src = `${themePath}parallax-layer2.png`;
     parallaxLayer2.onload = () => {
       setParallaxLayer2Image(parallaxLayer2);
     };
     
     // Load path image
     const path = new Image();
-    path.src = `${basePath}images/path.png`;
+    path.src = `${themePath}path.png`;
     path.onload = () => {
       setPathImage(path);
     };
     
     // Load path fork image
     const pathFork = new Image();
-    pathFork.src = `${basePath}images/path-fork.png`;
+    pathFork.src = `${themePath}path-fork.png`;
     pathFork.onload = () => {
       setPathForkImage(pathFork);
     };
     
     // Load parallax-layer6 image (mountains)
     const parallaxLayer6 = new Image();
-    parallaxLayer6.src = `${basePath}images/parallax-layer6.png`;
+    parallaxLayer6.src = `${themePath}parallax-layer6.png`;
     parallaxLayer6.onload = () => {
       setParallaxLayer6Image(parallaxLayer6);
     };
     
     // Load parallax-layer1 image (foreground layer)
     const parallaxLayer1 = new Image();
-    parallaxLayer1.src = `${basePath}images/parallax-layer1.png`;
+    parallaxLayer1.src = `${themePath}parallax-layer1.png`;
     parallaxLayer1.onload = () => {
       setParallaxLayer1Image(parallaxLayer1);
     };
     
     // Load parallax-layer4 image (mid-distant layer)
     const parallaxLayer4 = new Image();
-    parallaxLayer4.src = `${basePath}images/parallax-layer4.png`;
+    parallaxLayer4.src = `${themePath}parallax-layer4.png`;
     parallaxLayer4.onload = () => {
       setParallaxLayer4Image(parallaxLayer4);
     };
     
     // Load parallax-layer5 image (far layer)
     const parallaxLayer5 = new Image();
-    parallaxLayer5.src = `${basePath}images/parallax-layer5.png`;
+    parallaxLayer5.src = `${themePath}parallax-layer5.png`;
     parallaxLayer5.onload = () => {
       setParallaxLayer5Image(parallaxLayer5);
     };
     
     // Load parallax-layer3 image (bushes layer)
     const parallaxLayer3 = new Image();
-    parallaxLayer3.src = `${basePath}images/parallax-layer3.png`;
+    parallaxLayer3.src = `${themePath}parallax-layer3.png`;
     parallaxLayer3.onload = () => {
       setParallaxLayer3Image(parallaxLayer3);
     };
