@@ -752,11 +752,12 @@ const PathCanvas = () => {
     setCheckpointsAnswered(0); // Reset checkpoint counter for new category
     setUsedQuestionIds(new Set()); // Reset used questions for new category
     
-    // Position the first checkpoint immediately visible on the right side of screen
-    // offsetRef.current is current scroll position, add canvas width * 0.8 to place it on right
+    // Position the first checkpoint to appear centered when walker stops
+    // Walker stops 120px before checkpoint, walker is at 30% of screen
+    // So checkpoint should be at 30% + 120px = roughly 50% for centered appearance
     const canvas = canvasRef.current;
     if (canvas) {
-      checkpointPositionRef.current = offsetRef.current + canvas.width * 0.85;
+      checkpointPositionRef.current = offsetRef.current + canvas.width * 0.5 + 95; // Center (50%) + 95px offset (35 + 60 adjustment)
     } else {
       // Fallback if canvas not available
       checkpointPositionRef.current = offsetRef.current + 1000;
