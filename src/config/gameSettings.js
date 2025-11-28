@@ -20,6 +20,10 @@ const gameSettings = {
     // Should be >= animationDuration to ensure complete fade-out
     notificationDuration: 4000,
     
+    // Extra pause duration (in milliseconds) when showing streak milestone
+    // Added to base translation pause to give user time to see streak message
+    extraPauseDuration: 1000,
+    
     // Additional pause after notification for smooth transition
     // This is added to notificationDuration when pausing game animation
     pausePadding: 500,

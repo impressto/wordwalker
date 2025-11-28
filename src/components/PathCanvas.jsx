@@ -36,7 +36,6 @@ const PathCanvas = () => {
   const [showTranslation, setShowTranslation] = useState(false); // Show English translation after correct answer
   const [showHint, setShowHint] = useState(false); // Show hint after wrong answer
   const [streak, setStreak] = useState(0); // Track consecutive correct answers
-  const [streakMilestone, setStreakMilestone] = useState(null); // When set, temporarily show streak message
   const [showSearch, setShowSearch] = useState(false); // Show search dialog
   const [isSearchPaused, setIsSearchPaused] = useState(false); // Track if paused by search
   
@@ -107,6 +106,9 @@ const PathCanvas = () => {
   // Plus canvas width to ensure it scrolls into view from the right
   // Using 400 pixels = ~2-3 seconds to scroll into view from right edge
   const forkPositionRef = useRef(400); // When fork appears (in pixels from start)
+
+  // Prevent double-processing of answers
+  const processingAnswerRef = useRef(false);
 
   // Initialize sound manager
   const soundManagerRef = useRef(null);
@@ -793,8 +795,16 @@ const PathCanvas = () => {
   const handleAnswerChoice = (answer) => {
     if (!currentQuestion) return;
     
+    // Prevent double-processing using ref
+    if (processingAnswerRef.current) {
+      return;
+    }
+    
+    processingAnswerRef.current = true;
+    
     // Skip if this answer was already tried and was incorrect
     if (incorrectAnswers.includes(answer)) {
+      processingAnswerRef.current = false;
       return;
     }
     
@@ -822,21 +832,10 @@ const PathCanvas = () => {
           // Award bonus points
           setTotalPoints(prevPoints => prevPoints + gameSettings.streak.bonusPoints);
           
-          // Temporarily show streak message in the dialog
-          setStreakMilestone({
-            streak: newStreak,
-            bonusPoints: gameSettings.streak.bonusPoints
-          });
-          
           // Play streak bonus sound
           if (soundManagerRef.current) {
             soundManagerRef.current.playStreak();
           }
-          
-          // Clear streak message after duration, then proceed with normal flow
-          setTimeout(() => {
-            setStreakMilestone(null);
-          }, gameSettings.streak.notificationDuration);
         }
       } else {
         // Correct answer on retry - no points, but play a softer sound
@@ -850,12 +849,19 @@ const PathCanvas = () => {
       walkerFrameRef.current = 0; // Start victory animation from first frame
       victoryAnimationCounterRef.current = 0;
       
-      // Determine pause duration - normal pause for translation
-      const pauseDuration = 2000;
+      // Determine pause duration - add extra time if showing streak milestone
+      const baseTranslationPause = 2000;
+      const streakBonusPause = (newStreak > 0 && newStreak % gameSettings.streak.bonusThreshold === 0) 
+        ? gameSettings.streak.extraPauseDuration 
+        : 0;
+      const pauseDuration = baseTranslationPause + streakBonusPause;
       
       // Pause to show the translation, then continue
       setTimeout(() => {
         setShowTranslation(false);
+        
+        // Reset processing flag to allow next answer
+        processingAnswerRef.current = false;
         
         // Increment checkpoint counter
         const newCheckpointsAnswered = checkpointsAnswered + 1;
@@ -909,6 +915,9 @@ const PathCanvas = () => {
     } else {
       // Wrong answer - track it, play wrong sound, reset streak on first attempt, show hint
       setIncorrectAnswers(prev => [...prev, answer]);
+      
+      // Reset processing flag to allow retry
+      processingAnswerRef.current = false;
       
       if (soundManagerRef.current) {
         soundManagerRef.current.playWrong();
@@ -1072,7 +1081,7 @@ const PathCanvas = () => {
         <TranslationOverlay 
           currentQuestion={currentQuestion} 
           firstAttempt={firstAttempt}
-          streakMilestone={streakMilestone}
+          streak={streak}
         />
       )}
 

@@ -5,8 +5,9 @@
  */
 
 import { translations } from '../config/translations';
+import gameSettings from '../config/gameSettings';
 
-const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streakMilestone = null }) => {
+const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0 }) => {
   if (!currentQuestion) return null;
 
   // Get the English translation
@@ -15,6 +16,9 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streakMilest
   
   // Check if Spanish and English are the same (case-insensitive)
   const wordsAreSame = spanishWord.toLowerCase() === englishTranslation.toLowerCase();
+  
+  // Check if current streak is a milestone
+  const isStreakMilestone = streak > 0 && streak % gameSettings.streak.bonusThreshold === 0;
 
   return (
     <div id="translation-overlay" style={{
@@ -63,46 +67,124 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streakMilest
       )}
       
       {/* Show streak bonus message if milestone reached */}
-      {streakMilestone && (
-        <div style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          gap: '8px',
-          marginTop: '15px',
-          padding: '15px 25px',
-          backgroundColor: 'rgba(255, 152, 0, 0.95)',
-          borderRadius: '12px',
-          animation: 'streakPulse 2.5s ease-in-out',
-        }}>
+      {isStreakMilestone && (
+        <div 
+          key={`streak-${streak}`}
+          style={{
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: '25px',
+            marginTop: '20px',
+            padding: '25px 50px',
+            backgroundColor: 'rgba(255, 152, 0, 0.95)',
+            borderRadius: '15px',
+            animation: 'streakPulse 2.5s ease-in-out',
+            position: 'relative',
+          }}>
           <style>
             {`
               @keyframes streakPulse {
-                0%, 100% {
+                0% {
                   opacity: 0;
                   transform: scale(0.9);
                 }
-                10%, 90% {
+                20%, 100% {
                   opacity: 1;
                   transform: scale(1);
                 }
               }
+              @keyframes diamondGlow {
+                0%, 100% {
+                  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
+                }
+                50% {
+                  filter: drop-shadow(0 0 25px rgba(255, 255, 255, 1));
+                }
+              }
             `}
           </style>
-          <div style={{ fontSize: '40px' }}>🔥</div>
+          
+          {/* Diamond SVG at the left */}
+          <svg 
+            width="80" 
+            height="80" 
+            viewBox="0 0 100 100"
+            style={{
+              animation: 'diamondGlow 2s ease-in-out infinite',
+              flexShrink: 0,
+            }}
+          >
+            {/* Determine diamond color based on streak level */}
+            <defs>
+              <radialGradient id="diamondGradient">
+                <stop offset="0%" style={{
+                  stopColor: streak > 20 ? '#FFFFFF' : 
+                            streak > 10 ? '#FFD700' : 
+                            streak > 5 ? '#00FF7F' : '#87CEEB',
+                  stopOpacity: 1
+                }} />
+                <stop offset="100%" style={{
+                  stopColor: streak > 20 ? '#E0E0E0' : 
+                            streak > 10 ? '#FFA500' : 
+                            streak > 5 ? '#00C853' : '#4682B4',
+                  stopOpacity: 0.8
+                }} />
+              </radialGradient>
+            </defs>
+            
+            {/* Outer glow layers */}
+            <polygon 
+              points="50,10 90,50 50,90 10,50" 
+              fill="url(#diamondGradient)"
+              opacity="0.3"
+              transform="scale(1.3) translate(-7.5, -7.5)"
+            />
+            <polygon 
+              points="50,10 90,50 50,90 10,50" 
+              fill="url(#diamondGradient)"
+              opacity="0.4"
+              transform="scale(1.15) translate(-3.75, -3.75)"
+            />
+            
+            {/* Main diamond */}
+            <polygon 
+              points="50,10 90,50 50,90 10,50" 
+              fill="url(#diamondGradient)"
+              opacity="0.9"
+            />
+            
+            {/* Inner highlight for sparkle */}
+            <polygon 
+              points="50,30 65,50 50,70 35,50" 
+              fill="#FFFFFF"
+              opacity="0.6"
+            />
+          </svg>
+          
+          {/* Text content in a column */}
           <div style={{
-            fontSize: '24px',
-            fontWeight: 'bold',
-            color: 'white',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            gap: '8px',
           }}>
-            {streakMilestone.streak} STREAK!
-          </div>
-          <div style={{
-            fontSize: '18px',
-            color: 'white',
-            fontWeight: 'bold',
-          }}>
-            +{streakMilestone.bonusPoints} BONUS!
+            <div style={{
+              fontSize: '32px',
+              fontWeight: 'bold',
+              color: 'white',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
+            }}>
+              {streak} STREAK! 🔥
+            </div>
+            <div style={{
+              fontSize: '24px',
+              color: 'white',
+              fontWeight: 'bold',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
+            }}>
+              +{gameSettings.streak.bonusPoints} BONUS!
+            </div>
           </div>
         </div>
       )}
