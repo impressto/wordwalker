@@ -7,7 +7,6 @@ import ScoreDisplay from './ScoreDisplay';
 import PathChoiceDialog from './PathChoiceDialog';
 import QuestionDialog from './QuestionDialog';
 import TranslationOverlay from './TranslationOverlay';
-import StreakBonusNotification from './StreakBonusNotification';
 import SearchDialog from './SearchDialog';
 import InstallPrompt from './InstallPrompt';
 
@@ -37,7 +36,7 @@ const PathCanvas = () => {
   const [showTranslation, setShowTranslation] = useState(false); // Show English translation after correct answer
   const [showHint, setShowHint] = useState(false); // Show hint after wrong answer
   const [streak, setStreak] = useState(0); // Track consecutive correct answers
-  const [showStreakBonus, setShowStreakBonus] = useState(false); // Show streak bonus notification
+  const [streakMilestone, setStreakMilestone] = useState(null); // When set, temporarily show streak message
   const [showSearch, setShowSearch] = useState(false); // Show search dialog
   const [isSearchPaused, setIsSearchPaused] = useState(false); // Track if paused by search
   
@@ -806,7 +805,6 @@ const PathCanvas = () => {
       
       // Increment streak for correct answer on first attempt
       let newStreak = streak;
-      let streakBonus = 0;
       if (firstAttempt) {
         // Play correct sound only on first attempt
         if (soundManagerRef.current) {
@@ -821,18 +819,23 @@ const PathCanvas = () => {
         
         // Award streak bonus every N correct answers in a row (configurable)
         if (newStreak > 0 && newStreak % gameSettings.streak.bonusThreshold === 0) {
-          streakBonus = gameSettings.streak.bonusPoints;
-          setTotalPoints(prevPoints => prevPoints + streakBonus);
-          setShowStreakBonus(true);
+          // Award bonus points
+          setTotalPoints(prevPoints => prevPoints + gameSettings.streak.bonusPoints);
+          
+          // Temporarily show streak message in the dialog
+          setStreakMilestone({
+            streak: newStreak,
+            bonusPoints: gameSettings.streak.bonusPoints
+          });
           
           // Play streak bonus sound
           if (soundManagerRef.current) {
             soundManagerRef.current.playStreak();
           }
           
-          // Hide streak bonus after configured duration
+          // Clear streak message after duration, then proceed with normal flow
           setTimeout(() => {
-            setShowStreakBonus(false);
+            setStreakMilestone(null);
           }, gameSettings.streak.notificationDuration);
         }
       } else {
@@ -847,10 +850,10 @@ const PathCanvas = () => {
       walkerFrameRef.current = 0; // Start victory animation from first frame
       victoryAnimationCounterRef.current = 0;
       
-      // Determine pause duration - longer if streak bonus is showing
-      const pauseDuration = streakBonus > 0 ? 3000 : 2000; // 3 seconds if streak bonus, 2 seconds otherwise
+      // Determine pause duration - normal pause for translation
+      const pauseDuration = 2000;
       
-      // Pause to show the translation (and streak bonus if applicable), then continue
+      // Pause to show the translation, then continue
       setTimeout(() => {
         setShowTranslation(false);
         
@@ -1069,12 +1072,8 @@ const PathCanvas = () => {
         <TranslationOverlay 
           currentQuestion={currentQuestion} 
           firstAttempt={firstAttempt}
+          streakMilestone={streakMilestone}
         />
-      )}
-
-      {/* Streak Bonus Notification Component */}
-      {showStreakBonus && (
-        <StreakBonusNotification streak={streak} />
       )}
 
       {/* Search Dialog Component */}

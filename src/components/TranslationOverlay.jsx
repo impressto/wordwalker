@@ -1,11 +1,12 @@
 /**
  * TranslationOverlay Component
  * Shows the English translation and points earned after a correct answer
+ * Also displays streak bonus when a milestone is reached
  */
 
 import { translations } from '../config/translations';
 
-const TranslationOverlay = ({ currentQuestion, firstAttempt = true }) => {
+const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streakMilestone = null }) => {
   if (!currentQuestion) return null;
 
   // Get the English translation
@@ -58,6 +59,51 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true }) => {
           fontStyle: 'italic',
         }}>
           +{currentQuestion.points} points!
+        </div>
+      )}
+      
+      {/* Show streak bonus message if milestone reached */}
+      {streakMilestone && (
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '8px',
+          marginTop: '15px',
+          padding: '15px 25px',
+          backgroundColor: 'rgba(255, 152, 0, 0.95)',
+          borderRadius: '12px',
+          animation: 'streakPulse 2.5s ease-in-out',
+        }}>
+          <style>
+            {`
+              @keyframes streakPulse {
+                0%, 100% {
+                  opacity: 0;
+                  transform: scale(0.9);
+                }
+                10%, 90% {
+                  opacity: 1;
+                  transform: scale(1);
+                }
+              }
+            `}
+          </style>
+          <div style={{ fontSize: '40px' }}>🔥</div>
+          <div style={{
+            fontSize: '24px',
+            fontWeight: 'bold',
+            color: 'white',
+          }}>
+            {streakMilestone.streak} STREAK!
+          </div>
+          <div style={{
+            fontSize: '18px',
+            color: 'white',
+            fontWeight: 'bold',
+          }}>
+            +{streakMilestone.bonusPoints} BONUS!
+          </div>
         </div>
       )}
     </div>
