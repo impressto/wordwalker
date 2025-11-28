@@ -5,7 +5,7 @@
  */
 
 import { translations } from '../config/translations';
-import gameSettings from '../config/gameSettings';
+import gameSettings, { getStreakColor, getStreakGradientColor } from '../config/gameSettings';
 
 const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0 }) => {
   if (!currentQuestion) return null;
@@ -119,15 +119,11 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0 }
             <defs>
               <radialGradient id="diamondGradient">
                 <stop offset="0%" style={{
-                  stopColor: streak > 20 ? '#FFFFFF' : 
-                            streak > 10 ? '#FFD700' : 
-                            streak > 5 ? '#00FF7F' : '#87CEEB',
+                  stopColor: getStreakColor(streak),
                   stopOpacity: 1
                 }} />
                 <stop offset="100%" style={{
-                  stopColor: streak > 20 ? '#E0E0E0' : 
-                            streak > 10 ? '#FFA500' : 
-                            streak > 5 ? '#00C853' : '#4682B4',
+                  stopColor: getStreakGradientColor(streak),
                   stopOpacity: 0.8
                 }} />
               </radialGradient>

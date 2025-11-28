@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { getRandomQuestionByCategory, getRandomUnusedQuestionByCategory, shuffleOptions, getAllCategoryIds, getCategoryById } from '../config/questions';
 import { translations } from '../config/translations';
-import gameSettings from '../config/gameSettings';
+import gameSettings, { getStreakColor } from '../config/gameSettings';
 import SoundManager from '../soundManager';
 import ScoreDisplay from './ScoreDisplay';
 import PathChoiceDialog from './PathChoiceDialog';
@@ -245,17 +245,8 @@ const PathCanvas = () => {
     
     // Helper function to draw the streak diamond with glow effect
     const drawStreakDiamond = (x, y, size, glowIntensity, streak) => {
-      // Determine diamond color based on streak level
-      let diamondColor;
-      if (streak > 20) {
-        diamondColor = '#FFFFFF'; // White
-      } else if (streak > 10) {
-        diamondColor = '#FFD700'; // Yellow/Gold
-      } else if (streak > 5) {
-        diamondColor = '#00FF7F'; // Green
-      } else {
-        diamondColor = '#87CEEB'; // Light blue
-      }
+      // Determine diamond color based on streak level using game settings
+      const diamondColor = getStreakColor(streak);
       
       ctx.save();
       

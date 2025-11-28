@@ -27,6 +27,35 @@ const gameSettings = {
     // Additional pause after notification for smooth transition
     // This is added to notificationDuration when pausing game animation
     pausePadding: 500,
+    
+    // Streak color thresholds and colors for the diamond that follows the walker
+    // Each tier defines the minimum streak required and the color scheme
+    colorTiers: [
+      {
+        minStreak: 0,
+        name: 'Light Blue',
+        primaryColor: '#87CEEB',    // Light blue
+        gradientColor: '#4682B4',   // Steel blue
+      },
+      {
+        minStreak: 5,
+        name: 'Green',
+        primaryColor: '#00FF7F',    // Spring green
+        gradientColor: '#00C853',   // Dark green
+      },
+      {
+        minStreak: 10,
+        name: 'Gold',
+        primaryColor: '#FFD700',    // Gold
+        gradientColor: '#FFA500',   // Orange
+      },
+      {
+        minStreak: 20,
+        name: 'White',
+        primaryColor: '#FFFFFF',    // White
+        gradientColor: '#E0E0E0',   // Light gray
+      },
+    ],
   },
   
   // Question Settings
@@ -36,6 +65,44 @@ const gameSettings = {
   },
   
   // Other game settings can be added here as needed
+};
+
+/**
+ * Get the color tier for a given streak count
+ * @param {number} streak - Current streak count
+ * @returns {object} Color tier object with primaryColor and gradientColor
+ */
+export const getStreakColorTier = (streak) => {
+  const tiers = gameSettings.streak.colorTiers;
+  
+  // Find the highest tier that the streak qualifies for
+  // Iterate in reverse to get the highest matching tier
+  for (let i = tiers.length - 1; i >= 0; i--) {
+    if (streak >= tiers[i].minStreak) {
+      return tiers[i];
+    }
+  }
+  
+  // Fallback to the first tier (should never happen if tier 0 exists)
+  return tiers[0];
+};
+
+/**
+ * Get the primary diamond color for a given streak
+ * @param {number} streak - Current streak count
+ * @returns {string} Hex color code
+ */
+export const getStreakColor = (streak) => {
+  return getStreakColorTier(streak).primaryColor;
+};
+
+/**
+ * Get the gradient color for a given streak
+ * @param {number} streak - Current streak count
+ * @returns {string} Hex color code
+ */
+export const getStreakGradientColor = (streak) => {
+  return getStreakColorTier(streak).gradientColor;
 };
 
 export default gameSettings;
