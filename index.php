@@ -102,6 +102,13 @@ $version = $packageJson['version'] ?? '1.0.0';
             background: rgba(76, 175, 80, 0.2);
             transform: scale(1.05);
         }
+        
+        /* Hide Arcade link on mobile */
+        @media screen and (max-width: 768px) {
+            .back-to-arcade {
+                display: none;
+            }
+        }
     </style>
   </head>
   <body>

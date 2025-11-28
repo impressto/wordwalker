@@ -489,27 +489,6 @@ const PathCanvas = () => {
         }
       }
       
-      // Draw foreground trees (trees1) with parallax - in front of grass
-      if (trees1Image) {
-        const trees1Width = trees1Image.width;
-        const trees1Height = trees1Image.height;
-        
-        // Parallax effect - foreground trees move faster at 1.5x speed
-        const trees1ScrollOffset = (offsetRef.current * 1.5) % trees1Width;
-        
-        // Calculate how many tiles needed
-        const trees1TilesNeeded = Math.ceil(width / trees1Width) + 2;
-        
-        // Position foreground trees at bottom of screen
-        const trees1Y = height - trees1Height;
-        
-        // Draw trees1 tiles horizontally
-        for (let i = -1; i < trees1TilesNeeded; i++) {
-          const x = i * trees1Width - trees1ScrollOffset;
-          ctx.drawImage(trees1Image, x, trees1Y, trees1Width, trees1Height);
-        }
-      }
-      
       // Draw learning checkpoint (emoji on path) if path has been selected and not answered
       if (selectedPath && !questionAnswered) {
         const checkpointScreenX = checkpointPositionRef.current - scrollPos;
@@ -633,6 +612,26 @@ const PathCanvas = () => {
         );
       }
       // Note: No fallback emoji - wait for sprite sheet to load for cleaner appearance
+      
+      // Draw foreground trees (trees1) with parallax - in front of everything
+      if (trees1Image) {
+        const trees1Width = trees1Image.width;
+        const trees1Height = trees1Image.height;
+        const trees1ScrollOffset = (offsetRef.current * 1.5) % trees1Width;
+        const trees1TilesNeeded = Math.ceil(width / trees1Width) + 2;
+        const trees1Y = height - trees1Height;
+        
+        for (let i = -1; i < trees1TilesNeeded; i++) {
+          const x = i * trees1Width - trees1ScrollOffset;
+          ctx.drawImage(
+            trees1Image,
+            x,
+            trees1Y,
+            trees1Width,
+            trees1Height
+          );
+        }
+      }
     };
 
     const animate = () => {
