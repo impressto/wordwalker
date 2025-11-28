@@ -1721,5 +1721,33 @@ export const translations = {
   'es posible que': 'it\'s possible that',
   'prefiero que': 'I prefer that',
   'te recomiendo que': 'I recommend that',
+
+  // Accommodation phrases
+  '¿puedo sentarme aquí?': 'can I sit here?',
+  'puedo sentarme': 'I can sit',
+  'sentarme': 'to sit (myself)',
+  'aquí': 'here',
+  '¿cuándo abren el restaurante?': 'when do you open the restaurant?',
+  'abren': 'they open/you all open',
+  'abre': 'opens',
+  'necesito hacer el checkout': 'I need to checkout',
+  'hacer el checkout': 'to do checkout',
+  'checkout': 'checkout',
+  '¿puede llamarme un taxi?': 'can you call me a taxi?',
+  'puede llamarme': 'can you call me',
+  'llamarme': 'to call me',
+  'necesitamos toallas': 'we need towels',
+  'toallas': 'towels',
+  'toalla': 'towel',
+
+  // Food/Utensil phrases
+  '¿me puede dar un tenedor?': 'can I have a fork?',
+  'me puede dar': 'can you give me',
+  'tenedor': 'fork',
+  '¿me puede dar un cuchillo?': 'can I have a knife?',
+  'cuchillo': 'knife',
+  '¿me puede dar una cuchara?': 'can I have a spoon?',
+  'cuchara': 'spoon',
+  'cucharita': 'teaspoon',
 };
 
