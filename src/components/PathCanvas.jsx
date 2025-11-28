@@ -555,8 +555,10 @@ const PathCanvas = () => {
       
       if (walkerSpriteSheet) {
         // Update animation frame
-        // Allow animation to continue during victory animation even when paused
-        if (!isPaused || isVictoryAnimation) {
+        // Allow animation to continue during victory animation or when actually moving
+        // Stop animating when velocity is very low (nearly stopped)
+        const isMoving = velocityRef.current > 0.5;
+        if ((isMoving && !isPaused) || isVictoryAnimation) {
           walkerFrameCounterRef.current++;
           
           // Change frame every 5 loops for faster walking animation
@@ -579,6 +581,9 @@ const PathCanvas = () => {
               walkerFrameRef.current = (walkerFrameRef.current + 1) % spriteConfig.totalFrames;
             }
           }
+        } else {
+          // When stopped, reset to first frame of walking animation for idle pose
+          walkerFrameRef.current = 0;
         }
         
         // Calculate which row to use (walking or victory)
@@ -651,13 +656,19 @@ const PathCanvas = () => {
         // Stop when fork's LEFT edge reaches the screen, ensuring the right edge never comes into view
         const shouldStopForChoice = forkScreenX <= canvas.width && forkScreenX > 0 && !selectedPath;
         
+        // Check if checkpoint is approaching (to start decelerating early)
+        const personX = canvas.width * 0.3;
+        const checkpointScreenX = checkpointPositionRef.current - scrollPos;
+        const distanceToCheckpoint = checkpointScreenX - personX;
+        const shouldStopForCheckpoint = selectedPath && !questionAnswered && distanceToCheckpoint <= 120 && distanceToCheckpoint > 0;
+        
         // Target speed and inertia parameters
-        const targetSpeed = 3; // Maximum scroll speed
+        const targetSpeed = 4; // Maximum scroll speed (increased from 3 for faster gameplay)
         const acceleration = 0.15; // How quickly to speed up
         const deceleration = 0.2; // How quickly to slow down
         
         // Determine if walker should be moving
-        const shouldMove = !isPaused && (!shouldStopForChoice || selectedPath);
+        const shouldMove = !isPaused && (!shouldStopForChoice || selectedPath) && !shouldStopForCheckpoint;
         
         // Apply inertia - gradually change velocity toward target
         if (shouldMove) {
@@ -676,7 +687,7 @@ const PathCanvas = () => {
         offsetRef.current += velocityRef.current;
       } else {
         // Fallback if canvas not available
-        const targetSpeed = 3;
+        const targetSpeed = 4;
         const acceleration = 0.15;
         const deceleration = 0.2;
         
