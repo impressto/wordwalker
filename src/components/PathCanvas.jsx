@@ -498,7 +498,7 @@ const PathCanvas = () => {
         
         // Draw checkpoint emoji if it's visible on screen
         if (checkpointScreenX < width && checkpointScreenX > 0) {
-          const checkpointY = pathTop + (pathBottom - pathTop) * 0.5 - 25; // Positioned on the path, moved up 10 pixels
+          const checkpointY = pathTop + (pathBottom - pathTop) * 0.5 - 30; // Positioned on the path, moved up 15 pixels
           const checkpointSize = 60;
           
           // Initialize fade-in start time if not set
@@ -828,10 +828,10 @@ const PathCanvas = () => {
             soundManagerRef.current.playStreak();
           }
           
-          // Hide streak bonus after 2.5 seconds (accounts for fade in/out)
+          // Hide streak bonus after 4 seconds (longer to be readable)
           setTimeout(() => {
             setShowStreakBonus(false);
-          }, 2500);
+          }, 4000);
         }
       } else {
         // Correct answer on retry - no points, but play a softer sound
@@ -845,7 +845,10 @@ const PathCanvas = () => {
       walkerFrameRef.current = 0; // Start victory animation from first frame
       victoryAnimationCounterRef.current = 0;
       
-      // Pause for 2 seconds to show the translation, then continue
+      // Determine pause duration - longer if streak bonus is showing
+      const pauseDuration = streakBonus > 0 ? 3000 : 2000; // 3 seconds if streak bonus, 2 seconds otherwise
+      
+      // Pause to show the translation (and streak bonus if applicable), then continue
       setTimeout(() => {
         setShowTranslation(false);
         
@@ -897,7 +900,7 @@ const PathCanvas = () => {
           const category = forkCategories[selectedPath];
           loadNewQuestion(category);
         }
-      }, 2000); // 2 second pause to show translation
+      }, pauseDuration); // Dynamic pause: 3s with streak bonus, 2s otherwise
     } else {
       // Wrong answer - track it, play wrong sound, reset streak on first attempt, show hint
       setIncorrectAnswers(prev => [...prev, answer]);

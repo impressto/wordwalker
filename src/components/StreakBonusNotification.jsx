@@ -18,7 +18,7 @@ const StreakBonusNotification = ({ streak }) => {
       padding: '30px 50px',
       borderRadius: '15px',
       boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
-      zIndex: 12,
+      zIndex: 50,
       animation: 'streakFadeInOut 2.5s ease-in-out',
     }}>
       <style>
