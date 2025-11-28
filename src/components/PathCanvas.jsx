@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { getRandomQuestionByCategory, getRandomUnusedQuestionByCategory, shuffleOptions, getAllCategoryIds, getCategoryById } from '../config/questions';
 import { translations } from '../config/answer-translations';
+import { questionTranslations } from '../config/question-translations';
 import gameSettings, { getStreakColor } from '../config/gameSettings';
 import SoundManager from '../soundManager';
 import ScoreDisplay from './ScoreDisplay';
@@ -35,6 +36,7 @@ const PathCanvas = () => {
   const [incorrectAnswers, setIncorrectAnswers] = useState([]); // Track incorrect answer attempts
   const [showTranslation, setShowTranslation] = useState(false); // Show English translation after correct answer
   const [showHint, setShowHint] = useState(false); // Show hint after wrong answer
+  const [hintUsed, setHintUsed] = useState(false); // Track if hint was used for current question
   const [streak, setStreak] = useState(0); // Track consecutive correct answers
   const [showSearch, setShowSearch] = useState(false); // Show search dialog
   const [isSearchPaused, setIsSearchPaused] = useState(false); // Track if paused by search
@@ -728,6 +730,7 @@ const PathCanvas = () => {
       setUsedQuestionIds(prev => new Set([...prev, question.id]));
       // Reset hint when loading new question
       setShowHint(false);
+      setHintUsed(false);
     }
   };
 
@@ -783,6 +786,19 @@ const PathCanvas = () => {
     }
   };
 
+  const handleHintClick = () => {
+    if (!currentQuestion || hintUsed) return;
+    
+    // Mark hint as used
+    setHintUsed(true);
+    setShowHint(true);
+    
+    // Play a sound for hint reveal
+    if (soundManagerRef.current) {
+      soundManagerRef.current.playChoice(); // Reuse choice sound or add a new hint sound
+    }
+  };
+
   const handleAnswerChoice = (answer) => {
     if (!currentQuestion) return;
     
@@ -807,6 +823,14 @@ const PathCanvas = () => {
       // Increment streak for correct answer on first attempt
       let newStreak = streak;
       if (firstAttempt) {
+        // Calculate points to award based on whether hint was used
+        let pointsToAward = currentQuestion.points;
+        
+        if (hintUsed) {
+          // If hint was used, award only half points
+          pointsToAward = Math.floor(currentQuestion.points / 2);
+        }
+        
         // Play correct sound only on first attempt
         if (soundManagerRef.current) {
           soundManagerRef.current.playCorrect();
@@ -815,8 +839,8 @@ const PathCanvas = () => {
         newStreak = streak + 1;
         setStreak(newStreak);
         
-        // Award base points only on first attempt
-        setTotalPoints(prevPoints => prevPoints + currentQuestion.points);
+        // Award points (full or half depending on hint usage)
+        setTotalPoints(prevPoints => prevPoints + pointsToAward);
         
         // Award streak bonus every N correct answers in a row (configurable)
         if (newStreak > 0 && newStreak % gameSettings.streak.bonusThreshold === 0) {
@@ -863,6 +887,7 @@ const PathCanvas = () => {
         setIsPaused(false);
         setFirstAttempt(true); // Reset for next question
         setIncorrectAnswers([]); // Reset incorrect answers for next question
+        setHintUsed(false); // Reset hint usage for next question
         
         // Check if we've completed all checkpoints for this category
         if (newCheckpointsAnswered >= checkpointsPerCategory) {
@@ -904,7 +929,7 @@ const PathCanvas = () => {
         }
       }, pauseDuration); // Dynamic pause: 3s with streak bonus, 2s otherwise
     } else {
-      // Wrong answer - track it, play wrong sound, reset streak on first attempt, show hint
+      // Wrong answer - track it, play wrong sound, reset streak on first attempt
       setIncorrectAnswers(prev => [...prev, answer]);
       
       // Reset processing flag to allow retry
@@ -916,9 +941,14 @@ const PathCanvas = () => {
       
       if (firstAttempt) {
         setStreak(0); // Reset streak on first wrong answer
+        
+        // If hint was used and this is the first wrong answer, apply point penalty
+        if (hintUsed) {
+          const penalty = Math.floor(currentQuestion.points / 2);
+          setTotalPoints(prevPoints => Math.max(0, prevPoints - penalty)); // Can't go below 0
+        }
       }
       setFirstAttempt(false);
-      setShowHint(true); // Show hint after wrong answer
     }
   };
 
@@ -1061,9 +1091,12 @@ const PathCanvas = () => {
           currentQuestion={currentQuestion}
           showTranslation={showTranslation}
           showHint={showHint}
+          hintUsed={hintUsed}
           firstAttempt={firstAttempt}
           incorrectAnswers={incorrectAnswers}
           onAnswerChoice={handleAnswerChoice}
+          onHintClick={handleHintClick}
+          questionTranslation={questionTranslations[currentQuestion.question]}
         />
       )}
 

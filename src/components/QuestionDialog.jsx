@@ -3,11 +3,29 @@
  * Displays the question modal with emoji, question text, and answer options
  */
 
-const QuestionDialog = ({ currentQuestion, showTranslation, showHint, firstAttempt, incorrectAnswers = [], onAnswerChoice }) => {
+const QuestionDialog = ({ 
+  currentQuestion, 
+  showTranslation, 
+  showHint, 
+  hintUsed,
+  firstAttempt, 
+  incorrectAnswers = [], 
+  onAnswerChoice,
+  onHintClick,
+  questionTranslation
+}) => {
   if (!currentQuestion) return null;
 
   // Get the hint from the question object, or fallback to a generic hint
   const hint = currentQuestion.hint || 'Think about the question carefully';
+  
+  // Calculate potential points (accounting for hint usage)
+  const potentialPoints = hintUsed 
+    ? Math.floor(currentQuestion.points / 2) 
+    : currentQuestion.points;
+  
+  // Calculate penalty for displaying on hint button (negative value)
+  const penalty = Math.floor(currentQuestion.points / 2);
 
   return (
     <div id="question-dialog" style={{
@@ -39,9 +57,74 @@ const QuestionDialog = ({ currentQuestion, showTranslation, showHint, firstAttem
         fontSize: '24px',
         fontWeight: 'bold',
         marginBottom: '10px',
+        textAlign: 'center',
       }}>
         {currentQuestion.question}
       </div>
+      
+      {/* Hint Button and English Translation */}
+      {firstAttempt && !showHint && (
+        <button
+          onClick={onHintClick}
+          disabled={hintUsed}
+          style={{
+            padding: '8px 16px',
+            fontSize: '16px',
+            fontWeight: 'bold',
+            backgroundColor: hintUsed ? '#cccccc' : '#FF9800',
+            color: 'white',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: hintUsed ? 'not-allowed' : 'pointer',
+            boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
+            transition: 'all 0.2s',
+            opacity: hintUsed ? 0.5 : 1,
+          }}
+          onMouseEnter={(e) => {
+            if (!hintUsed) {
+              e.target.style.transform = 'scale(1.05)';
+              e.target.style.backgroundColor = '#F57C00';
+            }
+          }}
+          onMouseLeave={(e) => {
+            if (!hintUsed) {
+              e.target.style.transform = 'scale(1)';
+              e.target.style.backgroundColor = '#FF9800';
+            }
+          }}
+        >
+          💡 Show English (-{penalty} points)
+        </button>
+      )}
+      
+      {/* Display English translation when hint is shown */}
+      {showHint && questionTranslation && (
+        <div style={{
+          backgroundColor: '#FFF3E0',
+          padding: '12px 20px',
+          borderRadius: '8px',
+          border: '2px solid #FF9800',
+          animation: 'fadeInScale 0.4s ease-out',
+        }}>
+          <div style={{
+            color: '#E65100',
+            fontSize: '18px',
+            fontWeight: 'bold',
+            textAlign: 'center',
+          }}>
+            🇬🇧 {questionTranslation}
+          </div>
+          <div style={{
+            color: '#d32f2f',
+            fontSize: '14px',
+            marginTop: '6px',
+            textAlign: 'center',
+            fontWeight: 'bold',
+          }}>
+            Points reduced to {potentialPoints}
+          </div>
+        </div>
+      )}
       
       <div id="question-options" style={{
         display: 'flex',
@@ -110,20 +193,6 @@ const QuestionDialog = ({ currentQuestion, showTranslation, showHint, firstAttem
           }}>
             Try again! (No points for incorrect answers)
           </div>
-          {showHint && (
-            <div id="question-hint" style={{
-              color: '#1976D2',
-              fontSize: '18px',
-              fontWeight: 'bold',
-              backgroundColor: '#E3F2FD',
-              padding: '8px 16px',
-              borderRadius: '8px',
-              border: '2px solid #2196F3',
-              animation: 'fadeInScale 0.4s ease-out',
-            }}>
-              💡 Hint: "{hint}"
-            </div>
-          )}
         </div>
       )}
     </div>
