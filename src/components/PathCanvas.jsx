@@ -521,9 +521,9 @@ const PathCanvas = () => {
         }
         
         // Check if checkpoint is just to the right of the person - trigger question dialog
-        // Show question when checkpoint is within ~100px to the right of person
+        // Show question when checkpoint is within ~120px to the right of person (matches stopping distance)
         const distanceFromPerson = checkpointScreenX - personX;
-        if (distanceFromPerson <= 100 && distanceFromPerson > 0 && !showQuestion && currentQuestion) {
+        if (distanceFromPerson <= 120 && distanceFromPerson > -50 && !showQuestion && currentQuestion) {
           setIsPaused(true);
           setShowQuestion(true);
           
