@@ -845,11 +845,6 @@ const PathCanvas = () => {
       walkerFrameRef.current = 0; // Start victory animation from first frame
       victoryAnimationCounterRef.current = 0;
       
-      // Play victory sound
-      if (soundManagerRef.current) {
-        soundManagerRef.current.playVictory();
-      }
-      
       // Pause for 2 seconds to show the translation, then continue
       setTimeout(() => {
         setShowTranslation(false);

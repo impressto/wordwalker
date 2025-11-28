@@ -212,13 +212,6 @@ class SoundManager {
   }
 
   /**
-   * Play the victory animation sound (disabled)
-   */
-  playVictory() {
-    // Victory sound disabled
-  }
-
-  /**
    * Play the path choice sound
    */
   playChoice() {
@@ -227,3 +220,4 @@ class SoundManager {
 }
 
 export default SoundManager;
+
