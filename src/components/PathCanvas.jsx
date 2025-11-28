@@ -443,7 +443,7 @@ const PathCanvas = () => {
       // Draw the path using tiled images (on top of grass)
       
       // Person position (fixed on screen)
-      const personX = width * 0.3;
+      const personX = width * 0.4;
       
       // Calculate current scroll position and fork position
       const scrollPos = offsetRef.current;
@@ -661,7 +661,7 @@ const PathCanvas = () => {
         const shouldStopForChoice = forkScreenX <= canvas.width && forkScreenX > 0 && !selectedPath;
         
         // Check if checkpoint is approaching (to start decelerating early)
-        const personX = canvas.width * 0.3;
+        const personX = canvas.width * 0.4;
         const checkpointScreenX = checkpointPositionRef.current - scrollPos;
         const distanceToCheckpoint = checkpointScreenX - personX;
         const shouldStopForCheckpoint = selectedPath && !questionAnswered && distanceToCheckpoint <= 120 && distanceToCheckpoint > 0;
