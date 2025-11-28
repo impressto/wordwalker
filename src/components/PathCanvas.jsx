@@ -22,6 +22,7 @@ const PathCanvas = () => {
   const [parallaxLayer3Image, setParallaxLayer3Image] = useState(null); // Bushes layer
   const [walkerSpriteSheet, setWalkerSpriteSheet] = useState(null); // Walker sprite sheet
   const offsetRef = useRef(-300); // Start scrolled back so fork appears more centered initially
+  const velocityRef = useRef(0); // Current scroll velocity for smooth acceleration/deceleration
   const animationFrameRef = useRef(null);
   const [isPaused, setIsPaused] = useState(false);
   const [showChoice, setShowChoice] = useState(false);
@@ -650,16 +651,46 @@ const PathCanvas = () => {
         // Stop when fork's LEFT edge reaches the screen, ensuring the right edge never comes into view
         const shouldStopForChoice = forkScreenX <= canvas.width && forkScreenX > 0 && !selectedPath;
         
-        // Update scroll offset (move right to left) only if not paused
-        // Stop when choice dialog should show OR if path has been selected (then continue normally)
-        if (!isPaused && (!shouldStopForChoice || selectedPath)) {
-          offsetRef.current += 3; // Adjust speed as needed (increased from 2 to 3)
+        // Target speed and inertia parameters
+        const targetSpeed = 3; // Maximum scroll speed
+        const acceleration = 0.15; // How quickly to speed up
+        const deceleration = 0.2; // How quickly to slow down
+        
+        // Determine if walker should be moving
+        const shouldMove = !isPaused && (!shouldStopForChoice || selectedPath);
+        
+        // Apply inertia - gradually change velocity toward target
+        if (shouldMove) {
+          // Accelerate toward target speed
+          if (velocityRef.current < targetSpeed) {
+            velocityRef.current = Math.min(velocityRef.current + acceleration, targetSpeed);
+          }
+        } else {
+          // Decelerate toward zero
+          if (velocityRef.current > 0) {
+            velocityRef.current = Math.max(velocityRef.current - deceleration, 0);
+          }
         }
+        
+        // Apply velocity to offset
+        offsetRef.current += velocityRef.current;
       } else {
         // Fallback if canvas not available
+        const targetSpeed = 3;
+        const acceleration = 0.15;
+        const deceleration = 0.2;
+        
         if (!isPaused) {
-          offsetRef.current += 3;
+          if (velocityRef.current < targetSpeed) {
+            velocityRef.current = Math.min(velocityRef.current + acceleration, targetSpeed);
+          }
+        } else {
+          if (velocityRef.current > 0) {
+            velocityRef.current = Math.max(velocityRef.current - deceleration, 0);
+          }
         }
+        
+        offsetRef.current += velocityRef.current;
       }
       
       drawScene();
