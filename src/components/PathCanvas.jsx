@@ -111,6 +111,9 @@ const PathCanvas = () => {
 
   // Prevent double-processing of answers
   const processingAnswerRef = useRef(false);
+  
+  // Track if checkpoint sound has been played for current checkpoint
+  const checkpointSoundPlayedRef = useRef(false);
 
   // Initialize sound manager
   const soundManagerRef = useRef(null);
@@ -523,6 +526,12 @@ const PathCanvas = () => {
         if (distanceFromPerson <= 100 && distanceFromPerson > 0 && !showQuestion && currentQuestion) {
           setIsPaused(true);
           setShowQuestion(true);
+          
+          // Play checkpoint sound if not already played for this checkpoint
+          if (!checkpointSoundPlayedRef.current && soundManagerRef.current) {
+            soundManagerRef.current.playChoice();
+            checkpointSoundPlayedRef.current = true;
+          }
         }
       }
       
@@ -762,6 +771,9 @@ const PathCanvas = () => {
     // Reset fade-in timer for new checkpoint
     checkpointFadeStartTimeRef.current = null;
     
+    // Reset checkpoint sound flag for first checkpoint
+    checkpointSoundPlayedRef.current = false;
+    
     // Load the first question immediately so the correct emoji appears
     const category = forkCategories[choice];
     loadNewQuestion(category);
@@ -922,6 +934,9 @@ const PathCanvas = () => {
           
           // Reset fade-in timer for new checkpoint
           checkpointFadeStartTimeRef.current = null;
+          
+          // Reset checkpoint sound flag for next checkpoint
+          checkpointSoundPlayedRef.current = false;
           
           // Load the next question immediately for the next checkpoint
           const category = forkCategories[selectedPath];
