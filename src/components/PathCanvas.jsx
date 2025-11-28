@@ -1012,6 +1012,7 @@ const PathCanvas = () => {
             cursor: soundEnabled ? 'pointer' : 'not-allowed',
             opacity: soundEnabled ? 1 : 0.5,
             accentColor: '#4CAF50',
+            display: window.innerWidth <= 768 ? 'none' : 'block',
           }}
           title={`Volume: ${Math.round(volume * 100)}%`}
         />
