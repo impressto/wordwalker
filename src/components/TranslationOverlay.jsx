@@ -29,7 +29,7 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true }) => {
       padding: '40px',
       borderRadius: '15px',
       boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
-      zIndex: 11,
+      zIndex: 35,
       animation: 'fadeIn 0.3s ease-out',
       minWidth: '280px',
       maxWidth: '90vw',

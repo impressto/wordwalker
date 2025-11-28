@@ -13,7 +13,7 @@ const ScoreDisplay = ({ totalPoints, streak, selectedPath, forkCategories, check
       display: 'flex',
       flexDirection: 'row',
       gap: '15px',
-      zIndex: 20,
+      zIndex: 40,
       alignItems: 'center',
     }}>
       {/* Points and Streak Combined Display */}
