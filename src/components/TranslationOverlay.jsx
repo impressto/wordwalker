@@ -4,7 +4,7 @@
  * Also displays streak bonus when a milestone is reached
  */
 
-import { translations } from '../config/translations';
+import { translations } from '../config/answer-translations';
 import gameSettings, { getStreakColor, getStreakGradientColor } from '../config/gameSettings';
 
 const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0 }) => {
@@ -77,10 +77,11 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0 }
             gap: '25px',
             marginTop: '20px',
             padding: '25px 50px',
-            backgroundColor: 'rgba(255, 152, 0, 0.95)',
+            backgroundColor: `${getStreakColor(streak)}E6`, // Use streak color with opacity (E6 = 90%)
             borderRadius: '15px',
             animation: 'streakPulse 2.5s ease-in-out',
             position: 'relative',
+            boxShadow: `0 8px 32px ${getStreakColor(streak)}80`, // Glow effect using streak color
           }}>
           <style>
             {`

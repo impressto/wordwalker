@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { translations } from '../config/translations';
+import { translations } from '../config/answer-translations';
 import './SearchDialog.css';
 
 export default function SearchDialog({ isOpen, onClose }) {

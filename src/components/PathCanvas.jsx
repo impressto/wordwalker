@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { getRandomQuestionByCategory, getRandomUnusedQuestionByCategory, shuffleOptions, getAllCategoryIds, getCategoryById } from '../config/questions';
-import { translations } from '../config/translations';
+import { translations } from '../config/answer-translations';
 import gameSettings, { getStreakColor } from '../config/gameSettings';
 import SoundManager from '../soundManager';
 import ScoreDisplay from './ScoreDisplay';

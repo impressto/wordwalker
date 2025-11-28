@@ -4,7 +4,7 @@
  */
 
 import { useEffect, memo, useState, useRef } from 'react';
-import gameSettings from '../config/gameSettings';
+import gameSettings, { getStreakColor } from '../config/gameSettings';
 
 const StreakBonusNotification = ({ streak, show }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -41,6 +41,9 @@ const StreakBonusNotification = ({ streak, show }) => {
   if (!isVisible) {
     return null;
   }
+
+  // Get the current streak color
+  const streakColor = getStreakColor(currentStreak);
   
   return (
     <div style={{
@@ -52,10 +55,10 @@ const StreakBonusNotification = ({ streak, show }) => {
       flexDirection: 'column',
       alignItems: 'center',
       gap: '10px',
-      backgroundColor: 'rgba(255, 152, 0, 0.95)',
+      backgroundColor: `${streakColor}E6`, // Add opacity to the streak color (E6 = 90% opacity)
       padding: '30px 50px',
       borderRadius: '15px',
-      boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
+      boxShadow: `0 8px 32px ${streakColor}80`, // Glow effect using streak color
       zIndex: 50,
       animation: `streakFadeInOut ${animationDurationSeconds}s ease-in-out`,
     }}>
