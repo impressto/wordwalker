@@ -614,7 +614,9 @@ const PathCanvas = () => {
       // Note: No fallback emoji - wait for sprite sheet to load for cleaner appearance
       
       // Draw foreground trees (trees1) with parallax - in front of everything
-      if (trees1Image) {
+      // Only render in portrait mode to avoid visual clutter in landscape
+      const isPortrait = height > width;
+      if (trees1Image && isPortrait) {
         const trees1Width = trees1Image.width;
         const trees1Height = trees1Image.height;
         const trees1ScrollOffset = (offsetRef.current * 1.5) % trees1Width;
