@@ -7,7 +7,7 @@
 import { translations } from '../config/answer-translations';
 import gameSettings, { getStreakColor, getStreakGradientColor } from '../config/gameSettings';
 
-const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0 }) => {
+const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, hintUsed = false }) => {
   if (!currentQuestion) return null;
 
   // Get the English translation
@@ -19,6 +19,11 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0 }
   
   // Check if current streak is a milestone
   const isStreakMilestone = streak > 0 && streak % gameSettings.streak.bonusThreshold === 0;
+  
+  // Calculate actual points earned (accounting for hint usage)
+  const pointsEarned = hintUsed 
+    ? Math.floor(currentQuestion.points / 2) 
+    : currentQuestion.points;
 
   return (
     <div id="translation-overlay" style={{
@@ -62,7 +67,7 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0 }
           marginTop: '10px',
           fontStyle: 'italic',
         }}>
-          +{currentQuestion.points} points!
+          +{pointsEarned} points!
         </div>
       )}
       

@@ -1106,6 +1106,7 @@ const PathCanvas = () => {
           currentQuestion={currentQuestion} 
           firstAttempt={firstAttempt}
           streak={streak}
+          hintUsed={hintUsed}
         />
       )}
 

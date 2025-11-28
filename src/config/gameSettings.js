@@ -8,7 +8,7 @@ const gameSettings = {
   streak: {
     // Number of consecutive correct answers required to trigger streak bonus
     // Set to a lower number (e.g., 2 or 3) for easier testing
-    bonusThreshold: 5,
+    bonusThreshold: 2,
     
     // Bonus points awarded when streak threshold is reached
     bonusPoints: 50,
