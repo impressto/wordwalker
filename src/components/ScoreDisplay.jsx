@@ -24,6 +24,7 @@ const ScoreDisplay = ({ totalPoints, streak, selectedPath, forkCategories, check
         boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
         fontSize: '18px',
         fontWeight: 'bold',
+        color: '#000000',
         display: 'flex',
         alignItems: 'center',
         gap: '15px',

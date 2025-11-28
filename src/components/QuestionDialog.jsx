@@ -58,6 +58,7 @@ const QuestionDialog = ({
         fontWeight: 'bold',
         marginBottom: '10px',
         textAlign: 'center',
+        color: '#000000',
       }}>
         {currentQuestion.question}
       </div>
