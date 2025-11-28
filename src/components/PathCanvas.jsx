@@ -12,14 +12,14 @@ import InstallPrompt from './InstallPrompt';
 
 const PathCanvas = () => {
   const canvasRef = useRef(null);
-  const [grassImage, setGrassImage] = useState(null);
+  const [parallaxLayer2Image, setParallaxLayer2Image] = useState(null); // Grass
   const [pathImage, setPathImage] = useState(null);
   const [pathForkImage, setPathForkImage] = useState(null);
-  const [mountainsImage, setMountainsImage] = useState(null);
-  const [trees1Image, setTrees1Image] = useState(null); // Foreground trees
-  const [trees2Image, setTrees2Image] = useState(null); // Distant trees
-  const [trees3Image, setTrees3Image] = useState(null); // Very distant trees (between mountains and trees2)
-  const [bushesImage, setBushesImage] = useState(null); // Bushes behind path
+  const [parallaxLayer6Image, setParallaxLayer6Image] = useState(null); // Mountains
+  const [parallaxLayer1Image, setParallaxLayer1Image] = useState(null); // Foreground layer
+  const [parallaxLayer4Image, setParallaxLayer4Image] = useState(null); // Mid-distant layer
+  const [parallaxLayer5Image, setParallaxLayer5Image] = useState(null); // Far layer
+  const [parallaxLayer3Image, setParallaxLayer3Image] = useState(null); // Bushes layer
   const [walkerSpriteSheet, setWalkerSpriteSheet] = useState(null); // Walker sprite sheet
   const offsetRef = useRef(-300); // Start scrolled back so fork appears more centered initially
   const animationFrameRef = useRef(null);
@@ -168,11 +168,11 @@ const PathCanvas = () => {
     // Get base path for assets (handles subdirectory deployments)
     const basePath = import.meta.env.BASE_URL || '/';
     
-    // Load grass image
-    const grass = new Image();
-    grass.src = `${basePath}images/grass.png`;
-    grass.onload = () => {
-      setGrassImage(grass);
+    // Load parallax-layer2 image (grass)
+    const parallaxLayer2 = new Image();
+    parallaxLayer2.src = `${basePath}images/parallax-layer2.png`;
+    parallaxLayer2.onload = () => {
+      setParallaxLayer2Image(parallaxLayer2);
     };
     
     // Load path image
@@ -189,39 +189,39 @@ const PathCanvas = () => {
       setPathForkImage(pathFork);
     };
     
-    // Load mountains image
-    const mountains = new Image();
-    mountains.src = `${basePath}images/mountains.png`;
-    mountains.onload = () => {
-      setMountainsImage(mountains);
+    // Load parallax-layer6 image (mountains)
+    const parallaxLayer6 = new Image();
+    parallaxLayer6.src = `${basePath}images/parallax-layer6.png`;
+    parallaxLayer6.onload = () => {
+      setParallaxLayer6Image(parallaxLayer6);
     };
     
-    // Load trees1 image (foreground trees)
-    const trees1 = new Image();
-    trees1.src = `${basePath}images/trees1.png`;
-    trees1.onload = () => {
-      setTrees1Image(trees1);
+    // Load parallax-layer1 image (foreground layer)
+    const parallaxLayer1 = new Image();
+    parallaxLayer1.src = `${basePath}images/parallax-layer1.png`;
+    parallaxLayer1.onload = () => {
+      setParallaxLayer1Image(parallaxLayer1);
     };
     
-    // Load trees2 image (distant trees)
-    const trees2 = new Image();
-    trees2.src = `${basePath}images/trees2.png`;
-    trees2.onload = () => {
-      setTrees2Image(trees2);
+    // Load parallax-layer4 image (mid-distant layer)
+    const parallaxLayer4 = new Image();
+    parallaxLayer4.src = `${basePath}images/parallax-layer4.png`;
+    parallaxLayer4.onload = () => {
+      setParallaxLayer4Image(parallaxLayer4);
     };
     
-    // Load trees3 image (very distant trees - between mountains and trees2)
-    const trees3 = new Image();
-    trees3.src = `${basePath}images/trees3.png`;
-    trees3.onload = () => {
-      setTrees3Image(trees3);
+    // Load parallax-layer5 image (far layer)
+    const parallaxLayer5 = new Image();
+    parallaxLayer5.src = `${basePath}images/parallax-layer5.png`;
+    parallaxLayer5.onload = () => {
+      setParallaxLayer5Image(parallaxLayer5);
     };
     
-    // Load bushes image (behind path)
-    const bushes = new Image();
-    bushes.src = `${basePath}images/bushes.png`;
-    bushes.onload = () => {
-      setBushesImage(bushes);
+    // Load parallax-layer3 image (bushes layer)
+    const parallaxLayer3 = new Image();
+    parallaxLayer3.src = `${basePath}images/parallax-layer3.png`;
+    parallaxLayer3.onload = () => {
+      setParallaxLayer3Image(parallaxLayer3);
     };
     
     // Load walker sprite sheet
@@ -327,23 +327,23 @@ const PathCanvas = () => {
       ctx.fillRect(0, skyBottom, width, height - skyBottom);
       
       // Draw mountains at the horizon (tiled horizontally with parallax)
-      if (mountainsImage) {
-        const mountainWidth = mountainsImage.width;
-        const mountainHeight = mountainsImage.height;
+      if (parallaxLayer6Image) {
+        const layer6Width = parallaxLayer6Image.width;
+        const layer6Height = parallaxLayer6Image.height;
         
-        // Parallax effect - mountains move slower than foreground (0.3x speed)
-        const mountainScrollOffset = (offsetRef.current * 0.3) % mountainWidth;
+        // Parallax effect - layer 6 moves slower than foreground (0.3x speed)
+        const layer6ScrollOffset = (offsetRef.current * 0.3) % layer6Width;
         
         // Calculate how many tiles needed to cover the width
-        const mountainTilesNeeded = Math.ceil(width / mountainWidth) + 2;
+        const layer6TilesNeeded = Math.ceil(width / layer6Width) + 2;
         
-        // Position mountains at the horizon
-        const mountainY = horizonY - mountainHeight;
+        // Position layer 6 at the horizon
+        const layer6Y = horizonY - layer6Height;
         
-        // Draw mountain tiles horizontally
-        for (let i = -1; i < mountainTilesNeeded; i++) {
-          const x = i * mountainWidth - mountainScrollOffset;
-          ctx.drawImage(mountainsImage, x, mountainY, mountainWidth, mountainHeight);
+        // Draw layer 6 tiles horizontally
+        for (let i = -1; i < layer6TilesNeeded; i++) {
+          const x = i * layer6Width - layer6ScrollOffset;
+          ctx.drawImage(parallaxLayer6Image, x, layer6Y, layer6Width, layer6Height);
         }
       }
       
@@ -354,46 +354,46 @@ const PathCanvas = () => {
       ctx.fillStyle = distantGrassGradient;
       ctx.fillRect(0, horizonY, width, height * 0.55 - horizonY); // Fill from horizon to path top
       
-      // Draw very distant trees (trees3) with parallax - between mountains and trees2
+      // Draw parallax layer 5 (far layer) - between layer 6 and layer 4
       // Drawn after grass so it appears in front
-      if (trees3Image) {
-        const trees3Width = trees3Image.width;
-        const trees3Height = trees3Image.height;
+      if (parallaxLayer5Image) {
+        const layer5Width = parallaxLayer5Image.width;
+        const layer5Height = parallaxLayer5Image.height;
         
-        // Parallax effect - very distant trees move at 0.4x speed (slower than trees2)
-        const trees3ScrollOffset = (offsetRef.current * 0.4) % trees3Width;
+        // Parallax effect - layer 5 moves at 0.4x speed (slower than layer 4)
+        const layer5ScrollOffset = (offsetRef.current * 0.4) % layer5Width;
         
         // Calculate how many tiles needed
-        const trees3TilesNeeded = Math.ceil(width / trees3Width) + 2;
+        const layer5TilesNeeded = Math.ceil(width / layer5Width) + 2;
         
-        // Position very distant trees at horizon - moved up additional 30 pixels
-        const trees3Y = horizonY - trees3Height * 0.3 - 30; // Slightly overlap with mountains
+        // Position layer 5 at horizon - moved up additional 30 pixels
+        const layer5Y = horizonY - layer5Height * 0.3 - 30; // Slightly overlap with layer 6
         
-        // Draw trees3 tiles horizontally
-        for (let i = -1; i < trees3TilesNeeded; i++) {
-          const x = i * trees3Width - trees3ScrollOffset;
-          ctx.drawImage(trees3Image, x, trees3Y, trees3Width, trees3Height);
+        // Draw layer 5 tiles horizontally
+        for (let i = -1; i < layer5TilesNeeded; i++) {
+          const x = i * layer5Width - layer5ScrollOffset;
+          ctx.drawImage(parallaxLayer5Image, x, layer5Y, layer5Width, layer5Height);
         }
       }
       
-      // Draw distant trees (trees2) with parallax
-      if (trees2Image) {
-        const trees2Width = trees2Image.width;
-        const trees2Height = trees2Image.height;
+      // Draw parallax layer 4 (mid-distant layer)
+      if (parallaxLayer4Image) {
+        const layer4Width = parallaxLayer4Image.width;
+        const layer4Height = parallaxLayer4Image.height;
         
-        // Parallax effect - distant trees move at 0.5x speed
-        const trees2ScrollOffset = (offsetRef.current * 0.5) % trees2Width;
+        // Parallax effect - layer 4 moves at 0.5x speed
+        const layer4ScrollOffset = (offsetRef.current * 0.5) % layer4Width;
         
         // Calculate how many tiles needed
-        const trees2TilesNeeded = Math.ceil(width / trees2Width) + 2;
+        const layer4TilesNeeded = Math.ceil(width / layer4Width) + 2;
         
-        // Position distant trees
-        const trees2Y = horizonY - 15;
+        // Position layer 4
+        const layer4Y = horizonY - 15;
         
-        // Draw trees2 tiles horizontally
-        for (let i = -1; i < trees2TilesNeeded; i++) {
-          const x = i * trees2Width - trees2ScrollOffset;
-          ctx.drawImage(trees2Image, x, trees2Y, trees2Width, trees2Height);
+        // Draw layer 4 tiles horizontally
+        for (let i = -1; i < layer4TilesNeeded; i++) {
+          const x = i * layer4Width - layer4ScrollOffset;
+          ctx.drawImage(parallaxLayer4Image, x, layer4Y, layer4Width, layer4Height);
         }
       }
       
@@ -402,40 +402,40 @@ const PathCanvas = () => {
       const pathBottom = height * 0.75 + 90; // Where path ends (in front)
       const pathHeight = pathBottom - pathTop;
       
-      // Draw grass for entire area (path + foreground) - single unified tile
-      if (grassImage) {
-        const tileWidth = grassImage.width;
+      // Draw parallax layer 2 (grass) for entire area (path + foreground) - single unified tile
+      if (parallaxLayer2Image) {
+        const tileWidth = parallaxLayer2Image.width;
         const scrollOffset = offsetRef.current % tileWidth;
         
-        // Draw grass tiles - repeat horizontally, stretch vertically from pathTop to bottom
-        const totalGrassHeight = height - pathTop;
+        // Draw layer 2 tiles - repeat horizontally, stretch vertically from pathTop to bottom
+        const totalLayer2Height = height - pathTop;
         const tilesX = Math.ceil(width / tileWidth) + 1;
         
         for (let col = -1; col < tilesX; col++) {
           const x = col * tileWidth - scrollOffset;
           const y = pathTop;
-          ctx.drawImage(grassImage, x, y, tileWidth, totalGrassHeight);
+          ctx.drawImage(parallaxLayer2Image, x, y, tileWidth, totalLayer2Height);
         }
       }
       
-      // Draw bushes with parallax - after grass so bushes appear in front
-      if (bushesImage) {
-        const bushesWidth = bushesImage.width;
-        const bushesHeight = bushesImage.height;
+      // Draw parallax layer 3 (bushes) - after layer 2 so bushes appear in front
+      if (parallaxLayer3Image) {
+        const layer3Width = parallaxLayer3Image.width;
+        const layer3Height = parallaxLayer3Image.height;
         
-        // Parallax effect - bushes move at 0.8x speed (slower than path/grass)
-        const bushesScrollOffset = (offsetRef.current * 0.8) % bushesWidth;
+        // Parallax effect - layer 3 moves at 0.8x speed (slower than path/layer 2)
+        const layer3ScrollOffset = (offsetRef.current * 0.8) % layer3Width;
         
         // Calculate how many tiles needed
-        const bushesTilesNeeded = Math.ceil(width / bushesWidth) + 2;
+        const layer3TilesNeeded = Math.ceil(width / layer3Width) + 2;
         
-        // Position bushes just above the path - moved up 20 pixels
-        const bushesY = pathTop - bushesHeight * 0.5 - 20; // Overlap slightly with path area
+        // Position layer 3 just above the path - moved up 20 pixels
+        const layer3Y = pathTop - layer3Height * 0.5 - 20; // Overlap slightly with path area
         
-        // Draw bushes tiles horizontally
-        for (let i = -1; i < bushesTilesNeeded; i++) {
-          const x = i * bushesWidth - bushesScrollOffset;
-          ctx.drawImage(bushesImage, x, bushesY, bushesWidth, bushesHeight);
+        // Draw layer 3 tiles horizontally
+        for (let i = -1; i < layer3TilesNeeded; i++) {
+          const x = i * layer3Width - layer3ScrollOffset;
+          ctx.drawImage(parallaxLayer3Image, x, layer3Y, layer3Width, layer3Height);
         }
       }
       
@@ -613,24 +613,24 @@ const PathCanvas = () => {
       }
       // Note: No fallback emoji - wait for sprite sheet to load for cleaner appearance
       
-      // Draw foreground trees (trees1) with parallax - in front of everything
+      // Draw parallax layer 1 (foreground layer) - in front of everything
       // Only render in portrait mode to avoid visual clutter in landscape
       const isPortrait = height > width;
-      if (trees1Image && isPortrait) {
-        const trees1Width = trees1Image.width;
-        const trees1Height = trees1Image.height;
-        const trees1ScrollOffset = (offsetRef.current * 1.5) % trees1Width;
-        const trees1TilesNeeded = Math.ceil(width / trees1Width) + 2;
-        const trees1Y = height - trees1Height;
+      if (parallaxLayer1Image && isPortrait) {
+        const layer1Width = parallaxLayer1Image.width;
+        const layer1Height = parallaxLayer1Image.height;
+        const layer1ScrollOffset = (offsetRef.current * 1.5) % layer1Width;
+        const layer1TilesNeeded = Math.ceil(width / layer1Width) + 2;
+        const layer1Y = height - layer1Height;
         
-        for (let i = -1; i < trees1TilesNeeded; i++) {
-          const x = i * trees1Width - trees1ScrollOffset;
+        for (let i = -1; i < layer1TilesNeeded; i++) {
+          const x = i * layer1Width - layer1ScrollOffset;
           ctx.drawImage(
-            trees1Image,
+            parallaxLayer1Image,
             x,
-            trees1Y,
-            trees1Width,
-            trees1Height
+            layer1Y,
+            layer1Width,
+            layer1Height
           );
         }
       }
@@ -676,7 +676,7 @@ const PathCanvas = () => {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [grassImage, pathImage, pathForkImage, mountainsImage, trees1Image, trees2Image, trees3Image, bushesImage, walkerSpriteSheet, isPaused, showChoice, showQuestion, selectedPath, questionAnswered, isVictoryAnimation]);
+  }, [parallaxLayer2Image, pathImage, pathForkImage, parallaxLayer6Image, parallaxLayer1Image, parallaxLayer4Image, parallaxLayer5Image, parallaxLayer3Image, walkerSpriteSheet, isPaused, showChoice, showQuestion, selectedPath, questionAnswered, isVictoryAnimation]);
 
   // Helper function to load a new question for the current checkpoint
   const loadNewQuestion = (category) => {
