@@ -589,6 +589,7 @@ export const questionTranslations = {
   "¿Qué está atrás de ti?": "What is behind you?",
   "¿Qué edificio tiene gobierno?": "What building has the government?",
   "¿Dónde envías cartas?": "Where do you send letters?",
+  "¿Cómo se llama un gran espacio verde público?": "What is a large public green space called?",
   // Batch 6 - Health & Beach Activities (50 translations)
   "¿Qué te duele cuando vas al dentista?": "What hurts when you go to the dentist?",
   "¿Qué órgano te duele en otitis?": "What organ hurts in otitis?",

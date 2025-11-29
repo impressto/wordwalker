@@ -187,6 +187,15 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, 
             }}>
               You got {streak} in a row!
             </div>
+            <div style={{
+              fontSize: '18px',
+              color: 'white',
+              fontWeight: 'bold',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
+              marginTop: '4px',
+            }}>
+              +{gameSettings.streak.bonusPoints} BONUS POINTS
+            </div>
           </div>
         </div>
       )}

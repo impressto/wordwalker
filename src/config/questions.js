@@ -8737,7 +8737,7 @@ export const questions = [
   {
     id: 'directions_014',
     emoji: '🏞️',
-    question: '¿Qué lugar es?',
+    question: '¿Cómo se llama un gran espacio verde público?',
     options: ['el parque', 'el jardín público', 'el área verde'],
     correctAnswer: 'el parque',
     hint: 'Park - public green space, "jardín" is smaller garden',
