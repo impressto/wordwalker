@@ -403,23 +403,7 @@ const PathCanvas = () => {
       const pathBottom = height * 0.75 + 90; // Where path ends (in front)
       const pathHeight = pathBottom - pathTop;
       
-      // Draw parallax layer 2 (grass) for entire area (path + foreground) - single unified tile
-      if (parallaxLayer2Image) {
-        const tileWidth = parallaxLayer2Image.width;
-        const scrollOffset = offsetRef.current % tileWidth;
-        
-        // Draw layer 2 tiles - repeat horizontally, stretch vertically from pathTop to bottom
-        const totalLayer2Height = height - pathTop;
-        const tilesX = Math.ceil(width / tileWidth) + 1;
-        
-        for (let col = -1; col < tilesX; col++) {
-          const x = col * tileWidth - scrollOffset;
-          const y = pathTop;
-          ctx.drawImage(parallaxLayer2Image, x, y, tileWidth, totalLayer2Height);
-        }
-      }
-      
-      // Draw parallax layer 3 (bushes) - after layer 2 so bushes appear in front
+      // Draw parallax layer 3 (bushes) - before layer 2 so layer 2 appears in front
       if (parallaxLayer3Image) {
         const layer3Width = parallaxLayer3Image.width;
         const layer3Height = parallaxLayer3Image.height;
@@ -437,6 +421,22 @@ const PathCanvas = () => {
         for (let i = -1; i < layer3TilesNeeded; i++) {
           const x = i * layer3Width - layer3ScrollOffset;
           ctx.drawImage(parallaxLayer3Image, x, layer3Y, layer3Width, layer3Height);
+        }
+      }
+      
+      // Draw parallax layer 2 (grass) for entire area (path + foreground) - single unified tile
+      if (parallaxLayer2Image) {
+        const tileWidth = parallaxLayer2Image.width;
+        const scrollOffset = offsetRef.current % tileWidth;
+        
+        // Draw layer 2 tiles - repeat horizontally, stretch vertically from pathTop to bottom
+        const totalLayer2Height = height - pathTop;
+        const tilesX = Math.ceil(width / tileWidth) + 1;
+        
+        for (let col = -1; col < tilesX; col++) {
+          const x = col * tileWidth - scrollOffset;
+          const y = pathTop;
+          ctx.drawImage(parallaxLayer2Image, x, y, tileWidth, totalLayer2Height);
         }
       }
       
