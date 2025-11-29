@@ -96,14 +96,14 @@ const StreakBonusNotification = ({ streak, show }) => {
         color: 'white',
         textAlign: 'center',
       }}>
-        {currentStreak} STREAK!
+        STREAK!
       </div>
       
       <div style={{
         fontSize: '24px',
         color: 'white',
         fontWeight: 'bold',
-      }}>
+      }}>You got {currentStreak} correct in a row!
         +{gameSettings.streak.bonusPoints} BONUS POINTS!
       </div>
     </div>

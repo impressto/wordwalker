@@ -82,11 +82,12 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, 
             gap: '25px',
             marginTop: '20px',
             padding: '25px 50px',
-            backgroundColor: `${getStreakColor(streak)}E6`, // Use streak color with opacity (E6 = 90%)
+            background: `linear-gradient(135deg, ${getStreakColor(streak)}, ${getStreakGradientColor(streak)})`,
             borderRadius: '15px',
             animation: 'streakPulse 2.5s ease-in-out',
             position: 'relative',
-            boxShadow: `0 8px 32px ${getStreakColor(streak)}80`, // Glow effect using streak color
+            boxShadow: `0 8px 32px rgba(0, 0, 0, 0.4)`, // Neutral glow effect
+            opacity: 0.95,
           }}>
           <style>
             {`
@@ -172,20 +173,19 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, 
             gap: '8px',
           }}>
             <div style={{
-              fontSize: '32px',
+              fontSize: '36px',
               fontWeight: 'bold',
               color: 'white',
               textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
             }}>
-              {streak} STREAK! 🔥
+              STREAK! 🔥
             </div>
             <div style={{
-              fontSize: '24px',
+              fontSize: '20px',
               color: 'white',
-              fontWeight: 'bold',
               textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
             }}>
-              +{gameSettings.streak.bonusPoints} BONUS!
+              You got {streak} in a row!
             </div>
           </div>
         </div>

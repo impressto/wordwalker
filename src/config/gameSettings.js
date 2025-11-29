@@ -8,7 +8,7 @@ const gameSettings = {
   streak: {
     // Number of consecutive correct answers required to trigger streak bonus
     // Set to a lower number (e.g., 2 or 3) for easier testing
-    bonusThreshold: 5,
+    bonusThreshold: 2,
     
     // Bonus points awarded when streak threshold is reached
     bonusPoints: 50,
@@ -38,31 +38,31 @@ const gameSettings = {
         gradientColor: '#4682B4',   // Steel blue
       },
       {
-        minStreak: 5,
+        minStreak: 2,
         name: 'Green',
         primaryColor: '#00FF7F',    // Spring green
         gradientColor: '#00C853',   // Dark green
       },
       {
-        minStreak: 10,
+        minStreak: 4,
         name: 'Gold',
         primaryColor: '#FFD700',    // Gold
         gradientColor: '#FFA500',   // Orange
       },
       {
-        minStreak: 20,
+        minStreak: 6,
         name: 'Pink',
         primaryColor: '#ebb1b1ff',    // Pink
         gradientColor: '#cf5959ff',   // Light pink
       },
       {
-        minStreak: 50,
+        minStreak: 8,
         name: 'Purple',
         primaryColor: '#d28fd8ff',    // Purple
         gradientColor: '#6a22bbff',   // Dark Purple
       },
       {
-        minStreak: 100,
+        minStreak: 10,
         name: 'Red',
         primaryColor: '#ff4c4cff',    // Red
         gradientColor: '#b22222ff',   // Firebrick

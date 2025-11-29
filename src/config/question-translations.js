@@ -1321,7 +1321,7 @@ export const questionTranslations = {
   "¿Dónde estás?": "Where are you?",
   "¿Qué elevación es muy alta?": "What elevation is very high?",
   "¿Qué montaña arroja lava?": "What mountain throws lava?",
-  "¿Qué área natural es?": "What natural area is it?",
+  "¿Dónde protege una nación la naturaleza?": "Where does a nation protect nature?",
   "¿Qué planta grande tiene tronco y ramas?": "What large plant has a trunk and branches?",
   "¿Qué flor crece en climas cálidos?": "What flower grows in warm climates?",
   "¿Qué flor es?": "What flower is it?",

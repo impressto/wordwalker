@@ -1112,7 +1112,7 @@ export const translations = {
   
   // Beach & Activities
   'nadar': 'swim',
-  'surfear': 'surf',
+  'surf': 'surfing',
   'bucear': 'dive/snorkel',
   'sol': 'sun',
   'luna': 'moon',
@@ -2014,7 +2014,7 @@ export const translations = {
   'el pantalón': 'the pants',
   'el papel higiénico': 'the toilet paper',
   'el parque': 'the park',
-  'el parque nacional': 'the national park',
+  'una reserva de parque nacional': 'a national park reserve',
   'el pase de abordar': 'the boarding pass',
   'el pasaporte': 'the passport',
   'el pastel': 'the cake',
