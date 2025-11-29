@@ -2628,6 +2628,9 @@ export const translations = {
   'el perro': 'the dog',
   'el gato': 'the cat',
   'el ratón': 'the mouse',
+  'la rata': 'the rat',
+  'el hamster': 'the hamster',
+  'la ardilla': 'the squirrel',
   'el conejo': 'the rabbit',
   'el león': 'the lion',
   'el tigre': 'the tiger',
@@ -2710,7 +2713,6 @@ export const translations = {
   'la pupa': 'the pupa',
   'el gusano': 'the worm',
   'el murciélago': 'the bat',
-  'el lobo': 'the wolf',
   'el coyote': 'the coyote',
   'el venado': 'the deer',
   'el llama': 'the llama',
@@ -2723,6 +2725,9 @@ export const translations = {
   'el chimpancé': 'the chimpanzee',
   'el orangután': 'the orangutan',
   'el simio': 'the ape',
+  'el conejillo de indias': 'the guinea pig',
+  'el gerbil': 'the gerbil',
+
 };
 
 
