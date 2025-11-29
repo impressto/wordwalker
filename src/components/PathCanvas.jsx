@@ -5,11 +5,13 @@ import { translations } from '../config/answer-translations';
 import { questionTranslations } from '../config/question-translations';
 import gameSettings, { getStreakColor } from '../config/gameSettings';
 import SoundManager from '../soundManager';
+import { loadGameState, saveGameState, clearGameState, hasSavedGameState, convertLoadedState } from '../utils/gameStatePersistence';
 import ScoreDisplay from './ScoreDisplay';
 import PathChoiceDialog from './PathChoiceDialog';
 import QuestionDialog from './QuestionDialog';
 import TranslationOverlay from './TranslationOverlay';
 import SearchDialog from './SearchDialog';
+import ResumeDialog from './ResumeDialog';
 import InstallPrompt from './InstallPrompt';
 
 const PathCanvas = () => {
@@ -47,6 +49,11 @@ const PathCanvas = () => {
   const [volume, setVolume] = useState(() => {
     return parseFloat(localStorage.getItem('wordwalker-volume') || '0.7');
   });
+  
+  // Game state persistence
+  const [showResumeDialog, setShowResumeDialog] = useState(false);
+  const [hasCheckedSavedState, setHasCheckedSavedState] = useState(false);
+  const autosaveTimerRef = useRef(null);
   
   // Walker sprite animation state
   const walkerFrameRef = useRef(0); // Current frame index
@@ -175,6 +182,83 @@ const PathCanvas = () => {
   useEffect(() => {
     localStorage.setItem('wordwalker-volume', volume.toString());
   }, [volume]);
+
+  // Check for saved game state on component mount
+  useEffect(() => {
+    if (!hasCheckedSavedState && hasSavedGameState()) {
+      setShowResumeDialog(true);
+      setHasCheckedSavedState(true);
+    } else {
+      setHasCheckedSavedState(true);
+    }
+  }, [hasCheckedSavedState]);
+
+  // Auto-save game state periodically
+  useEffect(() => {
+    // Only auto-save if game has started (path selected)
+    if (!selectedPath) return;
+
+    autosaveTimerRef.current = setInterval(() => {
+      const gameState = {
+        totalPoints,
+        streak,
+        selectedPath,
+        checkpointsAnswered,
+        usedQuestionIds,
+        completedCategories,
+        forkCategories,
+        soundEnabled,
+        volume,
+      };
+      saveGameState(gameState);
+    }, 5000); // Auto-save every 5 seconds
+
+    return () => {
+      if (autosaveTimerRef.current) {
+        clearInterval(autosaveTimerRef.current);
+      }
+    };
+  }, [totalPoints, streak, selectedPath, checkpointsAnswered, usedQuestionIds, completedCategories, forkCategories, soundEnabled, volume]);
+
+  // Handle resume game
+  const handleResumeGame = () => {
+    const loadedState = loadGameState();
+    if (loadedState) {
+      const convertedState = convertLoadedState(loadedState);
+      setTotalPoints(convertedState.totalPoints);
+      setStreak(convertedState.streak);
+      setSelectedPath(convertedState.selectedPath);
+      setCheckpointsAnswered(convertedState.checkpointsAnswered);
+      setUsedQuestionIds(convertedState.usedQuestionIds);
+      setCompletedCategories(convertedState.completedCategories);
+      setForkCategories(convertedState.forkCategories);
+      setSoundEnabled(convertedState.soundEnabled);
+      setVolume(convertedState.volume);
+      setShowResumeDialog(false);
+    }
+  };
+
+  // Handle new game
+  const handleNewGame = () => {
+    clearGameState();
+    setTotalPoints(0);
+    setStreak(0);
+    setSelectedPath(null);
+    setCheckpointsAnswered(0);
+    setUsedQuestionIds(new Set());
+    setCompletedCategories(new Set());
+    setShowQuestion(false);
+    setCurrentQuestion(null);
+    setQuestionAnswered(false);
+    setFirstAttempt(true);
+    setIncorrectAnswers([]);
+    setShowTranslation(false);
+    setShowHint(false);
+    setHintUsed(false);
+    setShowChoice(false);
+    setIsPaused(false);
+    setShowResumeDialog(false);
+  };
 
   useEffect(() => {
     // Get base path for assets (handles subdirectory deployments)
@@ -1121,6 +1205,19 @@ const PathCanvas = () => {
         }}
       />
       
+      {/* Resume Dialog Component */}
+      {showResumeDialog && (
+        <ResumeDialog
+          onResume={handleResumeGame}
+          onNewGame={handleNewGame}
+          savedStats={{
+            totalPoints,
+            streak,
+            checkpointsAnswered,
+          }}
+        />
+      )}
+
       {/* Path Choice Dialog Component */}
       {showChoice && (
         <PathChoiceDialog
