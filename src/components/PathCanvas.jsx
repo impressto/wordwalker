@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { getRandomQuestionByCategory, getRandomUnusedQuestionByCategory, shuffleOptions, getAllCategoryIds, getCategoryById } from '../config/questions';
+import { isCategoryCompleted } from '../utils/questionTracking';
 import { translations } from '../config/answer-translations';
 import { questionTranslations } from '../config/question-translations';
 import gameSettings, { getStreakColor } from '../config/gameSettings';
@@ -79,6 +80,9 @@ const PathCanvas = () => {
   
   // Track used question IDs to prevent duplicates within a category walk
   const [usedQuestionIds, setUsedQuestionIds] = useState(new Set());
+  
+  // Track globally completed categories (categories where all questions have been asked)
+  const [completedCategories, setCompletedCategories] = useState(new Set());
   
   // Fork path categories - randomly select 4 different categories for each fork
   const [forkCategories, setForkCategories] = useState(() => {
@@ -740,7 +744,36 @@ const PathCanvas = () => {
       // Reset hint when loading new question
       setShowHint(false);
       setHintUsed(false);
+      
+      // Check if this category is now completed (all questions have been used)
+      if (isCategoryCompleted(category, new Set([...usedQuestionIds, question.id]))) {
+        setCompletedCategories(prev => new Set([...prev, category]));
+      }
     }
+  };
+
+  // Helper function to generate new fork categories, excluding completed and current categories
+  const generateNewForkCategories = (excludeCategory = null) => {
+    const allCategories = getAllCategoryIds();
+    // Filter out completed categories and the current category
+    const availableCategories = allCategories.filter(cat => 
+      !completedCategories.has(cat) && cat !== excludeCategory
+    );
+    
+    // If we have fewer than 4 available categories, we need to handle this gracefully
+    if (availableCategories.length < 4) {
+      console.warn('Not enough available categories. Some completed categories will be shown again.');
+      // Fall back to all categories except current one
+      return allCategories.filter(cat => cat !== excludeCategory);
+    }
+    
+    const shuffled = [...availableCategories].sort(() => Math.random() - 0.5);
+    return {
+      choice1: shuffled[0] || 'food',
+      choice2: shuffled[1] || 'shopping',
+      choice3: shuffled[2] || 'entertainment',
+      choice4: shuffled[3] || 'accommodation'
+    };
   };
 
   const handlePathChoice = (choice) => {
@@ -903,6 +936,10 @@ const PathCanvas = () => {
         
         // Check if we've completed all checkpoints for this category
         if (newCheckpointsAnswered >= checkpointsPerCategory) {
+          // Mark the current category as globally completed
+          const currentCategory = forkCategories[selectedPath];
+          setCompletedCategories(prev => new Set([...prev, currentCategory]));
+          
           // Reset for next fork
           setCheckpointsAnswered(0);
           setSelectedPath(null);
@@ -910,16 +947,8 @@ const PathCanvas = () => {
           setCurrentQuestion(null); // Clear current question
           
           // Generate new random categories for the next fork, excluding the just-completed category
-          const allCategories = getAllCategoryIds();
-          const currentCategory = forkCategories[selectedPath];
-          const availableCategories = allCategories.filter(cat => cat !== currentCategory);
-          const shuffled = [...availableCategories].sort(() => Math.random() - 0.5);
-          setForkCategories({
-            choice1: shuffled[0] || 'food',
-            choice2: shuffled[1] || 'shopping',
-            choice3: shuffled[2] || 'entertainment',
-            choice4: shuffled[3] || 'accommodation'
-          });
+          const newForkCategories = generateNewForkCategories(currentCategory);
+          setForkCategories(newForkCategories);
           
           // Position next fork further ahead - account for stop margin so it doesn't come too far into view
           // Adding extra distance (100px stopMargin) to compensate for the stopping point
