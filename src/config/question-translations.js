@@ -983,7 +983,6 @@ export const questionTranslations = {
   "¿Qué bulbo blanco tiene olor fuerte?": "What white bulb has a strong smell?",
   "¿Qué verdura redonda te hace llorar?": "What round vegetable makes you cry?",
   "¿De qué nuez se hace la mantequilla de maní?": "What nut is peanut butter made from?",
-  "¿Qué fruto seco comen las ardillas?": "What nut do squirrels eat?",
   "¿De qué fruta tropical sale leche vegetal?": "What tropical fruit does plant milk come from?",
   "¿Qué hongo comestible crece en bosques?": "What edible fungus grows in forests?",
   "¿Qué legumbre se usa en chili?": "What legume is used in chili?",

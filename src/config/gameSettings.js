@@ -51,9 +51,21 @@ const gameSettings = {
       },
       {
         minStreak: 20,
-        name: 'White',
-        primaryColor: '#FFFFFF',    // White
-        gradientColor: '#E0E0E0',   // Light gray
+        name: 'Pink',
+        primaryColor: '#ebb1b1ff',    // Pink
+        gradientColor: '#cf5959ff',   // Light pink
+      },
+      {
+        minStreak: 50,
+        name: 'Purple',
+        primaryColor: '#d28fd8ff',    // Purple
+        gradientColor: '#6a22bbff',   // Dark Purple
+      },
+      {
+        minStreak: 100,
+        name: 'Red',
+        primaryColor: '#ff4c4cff',    // Red
+        gradientColor: '#b22222ff',   // Firebrick
       },
     ],
   },

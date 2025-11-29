@@ -11,7 +11,7 @@ class SoundManager {
     
     // Preloaded audio buffers for instant playback
     this.preloadedSounds = {};
-    this.soundsToPreload = ['correct', 'wrong', 'streak', 'choice'];
+    this.soundsToPreload = ['correct', 'wrong', 'choice', 'streak1', 'streak2', 'streak3', 'streak4'];
 
     const AudioContext = window.AudioContext || window.webkitAudioContext;
     this.audioContext = new AudioContext();
@@ -21,6 +21,25 @@ class SoundManager {
     
     // Unlock audio on first user interaction (required for PWA/mobile)
     this.unlockAudio();
+  }
+
+  /**
+   * Get the streak sound file name based on streak level
+   * @param {number} streak - The current streak level
+   * @returns {string} The sound name (streak1, streak2, streak3, or streak4)
+   */
+  getStreakSoundName(streak) {
+    // Determine which streak sound to play based on streak level
+    // streak 5 = streak1, streak 10 = streak2, streak 15 = streak3, streak 20+ = streak4
+    if (streak >= 20) {
+      return 'streak4';
+    } else if (streak >= 15) {
+      return 'streak3';
+    } else if (streak >= 10) {
+      return 'streak2';
+    } else {
+      return 'streak1';
+    }
   }
 
   /**
@@ -205,10 +224,12 @@ class SoundManager {
   }
 
   /**
-   * Play the streak bonus sound
+   * Play the streak bonus sound based on streak level
+   * @param {number} streak - The current streak level
    */
-  playStreak() {
-    this.play('streak');
+  playStreak(streak = 5) {
+    const streakSound = this.getStreakSoundName(streak);
+    this.play(streakSound);
   }
 
   /**

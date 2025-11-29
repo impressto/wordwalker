@@ -859,9 +859,9 @@ const PathCanvas = () => {
           // Award bonus points
           setTotalPoints(prevPoints => prevPoints + gameSettings.streak.bonusPoints);
           
-          // Play streak bonus sound
+          // Play streak bonus sound (pass the streak level to play the appropriate sound)
           if (soundManagerRef.current) {
-            soundManagerRef.current.playStreak();
+            soundManagerRef.current.playStreak(newStreak);
           }
         }
       } else {
