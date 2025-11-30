@@ -14224,17 +14224,6 @@ export const questions = [
     difficulty: 'easy',
   },
   {
-    id: 'animals_053',
-    emoji: '🦍',
-    question: '¿Qué primate grande tiene brazos muy largos?',
-    options: ['el gorila', 'el orangután', 'el chimpancé'],
-    correctAnswer: 'el gorila',
-    hint: 'Gorilla - largest primate, endangered, knuckle-walks, very strong',
-    points: 10,
-    category: 'animals',
-    difficulty: 'medium',
-  },
-  {
     id: 'animals_054',
     emoji: '🦅',
     question: '¿Qué pájaro grande vuela muy alto?',

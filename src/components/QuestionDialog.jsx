@@ -94,7 +94,7 @@ const QuestionDialog = ({
             }
           }}
         >
-          💡 Show English (-{penalty} points)
+          💡 Show English (-{penalty} points from {currentQuestion.points})
         </button>
       )}
       
