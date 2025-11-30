@@ -26,6 +26,7 @@ const PathCanvas = () => {
   const [parallaxLayer3Image, setParallaxLayer3Image] = useState(null); // Bushes layer
   const [parallaxLayer7Image, setParallaxLayer7Image] = useState(null); // Rear layer (infinite distance, no parallax)
   const [walkerSpriteSheet, setWalkerSpriteSheet] = useState(null); // Walker sprite sheet
+  const [isLoading, setIsLoading] = useState(true); // Track if assets are still loading
   const offsetRef = useRef(-300); // Start scrolled back so fork appears more centered initially
   const velocityRef = useRef(0); // Current scroll velocity for smooth acceleration/deceleration
   const animationFrameRef = useRef(null);
@@ -346,6 +347,17 @@ const PathCanvas = () => {
       setWalkerSpriteSheet(walker);
     };
   }, []);
+
+  // Check if all critical assets are loaded
+  useEffect(() => {
+    // Consider loading complete when we have at least the path image and walker sprite sheet
+    // Other parallax layers are optional fallbacks
+    const criticalAssetsLoaded = pathImage && pathForkImage && walkerSpriteSheet;
+    
+    if (criticalAssetsLoaded && isLoading) {
+      setIsLoading(false);
+    }
+  }, [pathImage, pathForkImage, walkerSpriteSheet, isLoading]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -1101,6 +1113,44 @@ const PathCanvas = () => {
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
+      {/* Loading Screen Overlay */}
+      {isLoading && (
+        <div style={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          backgroundColor: '#1a3d0a',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          zIndex: 9999,
+        }}>
+          <div style={{
+            fontSize: '48px',
+            marginBottom: '20px',
+            animation: 'spin 1s linear infinite',
+          }}>
+            ⏳
+          </div>
+          <h1 style={{
+            color: '#87CEEB',
+            fontFamily: 'Arial, sans-serif',
+            marginTop: 0,
+          }}>
+            Loading...
+          </h1>
+          <style>{`
+            @keyframes spin {
+              0% { transform: rotate(0deg); }
+              100% { transform: rotate(360deg); }
+            }
+          `}</style>
+        </div>
+      )}
+      
       {/* Volume Control - Top Left */}
       <div style={{
         position: 'absolute',
