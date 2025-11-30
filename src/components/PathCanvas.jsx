@@ -349,7 +349,7 @@ const PathCanvas = () => {
     
     // Load walker sprite sheet
     const walker = new Image();
-    walker.src = `${basePath}images/walker.png`;
+    walker.src = `${basePath}images/walkers/walker.png`;
     walker.onload = () => {
       setWalkerSpriteSheet(walker);
     };

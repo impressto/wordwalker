@@ -79,7 +79,7 @@ check_file "dist/images/grass.png"
 check_file "dist/images/path.png"
 check_file "dist/images/path-fork.png"
 check_file "dist/images/mountains.png"
-check_file "dist/images/walker.png"
+check_file "dist/images/walkers/walker.png"
 
 echo ""
 echo "📋 Service Worker Configuration:"
