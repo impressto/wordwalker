@@ -19,7 +19,7 @@ const ScoreDisplay = ({ totalPoints, streak, selectedPath, forkCategories, check
   }, []);
   
   return (
-    <div style={{
+    <div id="score-display" style={{
       position: 'fixed',
       bottom: isMobile ? '30px' : '20px',
       left: '50%',
@@ -29,19 +29,22 @@ const ScoreDisplay = ({ totalPoints, streak, selectedPath, forkCategories, check
       gap: isMobile ? '8px' : '15px',
       zIndex: 1000,
       alignItems: 'center',
+      maxWidth: '95vw',
+      flexWrap: 'nowrap',
     }}>
       {/* Points and Streak Combined Display */}
-      <div style={{
-        padding: isMobile ? '8px 12px' : '10px 20px',
+      <div id="score-points-streak" style={{
+        padding: isMobile ? '8px 10px' : '10px 16px',
         backgroundColor: 'rgba(255, 255, 255, 0.9)',
         borderRadius: '8px',
         boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
-        fontSize: isMobile ? '14px' : '18px',
+        fontSize: isMobile ? '13px' : '16px',
         fontWeight: 'bold',
         color: '#000000',
         display: 'flex',
         alignItems: 'center',
-        gap: isMobile ? '8px' : '15px',
+        gap: isMobile ? '6px' : '12px',
+        whiteSpace: 'nowrap',
       }}>
         <span>Points: {totalPoints}</span>
         {streak > 0 && (
@@ -61,17 +64,18 @@ const ScoreDisplay = ({ totalPoints, streak, selectedPath, forkCategories, check
       
       {/* Category Progress */}
       {selectedPath && (
-        <div style={{
-          padding: isMobile ? '8px 12px' : '10px 20px',
+        <div id="score-category-progress" style={{
+          padding: isMobile ? '8px 10px' : '10px 16px',
           backgroundColor: 'rgba(33, 150, 243, 0.9)',
           borderRadius: '8px',
           boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
-          fontSize: isMobile ? '14px' : '16px',
+          fontSize: isMobile ? '13px' : '16px',
           fontWeight: 'bold',
           color: 'white',
           display: 'flex',
           alignItems: 'center',
-          gap: '6px',
+          gap: '5px',
+          whiteSpace: 'nowrap',
         }}>
           <span>{getCategoryById(forkCategories[selectedPath])?.emoji}</span>
           <span>{checkpointsAnswered}/{checkpointsPerCategory}</span>
