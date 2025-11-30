@@ -94,6 +94,9 @@ const PathCanvas = () => {
   // Track globally completed categories (categories where all questions have been asked)
   const [completedCategories, setCompletedCategories] = useState(new Set());
   
+  // Track questions answered correctly on first try (globally across all categories)
+  const [correctFirstTryIds, setCorrectFirstTryIds] = useState(new Set());
+  
   // Fork path categories - randomly select 4 different categories for each fork
   const [forkCategories, setForkCategories] = useState(() => {
     const allCategories = getAllCategoryIds();
@@ -195,6 +198,7 @@ const PathCanvas = () => {
           totalPoints: loadedState.totalPoints,
           streak: loadedState.streak,
           checkpointsAnswered: loadedState.checkpointsAnswered,
+          correctFirstTryIds: loadedState.correctFirstTryIds || [],
         });
       }
       setShowResumeDialog(true);
@@ -220,6 +224,7 @@ const PathCanvas = () => {
         forkCategories,
         soundEnabled,
         volume,
+        correctFirstTryIds,
       };
       saveGameState(gameState);
     }, 5000); // Auto-save every 5 seconds
@@ -229,7 +234,7 @@ const PathCanvas = () => {
         clearInterval(autosaveTimerRef.current);
       }
     };
-  }, [totalPoints, streak, selectedPath, checkpointsAnswered, usedQuestionIds, completedCategories, forkCategories, soundEnabled, volume]);
+  }, [totalPoints, streak, selectedPath, checkpointsAnswered, usedQuestionIds, completedCategories, forkCategories, soundEnabled, volume, correctFirstTryIds]);
 
   // Handle resume game
   const handleResumeGame = () => {
@@ -245,6 +250,7 @@ const PathCanvas = () => {
       setForkCategories(convertedState.forkCategories);
       setSoundEnabled(convertedState.soundEnabled);
       setVolume(convertedState.volume);
+      setCorrectFirstTryIds(convertedState.correctFirstTryIds);
       setShowResumeDialog(false);
     }
   };
@@ -258,6 +264,7 @@ const PathCanvas = () => {
     setCheckpointsAnswered(0);
     setUsedQuestionIds(new Set());
     setCompletedCategories(new Set());
+    setCorrectFirstTryIds(new Set());
     setShowQuestion(false);
     setCurrentQuestion(null);
     setQuestionAnswered(false);
@@ -992,6 +999,9 @@ const PathCanvas = () => {
       // Increment streak for correct answer on first attempt
       let newStreak = streak;
       if (firstAttempt) {
+        // Track this question as answered correctly on first try
+        setCorrectFirstTryIds(prev => new Set([...prev, currentQuestion.id]));
+        
         // Calculate points to award based on whether hint was used
         let pointsToAward = currentQuestion.points;
         

@@ -1,6 +1,12 @@
 import './ResumeDialog.css';
+import { questions } from '../config/questions';
 
 const ResumeDialog = ({ onResume, onNewGame, savedStats }) => {
+  // Calculate total questions and progress
+  const totalQuestions = questions.length;
+  const correctFirstTry = savedStats?.correctFirstTryIds?.length || 0;
+  const remaining = totalQuestions - correctFirstTry;
+
   return (
     <div className="resume-dialog-overlay">
       <div className="resume-dialog">
@@ -18,8 +24,12 @@ const ResumeDialog = ({ onResume, onNewGame, savedStats }) => {
               <span className="stat-value">{savedStats.streak}</span>
             </div>
             <div className="stat-item">
-              <span className="stat-label">Progress:</span>
-              <span className="stat-value">{savedStats.checkpointsAnswered} checkpoints</span>
+              <span className="stat-label">Learning Progress:</span>
+              <span className="stat-value">{correctFirstTry}/{totalQuestions} mastered</span>
+            </div>
+            <div className="stat-item">
+              <span className="stat-label">Remaining:</span>
+              <span className="stat-value">{remaining} to master</span>
             </div>
           </div>
         )}

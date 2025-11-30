@@ -36,6 +36,7 @@ export const saveGameState = (gameState) => {
       ...gameState,
       usedQuestionIds: Array.from(gameState.usedQuestionIds || []),
       completedCategories: Array.from(gameState.completedCategories || []),
+      correctFirstTryIds: Array.from(gameState.correctFirstTryIds || []),
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(serializableState));
   } catch (error) {
@@ -80,6 +81,7 @@ export const convertLoadedState = (loadedState) => {
     ...loadedState,
     usedQuestionIds: new Set(loadedState.usedQuestionIds || []),
     completedCategories: new Set(loadedState.completedCategories || []),
+    correctFirstTryIds: new Set(loadedState.correctFirstTryIds || []),
   };
 };
 
