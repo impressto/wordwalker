@@ -435,8 +435,11 @@ const PathCanvas = () => {
         const layer7Height = parallaxLayer7Image.height; // 300px
         
         // Layer 7 does not move (infinite distance, no parallax)
-        // Stretch to fill the entire canvas width, aligned to top
-        ctx.drawImage(parallaxLayer7Image, 0, 0, width, layer7Height);
+        // Scale to cover full canvas width + bleed on mobile
+        const scale = (width * 1.2) / layer7Width; // 1.2x scale allows bleeding on edges
+        const scaledHeight = layer7Height * scale;
+        const xOffset = -(scaledHeight * 0.1); // Center with slight offset
+        ctx.drawImage(parallaxLayer7Image, xOffset, 0, width * 1.2, scaledHeight);
       } else {
         // Fallback: if layer 7 is not loaded yet, draw simple blue and green rectangles
         const skyBottom = horizonY - 20;
@@ -447,9 +450,10 @@ const PathCanvas = () => {
         ctx.fillRect(0, skyBottom, width, height - skyBottom);
       }
       
-      // Fill bottom half with dark green to avoid white showing behind parallax trees
+      // Fill bottom portion with dark green to avoid white showing behind parallax trees
+      // Move 100 pixels higher and drawn on top of blue rectangle
       ctx.fillStyle = '#33631dff'; // Very dark green
-      ctx.fillRect(0, height * 0.5, width, height * 0.5);
+      ctx.fillRect(0, height * 0.5 - 100, width, height * 0.5 + 100);
       
       // Draw mountains at the horizon (tiled horizontally with parallax)
       if (parallaxLayer6Image) {
