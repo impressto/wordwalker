@@ -45,10 +45,12 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice }) => 
       left: '50%',
       transform: 'translate(-50%, -50%)',
       backgroundColor: 'rgba(255, 255, 255, 0.95)',
-      padding: '30px',
+      padding: '20px',
       borderRadius: '15px',
       boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
       zIndex: 10,
+      minWidth: '280px',
+      maxWidth: 'min(85vw, 380px)',
     }}>
       <h3 style={{
         margin: '0 0 20px 0',

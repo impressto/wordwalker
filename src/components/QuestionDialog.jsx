@@ -30,21 +30,21 @@ const QuestionDialog = ({
   return (
     <div id="question-dialog" style={{
       position: 'absolute',
-      top: 'calc(35% + 15px)',
+      top: 'calc(30% + 15px)',
       left: '50%',
       transform: 'translate(-50%, -50%)',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      gap: '20px',
+      gap: '15px',
       backgroundColor: 'rgba(255, 255, 255, 0.95)',
-      padding: '30px',
+      padding: '20px',
       borderRadius: '15px',
       boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
       zIndex: 30,
       animation: 'fadeIn 0.5s ease-out',
-      minWidth: '320px',
-      maxWidth: '90vw',
+      minWidth: '300px',
+      maxWidth: 'min(85vw, 380px)',
     }}>
       <div id="question-emoji" style={{ 
         fontSize: '60px',
@@ -66,11 +66,13 @@ const QuestionDialog = ({
       {/* Hint Button and English Translation */}
       {firstAttempt && !showHint && (
         <button
+          id="hint-button"
           onClick={onHintClick}
           disabled={hintUsed}
           style={{
-            padding: '8px 16px',
-            fontSize: '16px',
+            width: '100%',
+            padding: '12px 24px',
+            fontSize: '15px',
             fontWeight: 'bold',
             backgroundColor: hintUsed ? '#cccccc' : '#FF9800',
             color: 'white',
@@ -94,7 +96,7 @@ const QuestionDialog = ({
             }
           }}
         >
-          💡 Show English (-{penalty} points from {currentQuestion.points})
+          💡 Show English (-{penalty}pts)
         </button>
       )}
       
