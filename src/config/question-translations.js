@@ -1537,7 +1537,21 @@ export const questionTranslations = {
   "¿Qué insecto pequeño trabaja en equipo?": "What small insect works as a team?",
   "¿Qué insecto salta alto?": "What insect jumps high?",
   "¿Cuál es la larva de la mariposa?": "What is the larva of a butterfly?",
-  "¿Qué animal vuela de noche?": "What animal flies at night?"
+  "¿Qué animal vuela de noche?": "What animal flies at night?",
+
+  // New Food Questions (spices, hot sauce, ketchup)
+  "¿Qué se añade a la comida para el sabor?": "What is added to food for flavor?",
+  "¿Qué salsa roja picante acompaña muchas comidas?": "What spicy red sauce accompanies many meals?",
+  "¿Qué condimento rojo viene en una botella?": "What red condiment comes in a bottle?",
+
+  // New Shopping Questions (battery, yogurt, garbage, deodorant, razors, phone chargers, cable)
+  "¿Qué necesitas para que funcione un control remoto?": "What do you need for a remote control to work?",
+  "¿Qué postre lácteo es fermentado?": "What fermented dairy dessert is this?",
+  "¿Dónde tieres la basura?": "Where do you throw the garbage?",
+  "¿Qué usas para el olor corporal?": "What do you use for body odor?",
+  "¿Qué usas para afeitarte?": "What do you use to shave?",
+  "¿Qué necesitas para cargar tu teléfono?": "What do you need to charge your phone?",
+  "¿Qué cable conecta el cargador al teléfono?": "What cable connects the charger to the phone?"
 };
 
 /**

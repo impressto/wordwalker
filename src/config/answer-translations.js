@@ -2728,6 +2728,19 @@ export const translations = {
   'el conejillo de indias': 'the guinea pig',
   'el gerbil': 'the gerbil',
 
-};
+  // New Food Translations (spices, hot sauce, ketchup - correct answers only)
+  'las especias': 'spices',
+  'la salsa picante': 'hot sauce',
+  'el ketchup': 'ketchup',
 
+  // New Shopping Translations (correct answers only)
+  'la batería': 'battery',
+  'el yogur': 'yogurt',
+  'la basura': 'garbage',
+  'el desodorante': 'deodorant',
+  'la navaja': 'razor',
+  'el cargador de teléfono': 'phone charger',
+  'el cable del cargador': 'charger cable',
+
+};
 
