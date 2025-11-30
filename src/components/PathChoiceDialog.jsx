@@ -39,9 +39,9 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice }) => 
   );
 
   return (
-    <div style={{
+    <div id="path-choice-dialog" style={{
       position: 'absolute',
-      top: 'calc(50% - 10px)',
+      top: 'calc(40% - 10px)',
       left: '50%',
       transform: 'translate(-50%, -50%)',
       backgroundColor: 'rgba(255, 255, 255, 0.95)',
