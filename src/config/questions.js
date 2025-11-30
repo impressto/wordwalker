@@ -3505,17 +3505,6 @@ export const questions = [
     difficulty: 'easy',
   },
   {
-    id: 'shopping_144',
-    emoji: '🧺',
-    question: '¿Dónde pones la ropa sucia?',
-    options: ['el cesto de ropa', 'el armario', 'la percha'],
-    correctAnswer: 'el cesto de ropa',
-    hint: 'Laundry basket - collects dirty clothes until wash day, "cesta" also used',
-    points: 10,
-    category: 'shopping',
-    difficulty: 'medium',
-  },
-  {
     id: 'shopping_145',
     emoji: '🧷',
     question: '¿Qué usas para colgar ropa en el tendedero?',
@@ -5537,17 +5526,6 @@ export const questions = [
 
   // Hotel Rooms & Types (30 questions)
   {
-    id: 'accommodation_021',
-    emoji: '🛏️',
-    question: '¿Dónde duermes en el hotel?',
-    options: ['la cama', 'el colchón', 'el catre'],
-    correctAnswer: 'la cama',
-    hint: 'Bed - for sleeping, hotels have twin, double, queen, or king sizes',
-    points: 5,
-    category: 'accommodation',
-    difficulty: 'easy',
-  },
-  {
     id: 'accommodation_022',
     emoji: '🛏️',
     question: '¿Qué habitación tiene dos camas?',
@@ -5587,17 +5565,6 @@ export const questions = [
     options: ['la ventana', 'el ventanal', 'la claraboya'],
     correctAnswer: 'la ventana',
     hint: 'Window - for light and fresh air, balcony rooms have better views',
-    points: 5,
-    category: 'accommodation',
-    difficulty: 'easy',
-  },
-  {
-    id: 'accommodation_026',
-    emoji: '🚪',
-    question: '¿Por dónde entras a la habitación?',
-    options: ['la puerta', 'la entrada', 'el acceso'],
-    correctAnswer: 'la puerta',
-    hint: 'Door - main entrance to room, use key card to unlock',
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
