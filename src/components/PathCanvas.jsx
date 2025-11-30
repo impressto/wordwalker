@@ -53,6 +53,7 @@ const PathCanvas = () => {
   // Game state persistence
   const [showResumeDialog, setShowResumeDialog] = useState(false);
   const [hasCheckedSavedState, setHasCheckedSavedState] = useState(false);
+  const [savedStats, setSavedStats] = useState(null);
   const autosaveTimerRef = useRef(null);
   
   // Walker sprite animation state
@@ -186,6 +187,14 @@ const PathCanvas = () => {
   // Check for saved game state on component mount
   useEffect(() => {
     if (!hasCheckedSavedState && hasSavedGameState()) {
+      const loadedState = loadGameState();
+      if (loadedState) {
+        setSavedStats({
+          totalPoints: loadedState.totalPoints,
+          streak: loadedState.streak,
+          checkpointsAnswered: loadedState.checkpointsAnswered,
+        });
+      }
       setShowResumeDialog(true);
       setHasCheckedSavedState(true);
     } else {
@@ -1210,11 +1219,7 @@ const PathCanvas = () => {
         <ResumeDialog
           onResume={handleResumeGame}
           onNewGame={handleNewGame}
-          savedStats={{
-            totalPoints,
-            streak,
-            checkpointsAnswered,
-          }}
+          savedStats={savedStats}
         />
       )}
 
