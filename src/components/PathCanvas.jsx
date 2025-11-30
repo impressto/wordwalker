@@ -460,8 +460,9 @@ const PathCanvas = () => {
         const layer6Width = parallaxLayer6Image.width;
         const layer6Height = parallaxLayer6Image.height;
         
-        // Parallax effect - layer 6 moves slower than foreground (0.3x speed)
-        const layer6ScrollOffset = (offsetRef.current * 0.3) % layer6Width;
+        // Parallax effect - layer 6 moves based on config (far distance - very slow)
+        const layer6Speed = gameSettings.parallax.layerSpeeds.layer6;
+        const layer6ScrollOffset = (offsetRef.current * layer6Speed) % layer6Width;
         
         // Calculate how many tiles needed to cover the width
         const layer6TilesNeeded = Math.ceil(width / layer6Width) + 2;
@@ -484,8 +485,9 @@ const PathCanvas = () => {
         const layer5Width = parallaxLayer5Image.width;
         const layer5Height = parallaxLayer5Image.height;
         
-        // Parallax effect - layer 5 moves at 0.4x speed (slower than layer 4)
-        const layer5ScrollOffset = (offsetRef.current * 0.4) % layer5Width;
+        // Parallax effect - layer 5 moves based on config
+        const layer5Speed = gameSettings.parallax.layerSpeeds.layer5;
+        const layer5ScrollOffset = (offsetRef.current * layer5Speed) % layer5Width;
         
         // Calculate how many tiles needed
         const layer5TilesNeeded = Math.ceil(width / layer5Width) + 2;
@@ -505,8 +507,9 @@ const PathCanvas = () => {
         const layer4Width = parallaxLayer4Image.width;
         const layer4Height = parallaxLayer4Image.height;
         
-        // Parallax effect - layer 4 moves at 0.5x speed
-        const layer4ScrollOffset = (offsetRef.current * 0.5) % layer4Width;
+        // Parallax effect - layer 4 moves based on config
+        const layer4Speed = gameSettings.parallax.layerSpeeds.layer4;
+        const layer4ScrollOffset = (offsetRef.current * layer4Speed) % layer4Width;
         
         // Calculate how many tiles needed
         const layer4TilesNeeded = Math.ceil(width / layer4Width) + 2;
@@ -531,8 +534,9 @@ const PathCanvas = () => {
         const layer3Width = parallaxLayer3Image.width;
         const layer3Height = parallaxLayer3Image.height;
         
-        // Parallax effect - layer 3 moves at 0.8x speed (slower than path/layer 2)
-        const layer3ScrollOffset = (offsetRef.current * 0.8) % layer3Width;
+        // Parallax effect - layer 3 moves based on config
+        const layer3Speed = gameSettings.parallax.layerSpeeds.layer3;
+        const layer3ScrollOffset = (offsetRef.current * layer3Speed) % layer3Width;
         
         // Calculate how many tiles needed
         const layer3TilesNeeded = Math.ceil(width / layer3Width) + 2;

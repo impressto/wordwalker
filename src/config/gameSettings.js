@@ -81,6 +81,22 @@ const gameSettings = {
     // Base points for correct answers
     basePoints: 10,
   },
+
+  // Parallax Layer Settings
+  parallax: {
+    // Parallax speed multipliers for each layer
+    // Speed is relative to the main walker movement (1.0 = no parallax, 0.0 = no movement)
+    // Lower values = farther away = less movement
+    layerSpeeds: {
+      layer1: 0.8,   // Foreground (closest) - fast movement
+      layer2: 0.6,   // Mid-foreground
+      layer3: 0.5,   // Mid layer
+      layer4: 0.4,   // Mid-distant
+      layer5: 0.3,   // Distant layer
+      layer6: 0.15,  // Mountains (very far)
+      layer7: 0.0,   // Sky/rear (infinite distance - no movement)
+    },
+  },
   
   // Other game settings can be added here as needed
 };
