@@ -24,6 +24,7 @@ const PathCanvas = () => {
   const [parallaxLayer4Image, setParallaxLayer4Image] = useState(null); // Mid-distant layer
   const [parallaxLayer5Image, setParallaxLayer5Image] = useState(null); // Far layer
   const [parallaxLayer3Image, setParallaxLayer3Image] = useState(null); // Bushes layer
+  const [parallaxLayer7Image, setParallaxLayer7Image] = useState(null); // Rear layer (infinite distance, no parallax)
   const [walkerSpriteSheet, setWalkerSpriteSheet] = useState(null); // Walker sprite sheet
   const offsetRef = useRef(-300); // Start scrolled back so fork appears more centered initially
   const velocityRef = useRef(0); // Current scroll velocity for smooth acceleration/deceleration
@@ -331,6 +332,13 @@ const PathCanvas = () => {
       setParallaxLayer3Image(parallaxLayer3);
     };
     
+    // Load parallax-layer7 image (rear layer at infinite distance, no parallax)
+    const parallaxLayer7 = new Image();
+    parallaxLayer7.src = `${themePath}parallax-layer7.png`;
+    parallaxLayer7.onload = () => {
+      setParallaxLayer7Image(parallaxLayer7);
+    };
+    
     // Load walker sprite sheet
     const walker = new Image();
     walker.src = `${basePath}images/walker.png`;
@@ -408,21 +416,28 @@ const PathCanvas = () => {
       // Define horizon line (eye level) - positioned in upper third
       const horizonY = height * 0.35;
       
-      // Draw sky (upper portion - navy to light blue)
-      // Sky ends 20 pixels above the bottom of the mountains
-      const skyBottom = horizonY - 20;
-      const skyGradient = ctx.createLinearGradient(0, 0, 0, skyBottom);
-      skyGradient.addColorStop(0, '#3b6499ff'); // Navy blue at top
-      skyGradient.addColorStop(1, '#87CEEB'); // Light blue at bottom
-      ctx.fillStyle = skyGradient;
-      ctx.fillRect(0, 0, width, skyBottom);
+      // Draw parallax layer 7 (rear layer at infinite distance - no parallax effect)
+      // Drawn first so it appears behind everything else
+      if (parallaxLayer7Image) {
+        const layer7Width = parallaxLayer7Image.width; // 600px
+        const layer7Height = parallaxLayer7Image.height; // 300px
+        
+        // Layer 7 does not move (infinite distance, no parallax)
+        // Stretch to fill the entire canvas width, aligned to top
+        ctx.drawImage(parallaxLayer7Image, 0, 0, width, layer7Height);
+      } else {
+        // Fallback: if layer 7 is not loaded yet, draw simple blue and green rectangles
+        const skyBottom = horizonY - 20;
+        ctx.fillStyle = '#87CEEB'; // Light blue
+        ctx.fillRect(0, 0, width, skyBottom);
+        
+        ctx.fillStyle = '#2d5016'; // Dark green
+        ctx.fillRect(0, skyBottom, width, height - skyBottom);
+      }
       
-      // Draw grass base background (below sky to bottom)
-      const grassBaseGradient = ctx.createLinearGradient(0, skyBottom, 0, height);
-      grassBaseGradient.addColorStop(0, '#6B8E23'); // Olive drab at top
-      grassBaseGradient.addColorStop(1, '#3B5323'); // Dark green at bottom
-      ctx.fillStyle = grassBaseGradient;
-      ctx.fillRect(0, skyBottom, width, height - skyBottom);
+      // Fill bottom half with dark green to avoid white showing behind parallax trees
+      ctx.fillStyle = '#33631dff'; // Very dark green
+      ctx.fillRect(0, height * 0.5, width, height * 0.5);
       
       // Draw mountains at the horizon (tiled horizontally with parallax)
       if (parallaxLayer6Image) {
@@ -444,13 +459,8 @@ const PathCanvas = () => {
           ctx.drawImage(parallaxLayer6Image, x, layer6Y, layer6Width, layer6Height);
         }
       }
-      
-      // Draw distant grass (between horizon and path) - extended to cover area above path
-      const distantGrassGradient = ctx.createLinearGradient(0, horizonY, 0, height * 0.55);
-      distantGrassGradient.addColorStop(0, '#6B8E23'); // Olive drab (distant)
-      distantGrassGradient.addColorStop(1, '#7CB342'); // Lighter green
-      ctx.fillStyle = distantGrassGradient;
-      ctx.fillRect(0, horizonY, width, height * 0.55 - horizonY); // Fill from horizon to path top
+
+
       
       // Draw parallax layer 5 (far layer) - between layer 6 and layer 4
       // Drawn after grass so it appears in front
