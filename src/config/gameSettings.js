@@ -82,11 +82,16 @@ const gameSettings = {
     basePoints: 10,
   },
 
-  // Parallax Layer Settings
+  // Parallax/Theme Settings
   parallax: {
-    // Parallax speed multipliers for each layer
+    // Current active theme - can be changed to switch scenes
+    // Options: 'default', 'hong-kong', or other theme IDs defined in parallaxThemes.js
+    currentTheme: 'default',
+
+    // Default parallax speed multipliers for each layer
     // Speed is relative to the main walker movement (1.0 = no parallax, 0.0 = no movement)
     // Lower values = farther away = less movement
+    // Note: These can be overridden per-theme in parallaxThemes.js
     layerSpeeds: {
       layer1: 0.8,   // Foreground (closest) - fast movement
       layer2: 0.6,   // Mid-foreground

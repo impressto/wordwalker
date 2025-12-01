@@ -1,14 +1,16 @@
 /**
  * CharacterShop Component
- * Displays available characters for purchase
+ * Displays available characters and themes for purchase
  */
 
 import { useState, useEffect } from 'react';
+import { getShopThemes } from '../config/themeShopConfig';
 import './CharacterShop.css';
 
-const CharacterShop = ({ totalPoints, ownedCharacters, currentCharacter, onPurchase, onSelectCharacter, onClose }) => {
+const CharacterShop = ({ totalPoints, ownedCharacters, currentCharacter, onPurchase, onSelectCharacter, ownedThemes, currentTheme, onPurchaseTheme, onSelectTheme, onClose }) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isReady, setIsReady] = useState(false);
+  const [activeTab, setActiveTab] = useState('characters'); // 'characters' or 'themes'
 
   useEffect(() => {
     const handleResize = () => {
@@ -91,7 +93,7 @@ const CharacterShop = ({ totalPoints, ownedCharacters, currentCharacter, onPurch
     <div className={`character-shop-overlay ${isReady ? 'ready' : ''}`}>
       <div className="character-shop-dialog">
         <div className="shop-header">
-          <h2>Character Shop</h2>
+          <h2>Shop</h2>
           <button className="close-btn" onClick={onClose}>×</button>
         </div>
 
@@ -99,62 +101,151 @@ const CharacterShop = ({ totalPoints, ownedCharacters, currentCharacter, onPurch
           Points Available: <strong>{totalPoints}</strong>
         </div>
 
-        <div className="characters-grid">
-          {characters.map((character) => {
-            const isOwned = character.id === 'default' || ownedCharacters.includes(character.id);
-            const isSelected = character.id === currentCharacter;
-            const canAfford = totalPoints >= character.cost;
-
-            return (
-              <div
-                key={character.id}
-                className={`character-card ${isSelected ? 'selected' : ''} ${isOwned ? 'owned' : ''} ${!canAfford && !isOwned ? 'unaffordable' : ''}`}
-              >
-                <div className="character-preview">
-                  <img
-                    src={`${import.meta.env.BASE_URL}images/walkers/${character.avatarFile}`}
-                    alt={character.name}
-                  />
-                </div>
-
-                <div className="character-info">
-                  <h3>{character.name}</h3>
-                  <p className="description">{character.description}</p>
-
-                  {character.cost > 0 ? (
-                    <div className="cost">
-                      {isOwned ? (
-                        <span className="owned-badge">✓ Owned</span>
-                      ) : (
-                        <span className={canAfford ? 'affordable' : 'unaffordable'}>
-                          {character.cost} points
-                        </span>
-                      )}
-                    </div>
-                  ) : (
-                    <div className="cost">
-                      <span className="free">Free</span>
-                    </div>
-                  )}
-
-                  <button
-                    className={`action-btn ${isSelected ? 'selected-btn' : isOwned ? 'select-btn' : canAfford ? 'buy-btn' : 'disabled-btn'}`}
-                    onClick={() => handleCharacterAction(character)}
-                    disabled={!canAfford && !isOwned}
-                  >
-                    {isSelected
-                      ? '✓ Selected'
-                      : isOwned
-                      ? 'Select'
-                      : canAfford
-                      ? `Buy for ${character.cost}`
-                      : `Need ${character.cost - totalPoints} more`}
-                  </button>
-                </div>
-              </div>
-            );
-          })}
+        {/* Tab Navigation */}
+        <div className="shop-tabs">
+          <button
+            className={`tab-btn ${activeTab === 'characters' ? 'active' : ''}`}
+            onClick={() => setActiveTab('characters')}
+          >
+            Characters
+          </button>
+          <button
+            className={`tab-btn ${activeTab === 'themes' ? 'active' : ''}`}
+            onClick={() => setActiveTab('themes')}
+          >
+            Themes
+          </button>
         </div>
+
+        {/* Characters Tab */}
+        {activeTab === 'characters' && (
+          <div className="characters-grid">
+            {characters.map((character) => {
+              const isOwned = character.id === 'default' || ownedCharacters.includes(character.id);
+              const isSelected = character.id === currentCharacter;
+              const canAfford = totalPoints >= character.cost;
+
+              return (
+                <div
+                  key={character.id}
+                  className={`character-card ${isSelected ? 'selected' : ''} ${isOwned ? 'owned' : ''} ${!canAfford && !isOwned ? 'unaffordable' : ''}`}
+                >
+                  <div className="character-preview">
+                    <img
+                      src={`${import.meta.env.BASE_URL}images/walkers/${character.avatarFile}`}
+                      alt={character.name}
+                    />
+                  </div>
+
+                  <div className="character-info">
+                    <h3>{character.name}</h3>
+                    <p className="description">{character.description}</p>
+
+                    {character.cost > 0 ? (
+                      <div className="cost">
+                        {isOwned ? (
+                          <span className="owned-badge">✓ Owned</span>
+                        ) : (
+                          <span className={canAfford ? 'affordable' : 'unaffordable'}>
+                            {character.cost} points
+                          </span>
+                        )}
+                      </div>
+                    ) : (
+                      <div className="cost">
+                        <span className="free">Free</span>
+                      </div>
+                    )}
+
+                    <button
+                      className={`action-btn ${isSelected ? 'selected-btn' : isOwned ? 'select-btn' : canAfford ? 'buy-btn' : 'disabled-btn'}`}
+                      onClick={() => handleCharacterAction(character)}
+                      disabled={!canAfford && !isOwned}
+                    >
+                      {isSelected
+                        ? '✓ Selected'
+                        : isOwned
+                        ? 'Select'
+                        : canAfford
+                        ? `Buy for ${character.cost}`
+                        : `Need ${character.cost - totalPoints} more`}
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        {/* Themes Tab */}
+        {activeTab === 'themes' && (
+          <div className="themes-grid">
+            {getShopThemes().map((theme) => {
+              const isOwned = theme.id === 'default' || ownedThemes.includes(theme.id);
+              const isSelected = theme.id === currentTheme;
+              const canAfford = totalPoints >= theme.cost;
+
+              const handleThemeAction = () => {
+                if (theme.id === 'default' || isOwned) {
+                  onSelectTheme(theme.id);
+                } else {
+                  if (totalPoints >= theme.cost) {
+                    onPurchaseTheme(theme.id, theme.cost);
+                  }
+                }
+              };
+
+              return (
+                <div
+                  key={theme.id}
+                  className={`theme-card ${isSelected ? 'selected' : ''} ${isOwned ? 'owned' : ''} ${!canAfford && !isOwned ? 'unaffordable' : ''}`}
+                >
+                  <div className="theme-preview">
+                    <img
+                      src={`${import.meta.env.BASE_URL}images/themes/${theme.id}/${theme.thumbnail}`}
+                      alt={theme.name}
+                    />
+                  </div>
+
+                  <div className="theme-info">
+                    <h3>{theme.name}</h3>
+                    <p className="description">{theme.description}</p>
+
+                    {theme.cost > 0 ? (
+                      <div className="cost">
+                        {isOwned ? (
+                          <span className="owned-badge">✓ Owned</span>
+                        ) : (
+                          <span className={canAfford ? 'affordable' : 'unaffordable'}>
+                            {theme.cost} points
+                          </span>
+                        )}
+                      </div>
+                    ) : (
+                      <div className="cost">
+                        <span className="free">Free</span>
+                      </div>
+                    )}
+
+                    <button
+                      className={`action-btn ${isSelected ? 'selected-btn' : isOwned ? 'select-btn' : canAfford ? 'buy-btn' : 'disabled-btn'}`}
+                      onClick={handleThemeAction}
+                      disabled={!canAfford && !isOwned}
+                    >
+                      {isSelected
+                        ? '✓ Selected'
+                        : isOwned
+                        ? 'Select'
+                        : canAfford
+                        ? `Buy for ${theme.cost}`
+                        : `Need ${theme.cost - totalPoints} more`}
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        )}
 
         <div className="shop-footer">
           <button className="close-shop-btn" onClick={onClose}>

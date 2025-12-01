@@ -4,6 +4,8 @@ import { isCategoryCompleted } from '../utils/questionTracking';
 import { translations } from '../config/answer-translations';
 import { questionTranslations } from '../config/question-translations';
 import gameSettings, { getStreakColor } from '../config/gameSettings';
+import { getTheme } from '../config/parallaxThemes';
+import { setActiveTheme } from '../utils/themeManager';
 import SoundManager from '../soundManager';
 import { loadGameState, saveGameState, clearGameState, hasSavedGameState, convertLoadedState } from '../utils/gameStatePersistence';
 import ScoreDisplay from './ScoreDisplay';
@@ -147,6 +149,28 @@ const PathCanvas = () => {
   });
   const [showCharacterShop, setShowCharacterShop] = useState(false);
   const [walkerVariants, setWalkerVariants] = useState({}); // Store loaded walker images for different characters
+  
+  // Parallax theme state - track current active theme
+  const [currentTheme, setCurrentTheme] = useState(() => {
+    return localStorage.getItem('wordwalker-current-theme') || gameSettings.parallax.currentTheme;
+  });
+  
+  // Owned themes state - track which themes user has purchased
+  const [ownedThemes, setOwnedThemes] = useState(() => {
+    const saved = localStorage.getItem('wordwalker-owned-themes');
+    return saved ? JSON.parse(saved) : ['default'];
+  });
+  
+  // Update theme in localStorage when it changes
+  useEffect(() => {
+    localStorage.setItem('wordwalker-current-theme', currentTheme);
+    setActiveTheme(currentTheme);
+  }, [currentTheme]);
+  
+  // Update owned themes in localStorage when they change
+  useEffect(() => {
+    localStorage.setItem('wordwalker-owned-themes', JSON.stringify(ownedThemes));
+  }, [ownedThemes]);
   
   useEffect(() => {
     soundManagerRef.current = new SoundManager();
@@ -293,8 +317,10 @@ const PathCanvas = () => {
   useEffect(() => {
     // Get base path for assets (handles subdirectory deployments)
     const basePath = import.meta.env.BASE_URL || '/';
-    // Theme path - can be changed later based on category
-    const themePath = `${basePath}images/themes/default/`;
+    
+    // Get current theme configuration
+    const theme = getTheme(currentTheme);
+    const themePath = `${basePath}images/themes/${theme.imagePath}/`;
     
     // Load parallax-layer2 image (grass)
     const parallaxLayer2 = new Image();
@@ -381,7 +407,7 @@ const PathCanvas = () => {
     };
     
     loadWalkerVariants();
-  }, []);
+  }, [currentTheme]);
 
   // Update walker sprite sheet when current character changes
   useEffect(() => {
@@ -467,8 +493,21 @@ const PathCanvas = () => {
       const width = canvas.width;
       const height = canvas.height;
       
-      // Define horizon line (eye level) - positioned in upper third
-      const horizonY = height * 0.35;
+      // Get current theme configuration
+      const theme = getTheme(currentTheme);
+      
+      // Define horizon line (eye level) - positioned based on theme
+      const horizonY = height * theme.positioning.horizonY;
+      
+      // Helper function to get layer Y position with theme offset
+      const getLayerY = (baseY, layerId) => {
+        return baseY + (theme.layerPositions[layerId] || 0);
+      };
+      
+      // Helper function to get layer speed from theme
+      const getLayerSpeed = (layerId) => {
+        return theme.layerSpeeds[layerId] || gameSettings.parallax.layerSpeeds[layerId];
+      };
       
       // Draw parallax layer 7 (rear layer at infinite distance - no parallax effect)
       // Drawn first so it appears behind everything else
@@ -481,7 +520,8 @@ const PathCanvas = () => {
         const scale = (width * 1.2) / layer7Width; // 1.2x scale allows bleeding on edges
         const scaledHeight = layer7Height * scale;
         const xOffset = -(scaledHeight * 0.1); // Center with slight offset
-        ctx.drawImage(parallaxLayer7Image, xOffset, 0, width * 1.2, scaledHeight);
+        const layer7Y = getLayerY(0, 'layer7');
+        ctx.drawImage(parallaxLayer7Image, xOffset, layer7Y, width * 1.2, scaledHeight);
       } else {
         // Fallback: if layer 7 is not loaded yet, draw simple blue and green rectangles
         const skyBottom = horizonY - 20;
@@ -503,14 +543,14 @@ const PathCanvas = () => {
         const layer6Height = parallaxLayer6Image.height;
         
         // Parallax effect - layer 6 moves based on config (far distance - very slow)
-        const layer6Speed = gameSettings.parallax.layerSpeeds.layer6;
+        const layer6Speed = getLayerSpeed('layer6');
         const layer6ScrollOffset = (offsetRef.current * layer6Speed) % layer6Width;
         
         // Calculate how many tiles needed to cover the width
         const layer6TilesNeeded = Math.ceil(width / layer6Width) + 2;
         
-        // Position layer 6 at the horizon
-        const layer6Y = horizonY - layer6Height;
+        // Position layer 6 at the horizon with theme offset
+        const layer6Y = getLayerY(horizonY - layer6Height, 'layer6');
         
         // Draw layer 6 tiles horizontally
         for (let i = -1; i < layer6TilesNeeded; i++) {
@@ -528,14 +568,14 @@ const PathCanvas = () => {
         const layer5Height = parallaxLayer5Image.height;
         
         // Parallax effect - layer 5 moves based on config
-        const layer5Speed = gameSettings.parallax.layerSpeeds.layer5;
+        const layer5Speed = getLayerSpeed('layer5');
         const layer5ScrollOffset = (offsetRef.current * layer5Speed) % layer5Width;
         
         // Calculate how many tiles needed
         const layer5TilesNeeded = Math.ceil(width / layer5Width) + 2;
         
-        // Position layer 5 at horizon - moved up additional 30 pixels
-        const layer5Y = horizonY - layer5Height * 0.3 - 30; // Slightly overlap with layer 6
+        // Position layer 5 at horizon with theme offset
+        const layer5Y = getLayerY(horizonY - layer5Height * 0.3 - 30, 'layer5'); // Slightly overlap with layer 6
         
         // Draw layer 5 tiles horizontally
         for (let i = -1; i < layer5TilesNeeded; i++) {
@@ -550,14 +590,14 @@ const PathCanvas = () => {
         const layer4Height = parallaxLayer4Image.height;
         
         // Parallax effect - layer 4 moves based on config
-        const layer4Speed = gameSettings.parallax.layerSpeeds.layer4;
+        const layer4Speed = getLayerSpeed('layer4');
         const layer4ScrollOffset = (offsetRef.current * layer4Speed) % layer4Width;
         
         // Calculate how many tiles needed
         const layer4TilesNeeded = Math.ceil(width / layer4Width) + 2;
         
-        // Position layer 4
-        const layer4Y = horizonY - 15;
+        // Position layer 4 with theme offset
+        const layer4Y = getLayerY(horizonY - 15, 'layer4');
         
         // Draw layer 4 tiles horizontally
         for (let i = -1; i < layer4TilesNeeded; i++) {
@@ -566,9 +606,9 @@ const PathCanvas = () => {
         }
       }
       
-      // Define path area - moved down 90 pixels
-      const pathTop = height * 0.55 + 90; // Where path starts (behind)
-      const pathBottom = height * 0.75 + 90; // Where path ends (in front)
+      // Define path area based on theme positioning
+      const pathTop = height * theme.positioning.pathTopOffset + theme.positioning.pathTopAdditional; // Where path starts (behind)
+      const pathBottom = height * 0.75 + theme.positioning.pathTopAdditional; // Where path ends (in front)
       const pathHeight = pathBottom - pathTop;
       
       // Draw parallax layer 3 (bushes) - before layer 2 so layer 2 appears in front
@@ -577,14 +617,14 @@ const PathCanvas = () => {
         const layer3Height = parallaxLayer3Image.height;
         
         // Parallax effect - layer 3 moves based on config
-        const layer3Speed = gameSettings.parallax.layerSpeeds.layer3;
+        const layer3Speed = getLayerSpeed('layer3');
         const layer3ScrollOffset = (offsetRef.current * layer3Speed) % layer3Width;
         
         // Calculate how many tiles needed
         const layer3TilesNeeded = Math.ceil(width / layer3Width) + 2;
         
-        // Position layer 3 just above the path - moved up 20 pixels
-        const layer3Y = pathTop - layer3Height * 0.5 - 20; // Overlap slightly with path area
+        // Position layer 3 just above the path with theme offset
+        const layer3Y = getLayerY(pathTop - layer3Height * 0.5 - 20, 'layer3'); // Overlap slightly with path area
         
         // Draw layer 3 tiles horizontally
         for (let i = -1; i < layer3TilesNeeded; i++) {
@@ -801,9 +841,10 @@ const PathCanvas = () => {
       if (parallaxLayer1Image && isPortrait) {
         const layer1Width = parallaxLayer1Image.width;
         const layer1Height = parallaxLayer1Image.height;
-        const layer1ScrollOffset = (offsetRef.current * 1.5) % layer1Width;
+        const layer1Speed = getLayerSpeed('layer1');
+        const layer1ScrollOffset = (offsetRef.current * layer1Speed) % layer1Width;
         const layer1TilesNeeded = Math.ceil(width / layer1Width) + 2;
-        const layer1Y = height - layer1Height;
+        const layer1Y = getLayerY(height - layer1Height, 'layer1');
         
         for (let i = -1; i < layer1TilesNeeded; i++) {
           const x = i * layer1Width - layer1ScrollOffset;
@@ -894,7 +935,7 @@ const PathCanvas = () => {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [parallaxLayer2Image, pathImage, pathForkImage, parallaxLayer6Image, parallaxLayer1Image, parallaxLayer4Image, parallaxLayer5Image, parallaxLayer3Image, walkerSpriteSheet, isPaused, showChoice, showQuestion, selectedPath, questionAnswered, isVictoryAnimation]);
+  }, [parallaxLayer2Image, pathImage, pathForkImage, parallaxLayer6Image, parallaxLayer1Image, parallaxLayer4Image, parallaxLayer5Image, parallaxLayer3Image, walkerSpriteSheet, isPaused, showChoice, showQuestion, selectedPath, questionAnswered, isVictoryAnimation, currentTheme]);
 
   // Helper function to load a new question for the current checkpoint
   const loadNewQuestion = (category) => {
@@ -1197,6 +1238,29 @@ const PathCanvas = () => {
     localStorage.setItem('wordwalker-current-character', characterId);
   };
 
+  const handlePurchaseTheme = (themeId, cost) => {
+    if (totalPoints >= cost) {
+      // Deduct points
+      setTotalPoints(prevPoints => prevPoints - cost);
+      
+      // Add to owned themes
+      setOwnedThemes(prev => {
+        const updated = [...prev, themeId];
+        localStorage.setItem('wordwalker-owned-themes', JSON.stringify(updated));
+        return updated;
+      });
+      
+      // Select the new theme
+      handleSelectTheme(themeId);
+    }
+  };
+
+  const handleSelectTheme = (themeId) => {
+    setCurrentTheme(themeId);
+    localStorage.setItem('wordwalker-current-theme', themeId);
+    setActiveTheme(themeId);
+  };
+
   // Check if there's an affordable unbought character
   const hasAffordablePurchase = (() => {
     const characters = [
@@ -1437,6 +1501,10 @@ const PathCanvas = () => {
           currentCharacter={currentCharacter}
           onPurchase={handlePurchaseCharacter}
           onSelectCharacter={handleSelectCharacter}
+          ownedThemes={ownedThemes}
+          currentTheme={currentTheme}
+          onPurchaseTheme={handlePurchaseTheme}
+          onSelectTheme={handleSelectTheme}
           onClose={handleCloseCharacterShop}
         />
       )}
