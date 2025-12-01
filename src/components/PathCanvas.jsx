@@ -1196,6 +1196,23 @@ const PathCanvas = () => {
     localStorage.setItem('wordwalker-current-character', characterId);
   };
 
+  // Check if there's an affordable unbought character
+  const hasAffordablePurchase = (() => {
+    const characters = [
+      { id: 'default', cost: 0 },
+      { id: 'blue', cost: 50 },
+      { id: 'dog', cost: 75 },
+      { id: 'cat', cost: 60 },
+      { id: 'emma', cost: 80 },
+    ];
+    
+    return characters.some(char => 
+      char.id !== 'default' && 
+      !ownedCharacters.includes(char.id) && 
+      totalPoints >= char.cost
+    );
+  })();
+
   return (
     <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
       {/* Loading Screen Overlay */}
@@ -1347,6 +1364,7 @@ const PathCanvas = () => {
         checkpointsPerCategory={checkpointsPerCategory}
         getCategoryById={getCategoryById}
         onOpenShop={handleOpenCharacterShop}
+        hasAffordablePurchase={hasAffordablePurchase}
       />
 
       <canvas

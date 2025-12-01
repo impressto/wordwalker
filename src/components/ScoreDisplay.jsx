@@ -4,8 +4,9 @@
  */
 
 import { useState, useEffect } from 'react';
+import './ScoreDisplay.css';
 
-const ScoreDisplay = ({ totalPoints, streak, selectedPath, forkCategories, checkpointsAnswered, checkpointsPerCategory, getCategoryById, onOpenShop }) => {
+const ScoreDisplay = ({ totalPoints, streak, selectedPath, forkCategories, checkpointsAnswered, checkpointsPerCategory, getCategoryById, onOpenShop, hasAffordablePurchase }) => {
   // Detect if mobile screen with reactive state
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   
@@ -33,7 +34,11 @@ const ScoreDisplay = ({ totalPoints, streak, selectedPath, forkCategories, check
       flexWrap: 'nowrap',
     }}>
       {/* Points and Streak Combined Display - Clickable */}
-      <div id="score-points-streak" onClick={onOpenShop} style={{
+      <div 
+        id="score-points-streak" 
+        className={hasAffordablePurchase ? 'pulse-glow' : ''}
+        onClick={onOpenShop} 
+        style={{
         padding: isMobile ? '8px 10px' : '10px 16px',
         backgroundColor: 'rgba(255, 255, 255, 0.9)',
         borderRadius: '8px',
