@@ -65,6 +65,14 @@ const CharacterShop = ({ totalPoints, ownedCharacters, currentCharacter, onPurch
       cost: 80,
       description: 'A charming character',
     },
+    {
+      id: 'asuka',
+      name: 'Asuka',
+      spriteFile: 'walker-asuka.png',
+      avatarFile: 'walker-asuka-avatar.png',
+      cost: 85,
+      description: 'A spirited adventurer',
+    },
   ];
 
   const handleCharacterAction = (character) => {

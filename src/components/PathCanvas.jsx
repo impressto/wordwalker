@@ -368,6 +368,7 @@ const PathCanvas = () => {
         'dog': 'walker-dog.png',
         'cat': 'walker-cat.png',
         'emma': 'walker-emma.png',
+        'asuka': 'walker-asuka.png',
       };
       
       for (const [charId, filename] of Object.entries(characterFiles)) {
@@ -1204,6 +1205,7 @@ const PathCanvas = () => {
       { id: 'dog', cost: 75 },
       { id: 'cat', cost: 60 },
       { id: 'emma', cost: 80 },
+      { id: 'asuka', cost: 85 },
     ];
     
     return characters.some(char => 
