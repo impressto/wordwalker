@@ -639,12 +639,17 @@ const PathCanvas = () => {
         const scrollOffset = offsetRef.current % tileWidth;
         
         // Draw layer 2 tiles - repeat horizontally, stretch vertically from pathTop to bottom
-        const totalLayer2Height = height - pathTop;
+        // Layer 2 always fills from pathTop to bottom of canvas
+        // stretchFactor controls the image aspect ratio (1.0 = no distortion)
+        const stretchFactor = theme.layer2StretchFactor ?? 1.0;
+        const offsetY = theme.layer2OffsetY ?? 0;
+        const startY = pathTop + offsetY;
+        const totalLayer2Height = height - startY;  // Always fill to bottom of screen
         const tilesX = Math.ceil(width / tileWidth) + 1;
         
         for (let col = -1; col < tilesX; col++) {
           const x = col * tileWidth - scrollOffset;
-          const y = pathTop;
+          const y = startY;
           ctx.drawImage(parallaxLayer2Image, x, y, tileWidth, totalLayer2Height);
         }
       }

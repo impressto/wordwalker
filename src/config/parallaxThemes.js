@@ -13,12 +13,12 @@ const parallaxThemes = {
     // Layer positions (Y coordinate adjustments from base positions)
     // These are offsets from the calculated horizon and path positions
     layerPositions: {
-      layer1: 0,      // Foreground - no adjustment
+      layer1: 0,      // Foreground grass - no adjustment
       layer2: 0,      // Grass/midground - no adjustment
-      layer3: -20,    // Bushes - 20 pixels up from calculated position
-      layer4: -15,    // Mid-distant - 15 pixels up
-      layer5: -30,    // Far layer - 30 pixels up
-      layer6: 0,      // Mountains - at horizon
+      layer3: 10,    // Bushes - 20 pixels up from calculated position
+      layer4: 0,    // trees - 15 pixels up
+      layer5: -60,    // pine tree - 30 pixels up
+      layer6: -30,      // Mountains - at horizon
       layer7: 0,      // Sky/rear - no adjustment
     },
     // Parallax speed multipliers for each layer
@@ -39,6 +39,14 @@ const parallaxThemes = {
       pathTopOffset: 0.55,   // Path top as proportion of canvas height
       pathTopAdditional: 90, // Additional pixel offset for path top
     },
+    // Layer 2 vertical stretch control (for grass/street level)
+    // 1.0 = full stretch from path to bottom of canvas
+    // 0.5 = half stretch (use original image height, no stretching)
+    // Values > 1.0 = extra stretch beyond canvas height
+    layer2StretchFactor: 0.8,
+    // Layer 2 vertical offset (moves layer up/down from path top)
+    // Positive value = move down, negative = move up
+    layer2OffsetY: 30,
   },
 
   // Hong Kong theme - urban/harbor scene
@@ -52,15 +60,15 @@ const parallaxThemes = {
       layer1: 0,      // Foreground - adjust as needed
       layer2: 0,      // Grass/street level - adjust as needed
       layer3: -20,    // Buildings/structures - adjust as needed
-      layer4: -15,    // Mid-distant buildings - adjust as needed
-      layer5: -30,    // Distant skyline - adjust as needed
-      layer6: 0,      // Background buildings - adjust as needed
-      layer7: 0,      // Sky/rear - adjust as needed
+      layer4: -140,   // Mid-distant buildings - adjust as needed
+      layer5: -50,    // Distant skyline - adjust as needed
+      layer6: 120,   // monuntains- adjust as needed
+      layer7: -100,      // Sky/rear - adjust as needed
     },
     layerSpeeds: {
       layer1: 0.8,    // Foreground
       layer2: 0.6,    // Mid-foreground
-      layer3: 0.5,    // Mid layer
+      layer3: 0.6,    // Mid layer
       layer4: 0.4,    // Mid-distant
       layer5: 0.3,    // Distant layer
       layer6: 0.15,   // Background
@@ -71,6 +79,10 @@ const parallaxThemes = {
       pathTopOffset: 0.55,
       pathTopAdditional: 90,
     },
+    // Layer 2 vertical stretch control
+    layer2StretchFactor: 0.6,
+    // Layer 2 vertical offset (moves layer up/down from path top)
+    layer2OffsetY: 50,
   },
 
   // Add more themes below following the same structure
