@@ -5,7 +5,7 @@
 
 import { useState, useEffect } from 'react';
 
-const ScoreDisplay = ({ totalPoints, streak, selectedPath, forkCategories, checkpointsAnswered, checkpointsPerCategory, getCategoryById }) => {
+const ScoreDisplay = ({ totalPoints, streak, selectedPath, forkCategories, checkpointsAnswered, checkpointsPerCategory, getCategoryById, onOpenShop }) => {
   // Detect if mobile screen with reactive state
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   
@@ -32,8 +32,8 @@ const ScoreDisplay = ({ totalPoints, streak, selectedPath, forkCategories, check
       maxWidth: '95vw',
       flexWrap: 'nowrap',
     }}>
-      {/* Points and Streak Combined Display */}
-      <div id="score-points-streak" style={{
+      {/* Points and Streak Combined Display - Clickable */}
+      <div id="score-points-streak" onClick={onOpenShop} style={{
         padding: isMobile ? '8px 10px' : '10px 16px',
         backgroundColor: 'rgba(255, 255, 255, 0.9)',
         borderRadius: '8px',
@@ -45,6 +45,15 @@ const ScoreDisplay = ({ totalPoints, streak, selectedPath, forkCategories, check
         alignItems: 'center',
         gap: isMobile ? '6px' : '12px',
         whiteSpace: 'nowrap',
+        cursor: 'pointer',
+        transition: 'all 0.2s ease',
+        userSelect: 'none',
+      }} onMouseEnter={(e) => {
+        e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 1)';
+        e.currentTarget.style.boxShadow = '0 4px 8px rgba(0,0,0,0.3)';
+      }} onMouseLeave={(e) => {
+        e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+        e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.2)';
       }}>
         <span>Points: {totalPoints}</span>
         {streak > 0 && (

@@ -13,6 +13,7 @@ import TranslationOverlay from './TranslationOverlay';
 import SearchDialog from './SearchDialog';
 import ResumeDialog from './ResumeDialog';
 import InstallPrompt from './InstallPrompt';
+import CharacterShop from './CharacterShop';
 
 const PathCanvas = () => {
   const canvasRef = useRef(null);
@@ -73,12 +74,12 @@ const PathCanvas = () => {
   
   // Sprite sheet configuration
   const spriteConfig = {
-    width: 1800,           // Total sprite sheet width
-    height: 740,           // Total sprite sheet height
+    width: 1400,           // Total sprite sheet width
+    height: 600,           // Total sprite sheet height
     rows: 2,               // 2 rows (walking, victory)
     cols: 6,               // 6 sprites per row
-    frameWidth: 300,       // Each sprite is 300px wide (1800 / 6 = 300)
-    frameHeight: 370,      // 740 / 2 = 370px per frame
+    frameWidth: 233.33,    // Each sprite is ~233px wide (1400 / 6 = 233.33)
+    frameHeight: 300,      // 600 / 2 = 300px per frame
     walkingRow: 0,         // First row is walking animation
     victoryRow: 1,         // Second row is victory animation
     totalFrames: 6,        // 6 frames per animation
@@ -135,6 +136,17 @@ const PathCanvas = () => {
   // Initialize sound manager
   const soundManagerRef = useRef(null);
   const [audioInitialized, setAudioInitialized] = useState(false);
+  
+  // Character system state
+  const [currentCharacter, setCurrentCharacter] = useState(() => {
+    return localStorage.getItem('wordwalker-current-character') || 'default';
+  });
+  const [ownedCharacters, setOwnedCharacters] = useState(() => {
+    const saved = localStorage.getItem('wordwalker-owned-characters');
+    return saved ? JSON.parse(saved) : ['default'];
+  });
+  const [showCharacterShop, setShowCharacterShop] = useState(false);
+  const [walkerVariants, setWalkerVariants] = useState({}); // Store loaded walker images for different characters
   
   useEffect(() => {
     soundManagerRef.current = new SoundManager();
@@ -347,13 +359,32 @@ const PathCanvas = () => {
       setParallaxLayer7Image(parallaxLayer7);
     };
     
-    // Load walker sprite sheet
-    const walker = new Image();
-    walker.src = `${basePath}images/walkers/walker.png`;
-    walker.onload = () => {
-      setWalkerSpriteSheet(walker);
+    // Load walker sprite sheets for all characters
+    const loadWalkerVariants = async () => {
+      const variants = {};
+      const characterFiles = {
+        'default': 'walker-default.png',
+        'blue': 'walker-blue.png',
+      };
+      
+      for (const [charId, filename] of Object.entries(characterFiles)) {
+        const walker = new Image();
+        walker.src = `${basePath}images/walkers/${filename}`;
+        variants[charId] = walker;
+      }
+      
+      setWalkerVariants(variants);
     };
+    
+    loadWalkerVariants();
   }, []);
+
+  // Update walker sprite sheet when current character changes
+  useEffect(() => {
+    if (walkerVariants[currentCharacter]) {
+      setWalkerSpriteSheet(walkerVariants[currentCharacter]);
+    }
+  }, [currentCharacter, walkerVariants]);
 
   // Check if all critical assets are loaded
   useEffect(() => {
@@ -1130,6 +1161,38 @@ const PathCanvas = () => {
     }
   };
 
+  const handleOpenCharacterShop = () => {
+    setShowCharacterShop(true);
+    setIsPaused(true);
+  };
+
+  const handleCloseCharacterShop = () => {
+    setShowCharacterShop(false);
+    setIsPaused(false);
+  };
+
+  const handlePurchaseCharacter = (characterId, cost) => {
+    if (totalPoints >= cost) {
+      // Deduct points
+      setTotalPoints(prevPoints => prevPoints - cost);
+      
+      // Add to owned characters
+      setOwnedCharacters(prev => {
+        const updated = [...prev, characterId];
+        localStorage.setItem('wordwalker-owned-characters', JSON.stringify(updated));
+        return updated;
+      });
+      
+      // Select the new character
+      handleSelectCharacter(characterId);
+    }
+  };
+
+  const handleSelectCharacter = (characterId) => {
+    setCurrentCharacter(characterId);
+    localStorage.setItem('wordwalker-current-character', characterId);
+  };
+
   return (
     <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
       {/* Loading Screen Overlay */}
@@ -1280,6 +1343,7 @@ const PathCanvas = () => {
         checkpointsAnswered={checkpointsAnswered}
         checkpointsPerCategory={checkpointsPerCategory}
         getCategoryById={getCategoryById}
+        onOpenShop={handleOpenCharacterShop}
       />
 
       <canvas
@@ -1341,6 +1405,18 @@ const PathCanvas = () => {
         isOpen={showSearch}
         onClose={handleSearchClose}
       />
+
+      {/* Character Shop Component */}
+      {showCharacterShop && (
+        <CharacterShop
+          totalPoints={totalPoints}
+          ownedCharacters={ownedCharacters}
+          currentCharacter={currentCharacter}
+          onPurchase={handlePurchaseCharacter}
+          onSelectCharacter={handleSelectCharacter}
+          onClose={handleCloseCharacterShop}
+        />
+      )}
 
       {/* Install PWA Prompt */}
       <InstallPrompt />

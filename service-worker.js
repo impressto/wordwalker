@@ -1,5 +1,5 @@
 // Service Worker for WordWalker PWA
-const CACHE_NAME = 'wordwalker-v1.2.6';
+const CACHE_NAME = 'wordwalker-v1.2.8';
 const ASSETS_CACHE = 'wordwalker-assets-v1';
 const AUDIO_CACHE = 'wordwalker-audio-v1';
 const IMAGE_CACHE = 'wordwalker-images-v1';
@@ -14,7 +14,7 @@ const CORE_ASSETS = [
   '/wordwalker/dist/assets/vendor.js',
   '/wordwalker/dist/assets/index.css',
   // Essential images for the app to function
-  '/wordwalker/dist/images/walkers/walker.png',
+  '/wordwalker/dist/images/walkers/walker-default.png',
   '/wordwalker/dist/images/path.png',
   '/wordwalker/dist/images/grass.png',
   '/wordwalker/dist/images/mountains.png',

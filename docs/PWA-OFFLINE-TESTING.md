@@ -286,7 +286,7 @@
       - /wordwalker/dist/assets/index.js
       - /wordwalker/dist/assets/index.css
       - /wordwalker/dist/assets/vendor.js
-      - /wordwalker/dist/images/walker.png
+      - /wordwalker/dist/images/walker-default.png
       - ... and many more game assets
 
 4. Expand wordwalker-audio-v1

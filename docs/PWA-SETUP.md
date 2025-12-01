@@ -45,7 +45,7 @@ When deploying WordWalker to your hosting server, ensure the following files are
 - `trees2.png` - Mid-distance trees
 - `trees3.png` - Far-distance trees
 - `bushes.png` - Bushes behind path
-- `walker.png` - Walker sprite sheet
+- `walker-default.png` - Walker sprite sheet
 - `wordwalk-logo.png` - App logo
 
 ## Build and Deploy

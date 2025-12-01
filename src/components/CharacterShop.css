@@ -1,0 +1,276 @@
+/* Character Shop Dialog Styles */
+
+.character-shop-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 16px;
+  box-sizing: border-box;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.character-shop-overlay.ready {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.character-shop-dialog {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 24px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.shop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 12px;
+}
+
+.shop-header h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 32px;
+  cursor: pointer;
+  color: #999;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.close-btn:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.current-points {
+  background-color: #f0f0f0;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  color: #333;
+}
+
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+  padding: 8px 0;
+}
+
+.character-card {
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: all 0.3s ease;
+  background-color: white;
+}
+
+.character-card:hover {
+  border-color: #2196f3;
+  box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+}
+
+.character-card.selected {
+  border-color: #4caf50;
+  background-color: #f1f8f6;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.2);
+}
+
+.character-card.unaffordable:not(.owned) {
+  opacity: 0.7;
+}
+
+.character-preview {
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  padding: 12px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.character-preview img {
+  max-width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+}
+
+.character-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.character-info h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+.description {
+  margin: 0;
+  font-size: 14px;
+  color: #777;
+}
+
+.cost {
+  font-size: 14px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.cost .affordable {
+  color: #2196f3;
+}
+
+.cost .unaffordable {
+  color: #f44336;
+}
+
+.cost .owned-badge {
+  color: #4caf50;
+  background-color: rgba(76, 175, 80, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.cost .free {
+  color: #4caf50;
+}
+
+.action-btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.buy-btn {
+  background-color: #2196f3;
+  color: white;
+}
+
+.buy-btn:hover {
+  background-color: #1976d2;
+}
+
+.select-btn {
+  background-color: #ff9800;
+  color: white;
+}
+
+.select-btn:hover {
+  background-color: #f57c00;
+}
+
+.selected-btn {
+  background-color: #4caf50;
+  color: white;
+  cursor: default;
+}
+
+.disabled-btn {
+  background-color: #ccc;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.shop-footer {
+  border-top: 2px solid #f0f0f0;
+  padding-top: 12px;
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.close-shop-btn {
+  padding: 10px 24px;
+  background-color: #666;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.close-shop-btn:hover {
+  background-color: #555;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .character-shop-overlay {
+    padding: 16px;
+  }
+
+  .character-shop-dialog {
+    width: 100%;
+    max-width: 100%;
+    max-height: 90vh;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .characters-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .character-preview {
+    min-height: 100px;
+  }
+
+  .character-preview img {
+    max-height: 100px;
+  }
+}
