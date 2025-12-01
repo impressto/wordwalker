@@ -27,17 +27,43 @@ const CharacterShop = ({ totalPoints, ownedCharacters, currentCharacter, onPurch
   const characters = [
     {
       id: 'default',
-      name: 'Default Walker',
+      name: 'Walter',
       spriteFile: 'walker-default.png',
+      avatarFile: 'walker-default-avatar.png',
       cost: 0,
       description: 'Your starting character',
     },
     {
       id: 'blue',
-      name: 'Blue Boy',
+      name: 'Charlie',
       spriteFile: 'walker-blue.png',
+      avatarFile: 'walker-blue-avatar.png',
       cost: 50,
       description: 'A speedy blue character',
+    },
+    {
+      id: 'dog',
+      name: 'Chewie',
+      spriteFile: 'walker-dog.png',
+      avatarFile: 'walker-dog-avatar.png',
+      cost: 75,
+      description: 'A loyal canine companion',
+    },
+    {
+      id: 'cat',
+      name: 'Tiger',
+      spriteFile: 'walker-cat.png',
+      avatarFile: 'walker-cat-avatar.png',
+      cost: 60,
+      description: 'An independent feline friend',
+    },
+    {
+      id: 'emma',
+      name: 'Emma',
+      spriteFile: 'walker-emma.png',
+      avatarFile: 'walker-emma-avatar.png',
+      cost: 80,
+      description: 'A charming character',
     },
   ];
 
@@ -78,7 +104,7 @@ const CharacterShop = ({ totalPoints, ownedCharacters, currentCharacter, onPurch
               >
                 <div className="character-preview">
                   <img
-                    src={`${import.meta.env.BASE_URL}images/walkers/${character.spriteFile}`}
+                    src={`${import.meta.env.BASE_URL}images/walkers/${character.avatarFile}`}
                     alt={character.name}
                   />
                 </div>

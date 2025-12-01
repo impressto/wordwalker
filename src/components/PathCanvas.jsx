@@ -365,6 +365,9 @@ const PathCanvas = () => {
       const characterFiles = {
         'default': 'walker-default.png',
         'blue': 'walker-blue.png',
+        'dog': 'walker-dog.png',
+        'cat': 'walker-cat.png',
+        'emma': 'walker-emma.png',
       };
       
       for (const [charId, filename] of Object.entries(characterFiles)) {
@@ -730,8 +733,8 @@ const PathCanvas = () => {
         if ((isMoving && !isPaused) || isVictoryAnimation) {
           walkerFrameCounterRef.current++;
           
-          // Change frame every 5 loops for walking animation, every 12 loops for slower victory animation
-          const frameInterval = isVictoryAnimation ? 12 : 5;
+          // Change frame every 6 loops for walking animation (slowed 20%), every 12 loops for slower victory animation
+          const frameInterval = isVictoryAnimation ? 12 : 6;
           if (walkerFrameCounterRef.current % frameInterval === 0) {
             if (isVictoryAnimation) {
               // Victory animation (slower, more obvious)
@@ -783,7 +786,7 @@ const PathCanvas = () => {
           sourceX, sourceY,                    // Source position in sprite sheet
           spriteConfig.frameWidth,             // Source width
           spriteConfig.frameHeight,            // Source height
-          personX - drawWidth / 2,             // Destination X (centered)
+          personX - drawWidth / 2 + 10,        // Destination X (centered + 10px right)
           personY - drawHeight / 2 + bounceOffset, // Destination Y (centered + bounce)
           drawWidth,                           // Destination width
           drawHeight                           // Destination height
