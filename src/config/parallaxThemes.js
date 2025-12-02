@@ -10,6 +10,11 @@ const parallaxThemes = {
     name: 'Default Forest',
     description: 'Original forest landscape',
     imagePath: 'default',
+    // Canvas background colors for fallback when layer images aren't loaded
+    canvasColors: {
+      aboveHorizon: '#a7dbf6',  // Light blue sky
+      belowHorizon: '#1d6c51',  // Dark green ground
+    },
     // Layer positions (Y coordinate adjustments from base positions)
     // These are offsets from the calculated horizon and path positions
     layerPositions: {
@@ -54,6 +59,11 @@ const parallaxThemes = {
     name: 'Hong Kong Harbor',
     description: 'Urban harbor landscape',
     imagePath: 'hong-kong',
+    // Canvas background colors for fallback when layer images aren't loaded
+    canvasColors: {
+      aboveHorizon: '#f9b858',  // Light blue sky for harbor
+      belowHorizon: '#ac8062',  // Dark gray-green for urban ground
+    },
     // Layer positions for Hong Kong theme - may need different vertical positioning
     // These values should be adjusted based on the actual Hong Kong artwork
     layerPositions: {
@@ -90,6 +100,11 @@ const parallaxThemes = {
     name: 'Jamaica Beach',
     description: 'Tropical beach landscape',
     imagePath: 'jamaica',
+    // Canvas background colors for fallback when layer images aren't loaded
+    canvasColors: {
+      aboveHorizon: '#b7dbed',  // Light blue tropical sky
+      belowHorizon: '#fae19e',  // Sandy beach color
+    },
     // Layer positions for Jamaica theme
     layerPositions: {
       layer1: 0,      // Foreground - sand dune

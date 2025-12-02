@@ -526,18 +526,20 @@ const PathCanvas = () => {
         const layer7Y = getLayerY(0, 'layer7');
         ctx.drawImage(parallaxLayer7Image, xOffset, layer7Y, width * 1.2, scaledHeight);
       } else {
-        // Fallback: if layer 7 is not loaded yet, draw simple blue and green rectangles
-        const skyBottom = horizonY - 20;
-        ctx.fillStyle = '#87CEEB'; // Light blue
-        ctx.fillRect(0, 0, width, skyBottom);
+        // Fallback: if layer 7 is not loaded yet, draw theme colors for above and below horizon
+        // First, fill entire canvas with above-horizon color as a safeguard
+        ctx.fillStyle = theme.canvasColors.aboveHorizon;
+        ctx.fillRect(0, 0, width, height);
         
-        ctx.fillStyle = '#2d5016'; // Dark green
-        ctx.fillRect(0, skyBottom, width, height - skyBottom);
+        // Then draw below-horizon color on top with overlap to prevent gaps from subpixel rendering
+        const skyBottom = horizonY - 20;
+        ctx.fillStyle = theme.canvasColors.belowHorizon;
+        ctx.fillRect(0, skyBottom - 2, width, height - skyBottom + 2);
       }
       
-      // Fill bottom portion with dark green to avoid white showing behind parallax trees
-      // Move 100 pixels higher and drawn on top of blue rectangle
-      ctx.fillStyle = '#33631dff'; // Very dark green
+      // Fill bottom portion with theme below-horizon color to avoid white showing behind parallax trees
+      // Move 100 pixels higher and drawn on top of above-horizon rectangle
+      ctx.fillStyle = theme.canvasColors.belowHorizon;
       ctx.fillRect(0, height * 0.5 - 100, width, height * 0.5 + 100);
       
       // Draw mountains at the horizon (tiled horizontally with parallax)
@@ -968,11 +970,12 @@ const PathCanvas = () => {
   };
 
   // Helper function to generate new fork categories, excluding completed and current categories
-  const generateNewForkCategories = (excludeCategory = null) => {
+  const generateNewForkCategories = (excludeCategory = null, additionalCompleted = new Set()) => {
     const allCategories = getAllCategoryIds();
-    // Filter out completed categories and the current category
+    // Filter out completed categories (including newly completed ones) and the current category
+    const allCompletedCategories = new Set([...completedCategories, ...additionalCompleted]);
     const availableCategories = allCategories.filter(cat => 
-      !completedCategories.has(cat) && cat !== excludeCategory
+      !allCompletedCategories.has(cat) && cat !== excludeCategory
     );
     
     // If we have fewer than 4 available categories, we need to handle this gracefully
@@ -1165,7 +1168,8 @@ const PathCanvas = () => {
           setCurrentQuestion(null); // Clear current question
           
           // Generate new random categories for the next fork, excluding the just-completed category
-          const newForkCategories = generateNewForkCategories(currentCategory);
+          // Pass the currentCategory as additionalCompleted to ensure it's excluded immediately
+          const newForkCategories = generateNewForkCategories(null, new Set([currentCategory]));
           setForkCategories(newForkCategories);
           
           // Position next fork further ahead - account for stop margin so it doesn't come too far into view
