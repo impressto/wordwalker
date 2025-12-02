@@ -493,6 +493,9 @@ const PathCanvas = () => {
       const width = canvas.width;
       const height = canvas.height;
       
+      // Clear canvas for new frame
+      ctx.clearRect(0, 0, width, height);
+      
       // Get current theme configuration
       const theme = getTheme(currentTheme);
       
@@ -584,7 +587,7 @@ const PathCanvas = () => {
         }
       }
       
-      // Draw parallax layer 4 (mid-distant layer)
+      // Draw parallax layer 4 (midcan we br-distant layer)
       if (parallaxLayer4Image) {
         const layer4Width = parallaxLayer4Image.width;
         const layer4Height = parallaxLayer4Image.height;
@@ -709,7 +712,7 @@ const PathCanvas = () => {
         const checkpointScreenX = checkpointPositionRef.current - scrollPos;
         
         // Draw checkpoint emoji if it's visible on screen
-        if (checkpointScreenX < width && checkpointScreenX > 0) {
+        if (checkpointScreenX < width && checkpointScreenX > -100) {
           const checkpointY = pathTop + (pathBottom - pathTop) * 0.5 - 30; // Positioned on the path, moved up 15 pixels
           const checkpointSize = 60;
           
@@ -718,7 +721,7 @@ const PathCanvas = () => {
             checkpointFadeStartTimeRef.current = Date.now();
           }
           
-          // Calculate fade-in opacity
+          // Calculate fade-in opacity (when coming into view)
           const fadeElapsed = Date.now() - checkpointFadeStartTimeRef.current;
           const fadeOpacity = Math.min(fadeElapsed / checkpointFadeDuration, 1);
           
