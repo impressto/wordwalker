@@ -142,17 +142,17 @@ const parallaxThemes = {
     imagePath: 'dia-de-los-muertos',
     // Canvas background colors for fallback when layer images aren't loaded
     canvasColors: {
-      aboveHorizon: '#6b4c9a',  // Purple twilight sky
-      belowHorizon: '#2d1b3d',  // Dark purple ground
+      aboveHorizon: '#39486a',  // dark blue
+      belowHorizon: '#a38780', // sidewalk color
     },
     // Layer positions for Día de los Muertos theme
     layerPositions: {
       layer1: 0,      // Foreground - marigolds/flowers
       layer2: 0,      // Ground level
       layer3: -30,    // Altars/decorations
-      layer4: 20,     // Skulls/skulls
-      layer5: -40,    // Streamers/papel picado
-      layer6: 0,      // Distant elements
+      layer4: -100,     // buildings
+      layer5: 40,    // grave yard
+      layer6: 20,      // mountains
       layer7: 0,      // Sky/rear
     },
     layerSpeeds: {

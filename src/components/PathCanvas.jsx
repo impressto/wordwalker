@@ -409,6 +409,19 @@ const PathCanvas = () => {
     }
   }, [pathImage, pathForkImage, walkerSpriteSheet, isLoading]);
 
+  // Adjust camera position when choice dialog is shown/hidden
+  // When dialog is visible AND animation is paused, position the fork on the right side of the canvas
+  useEffect(() => {
+    if (showChoice && isPaused) {
+      const canvas = canvasRef.current;
+      if (canvas) {
+        const width = canvas.width;
+        // Position fork at approximately 75% across the screen (right side)
+        offsetRef.current = forkPositionRef.current - (width * 0.75);
+      }
+    }
+  }, [showChoice, isPaused]);
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -656,6 +669,8 @@ const PathCanvas = () => {
       if (shouldShowChoice && !isPaused && !showChoice) {
         setIsPaused(true);
         setShowChoice(true);
+        // Immediately reposition camera to show fork on the right side
+        offsetRef.current = forkPositionRef.current - (width * 0.75);
       }
       
       // Draw path tiles
@@ -663,10 +678,13 @@ const PathCanvas = () => {
         const tileSize = 240; // Both images are 240x240
         const pathScrollOffset = scrollPos % tileSize;
         
+        // Calculate fork screen position - shift right 10px to spill over canvas edge
+        const forkScreenX = width - tileSize + 10;
+        
         // Calculate how many tiles we need
         const tilesNeeded = Math.ceil(width / tileSize) + 2;
         
-        // Draw straight path tiles before fork
+        // Draw straight path tiles and fork (only show fork when dialog is visible)
         for (let i = -1; i < tilesNeeded; i++) {
           const tileX = i * tileSize - pathScrollOffset;
           
@@ -674,20 +692,25 @@ const PathCanvas = () => {
           const tileWorldStartX = scrollPos + tileX;
           const tileWorldEndX = tileWorldStartX + tileSize;
           
-          // Determine which tile should show the fork - the tile that contains the fork position
-          const forkPosition = forkPositionRef.current;
+          // Check if this tile is on screen
+          const tileScreenX = tileX;
+          const tileScreenRight = tileScreenX + tileSize;
+          const tileOnScreen = tileScreenRight > 0 && tileScreenX < width;
           
-          if (tileWorldEndX <= forkPosition) {
-            // Tile is completely before the fork - draw straight path
-            ctx.drawImage(pathImage, tileX, pathTop, tileSize, pathHeight);
-          } else if (tileWorldStartX <= forkPosition && tileWorldEndX > forkPosition && !selectedPath) {
-            // This tile contains the fork position and no path selected - draw fork
-            ctx.drawImage(pathForkImage, tileX, pathTop, tileSize, pathHeight);
-          } else if (selectedPath) {
-            // Path selected - draw straight path tiles everywhere
-            ctx.drawImage(pathImage, tileX, pathTop, tileSize, pathHeight);
+          if (!tileOnScreen) continue; // Skip tiles not on screen
+          
+          // Skip drawing the tile if fork is visible and this tile would be covered by the fork
+          if (showChoice && !selectedPath && tileScreenX >= forkScreenX) {
+            continue; // Skip tiles that would be covered by the fork
           }
-          // If no path selected and tile is after fork, don't draw anything (fork extends off screen)
+          
+          // Always draw straight path (no fork animation)
+          ctx.drawImage(pathImage, tileX, pathTop, tileSize, pathHeight);
+        }
+        
+        // Draw fork at fixed screen position with right edge aligned to canvas right edge
+        if (showChoice && !selectedPath) {
+          ctx.drawImage(pathForkImage, forkScreenX, pathTop, tileSize, pathHeight);
         }
       }
       
