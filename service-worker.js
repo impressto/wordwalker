@@ -1,5 +1,5 @@
 // Service Worker for WordWalker PWA
-const CACHE_NAME = 'wordwalker-v1.2.14';
+const CACHE_NAME = 'wordwalker-v1.3.0';
 const ASSETS_CACHE = 'wordwalker-assets-v1';
 const AUDIO_CACHE = 'wordwalker-audio-v1';
 const IMAGE_CACHE = 'wordwalker-images-v1';
@@ -13,19 +13,58 @@ const CORE_ASSETS = [
   '/wordwalker/dist/assets/index.js',
   '/wordwalker/dist/assets/vendor.js',
   '/wordwalker/dist/assets/index.css',
-  // Essential images for the app to function
-  '/wordwalker/dist/images/walkers/walker-default.png',
-  '/wordwalker/dist/images/path.png',
-  '/wordwalker/dist/images/grass.png',
-  '/wordwalker/dist/images/mountains.png',
-  '/wordwalker/dist/images/bushes.png',
-  '/wordwalker/dist/images/trees1.png',
-  '/wordwalker/dist/images/trees2.png',
-  '/wordwalker/dist/images/trees3.png',
-  '/wordwalker/dist/images/fork.png',
-  '/wordwalker/dist/images/path-fork.png',
+  // Essential icons
   '/wordwalker/dist/images/icon-192x192.png',
   '/wordwalker/dist/images/icon-512x512.png',
+  '/wordwalker/dist/images/logoscreen.png',
+  '/wordwalker/dist/images/top-logo.png',
+  // Walker avatars and sprites
+  '/wordwalker/dist/images/walkers/walker-default.png',
+  '/wordwalker/dist/images/walkers/walker-default-avatar.png',
+  '/wordwalker/dist/images/walkers/walker-asuka.png',
+  '/wordwalker/dist/images/walkers/walker-asuka-avatar.png',
+  '/wordwalker/dist/images/walkers/walker-blue.png',
+  '/wordwalker/dist/images/walkers/walker-blue-avatar.png',
+  '/wordwalker/dist/images/walkers/walker-cat.png',
+  '/wordwalker/dist/images/walkers/walker-cat-avatar.png',
+  '/wordwalker/dist/images/walkers/walker-dog.png',
+  '/wordwalker/dist/images/walkers/walker-dog-avatar.png',
+  '/wordwalker/dist/images/walkers/walker-emma.png',
+  '/wordwalker/dist/images/walkers/walker-emma-avatar.png',
+  // Default theme - parallax layers
+  '/wordwalker/dist/images/themes/default/parallax-layer1.png',
+  '/wordwalker/dist/images/themes/default/parallax-layer2.png',
+  '/wordwalker/dist/images/themes/default/parallax-layer3.png',
+  '/wordwalker/dist/images/themes/default/parallax-layer4.png',
+  '/wordwalker/dist/images/themes/default/parallax-layer5.png',
+  '/wordwalker/dist/images/themes/default/parallax-layer6.png',
+  '/wordwalker/dist/images/themes/default/parallax-layer7.png',
+  '/wordwalker/dist/images/themes/default/path.png',
+  '/wordwalker/dist/images/themes/default/path-fork.png',
+  '/wordwalker/dist/images/themes/default/scene.jpg',
+  // Hong Kong theme - parallax layers
+  '/wordwalker/dist/images/themes/hong-kong/parallax-layer1.png',
+  '/wordwalker/dist/images/themes/hong-kong/parallax-layer2.png',
+  '/wordwalker/dist/images/themes/hong-kong/parallax-layer3.png',
+  '/wordwalker/dist/images/themes/hong-kong/parallax-layer4.png',
+  '/wordwalker/dist/images/themes/hong-kong/parallax-layer5.png',
+  '/wordwalker/dist/images/themes/hong-kong/parallax-layer6.png',
+  '/wordwalker/dist/images/themes/hong-kong/parallax-layer7.png',
+  '/wordwalker/dist/images/themes/hong-kong/path.png',
+  '/wordwalker/dist/images/themes/hong-kong/path-fork.png',
+  '/wordwalker/dist/images/themes/hong-kong/scene.jpg',
+  // Jamaica theme - parallax layers
+  '/wordwalker/dist/images/themes/jamaica/parallax-layer1.png',
+  '/wordwalker/dist/images/themes/jamaica/parallax-layer2.png',
+  '/wordwalker/dist/images/themes/jamaica/parallax-layer3.png',
+  '/wordwalker/dist/images/themes/jamaica/parallax-layer4.png',
+  '/wordwalker/dist/images/themes/jamaica/parallax-layer5.png',
+  '/wordwalker/dist/images/themes/jamaica/parallax-layer6.png',
+  '/wordwalker/dist/images/themes/jamaica/parallax-layer7.png',
+  '/wordwalker/dist/images/themes/jamaica/path.png',
+  '/wordwalker/dist/images/themes/jamaica/path-fork.png',
+  '/wordwalker/dist/images/themes/jamaica/path-fork2.png',
+  '/wordwalker/dist/images/themes/jamaica/scene.jpg',
 ];
 
 // Assets that will be cached as they're requested

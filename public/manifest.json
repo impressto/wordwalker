@@ -43,5 +43,83 @@
     }
   ],
   "shortcuts": [],
-  "prefer_related_applications": false
+  "prefer_related_applications": false,
+  "cached_assets": {
+    "images": {
+      "root": [
+        "images/1024x500.jpg",
+        "images/icon-192x192.png",
+        "images/icon-512x512.png",
+        "images/logoscreen.jpg",
+        "images/logoscreen.png",
+        "images/original-word-walker.png",
+        "images/screenshot.png",
+        "images/top-logo.png",
+        "images/updated-sprite-sheet.png",
+        "images/vendor.png",
+        "images/walker-orginal.png",
+        "images/wordwakler-reading.png",
+        "images/word-walker-final.png",
+        "images/word-walker.jpg",
+        "images/word-walker.-pose1.jpg",
+        "images/word-walker.-pose2.png",
+        "images/word-walker.-pose3.png",
+        "images/word-walker-pose4.png"
+      ],
+      "themes": {
+        "default": [
+          "images/themes/default/parallax-layer1.png",
+          "images/themes/default/parallax-layer2.png",
+          "images/themes/default/parallax-layer3.png",
+          "images/themes/default/parallax-layer4.png",
+          "images/themes/default/parallax-layer5.png",
+          "images/themes/default/parallax-layer6.png",
+          "images/themes/default/parallax-layer7.png",
+          "images/themes/default/path-fork.png",
+          "images/themes/default/path.png",
+          "images/themes/default/scene.jpg"
+        ],
+        "hong-kong": [
+          "images/themes/hong-kong/parallax-layer1.png",
+          "images/themes/hong-kong/parallax-layer2.png",
+          "images/themes/hong-kong/parallax-layer3.png",
+          "images/themes/hong-kong/parallax-layer4.png",
+          "images/themes/hong-kong/parallax-layer5.png",
+          "images/themes/hong-kong/parallax-layer5-maybe.png",
+          "images/themes/hong-kong/parallax-layer6.png",
+          "images/themes/hong-kong/parallax-layer7.png",
+          "images/themes/hong-kong/path-fork.png",
+          "images/themes/hong-kong/path.png",
+          "images/themes/hong-kong/scene.jpg"
+        ],
+        "jamaica": [
+          "images/themes/jamaica/parallax-layer1.png",
+          "images/themes/jamaica/parallax-layer2.png",
+          "images/themes/jamaica/parallax-layer3.png",
+          "images/themes/jamaica/parallax-layer4.png",
+          "images/themes/jamaica/parallax-layer5.png",
+          "images/themes/jamaica/parallax-layer6.png",
+          "images/themes/jamaica/parallax-layer7.png",
+          "images/themes/jamaica/path-fork.png",
+          "images/themes/jamaica/path-fork2.png",
+          "images/themes/jamaica/path.png",
+          "images/themes/jamaica/scene.jpg"
+        ]
+      },
+      "walkers": [
+        "images/walkers/walker-asuka-avatar.png",
+        "images/walkers/walker-asuka.png",
+        "images/walkers/walker-blue-avatar.png",
+        "images/walkers/walker-blue.png",
+        "images/walkers/walker-cat-avatar.png",
+        "images/walkers/walker-cat.png",
+        "images/walkers/walker-default-avatar.png",
+        "images/walkers/walker-default.png",
+        "images/walkers/walker-dog-avatar.png",
+        "images/walkers/walker-dog.png",
+        "images/walkers/walker-emma-avatar.png",
+        "images/walkers/walker-emma.png"
+      ]
+    }
+  }
 }
