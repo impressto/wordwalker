@@ -96,7 +96,7 @@ const parallaxThemes = {
       layer2: 0,      // beach level
       layer3: -40,    // unbrellas
       layer4: 40,      // surf
-      layer5: 0,      // cruise ship
+      layer5: -15,      // cruise ship
       layer6: 0,      // mountains
       layer7: 0,      // Sky/rear
     },
