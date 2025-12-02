@@ -85,6 +85,41 @@ const parallaxThemes = {
     layer2OffsetY: 50,
   },
 
+  // Jamaica theme - tropical beach scene
+  'jamaica': {
+    name: 'Jamaica Beach',
+    description: 'Tropical beach landscape',
+    imagePath: 'jamaica',
+    // Layer positions for Jamaica theme
+    layerPositions: {
+      layer1: 0,      // Foreground - sand dune
+      layer2: 0,      // beach level
+      layer3: -40,    // unbrellas
+      layer4: 40,      // surf
+      layer5: 0,      // cruise ship
+      layer6: 0,      // mountains
+      layer7: 0,      // Sky/rear
+    },
+    layerSpeeds: {
+      layer1: 0.8,    // Foreground
+      layer2: 0.6,    // Mid-foreground
+      layer3: 0.5,    // Mid layer
+      layer4: 0.4,    // Mid-distant
+      layer5: 0.3,    // Distant layer
+      layer6: 0.15,   // Background
+      layer7: 0.0,    // Static background
+    },
+    positioning: {
+      horizonY: 0.35,        // Horizon at water line
+      pathTopOffset: 0.55,   // Path on sand
+      pathTopAdditional: 90,
+    },
+    // Layer 2 vertical stretch control
+    layer2StretchFactor: 0.8,
+    // Layer 2 vertical offset
+    layer2OffsetY: 30,
+  },
+
   // Add more themes below following the same structure
   // Template for new theme:
   // 'theme-id': {

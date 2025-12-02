@@ -20,6 +20,13 @@ const themeShopConfig = {
       cost: 150,
       thumbnail: 'scene.jpg', // Located at public/images/themes/hong-kong/scene.jpg
     },
+    {
+      id: 'jamaica',
+      name: 'Jamaica Beach',
+      description: 'Tropical beach landscape',
+      cost: 175,
+      thumbnail: 'scene.jpg', // Located at public/images/themes/jamaica/scene.jpg
+    },
     // Add more themes here following the same structure
     // {
     //   id: 'mountain',
