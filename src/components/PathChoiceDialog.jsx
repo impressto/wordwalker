@@ -3,7 +3,7 @@
  * Displays a dialog with four category options for the user to choose
  */
 
-const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice }) => {
+const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpenShop }) => {
   const createButton = (choiceKey, emoji) => (
     <button
       onClick={() => onPathChoice(choiceKey)}
@@ -51,6 +51,8 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice }) => 
       zIndex: 1010,
       minWidth: '280px',
       maxWidth: 'min(85vw, 380px)',
+      display: 'flex',
+      flexDirection: 'column',
     }}>
       <h3 style={{
         margin: '0 0 20px 0',
@@ -64,11 +66,62 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice }) => 
         display: 'grid',
         gridTemplateColumns: 'repeat(2, 1fr)',
         gap: '15px',
+        marginBottom: '20px',
       }}>
         {createButton('choice1')}
         {createButton('choice2')}
         {createButton('choice3')}
         {createButton('choice4')}
+      </div>
+
+      {/* Vendor Section */}
+      <div style={{
+        position: 'relative',
+        width: '100%',
+        marginTop: '10px',
+        borderTop: '2px solid #ddd',
+        paddingTop: '15px',
+      }}>
+        <img 
+          src={`${import.meta.env.BASE_URL || '/'}images/vendor.png`}
+          alt="Vendor"
+          style={{
+            width: '40%',
+            height: 'auto',
+            borderRadius: '8px',
+            display: 'block',
+            margin: '0 auto',
+          }}
+        />
+        <button
+          onClick={onOpenShop}
+          style={{
+            position: 'absolute',
+            bottom: '5px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            padding: '8px 20px',
+            fontSize: '12px',
+            fontWeight: 'bold',
+            backgroundColor: '#FF9800',
+            color: 'white',
+            border: 'none',
+            borderRadius: '20px',
+            cursor: 'pointer',
+            boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
+            transition: 'all 0.2s',
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.transform = 'translateX(-50%) scale(1.1)';
+            e.target.style.backgroundColor = '#FB8C00';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.transform = 'translateX(-50%) scale(1)';
+            e.target.style.backgroundColor = '#FF9800';
+          }}
+        >
+          💰 TRADE
+        </button>
       </div>
     </div>
   );

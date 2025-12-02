@@ -261,6 +261,7 @@ const PathCanvas = () => {
         soundEnabled,
         volume,
         correctFirstTryIds,
+        offsetRef: offsetRef.current,
       };
       saveGameState(gameState);
     }, 5000); // Auto-save every 5 seconds
@@ -287,6 +288,18 @@ const PathCanvas = () => {
       setSoundEnabled(convertedState.soundEnabled);
       setVolume(convertedState.volume);
       setCorrectFirstTryIds(convertedState.correctFirstTryIds);
+      
+      // Restore scroll position and calculate next checkpoint
+      offsetRef.current = convertedState.offsetRef || 0;
+      
+      // Recalculate checkpoint position based on how many checkpoints have been answered
+      const nextCheckpointIndex = convertedState.checkpointsAnswered;
+      checkpointPositionRef.current = forkPositionRef.current + 1500 + (nextCheckpointIndex * checkpointSpacing);
+      
+      // Reset checkpoint fade animation to trigger it fresh
+      checkpointFadeStartTimeRef.current = null;
+      checkpointSoundPlayedRef.current = false;
+      
       setShowResumeDialog(false);
     }
   };
@@ -1471,6 +1484,7 @@ const PathCanvas = () => {
           forkCategories={forkCategories}
           getCategoryById={getCategoryById}
           onPathChoice={handlePathChoice}
+          onOpenShop={handleOpenCharacterShop}
         />
       )}
 
