@@ -41,7 +41,7 @@ const QuestionDialog = ({
       padding: '20px',
       borderRadius: '15px',
       boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
-      zIndex: 30,
+      zIndex: 1010,
       animation: 'fadeIn 0.5s ease-out',
       minWidth: '300px',
       maxWidth: 'min(85vw, 380px)',

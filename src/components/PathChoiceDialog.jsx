@@ -48,7 +48,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice }) => 
       padding: '20px',
       borderRadius: '15px',
       boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
-      zIndex: 10,
+      zIndex: 1010,
       minWidth: '280px',
       maxWidth: 'min(85vw, 380px)',
     }}>
