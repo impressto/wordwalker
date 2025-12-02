@@ -1244,46 +1244,51 @@ const PathCanvas = () => {
   const handlePurchaseCharacter = (characterId, cost) => {
     if (totalPoints >= cost) {
       // Deduct points
-      setTotalPoints(prevPoints => prevPoints - cost);
+      const newPoints = totalPoints - cost;
+      setTotalPoints(newPoints);
       
-      // Add to owned characters
-      setOwnedCharacters(prev => {
-        const updated = [...prev, characterId];
-        localStorage.setItem('wordwalker-owned-characters', JSON.stringify(updated));
-        return updated;
-      });
+      // Add to owned characters and select immediately
+      const updated = [...ownedCharacters, characterId];
+      setOwnedCharacters(updated);
+      localStorage.setItem('wordwalker-owned-characters', JSON.stringify(updated));
       
-      // Select the new character
-      handleSelectCharacter(characterId);
+      // Select the new character immediately
+      setCurrentCharacter(characterId);
+      localStorage.setItem('wordwalker-current-character', characterId);
     }
   };
 
   const handleSelectCharacter = (characterId) => {
-    setCurrentCharacter(characterId);
-    localStorage.setItem('wordwalker-current-character', characterId);
+    if (ownedCharacters.includes(characterId) || characterId === 'default') {
+      setCurrentCharacter(characterId);
+      localStorage.setItem('wordwalker-current-character', characterId);
+    }
   };
 
   const handlePurchaseTheme = (themeId, cost) => {
     if (totalPoints >= cost) {
       // Deduct points
-      setTotalPoints(prevPoints => prevPoints - cost);
+      const newPoints = totalPoints - cost;
+      setTotalPoints(newPoints);
       
-      // Add to owned themes
-      setOwnedThemes(prev => {
-        const updated = [...prev, themeId];
-        localStorage.setItem('wordwalker-owned-themes', JSON.stringify(updated));
-        return updated;
-      });
+      // Add to owned themes and select immediately
+      const updated = [...ownedThemes, themeId];
+      setOwnedThemes(updated);
+      localStorage.setItem('wordwalker-owned-themes', JSON.stringify(updated));
       
-      // Select the new theme
-      handleSelectTheme(themeId);
+      // Select the new theme immediately
+      setCurrentTheme(themeId);
+      localStorage.setItem('wordwalker-current-theme', themeId);
+      setActiveTheme(themeId);
     }
   };
 
   const handleSelectTheme = (themeId) => {
-    setCurrentTheme(themeId);
-    localStorage.setItem('wordwalker-current-theme', themeId);
-    setActiveTheme(themeId);
+    if (ownedThemes.includes(themeId) || themeId === 'default') {
+      setCurrentTheme(themeId);
+      localStorage.setItem('wordwalker-current-theme', themeId);
+      setActiveTheme(themeId);
+    }
   };
 
   // Check if there's an affordable unbought character

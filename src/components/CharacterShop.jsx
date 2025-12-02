@@ -12,6 +12,18 @@ const CharacterShop = ({ totalPoints, ownedCharacters, currentCharacter, onPurch
   const [isReady, setIsReady] = useState(false);
   const [activeTab, setActiveTab] = useState('characters'); // 'characters' or 'themes'
 
+  // Debug logging for state issues
+  useEffect(() => {
+    console.log('[CharacterShop] State update:', {
+      totalPoints,
+      currentCharacter,
+      ownedCharacters,
+      currentTheme,
+      ownedThemes,
+      activeTab
+    });
+  }, [totalPoints, currentCharacter, ownedCharacters, currentTheme, ownedThemes, activeTab]);
+
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -121,9 +133,10 @@ const CharacterShop = ({ totalPoints, ownedCharacters, currentCharacter, onPurch
         {activeTab === 'characters' && (
           <div className="characters-grid">
             {characters.map((character) => {
-              const isOwned = character.id === 'default' || ownedCharacters.includes(character.id);
+              const ownedList = Array.isArray(ownedCharacters) ? ownedCharacters : [];
+              const isOwned = character.id === 'default' || ownedList.includes(character.id);
               const isSelected = character.id === currentCharacter;
-              const canAfford = totalPoints >= character.cost;
+              const canAfford = (totalPoints ?? 0) >= character.cost;
 
               return (
                 <div
@@ -162,13 +175,10 @@ const CharacterShop = ({ totalPoints, ownedCharacters, currentCharacter, onPurch
                       onClick={() => handleCharacterAction(character)}
                       disabled={!canAfford && !isOwned}
                     >
-                      {isSelected
-                        ? '✓ Selected'
-                        : isOwned
-                        ? 'Select'
-                        : canAfford
-                        ? `Buy for ${character.cost}`
-                        : `Need ${character.cost - totalPoints} more`}
+                      {isSelected && '✓ Selected'}
+                      {!isSelected && isOwned && 'Select'}
+                      {!isSelected && !isOwned && canAfford && `Buy for ${character.cost}`}
+                      {!isSelected && !isOwned && !canAfford && `Need ${Math.max(0, character.cost - totalPoints)} more`}
                     </button>
                   </div>
                 </div>
@@ -181,9 +191,10 @@ const CharacterShop = ({ totalPoints, ownedCharacters, currentCharacter, onPurch
         {activeTab === 'themes' && (
           <div className="themes-grid">
             {getShopThemes().map((theme) => {
-              const isOwned = theme.id === 'default' || ownedThemes.includes(theme.id);
+              const ownedList = Array.isArray(ownedThemes) ? ownedThemes : [];
+              const isOwned = theme.id === 'default' || ownedList.includes(theme.id);
               const isSelected = theme.id === currentTheme;
-              const canAfford = totalPoints >= theme.cost;
+              const canAfford = (totalPoints ?? 0) >= theme.cost;
 
               const handleThemeAction = () => {
                 if (theme.id === 'default' || isOwned) {
@@ -232,13 +243,10 @@ const CharacterShop = ({ totalPoints, ownedCharacters, currentCharacter, onPurch
                       onClick={handleThemeAction}
                       disabled={!canAfford && !isOwned}
                     >
-                      {isSelected
-                        ? '✓ Selected'
-                        : isOwned
-                        ? 'Select'
-                        : canAfford
-                        ? `Buy for ${theme.cost}`
-                        : `Need ${theme.cost - totalPoints} more`}
+                      {isSelected && '✓ Selected'}
+                      {!isSelected && isOwned && 'Select'}
+                      {!isSelected && !isOwned && canAfford && `Buy for ${theme.cost}`}
+                      {!isSelected && !isOwned && !canAfford && `Need ${Math.max(0, theme.cost - totalPoints)} more`}
                     </button>
                   </div>
                 </div>
