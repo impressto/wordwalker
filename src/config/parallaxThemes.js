@@ -135,6 +135,46 @@ const parallaxThemes = {
     layer2OffsetY: 30,
   },
 
+  // Día de los Muertos theme - Day of the Dead celebration
+  'dia-de-los-muertos': {
+    name: 'Día de los Muertos',
+    description: 'Colorful Day of the Dead celebration',
+    imagePath: 'dia-de-los-muertos',
+    // Canvas background colors for fallback when layer images aren't loaded
+    canvasColors: {
+      aboveHorizon: '#6b4c9a',  // Purple twilight sky
+      belowHorizon: '#2d1b3d',  // Dark purple ground
+    },
+    // Layer positions for Día de los Muertos theme
+    layerPositions: {
+      layer1: 0,      // Foreground - marigolds/flowers
+      layer2: 0,      // Ground level
+      layer3: -30,    // Altars/decorations
+      layer4: 20,     // Skulls/skulls
+      layer5: -40,    // Streamers/papel picado
+      layer6: 0,      // Distant elements
+      layer7: 0,      // Sky/rear
+    },
+    layerSpeeds: {
+      layer1: 0.8,    // Foreground (closest) - fast movement
+      layer2: 0.6,    // Mid-foreground
+      layer3: 0.5,    // Mid layer
+      layer4: 0.4,    // Mid-distant
+      layer5: 0.3,    // Distant layer
+      layer6: 0.15,   // Background
+      layer7: 0.0,    // Static background/sky
+    },
+    positioning: {
+      horizonY: 0.35,        // Horizon positioning
+      pathTopOffset: 0.55,   // Path top as proportion of canvas height
+      pathTopAdditional: 90, // Additional pixel offset for path top
+    },
+    // Layer 2 vertical stretch control
+    layer2StretchFactor: 0.8,
+    // Layer 2 vertical offset
+    layer2OffsetY: 30,
+  },
+
   // Add more themes below following the same structure
   // Template for new theme:
   // 'theme-id': {

@@ -27,6 +27,13 @@ const themeShopConfig = {
       cost: 175,
       thumbnail: 'scene.jpg', // Located at public/images/themes/jamaica/scene.jpg
     },
+    {
+      id: 'dia-de-los-muertos',
+      name: 'Día de los Muertos',
+      description: 'Colorful Day of the Dead celebration',
+      cost: 200,
+      thumbnail: 'scene.jpg', // Located at public/images/themes/dia-de-los-muertos/scene.jpg
+    },
     // Add more themes here following the same structure
     // {
     //   id: 'mountain',
