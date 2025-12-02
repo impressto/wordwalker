@@ -71,8 +71,8 @@ const parallaxThemes = {
       layer2: 0,      // Grass/street level - adjust as needed
       layer3: -20,    // Buildings/structures - adjust as needed
       layer4: -140,   // Mid-distant buildings - adjust as needed
-      layer5: -50,    // Distant skyline - adjust as needed
-      layer6: 120,   // monuntains- adjust as needed
+      layer5: -90,    // high rises in the distance - adjust as needed
+      layer6: 120,   // mountains- adjust as needed
       layer7: -100,      // Sky/rear - adjust as needed
     },
     layerSpeeds: {

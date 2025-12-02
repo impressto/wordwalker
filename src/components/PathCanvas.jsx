@@ -668,9 +668,13 @@ const PathCanvas = () => {
       
       if (shouldShowChoice && !isPaused && !showChoice) {
         setIsPaused(true);
-        setShowChoice(true);
         // Immediately reposition camera to show fork on the right side
         offsetRef.current = forkPositionRef.current - (width * 0.75);
+        
+        // Delay showing dialog to allow canvas to render first and avoid visual flash
+        setTimeout(() => {
+          setShowChoice(true);
+        }, 50); // Slight delay to ensure canvas updates before dialog appears
       }
       
       // Draw path tiles
