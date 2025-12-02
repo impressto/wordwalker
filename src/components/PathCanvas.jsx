@@ -8,6 +8,7 @@ import { getTheme } from '../config/parallaxThemes';
 import { setActiveTheme } from '../utils/themeManager';
 import SoundManager from '../soundManager';
 import { loadGameState, saveGameState, clearGameState, hasSavedGameState, convertLoadedState } from '../utils/gameStatePersistence';
+import { useCharacterAndTheme } from '../hooks/useCharacterAndTheme';
 import ScoreDisplay from './ScoreDisplay';
 import PathChoiceDialog from './PathChoiceDialog';
 import QuestionDialog from './QuestionDialog';
@@ -18,6 +19,29 @@ import InstallPrompt from './InstallPrompt';
 import CharacterShop from './CharacterShop';
 
 const PathCanvas = () => {
+  // Character and theme management hook
+  const {
+    currentCharacter,
+    setCurrentCharacter,
+    ownedCharacters,
+    setOwnedCharacters,
+    showCharacterShop,
+    setShowCharacterShop,
+    walkerVariants,
+    getWalkerSpriteSheet,
+    currentTheme,
+    setCurrentTheme,
+    ownedThemes,
+    setOwnedThemes,
+    handleOpenCharacterShop,
+    handleCloseCharacterShop,
+    handlePurchaseCharacter,
+    handleSelectCharacter,
+    handlePurchaseTheme,
+    handleSelectTheme,
+    hasAffordablePurchase,
+  } = useCharacterAndTheme();
+
   const canvasRef = useRef(null);
   const [parallaxLayer2Image, setParallaxLayer2Image] = useState(null); // Grass
   const [pathImage, setPathImage] = useState(null);
@@ -138,39 +162,6 @@ const PathCanvas = () => {
   // Initialize sound manager
   const soundManagerRef = useRef(null);
   const [audioInitialized, setAudioInitialized] = useState(false);
-  
-  // Character system state
-  const [currentCharacter, setCurrentCharacter] = useState(() => {
-    return localStorage.getItem('wordwalker-current-character') || 'default';
-  });
-  const [ownedCharacters, setOwnedCharacters] = useState(() => {
-    const saved = localStorage.getItem('wordwalker-owned-characters');
-    return saved ? JSON.parse(saved) : ['default'];
-  });
-  const [showCharacterShop, setShowCharacterShop] = useState(false);
-  const [walkerVariants, setWalkerVariants] = useState({}); // Store loaded walker images for different characters
-  
-  // Parallax theme state - track current active theme
-  const [currentTheme, setCurrentTheme] = useState(() => {
-    return localStorage.getItem('wordwalker-current-theme') || gameSettings.parallax.currentTheme;
-  });
-  
-  // Owned themes state - track which themes user has purchased
-  const [ownedThemes, setOwnedThemes] = useState(() => {
-    const saved = localStorage.getItem('wordwalker-owned-themes');
-    return saved ? JSON.parse(saved) : ['default'];
-  });
-  
-  // Update theme in localStorage when it changes
-  useEffect(() => {
-    localStorage.setItem('wordwalker-current-theme', currentTheme);
-    setActiveTheme(currentTheme);
-  }, [currentTheme]);
-  
-  // Update owned themes in localStorage when they change
-  useEffect(() => {
-    localStorage.setItem('wordwalker-owned-themes', JSON.stringify(ownedThemes));
-  }, [ownedThemes]);
   
   useEffect(() => {
     soundManagerRef.current = new SoundManager();
@@ -397,37 +388,15 @@ const PathCanvas = () => {
     parallaxLayer7.onload = () => {
       setParallaxLayer7Image(parallaxLayer7);
     };
-    
-    // Load walker sprite sheets for all characters
-    const loadWalkerVariants = async () => {
-      const variants = {};
-      const characterFiles = {
-        'default': 'walker-default.png',
-        'blue': 'walker-blue.png',
-        'dog': 'walker-dog.png',
-        'cat': 'walker-cat.png',
-        'emma': 'walker-emma.png',
-        'asuka': 'walker-asuka.png',
-      };
-      
-      for (const [charId, filename] of Object.entries(characterFiles)) {
-        const walker = new Image();
-        walker.src = `${basePath}images/walkers/${filename}`;
-        variants[charId] = walker;
-      }
-      
-      setWalkerVariants(variants);
-    };
-    
-    loadWalkerVariants();
   }, [currentTheme]);
 
-  // Update walker sprite sheet when current character changes
+  // Update walker sprite sheet when current character changes or variants load
   useEffect(() => {
-    if (walkerVariants[currentCharacter]) {
-      setWalkerSpriteSheet(walkerVariants[currentCharacter]);
+    const spriteSheet = getWalkerSpriteSheet();
+    if (spriteSheet) {
+      setWalkerSpriteSheet(spriteSheet);
     }
-  }, [currentCharacter, walkerVariants]);
+  }, [currentCharacter, walkerVariants, getWalkerSpriteSheet]);
 
   // Check if all critical assets are loaded
   useEffect(() => {
@@ -1231,83 +1200,24 @@ const PathCanvas = () => {
     }
   };
 
-  const handleOpenCharacterShop = () => {
-    setShowCharacterShop(true);
+  // Character and theme shop handlers with pause management
+  const handleOpenShop = () => {
+    handleOpenCharacterShop();
     setIsPaused(true);
   };
 
-  const handleCloseCharacterShop = () => {
-    setShowCharacterShop(false);
+  const handleCloseShop = () => {
+    handleCloseCharacterShop();
     setIsPaused(false);
   };
 
-  const handlePurchaseCharacter = (characterId, cost) => {
-    if (totalPoints >= cost) {
-      // Deduct points
-      const newPoints = totalPoints - cost;
-      setTotalPoints(newPoints);
-      
-      // Add to owned characters and select immediately
-      const updated = [...ownedCharacters, characterId];
-      setOwnedCharacters(updated);
-      localStorage.setItem('wordwalker-owned-characters', JSON.stringify(updated));
-      
-      // Select the new character immediately
-      setCurrentCharacter(characterId);
-      localStorage.setItem('wordwalker-current-character', characterId);
-    }
+  const handlePurchaseCharacterWrapper = (characterId, cost) => {
+    handlePurchaseCharacter(characterId, cost, totalPoints, setTotalPoints);
   };
 
-  const handleSelectCharacter = (characterId) => {
-    if (ownedCharacters.includes(characterId) || characterId === 'default') {
-      setCurrentCharacter(characterId);
-      localStorage.setItem('wordwalker-current-character', characterId);
-    }
+  const handlePurchaseThemeWrapper = (themeId, cost) => {
+    handlePurchaseTheme(themeId, cost, totalPoints, setTotalPoints);
   };
-
-  const handlePurchaseTheme = (themeId, cost) => {
-    if (totalPoints >= cost) {
-      // Deduct points
-      const newPoints = totalPoints - cost;
-      setTotalPoints(newPoints);
-      
-      // Add to owned themes and select immediately
-      const updated = [...ownedThemes, themeId];
-      setOwnedThemes(updated);
-      localStorage.setItem('wordwalker-owned-themes', JSON.stringify(updated));
-      
-      // Select the new theme immediately
-      setCurrentTheme(themeId);
-      localStorage.setItem('wordwalker-current-theme', themeId);
-      setActiveTheme(themeId);
-    }
-  };
-
-  const handleSelectTheme = (themeId) => {
-    if (ownedThemes.includes(themeId) || themeId === 'default') {
-      setCurrentTheme(themeId);
-      localStorage.setItem('wordwalker-current-theme', themeId);
-      setActiveTheme(themeId);
-    }
-  };
-
-  // Check if there's an affordable unbought character
-  const hasAffordablePurchase = (() => {
-    const characters = [
-      { id: 'default', cost: 0 },
-      { id: 'blue', cost: 50 },
-      { id: 'dog', cost: 75 },
-      { id: 'cat', cost: 60 },
-      { id: 'emma', cost: 80 },
-      { id: 'asuka', cost: 85 },
-    ];
-    
-    return characters.some(char => 
-      char.id !== 'default' && 
-      !ownedCharacters.includes(char.id) && 
-      totalPoints >= char.cost
-    );
-  })();
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
@@ -1459,8 +1369,8 @@ const PathCanvas = () => {
         checkpointsAnswered={checkpointsAnswered}
         checkpointsPerCategory={checkpointsPerCategory}
         getCategoryById={getCategoryById}
-        onOpenShop={handleOpenCharacterShop}
-        hasAffordablePurchase={hasAffordablePurchase}
+        onOpenShop={handleOpenShop}
+        hasAffordablePurchase={hasAffordablePurchase(totalPoints)}
       />
 
       <canvas
@@ -1489,7 +1399,7 @@ const PathCanvas = () => {
           forkCategories={forkCategories}
           getCategoryById={getCategoryById}
           onPathChoice={handlePathChoice}
-          onOpenShop={handleOpenCharacterShop}
+          onOpenShop={handleOpenShop}
         />
       )}
 
@@ -1530,13 +1440,13 @@ const PathCanvas = () => {
           totalPoints={totalPoints}
           ownedCharacters={ownedCharacters}
           currentCharacter={currentCharacter}
-          onPurchase={handlePurchaseCharacter}
+          onPurchase={handlePurchaseCharacterWrapper}
           onSelectCharacter={handleSelectCharacter}
           ownedThemes={ownedThemes}
           currentTheme={currentTheme}
-          onPurchaseTheme={handlePurchaseTheme}
+          onPurchaseTheme={handlePurchaseThemeWrapper}
           onSelectTheme={handleSelectTheme}
-          onClose={handleCloseCharacterShop}
+          onClose={handleCloseShop}
         />
       )}
 
