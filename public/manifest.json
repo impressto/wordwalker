@@ -104,6 +104,20 @@
           "images/themes/jamaica/path-fork2.png",
           "images/themes/jamaica/path.png",
           "images/themes/jamaica/scene.jpg"
+        ],
+        "dia-de-los-muertos": [
+          "images/themes/dia-de-los-muertos/day-of-dead-parallax.png",
+          "images/themes/dia-de-los-muertos/day-of-the-dead.png",
+          "images/themes/dia-de-los-muertos/parallax-layer1.png",
+          "images/themes/dia-de-los-muertos/parallax-layer2.png",
+          "images/themes/dia-de-los-muertos/parallax-layer3.png",
+          "images/themes/dia-de-los-muertos/parallax-layer4.png",
+          "images/themes/dia-de-los-muertos/parallax-layer5.png",
+          "images/themes/dia-de-los-muertos/parallax-layer6.png",
+          "images/themes/dia-de-los-muertos/parallax-layer7.png",
+          "images/themes/dia-de-los-muertos/path-fork.png",
+          "images/themes/dia-de-los-muertos/path.png",
+          "images/themes/dia-de-los-muertos/scene.jpg"
         ]
       },
       "walkers": [
@@ -120,6 +134,22 @@
         "images/walkers/walker-emma-avatar.png",
         "images/walkers/walker-emma.png"
       ]
+    },
+    "audio": {
+      "themes": {
+        "default": [
+          "audio/themes/default/background.mp3"
+        ],
+        "hong-kong": [
+          "audio/themes/hong-kong/background.mp3"
+        ],
+        "dia-de-los-muertos": [
+          "audio/themes/dia-de-los-muertos/background.mp3"
+        ],
+        "jamaica": [
+          "audio/themes/jamaica/background.mp3"
+        ]
+      }
     }
   }
 }

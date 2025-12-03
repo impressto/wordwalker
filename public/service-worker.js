@@ -65,6 +65,24 @@ const CORE_ASSETS = [
   '/wordwalker/dist/images/themes/jamaica/path-fork.png',
   '/wordwalker/dist/images/themes/jamaica/path-fork2.png',
   '/wordwalker/dist/images/themes/jamaica/scene.jpg',
+  // Dia-de-los-muertos theme - parallax layers
+  '/wordwalker/dist/images/themes/dia-de-los-muertos/parallax-layer1.png',
+  '/wordwalker/dist/images/themes/dia-de-los-muertos/parallax-layer2.png',
+  '/wordwalker/dist/images/themes/dia-de-los-muertos/parallax-layer3.png',
+  '/wordwalker/dist/images/themes/dia-de-los-muertos/parallax-layer4.png',
+  '/wordwalker/dist/images/themes/dia-de-los-muertos/parallax-layer5.png',
+  '/wordwalker/dist/images/themes/dia-de-los-muertos/parallax-layer6.png',
+  '/wordwalker/dist/images/themes/dia-de-los-muertos/parallax-layer7.png',
+  '/wordwalker/dist/images/themes/dia-de-los-muertos/path.png',
+  '/wordwalker/dist/images/themes/dia-de-los-muertos/path-fork.png',
+  '/wordwalker/dist/images/themes/dia-de-los-muertos/scene.jpg',
+  '/wordwalker/dist/images/themes/dia-de-los-muertos/day-of-the-dead.png',
+  '/wordwalker/dist/images/themes/dia-de-los-muertos/day-of-dead-parallax.png',
+  // Theme background audio files
+  '/wordwalker/dist/audio/themes/default/background.mp3',
+  '/wordwalker/dist/audio/themes/hong-kong/background.mp3',
+  '/wordwalker/dist/audio/themes/jamaica/background.mp3',
+  '/wordwalker/dist/audio/themes/dia-de-los-muertos/background.mp3',
 ];
 
 // Assets that will be cached as they're requested
