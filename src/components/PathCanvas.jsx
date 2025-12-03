@@ -214,6 +214,90 @@ const PathCanvas = () => {
     }
   }, [currentTheme]);
 
+  // Handle page visibility, minimize, and window blur events to stop background music
+  useEffect(() => {
+    // Handle visibility change (tab switch, minimize, etc.)
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        // Page is hidden - stop background music
+        if (soundManagerRef.current) {
+          soundManagerRef.current.stopBackgroundMusic();
+          console.log('Page hidden - background music stopped');
+        }
+      } else {
+        // Page is visible again - resume background music if enabled
+        if (soundManagerRef.current && audioInitialized && soundEnabled && volume > 0) {
+          soundManagerRef.current.startBackgroundMusic();
+          console.log('Page visible - background music resumed');
+        }
+      }
+    };
+
+    // Handle window blur (user switches windows/tabs)
+    const handleWindowBlur = () => {
+      if (soundManagerRef.current) {
+        soundManagerRef.current.stopBackgroundMusic();
+        console.log('Window lost focus - background music stopped');
+      }
+    };
+
+    // Handle window focus (user comes back)
+    const handleWindowFocus = () => {
+      if (soundManagerRef.current && audioInitialized && soundEnabled && volume > 0) {
+        soundManagerRef.current.startBackgroundMusic();
+        console.log('Window regained focus - background music resumed');
+      }
+    };
+
+    // Handle before unload (page close, reload, navigation)
+    const handleBeforeUnload = () => {
+      if (soundManagerRef.current) {
+        soundManagerRef.current.stopBackgroundMusic();
+      }
+    };
+
+    // Handle page hide (browser minimize on some platforms)
+    const handlePageHide = () => {
+      if (soundManagerRef.current) {
+        soundManagerRef.current.stopBackgroundMusic();
+        console.log('Page hide - background music stopped');
+      }
+    };
+
+    // Add event listeners
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('blur', handleWindowBlur);
+    window.addEventListener('focus', handleWindowFocus);
+    window.addEventListener('beforeunload', handleBeforeUnload);
+    window.addEventListener('pagehide', handlePageHide);
+
+    // Cleanup event listeners
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('blur', handleWindowBlur);
+      window.removeEventListener('focus', handleWindowFocus);
+      window.removeEventListener('beforeunload', handleBeforeUnload);
+      window.removeEventListener('pagehide', handlePageHide);
+    };
+  }, [audioInitialized, soundEnabled, volume]);
+
+  // Handle background music pause/resume when search dialog opens/closes
+  useEffect(() => {
+    if (showSearch) {
+      // Search dialog opened - pause background music
+      if (soundManagerRef.current) {
+        soundManagerRef.current.stopBackgroundMusic();
+        console.log('Search dialog opened - background music paused');
+      }
+    } else {
+      // Search dialog closed - resume background music if enabled
+      if (soundManagerRef.current && audioInitialized && soundEnabled && volume > 0) {
+        soundManagerRef.current.startBackgroundMusic();
+        console.log('Search dialog closed - background music resumed');
+      }
+    }
+  }, [showSearch, audioInitialized, soundEnabled, volume]);
+
   // Check for saved game state on component mount
   useEffect(() => {
     if (!hasCheckedSavedState && hasSavedGameState()) {
