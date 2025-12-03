@@ -71,8 +71,8 @@ const parallaxThemes = {
       layer2: 0,      // Grass/street level - adjust as needed
       layer3: -20,    // Buildings/structures - adjust as needed
       layer4: -140,   // Mid-distant buildings - adjust as needed
-      layer5: -50,    // Distant skyline - adjust as needed
-      layer6: 120,   // monuntains- adjust as needed
+      layer5: -90,    // high rises in the distance - adjust as needed
+      layer6: 120,   // mountains- adjust as needed
       layer7: -100,      // Sky/rear - adjust as needed
     },
     layerSpeeds: {
@@ -128,6 +128,46 @@ const parallaxThemes = {
       horizonY: 0.35,        // Horizon at water line
       pathTopOffset: 0.55,   // Path on sand
       pathTopAdditional: 90,
+    },
+    // Layer 2 vertical stretch control
+    layer2StretchFactor: 0.8,
+    // Layer 2 vertical offset
+    layer2OffsetY: 30,
+  },
+
+  // Día de los Muertos theme - Day of the Dead celebration
+  'dia-de-los-muertos': {
+    name: 'Día de los Muertos',
+    description: 'Colorful Day of the Dead celebration',
+    imagePath: 'dia-de-los-muertos',
+    // Canvas background colors for fallback when layer images aren't loaded
+    canvasColors: {
+      aboveHorizon: '#39486a',  // dark blue
+      belowHorizon: '#a38780', // sidewalk color
+    },
+    // Layer positions for Día de los Muertos theme
+    layerPositions: {
+      layer1: 0,      // Foreground - marigolds/flowers
+      layer2: 0,      // Ground level
+      layer3: -30,    // Altars/decorations
+      layer4: -100,     // buildings
+      layer5: 40,    // grave yard
+      layer6: 20,      // mountains
+      layer7: 0,      // Sky/rear
+    },
+    layerSpeeds: {
+      layer1: 0.8,    // Foreground (closest) - fast movement
+      layer2: 0.6,    // Mid-foreground
+      layer3: 0.5,    // Mid layer
+      layer4: 0.4,    // Mid-distant
+      layer5: 0.3,    // Distant layer
+      layer6: 0.15,   // Background
+      layer7: 0.0,    // Static background/sky
+    },
+    positioning: {
+      horizonY: 0.35,        // Horizon positioning
+      pathTopOffset: 0.55,   // Path top as proportion of canvas height
+      pathTopAdditional: 90, // Additional pixel offset for path top
     },
     // Layer 2 vertical stretch control
     layer2StretchFactor: 0.8,
