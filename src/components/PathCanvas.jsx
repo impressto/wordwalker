@@ -5,6 +5,7 @@ import { translations } from '../config/answer-translations';
 import { questionTranslations } from '../config/question-translations';
 import gameSettings, { getStreakColor } from '../config/gameSettings';
 import { getTheme } from '../config/parallaxThemes';
+import { getSpriteSheetConfig } from '../config/characterConfig';
 import { setActiveTheme } from '../utils/themeManager';
 import SoundManager from '../soundManager';
 import { loadGameState, saveGameState, clearGameState, hasSavedGameState, convertLoadedState } from '../utils/gameStatePersistence';
@@ -98,18 +99,8 @@ const PathCanvas = () => {
   const checkpointFadeStartTimeRef = useRef(null); // Track when checkpoint starts fading in
   const checkpointFadeDuration = 500; // 500ms fade-in duration
   
-  // Sprite sheet configuration
-  const spriteConfig = {
-    width: 1400,           // Total sprite sheet width
-    height: 600,           // Total sprite sheet height
-    rows: 2,               // 2 rows (walking, victory)
-    cols: 6,               // 6 sprites per row
-    frameWidth: 233.33,    // Each sprite is ~233px wide (1400 / 6 = 233.33)
-    frameHeight: 300,      // 600 / 2 = 300px per frame
-    walkingRow: 0,         // First row is walking animation
-    victoryRow: 1,         // Second row is victory animation
-    totalFrames: 6,        // 6 frames per animation
-  };
+  // Get sprite sheet configuration from character config
+  const spriteConfig = getSpriteSheetConfig();
   
   // Checkpoint cycling - track how many checkpoints answered in current category
   const [checkpointsAnswered, setCheckpointsAnswered] = useState(0);

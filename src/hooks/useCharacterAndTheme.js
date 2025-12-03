@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import gameSettings from '../config/gameSettings';
+import { getCharacterFileMap } from '../config/characterConfig';
 import { setActiveTheme } from '../utils/themeManager';
 
 /**
@@ -52,14 +53,7 @@ export const useCharacterAndTheme = () => {
   useEffect(() => {
     const loadWalkerVariants = async () => {
       const variants = {};
-      const characterFiles = {
-        'default': 'walker-default.png',
-        'blue': 'walker-blue.png',
-        'dog': 'walker-dog.png',
-        'cat': 'walker-cat.png',
-        'emma': 'walker-emma.png',
-        'asuka': 'walker-asuka.png',
-      };
+      const characterFiles = getCharacterFileMap();
 
       const basePath = import.meta.env.BASE_URL || '/';
 

@@ -5,6 +5,7 @@
 
 import { useState, useEffect } from 'react';
 import { getShopThemes } from '../config/themeShopConfig';
+import { getAllCharacters } from '../config/characterConfig';
 import './CharacterShop.css';
 
 const CharacterShop = ({ totalPoints, ownedCharacters, currentCharacter, onPurchase, onSelectCharacter, ownedThemes, currentTheme, onPurchaseTheme, onSelectTheme, onClose }) => {
@@ -37,57 +38,8 @@ const CharacterShop = ({ totalPoints, ownedCharacters, currentCharacter, onPurch
     setIsReady(true);
   }, []);
 
-  // Character definitions with costs
-  const characters = [
-    {
-      id: 'default',
-      name: 'Walter',
-      spriteFile: 'walker-default.png',
-      avatarFile: 'walker-default-avatar.png',
-      cost: 0,
-      description: 'Your starting character',
-    },
-    {
-      id: 'blue',
-      name: 'Charlie',
-      spriteFile: 'walker-blue.png',
-      avatarFile: 'walker-blue-avatar.png',
-      cost: 50,
-      description: 'A speedy blue character',
-    },
-    {
-      id: 'dog',
-      name: 'Chewie',
-      spriteFile: 'walker-dog.png',
-      avatarFile: 'walker-dog-avatar.png',
-      cost: 75,
-      description: 'A loyal canine companion',
-    },
-    {
-      id: 'cat',
-      name: 'Tiger',
-      spriteFile: 'walker-cat.png',
-      avatarFile: 'walker-cat-avatar.png',
-      cost: 60,
-      description: 'An independent feline friend',
-    },
-    {
-      id: 'emma',
-      name: 'Emma',
-      spriteFile: 'walker-emma.png',
-      avatarFile: 'walker-emma-avatar.png',
-      cost: 80,
-      description: 'A charming character',
-    },
-    {
-      id: 'asuka',
-      name: 'Asuka',
-      spriteFile: 'walker-asuka.png',
-      avatarFile: 'walker-asuka-avatar.png',
-      cost: 85,
-      description: 'A spirited adventurer',
-    },
-  ];
+  // Get character definitions from config
+  const characters = getAllCharacters();
 
   const handleCharacterAction = (character) => {
     if (character.id === 'default' || ownedCharacters.includes(character.id)) {
