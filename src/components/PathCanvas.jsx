@@ -207,6 +207,13 @@ const PathCanvas = () => {
     localStorage.setItem('wordwalker-volume', volume.toString());
   }, [volume]);
 
+  // Update sound manager theme when current theme changes
+  useEffect(() => {
+    if (soundManagerRef.current) {
+      soundManagerRef.current.setTheme(currentTheme);
+    }
+  }, [currentTheme]);
+
   // Check for saved game state on component mount
   useEffect(() => {
     if (!hasCheckedSavedState && hasSavedGameState()) {

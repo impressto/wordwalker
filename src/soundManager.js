@@ -8,6 +8,7 @@ class SoundManager {
     this.masterVolume = 1;
     this.audioUnlocked = false;
     this.backgroundMusic = null;
+    this.currentTheme = 'default'; // Track current theme for background music
     
     // Preloaded audio buffers for instant playback
     this.preloadedSounds = {};
@@ -114,6 +115,20 @@ class SoundManager {
   }
 
   /**
+   * Set the current theme for background music
+   * @param {string} themeId - The theme identifier
+   */
+  setTheme(themeId) {
+    this.currentTheme = themeId;
+    
+    // If background music is playing, restart it with the new theme
+    if (this.backgroundMusic) {
+      this.stopBackgroundMusic();
+      this.startBackgroundMusic();
+    }
+  }
+
+  /**
    * Start playing looping background music
    */
   startBackgroundMusic() {
@@ -130,12 +145,14 @@ class SoundManager {
       this.audioContext.resume();
     }
 
-    this.backgroundMusic = new Audio(`${this.baseUrl}background.${this.fileFormat}`);
+    // Construct path to theme-specific background music
+    const backgroundPath = `${this.baseUrl}themes/${this.currentTheme}/background.${this.fileFormat}`;
+    this.backgroundMusic = new Audio(backgroundPath);
     this.backgroundMusic.loop = true;
     this.backgroundMusic.volume = this.masterVolume * 0.3; // 30% volume for background
     this.backgroundMusic.preload = 'auto';
     
-    console.log('Starting background music');
+    console.log(`Starting background music for theme: ${this.currentTheme}`);
     
     this.backgroundMusic.play().catch((error) => {
       console.error('Failed to play background music:', error);
