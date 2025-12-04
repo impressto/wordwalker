@@ -13,7 +13,7 @@ const parallaxThemes = {
     // Canvas background colors for fallback when layer images aren't loaded
     canvasColors: {
       aboveHorizon: '#a7dbf6',  // Light blue sky
-      belowHorizon: '#1d6c51',  // Dark green ground
+      belowHorizon: '#616e3f',  // Dark green ground
     },
     // Layer positions (Y coordinate adjustments from base positions)
     // These are offsets from the calculated horizon and path positions
@@ -21,8 +21,8 @@ const parallaxThemes = {
       layer1: 0,      // Foreground grass - no adjustment
       layer2: 0,      // Grass/midground - no adjustment
       layer3: 10,    // Bushes - 20 pixels up from calculated position
-      layer4: 0,    // trees - 15 pixels up
-      layer5: -60,    // pine tree - 30 pixels up
+      layer4: -100,    // trees - 15 pixels up
+      layer5: -40,    // pine tree - 30 pixels up
       layer6: -30,      // Mountains - at horizon
       layer7: 0,      // Sky/rear - no adjustment
     },
