@@ -64,15 +64,15 @@ export const questionTranslations = {
 
 ## Migration Status
 
-### ✅ **Completed:** (156 translations)
+### ✅ **Completed:** (369 translations)
 - `animals.js` - 64 translations (Domestic, Wild, Birds, Marine Life, Insects)
 - `beach.js` - 43 translations (Beach Items, Water Activities, Marine Life)
 - `people.js` - 100 translations (Family, Professions, Physical Descriptions, Personality, Age)
+- `food.js` - 162 translations (Fruits, Vegetables, Meat, Seafood, Desserts, Drinks, International Cuisine)
 
-### ⏳ **In Progress:** (~1,500 translations remaining)
+### ⏳ **In Progress:** (~1,287 translations remaining)
 
 Files created with TODO markers - ready for content extraction:
-- `food.js` - ~200-300 translations needed
 - `shopping.js` - ~150-200 translations needed
 - `entertainment.js` - ~100-150 translations needed
 - `accommodation.js` - ~150-200 translations needed

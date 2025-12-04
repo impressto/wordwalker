@@ -36,9 +36,9 @@ export const questionTranslations = {
   ...animalsTranslations,
   ...beachTranslations,
   ...peopleTranslations,
+  ...foodTranslations,
   
   // ⏳ TODO: Extract translations from question-translations.js
-  ...foodTranslations,
   ...shoppingTranslations,
   ...entertainmentTranslations,
   ...accommodationTranslations,
