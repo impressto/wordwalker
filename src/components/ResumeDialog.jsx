@@ -1,13 +1,42 @@
+import { useState } from 'react';
 import './ResumeDialog.css';
 import { questions } from '../config/questions';
+import NewGameConfirmationDialog from './NewGameConfirmationDialog';
+import { getTotalMasteredQuestions } from '../utils/questionTracking';
 
 const ResumeDialog = ({ onResume, onNewGame, savedStats }) => {
+  const [showConfirmation, setShowConfirmation] = useState(false);
+  
   // Calculate total questions and progress
   const totalQuestions = questions.length;
   // Sum first-try correct across all categories
   const correctFirstTry = Object.values(savedStats?.correctFirstTryIds || {})
     .reduce((total, categoryIds) => total + categoryIds.length, 0);
   const remaining = totalQuestions - correctFirstTry;
+  
+  // Get total mastered questions (permanent learning data)
+  const masteredCount = getTotalMasteredQuestions(savedStats?.correctAnswersByCategory || {});
+  
+  // Threshold for showing confirmation (20 mastered questions)
+  const CONFIRMATION_THRESHOLD = 20;
+  const shouldShowConfirmation = masteredCount >= CONFIRMATION_THRESHOLD;
+  
+  const handleNewGameClick = () => {
+    if (shouldShowConfirmation) {
+      setShowConfirmation(true);
+    } else {
+      onNewGame();
+    }
+  };
+  
+  const handleConfirmNewGame = () => {
+    setShowConfirmation(false);
+    onNewGame();
+  };
+  
+  const handleCancelNewGame = () => {
+    setShowConfirmation(false);
+  };
 
   return (
     <div className="resume-dialog-overlay">
@@ -40,11 +69,19 @@ const ResumeDialog = ({ onResume, onNewGame, savedStats }) => {
           <button className="btn-resume" onClick={onResume}>
             📖 Resume Game
           </button>
-          <button className="btn-new-game" onClick={onNewGame}>
+          <button className="btn-new-game" onClick={handleNewGameClick}>
             ✨ New Game
           </button>
         </div>
       </div>
+      
+      {showConfirmation && (
+        <NewGameConfirmationDialog
+          masteredCount={masteredCount}
+          onConfirm={handleConfirmNewGame}
+          onCancel={handleCancelNewGame}
+        />
+      )}
     </div>
   );
 };

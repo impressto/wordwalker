@@ -316,3 +316,12 @@ export const resetCategoryFirstTryCorrect = (category, correctFirstTryIds = {}) 
   delete updatedFirstTry[category];
   return updatedFirstTry;
 };
+
+/**
+ * Get total count of permanently mastered questions across all categories
+ * @param {Object} correctAnswersByCategory - Tracking object organized by category
+ * @returns {number} Total number of questions answered correctly
+ */
+export const getTotalMasteredQuestions = (correctAnswersByCategory = {}) => {
+  return Object.values(correctAnswersByCategory).reduce((total, answers) => total + answers.length, 0);
+};
