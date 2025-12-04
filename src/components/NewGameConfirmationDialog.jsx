@@ -1,8 +1,20 @@
+import { useState, useEffect } from 'react';
 import './NewGameConfirmationDialog.css';
 
 const NewGameConfirmationDialog = ({ masteredCount, onConfirm, onCancel }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  // Add a small delay before showing the dialog to allow DOM layout calculation
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 50); // 50ms delay for layout calculation
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="new-game-confirmation-overlay">
+    <div className={`new-game-confirmation-overlay ${isVisible ? 'visible' : ''}`}>
       <div className="new-game-confirmation-dialog">
         <div className="confirmation-icon">⚠️</div>
         

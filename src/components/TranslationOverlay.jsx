@@ -27,8 +27,8 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, 
 
   return (
     <div id="translation-overlay" style={{
-      position: 'absolute',
-      top: 'calc(35% + 15px)',
+      position: 'fixed',
+      top: '50%',
       left: '50%',
       transform: 'translate(-50%, -50%)',
       display: 'flex',

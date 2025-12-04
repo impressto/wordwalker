@@ -360,6 +360,7 @@ const PathCanvas = () => {
     const loadedState = loadGameState();
     if (loadedState) {
       const convertedState = convertLoadedState(loadedState);
+      console.log('Resuming game - forkCategories:', convertedState.forkCategories);
       setTotalPoints(convertedState.totalPoints);
       setStreak(convertedState.streak);
       setSelectedPath(convertedState.selectedPath);
@@ -1120,14 +1121,18 @@ const PathCanvas = () => {
       !allCompletedCategories.has(cat) && cat !== excludeCategory
     );
     
-    // If we have fewer than 4 available categories, we need to handle this gracefully
+    // Use available categories if we have enough, otherwise fall back to all categories
+    let categoriesToUse = availableCategories;
     if (availableCategories.length < 4) {
       console.warn('Not enough available categories. Some completed categories will be shown again.');
       // Fall back to all categories except current one
-      return allCategories.filter(cat => cat !== excludeCategory);
+      categoriesToUse = allCategories.filter(cat => cat !== excludeCategory);
     }
     
-    const shuffled = [...availableCategories].sort(() => Math.random() - 0.5);
+    // Always shuffle the final list
+    const shuffled = [...categoriesToUse].sort(() => Math.random() - 0.5);
+    
+    // Always return an object with choice1-4 keys
     return {
       choice1: shuffled[0] || 'food',
       choice2: shuffled[1] || 'shopping',

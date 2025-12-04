@@ -78,12 +78,32 @@ export const hasSavedGameState = () => {
 export const convertLoadedState = (loadedState) => {
   if (!loadedState) return null;
 
+  // Ensure forkCategories is a valid object with choice1-4 keys
+  const defaultForkCategories = { 
+    choice1: 'food', 
+    choice2: 'shopping', 
+    choice3: 'entertainment', 
+    choice4: 'accommodation' 
+  };
+  
+  const forkCategories = loadedState.forkCategories;
+  // Validate that forkCategories has all required keys, otherwise use defaults
+  const validForkCategories = (
+    forkCategories && 
+    typeof forkCategories === 'object' && 
+    forkCategories.choice1 && 
+    forkCategories.choice2 && 
+    forkCategories.choice3 && 
+    forkCategories.choice4
+  ) ? forkCategories : defaultForkCategories;
+
   return {
     ...loadedState,
     usedQuestionIds: loadedState.usedQuestionIds || {}, // Now an object organized by category
     completedCategories: new Set(loadedState.completedCategories || []),
     correctFirstTryIds: loadedState.correctFirstTryIds || {}, // Now an object organized by category
     correctAnswersByCategory: loadedState.correctAnswersByCategory || {}, // Restore category-based correct answer tracking
+    forkCategories: validForkCategories, // Validate fork categories
   };
 };
 

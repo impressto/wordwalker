@@ -1,15 +1,26 @@
 .new-game-confirmation-overlay {
   position: fixed;
+  /* Center horizontally within the max-width: 600px canvas */
+  left: 50%;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  width: min(100vw, 600px);
+  height: 100vh;
+  transform: translateX(-50%);
   background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1001;
+  opacity: 0;
+  animation: none;
+  transition: opacity 0.3s ease-out;
+  pointer-events: none;
+}
+
+.new-game-confirmation-overlay.visible {
+  opacity: 1;
   animation: fadeIn 0.3s ease-out;
+  pointer-events: auto;
 }
 
 @keyframes fadeIn {
@@ -29,7 +40,14 @@
   width: 90%;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
   text-align: center;
-  animation: slideUp 0.4s ease-out;
+  animation: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+}
+
+.new-game-confirmation-overlay.visible .new-game-confirmation-dialog {
+  animation: none;
+  opacity: 1;
 }
 
 @keyframes slideUp {
