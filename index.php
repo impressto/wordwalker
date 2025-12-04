@@ -30,8 +30,16 @@ $version = $packageJson['version'] ?? '1.0.0';
     
     <!-- PWA Manifest -->
     <link rel="manifest" href="dist/manifest.json" />
-    <link rel="icon" type="image/png" sizes="192x192" href="dist/images/icon-192x192.png" />
-    <link rel="icon" type="image/png" sizes="512x512" href="dist/images/icon-512x512.png" />
+    
+    <!-- Favicon files -->
+    <link rel="icon" type="image/x-icon" href="https://impressto.ca/wordwalker/dist/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="https://impressto.ca/wordwalker/dist/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="https://impressto.ca/wordwalker/dist/favicon-96x96.png" />
+    <link rel="apple-touch-icon" href="https://impressto.ca/wordwalker/dist/apple-touch-icon.png" />
+    
+    <!-- PWA Icons (large sizes for app install) -->
+    <link rel="icon" type="image/png" sizes="192x192" href="https://impressto.ca/wordwalker/dist/images/icon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="https://impressto.ca/wordwalker/dist/images/icon-512x512.png" />
     
     <!-- Apple Mobile Web App -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
