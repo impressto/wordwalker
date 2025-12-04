@@ -34,7 +34,7 @@ export const saveGameState = (gameState) => {
     // Convert Sets to Arrays for JSON serialization
     const serializableState = {
       ...gameState,
-      usedQuestionIds: Array.from(gameState.usedQuestionIds || []),
+      usedQuestionIds: gameState.usedQuestionIds || {}, // Now an object organized by category
       completedCategories: Array.from(gameState.completedCategories || []),
       correctFirstTryIds: Array.from(gameState.correctFirstTryIds || []),
       correctAnswersByCategory: gameState.correctAnswersByCategory || {}, // Persistent tracking across sessions
@@ -80,7 +80,7 @@ export const convertLoadedState = (loadedState) => {
 
   return {
     ...loadedState,
-    usedQuestionIds: new Set(loadedState.usedQuestionIds || []),
+    usedQuestionIds: loadedState.usedQuestionIds || {}, // Now an object organized by category
     completedCategories: new Set(loadedState.completedCategories || []),
     correctFirstTryIds: new Set(loadedState.correctFirstTryIds || []),
     correctAnswersByCategory: loadedState.correctAnswersByCategory || {}, // Restore category-based correct answer tracking

@@ -14227,23 +14227,24 @@ export const getRandomQuestionByCategory = (category) => {
  * Helper function to get a random question from a category, excluding already used questions
  * and questions that have been answered correctly in the past
  * @param {string} category - The category to pick from
- * @param {Set} usedQuestionIds - Set of question IDs that have already been used in this session
- * @param {Object} correctAnswersByCategory - Object tracking questions answered correctly by category
+ * @param {Object} usedQuestionIds - Object tracking used questions by category (numeric IDs only)
+ * @param {Object} correctAnswersByCategory - Object tracking questions answered correctly by category (numeric IDs only)
  * @returns {Object|null} A random unused question object, or null if all questions used
  */
 export const getRandomUnusedQuestionByCategory = (
   category, 
-  usedQuestionIds = new Set(),
+  usedQuestionIds = {},
   correctAnswersByCategory = {}
 ) => {
   const categoryQuestions = getQuestionsByCategory(category);
+  const usedThisSession = usedQuestionIds[category] || [];
   const correctlyAnswered = correctAnswersByCategory[category] || [];
   
-  // Filter out both used questions and previously mastered questions
-  // Note: correctlyAnswered contains numeric IDs only (e.g., '031'), so extract numeric part from q.id
+  // Filter out both used questions (this session) and previously mastered questions
+  // Note: usedThisSession and correctlyAnswered contain numeric IDs only (e.g., '031')
   const availableQuestions = categoryQuestions.filter(q => {
     const numericId = q.id.split('_')[1];
-    return !usedQuestionIds.has(q.id) && !correctlyAnswered.includes(numericId);
+    return !usedThisSession.includes(numericId) && !correctlyAnswered.includes(numericId);
   });
   
   // If all questions have been answered correctly or used, show all questions again

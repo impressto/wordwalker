@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { getRandomQuestionByCategory, getRandomUnusedQuestionByCategory, shuffleOptions, getAllCategoryIds, getCategoryById } from '../config/questions';
-import { isCategoryCompleted, addCorrectAnswer, addToCorrectFirstTry } from '../utils/questionTracking';
+import { isCategoryCompleted, addCorrectAnswer, addToCorrectFirstTry, addUsedQuestion } from '../utils/questionTracking';
 import { translations } from '../config/answer-translations';
 import { questionTranslations } from '../config/question-translations';
 import gameSettings, { getStreakColor } from '../config/gameSettings';
@@ -107,7 +107,7 @@ const PathCanvas = () => {
   const checkpointsPerCategory = 10; // Number of checkpoints before next fork
   
   // Track used question IDs to prevent duplicates within a category walk
-  const [usedQuestionIds, setUsedQuestionIds] = useState(new Set());
+  const [usedQuestionIds, setUsedQuestionIds] = useState({});
   
   // Track globally completed categories (categories where all questions have been asked)
   const [completedCategories, setCompletedCategories] = useState(new Set());
@@ -393,7 +393,7 @@ const PathCanvas = () => {
     setStreak(0);
     setSelectedPath(null);
     setCheckpointsAnswered(0);
-    setUsedQuestionIds(new Set());
+    setUsedQuestionIds({});
     setCompletedCategories(new Set());
     setCorrectFirstTryIds(new Set());
     setCorrectAnswersByCategory(persistedCorrectAnswers); // Preserve learned questions
@@ -1057,8 +1057,8 @@ const PathCanvas = () => {
         ...question,
         options: shuffledOptions
       });
-      // Add this question ID to the used set
-      setUsedQuestionIds(prev => new Set([...prev, question.id]));
+      // Add this question ID to the used questions by category
+      setUsedQuestionIds(prev => addUsedQuestion(question.id, category, prev));
       // Reset hint when loading new question
       setShowHint(false);
       setHintUsed(false);
@@ -1107,7 +1107,7 @@ const PathCanvas = () => {
     setShowChoice(false);
     setIsPaused(false);
     setCheckpointsAnswered(0); // Reset checkpoint counter for new category
-    setUsedQuestionIds(new Set()); // Reset used questions for new category
+    setUsedQuestionIds({}); // Reset used questions for new category
     
     // Position the first checkpoint to appear centered when walker stops
     // Walker stops 120px before checkpoint, walker is at 30% of screen

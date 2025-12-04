@@ -19,13 +19,12 @@ export const getCategoryQuestionCount = (category) => {
 /**
  * Check if a category is complete (all questions have been used)
  * @param {string} category - The category to check
- * @param {Set} usedQuestionIds - Set of question IDs that have been used
+ * @param {Object} usedQuestionIds - Object tracking used questions by category
  * @returns {boolean} True if all questions in the category have been used
  */
-export const isCategoryCompleted = (category, usedQuestionIds = new Set()) => {
+export const isCategoryCompleted = (category, usedQuestionIds = {}) => {
   const totalQuestions = getCategoryQuestionCount(category);
-  const categoryQuestions = getQuestionsByCategory(category);
-  const usedInCategory = categoryQuestions.filter(q => usedQuestionIds.has(q.id)).length;
+  const usedInCategory = (usedQuestionIds[category] || []).length;
   return usedInCategory >= totalQuestions;
 };
 
@@ -178,4 +177,73 @@ export const isFirstTryCorrect = (questionId, correctFirstTryIds = new Set()) =>
  */
 export const getFirstTryCorrectCount = (correctFirstTryIds = new Set()) => {
   return correctFirstTryIds.size;
+};
+
+/**
+ * Add a question to the used questions by category
+ * @param {string} questionId - The question ID (e.g., 'food_031')
+ * @param {string} category - The category name
+ * @param {Object} usedQuestionIds - Current tracking object organized by category
+ * @returns {Object} Updated tracking object
+ */
+export const addUsedQuestion = (questionId, category, usedQuestionIds = {}) => {
+  const updatedUsed = { ...usedQuestionIds };
+  
+  if (!updatedUsed[category]) {
+    updatedUsed[category] = [];
+  }
+  
+  // Store only numeric ID (e.g., '031' instead of 'food_031')
+  const numericId = questionId.split('_')[1] || questionId;
+  
+  // Avoid duplicates
+  if (!updatedUsed[category].includes(numericId)) {
+    updatedUsed[category].push(numericId);
+  }
+  
+  return updatedUsed;
+};
+
+/**
+ * Check if a question has been used in the current session
+ * @param {string} questionId - The question ID (e.g., 'food_031')
+ * @param {string} category - The category name
+ * @param {Object} usedQuestionIds - Tracking object organized by category
+ * @returns {boolean} True if the question was used this session
+ */
+export const isQuestionUsed = (questionId, category, usedQuestionIds = {}) => {
+  const categoryUsed = usedQuestionIds[category] || [];
+  const numericId = questionId.split('_')[1] || questionId;
+  return categoryUsed.includes(numericId);
+};
+
+/**
+ * Get used questions in a specific category
+ * @param {string} category - The category name
+ * @param {Object} usedQuestionIds - Tracking object organized by category
+ * @returns {Array} Array of numeric IDs used in that category
+ */
+export const getUsedQuestionsInCategory = (category, usedQuestionIds = {}) => {
+  return usedQuestionIds[category] || [];
+};
+
+/**
+ * Reset used questions for a specific category
+ * @param {string} category - The category name
+ * @param {Object} usedQuestionIds - Current tracking object
+ * @returns {Object} Updated tracking object with that category cleared
+ */
+export const resetCategoryUsedQuestions = (category, usedQuestionIds = {}) => {
+  const updatedUsed = { ...usedQuestionIds };
+  delete updatedUsed[category];
+  return updatedUsed;
+};
+
+/**
+ * Get total count of used questions across all categories
+ * @param {Object} usedQuestionIds - Tracking object organized by category
+ * @returns {number} Total number of questions used this session
+ */
+export const getTotalUsedQuestions = (usedQuestionIds = {}) => {
+  return Object.values(usedQuestionIds).reduce((total, used) => total + used.length, 0);
 };
