@@ -146,3 +146,36 @@ export const resetCategoryCorrectAnswers = (category, correctAnswersByCategory =
   delete updatedTracking[category];
   return updatedTracking;
 };
+
+/**
+ * Add a question ID to the correctFirstTryIds set (session-scoped)
+ * Stores only numeric IDs to reduce storage: 'food_031' -> '031'
+ * @param {string} questionId - The question ID (e.g., 'food_031')
+ * @param {Set} correctFirstTryIds - Current Set of first-try correct IDs
+ * @returns {Set} Updated Set with numeric ID added
+ */
+export const addToCorrectFirstTry = (questionId, correctFirstTryIds = new Set()) => {
+  // Extract numeric ID to reduce storage by ~60% (less critical for session data, but consistent)
+  const numericId = questionId.split('_')[1] || questionId;
+  return new Set([...correctFirstTryIds, numericId]);
+};
+
+/**
+ * Check if a question was answered correctly on first try (session-scoped)
+ * @param {string} questionId - The question ID (e.g., 'food_031')
+ * @param {Set} correctFirstTryIds - Set of first-try correct IDs (numeric only)
+ * @returns {boolean} True if the question was answered correctly on first try this session
+ */
+export const isFirstTryCorrect = (questionId, correctFirstTryIds = new Set()) => {
+  const numericId = questionId.split('_')[1] || questionId;
+  return correctFirstTryIds.has(numericId);
+};
+
+/**
+ * Get count of questions answered correctly on first try
+ * @param {Set} correctFirstTryIds - Set of first-try correct IDs
+ * @returns {number} Number of first-try correct questions
+ */
+export const getFirstTryCorrectCount = (correctFirstTryIds = new Set()) => {
+  return correctFirstTryIds.size;
+};

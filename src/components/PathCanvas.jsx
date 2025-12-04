@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { getRandomQuestionByCategory, getRandomUnusedQuestionByCategory, shuffleOptions, getAllCategoryIds, getCategoryById } from '../config/questions';
-import { isCategoryCompleted, addCorrectAnswer } from '../utils/questionTracking';
+import { isCategoryCompleted, addCorrectAnswer, addToCorrectFirstTry } from '../utils/questionTracking';
 import { translations } from '../config/answer-translations';
 import { questionTranslations } from '../config/question-translations';
 import gameSettings, { getStreakColor } from '../config/gameSettings';
@@ -1187,8 +1187,9 @@ const PathCanvas = () => {
       // Increment streak for correct answer on first attempt
       let newStreak = streak;
       if (firstAttempt) {
-        // Track this question as answered correctly on first try
-        setCorrectFirstTryIds(prev => new Set([...prev, currentQuestion.id]));
+        // Track this question as answered correctly on first try (session-scoped)
+        // Stores numeric ID only (e.g., '031' instead of 'food_031') to optimize storage
+        setCorrectFirstTryIds(prev => addToCorrectFirstTry(currentQuestion.id, prev));
         
         // Add to persistent category-based tracking
         setCorrectAnswersByCategory(prev => 
