@@ -1,15 +1,120 @@
 /**
  * Restaurant & Dining Question Translations
  * Category: restaurant
- * 
- * TODO: Extract restaurant-related translations from question-translations.js if separate from food
- * Look for questions about:
- * - Restaurant phrases
- * - Ordering food
- * - Menu vocabulary
- * - Dining etiquette
  */
 
 export const restaurantTranslations = {
-  // TODO: Check if this is separate from food category and add translations
+  // Basic Restaurant Phrases (1-15)
+  "¿Qué dices al mesero para pedir?": "What do you say to the waiter to order?",
+  "¿Qué necesitas para ver las opciones de comida?": "What do you need to see the food options?",
+  "¿Quién te sirve en un restaurante?": "Who serves you in a restaurant?",
+  "¿Qué pides al final de la comida?": "What do you ask for at the end of the meal?",
+  "¿Qué pides cuando llegas al restaurante?": "What do you ask for when you arrive at the restaurant?",
+  "¿Qué haces para asegurar una mesa?": "What do you do to secure a table?",
+  "¿Qué dejas para el mesero por buen servicio?": "What do you leave for the waiter for good service?",
+  "¿Qué pides primero para tomar?": "What do you order first to drink?",
+  "¿Qué comes antes del plato principal?": "What do you eat before the main dish?",
+  "¿Qué comes después del plato principal?": "What do you eat after the main dish?",
+  "¿Con qué comes?": "What do you eat with?",
+  "¿Qué le pones a la comida para más sabor?": "What do you put on food for more flavor?",
+  "¿Qué le pones a la comida para hacerla picante?": "What do you put on food to make it spicy?",
+  "¿De qué tomas agua?": "What do you drink water from?",
+  "¿Dónde sirven tu comida?": "Where do they serve your food?",
+
+  // Ordering Food (16-30)
+  "¿Cómo pides una hamburguesa?": "How do you order a hamburger?",
+  "¿Cómo te gusta la carne?": "How do you like your meat?",
+  "¿Qué dices cuando quieres pizza?": "What do you say when you want pizza?",
+  "¿Qué comida mexicana pides?": "What Mexican food do you order?",
+  "¿Qué plato líquido pides cuando hace frío?": "What liquid dish do you order when it's cold?",
+  "¿Qué pides si quieres comer vegetales?": "What do you order if you want to eat vegetables?",
+  "¿Qué comida italiana con salsa pides?": "What Italian food with sauce do you order?",
+  "¿Qué acompaña muchos platos latinos?": "What accompanies many Latin dishes?",
+  "¿Qué te dan gratis en muchos restaurantes?": "What do they give you free in many restaurants?",
+  "¿Qué le pones al pan?": "What do you put on bread?",
+  "¿Qué acompañamiento pides con hamburguesa?": "What side do you order with a hamburger?",
+  "¿Qué proteína del mar pides?": "What protein from the sea do you order?",
+  "¿Qué mariscos pequeños pides?": "What small seafood do you order?",
+  "¿Qué carne de ave pides?": "What poultry meat do you order?",
+  "¿Qué carne roja pides?": "What red meat do you order?",
+
+  // Drinks (31-45)
+  "¿Qué bebida básica pides?": "What basic drink do you order?",
+  "¿Qué bebida con gas pides?": "What carbonated drink do you order?",
+  "¿Qué bebida caliente pides después de comer?": "What hot drink do you order after eating?",
+  "¿Qué otra bebida caliente pides?": "What other hot drink do you order?",
+  "¿Qué bebida alcohólica de uvas pides?": "What alcoholic drink made from grapes do you order?",
+  "¿Qué bebida alcohólica fría pides?": "What cold alcoholic drink do you order?",
+  "¿Qué bebida de frutas pides?": "What fruit drink do you order?",
+  "¿Qué bebida blanca pides con cereal?": "What white drink do you order with cereal?",
+  "¿Qué le pides al mesero para enfriar tu bebida?": "What do you ask the waiter for to cool your drink?",
+  "¿Qué le pones al agua para sabor?": "What do you put in water for flavor?",
+  "¿Qué bebida tropical pides en la playa?": "What tropical drink do you order at the beach?",
+  "¿Qué licor fuerte pides?": "What strong liquor do you order?",
+  "¿Qué bebida especial pides para celebrar?": "What special drink do you order to celebrate?",
+  "¿Qué bebida con burbujas es popular en Asia?": "What drink with bubbles is popular in Asia?",
+  "¿Cómo pides café con leche?": "How do you order coffee with milk?",
+
+  // Desserts (46-55)
+  "¿Qué postre dulce y esponjoso pides?": "What sweet and fluffy dessert do you order?",
+  "¿Qué postre frío pides en verano?": "What cold dessert do you order in summer?",
+  "¿Qué postre cremoso español pides?": "What creamy Spanish dessert do you order?",
+  "¿Qué postre crujiente y dulce pides con café?": "What crunchy and sweet dessert do you order with coffee?",
+  "¿Qué postre con frutas pides?": "What dessert with fruit do you order?",
+  "¿Qué postre de cacao pides?": "What cocoa dessert do you order?",
+  "¿Qué postre pequeño individual pides?": "What small individual dessert do you order?",
+  "¿Qué postre frito y redondo pides?": "What fried and round dessert do you order?",
+  "¿Qué helado con frutas y crema pides?": "What ice cream with fruit and cream do you order?",
+  "¿Qué postre en palitos pides?": "What dessert on sticks do you order?",
+
+  // Restaurant Types & Situations (56-70)
+  "¿A qué restaurante vas para pizza?": "What restaurant do you go to for pizza?",
+  "¿Dónde tomas café y pastel?": "Where do you have coffee and cake?",
+  "¿Qué tipo de restaurante sirve comida rápida?": "What type of restaurant serves fast food?",
+  "¿Qué restaurante sirve comida para llevar?": "What restaurant serves takeout food?",
+  "¿Dónde comes dentro del restaurante?": "Where do you eat inside the restaurant?",
+  "¿Dónde pides sin salir del carro?": "Where do you order without leaving the car?",
+  "¿Qué servicio trae comida a tu casa?": "What service brings food to your house?",
+  "¿Qué tipo de restaurante es elegante?": "What type of restaurant is elegant?",
+  "¿Dónde comes mucha variedad pagando una vez?": "Where do you eat lots of variety paying once?",
+  "¿Qué restaurante sirve comida asiática?": "What restaurant serves Asian food?",
+  "¿Qué restaurante sirve tacos y burritos?": "What restaurant serves tacos and burritos?",
+  "¿Qué restaurante sirve pasta y pizza?": "What restaurant serves pasta and pizza?",
+  "¿Qué restaurante sirve paella?": "What restaurant serves paella?",
+  "¿Qué restaurante sirve sushi?": "What restaurant serves sushi?",
+  "¿Qué restaurante sirve croissants?": "What restaurant serves croissants?",
+
+  // Dining Preferences & Requests (71-85)
+  "¿Qué pides si no comes carne?": "What do you order if you don't eat meat?",
+  "¿Qué le dices al mesero si tienes alergia?": "What do you tell the waiter if you have an allergy?",
+  "¿Qué dices si no quieres comida picante?": "What do you say if you don't want spicy food?",
+  "¿Qué dices si no quieres sal?": "What do you say if you don't want salt?",
+  "¿Cómo pides la comida caliente?": "How do you ask for the food hot?",
+  "¿Cómo pides la bebida muy fría?": "How do you ask for the drink very cold?",
+  "¿Qué pides si necesitas tenedor?": "What do you ask for if you need a fork?",
+  "¿Qué pides para comer sopa?": "What do you ask for to eat soup?",
+  "¿Qué pides para cortar carne?": "What do you ask for to cut meat?",
+  "¿Qué usas para limpiarte la boca?": "What do you use to clean your mouth?",
+  "¿Qué pides para tomar tu refresco?": "What do you ask for to drink your soda?",
+  "¿Qué pides para llevar lo que sobra?": "What do you ask for to take what's left?",
+  "¿Qué dices si no quieres hielo?": "What do you say if you don't want ice?",
+  "¿Qué pides para tu té?": "What do you ask for for your tea?",
+  "¿Qué le pones al té para endulzar?": "What do you put in tea to sweeten it?",
+
+  // Final phrases & situations (86-100)
+  "¿Qué dices cuando la comida está deliciosa?": "What do you say when the food is delicious?",
+  "¿Qué dices cuando tienes hambre?": "What do you say when you're hungry?",
+  "¿Qué dices cuando tienes sed?": "What do you say when you're thirsty?",
+  "¿Qué dices al mesero al final?": "What do you say to the waiter at the end?",
+  "¿Qué dices para ser cortés al pedir?": "What do you say to be polite when ordering?",
+  "¿A qué hora comes en la mañana?": "What time do you eat in the morning?",
+  "¿A qué hora comes a mediodía?": "What time do you eat at noon?",
+  "¿A qué hora comes en la noche?": "What time do you eat at night?",
+  "¿Qué dices para pedir más?": "What do you say to ask for more?",
+  "¿Qué dices cuando no quieres más?": "What do you say when you don't want more?",
+  "¿Qué dices para llamar al mesero?": "What do you say to call the waiter?",
+  "¿Qué preguntas para saber opciones?": "What do you ask to know the options?",
+  "¿Qué preguntas para saber el precio?": "What do you ask to know the price?",
+  "¿Qué preguntas para encontrar el baño?": "What do you ask to find the bathroom?",
+  "¿Qué dices para disfrutar la comida?": "What do you say to enjoy the food?",
 };

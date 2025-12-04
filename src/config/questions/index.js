@@ -17,6 +17,7 @@ import { beachQuestions } from './beach.js';
 import { animalsQuestions } from './animals.js';
 import { peopleQuestions } from './people.js';
 import { dailyRoutinesQuestions } from './daily_routines.js';
+import { restaurantQuestions } from './restaurant.js';
 
 // Export individual category questions
 export {
@@ -34,6 +35,7 @@ export {
   animalsQuestions,
   peopleQuestions,
   dailyRoutinesQuestions,
+  restaurantQuestions,
 };
 
 /**
@@ -54,6 +56,7 @@ export const questions = [
   ...animalsQuestions,
   ...peopleQuestions,
   ...dailyRoutinesQuestions,
+  ...restaurantQuestions,
 ];
 
 /**

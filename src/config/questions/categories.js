@@ -107,6 +107,13 @@ export const categories = {
     emoji: '🍽️',
     description: 'Learn restaurant vocabulary, ordering, and dining phrases',
   },
+  weather: {
+    id: 'weather',
+    name: 'Weather & Environment',
+    displayName: 'Clima y Medio Ambiente',
+    emoji: '🌤️',
+    description: 'Learn weather, climate, and environmental vocabulary',
+  },
 };
 
 /**
