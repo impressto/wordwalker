@@ -57,6 +57,7 @@ const PathCanvas = () => {
   const [isLoading, setIsLoading] = useState(true); // Track if assets are still loading
   const offsetRef = useRef(-300); // Start scrolled back so fork appears more centered initially
   const velocityRef = useRef(0); // Current scroll velocity for smooth acceleration/deceleration
+  const targetOffsetRef = useRef(null); // Target offset for smooth camera panning (null = no target)
   const animationFrameRef = useRef(null);
   const [isPaused, setIsPaused] = useState(false);
   const [showChoice, setShowChoice] = useState(false);
@@ -506,15 +507,18 @@ const PathCanvas = () => {
   }, [pathImage, pathForkImage, walkerSpriteSheet, isLoading]);
 
   // Adjust camera position when choice dialog is shown/hidden
-  // When dialog is visible AND animation is paused, position the fork on the right side of the canvas
+  // When dialog is visible AND animation is paused, smoothly pan the fork to the right side
   useEffect(() => {
     if (showChoice && isPaused) {
       const canvas = canvasRef.current;
       if (canvas) {
         const width = canvas.width;
-        // Position fork at approximately 75% across the screen (right side)
-        offsetRef.current = forkPositionRef.current - (width * 0.75);
+        // Set target offset for smooth animation to position fork at 75% across the screen
+        targetOffsetRef.current = forkPositionRef.current - (width * 0.75);
       }
+    } else {
+      // Clear target when dialog closes
+      targetOffsetRef.current = null;
     }
   }, [showChoice, isPaused]);
 
@@ -998,41 +1002,71 @@ const PathCanvas = () => {
         const acceleration = 0.15; // How quickly to speed up
         const deceleration = 0.2; // How quickly to slow down
         
-        // Determine if walker should be moving
-        const shouldMove = !isPaused && (!shouldStopForChoice || selectedPath) && !shouldStopForCheckpoint;
-        
-        // Apply inertia - gradually change velocity toward target
-        if (shouldMove) {
-          // Accelerate toward target speed
-          if (velocityRef.current < targetSpeed) {
-            velocityRef.current = Math.min(velocityRef.current + acceleration, targetSpeed);
+        // Apply smooth camera panning if we have a target offset (for fork repositioning)
+        if (targetOffsetRef.current !== null) {
+          const cameraSpeed = 8; // Speed at which camera pans to target (higher = faster)
+          const distanceToTarget = targetOffsetRef.current - offsetRef.current;
+          
+          // If we're very close to target, snap to it
+          if (Math.abs(distanceToTarget) < 1) {
+            offsetRef.current = targetOffsetRef.current;
+          } else {
+            // Smoothly move toward target
+            offsetRef.current += distanceToTarget / cameraSpeed;
           }
+          
+          // Keep velocity at zero while panning to prevent walker animation
+          velocityRef.current = 0;
         } else {
-          // Decelerate toward zero
-          if (velocityRef.current > 0) {
-            velocityRef.current = Math.max(velocityRef.current - deceleration, 0);
+          // Determine if walker should be moving (normal gameplay)
+          const shouldMove = !isPaused && (!shouldStopForChoice || selectedPath) && !shouldStopForCheckpoint;
+          
+          // Apply inertia - gradually change velocity toward target
+          if (shouldMove) {
+            // Accelerate toward target speed
+            if (velocityRef.current < targetSpeed) {
+              velocityRef.current = Math.min(velocityRef.current + acceleration, targetSpeed);
+            }
+          } else {
+            // Decelerate toward zero
+            if (velocityRef.current > 0) {
+              velocityRef.current = Math.max(velocityRef.current - deceleration, 0);
+            }
           }
+          
+          // Apply velocity to offset
+          offsetRef.current += velocityRef.current;
         }
-        
-        // Apply velocity to offset
-        offsetRef.current += velocityRef.current;
       } else {
         // Fallback if canvas not available
-        const targetSpeed = 4;
-        const acceleration = 0.15;
-        const deceleration = 0.2;
-        
-        if (!isPaused) {
-          if (velocityRef.current < targetSpeed) {
-            velocityRef.current = Math.min(velocityRef.current + acceleration, targetSpeed);
+        if (targetOffsetRef.current !== null) {
+          // Smooth panning (no walker movement)
+          const cameraSpeed = 8;
+          const distanceToTarget = targetOffsetRef.current - offsetRef.current;
+          if (Math.abs(distanceToTarget) < 1) {
+            offsetRef.current = targetOffsetRef.current;
+          } else {
+            offsetRef.current += distanceToTarget / cameraSpeed;
           }
+          velocityRef.current = 0;
         } else {
-          if (velocityRef.current > 0) {
-            velocityRef.current = Math.max(velocityRef.current - deceleration, 0);
+          // Normal movement
+          const targetSpeed = 4;
+          const acceleration = 0.15;
+          const deceleration = 0.2;
+          
+          if (!isPaused) {
+            if (velocityRef.current < targetSpeed) {
+              velocityRef.current = Math.min(velocityRef.current + acceleration, targetSpeed);
+            }
+          } else {
+            if (velocityRef.current > 0) {
+              velocityRef.current = Math.max(velocityRef.current - deceleration, 0);
+            }
           }
+          
+          offsetRef.current += velocityRef.current;
         }
-        
-        offsetRef.current += velocityRef.current;
       }
       
       drawScene();

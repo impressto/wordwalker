@@ -28,6 +28,8 @@ body {
   min-width: 320px;
   min-height: 100vh;
   overflow: hidden;
+  /* Prevent layout shift from scrollbar appearance */
+  scrollbar-gutter: stable;
 }
 
 h1 {
