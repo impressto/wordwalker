@@ -247,3 +247,72 @@ export const resetCategoryUsedQuestions = (category, usedQuestionIds = {}) => {
 export const getTotalUsedQuestions = (usedQuestionIds = {}) => {
   return Object.values(usedQuestionIds).reduce((total, used) => total + used.length, 0);
 };
+
+/**
+ * Add a question to first-try correct by category (session-scoped)
+ * @param {string} questionId - The question ID (e.g., 'food_031')
+ * @param {string} category - The category name
+ * @param {Object} correctFirstTryIds - Current tracking object organized by category
+ * @returns {Object} Updated tracking object
+ */
+export const addToFirstTryByCategory = (questionId, category, correctFirstTryIds = {}) => {
+  const updatedFirstTry = { ...correctFirstTryIds };
+  
+  if (!updatedFirstTry[category]) {
+    updatedFirstTry[category] = [];
+  }
+  
+  // Store only numeric ID (e.g., '031' instead of 'food_031')
+  const numericId = questionId.split('_')[1] || questionId;
+  
+  // Avoid duplicates
+  if (!updatedFirstTry[category].includes(numericId)) {
+    updatedFirstTry[category].push(numericId);
+  }
+  
+  return updatedFirstTry;
+};
+
+/**
+ * Check if a question was answered correctly on first try
+ * @param {string} questionId - The question ID (e.g., 'food_031')
+ * @param {string} category - The category name
+ * @param {Object} correctFirstTryIds - Tracking object organized by category
+ * @returns {boolean} True if the question was answered correctly on first try
+ */
+export const isFirstTryCorrectByCategory = (questionId, category, correctFirstTryIds = {}) => {
+  const categoryFirstTry = correctFirstTryIds[category] || [];
+  const numericId = questionId.split('_')[1] || questionId;
+  return categoryFirstTry.includes(numericId);
+};
+
+/**
+ * Get first-try correct questions in a specific category
+ * @param {string} category - The category name
+ * @param {Object} correctFirstTryIds - Tracking object organized by category
+ * @returns {Array} Array of numeric IDs answered correctly on first try
+ */
+export const getFirstTryCorrectInCategory = (category, correctFirstTryIds = {}) => {
+  return correctFirstTryIds[category] || [];
+};
+
+/**
+ * Get total count of questions answered correctly on first try across all categories
+ * @param {Object} correctFirstTryIds - Tracking object organized by category
+ * @returns {number} Total number of first-try correct questions
+ */
+export const getTotalFirstTryCorrect = (correctFirstTryIds = {}) => {
+  return Object.values(correctFirstTryIds).reduce((total, firstTry) => total + firstTry.length, 0);
+};
+
+/**
+ * Reset first-try correct questions for a specific category
+ * @param {string} category - The category name
+ * @param {Object} correctFirstTryIds - Current tracking object
+ * @returns {Object} Updated tracking object with that category cleared
+ */
+export const resetCategoryFirstTryCorrect = (category, correctFirstTryIds = {}) => {
+  const updatedFirstTry = { ...correctFirstTryIds };
+  delete updatedFirstTry[category];
+  return updatedFirstTry;
+};

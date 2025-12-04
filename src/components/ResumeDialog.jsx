@@ -4,7 +4,9 @@ import { questions } from '../config/questions';
 const ResumeDialog = ({ onResume, onNewGame, savedStats }) => {
   // Calculate total questions and progress
   const totalQuestions = questions.length;
-  const correctFirstTry = savedStats?.correctFirstTryIds?.length || 0;
+  // Sum first-try correct across all categories
+  const correctFirstTry = Object.values(savedStats?.correctFirstTryIds || {})
+    .reduce((total, categoryIds) => total + categoryIds.length, 0);
   const remaining = totalQuestions - correctFirstTry;
 
   return (

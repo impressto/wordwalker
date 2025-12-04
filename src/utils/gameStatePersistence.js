@@ -36,7 +36,7 @@ export const saveGameState = (gameState) => {
       ...gameState,
       usedQuestionIds: gameState.usedQuestionIds || {}, // Now an object organized by category
       completedCategories: Array.from(gameState.completedCategories || []),
-      correctFirstTryIds: Array.from(gameState.correctFirstTryIds || []),
+      correctFirstTryIds: gameState.correctFirstTryIds || {}, // Now an object organized by category
       correctAnswersByCategory: gameState.correctAnswersByCategory || {}, // Persistent tracking across sessions
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(serializableState));
@@ -82,7 +82,7 @@ export const convertLoadedState = (loadedState) => {
     ...loadedState,
     usedQuestionIds: loadedState.usedQuestionIds || {}, // Now an object organized by category
     completedCategories: new Set(loadedState.completedCategories || []),
-    correctFirstTryIds: new Set(loadedState.correctFirstTryIds || []),
+    correctFirstTryIds: loadedState.correctFirstTryIds || {}, // Now an object organized by category
     correctAnswersByCategory: loadedState.correctAnswersByCategory || {}, // Restore category-based correct answer tracking
   };
 };

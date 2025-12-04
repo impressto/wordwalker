@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { getRandomQuestionByCategory, getRandomUnusedQuestionByCategory, shuffleOptions, getAllCategoryIds, getCategoryById } from '../config/questions';
-import { isCategoryCompleted, addCorrectAnswer, addToCorrectFirstTry, addUsedQuestion } from '../utils/questionTracking';
+import { isCategoryCompleted, addCorrectAnswer, addToCorrectFirstTry, addUsedQuestion, addToFirstTryByCategory } from '../utils/questionTracking';
 import { translations } from '../config/answer-translations';
 import { questionTranslations } from '../config/question-translations';
 import gameSettings, { getStreakColor } from '../config/gameSettings';
@@ -113,7 +113,7 @@ const PathCanvas = () => {
   const [completedCategories, setCompletedCategories] = useState(new Set());
   
   // Track questions answered correctly on first try (globally across all categories)
-  const [correctFirstTryIds, setCorrectFirstTryIds] = useState(new Set());
+  const [correctFirstTryIds, setCorrectFirstTryIds] = useState({});
   
   // Track questions answered correctly by category - persists across sessions
   const [correctAnswersByCategory, setCorrectAnswersByCategory] = useState({});
@@ -395,7 +395,7 @@ const PathCanvas = () => {
     setCheckpointsAnswered(0);
     setUsedQuestionIds({});
     setCompletedCategories(new Set());
-    setCorrectFirstTryIds(new Set());
+    setCorrectFirstTryIds({});
     setCorrectAnswersByCategory(persistedCorrectAnswers); // Preserve learned questions
     setShowQuestion(false);
     setCurrentQuestion(null);
@@ -1187,9 +1187,10 @@ const PathCanvas = () => {
       // Increment streak for correct answer on first attempt
       let newStreak = streak;
       if (firstAttempt) {
-        // Track this question as answered correctly on first try (session-scoped)
-        // Stores numeric ID only (e.g., '031' instead of 'food_031') to optimize storage
-        setCorrectFirstTryIds(prev => addToCorrectFirstTry(currentQuestion.id, prev));
+        // Track this question as answered correctly on first try (session-scoped, organized by category)
+        setCorrectFirstTryIds(prev => 
+          addToFirstTryByCategory(currentQuestion.id, currentQuestion.category, prev)
+        );
         
         // Add to persistent category-based tracking
         setCorrectAnswersByCategory(prev => 
