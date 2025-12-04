@@ -41,7 +41,7 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, 
       boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
       zIndex: 1010,
       animation: 'fadeIn 0.3s ease-out',
-      minWidth: '280px',
+      minWidth: '350px',
       maxWidth: 'min(85vw, 380px)',
     }}>
       <div id="translation-checkmark" style={{

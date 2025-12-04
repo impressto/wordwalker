@@ -4,6 +4,7 @@
  */
 
 import { useState, useEffect } from 'react';
+import { getTranslationBoxDuration } from '../config/gameSettings';
 
 const QuestionDialog = ({ 
   currentQuestion, 
@@ -17,6 +18,32 @@ const QuestionDialog = ({
   questionTranslation
 }) => {
   const [dialogTop, setDialogTop] = useState('100px');
+  const [isTranslationVisible, setIsTranslationVisible] = useState(true);
+
+  useEffect(() => {
+    const duration = getTranslationBoxDuration();
+    
+    // If duration is 0, keep translation visible indefinitely
+    if (duration === 0) {
+      setIsTranslationVisible(true);
+      return;
+    }
+    
+    // Only set timer if showHint is true and duration is configured
+    if (!showHint) {
+      setIsTranslationVisible(false);
+      return;
+    }
+    
+    setIsTranslationVisible(true);
+    
+    // Set timer to hide translation box after configured duration
+    const timer = setTimeout(() => {
+      setIsTranslationVisible(false);
+    }, duration);
+
+    return () => clearTimeout(timer);
+  }, [showHint, currentQuestion?.id]);
 
   useEffect(() => {
     const calculatePosition = () => {
@@ -93,7 +120,7 @@ const QuestionDialog = ({
       </div>
       
       <div id="question-text" style={{
-        fontSize: '24px',
+        fontSize: '20px',
         fontWeight: 'bold',
         marginBottom: '10px',
         textAlign: 'center',
@@ -140,13 +167,19 @@ const QuestionDialog = ({
       )}
       
       {/* Display English translation when hint is shown */}
-      {showHint && questionTranslation && (
+      {showHint && isTranslationVisible && questionTranslation && (
         <div style={{
           backgroundColor: '#FFF3E0',
           padding: '12px 20px',
           borderRadius: '8px',
           border: '2px solid #FF9800',
           animation: 'fadeInScale 0.4s ease-out',
+          width: '120%',
+          minWidth: '350px',
+          boxSizing: 'border-box',
+          margin: '0 auto',
+          position: 'relative',
+          left: '-10%',
         }}>
           <div style={{
             color: '#E65100',
@@ -187,7 +220,7 @@ const QuestionDialog = ({
               disabled={isDisabled}
               style={{
                 padding: '12px 24px',
-                fontSize: '18px',
+                fontSize: '16px',
                 fontWeight: 'bold',
                 backgroundColor: isIncorrect ? '#d32f2f' : (showTranslation ? '#cccccc' : '#2196F3'),
                 color: 'white',

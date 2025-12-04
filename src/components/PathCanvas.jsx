@@ -3,7 +3,7 @@ import { getRandomQuestionByCategory, getRandomUnusedQuestionByCategory, shuffle
 import { isCategoryCompleted, addCorrectAnswer, addToCorrectFirstTry, addUsedQuestion, addToFirstTryByCategory } from '../utils/questionTracking';
 import { translations } from '../config/answer-translations';
 import { questionTranslations } from '../config/question-translations';
-import gameSettings, { getStreakColor } from '../config/gameSettings';
+import gameSettings, { getStreakColor, getTranslationBoxDuration } from '../config/gameSettings';
 import { getTheme } from '../config/parallaxThemes';
 import { getSpriteSheetConfig } from '../config/characterConfig';
 import { setActiveTheme } from '../utils/themeManager';
@@ -1284,8 +1284,10 @@ const PathCanvas = () => {
       walkerFrameRef.current = 0; // Start victory animation from first frame
       victoryAnimationCounterRef.current = 0;
       
-      // Determine pause duration - add extra time if showing streak milestone
-      const baseTranslationPause = 2000;
+      // Determine pause duration - use configured translation box duration
+      // If duration is 0 (infinite), use a minimum of 2 seconds for the victory animation
+      const configuredDuration = getTranslationBoxDuration();
+      const baseTranslationPause = configuredDuration === 0 ? 2000 : configuredDuration;
       const streakBonusPause = (newStreak > 0 && newStreak % gameSettings.streak.bonusThreshold === 0) 
         ? gameSettings.streak.extraPauseDuration 
         : 0;
