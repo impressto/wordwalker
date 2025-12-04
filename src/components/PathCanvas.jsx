@@ -772,6 +772,7 @@ const PathCanvas = () => {
       // Draw path tiles
       if (pathImage && pathForkImage) {
         const tileSize = 240; // Both images are 240x240
+        const tileOverlap = 1; // 1-pixel overlap to prevent vertical hairlines
         const pathScrollOffset = scrollPos % tileSize;
         
         // Calculate fork screen position - shift right 10px to spill over canvas edge
@@ -800,8 +801,8 @@ const PathCanvas = () => {
             continue; // Skip tiles that would be covered by the fork
           }
           
-          // Always draw straight path (no fork animation)
-          ctx.drawImage(pathImage, tileX, pathTop, tileSize, pathHeight);
+          // Draw straight path with 1-pixel overlap to prevent vertical hairlines
+          ctx.drawImage(pathImage, tileX - tileOverlap, pathTop, tileSize + tileOverlap, pathHeight);
         }
         
         // Draw fork at fixed screen position with right edge aligned to canvas right edge
