@@ -4,6 +4,17 @@
  */
 
 const gameSettings = {
+  // Game State & Persistence Settings
+  persistence: {
+    // Number of mastered questions required to show confirmation dialog when starting new game
+    // This prevents accidental data loss while allowing new players frictionless experience
+    confirmationThreshold: 2,
+    
+    // Number of questions to answer before returning to the fork to select a new category
+    // Player must answer this many correct (or incorrect) before moving to next category
+    checkpointsPerCategory: 3,
+  },
+
   // Streak System Settings
   streak: {
     // Number of consecutive correct answers required to trigger streak bonus

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './ResumeDialog.css';
 import { questions } from '../config/questions';
+import gameSettings from '../config/gameSettings';
 import NewGameConfirmationDialog from './NewGameConfirmationDialog';
 import { getTotalMasteredQuestions } from '../utils/questionTracking';
 
@@ -17,9 +18,15 @@ const ResumeDialog = ({ onResume, onNewGame, savedStats }) => {
   // Get total mastered questions (permanent learning data)
   const masteredCount = getTotalMasteredQuestions(savedStats?.correctAnswersByCategory || {});
   
-  // Threshold for showing confirmation (20 mastered questions)
-  const CONFIRMATION_THRESHOLD = 20;
-  const shouldShowConfirmation = masteredCount >= CONFIRMATION_THRESHOLD;
+  // Debug logging to verify data
+  console.log('ResumeDialog - savedStats:', savedStats);
+  console.log('ResumeDialog - correctAnswersByCategory:', savedStats?.correctAnswersByCategory);
+  console.log('ResumeDialog - masteredCount:', masteredCount);
+  console.log('ResumeDialog - confirmationThreshold:', gameSettings.persistence.confirmationThreshold);
+  console.log('ResumeDialog - shouldShowConfirmation:', masteredCount >= gameSettings.persistence.confirmationThreshold);
+  
+  // Threshold for showing confirmation (configurable in gameSettings)
+  const shouldShowConfirmation = masteredCount >= gameSettings.persistence.confirmationThreshold;
   
   const handleNewGameClick = () => {
     if (shouldShowConfirmation) {

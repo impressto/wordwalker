@@ -104,7 +104,7 @@ const PathCanvas = () => {
   
   // Checkpoint cycling - track how many checkpoints answered in current category
   const [checkpointsAnswered, setCheckpointsAnswered] = useState(0);
-  const checkpointsPerCategory = 10; // Number of checkpoints before next fork
+  const checkpointsPerCategory = gameSettings.persistence.checkpointsPerCategory;
   
   // Track used question IDs to prevent duplicates within a category walk
   const [usedQuestionIds, setUsedQuestionIds] = useState({});
@@ -305,13 +305,17 @@ const PathCanvas = () => {
   useEffect(() => {
     if (!hasCheckedSavedState && hasSavedGameState()) {
       const loadedState = loadGameState();
+      console.log('PathCanvas - loadedState:', loadedState);
       if (loadedState) {
-        setSavedStats({
+        const statsToSet = {
           totalPoints: loadedState.totalPoints,
           streak: loadedState.streak,
           checkpointsAnswered: loadedState.checkpointsAnswered,
           correctFirstTryIds: loadedState.correctFirstTryIds || [],
-        });
+          correctAnswersByCategory: loadedState.correctAnswersByCategory || {},
+        };
+        console.log('PathCanvas - statsToSet:', statsToSet);
+        setSavedStats(statsToSet);
       }
       setShowResumeDialog(true);
       setHasCheckedSavedState(true);
@@ -1065,7 +1069,9 @@ const PathCanvas = () => {
       setHintUsed(false);
       
       // Check if this category is now completed (all questions have been used)
-      if (isCategoryCompleted(category, new Set([...usedQuestionIds, question.id]))) {
+      // Note: We create a temporary updated state to check completion
+      const updatedUsedIds = addUsedQuestion(question.id, category, usedQuestionIds);
+      if (isCategoryCompleted(category, updatedUsedIds)) {
         setCompletedCategories(prev => new Set([...prev, category]));
       }
     }
