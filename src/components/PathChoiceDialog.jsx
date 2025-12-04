@@ -1,12 +1,40 @@
 /**
  * PathChoiceDialog Component
- * Displays a dialog with four category options for the user to choose
+ * Displays a dialog with category options for the user to choose
+ * Now with pagination to browse through all available categories
  */
 
 import { useState, useEffect } from 'react';
+import { getAllCategoryIds } from '../config/questions';
 
-const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpenShop }) => {
+const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpenShop, completedCategories = new Set(), currentCategory = null }) => {
   const [dialogTop, setDialogTop] = useState('100px');
+  const [currentPage, setCurrentPage] = useState(0);
+  
+  // Get all available categories, excluding completed ones and current category
+  const allCategoryIds = getAllCategoryIds();
+  const availableCategories = allCategoryIds.filter(catId => 
+    !completedCategories.has(catId) && catId !== currentCategory
+  );
+  
+  // If we have fewer available categories, use all categories
+  const categoriesToShow = availableCategories.length >= 4 ? availableCategories : allCategoryIds;
+  
+  const categoriesPerPage = 4;
+  const totalPages = Math.ceil(categoriesToShow.length / categoriesPerPage);
+  
+  // Get current page categories
+  const startIndex = currentPage * categoriesPerPage;
+  const endIndex = startIndex + categoriesPerPage;
+  const currentPageCategories = categoriesToShow.slice(startIndex, endIndex);
+  
+  const handlePrevPage = () => {
+    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+  };
+  
+  const handleNextPage = () => {
+    setCurrentPage((prev) => (prev + 1) % totalPages);
+  };
 
   useEffect(() => {
     const calculatePosition = () => {
@@ -71,14 +99,13 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
     );
   }
 
-  const createButton = (choiceKey, emoji) => {
-    const categoryId = forkCategories[choiceKey];
+  const createButton = (categoryId) => {
     const category = getCategoryById(categoryId);
     
-    if (!categoryId || !category) {
-      console.warn(`PathChoiceDialog: Missing category data for ${choiceKey}:`, categoryId, 'category:', category);
+    if (!category) {
+      console.warn(`PathChoiceDialog: Missing category data for ${categoryId}`);
       return (
-        <div key={choiceKey} style={{
+        <div key={categoryId} style={{
           padding: '15px 20px',
           fontSize: '14px',
           backgroundColor: '#ffebee',
@@ -88,15 +115,15 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
           minWidth: '140px',
           textAlign: 'center',
         }}>
-          Missing: {choiceKey}
+          Missing: {categoryId}
         </div>
       );
     }
     
     return (
       <button
-        key={choiceKey}
-        onClick={() => onPathChoice(choiceKey)}
+        key={categoryId}
+        onClick={() => onPathChoice(categoryId)}
         style={{
           padding: '10px 15px',
           fontSize: '18px',
@@ -153,17 +180,112 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
       }}>
         Choose Your Path 🛤️
       </h3>
+      
+      {/* Pagination Container */}
       <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(2, 1fr)',
-        gap: '10px',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '8px',
         marginBottom: '12px',
       }}>
-        {createButton('choice1')}
-        {createButton('choice2')}
-        {createButton('choice3')}
-        {createButton('choice4')}
+        {/* Previous Button */}
+        <button
+          onClick={handlePrevPage}
+          disabled={totalPages <= 1}
+          style={{
+            padding: '8px 12px',
+            fontSize: '20px',
+            fontWeight: 'bold',
+            backgroundColor: totalPages <= 1 ? '#ccc' : '#2196F3',
+            color: 'white',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: totalPages <= 1 ? 'not-allowed' : 'pointer',
+            boxShadow: totalPages <= 1 ? 'none' : '0 2px 4px rgba(0,0,0,0.2)',
+            transition: 'all 0.2s',
+            flexShrink: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            minWidth: '40px',
+            opacity: totalPages <= 1 ? 0.5 : 1,
+          }}
+          onMouseEnter={(e) => {
+            if (totalPages > 1) {
+              e.target.style.transform = 'scale(1.1)';
+              e.target.style.backgroundColor = '#1976D2';
+            }
+          }}
+          onMouseLeave={(e) => {
+            if (totalPages > 1) {
+              e.target.style.transform = 'scale(1)';
+              e.target.style.backgroundColor = '#2196F3';
+            }
+          }}
+        >
+          ❮
+        </button>
+        
+        {/* Categories Grid */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: '10px',
+          flex: 1,
+        }}>
+          {currentPageCategories.map(categoryId => createButton(categoryId))}
+        </div>
+        
+        {/* Next Button */}
+        <button
+          onClick={handleNextPage}
+          disabled={totalPages <= 1}
+          style={{
+            padding: '8px 12px',
+            fontSize: '20px',
+            fontWeight: 'bold',
+            backgroundColor: totalPages <= 1 ? '#ccc' : '#2196F3',
+            color: 'white',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: totalPages <= 1 ? 'not-allowed' : 'pointer',
+            boxShadow: totalPages <= 1 ? 'none' : '0 2px 4px rgba(0,0,0,0.2)',
+            transition: 'all 0.2s',
+            flexShrink: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            minWidth: '40px',
+            opacity: totalPages <= 1 ? 0.5 : 1,
+          }}
+          onMouseEnter={(e) => {
+            if (totalPages > 1) {
+              e.target.style.transform = 'scale(1.1)';
+              e.target.style.backgroundColor = '#1976D2';
+            }
+          }}
+          onMouseLeave={(e) => {
+            if (totalPages > 1) {
+              e.target.style.transform = 'scale(1)';
+              e.target.style.backgroundColor = '#2196F3';
+            }
+          }}
+        >
+          ❯
+        </button>
       </div>
+      
+      {/* Page Indicator */}
+      {totalPages > 1 && (
+        <div style={{
+          textAlign: 'center',
+          fontSize: '12px',
+          color: '#666',
+          marginBottom: '8px',
+        }}>
+          Page {currentPage + 1} of {totalPages}
+        </div>
+      )}
 
       {/* Vendor Section */}
       <div style={{

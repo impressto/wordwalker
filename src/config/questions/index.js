@@ -16,6 +16,7 @@ import { grammarQuestions } from './grammar.js';
 import { beachQuestions } from './beach.js';
 import { animalsQuestions } from './animals.js';
 import { peopleQuestions } from './people.js';
+import { dailyRoutinesQuestions } from './daily_routines.js';
 
 // Export individual category questions
 export {
@@ -32,6 +33,7 @@ export {
   beachQuestions,
   animalsQuestions,
   peopleQuestions,
+  dailyRoutinesQuestions,
 };
 
 /**
@@ -51,6 +53,7 @@ export const questions = [
   ...beachQuestions,
   ...animalsQuestions,
   ...peopleQuestions,
+  ...dailyRoutinesQuestions,
 ];
 
 /**

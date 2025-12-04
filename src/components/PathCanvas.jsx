@@ -1149,6 +1149,11 @@ const PathCanvas = () => {
       soundManagerRef.current.playChoice();
     }
     
+    // choice can now be either a categoryId directly or a choice key
+    // If it's a choice key (choice1, choice2, etc.), look it up in forkCategories
+    // Otherwise, treat it as a categoryId directly
+    const category = forkCategories[choice] || choice;
+    
     setSelectedPath(choice);
     setShowChoice(false);
     setIsPaused(false);
@@ -1173,7 +1178,6 @@ const PathCanvas = () => {
     checkpointSoundPlayedRef.current = false;
     
     // Load the first question immediately so the correct emoji appears
-    const category = forkCategories[choice];
     loadNewQuestion(category);
   };
 
@@ -1314,7 +1318,8 @@ const PathCanvas = () => {
         // Check if we've completed all checkpoints for this category
         if (newCheckpointsAnswered >= checkpointsPerCategory) {
           // Mark the current category as globally completed
-          const currentCategory = forkCategories[selectedPath];
+          // selectedPath can be either a choice key or a categoryId directly
+          const currentCategory = forkCategories[selectedPath] || selectedPath;
           setCompletedCategories(prev => new Set([...prev, currentCategory]));
           
           // Reset for next fork
@@ -1346,7 +1351,8 @@ const PathCanvas = () => {
           checkpointSoundPlayedRef.current = false;
           
           // Load the next question immediately for the next checkpoint
-          const category = forkCategories[selectedPath];
+          // selectedPath can be either a choice key or a categoryId directly
+          const category = forkCategories[selectedPath] || selectedPath;
           loadNewQuestion(category);
         }
       }, pauseDuration); // Dynamic pause: 3s with streak bonus, 2s otherwise
@@ -1574,6 +1580,8 @@ const PathCanvas = () => {
           getCategoryById={getCategoryById}
           onPathChoice={handlePathChoice}
           onOpenShop={handleOpenShop}
+          completedCategories={completedCategories}
+          currentCategory={selectedPath ? (forkCategories[selectedPath] || selectedPath) : null}
         />
       )}
 

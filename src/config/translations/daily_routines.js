@@ -1,15 +1,10 @@
 /**
  * Daily Routines Question Translations
  * Category: daily_routines
- * 
- * TODO: Extract daily routines-related translations from question-translations.js if this category exists
- * Look for questions about:
- * - Daily activities
- * - Reflexive verbs
- * - Time of day
- * - Routine actions
  */
 
 export const dailyRoutinesTranslations = {
-  // TODO: Check if this category has questions and add translations
+  "¿Qué haces cuando suena el despertador?": "What do you do when the alarm rings?",
+  "¿Qué haces después de despertarte?": "What do you do after waking up?",
+  "¿Qué haces en el baño por la mañana?": "What do you do in the bathroom in the morning?",
 };
