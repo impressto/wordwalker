@@ -3,6 +3,8 @@
  * Displays the question modal with emoji, question text, and answer options
  */
 
+import { useState, useEffect } from 'react';
+
 const QuestionDialog = ({ 
   currentQuestion, 
   showTranslation, 
@@ -14,6 +16,43 @@ const QuestionDialog = ({
   onHintClick,
   questionTranslation
 }) => {
+  const [dialogTop, setDialogTop] = useState('100px');
+
+  useEffect(() => {
+    const calculatePosition = () => {
+      // Look for the logo image by its alt text
+      const logoImg = document.querySelector('img[alt="WordWalk Logo"]');
+      if (logoImg) {
+        // Get the parent container of the logo
+        const logoContainer = logoImg.parentElement;
+        if (logoContainer) {
+          const rect = logoContainer.getBoundingClientRect();
+          // Position 10px below the logo, accounting for viewport scrolling
+          const topPosition = rect.bottom + 10 + window.scrollY;
+          setDialogTop(`${topPosition}px`);
+        }
+      }
+    };
+
+    // Calculate on mount
+    calculatePosition();
+    
+    // Recalculate on window resize
+    window.addEventListener('resize', calculatePosition);
+    
+    // Also recalculate on scroll since absolute/fixed positioning can be affected
+    window.addEventListener('scroll', calculatePosition);
+    
+    // Use a small delay to ensure everything is rendered
+    const timer = setTimeout(calculatePosition, 150);
+
+    return () => {
+      window.removeEventListener('resize', calculatePosition);
+      window.removeEventListener('scroll', calculatePosition);
+      clearTimeout(timer);
+    };
+  }, []);
+
   if (!currentQuestion) return null;
 
   // Get the hint from the question object, or fallback to a generic hint
@@ -30,9 +69,9 @@ const QuestionDialog = ({
   return (
     <div id="question-dialog" style={{
       position: 'fixed',
-      top: '50%',
+      top: dialogTop,
       left: '50%',
-      transform: 'translate(-50%, -50%)',
+      transform: 'translateX(-50%)',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
@@ -42,7 +81,7 @@ const QuestionDialog = ({
       borderRadius: '15px',
       boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
       zIndex: 1010,
-      animation: 'fadeIn 0.5s ease-out',
+      animation: 'fadeInOnly 0.5s ease-out',
       minWidth: '300px',
       maxWidth: 'min(85vw, 380px)',
     }}>
