@@ -17,21 +17,21 @@ const themeShopConfig = {
       id: 'hong-kong',
       name: 'Hong Kong Harbor',
       description: 'Urban harbor landscape',
-      cost: 150,
+      cost: 250,
       thumbnail: 'scene.jpg', // Located at public/images/themes/hong-kong/scene.jpg
     },
     {
       id: 'jamaica',
       name: 'Jamaica Beach',
       description: 'Tropical beach landscape',
-      cost: 175,
+      cost: 250,
       thumbnail: 'scene.jpg', // Located at public/images/themes/jamaica/scene.jpg
     },
     {
       id: 'dia-de-los-muertos',
       name: 'Día de los Muertos',
       description: 'Colorful Day of the Dead celebration',
-      cost: 200,
+      cost: 400,
       thumbnail: 'scene.jpg', // Located at public/images/themes/dia-de-los-muertos/scene.jpg
     },
     // Add more themes here following the same structure

@@ -8,11 +8,11 @@ const gameSettings = {
   persistence: {
     // Number of mastered questions required to show confirmation dialog when starting new game
     // This prevents accidental data loss while allowing new players frictionless experience
-    confirmationThreshold: 2,
+    confirmationThreshold: 20,
     
     // Number of questions to answer before returning to the fork to select a new category
     // Player must answer this many correct (or incorrect) before moving to next category
-    checkpointsPerCategory: 3,
+    checkpointsPerCategory: 10,
   },
 
   // Streak System Settings
@@ -22,7 +22,7 @@ const gameSettings = {
     bonusThreshold: 5,
     
     // Bonus points awarded when streak threshold is reached
-    bonusPoints: 50,
+    bonusPoints: 25,
     
     // Duration (in milliseconds) of the CSS fade-in/out animation
     animationDuration: 2500,

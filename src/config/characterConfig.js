@@ -25,7 +25,7 @@ const characterConfig = {
       name: 'Charlie',
       spriteFile: 'walker-blue.png',
       avatarFile: 'walker-blue-avatar.png',
-      cost: 50,
+      cost: 100,
       description: 'A speedy blue character',
     },
     {
@@ -33,7 +33,7 @@ const characterConfig = {
       name: 'Chewie',
       spriteFile: 'walker-dog.png',
       avatarFile: 'walker-dog-avatar.png',
-      cost: 75,
+      cost: 200,
       description: 'A loyal canine companion',
     },
     {
@@ -41,7 +41,7 @@ const characterConfig = {
       name: 'Tiger',
       spriteFile: 'walker-cat.png',
       avatarFile: 'walker-cat-avatar.png',
-      cost: 60,
+      cost: 200,
       description: 'An independent feline friend',
     },
     {
@@ -49,7 +49,7 @@ const characterConfig = {
       name: 'Emma',
       spriteFile: 'walker-emma.png',
       avatarFile: 'walker-emma-avatar.png',
-      cost: 80,
+      cost: 300,
       description: 'A charming character',
     },
     {
@@ -57,7 +57,7 @@ const characterConfig = {
       name: 'Asuka',
       spriteFile: 'walker-asuka.png',
       avatarFile: 'walker-asuka-avatar.png',
-      cost: 85,
+      cost: 300,
       description: 'A spirited adventurer',
     },
   ],

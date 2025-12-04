@@ -98,7 +98,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
         key={choiceKey}
         onClick={() => onPathChoice(choiceKey)}
         style={{
-          padding: '15px 20px',
+          padding: '10px 15px',
           fontSize: '18px',
           fontWeight: 'bold',
           backgroundColor: '#4CAF50',
@@ -111,7 +111,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: '8px',
+          gap: '4px',
           minWidth: '140px',
         }}
         onMouseEnter={(e) => {
@@ -136,7 +136,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
       left: '50%',
       transform: 'translateX(-50%)',
       backgroundColor: 'rgba(255, 255, 255, 0.95)',
-      padding: '20px',
+      padding: '12px',
       borderRadius: '15px',
       boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
       zIndex: 1010,
@@ -146,7 +146,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
       flexDirection: 'column',
     }}>
       <h3 style={{
-        margin: '0 0 20px 0',
+        margin: '0 0 12px 0',
         textAlign: 'center',
         fontSize: '22px',
         color: '#333',
@@ -156,8 +156,8 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
       <div style={{
         display: 'grid',
         gridTemplateColumns: 'repeat(2, 1fr)',
-        gap: '15px',
-        marginBottom: '20px',
+        gap: '10px',
+        marginBottom: '12px',
       }}>
         {createButton('choice1')}
         {createButton('choice2')}
@@ -169,9 +169,9 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
       <div style={{
         position: 'relative',
         width: '100%',
-        marginTop: '10px',
+        marginTop: '6px',
         borderTop: '2px solid #ddd',
-        paddingTop: '15px',
+        paddingTop: '10px',
       }}>
         <img 
           src={`${import.meta.env.BASE_URL || '/'}images/vendor.png`}
