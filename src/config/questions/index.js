@@ -15,6 +15,7 @@ import { numbersQuestions } from './numbers.js';
 import { grammarQuestions } from './grammar.js';
 import { beachQuestions } from './beach.js';
 import { animalsQuestions } from './animals.js';
+import { peopleQuestions } from './people.js';
 
 // Export individual category questions
 export {
@@ -30,6 +31,7 @@ export {
   grammarQuestions,
   beachQuestions,
   animalsQuestions,
+  peopleQuestions,
 };
 
 /**
@@ -48,6 +50,7 @@ export const questions = [
   ...grammarQuestions,
   ...beachQuestions,
   ...animalsQuestions,
+  ...peopleQuestions,
 ];
 
 /**
