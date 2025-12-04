@@ -24,6 +24,7 @@ import { numbersTranslations } from './numbers.js';
 import { grammarTranslations } from './grammar.js';
 import { dailyRoutinesTranslations } from './daily_routines.js';
 import { restaurantTranslations } from './restaurant.js';
+import { weatherTranslations } from './weather.js';
 
 /**
  * Combined question translations from all categories
@@ -50,6 +51,7 @@ export const questionTranslations = {
   ...grammarTranslations,
   ...dailyRoutinesTranslations,
   ...restaurantTranslations,
+  ...weatherTranslations,
 };
 
 /**
