@@ -130,7 +130,7 @@ const QuestionDialog = ({
       </div>
       
       {/* Hint Button and English Translation */}
-      {firstAttempt && !showHint && (
+      {firstAttempt && !showHint && questionTranslation && (
         <button
           id="hint-button"
           onClick={onHintClick}
