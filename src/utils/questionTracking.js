@@ -65,3 +65,84 @@ export const getCompletedCategoryCount = (completedCategories = new Set()) => {
 export const resetCategoryTracking = () => {
   return new Set();
 };
+
+/**
+ * Add a correctly answered question to the permanent category history
+ * @param {string} questionId - The question ID
+ * @param {string} category - The category name
+ * @param {Object} correctAnswersByCategory - Current tracking object
+ * @returns {Object} Updated tracking object
+ */
+export const addCorrectAnswer = (questionId, category, correctAnswersByCategory = {}) => {
+  const updatedTracking = { ...correctAnswersByCategory };
+  
+  if (!updatedTracking[category]) {
+    updatedTracking[category] = [];
+  }
+  
+  // Store only the numeric ID without the category prefix (e.g., '031' instead of 'food_031')
+  // This reduces storage by ~30-40%
+  const numericId = questionId.split('_')[1] || questionId;
+  
+  // Avoid duplicates
+  if (!updatedTracking[category].includes(numericId)) {
+    updatedTracking[category].push(numericId);
+  }
+  
+  return updatedTracking;
+};
+
+/**
+ * Get all questions already answered correctly in a category
+ * @param {string} category - The category name
+ * @param {Object} correctAnswersByCategory - Tracking object
+ * @returns {Array} Array of question IDs that were answered correctly
+ */
+export const getCorrectAnswersInCategory = (category, correctAnswersByCategory = {}) => {
+  return correctAnswersByCategory[category] || [];
+};
+
+/**
+ * Check if a specific question was answered correctly in the past
+ * @param {string} questionId - The question ID (e.g., 'food_031')
+ * @param {string} category - The category name
+ * @param {Object} correctAnswersByCategory - Tracking object
+ * @returns {boolean} True if the question was previously answered correctly
+ */
+export const isQuestionAnsweredCorrectly = (questionId, category, correctAnswersByCategory = {}) => {
+  const categoryAnswers = correctAnswersByCategory[category] || [];
+  // Extract numeric ID (e.g., '031' from 'food_031') since we store only numeric IDs
+  const numericId = questionId.split('_')[1] || questionId;
+  return categoryAnswers.includes(numericId);
+};
+
+/**
+ * Get total count of questions answered correctly across all categories
+ * @param {Object} correctAnswersByCategory - Tracking object
+ * @returns {number} Total number of questions answered correctly
+ */
+export const getTotalCorrectAnswers = (correctAnswersByCategory = {}) => {
+  return Object.values(correctAnswersByCategory).reduce((total, answers) => total + answers.length, 0);
+};
+
+/**
+ * Get count of questions answered correctly in a specific category
+ * @param {string} category - The category name
+ * @param {Object} correctAnswersByCategory - Tracking object
+ * @returns {number} Number of questions answered correctly in that category
+ */
+export const getCategoryCorrectAnswerCount = (category, correctAnswersByCategory = {}) => {
+  return getCorrectAnswersInCategory(category, correctAnswersByCategory).length;
+};
+
+/**
+ * Reset correct answers for a specific category (useful for practice mode)
+ * @param {string} category - The category name
+ * @param {Object} correctAnswersByCategory - Current tracking object
+ * @returns {Object} Updated tracking object without that category
+ */
+export const resetCategoryCorrectAnswers = (category, correctAnswersByCategory = {}) => {
+  const updatedTracking = { ...correctAnswersByCategory };
+  delete updatedTracking[category];
+  return updatedTracking;
+};

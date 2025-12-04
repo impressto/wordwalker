@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { getRandomQuestionByCategory, getRandomUnusedQuestionByCategory, shuffleOptions, getAllCategoryIds, getCategoryById } from '../config/questions';
-import { isCategoryCompleted } from '../utils/questionTracking';
+import { isCategoryCompleted, addCorrectAnswer } from '../utils/questionTracking';
 import { translations } from '../config/answer-translations';
 import { questionTranslations } from '../config/question-translations';
 import gameSettings, { getStreakColor } from '../config/gameSettings';
@@ -114,6 +114,9 @@ const PathCanvas = () => {
   
   // Track questions answered correctly on first try (globally across all categories)
   const [correctFirstTryIds, setCorrectFirstTryIds] = useState(new Set());
+  
+  // Track questions answered correctly by category - persists across sessions
+  const [correctAnswersByCategory, setCorrectAnswersByCategory] = useState({});
   
   // Fork path categories - randomly select 4 different categories for each fork
   const [forkCategories, setForkCategories] = useState(() => {
@@ -334,6 +337,7 @@ const PathCanvas = () => {
         soundEnabled,
         volume,
         correctFirstTryIds,
+        correctAnswersByCategory,
         offsetRef: offsetRef.current,
       };
       saveGameState(gameState);
@@ -344,7 +348,7 @@ const PathCanvas = () => {
         clearInterval(autosaveTimerRef.current);
       }
     };
-  }, [totalPoints, streak, selectedPath, checkpointsAnswered, usedQuestionIds, completedCategories, forkCategories, soundEnabled, volume, correctFirstTryIds]);
+  }, [totalPoints, streak, selectedPath, checkpointsAnswered, usedQuestionIds, completedCategories, forkCategories, soundEnabled, volume, correctFirstTryIds, correctAnswersByCategory]);
 
   // Handle resume game
   const handleResumeGame = () => {
@@ -361,6 +365,7 @@ const PathCanvas = () => {
       setSoundEnabled(convertedState.soundEnabled);
       setVolume(convertedState.volume);
       setCorrectFirstTryIds(convertedState.correctFirstTryIds);
+      setCorrectAnswersByCategory(convertedState.correctAnswersByCategory);
       
       // Restore scroll position and calculate next checkpoint
       offsetRef.current = convertedState.offsetRef || 0;
@@ -379,6 +384,10 @@ const PathCanvas = () => {
 
   // Handle new game
   const handleNewGame = () => {
+    // Load current correctAnswersByCategory before clearing state
+    const loadedState = loadGameState();
+    const persistedCorrectAnswers = loadedState?.correctAnswersByCategory || {};
+    
     clearGameState();
     setTotalPoints(0);
     setStreak(0);
@@ -387,6 +396,7 @@ const PathCanvas = () => {
     setUsedQuestionIds(new Set());
     setCompletedCategories(new Set());
     setCorrectFirstTryIds(new Set());
+    setCorrectAnswersByCategory(persistedCorrectAnswers); // Preserve learned questions
     setShowQuestion(false);
     setCurrentQuestion(null);
     setQuestionAnswered(false);
@@ -1040,7 +1050,7 @@ const PathCanvas = () => {
 
   // Helper function to load a new question for the current checkpoint
   const loadNewQuestion = (category) => {
-    const question = getRandomUnusedQuestionByCategory(category, usedQuestionIds);
+    const question = getRandomUnusedQuestionByCategory(category, usedQuestionIds, correctAnswersByCategory);
     if (question) {
       const shuffledOptions = shuffleOptions(question.options);
       setCurrentQuestion({
@@ -1179,6 +1189,11 @@ const PathCanvas = () => {
       if (firstAttempt) {
         // Track this question as answered correctly on first try
         setCorrectFirstTryIds(prev => new Set([...prev, currentQuestion.id]));
+        
+        // Add to persistent category-based tracking
+        setCorrectAnswersByCategory(prev => 
+          addCorrectAnswer(currentQuestion.id, currentQuestion.category, prev)
+        );
         
         // Calculate points to award based on whether hint was used
         let pointsToAward = currentQuestion.points;

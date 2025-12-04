@@ -37,6 +37,7 @@ export const saveGameState = (gameState) => {
       usedQuestionIds: Array.from(gameState.usedQuestionIds || []),
       completedCategories: Array.from(gameState.completedCategories || []),
       correctFirstTryIds: Array.from(gameState.correctFirstTryIds || []),
+      correctAnswersByCategory: gameState.correctAnswersByCategory || {}, // Persistent tracking across sessions
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(serializableState));
   } catch (error) {
@@ -82,6 +83,7 @@ export const convertLoadedState = (loadedState) => {
     usedQuestionIds: new Set(loadedState.usedQuestionIds || []),
     completedCategories: new Set(loadedState.completedCategories || []),
     correctFirstTryIds: new Set(loadedState.correctFirstTryIds || []),
+    correctAnswersByCategory: loadedState.correctAnswersByCategory || {}, // Restore category-based correct answer tracking
   };
 };
 
@@ -102,6 +104,7 @@ export const extractGameState = (componentState) => {
     forkCategories: componentState.forkCategories,
     soundEnabled: componentState.soundEnabled,
     volume: componentState.volume,
+    correctAnswersByCategory: componentState.correctAnswersByCategory, // Persistent learning data
     // Include position data for visual resume
     offsetRef: componentState.offsetRef,
     velocityRef: componentState.velocityRef,

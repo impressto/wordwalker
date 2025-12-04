@@ -14225,22 +14225,35 @@ export const getRandomQuestionByCategory = (category) => {
 
 /**
  * Helper function to get a random question from a category, excluding already used questions
+ * and questions that have been answered correctly in the past
  * @param {string} category - The category to pick from
- * @param {Set} usedQuestionIds - Set of question IDs that have already been used
+ * @param {Set} usedQuestionIds - Set of question IDs that have already been used in this session
+ * @param {Object} correctAnswersByCategory - Object tracking questions answered correctly by category
  * @returns {Object|null} A random unused question object, or null if all questions used
  */
-export const getRandomUnusedQuestionByCategory = (category, usedQuestionIds = new Set()) => {
+export const getRandomUnusedQuestionByCategory = (
+  category, 
+  usedQuestionIds = new Set(),
+  correctAnswersByCategory = {}
+) => {
   const categoryQuestions = getQuestionsByCategory(category);
-  const unusedQuestions = categoryQuestions.filter(q => !usedQuestionIds.has(q.id));
+  const correctlyAnswered = correctAnswersByCategory[category] || [];
   
-  // If all questions have been used, reset and use all questions again
-  if (unusedQuestions.length === 0) {
-    console.log(`All questions in category "${category}" have been used. Resetting available questions.`);
+  // Filter out both used questions and previously mastered questions
+  // Note: correctlyAnswered contains numeric IDs only (e.g., '031'), so extract numeric part from q.id
+  const availableQuestions = categoryQuestions.filter(q => {
+    const numericId = q.id.split('_')[1];
+    return !usedQuestionIds.has(q.id) && !correctlyAnswered.includes(numericId);
+  });
+  
+  // If all questions have been answered correctly or used, show all questions again
+  if (availableQuestions.length === 0) {
+    console.log(`All questions in category "${category}" have been mastered or used. Showing previously answered questions.`);
     return getRandomQuestionByCategory(category);
   }
   
-  const randomIndex = Math.floor(Math.random() * unusedQuestions.length);
-  return unusedQuestions[randomIndex];
+  const randomIndex = Math.floor(Math.random() * availableQuestions.length);
+  return availableQuestions[randomIndex];
 };
 
 /**
