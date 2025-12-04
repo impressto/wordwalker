@@ -40,10 +40,23 @@
       "sizes": "360x640",
       "type": "image/png",
       "form_factor": "narrow"
+    },
+    {
+      "src": "images/1440x900-screen.jpg",
+      "sizes": "1440x900",
+      "type": "image/jpeg",
+      "form_factor": "wide"
     }
   ],
   "shortcuts": [],
   "prefer_related_applications": false,
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.impressto.wordwalker",
+      "id": "com.impressto.wordwalker"
+    }
+  ],
   "cached_assets": {
     "images": {
       "root": [
