@@ -325,3 +325,15 @@ export const resetCategoryFirstTryCorrect = (category, correctFirstTryIds = {}) 
 export const getTotalMasteredQuestions = (correctAnswersByCategory = {}) => {
   return Object.values(correctAnswersByCategory).reduce((total, answers) => total + answers.length, 0);
 };
+
+/**
+ * Check if all questions in a category have been answered correctly on first try (fully mastered)
+ * @param {string} category - The category name
+ * @param {Object} correctAnswersByCategory - Tracking object with permanent correct answers
+ * @returns {boolean} True if all questions in the category have been answered correctly
+ */
+export const isCategoryFullyMastered = (category, correctAnswersByCategory = {}) => {
+  const totalQuestions = getCategoryQuestionCount(category);
+  const masteredInCategory = (correctAnswersByCategory[category] || []).length;
+  return masteredInCategory >= totalQuestions;
+};

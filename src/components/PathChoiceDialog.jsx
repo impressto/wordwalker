@@ -1,24 +1,21 @@
 /**
  * PathChoiceDialog Component
  * Displays a dialog with category options for the user to choose
- * Now with pagination to browse through all available categories
+ * Now with pagination to browse through all categories
+ * Categories are shown even if fully mastered, but disabled
  */
 
 import { useState, useEffect } from 'react';
 import { getAllCategoryIds } from '../config/questions';
+import { isCategoryFullyMastered } from '../utils/questionTracking';
 
-const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpenShop, completedCategories = new Set(), currentCategory = null }) => {
+const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpenShop, completedCategories = new Set(), currentCategory = null, correctAnswersByCategory = {} }) => {
   const [dialogTop, setDialogTop] = useState('100px');
   const [currentPage, setCurrentPage] = useState(0);
   
-  // Get all available categories, excluding completed ones and current category
+  // Get all categories - we now show all of them, just disable the mastered ones
   const allCategoryIds = getAllCategoryIds();
-  const availableCategories = allCategoryIds.filter(catId => 
-    !completedCategories.has(catId) && catId !== currentCategory
-  );
-  
-  // If we have fewer available categories, use all categories
-  const categoriesToShow = availableCategories.length >= 4 ? availableCategories : allCategoryIds;
+  const categoriesToShow = allCategoryIds;
   
   const categoriesPerPage = 4;
   const totalPages = Math.ceil(categoriesToShow.length / categoriesPerPage);
@@ -120,38 +117,54 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
       );
     }
     
+    // Check if this category is fully mastered (all questions answered correctly on first try)
+    const isFullyMastered = isCategoryFullyMastered(categoryId, correctAnswersByCategory);
+    const isCurrentCategory = categoryId === currentCategory;
+    const isDisabled = isFullyMastered || isCurrentCategory;
+    
     return (
       <button
         key={categoryId}
-        onClick={() => onPathChoice(categoryId)}
+        onClick={() => !isDisabled && onPathChoice(categoryId)}
+        disabled={isDisabled}
+        title={isFullyMastered ? 'Category Mastered! ✨ All questions answered correctly' : (isCurrentCategory ? 'Currently playing this category' : '')}
         style={{
           padding: '10px 15px',
           fontSize: '18px',
           fontWeight: 'bold',
-          backgroundColor: '#4CAF50',
+          backgroundColor: isDisabled ? '#9e9e9e' : '#4CAF50',
           color: 'white',
           border: 'none',
           borderRadius: '10px',
-          cursor: 'pointer',
-          boxShadow: '0 4px 6px rgba(0,0,0,0.3)',
+          cursor: isDisabled ? 'not-allowed' : 'pointer',
+          boxShadow: isDisabled ? '0 2px 3px rgba(0,0,0,0.2)' : '0 4px 6px rgba(0,0,0,0.3)',
           transition: 'all 0.2s',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           gap: '4px',
           minWidth: '140px',
+          opacity: isDisabled ? 0.6 : 1,
+          position: 'relative',
         }}
         onMouseEnter={(e) => {
-          e.target.style.transform = 'scale(1.05)';
-          e.target.style.backgroundColor = '#45a049';
+          if (!isDisabled) {
+            e.target.style.transform = 'scale(1.05)';
+            e.target.style.backgroundColor = '#45a049';
+          }
         }}
         onMouseLeave={(e) => {
-          e.target.style.transform = 'scale(1)';
-          e.target.style.backgroundColor = '#4CAF50';
+          if (!isDisabled) {
+            e.target.style.transform = 'scale(1)';
+            e.target.style.backgroundColor = '#4CAF50';
+          }
         }}
       >
         <span style={{ fontSize: '32px' }}>{category.emoji}</span>
         <span style={{ fontSize: '14px', textAlign: 'center' }}>{category.displayName}</span>
+        {isFullyMastered && (
+          <span style={{ fontSize: '16px', position: 'absolute', top: '5px', right: '5px' }}>✨</span>
+        )}
       </button>
     );
   };
