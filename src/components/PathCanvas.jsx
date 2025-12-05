@@ -86,6 +86,9 @@ const PathCanvas = () => {
   const [volume, setVolume] = useState(() => {
     return parseFloat(localStorage.getItem('wordwalker-volume') || '0.7');
   });
+  const [musicEnabled, setMusicEnabled] = useState(() => {
+    return localStorage.getItem('wordwalker-music-enabled') !== 'false';
+  });
   
   // Game state persistence
   const [showResumeDialog, setShowResumeDialog] = useState(false);
@@ -228,6 +231,18 @@ const PathCanvas = () => {
     localStorage.setItem('wordwalker-volume', volume.toString());
   }, [volume]);
 
+  // Save music enabled state to localStorage when it changes
+  useEffect(() => {
+    localStorage.setItem('wordwalker-music-enabled', musicEnabled.toString());
+  }, [musicEnabled]);
+
+  // Update sound manager music enabled state when it changes
+  useEffect(() => {
+    if (soundManagerRef.current && audioInitialized) {
+      soundManagerRef.current.setMusicEnabled(musicEnabled);
+    }
+  }, [musicEnabled, audioInitialized]);
+
   // Update sound manager theme when current theme changes
   useEffect(() => {
     if (soundManagerRef.current) {
@@ -349,6 +364,7 @@ const PathCanvas = () => {
         forkCategories,
         soundEnabled,
         volume,
+        musicEnabled,
         correctFirstTryIds,
         correctAnswersByCategory,
         offsetRef: offsetRef.current,
@@ -361,7 +377,7 @@ const PathCanvas = () => {
         clearInterval(autosaveTimerRef.current);
       }
     };
-  }, [totalPoints, streak, selectedPath, checkpointsAnswered, usedQuestionIds, completedCategories, forkCategories, soundEnabled, volume, correctFirstTryIds, correctAnswersByCategory]);
+  }, [totalPoints, streak, selectedPath, checkpointsAnswered, usedQuestionIds, completedCategories, forkCategories, soundEnabled, volume, musicEnabled, correctFirstTryIds, correctAnswersByCategory]);
 
   // Handle resume game
   const handleResumeGame = () => {
@@ -377,6 +393,7 @@ const PathCanvas = () => {
       setForkCategories(convertedState.forkCategories);
       setSoundEnabled(convertedState.soundEnabled);
       setVolume(convertedState.volume);
+      setMusicEnabled(convertedState.musicEnabled !== undefined ? convertedState.musicEnabled : true);
       setCorrectFirstTryIds(convertedState.correctFirstTryIds);
       setCorrectAnswersByCategory(convertedState.correctAnswersByCategory);
       
@@ -1670,6 +1687,8 @@ const PathCanvas = () => {
         volume={volume}
         onToggleSound={() => setSoundEnabled(!soundEnabled)}
         onVolumeChange={setVolume}
+        musicEnabled={musicEnabled}
+        onToggleMusic={() => setMusicEnabled(!musicEnabled)}
       />
 
       {/* Top Logo */}

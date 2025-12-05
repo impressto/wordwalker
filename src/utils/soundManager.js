@@ -6,6 +6,7 @@ class SoundManager {
     this.baseUrl = `${baseUrl}audio/`;
     this.fileFormat = 'mp3';
     this.masterVolume = 1;
+    this.musicEnabled = true; // Separate control for background music
     this.audioUnlocked = false;
     this.backgroundMusic = null;
     this.currentTheme = 'default'; // Track current theme for background music
@@ -121,10 +122,26 @@ class SoundManager {
     // Update background music volume
     if (this.backgroundMusic) {
       this.backgroundMusic.volume = this.masterVolume * 0.3; // Background at 30% of master
-      if (this.masterVolume === 0) {
+      if (this.masterVolume === 0 || !this.musicEnabled) {
         this.backgroundMusic.pause();
       } else if (this.backgroundMusic.paused) {
         this.backgroundMusic.play().catch(() => {});
+      }
+    }
+  }
+
+  /**
+   * Toggle background music on/off (while keeping sound effects active)
+   * @param {boolean} enabled - Whether background music should be enabled
+   */
+  setMusicEnabled(enabled) {
+    this.musicEnabled = enabled;
+    
+    if (this.backgroundMusic) {
+      if (enabled && this.masterVolume > 0) {
+        this.backgroundMusic.play().catch(() => {});
+      } else {
+        this.backgroundMusic.pause();
       }
     }
   }
@@ -174,7 +191,7 @@ class SoundManager {
       return; // Already playing
     }
     
-    if (this.masterVolume === 0) {
+    if (this.masterVolume === 0 || !this.musicEnabled) {
       return;
     }
 

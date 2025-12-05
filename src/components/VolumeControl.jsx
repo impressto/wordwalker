@@ -1,6 +1,48 @@
-const VolumeControl = ({ soundEnabled, volume, onToggleSound, onVolumeChange }) => {
+const VolumeControl = ({ soundEnabled, volume, onToggleSound, onVolumeChange, musicEnabled, onToggleMusic }) => {
+  // Cycle through three states:
+  // State 1: All sound active (soundEnabled=true, musicEnabled=true) - 🎵
+  // State 2: Just effects (soundEnabled=true, musicEnabled=false) - 🔊
+  // State 3: No sound (soundEnabled=false, musicEnabled=false) - 🔇
+  const handleCycleSound = () => {
+    if (soundEnabled && musicEnabled) {
+      // State 1 -> State 2: Turn off music, keep effects
+      onToggleMusic();
+    } else if (soundEnabled && !musicEnabled) {
+      // State 2 -> State 3: Turn off all sound
+      onToggleSound();
+    } else {
+      // State 3 -> State 1: Turn on all sound including music
+      onToggleSound();
+      if (!musicEnabled) {
+        onToggleMusic();
+      }
+    }
+  };
+
+  // Determine which icon to show
+  const getIcon = () => {
+    if (!soundEnabled) {
+      return '🔇'; // No sound
+    } else if (musicEnabled) {
+      return '🎵'; // All sound active
+    } else {
+      return '🔊'; // Just effects
+    }
+  };
+
+  // Determine title text
+  const getTitle = () => {
+    if (!soundEnabled) {
+      return 'No Sound (Click to enable all)';
+    } else if (musicEnabled) {
+      return 'All Sound Active (Click for effects only)';
+    } else {
+      return 'Effects Only (Click to mute all)';
+    }
+  };
+
   return (
-    <div style={{
+    <div id="volume-control" style={{
       position: 'absolute',
       top: '20px',
       left: '20px',
@@ -14,7 +56,7 @@ const VolumeControl = ({ soundEnabled, volume, onToggleSound, onVolumeChange }) 
       boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
     }}>
       <button 
-        onClick={onToggleSound} 
+        onClick={handleCycleSound} 
         style={{
           background: 'none',
           border: 'none',
@@ -24,9 +66,9 @@ const VolumeControl = ({ soundEnabled, volume, onToggleSound, onVolumeChange }) 
           lineHeight: '1',
           filter: 'drop-shadow(0 2px 2px rgba(0,0,0,0.3))',
         }}
-        title={soundEnabled ? 'Sound On' : 'Sound Off'}
+        title={getTitle()}
       >
-        {soundEnabled ? (volume > 0.5 ? '🔊' : volume > 0 ? '🔉' : '🔈') : '🔇'}
+        {getIcon()}
       </button>
       <input
         type="range"
