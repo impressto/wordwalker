@@ -153,5 +153,10 @@ export const accommodationTranslations = {
   "accommodation_147": "Where do you store luggage after check-out?",
   "accommodation_148": "What do you do if you lost something?",
   "accommodation_149": "What do you leave at the end of your stay?",
-  "accommodation_150": "How many stars do you give if it was excellent?"
+  "accommodation_150": "How many stars do you give if it was excellent?",
+  "accommodation_151": "Can I sit here?",
+  "accommodation_152": "When do you open the restaurant?",
+  "accommodation_153": "I need to checkout",
+  "accommodation_154": "Can you call me a taxi?",
+  "accommodation_155": "We need towels"
 };

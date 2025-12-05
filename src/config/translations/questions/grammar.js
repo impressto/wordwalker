@@ -6,6 +6,14 @@
  */
 
 export const grammarTranslations = {
+  "grammar_1": "How do you say 'I' (subject pronoun)?",
+  "grammar_2": "How do you say 'you' (informal)?",
+  "grammar_3": "How do you say 'he'?",
+  "grammar_4": "How do you say 'she'?",
+  "grammar_5": "How do you say 'we'?",
+  "grammar_6": "How do you say 'they' (masculine)?",
+  "grammar_7": "How do you say 'they' (feminine)?",
+  "grammar_8": "How do you say 'you' (formal)?",
   "grammar_9": "I am a student.",
   "grammar_10": "You are intelligent.",
   "grammar_11": "He is a doctor.",

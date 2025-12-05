@@ -7,9 +7,12 @@
 
 export const animalsTranslations = {
   "animals_001": "What is a common domestic animal?",
+  "animals_002": "What animal says 'meow'?",
   "animals_003": "What small animal lives in houses?",
   "animals_004": "What rodent is bigger than a mouse?",
-  "animals_005": "What is the king of the jungle?",
+  "animals_005": "What small rodent has pouches in its cheeks?",
+  "animals_006": "What animal eats nuts in trees?",
+  "animals_007": "What animal has long ears?",
   "animals_006": "What animal has orange stripes?",
   "animals_007": "What animal has a trunk?",
   "animals_008": "What animal has the longest neck?",
@@ -26,6 +29,7 @@ export const animalsTranslations = {
   "animals_019": "What animal jumps and comes from Australia?",
   "animals_020": "What animal eats eucalyptus?",
   "animals_021": "What giant animal is black and white?",
+  "animals_022": "What domestic animal is a pet in houses?",
   "animals_023": "What is the largest wild cat in America?",
   "animals_024": "What animal is similar to humans?",
   "animals_025": "What big primate has very long arms?",

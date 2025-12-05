@@ -161,6 +161,9 @@ export const foodTranslations = {
   "food_153": "What Middle Eastern food is made from chickpeas?",
   "food_154": "What Mexican food has a crunchy tortilla?",
   "food_155": "What fried Middle Eastern ball is vegetarian?",
+  "food_156": "How do you ask 'can I have a fork?'",
+  "food_157": "How do you ask 'can I have a knife?'",
+  "food_158": "How do you ask 'can I have a spoon?'",
   "food_159": "What is added to food for flavor?",
   "food_160": "What spicy red sauce accompanies many meals?",
   "food_161": "What red condiment comes in a bottle?"

@@ -18,6 +18,7 @@ export const directionsTranslations = {
   "directions_010": "Where do you buy products?",
   "directions_011": "Where do seriously ill people go?",
   "directions_012": "Where can you buy this?",
+  "directions_013": "What place is it?",
   "directions_014": "What is a large public green space called?",
   "directions_015": "What structure crosses a river or valley?",
   "directions_016": "What do you do to return?",
