@@ -102,5 +102,6 @@ export const weatherAnswerTranslations = {
   "28 días": "28 days",
   "ecuador": "equator",
   "el relámpago": "the lightning",
-  "los árboles": "the trees"
+  "los árboles": "the trees",
+  "el paraguas": "the umbrella"
 };

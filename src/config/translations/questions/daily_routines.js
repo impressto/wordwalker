@@ -111,5 +111,6 @@ export const dailyRoutinesTranslations = {
   "daily_103": "Where do you store the tools?",
   "daily_104": "What tool do you use to drive nails into wood?",
   "daily_105": "What do you clean dishes and surfaces with?",
-  "daily_106": "What do you set to catch mice?"
+  "daily_106": "What do you set to catch mice?",
+  "daily_107": "What do you receive in your home mailbox?"
 };

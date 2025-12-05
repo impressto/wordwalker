@@ -1117,4 +1117,15 @@ export const weatherQuestions = [
     category: 'weather',
     difficulty: 'medium',
   },
+  {
+    id: 'weather_101',
+    emoji: '☔️',
+    question: '¿Qué usas cuando caminas bajo la lluvia?',
+    options: ['el paraguas', 'los lentes de sol', 'la bufanda'],
+    correctAnswer: 'el paraguas',
+    hint: 'Umbrella - "paraguas", protects you when walking in the rain',
+    points: 5,
+    category: 'weather',
+    difficulty: 'easy',
+  },
 ];

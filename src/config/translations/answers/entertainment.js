@@ -140,5 +140,6 @@ export const entertainmentAnswerTranslations = {
   "la tragedia": "the tragedy",
   "los artistas callejeros": "the street performers",
   "el mago": "the magician",
-  "alucinante": "mind-blowing / amazing"
+  "alucinante": "mind-blowing / amazing",
+  "el show de Michael Jackson": "the Michael Jackson show"
 };

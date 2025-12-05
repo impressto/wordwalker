@@ -157,5 +157,6 @@ export const entertainmentTranslations = {
   "entertainment_150": "What play is very sad?",
   "entertainment_151": "What are artists called who perform on the street?",
   "entertainment_152": "What is a person called who performs magic tricks?",
-  "entertainment_153": "How do you describe a show that surprises you tremendously?"
+  "entertainment_153": "How do you describe a show that surprises you tremendously?",
+  "entertainment_154": "What type of music and dance show is seen at resorts?"
 };

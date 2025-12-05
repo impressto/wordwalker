@@ -111,5 +111,6 @@ export const dailyroutinesAnswerTranslations = {
   "en la caja de herramientas": "in the toolbox",
   "el martillo": "the hammer",
   "la esponja": "the sponge",
-  "la trampa": "the trap"
+  "la trampa": "the trap",
+  "el correo": "the mail"
 };

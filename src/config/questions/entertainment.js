@@ -1688,4 +1688,15 @@ export const entertainmentQuestions = [
     category: 'entertainment',
     difficulty: 'medium',
   },
+  {
+    id: 'entertainment_154',
+    emoji: '🧟',
+    question: '¿Qué tipo de espectáculo de música y baile se ve en los resorts?',
+    options: ['el show de Michael Jackson', 'el tributo a Michael Jackson', 'el espectáculo de MJ'],
+    correctAnswer: 'el show de Michael Jackson',
+    hint: 'Michael Jackson show - tribute performances popular at resorts, featuring Thriller and iconic dance moves',
+    points: 10,
+    category: 'entertainment',
+    difficulty: 'medium',
+  },
 ];

@@ -1179,4 +1179,15 @@ export const dailyRoutinesQuestions = [
     category: 'daily_routines',
     difficulty: 'easy',
   },
+  {
+    id: 'daily_107',
+    emoji: '📬',
+    question: '¿Qué recibes en el buzón de tu casa?',
+    options: ['el correo', 'la comida', 'el agua'],
+    correctAnswer: 'el correo',
+    hint: 'Mail - "correo", letters and packages delivered to your mailbox',
+    points: 5,
+    category: 'daily_routines',
+    difficulty: 'easy',
+  },
 ];

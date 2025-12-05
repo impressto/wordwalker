@@ -1201,4 +1201,15 @@ export const peopleQuestions = [
     category: 'people',
     difficulty: 'medium',
   },
+  {
+    id: 'people_109',
+    emoji: '🤬',
+    question: '¿Qué hace alguien cuando dice palabras groseras?',
+    options: ['maldice', 'felicita', 'saluda'],
+    correctAnswer: 'maldice',
+    hint: 'Swear/curse - "maldecir", using offensive or vulgar language when angry',
+    points: 10,
+    category: 'people',
+    difficulty: 'medium',
+  },
 ];

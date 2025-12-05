@@ -96,5 +96,7 @@ export const beachAnswerTranslations = {
   "la gimnasia": "the gymnastics",
   "el yoga": "the yoga",
   "el circo": "the circus",
-  "el cactus": "the cactus"
+  "el cactus": "the cactus",
+  "tomar una selfie": "take a selfie",
+  "sudar": "sweat"
 };

@@ -1810,4 +1810,15 @@ export const foodQuestions = [
     category: 'food',
     difficulty: 'medium',
   },
+  {
+    id: 'food_163',
+    emoji: '🍼',
+    question: '¿Qué toman los bebés?',
+    options: ['la fórmula para bebés', 'la leche de fórmula', 'la fórmula infantil'],
+    correctAnswer: 'la fórmula para bebés',
+    hint: 'Baby formula - infant milk substitute, nutritious for babies',
+    points: 10,
+    category: 'food',
+    difficulty: 'medium',
+  },
 ];
