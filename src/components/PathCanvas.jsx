@@ -179,14 +179,15 @@ const PathCanvas = () => {
   const [audioInitialized, setAudioInitialized] = useState(false);
   
   useEffect(() => {
-    soundManagerRef.current = new SoundManager();
+    // Initialize with current theme to avoid preloading wrong theme sounds
+    soundManagerRef.current = new SoundManager(currentTheme);
     return () => {
       // Cleanup sound manager when component unmounts
       if (soundManagerRef.current) {
         soundManagerRef.current.stopBackgroundMusic();
       }
     };
-  }, []);
+  }, []); // Only run once on mount - theme changes handled by separate useEffect
 
   // Initialize audio on first user interaction
   useEffect(() => {

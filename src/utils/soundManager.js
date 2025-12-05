@@ -1,5 +1,5 @@
 class SoundManager {
-  constructor() {
+  constructor(initialTheme = 'default') {
     // Audio files in public/audio folder
     // Use Vite's base URL for proper subdirectory support
     const baseUrl = import.meta.env.BASE_URL || '/';
@@ -9,7 +9,7 @@ class SoundManager {
     this.musicEnabled = true; // Separate control for background music
     this.audioUnlocked = false;
     this.backgroundMusic = null;
-    this.currentTheme = 'default'; // Track current theme for background music
+    this.currentTheme = initialTheme; // Track current theme for background music
     
     // Preloaded audio buffers for instant playback
     this.preloadedSounds = {};
@@ -170,7 +170,7 @@ class SoundManager {
     for (const sound of this.themeSounds) {
       try {
         const url = `${this.baseUrl}themes/${this.currentTheme}/${sound}.${this.fileFormat}`;
-        const response = await fetch(url);
+        const response = await fetch(url, { cache: 'no-cache' }); // Force fresh fetch
         if (!response.ok) {
           throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
@@ -178,7 +178,8 @@ class SoundManager {
         const audioBuffer = await this.audioContext.decodeAudioData(arrayBuffer);
         this.preloadedSounds[sound] = audioBuffer;
       } catch (error) {
-        // Failed to reload sound
+        // Failed to reload sound - remove old preloaded sound to force fallback to Audio element
+        delete this.preloadedSounds[sound];
       }
     }
   }
