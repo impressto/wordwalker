@@ -18,6 +18,7 @@ import SearchDialog from './SearchDialog';
 import ResumeDialog from './ResumeDialog';
 import InstallPrompt from './InstallPrompt';
 import CharacterShop from './CharacterShop';
+import CheckpointHintPopup from './CheckpointHintPopup';
 
 const PathCanvas = () => {
   // Character and theme management hook
@@ -74,6 +75,7 @@ const PathCanvas = () => {
   const [streak, setStreak] = useState(0); // Track consecutive correct answers
   const [showSearch, setShowSearch] = useState(false); // Show search dialog
   const [isSearchPaused, setIsSearchPaused] = useState(false); // Track if paused by search
+  const [showCheckpointHint, setShowCheckpointHint] = useState(false); // Show hint popup when checkpoint is clicked
   
   // Volume control state
   const [soundEnabled, setSoundEnabled] = useState(true);
@@ -153,6 +155,9 @@ const PathCanvas = () => {
   
   // Track if checkpoint sound has been played for current checkpoint
   const checkpointSoundPlayedRef = useRef(false);
+
+  // Track checkpoint bounds for click detection
+  const checkpointBoundsRef = useRef({ x: 0, y: 0, size: 0 });
 
   // Initialize sound manager
   const soundManagerRef = useRef(null);
@@ -839,7 +844,26 @@ const PathCanvas = () => {
           const fadeOpacity = Math.min(fadeElapsed / checkpointFadeDuration, 1);
           
           ctx.save();
+          
+          // Add pulsing glow effect to indicate clickability
+          const pulseTime = Date.now() / 1000; // Convert to seconds
+          const pulseIntensity = (Math.sin(pulseTime * 2) + 1) / 2; // 0 to 1
+          
+          // Draw glow layers (subtle pulsing effect)
+          for (let i = 3; i > 0; i--) {
+            const glowSize = checkpointSize * (1 + i * 0.2 * pulseIntensity); // Reduced from 0.3 to 0.2
+            ctx.globalAlpha = fadeOpacity * 0.3 * pulseIntensity / i; // Reduced from 0.4 to 0.3
+            ctx.fillStyle = '#FFD700'; // Gold color for hint indicator
+            ctx.font = `${glowSize}px Arial`;
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            const emojiToDisplay = currentQuestion ? currentQuestion.emoji : '❓';
+            ctx.fillText(emojiToDisplay, checkpointScreenX, checkpointY);
+          }
+          
+          // Draw main emoji
           ctx.globalAlpha = fadeOpacity;
+          ctx.fillStyle = 'black';
           ctx.font = `${checkpointSize}px Arial`;
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
@@ -848,6 +872,17 @@ const PathCanvas = () => {
           const emojiToDisplay = currentQuestion ? currentQuestion.emoji : '❓';
           ctx.fillText(emojiToDisplay, checkpointScreenX, checkpointY);
           ctx.restore();
+          
+          // Store checkpoint bounds for click detection
+          checkpointBoundsRef.current = {
+            x: checkpointScreenX,
+            y: checkpointY,
+            size: checkpointSize,
+            visible: true
+          };
+        } else {
+          // Mark checkpoint as not visible
+          checkpointBoundsRef.current.visible = false;
         }
         
         // Check if checkpoint is just to the right of the person - trigger question dialog
@@ -863,6 +898,9 @@ const PathCanvas = () => {
             checkpointSoundPlayedRef.current = true;
           }
         }
+      } else {
+        // No checkpoint to show - mark as not visible
+        checkpointBoundsRef.current.visible = false;
       }
       
       // Draw walking person using sprite sheet animation
@@ -1399,6 +1437,86 @@ const PathCanvas = () => {
     handlePurchaseTheme(themeId, cost, totalPoints, setTotalPoints);
   };
 
+  // Check if coordinates are over checkpoint
+  const isOverCheckpoint = (canvasX, canvasY) => {
+    const bounds = checkpointBoundsRef.current;
+    
+    console.log('isOverCheckpoint check:', {
+      visible: bounds.visible,
+      hasQuestion: !!currentQuestion,
+      hasPath: !!selectedPath,
+      questionAnswered,
+      showQuestion
+    });
+    
+    // Allow clicking checkpoint even when question dialog is shown (removed showQuestion check)
+    if (!bounds.visible || !currentQuestion || !selectedPath || questionAnswered) {
+      return false;
+    }
+    
+    // Use larger hit area - 1.5x the emoji size for easier clicking
+    const hitAreaSize = bounds.size * 1.5;
+    const halfSize = hitAreaSize / 2;
+    const distanceX = Math.abs(canvasX - bounds.x);
+    const distanceY = Math.abs(canvasY - bounds.y);
+    
+    console.log('Distance check:', {
+      distanceX,
+      distanceY,
+      halfSize,
+      withinX: distanceX <= halfSize,
+      withinY: distanceY <= halfSize
+    });
+    
+    return distanceX <= halfSize && distanceY <= halfSize;
+  };
+
+  // Handle canvas click to detect checkpoint clicks
+  const handleCanvasClick = (event) => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    
+    const clickX = (event.clientX - rect.left) * scaleX;
+    const clickY = (event.clientY - rect.top) * scaleY;
+
+    console.log('Canvas clicked at:', clickX, clickY);
+    console.log('Checkpoint bounds:', checkpointBoundsRef.current);
+
+    if (isOverCheckpoint(clickX, clickY)) {
+      // Checkpoint was clicked - show hint popup
+      console.log('Checkpoint clicked!');
+      setShowCheckpointHint(true);
+      
+      // Play a subtle sound effect
+      if (soundManagerRef.current) {
+        soundManagerRef.current.playChoice();
+      }
+    }
+  };
+
+  // Handle canvas mouse move to update cursor
+  const handleCanvasMouseMove = (event) => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    
+    const mouseX = (event.clientX - rect.left) * scaleX;
+    const mouseY = (event.clientY - rect.top) * scaleY;
+
+    if (isOverCheckpoint(mouseX, mouseY)) {
+      canvas.style.cursor = 'pointer';
+    } else {
+      canvas.style.cursor = 'default';
+    }
+  };
+
   return (
     <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
       {/* Loading Screen Overlay */}
@@ -1555,12 +1673,15 @@ const PathCanvas = () => {
 
       <canvas
         ref={canvasRef}
+        onClick={handleCanvasClick}
+        onMouseMove={handleCanvasMouseMove}
         style={{
           display: 'block',
           width: '100%',
           height: '100vh',
           margin: 0,
           padding: 0,
+          cursor: 'default',
         }}
       />
       
@@ -1607,6 +1728,14 @@ const PathCanvas = () => {
           firstAttempt={firstAttempt}
           streak={streak}
           hintUsed={hintUsed}
+        />
+      )}
+
+      {/* Checkpoint Hint Popup Component */}
+      {showCheckpointHint && (
+        <CheckpointHintPopup
+          currentQuestion={currentQuestion}
+          onClose={() => setShowCheckpointHint(false)}
         />
       )}
 
