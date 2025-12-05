@@ -164,6 +164,134 @@ This new structure makes it easier to:
 
 ---
 
+## Phase 2: Questions Consolidation
+
+### Additional Restructuring (December 4, 2024)
+
+Following the success of Phase 1, we completed the consolidation by moving question files under the same `translations/` directory structure.
+
+### Before Phase 2
+```
+src/config/
+├── questions/                    # Question files (separate)
+│   ├── index.js
+│   ├── categories.js
+│   ├── accommodation.js
+│   └── ...
+└── translations/                 # Translation files
+    ├── answers/
+    └── [hint translations]
+```
+
+### After Phase 2
+```
+src/config/
+└── translations/                 # All translation-related content unified
+    ├── answers/                  # Answer translations
+    ├── questions/                # Question definitions ✨ NEW
+    │   ├── index.js
+    │   ├── categories.js
+    │   ├── accommodation.js
+    │   └── ... (19 files total)
+    └── [hint translations]
+```
+
+### Files Updated in Phase 2
+
+#### Component Imports (4 files)
+- `src/components/PathCanvas.jsx`
+- `src/components/PathChoiceDialog.jsx`
+- `src/components/ResumeDialog.jsx`
+- `src/utils/questionTracking.js`
+
+**Old import:**
+```javascript
+import { getAllCategoryIds } from '../config/questions';
+```
+
+**New import:**
+```javascript
+import { getAllCategoryIds } from '../config/translations/questions';
+```
+
+#### Script Files (2 files)
+- `extract-translations.js`
+- `split-questions.js`
+
+#### Index.js Enhancement
+Added re-export of category utilities:
+```javascript
+export { categories, getAllCategoryIds, getCategoryById } from './categories.js';
+```
+
+### Migration Steps - Phase 2
+
+1. ✅ Created `src/config/translations/questions/` directory
+2. ✅ Moved all 19 files from `src/config/questions/` to new location
+3. ✅ Removed empty `src/config/questions/` directory
+4. ✅ Updated all imports in component files (4 files)
+5. ✅ Updated all imports in script files (2 files)
+6. ✅ Enhanced index.js to re-export category utilities
+7. ✅ Tested build: **Successful** ✓
+
+### Questions Directory Structure (`src/config/translations/questions/`)
+- **Purpose**: Contains all question definitions and category metadata
+- **Files**: 19 files
+  - 16 category question files
+  - 1 categories.js (category definitions)
+  - 1 index.js (main export)
+  - 1 README.md (documentation)
+
+### Final Verification
+
+#### Build Test - Phase 2
+```bash
+npm run build
+✓ built in 2.45s
+```
+
+---
+
+## Final Structure Overview
+
+The complete `src/config/translations/` directory now contains:
+
+```
+src/config/translations/
+├── answers/                      # Answer translations (Spanish → English)
+│   ├── index.js
+│   ├── README.md
+│   └── [16 category files]       # 18 files total
+│
+├── questions/                    # Question definitions
+│   ├── index.js
+│   ├── categories.js
+│   ├── README.md
+│   └── [16 category files]       # 19 files total
+│
+├── index.js                      # Hint translations index
+├── IMPLEMENTATION-SUMMARY.md
+├── MIGRATION-GUIDE.md
+├── README.md
+├── TEMPLATE.js
+└── [16 hint translation files]   # 21 files total
+```
+
+**Total: 58 translation-related files organized in one logical directory structure**
+
+### Benefits of Final Structure
+
+1. **Complete Consolidation**: All translation and question content under one roof
+2. **Clear Organization**: Three distinct subdirectories with clear purposes
+   - `answers/` - Word/phrase translations
+   - `questions/` - Question definitions
+   - Root - Question text translations (hints)
+3. **Easier Maintenance**: Related files are grouped together
+4. **Scalability**: Easy to add new content types (e.g., `ui/`, `errors/`)
+5. **Consistent Patterns**: All category-based content follows the same structure
+
+---
+
 **Status**: Ready for production ✅  
 **Tested**: Build + Runtime ✅  
 **Documented**: Complete ✅

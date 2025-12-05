@@ -11,7 +11,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const questionsFile = path.join(__dirname, 'src/config/questions.js');
-const outputDir = path.join(__dirname, 'src/config/questions');
+const outputDir = path.join(__dirname, 'src/config/translations/questions');
 
 // Read the questions file
 const content = fs.readFileSync(questionsFile, 'utf8');

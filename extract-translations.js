@@ -40,7 +40,7 @@ async function extractTranslationsForCategory(category) {
   
   try {
     // Dynamically import the question file
-    const questionModule = await import(`./src/config/questions/${category}.js`);
+    const questionModule = await import(`./src/config/translations/questions/${category}.js`);
     const questionKey = `${category.charAt(0) + category.slice(1).replace(/_./g, m => m.charAt(1).toUpperCase())}Questions`;
     const questions = questionModule[questionKey] || questionModule.default;
     
