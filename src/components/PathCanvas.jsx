@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { getRandomQuestionByCategory, getRandomUnusedQuestionByCategory, shuffleOptions, getAllCategoryIds, getCategoryById } from '../config/questions';
 import { isCategoryCompleted, addCorrectAnswer, addToCorrectFirstTry, addUsedQuestion, addToFirstTryByCategory } from '../utils/questionTracking';
 import { translations } from '../config/answer-translations/index';
-import { questionTranslations } from '../config/question-translations';
+import { questionTranslations } from '../config/translations';
 import gameSettings, { getStreakColor, getTranslationBoxDuration } from '../config/gameSettings';
 import { getTheme } from '../config/parallaxThemes';
 import { getSpriteSheetConfig } from '../config/characterConfig';

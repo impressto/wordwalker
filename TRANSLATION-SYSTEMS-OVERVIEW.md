@@ -138,9 +138,9 @@ Object.entries(translations).forEach(([spanish, english]) => {
 });
 ```
 
-### QuestionDialog.jsx ✓ (Unchanged)
+### QuestionDialog.jsx ✓ (Updated)
 ```javascript
-import { questionTranslations } from '../config/question-translations';
+import { questionTranslations } from '../config/translations';
 
 // Show hint feature
 const hint = questionTranslations[currentQuestion.question];

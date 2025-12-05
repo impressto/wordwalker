@@ -1,17 +1,12 @@
 /**
- * Numbers, Colors & Time Question Translations
+ * Numbers Question Translations
  * Category: numbers
- * 
- * TODO: Extract numbers-related translations from question-translations.js
- * Look for questions about:
- * - Numbers, counting
- * - Colors
- * - Time, dates
- * - Days, months
  */
 
 export const numbersTranslations = {
-  // TODO: Add ~100+ numbers, colors & time translations
-  // Extract from lines 1365-1450 of question-translations.js
-  // Search for: número, color, hora, día, mes, etc.
+  "¿Dónde está tu número de asiento?": "Where is your seat number?",
+  "¿Qué medalla es para el segundo lugar?": "What medal is for second place?",
+  "¿Qué número das para mostrar tu opinión?": "What number do you give to show your opinion?",
+  "¿Qué número indica qué tan rápido puedes ir?": "What number indicates how fast you can go?",
+  "¿Qué número necesitas para comprar zapatos?": "What number do you need to buy shoes?",
 };

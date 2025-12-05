@@ -1,17 +1,53 @@
 /**
- * Directions & Navigation Question Translations
+ * Directions Question Translations
  * Category: directions
- * 
- * TODO: Extract directions-related translations from question-translations.js
- * Look for questions about:
- * - Directions, locations
- * - Navigation vocabulary
- * - Places, buildings
- * - Position words
  */
 
 export const directionsTranslations = {
-  // TODO: Add ~50+ directions translations
-  // Extract from question-translations.js
-  // Search for: dirección, calle, izquierda, derecha, cerca, etc.
+  "¿Cómo doblas a la derecha?": "How do you turn right?",
+  "¿Cómo doblas a la izquierda?": "How do you turn left?",
+  "¿Cómo se llama un gran espacio verde público?": "What is a large public green space called?",
+  "¿Cuánto tiempo toma llegar?": "How long does it take to arrive?",
+  "¿Dónde comes fuera de casa?": "Where do you eat outside the house?",
+  "¿Dónde compras artículos pequeños?": "Where do you buy small items?",
+  "¿Dónde compras productos?": "Where do you buy products?",
+  "¿Dónde depositas o retiras dinero?": "Where do you deposit or withdraw money?",
+  "¿Dónde envías cartas?": "Where do you send letters?",
+  "¿Dónde está cerca?": "Where is near?",
+  "¿Dónde está lejos de ti?": "Where is far from you?",
+  "¿Dónde estás ahora?": "Where are you now?",
+  "¿Dónde estudian los niños?": "Where do children study?",
+  "¿Dónde puedes comprar esto?": "Where can you buy this?",
+  "¿Dónde se encuentran dos calles?": "Where do two streets meet?",
+  "¿Dónde se quedan los turistas?": "Where do tourists stay?",
+  "¿Dónde tomas café?": "Where do you drink coffee?",
+  "¿Dónde trabaja la gente?": "Where do people work?",
+  "¿Dónde van los enfermos graves?": "Where do seriously ill people go?",
+  "¿Dónde vas a rezar o a misa?": "Where do you go to pray or to mass?",
+  "¿Dónde ves arte e historia?": "Where do you see art and history?",
+  "¿Dónde ves arte?": "Where do you see art?",
+  "¿Dónde ves deportes?": "Where do you watch sports?",
+  "¿Dónde ves obras de teatro?": "Where do you watch plays?",
+  "¿Dónde ves películas?": "Where do you watch movies?",
+  "¿Qué área está fuera del centro?": "What area is outside the center?",
+  "¿Qué área tiene naturaleza?": "What area has nature?",
+  "¿Qué centro tiene muchas tiendas?": "What center has many stores?",
+  "¿Qué consultas para orientarte en la ciudad?": "What do you check to orient yourself in the city?",
+  "¿Qué dirección es?": "What direction is it?",
+  "¿Qué edificio religioso es grande?": "What religious building is large?",
+  "¿Qué edificio tiene gobierno?": "What building has the government?",
+  "¿Qué es el centro de la ciudad?": "What is the center of the city?",
+  "¿Qué es una sección de calle?": "What is a section of street?",
+  "¿Qué está al final de la calle?": "What is at the end of the street?",
+  "¿Qué está al otro lado?": "What is on the other side?",
+  "¿Qué está atrás de ti?": "What is behind you?",
+  "¿Qué está junto a ti?": "What is next to you?",
+  "¿Qué estructura cruza un río o valle?": "What structure crosses a river or valley?",
+  "¿Qué haces en la esquina?": "What do you do at the corner?",
+  "¿Qué haces para avanzar?": "What do you do to advance?",
+  "¿Qué haces para volver?": "What do you do to return?",
+  "¿Qué instrumento siempre apunta al norte?": "What instrument always points north?",
+  "¿Qué lugar tiene muchos edificios?": "What place has many buildings?",
+  "¿Qué templo antiguo tiene columnas?": "What ancient temple has columns?",
+  "¿Qué templo tiene cúpula?": "What temple has a dome?",
 };
