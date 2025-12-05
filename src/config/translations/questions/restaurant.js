@@ -3,16 +3,120 @@
  * Category: restaurant
  * 
  * Maps question IDs to English translations
- * 
- * NOTE: This file currently has no translations.
- * The questions in src/config/questions/restaurant.js need English translations added.
- * Previous translations were for questions that no longer exist.
  */
 
 export const restaurantTranslations = {
-  // TODO: Add translations for restaurant questions
-  // Example format:
-  // "restaurant_001": "What do you say to the waiter to order?",
-  // "restaurant_002": "What do you need to see the food options?",
-  // etc.
+  // Basic Restaurant Phrases (1-15)
+  "rest_001": "What do you say to the waiter to order?",
+  "rest_002": "What do you need to see the food options?",
+  "rest_003": "Who serves you at a restaurant?",
+  "rest_004": "What do you ask for at the end of the meal?",
+  "rest_005": "What do you ask for when you arrive at the restaurant?",
+  "rest_006": "What do you do to secure a table?",
+  "rest_007": "What do you leave for the waiter for good service?",
+  "rest_008": "What do you order first to drink?",
+  "rest_009": "What do you eat before the main course?",
+  "rest_010": "What do you eat after the main course?",
+  "rest_011": "What do you eat with?",
+  "rest_012": "What do you put on food for more flavor?",
+  "rest_013": "What do you put on food to make it spicy?",
+  "rest_014": "What do you drink water from?",
+  "rest_015": "Where do they serve your food?",
+
+  // Ordering Food (16-30)
+  "rest_016": "How do you order a hamburger?",
+  "rest_017": "How do you like your meat?",
+  "rest_018": "What do you say when you want pizza?",
+  "rest_019": "What Mexican food do you order?",
+  "rest_020": "What liquid dish do you order when it's cold?",
+  "rest_021": "What do you order if you want to eat vegetables?",
+  "rest_022": "What Italian food with sauce do you order?",
+  "rest_023": "What accompanies many Latin dishes?",
+  "rest_024": "What do they give you free at many restaurants?",
+  "rest_025": "What do you put on bread?",
+  "rest_026": "What side dish do you order with a hamburger?",
+  "rest_027": "What protein from the sea do you order?",
+  "rest_028": "What small seafood do you order?",
+  "rest_029": "What poultry meat do you order?",
+  "rest_030": "What red meat do you order?",
+
+  // Drinks (31-45)
+  "rest_031": "What basic drink do you order?",
+  "rest_032": "What carbonated drink do you order?",
+  "rest_033": "What hot drink do you order after eating?",
+  "rest_034": "What other hot drink do you order?",
+  "rest_035": "What alcoholic drink made from grapes do you order?",
+  "rest_036": "What cold alcoholic drink do you order?",
+  "rest_037": "What fruit drink do you order?",
+  "rest_038": "What white drink do you order with cereal?",
+  "rest_039": "What do you ask the waiter for to cool your drink?",
+  "rest_040": "What do you put in water for flavor?",
+  "rest_041": "What tropical drink do you order at the beach?",
+  "rest_042": "What strong liquor do you order?",
+  "rest_043": "What special drink do you order to celebrate?",
+  "rest_044": "What drink with bubbles is popular in Asia?",
+  "rest_045": "How do you order coffee with milk?",
+
+  // Desserts (46-55)
+  "rest_046": "What sweet and fluffy dessert do you order?",
+  "rest_047": "What cold dessert do you order in summer?",
+  "rest_048": "What creamy Spanish dessert do you order?",
+  "rest_049": "What crunchy and sweet dessert do you order with coffee?",
+  "rest_050": "What dessert with fruit do you order?",
+  "rest_051": "What cocoa dessert do you order?",
+  "rest_052": "What small individual dessert do you order?",
+  "rest_053": "What fried and round dessert do you order?",
+  "rest_054": "What ice cream with fruit and cream do you order?",
+  "rest_055": "What dessert on sticks do you order?",
+
+  // Restaurant Types & Situations (56-70)
+  "rest_056": "What restaurant do you go to for pizza?",
+  "rest_057": "Where do you have coffee and cake?",
+  "rest_058": "What type of restaurant serves fast food?",
+  "rest_059": "What restaurant serves food to take away?",
+  "rest_060": "Where do you eat inside the restaurant?",
+  "rest_061": "Where do you order without getting out of the car?",
+  "rest_062": "What service brings food to your house?",
+  "rest_063": "What type of restaurant is elegant?",
+  "rest_064": "Where do you eat a lot of variety by paying once?",
+  "rest_065": "What restaurant serves Asian food?",
+  "rest_066": "What restaurant serves tacos and burritos?",
+  "rest_067": "What restaurant serves pasta and pizza?",
+  "rest_068": "What restaurant serves paella?",
+  "rest_069": "What restaurant serves sushi?",
+  "rest_070": "What restaurant serves croissants?",
+
+  // Dining Preferences & Requests (71-85)
+  "rest_071": "What do you order if you don't eat meat?",
+  "rest_072": "What do you tell the waiter if you have an allergy?",
+  "rest_073": "What do you say if you don't want spicy food?",
+  "rest_074": "What do you say if you don't want salt?",
+  "rest_075": "How do you order hot food?",
+  "rest_076": "How do you order a very cold drink?",
+  "rest_077": "What do you ask for if you need a fork?",
+  "rest_078": "What do you ask for to eat soup?",
+  "rest_079": "What do you ask for to cut meat?",
+  "rest_080": "What do you use to clean your mouth?",
+  "rest_081": "What do you ask for to drink your soda?",
+  "rest_082": "What do you ask for to take what's left over?",
+  "rest_083": "What do you say if you don't want ice?",
+  "rest_084": "What do you ask for for your tea?",
+  "rest_085": "What do you put in tea to sweeten it?",
+
+  // Final phrases & situations (86-100)
+  "rest_086": "What do you say when the food is delicious?",
+  "rest_087": "What do you say when you're hungry?",
+  "rest_088": "What do you say when you're thirsty?",
+  "rest_089": "What do you say to the waiter at the end?",
+  "rest_090": "What do you say to be polite when ordering?",
+  "rest_091": "What time do you eat in the morning?",
+  "rest_092": "What time do you eat at noon?",
+  "rest_093": "What time do you eat at night?",
+  "rest_094": "What do you say to ask for more?",
+  "rest_095": "What do you say when you don't want more?",
+  "rest_096": "What do you say to call the waiter?",
+  "rest_097": "What do you ask to know the options?",
+  "rest_098": "What do you ask to know the price?",
+  "rest_099": "What do you ask to find the bathroom?",
+  "rest_100": "What do you say to enjoy the meal?",
 };

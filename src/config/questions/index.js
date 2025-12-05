@@ -18,6 +18,7 @@ import { animalsQuestions } from './animals.js';
 import { peopleQuestions } from './people.js';
 import { dailyRoutinesQuestions } from './daily_routines.js';
 import { restaurantQuestions } from './restaurant.js';
+import { weatherQuestions } from './weather.js';
 
 // Import and re-export category utilities
 export { categories, getAllCategoryIds, getCategoryById } from './categories.js';
@@ -39,6 +40,7 @@ export {
   peopleQuestions,
   dailyRoutinesQuestions,
   restaurantQuestions,
+  weatherQuestions,
 };
 
 /**
@@ -60,6 +62,7 @@ export const questions = [
   ...peopleQuestions,
   ...dailyRoutinesQuestions,
   ...restaurantQuestions,
+  ...weatherQuestions,
 ];
 
 /**
