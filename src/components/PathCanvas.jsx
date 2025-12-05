@@ -19,6 +19,10 @@ import ResumeDialog from './ResumeDialog';
 import InstallPrompt from './InstallPrompt';
 import CharacterShop from './CharacterShop';
 import CheckpointHintPopup from './CheckpointHintPopup';
+import LoadingScreen from './LoadingScreen';
+import VolumeControl from './VolumeControl';
+import TopLogo from './TopLogo';
+import SearchButton from './SearchButton';
 
 const PathCanvas = () => {
   // Character and theme management hook
@@ -1520,143 +1524,21 @@ const PathCanvas = () => {
   return (
     <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
       {/* Loading Screen Overlay */}
-      {isLoading && (
-        <div style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          backgroundColor: '#1a3d0a',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          zIndex: 9999,
-        }}>
-          <div style={{
-            fontSize: '48px',
-            marginBottom: '20px',
-            animation: 'spin 1s linear infinite',
-          }}>
-            ⏳
-          </div>
-          <h1 style={{
-            color: '#87CEEB',
-            fontFamily: 'Arial, sans-serif',
-            marginTop: 0,
-          }}>
-            Loading...
-          </h1>
-          <style>{`
-            @keyframes spin {
-              0% { transform: rotate(0deg); }
-              100% { transform: rotate(360deg); }
-            }
-          `}</style>
-        </div>
-      )}
+      <LoadingScreen isLoading={isLoading} />
       
       {/* Volume Control - Top Left */}
-      <div style={{
-        position: 'absolute',
-        top: '20px',
-        left: '20px',
-        zIndex: 30,
-        display: 'flex',
-        alignItems: 'center',
-        gap: '8px',
-        background: 'rgba(0, 0, 0, 0.7)',
-        padding: '10px 15px',
-        borderRadius: '25px',
-        boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
-      }}>
-        <button 
-          onClick={() => setSoundEnabled(!soundEnabled)} 
-          style={{
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            fontSize: '24px',
-            padding: '0',
-            lineHeight: '1',
-            filter: 'drop-shadow(0 2px 2px rgba(0,0,0,0.3))',
-          }}
-          title={soundEnabled ? 'Sound On' : 'Sound Off'}
-        >
-          {soundEnabled ? (volume > 0.5 ? '🔊' : volume > 0 ? '🔉' : '🔈') : '🔇'}
-        </button>
-        <input
-          type="range"
-          min="0"
-          max="1"
-          step="0.1"
-          value={volume}
-          onChange={(e) => setVolume(parseFloat(e.target.value))}
-          disabled={!soundEnabled}
-          style={{
-            width: '80px',
-            height: '4px',
-            cursor: soundEnabled ? 'pointer' : 'not-allowed',
-            opacity: soundEnabled ? 1 : 0.5,
-            accentColor: '#4CAF50',
-            display: window.innerWidth <= 768 ? 'none' : 'block',
-          }}
-          title={`Volume: ${Math.round(volume * 100)}%`}
-        />
-      </div>
+      <VolumeControl 
+        soundEnabled={soundEnabled}
+        volume={volume}
+        onToggleSound={() => setSoundEnabled(!soundEnabled)}
+        onVolumeChange={setVolume}
+      />
 
       {/* Top Logo */}
-      <div style={{
-        position: 'absolute',
-        top: '10px',
-        left: '50%',
-        transform: 'translateX(-50%)',
-        zIndex: 30,
-      }}>
-        <img 
-          src={`${import.meta.env.BASE_URL || '/'}images/top-logo.png`}
-          alt="WordWalk Logo"
-          style={{
-            maxWidth: '200px',
-            height: 'auto',
-            display: 'block',
-          }}
-        />
-      </div>
+      <TopLogo />
 
       {/* Search Button - Top Right */}
-      <button
-        onClick={handleSearchClick}
-        style={{
-          position: 'absolute',
-          top: '20px',
-          right: '20px',
-          zIndex: 30,
-          background: '#4CAF50',
-          border: 'none',
-          borderRadius: '50%',
-          width: '56px',
-          height: '56px',
-          fontSize: '28px',
-          cursor: 'pointer',
-          boxShadow: '0 4px 8px rgba(0,0,0,0.2)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          transition: 'all 0.2s',
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.transform = 'scale(1.1)';
-          e.currentTarget.style.boxShadow = '0 6px 12px rgba(0,0,0,0.3)';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.transform = 'scale(1)';
-          e.currentTarget.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
-        }}
-      >
-        🔍
-      </button>
+      <SearchButton onClick={handleSearchClick} />
 
       {/* Score Display Component */}
       <ScoreDisplay
