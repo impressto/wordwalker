@@ -3,6 +3,6 @@
       "target": {
         "namespace": "android_app",
         "package_name": "ca.impresstowordwalkeres.twa",
-        "sha256_cert_fingerprints": ["9A:E8:A4:24:A1:A2:4D:B5:63:FE:BB:D6:FE:C3:7E:A0:DC:6A:1F:86:C7:5B:4E:DA:CE:20:09:16:1B:28:DF:7C"]
+        "sha256_cert_fingerprints": ["F0:CD:B9:1D:43:57:E9:9A:C7:02:0C:18:33:D5:14:9C:41:D1:35:B6:A2:6E:B5:46:54:A5:76:9A:76:55:EF:37"]
       }
     }]
