@@ -383,6 +383,10 @@ const PathCanvas = () => {
       // Restore scroll position and calculate next checkpoint
       offsetRef.current = convertedState.offsetRef || 0;
       
+      // Reset velocity and target to ensure smooth forward movement from restored position
+      velocityRef.current = 0;
+      targetOffsetRef.current = null;
+      
       // Recalculate checkpoint position based on how many checkpoints have been answered
       const nextCheckpointIndex = convertedState.checkpointsAnswered;
       checkpointPositionRef.current = forkPositionRef.current + 1500 + (nextCheckpointIndex * checkpointSpacing);
