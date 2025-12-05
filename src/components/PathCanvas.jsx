@@ -1596,7 +1596,7 @@ const PathCanvas = () => {
           incorrectAnswers={incorrectAnswers}
           onAnswerChoice={handleAnswerChoice}
           onHintClick={handleHintClick}
-          questionTranslation={questionTranslations[currentQuestion.question]}
+          questionTranslation={questionTranslations[currentQuestion.id]}
         />
       )}
 
