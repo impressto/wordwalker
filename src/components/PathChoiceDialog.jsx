@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 import { getAllCategoryIds } from '../config/questions';
 import { isCategoryFullyMastered } from '../utils/questionTracking';
 
-const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpenShop, completedCategories = new Set(), currentCategory = null, correctAnswersByCategory = {} }) => {
+const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpenShop, currentCategory = null, correctAnswersByCategory = {} }) => {
   const [dialogTop, setDialogTop] = useState('100px');
   const [currentPage, setCurrentPage] = useState(0);
   
