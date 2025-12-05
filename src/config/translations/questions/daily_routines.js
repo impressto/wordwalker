@@ -105,5 +105,6 @@ export const dailyRoutinesTranslations = {
   "daily_097": "What do you do at the gym?",
   "daily_098": "What do you do in the pool?",
   "daily_099": "What do you plan for the day?",
-  "daily_100": "What do you do at the end of the day?"
+  "daily_100": "What do you do at the end of the day?",
+  "daily_101": "What do you do with used plastic and paper?"
 };

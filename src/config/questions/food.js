@@ -1799,4 +1799,15 @@ export const foodQuestions = [
     category: 'food',
     difficulty: 'easy',
   },
+  {
+    id: 'food_162',
+    emoji: '🫛',
+    question: '¿Qué verdura verde y pequeña viene en vaina?',
+    options: ['los guisantes', 'los chícharos', 'las arvejas'],
+    correctAnswer: 'los guisantes',
+    hint: 'Peas - small green legumes in pods, "chícharos" in Mexico, "arvejas" in South America',
+    points: 10,
+    category: 'food',
+    difficulty: 'medium',
+  },
 ];

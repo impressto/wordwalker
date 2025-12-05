@@ -147,5 +147,6 @@ export const shoppingAnswerTranslations = {
   "el desodorante": "deodorant",
   "la navaja": "razor",
   "el cargador de teléfono": "phone charger",
-  "el cable del cargador": "charger cable"
+  "el cable del cargador": "charger cable",
+  "la barbería": "the barbershop"
 };

@@ -166,5 +166,6 @@ export const foodTranslations = {
   "food_158": "How do you ask 'can I have a spoon?'",
   "food_159": "What is added to food for flavor?",
   "food_160": "What spicy red sauce accompanies many meals?",
-  "food_161": "What red condiment comes in a bottle?"
+  "food_161": "What red condiment comes in a bottle?",
+  "food_162": "What small green vegetable comes in a pod?"
 };

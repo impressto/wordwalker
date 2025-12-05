@@ -154,5 +154,7 @@ export const entertainmentTranslations = {
   "entertainment_147": "What art creates three-dimensional forms?",
   "entertainment_148": "Where do you exhibit your paintings?",
   "entertainment_149": "What do you mix to create new colors?",
-  "entertainment_150": "What play is very sad?"
+  "entertainment_150": "What play is very sad?",
+  "entertainment_151": "What are artists called who perform on the street?",
+  "entertainment_152": "What is a person called who performs magic tricks?"
 };

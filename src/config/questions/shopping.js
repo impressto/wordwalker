@@ -1730,4 +1730,15 @@ export const shoppingQuestions = [
     category: 'shopping',
     difficulty: 'easy',
   },
+  {
+    id: 'shopping_158',
+    emoji: '💈',
+    question: '¿Dónde vas para cortarte el pelo?',
+    options: ['la barbería', 'la peluquería', 'el salón de belleza'],
+    correctAnswer: 'la barbería',
+    hint: 'Barbershop - place for haircuts, "peluquería" for hair salon, "barbería" traditionally for men',
+    points: 10,
+    category: 'shopping',
+    difficulty: 'medium',
+  },
 ];

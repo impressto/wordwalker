@@ -60,5 +60,10 @@ export const animalsTranslations = {
   "animals_050": "What animal flies at night?",
   "animals_058": "What white bird is elegant?",
   "animals_059": "What bird has feathers of many colors?",
-  "animals_060": "What animal has a shell?"
+  "animals_060": "What animal has a shell?",
+  "animals_061": "What large bird is traditionally eaten at Thanksgiving?",
+  "animals_062": "What is a male cow called?",
+  "animals_063": "What is the male chicken that crows in the morning called?",
+  "animals_064": "What farm bird lays eggs?",
+  "animals_065": "What is the baby that comes out of the egg called?"
 };

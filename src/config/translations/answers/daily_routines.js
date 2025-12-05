@@ -105,5 +105,6 @@ export const dailyroutinesAnswerTranslations = {
   "entreno": "I train/work out",
   "nado": "I swim",
   "organizo mis tareas": "I organize my tasks",
-  "reflexiono": "I reflect"
+  "reflexiono": "I reflect",
+  "reciclo": "I recycle"
 };

@@ -1113,4 +1113,15 @@ export const dailyRoutinesQuestions = [
     category: 'daily_routines',
     difficulty: 'easy',
   },
+  {
+    id: 'daily_101',
+    emoji: '♻️',
+    question: '¿Qué haces con el plástico y el papel usado?',
+    options: ['reciclo', 'lo tiro todo junto', 'lo guardo'],
+    correctAnswer: 'reciclo',
+    hint: 'Recycle - "reciclar", separating waste for environmental care',
+    points: 10,
+    category: 'daily_routines',
+    difficulty: 'easy',
+  },
 ];

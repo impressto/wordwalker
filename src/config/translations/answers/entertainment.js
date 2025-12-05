@@ -137,5 +137,7 @@ export const entertainmentAnswerTranslations = {
   "bosquejar": "sketch",
   "la escultura": "the sculpture",
   "la galería": "the gallery",
-  "la tragedia": "the tragedy"
+  "la tragedia": "the tragedy",
+  "los artistas callejeros": "the street performers",
+  "el mago": "the magician"
 };

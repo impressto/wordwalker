@@ -58,5 +58,10 @@ export const animalsAnswerTranslations = {
   "la hormiga": "the ant",
   "el saltamontes": "the grasshopper",
   "la oruga": "the caterpillar",
-  "el murciélago": "the bat"
+  "el murciélago": "the bat",
+  "el pavo": "the turkey",
+  "el toro": "the bull",
+  "el gallo": "the rooster",
+  "la gallina": "the chicken/hen",
+  "el pollito": "the chick"
 };

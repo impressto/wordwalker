@@ -145,5 +145,6 @@ export const foodAnswerTranslations = {
   "¿me puede dar una cuchara?": "can I have a spoon?",
   "las especias": "spices",
   "la salsa picante": "hot sauce",
-  "el ketchup": "ketchup"
+  "el ketchup": "ketchup",
+  "los guisantes": "the peas"
 };

@@ -49,5 +49,7 @@ export const emergenciesAnswerTranslations = {
   "las muletas": "the crutches",
   "el paramédico": "the paramedic",
   "la infección": "the infection",
-  "el análisis": "the test / analysis"
+  "el análisis": "the test / analysis",
+  "el cultivo": "the culture",
+  "la prueba genética": "the genetic test"
 };
