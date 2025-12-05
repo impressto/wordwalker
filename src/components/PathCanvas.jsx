@@ -163,6 +163,14 @@ const PathCanvas = () => {
   // Track checkpoint bounds for click detection
   const checkpointBoundsRef = useRef({ x: 0, y: 0, size: 0 });
 
+  // Easter egg - preview mode when walker is held
+  const [isPreviewMode, setIsPreviewMode] = useState(false);
+  const [questionDialogOpacity, setQuestionDialogOpacity] = useState(1);
+  const walkerPressTimerRef = useRef(null);
+  const walkerPressStartRef = useRef(null);
+  const walkerBoundsRef = useRef({ x: 0, y: 0, width: 0, height: 0 });
+  const previewStateSnapshotRef = useRef(null); // Store state before preview mode
+
   // Initialize sound manager
   const soundManagerRef = useRef(null);
   const [audioInitialized, setAudioInitialized] = useState(false);
@@ -931,10 +939,10 @@ const PathCanvas = () => {
       
       if (walkerSpriteSheet) {
         // Update animation frame
-        // Allow animation to continue during victory animation or when actually moving
+        // Allow animation to continue during victory animation, when actually moving, or during preview mode
         // Stop animating when velocity is very low (nearly stopped)
         const isMoving = velocityRef.current > 0.5;
-        if ((isMoving && !isPaused) || isVictoryAnimation) {
+        if ((isMoving && !isPaused) || isVictoryAnimation || isPreviewMode) {
           walkerFrameCounterRef.current++;
           
           // Change frame every 6 loops for walking animation (slowed 20%), every 12 loops for slower victory animation
@@ -984,17 +992,29 @@ const PathCanvas = () => {
           bounceOffset = -20 * Math.sin(bounceProgress * Math.PI); // Smooth sine wave bounce
         }
         
+        // Calculate walker position
+        const walkerX = personX - drawWidth / 2 + 10;
+        const walkerY = personY - drawHeight / 2 + bounceOffset;
+        
         // Draw the current frame from sprite sheet
         ctx.drawImage(
           walkerSpriteSheet,
           sourceX, sourceY,                    // Source position in sprite sheet
           spriteConfig.frameWidth,             // Source width
           spriteConfig.frameHeight,            // Source height
-          personX - drawWidth / 2 + 10,        // Destination X (centered + 10px right)
-          personY - drawHeight / 2 + bounceOffset, // Destination Y (centered + bounce)
+          walkerX,                             // Destination X (centered + 10px right)
+          walkerY,                             // Destination Y (centered + bounce)
           drawWidth,                           // Destination width
           drawHeight                           // Destination height
         );
+        
+        // Update walker bounds for click detection (Easter egg)
+        walkerBoundsRef.current = {
+          x: walkerX,
+          y: walkerY,
+          width: drawWidth,
+          height: drawHeight
+        };
       }
       // Note: No fallback emoji - wait for sprite sheet to load for cleaner appearance
       
@@ -1061,8 +1081,8 @@ const PathCanvas = () => {
           // Keep velocity at zero while panning to prevent walker animation
           velocityRef.current = 0;
         } else {
-          // Determine if walker should be moving (normal gameplay)
-          const shouldMove = !isPaused && (!shouldStopForChoice || selectedPath) && !shouldStopForCheckpoint;
+          // Determine if walker should be moving (normal gameplay or preview mode)
+          const shouldMove = (!isPaused && (!shouldStopForChoice || selectedPath) && !shouldStopForCheckpoint) || isPreviewMode;
           
           // Apply inertia - gradually change velocity toward target
           if (shouldMove) {
@@ -1098,7 +1118,7 @@ const PathCanvas = () => {
           const acceleration = 0.15;
           const deceleration = 0.2;
           
-          if (!isPaused) {
+          if (!isPaused || isPreviewMode) {
             if (velocityRef.current < targetSpeed) {
               velocityRef.current = Math.min(velocityRef.current + acceleration, targetSpeed);
             }
@@ -1108,6 +1128,8 @@ const PathCanvas = () => {
             }
           }
           
+          // Note: In this fallback case, we don't have shouldStopForCheckpoint,
+          // so just apply velocity normally
           offsetRef.current += velocityRef.current;
         }
       }
@@ -1128,7 +1150,7 @@ const PathCanvas = () => {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [parallaxLayer2Image, pathImage, pathForkImage, parallaxLayer6Image, parallaxLayer1Image, parallaxLayer4Image, parallaxLayer5Image, parallaxLayer3Image, walkerSpriteSheet, isPaused, showChoice, showQuestion, selectedPath, questionAnswered, isVictoryAnimation, currentTheme]);
+  }, [parallaxLayer2Image, pathImage, pathForkImage, parallaxLayer6Image, parallaxLayer1Image, parallaxLayer4Image, parallaxLayer5Image, parallaxLayer3Image, walkerSpriteSheet, isPaused, showChoice, showQuestion, selectedPath, questionAnswered, isVictoryAnimation, currentTheme, isPreviewMode]);
 
   // Helper function to load a new question for the current checkpoint
   const loadNewQuestion = (category) => {
@@ -1257,6 +1279,17 @@ const PathCanvas = () => {
 
   const handleAnswerChoice = (answer) => {
     if (!currentQuestion) return;
+    
+    // Exit preview mode if active (user is answering the question)
+    if (isPreviewMode) {
+      setIsPreviewMode(false);
+      setQuestionDialogOpacity(1); // Reset opacity immediately
+      // Clear any pending timer
+      if (walkerPressTimerRef.current) {
+        clearTimeout(walkerPressTimerRef.current);
+        walkerPressTimerRef.current = null;
+      }
+    }
     
     // Prevent double-processing using ref
     if (processingAnswerRef.current) {
@@ -1521,6 +1554,140 @@ const PathCanvas = () => {
     }
   };
 
+  // Check if coordinates are over walker (Easter egg)
+  const isOverWalker = (canvasX, canvasY) => {
+    const bounds = walkerBoundsRef.current;
+    if (!bounds.width || !bounds.height) return false;
+    
+    return (
+      canvasX >= bounds.x &&
+      canvasX <= bounds.x + bounds.width &&
+      canvasY >= bounds.y &&
+      canvasY <= bounds.y + bounds.height
+    );
+  };
+
+  // Handle walker press start (mouse/touch)
+  const handleWalkerPressStart = (canvasX, canvasY) => {
+    // Only activate if there's a question dialog showing
+    if (!showQuestion || !currentQuestion) return;
+    
+    if (isOverWalker(canvasX, canvasY)) {
+      walkerPressStartRef.current = Date.now();
+      
+      // Set timer to activate preview mode after 5 seconds
+      walkerPressTimerRef.current = setTimeout(() => {
+        // Capture current state before entering preview mode
+        previewStateSnapshotRef.current = {
+          offset: offsetRef.current,
+          velocity: velocityRef.current,
+          checkpointPosition: checkpointPositionRef.current,
+          isPaused: isPaused
+        };
+        
+        setIsPreviewMode(true);
+        // Fade out question dialog
+        let opacity = 1;
+        const fadeInterval = setInterval(() => {
+          opacity -= 0.05;
+          if (opacity <= 0) {
+            opacity = 0;
+            clearInterval(fadeInterval);
+          }
+          setQuestionDialogOpacity(opacity);
+        }, 20); // Smooth fade over ~400ms
+      }, 5000);
+    }
+  };
+
+  // Handle walker press end (mouse/touch release)
+  const handleWalkerPressEnd = () => {
+    // Clear timer if still waiting
+    if (walkerPressTimerRef.current) {
+      clearTimeout(walkerPressTimerRef.current);
+      walkerPressTimerRef.current = null;
+    }
+    
+    // If in preview mode, exit it and restore state
+    if (isPreviewMode) {
+      // Restore state from snapshot
+      if (previewStateSnapshotRef.current) {
+        offsetRef.current = previewStateSnapshotRef.current.offset;
+        velocityRef.current = previewStateSnapshotRef.current.velocity;
+        checkpointPositionRef.current = previewStateSnapshotRef.current.checkpointPosition;
+        // Note: isPaused will remain as-is since we're in a question dialog context
+        
+        // Clear the snapshot
+        previewStateSnapshotRef.current = null;
+      }
+      
+      setIsPreviewMode(false);
+      
+      // Fade question dialog back in
+      let opacity = 0;
+      const fadeInterval = setInterval(() => {
+        opacity += 0.05;
+        if (opacity >= 1) {
+          opacity = 1;
+          clearInterval(fadeInterval);
+        }
+        setQuestionDialogOpacity(opacity);
+      }, 20); // Smooth fade over ~400ms
+    }
+    
+    walkerPressStartRef.current = null;
+  };
+
+  // Handle mouse down on canvas
+  const handleCanvasMouseDown = (event) => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    
+    const x = (event.clientX - rect.left) * scaleX;
+    const y = (event.clientY - rect.top) * scaleY;
+
+    handleWalkerPressStart(x, y);
+  };
+
+  // Handle mouse up on canvas
+  const handleCanvasMouseUp = () => {
+    handleWalkerPressEnd();
+  };
+
+  // Handle touch start on canvas
+  const handleCanvasTouchStart = (event) => {
+    const canvas = canvasRef.current;
+    if (!canvas || event.touches.length === 0) return;
+
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    
+    const touch = event.touches[0];
+    const x = (touch.clientX - rect.left) * scaleX;
+    const y = (touch.clientY - rect.top) * scaleY;
+
+    handleWalkerPressStart(x, y);
+  };
+
+  // Handle touch end on canvas
+  const handleCanvasTouchEnd = () => {
+    handleWalkerPressEnd();
+  };
+
+  // Cleanup timer on unmount
+  useEffect(() => {
+    return () => {
+      if (walkerPressTimerRef.current) {
+        clearTimeout(walkerPressTimerRef.current);
+      }
+    };
+  }, []);
+
   return (
     <div style={{ position: 'relative', width: '100%', height: '100vh' }}>
       {/* Loading Screen Overlay */}
@@ -1557,6 +1724,12 @@ const PathCanvas = () => {
         ref={canvasRef}
         onClick={handleCanvasClick}
         onMouseMove={handleCanvasMouseMove}
+        onMouseDown={handleCanvasMouseDown}
+        onMouseUp={handleCanvasMouseUp}
+        onMouseLeave={handleCanvasMouseUp}
+        onTouchStart={handleCanvasTouchStart}
+        onTouchEnd={handleCanvasTouchEnd}
+        onTouchCancel={handleCanvasTouchEnd}
         style={{
           display: 'block',
           width: '100%',
@@ -1590,17 +1763,19 @@ const PathCanvas = () => {
 
       {/* Question Dialog Component */}
       {showQuestion && currentQuestion && (
-        <QuestionDialog
-          currentQuestion={currentQuestion}
-          showTranslation={showTranslation}
-          showHint={showHint}
-          hintUsed={hintUsed}
-          firstAttempt={firstAttempt}
-          incorrectAnswers={incorrectAnswers}
-          onAnswerChoice={handleAnswerChoice}
-          onHintClick={handleHintClick}
-          questionTranslation={questionTranslations[currentQuestion.id]}
-        />
+        <div style={{ opacity: questionDialogOpacity, transition: 'opacity 0.4s ease' }}>
+          <QuestionDialog
+            currentQuestion={currentQuestion}
+            showTranslation={showTranslation}
+            showHint={showHint}
+            hintUsed={hintUsed}
+            firstAttempt={firstAttempt}
+            incorrectAnswers={incorrectAnswers}
+            onAnswerChoice={handleAnswerChoice}
+            onHintClick={handleHintClick}
+            questionTranslation={questionTranslations[currentQuestion.id]}
+          />
+        </div>
       )}
 
       {/* Translation Overlay Component */}
