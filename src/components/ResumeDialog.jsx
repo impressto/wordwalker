@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './ResumeDialog.css';
-import { questions } from '../config/translations/questions';
+import { questions } from '../config/questions';
 import gameSettings from '../config/gameSettings';
 import NewGameConfirmationDialog from './NewGameConfirmationDialog';
 import { getTotalMasteredQuestions } from '../utils/questionTracking';

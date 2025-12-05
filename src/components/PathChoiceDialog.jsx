@@ -5,7 +5,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { getAllCategoryIds } from '../config/translations/questions';
+import { getAllCategoryIds } from '../config/questions';
 
 const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpenShop, completedCategories = new Set(), currentCategory = null }) => {
   const [dialogTop, setDialogTop] = useState('100px');

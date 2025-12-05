@@ -5,7 +5,7 @@
  * and managing category completion status
  */
 
-import { getQuestionsByCategory } from '../config/translations/questions';
+import { getQuestionsByCategory } from '../config/questions';
 
 /**
  * Get the total number of questions in a category
