@@ -18,13 +18,6 @@ const ResumeDialog = ({ onResume, onNewGame, savedStats }) => {
   // Get total mastered questions (permanent learning data)
   const masteredCount = getTotalMasteredQuestions(savedStats?.correctAnswersByCategory || {});
   
-  // Debug logging to verify data
-  console.log('ResumeDialog - savedStats:', savedStats);
-  console.log('ResumeDialog - correctAnswersByCategory:', savedStats?.correctAnswersByCategory);
-  console.log('ResumeDialog - masteredCount:', masteredCount);
-  console.log('ResumeDialog - confirmationThreshold:', gameSettings.persistence.confirmationThreshold);
-  console.log('ResumeDialog - shouldShowConfirmation:', masteredCount >= gameSettings.persistence.confirmationThreshold);
-  
   // Threshold for showing confirmation (configurable in gameSettings)
   const shouldShowConfirmation = masteredCount >= gameSettings.persistence.confirmationThreshold;
   

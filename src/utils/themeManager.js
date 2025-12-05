@@ -13,7 +13,6 @@ import { getTheme, getThemeIds, themeExists } from '../config/parallaxThemes';
  */
 export const setActiveTheme = (themeId) => {
   if (!themeExists(themeId)) {
-    console.error(`Theme "${themeId}" does not exist`);
     return false;
   }
   

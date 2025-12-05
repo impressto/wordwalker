@@ -69,7 +69,6 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
   }, []);
   // Validate forkCategories structure
   if (!forkCategories || typeof forkCategories !== 'object') {
-    console.error('PathChoiceDialog: Invalid forkCategories', forkCategories);
     return (
       <div style={{
         position: 'fixed',
@@ -100,7 +99,6 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
     const category = getCategoryById(categoryId);
     
     if (!category) {
-      console.warn(`PathChoiceDialog: Missing category data for ${categoryId}`);
       return (
         <div key={categoryId} style={{
           padding: '15px 20px',

@@ -57,9 +57,8 @@ class SoundManager {
         const arrayBuffer = await response.arrayBuffer();
         const audioBuffer = await this.audioContext.decodeAudioData(arrayBuffer);
         this.preloadedSounds[sound] = audioBuffer;
-        console.log(`Preloaded theme sound: ${sound} for theme: ${this.currentTheme}`);
       } catch (error) {
-        console.error(`Failed to preload theme sound: ${sound}`, error);
+        // Failed to preload sound
       }
     }
     
@@ -71,9 +70,8 @@ class SoundManager {
         const arrayBuffer = await response.arrayBuffer();
         const audioBuffer = await this.audioContext.decodeAudioData(arrayBuffer);
         this.preloadedSounds[sound] = audioBuffer;
-        console.log(`Preloaded generic sound: ${sound}`);
       } catch (error) {
-        console.error(`Failed to preload generic sound: ${sound}`, error);
+        // Failed to preload sound
       }
     }
   }
@@ -136,7 +134,6 @@ class SoundManager {
    * @param {string} themeId - The theme identifier
    */
   setTheme(themeId) {
-    console.log(`SoundManager: Setting theme to: ${themeId} (previous: ${this.currentTheme})`);
     this.currentTheme = themeId;
     
     // Reload theme-specific sound effects
@@ -153,11 +150,9 @@ class SoundManager {
    * Preload theme-specific sound effects when theme changes
    */
   async preloadThemeSounds() {
-    console.log(`SoundManager: Preloading theme sounds for: ${this.currentTheme}`);
     for (const sound of this.themeSounds) {
       try {
         const url = `${this.baseUrl}themes/${this.currentTheme}/${sound}.${this.fileFormat}`;
-        console.log(`SoundManager: Loading ${sound} from URL: ${url}`);
         const response = await fetch(url);
         if (!response.ok) {
           throw new Error(`HTTP ${response.status}: ${response.statusText}`);
@@ -165,9 +160,8 @@ class SoundManager {
         const arrayBuffer = await response.arrayBuffer();
         const audioBuffer = await this.audioContext.decodeAudioData(arrayBuffer);
         this.preloadedSounds[sound] = audioBuffer;
-        console.log(`✓ Successfully reloaded theme sound: ${sound} for theme: ${this.currentTheme} (buffer duration: ${audioBuffer.duration.toFixed(2)}s)`);
       } catch (error) {
-        console.error(`✗ Failed to reload theme sound: ${sound} for theme: ${this.currentTheme}`, error);
+        // Failed to reload sound
       }
     }
   }
@@ -196,10 +190,8 @@ class SoundManager {
     this.backgroundMusic.volume = this.masterVolume * 0.3; // 30% volume for background
     this.backgroundMusic.preload = 'auto';
     
-    console.log(`Starting background music for theme: ${this.currentTheme}`);
-    
-    this.backgroundMusic.play().catch((error) => {
-      console.error('Failed to play background music:', error);
+    this.backgroundMusic.play().catch(() => {
+      // Failed to play background music
     });
   }
 
@@ -211,7 +203,6 @@ class SoundManager {
       this.backgroundMusic.pause();
       this.backgroundMusic.currentTime = 0;
       this.backgroundMusic = null;
-      console.log('Stopped background music');
     }
   }
 
@@ -254,7 +245,6 @@ class SoundManager {
     const audio = new Audio(audioUrl);
     audio.volume = this.masterVolume;
     audio.preload = 'auto';
-    console.log(`Playing sound (not preloaded): ${sound} from ${isThemeSound ? 'theme' : 'generic'}`);
     
     // Store reference to prevent garbage collection
     if (!this.activeSounds) {
@@ -269,8 +259,8 @@ class SoundManager {
       }
     });
     
-    audio.play().catch((error) => {
-      console.error(`Failed to play sound: ${sound}`, error);
+    audio.play().catch(() => {
+      // Failed to play sound
     });
     
     return audio;
@@ -280,7 +270,6 @@ class SoundManager {
    * Play the correct answer sound
    */
   playCorrect() {
-    console.log(`SoundManager: Playing correct sound for theme: ${this.currentTheme}`);
     this.play('correct');
   }
 

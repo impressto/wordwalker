@@ -13,18 +13,6 @@ const CharacterShop = ({ totalPoints, ownedCharacters, currentCharacter, onPurch
   const [isReady, setIsReady] = useState(false);
   const [activeTab, setActiveTab] = useState('characters'); // 'characters' or 'themes'
 
-  // Debug logging for state issues
-  useEffect(() => {
-    console.log('[CharacterShop] State update:', {
-      totalPoints,
-      currentCharacter,
-      ownedCharacters,
-      currentTheme,
-      ownedThemes,
-      activeTab
-    });
-  }, [totalPoints, currentCharacter, ownedCharacters, currentTheme, ownedThemes, activeTab]);
-
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);

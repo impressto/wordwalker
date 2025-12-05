@@ -195,7 +195,6 @@ const parallaxThemes = {
 export const getTheme = (themeId) => {
   const theme = parallaxThemes[themeId];
   if (!theme) {
-    console.warn(`Theme "${themeId}" not found. Using default theme.`);
     return parallaxThemes.default;
   }
   return theme;

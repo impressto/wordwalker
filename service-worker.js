@@ -104,36 +104,28 @@ const AUDIO_PATTERNS = [
 
 // Install event - cache core assets
 self.addEventListener('install', event => {
-  console.log('[Service Worker] Installing...');
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('[Service Worker] Caching core assets');
-        // Cache files individually to see which ones fail
+        // Cache files individually to handle failures gracefully
         const cachePromises = CORE_ASSETS.map(url => {
-          return cache.add(url)
-            .then(() => {
-              console.log(`[Service Worker] ✅ Cached: ${url}`);
-            })
-            .catch(err => {
-              console.error(`[Service Worker] ❌ Failed to cache: ${url}`, err);
-            });
+          return cache.add(url).catch(() => {
+            // Failed to cache this asset
+          });
         });
         return Promise.all(cachePromises);
       })
       .then(() => {
-        console.log('[Service Worker] Core assets cached');
         return self.skipWaiting(); // Activate immediately
       })
-      .catch(err => {
-        console.error('[Service Worker] Install failed:', err);
+      .catch(() => {
+        // Install failed
       })
   );
 });
 
 // Activate event - clean up old caches
 self.addEventListener('activate', event => {
-  console.log('[Service Worker] Activating...');
   event.waitUntil(
     caches.keys()
       .then(cacheNames => {
@@ -144,14 +136,12 @@ self.addEventListener('activate', event => {
                 cacheName !== ASSETS_CACHE && 
                 cacheName !== AUDIO_CACHE && 
                 cacheName !== IMAGE_CACHE) {
-              console.log('[Service Worker] Deleting old cache:', cacheName);
               return caches.delete(cacheName);
             }
           })
         );
       })
       .then(() => {
-        console.log('[Service Worker] Activated');
         return self.clients.claim(); // Take control immediately
       })
   );
@@ -191,7 +181,6 @@ self.addEventListener('fetch', event => {
       .then(cachedResponse => {
         // Return cached response if found
         if (cachedResponse) {
-          console.log('[Service Worker] Serving from cache:', url);
           return cachedResponse;
         }
 
@@ -210,18 +199,14 @@ self.addEventListener('fetch', event => {
             // Cache the fetched response
             caches.open(cacheName)
               .then(cache => {
-                console.log('[Service Worker] Caching new resource:', url);
                 cache.put(request, responseToCache);
               });
 
             return response;
           })
-          .catch(error => {
-            console.error('[Service Worker] Fetch failed for:', url, error);
-            
+          .catch(() => {
             // Return offline page or fallback for navigation requests
             if (request.destination === 'document' || request.mode === 'navigate') {
-              console.log('[Service Worker] Returning cached app for navigation request');
               // Try multiple cache keys in order of preference
               return caches.match('/wordwalker/index.php')
                 .then(cached => {
@@ -234,10 +219,8 @@ self.addEventListener('fetch', event => {
                 })
                 .then(cached => {
                   if (cached) {
-                    console.log('[Service Worker] Returning cached HTML');
                     return cached;
                   }
-                  console.log('[Service Worker] No cached HTML found, returning offline page');
                   return caches.match('/wordwalker/dist/offline.html');
                 });
             }

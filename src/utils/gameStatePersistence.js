@@ -20,7 +20,7 @@ export const loadGameState = () => {
       return state;
     }
   } catch (error) {
-    console.error('Failed to load game state:', error);
+    // Failed to load game state
   }
   return null;
 };
@@ -41,7 +41,7 @@ export const saveGameState = (gameState) => {
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(serializableState));
   } catch (error) {
-    console.error('Failed to save game state:', error);
+    // Failed to save game state
   }
 };
 
@@ -52,7 +52,7 @@ export const clearGameState = () => {
   try {
     localStorage.removeItem(STORAGE_KEY);
   } catch (error) {
-    console.error('Failed to clear game state:', error);
+    // Failed to clear game state
   }
 };
 
@@ -64,7 +64,6 @@ export const hasSavedGameState = () => {
   try {
     return localStorage.getItem(STORAGE_KEY) !== null;
   } catch (error) {
-    console.error('Failed to check saved game state:', error);
     return false;
   }
 };

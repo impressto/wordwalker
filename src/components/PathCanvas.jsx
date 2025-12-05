@@ -243,13 +243,11 @@ const PathCanvas = () => {
         // Page is hidden - stop background music
         if (soundManagerRef.current) {
           soundManagerRef.current.stopBackgroundMusic();
-          console.log('Page hidden - background music stopped');
         }
       } else {
         // Page is visible again - resume background music if enabled
         if (soundManagerRef.current && audioInitialized && soundEnabled && volume > 0) {
           soundManagerRef.current.startBackgroundMusic();
-          console.log('Page visible - background music resumed');
         }
       }
     };
@@ -258,7 +256,6 @@ const PathCanvas = () => {
     const handleWindowBlur = () => {
       if (soundManagerRef.current) {
         soundManagerRef.current.stopBackgroundMusic();
-        console.log('Window lost focus - background music stopped');
       }
     };
 
@@ -266,7 +263,6 @@ const PathCanvas = () => {
     const handleWindowFocus = () => {
       if (soundManagerRef.current && audioInitialized && soundEnabled && volume > 0) {
         soundManagerRef.current.startBackgroundMusic();
-        console.log('Window regained focus - background music resumed');
       }
     };
 
@@ -281,7 +277,6 @@ const PathCanvas = () => {
     const handlePageHide = () => {
       if (soundManagerRef.current) {
         soundManagerRef.current.stopBackgroundMusic();
-        console.log('Page hide - background music stopped');
       }
     };
 
@@ -308,13 +303,11 @@ const PathCanvas = () => {
       // Search dialog opened - pause background music
       if (soundManagerRef.current) {
         soundManagerRef.current.stopBackgroundMusic();
-        console.log('Search dialog opened - background music paused');
       }
     } else {
       // Search dialog closed - resume background music if enabled
       if (soundManagerRef.current && audioInitialized && soundEnabled && volume > 0) {
         soundManagerRef.current.startBackgroundMusic();
-        console.log('Search dialog closed - background music resumed');
       }
     }
   }, [showSearch, audioInitialized, soundEnabled, volume]);
@@ -323,7 +316,6 @@ const PathCanvas = () => {
   useEffect(() => {
     if (!hasCheckedSavedState && hasSavedGameState()) {
       const loadedState = loadGameState();
-      console.log('PathCanvas - loadedState:', loadedState);
       if (loadedState) {
         const statsToSet = {
           totalPoints: loadedState.totalPoints,
@@ -332,7 +324,6 @@ const PathCanvas = () => {
           correctFirstTryIds: loadedState.correctFirstTryIds || [],
           correctAnswersByCategory: loadedState.correctAnswersByCategory || {},
         };
-        console.log('PathCanvas - statsToSet:', statsToSet);
         setSavedStats(statsToSet);
       }
       setShowResumeDialog(true);
@@ -377,7 +368,6 @@ const PathCanvas = () => {
     const loadedState = loadGameState();
     if (loadedState) {
       const convertedState = convertLoadedState(loadedState);
-      console.log('Resuming game - forkCategories:', convertedState.forkCategories);
       setTotalPoints(convertedState.totalPoints);
       setStreak(convertedState.streak);
       setSelectedPath(convertedState.selectedPath);
@@ -1188,7 +1178,6 @@ const PathCanvas = () => {
     // Use available categories if we have enough, otherwise fall back to all categories
     let categoriesToUse = availableCategories;
     if (availableCategories.length < 4) {
-      console.warn('Not enough available categories. Some completed categories will be shown again.');
       // Fall back to all categories except current one
       categoriesToUse = allCategories.filter(cat => cat !== excludeCategory);
     }
@@ -1206,8 +1195,6 @@ const PathCanvas = () => {
   };
 
   const handlePathChoice = (choice) => {
-    console.log(`User chose: ${choice} path`);
-    
     // Play choice sound
     if (soundManagerRef.current) {
       soundManagerRef.current.playChoice();
@@ -1478,14 +1465,6 @@ const PathCanvas = () => {
   const isOverCheckpoint = (canvasX, canvasY) => {
     const bounds = checkpointBoundsRef.current;
     
-    console.log('isOverCheckpoint check:', {
-      visible: bounds.visible,
-      hasQuestion: !!currentQuestion,
-      hasPath: !!selectedPath,
-      questionAnswered,
-      showQuestion
-    });
-    
     // Allow clicking checkpoint even when question dialog is shown (removed showQuestion check)
     if (!bounds.visible || !currentQuestion || !selectedPath || questionAnswered) {
       return false;
@@ -1496,14 +1475,6 @@ const PathCanvas = () => {
     const halfSize = hitAreaSize / 2;
     const distanceX = Math.abs(canvasX - bounds.x);
     const distanceY = Math.abs(canvasY - bounds.y);
-    
-    console.log('Distance check:', {
-      distanceX,
-      distanceY,
-      halfSize,
-      withinX: distanceX <= halfSize,
-      withinY: distanceY <= halfSize
-    });
     
     return distanceX <= halfSize && distanceY <= halfSize;
   };
@@ -1520,12 +1491,8 @@ const PathCanvas = () => {
     const clickX = (event.clientX - rect.left) * scaleX;
     const clickY = (event.clientY - rect.top) * scaleY;
 
-    console.log('Canvas clicked at:', clickX, clickY);
-    console.log('Checkpoint bounds:', checkpointBoundsRef.current);
-
     if (isOverCheckpoint(clickX, clickY)) {
       // Checkpoint was clicked - show hint popup
-      console.log('Checkpoint clicked!');
       setShowCheckpointHint(true);
       
       // Play a subtle sound effect

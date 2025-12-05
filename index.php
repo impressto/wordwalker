@@ -137,8 +137,6 @@ $version = $packageJson['version'] ?? '1.0.0';
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('service-worker.js')
                     .then(registration => {
-                        console.log('✅ Service Worker registered:', registration.scope);
-                        
                         // Check for updates every 60 seconds
                         setInterval(() => {
                             registration.update();
@@ -147,43 +145,36 @@ $version = $packageJson['version'] ?? '1.0.0';
                         // Handle service worker updates
                         registration.addEventListener('updatefound', () => {
                             const newWorker = registration.installing;
-                            console.log('🔄 New Service Worker found, installing...');
                             
                             newWorker.addEventListener('statechange', () => {
                                 if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                                    console.log('✨ New Service Worker installed, reload to update');
                                     // Optionally show a notification to the user
                                     // You could add a toast notification here
                                 }
                             });
                         });
                     })
-                    .catch(error => {
-                        console.log('❌ Service Worker registration failed:', error);
+                    .catch(() => {
+                        // Service Worker registration failed
                     });
             });
             
             // Handle service worker controller changes
             navigator.serviceWorker.addEventListener('controllerchange', () => {
-                console.log('🔄 Service Worker controller changed');
                 // Optionally reload the page when a new service worker takes control
                 // window.location.reload();
             });
-        } else {
-            console.log('⚠️ Service Workers are not supported in this browser');
         }
         
         // Install prompt for PWA
         let deferredPrompt;
         window.addEventListener('beforeinstallprompt', (e) => {
-            console.log('💾 Install prompt available');
             e.preventDefault();
             deferredPrompt = e;
             // You could show an install button here
         });
         
         window.addEventListener('appinstalled', () => {
-            console.log('✅ PWA was installed');
             deferredPrompt = null;
         });
     </script>
