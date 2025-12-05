@@ -1677,4 +1677,15 @@ export const entertainmentQuestions = [
     category: 'entertainment',
     difficulty: 'easy',
   },
+  {
+    id: 'entertainment_153',
+    emoji: '🤯',
+    question: '¿Cómo describes un espectáculo que te sorprende muchísimo?',
+    options: ['alucinante', 'aburrido', 'normal'],
+    correctAnswer: 'alucinante',
+    hint: 'Mind-blowing - "alucinante", incredibly amazing entertainment that blows your mind',
+    points: 10,
+    category: 'entertainment',
+    difficulty: 'medium',
+  },
 ];

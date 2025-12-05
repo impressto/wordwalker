@@ -59,5 +59,6 @@ export const emergenciesTranslations = {
   "emergencies_051": "What causes contagious diseases?",
   "emergencies_052": "What do they do to diagnose diseases?",
   "emergencies_053": "What laboratory test identifies bacteria?",
-  "emergencies_054": "What test studies your DNA?"
+  "emergencies_054": "What test studies your DNA?",
+  "emergencies_055": "What does a blind person use to walk?"
 };

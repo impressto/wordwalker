@@ -139,5 +139,6 @@ export const entertainmentAnswerTranslations = {
   "la galería": "the gallery",
   "la tragedia": "the tragedy",
   "los artistas callejeros": "the street performers",
-  "el mago": "the magician"
+  "el mago": "the magician",
+  "alucinante": "mind-blowing / amazing"
 };

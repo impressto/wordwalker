@@ -109,5 +109,7 @@ export const dailyRoutinesTranslations = {
   "daily_101": "What do you do with used plastic and paper?",
   "daily_102": "What tool do you use to cut wood?",
   "daily_103": "Where do you store the tools?",
-  "daily_104": "What tool do you use to drive nails into wood?"
+  "daily_104": "What tool do you use to drive nails into wood?",
+  "daily_105": "What do you clean dishes and surfaces with?",
+  "daily_106": "What do you set to catch mice?"
 };

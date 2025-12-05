@@ -105,5 +105,12 @@ export const peopleAnswerTranslations = {
   "el anciano": "the elderly person",
   "la persona": "the person",
   "la gente": "the people",
-  "la lengua": "the tongue"
+  "la lengua": "the tongue",
+  "restricción de edad": "age restriction",
+  "le doy de comer": "I feed him/her",
+  "el impostor": "the imposter",
+  "la depresión": "depression",
+  "el desamor": "heartbreak",
+  "para que se haga lo correcto": "so that the right thing is done",
+  "visito su tumba": "I visit their grave"
 };
