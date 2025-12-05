@@ -24,7 +24,7 @@ const themeShopConfig = {
       id: 'jamaica',
       name: 'Jamaica Beach',
       description: 'Tropical beach landscape',
-      cost: 250,
+      cost: 50,
       thumbnail: 'scene.jpg', // Located at public/images/themes/jamaica/scene.jpg
     },
     {
