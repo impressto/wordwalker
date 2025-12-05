@@ -1,6 +1,6 @@
 /**
  * Directions Category Answer Translations
- * Auto-generated from answer-translations.js
+ * Auto-generated
  * Category: directions
  * Total translations: 49
  */

@@ -1,6 +1,6 @@
 /**
  * Daily routines Category Answer Translations
- * Auto-generated from answer-translations.js
+ * Auto-generated
  * Category: daily_routines
  * Total translations: 3
  */

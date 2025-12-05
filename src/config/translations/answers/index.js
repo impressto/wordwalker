@@ -2,8 +2,7 @@
  * Unified Answer Translations Index
  * Aggregates all category-based answer translations
  * 
- * This file provides backward compatibility with the original
- * answer-translations.js structure while organizing translations
+ * This file provides a unified interface while organizing translations
  * by category for better maintainability.
  */
 

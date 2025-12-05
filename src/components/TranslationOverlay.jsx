@@ -4,7 +4,7 @@
  * Also displays streak bonus when a milestone is reached
  */
 
-import { translations } from '../config/answer-translations/index';
+import { translations } from '../config/translations/answers/index';
 import gameSettings, { getStreakColor, getStreakGradientColor } from '../config/gameSettings';
 
 const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, hintUsed = false }) => {

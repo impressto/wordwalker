@@ -1,6 +1,6 @@
 /**
  * Entertainment Category Answer Translations
- * Auto-generated from answer-translations.js
+ * Auto-generated
  * Category: entertainment
  * Total translations: 132
  */

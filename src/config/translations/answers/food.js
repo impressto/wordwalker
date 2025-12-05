@@ -1,6 +1,6 @@
 /**
  * Food Category Answer Translations
- * Auto-generated from answer-translations.js
+ * Auto-generated
  * Category: food
  * Total translations: 140
  */

@@ -1,6 +1,6 @@
 /**
  * Emergencies Category Answer Translations
- * Auto-generated from answer-translations.js
+ * Auto-generated
  * Category: emergencies
  * Total translations: 42
  */

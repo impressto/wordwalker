@@ -1,6 +1,6 @@
 /**
  * People Category Answer Translations
- * Auto-generated from answer-translations.js
+ * Auto-generated
  * Category: people
  * Total translations: 99
  */

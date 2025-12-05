@@ -1,6 +1,6 @@
 /**
  * Accommodation Category Answer Translations
- * Auto-generated from answer-translations.js
+ * Auto-generated
  * Category: accommodation
  * Total translations: 147
  */

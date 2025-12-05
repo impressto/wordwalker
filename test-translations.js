@@ -5,7 +5,7 @@
  * Tests that all translations are accessible and search works correctly
  */
 
-import { translations, getTranslation, hasTranslation } from './src/config/answer-translations/index.js';
+import { translations, getTranslation, hasTranslation } from './src/config/translations/answers/index.js';
 
 console.log('🧪 Testing Answer Translations...\n');
 

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Script to extract category-based translations from answer-translations.js
+ * Script to extract category-based translations from answer translations
  * by matching correctAnswer values from question files
  */
 
@@ -13,7 +13,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Import the full translations object
-import { translations } from './src/config/answer-translations.js';
+import { translations } from './src/config/translations/answers/index.js';
 
 // Category question files to process
 const categories = [
@@ -106,7 +106,7 @@ async function generateTranslationFiles() {
   }
 
   // Create the output directory
-  const outputDir = path.join(__dirname, 'src/config/answer-translations');
+  const outputDir = path.join(__dirname, 'src/config/translations/answers');
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });
   }
@@ -120,7 +120,7 @@ async function generateTranslationFiles() {
     // Generate the file content
     const fileContent = `/**
  * ${category.charAt(0).toUpperCase() + category.slice(1).replace(/_/g, ' ')} Category Answer Translations
- * Auto-generated from answer-translations.js
+ * Auto-generated
  * Category: ${category}
  * Total translations: ${stats.found}
  */
@@ -148,8 +148,7 @@ export const ${category.replace(/_/g, '')}AnswerTranslations = ${JSON.stringify(
  * Unified Answer Translations Index
  * Aggregates all category-based answer translations
  * 
- * This file provides backward compatibility with the original
- * answer-translations.js structure while organizing translations
+ * This file provides a unified interface while organizing translations
  * by category for better maintainability.
  */
 
@@ -195,11 +194,11 @@ export function hasTranslation(spanish) {
   console.log(`  Total missing: ${totalMissing}`);
   
   console.log('\n✅ Translation extraction complete!\n');
-  console.log('📁 Files created in: src/config/answer-translations/\n');
+  console.log('📁 Files created in: src/config/translations/answers/\n');
   console.log('Next steps:');
   console.log('  1. Review the generated files');
   console.log('  2. Update imports in components to use:');
-  console.log('     import { translations } from \'../config/answer-translations\';');
+  console.log('     import { translations } from \'../config/translations/answers\';');
   console.log('  3. Optionally backup and remove old answer-translations.js\n');
 }
 

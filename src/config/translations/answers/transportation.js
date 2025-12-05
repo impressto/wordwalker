@@ -1,6 +1,6 @@
 /**
  * Transportation Category Answer Translations
- * Auto-generated from answer-translations.js
+ * Auto-generated
  * Category: transportation
  * Total translations: 140
  */

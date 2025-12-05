@@ -1,6 +1,6 @@
 /**
  * Grammar Category Answer Translations
- * Auto-generated from answer-translations.js
+ * Auto-generated
  * Category: grammar
  * Total translations: 159
  */

@@ -1,6 +1,6 @@
 /**
  * Weather Category Answer Translations
- * Auto-generated from answer-translations.js
+ * Auto-generated
  * Category: weather
  * Total translations: 96
  */

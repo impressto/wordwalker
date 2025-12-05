@@ -1,6 +1,6 @@
 /**
  * Numbers Category Answer Translations
- * Auto-generated from answer-translations.js
+ * Auto-generated
  * Category: numbers
  * Total translations: 180
  */
