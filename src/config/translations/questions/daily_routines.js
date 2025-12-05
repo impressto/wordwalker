@@ -106,5 +106,8 @@ export const dailyRoutinesTranslations = {
   "daily_098": "What do you do in the pool?",
   "daily_099": "What do you plan for the day?",
   "daily_100": "What do you do at the end of the day?",
-  "daily_101": "What do you do with used plastic and paper?"
+  "daily_101": "What do you do with used plastic and paper?",
+  "daily_102": "What tool do you use to cut wood?",
+  "daily_103": "Where do you store the tools?",
+  "daily_104": "What tool do you use to drive nails into wood?"
 };

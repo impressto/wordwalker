@@ -675,4 +675,15 @@ export const animalsQuestions = [
     category: 'animals',
     difficulty: 'easy',
   },
+  {
+    id: 'animals_066',
+    emoji: '🦨',
+    question: '¿Qué animal tiene rayas blancas y negras y produce mal olor?',
+    options: ['el zorrillo', 'la mofeta', 'el tejón'],
+    correctAnswer: 'el zorrillo',
+    hint: 'Skunk - black and white striped animal, sprays bad smell for defense',
+    points: 5,
+    category: 'animals',
+    difficulty: 'easy',
+  },
 ];

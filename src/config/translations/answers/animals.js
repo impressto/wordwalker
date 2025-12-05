@@ -63,5 +63,6 @@ export const animalsAnswerTranslations = {
   "el toro": "the bull",
   "el gallo": "the rooster",
   "la gallina": "the chicken/hen",
-  "el pollito": "the chick"
+  "el pollito": "the chick",
+  "el zorrillo": "the skunk"
 };

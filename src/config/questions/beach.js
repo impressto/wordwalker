@@ -1112,4 +1112,15 @@ export const beachQuestions = [
     category: 'beach',
     difficulty: 'easy',
   },
+  {
+    id: 'beach_101',
+    emoji: '🌵',
+    question: '¿Qué planta tiene espinas y crece en el desierto?',
+    options: ['el cactus', 'la palmera', 'el aloe'],
+    correctAnswer: 'el cactus',
+    hint: 'Cactus - desert plant with spines, stores water, survives in hot dry climates',
+    points: 5,
+    category: 'beach',
+    difficulty: 'easy',
+  },
 ];

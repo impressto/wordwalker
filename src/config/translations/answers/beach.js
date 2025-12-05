@@ -95,5 +95,6 @@ export const beachAnswerTranslations = {
   "levantar pesas": "lift weights",
   "la gimnasia": "the gymnastics",
   "el yoga": "the yoga",
-  "el circo": "the circus"
+  "el circo": "the circus",
+  "el cactus": "the cactus"
 };

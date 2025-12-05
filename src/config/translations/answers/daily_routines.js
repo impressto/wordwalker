@@ -106,5 +106,8 @@ export const dailyroutinesAnswerTranslations = {
   "nado": "I swim",
   "organizo mis tareas": "I organize my tasks",
   "reflexiono": "I reflect",
-  "reciclo": "I recycle"
+  "reciclo": "I recycle",
+  "la sierra": "the saw",
+  "en la caja de herramientas": "in the toolbox",
+  "el martillo": "the hammer"
 };

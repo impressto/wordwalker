@@ -1741,4 +1741,15 @@ export const shoppingQuestions = [
     category: 'shopping',
     difficulty: 'medium',
   },
+  {
+    id: 'shopping_159',
+    emoji: '💱',
+    question: '¿Qué haces cuando cambias dólares por euros?',
+    options: ['cambio moneda', 'compro dinero', 'vendo billetes'],
+    correctAnswer: 'cambio moneda',
+    hint: 'Exchange currency - "cambiar moneda", converting one currency to another',
+    points: 10,
+    category: 'shopping',
+    difficulty: 'medium',
+  },
 ];
