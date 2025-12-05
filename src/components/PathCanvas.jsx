@@ -7,7 +7,7 @@ import gameSettings, { getStreakColor, getTranslationBoxDuration } from '../conf
 import { getTheme } from '../config/parallaxThemes';
 import { getSpriteSheetConfig } from '../config/characterConfig';
 import { setActiveTheme } from '../utils/themeManager';
-import SoundManager from '../soundManager';
+import SoundManager from '../utils/soundManager';
 import { loadGameState, saveGameState, clearGameState, hasSavedGameState, convertLoadedState } from '../utils/gameStatePersistence';
 import { useCharacterAndTheme } from '../hooks/useCharacterAndTheme';
 import ScoreDisplay from './ScoreDisplay';
