@@ -115,4 +115,5 @@ export const peopleTranslations = {
   "people_098": "How do you say 'elderly person'?",
   "people_099": "How do you say 'person'?",
   "people_100": "How do you say 'people' (collective)?",
+  "people_101": "What do you taste food with?",
 };

@@ -55,5 +55,7 @@ export const emergenciesTranslations = {
   "emergencies_047": "What do you measure fever with?",
   "emergencies_048": "What breaks in a fracture?",
   "emergencies_049": "What do you use with a broken bone?",
-  "emergencies_050": "What personnel helps you in an emergency?"
+  "emergencies_050": "What personnel helps you in an emergency?",
+  "emergencies_051": "What causes contagious diseases?",
+  "emergencies_052": "What do they do to diagnose diseases?"
 };

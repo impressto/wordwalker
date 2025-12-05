@@ -1117,4 +1117,15 @@ export const restaurantQuestions = [
     category: 'restaurant',
     difficulty: 'medium',
   },
+  {
+    id: 'rest_101',
+    emoji: '🚬',
+    question: '¿Qué está prohibido en muchos restaurantes?',
+    options: ['fumar', 'comer', 'beber'],
+    correctAnswer: 'fumar',
+    hint: 'Smoking - not allowed in most restaurants, "prohibido fumar"',
+    points: 5,
+    category: 'restaurant',
+    difficulty: 'easy',
+  },
 ];

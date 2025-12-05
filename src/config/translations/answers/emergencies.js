@@ -47,5 +47,7 @@ export const emergenciesAnswerTranslations = {
   "la sangre": "the blood",
   "el hueso": "the bone",
   "las muletas": "the crutches",
-  "el paramédico": "the paramedic"
+  "el paramédico": "the paramedic",
+  "la infección": "the infection",
+  "el análisis": "the test / analysis"
 };

@@ -104,5 +104,6 @@ export const peopleAnswerTranslations = {
   "el adulto": "the adult",
   "el anciano": "the elderly person",
   "la persona": "the person",
-  "la gente": "the people"
+  "la gente": "the people",
+  "la lengua": "the tongue"
 };

@@ -104,5 +104,6 @@ export const restaurantAnswerTranslations = {
   "¿dónde está el baño?": "where is the bathroom?",
   "¡buen provecho!": "enjoy your meal!",
   "del vaso": "from the glass",
-  "en el plato": "on the plate"
+  "en el plato": "on the plate",
+  "fumar": "to smoke"
 };

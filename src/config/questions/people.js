@@ -1113,4 +1113,15 @@ export const peopleQuestions = [
     category: 'people',
     difficulty: 'medium',
   },
+  {
+    id: 'people_101',
+    emoji: '👅',
+    question: '¿Con qué saboreas la comida?',
+    options: ['la lengua', 'la boca', 'los labios'],
+    correctAnswer: 'la lengua',
+    hint: 'Tongue - organ for taste and speech, from Latin "lingua"',
+    points: 5,
+    category: 'people',
+    difficulty: 'easy',
+  },
 ];
