@@ -51,6 +51,5 @@ export const emergenciesAnswerTranslations = {
   "la infección": "the infection",
   "el análisis": "the test / analysis",
   "el cultivo": "the culture",
-  "la prueba genética": "the genetic test",
-  "el bastón blanco": "the white cane"
+  "la prueba genética": "the genetic test"
 };

@@ -1662,4 +1662,15 @@ export const transportationQuestions = [
     category: 'transportation',
     difficulty: 'hard',
   },
+  {
+    id: 'transportation_151',
+    emoji: '🌁',
+    question: '¿Qué estructura cruza un río o valle?',
+    options: ['el puente', 'el túnel', 'la carretera'],
+    correctAnswer: 'el puente',
+    hint: 'Bridge - structure that spans across obstacles like rivers or valleys',
+    points: 5,
+    category: 'transportation',
+    difficulty: 'easy',
+  },
 ];

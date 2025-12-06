@@ -1169,17 +1169,6 @@ export const peopleQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'people_106',
-    emoji: '💔',
-    question: '¿Cómo se llama el dolor emocional de perder un amor?',
-    options: ['el desamor', 'la felicidad', 'el amor'],
-    correctAnswer: 'el desamor',
-    hint: 'Heartbreak - "desamor", emotional pain from lost love or romantic disappointment',
-    points: 10,
-    category: 'people',
-    difficulty: 'medium',
-  },
-  {
     id: 'people_107',
     emoji: '⚖️',
     question: '¿Por qué las personas buscan la justicia?',

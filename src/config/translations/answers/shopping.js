@@ -149,5 +149,8 @@ export const shoppingAnswerTranslations = {
   "el cargador de teléfono": "phone charger",
   "el cable del cargador": "charger cable",
   "la barbería": "the barbershop",
-  "cambio moneda": "I exchange currency"
+  "cambio moneda": "I exchange currency",
+  "las tijeras": "the scissors",
+  "el esmalte de uñas": "the nail polish",
+  "el cajero automático": "the ATM"
 };

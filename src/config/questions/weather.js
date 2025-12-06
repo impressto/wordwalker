@@ -1128,4 +1128,15 @@ export const weatherQuestions = [
     category: 'weather',
     difficulty: 'easy',
   },
+  {
+    id: 'weather_102',
+    emoji: '🌓',
+    question: '¿Cómo se llama cuando la luna está mitad iluminada?',
+    options: ['la media luna', 'la luna llena', 'la luna nueva'],
+    correctAnswer: 'la media luna',
+    hint: 'Half moon - lunar phase when half of the moon is illuminated',
+    points: 5,
+    category: 'weather',
+    difficulty: 'easy',
+  },
 ];

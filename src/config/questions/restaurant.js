@@ -1128,4 +1128,15 @@ export const restaurantQuestions = [
     category: 'restaurant',
     difficulty: 'easy',
   },
+  {
+    id: 'rest_102',
+    emoji: '🏮',
+    question: '¿Qué ilumina y decora un restaurante elegante?',
+    options: ['las lámparas', 'las mesas', 'los platos'],
+    correctAnswer: 'las lámparas',
+    hint: 'Lamps/lanterns - decorative lighting creates ambiance in fancy restaurants',
+    points: 10,
+    category: 'restaurant',
+    difficulty: 'medium',
+  },
 ];

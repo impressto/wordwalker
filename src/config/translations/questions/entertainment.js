@@ -158,5 +158,8 @@ export const entertainmentTranslations = {
   "entertainment_151": "What are artists called who perform on the street?",
   "entertainment_152": "What is a person called who performs magic tricks?",
   "entertainment_153": "How do you describe a show that surprises you tremendously?",
-  "entertainment_154": "What type of music and dance show is seen at resorts?"
+  "entertainment_154": "What type of music and dance show is seen at resorts?",
+  "entertainment_155": "What games have digital characters and levels?",
+  "entertainment_156": "What show has colorful explosions in the sky?",
+  "entertainment_157": "What do actors wear to cover their face?"
 };

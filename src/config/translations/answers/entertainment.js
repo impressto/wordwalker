@@ -141,5 +141,8 @@ export const entertainmentAnswerTranslations = {
   "los artistas callejeros": "the street performers",
   "el mago": "the magician",
   "alucinante": "mind-blowing / amazing",
-  "el show de Michael Jackson": "the Michael Jackson show"
+  "el show de Michael Jackson": "the Michael Jackson show",
+  "los videojuegos": "the video games",
+  "los fuegos artificiales": "the fireworks",
+  "la máscara": "the mask"
 };

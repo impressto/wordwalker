@@ -145,5 +145,6 @@ export const transportationAnswerTranslations = {
   "el chaleco reflectante": "the reflective vest",
   "el coche eléctrico": "the electric car",
   "la estación de carga": "the charging station",
-  "el coche autónomo": "the autonomous car"
+  "el coche autónomo": "the autonomous car",
+  "el puente": "the bridge"
 };

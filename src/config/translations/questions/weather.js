@@ -120,4 +120,5 @@ export const weatherTranslations = {
   "weather_099": "What line divides the Earth into hemispheres?",
   "weather_100": "What do you see first, the lightning or the thunder?",
   "weather_101": "What do you use when you walk in the rain?",
+  "weather_102": "What is it called when the moon is half illuminated?",
 };

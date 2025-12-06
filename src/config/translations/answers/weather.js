@@ -103,5 +103,6 @@ export const weatherAnswerTranslations = {
   "ecuador": "equator",
   "el relámpago": "the lightning",
   "los árboles": "the trees",
-  "el paraguas": "the umbrella"
+  "el paraguas": "the umbrella",
+  "la media luna": "the half moon"
 };

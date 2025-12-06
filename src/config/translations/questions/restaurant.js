@@ -120,4 +120,5 @@ export const restaurantTranslations = {
   "rest_099": "What do you ask to find the bathroom?",
   "rest_100": "What do you say to enjoy the meal?",
   "rest_101": "What is prohibited in many restaurants?",
+  "rest_102": "What illuminates and decorates an elegant restaurant?",
 };

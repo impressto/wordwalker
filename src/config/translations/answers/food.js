@@ -102,7 +102,6 @@ export const foodAnswerTranslations = {
   "las palomitas": "the popcorn",
   "la galleta de la fortuna": "the fortune cookie",
   "la magdalena": "the cupcake / muffin",
-  "el dango": "the dango",
   "el pastel de luna": "the mooncake",
   "el durazno": "the peach",
   "el pescado": "the fish",

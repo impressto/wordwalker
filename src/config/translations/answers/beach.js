@@ -98,5 +98,11 @@ export const beachAnswerTranslations = {
   "el circo": "the circus",
   "el cactus": "the cactus",
   "tomar una selfie": "take a selfie",
-  "sudar": "sweat"
+  "sudar": "sweat",
+  "el parasailing": "parasailing",
+  "hacer parasailing": "go parasailing",
+  "el paravelismo": "paragliding",
+  "la cabaña": "the hut/cabin",
+  "la palapa": "the palapa/thatched hut",
+  "el chiringuito": "the beach bar/hut"
 };

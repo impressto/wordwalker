@@ -104,7 +104,6 @@ export const foodTranslations = {
   "food_096": "What do you eat at the movies?",
   "food_097": "What Chinese cookie has a message inside?",
   "food_098": "What small dessert has pleated paper?",
-  "food_099": "What Japanese candy is on sticks?",
   "food_100": "What Chinese cake is eaten in autumn?",
   "food_101": "What summer fruit has fuzzy skin?",
   "food_102": "What tropical fruit has a large pit?",

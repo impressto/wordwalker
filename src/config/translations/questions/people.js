@@ -120,7 +120,6 @@ export const peopleTranslations = {
   "people_103": "What do you do when a baby is hungry?",
   "people_104": "What do you call someone who pretends to be another person?",
   "people_105": "What is the emotional state of deep sadness called?",
-  "people_106": "What is the emotional pain of losing a love called?",
   "people_107": "Why do people seek justice?",
   "people_108": "What do you do when you visit a deceased family member?",
   "people_109": "What does someone do when they say rude words?",

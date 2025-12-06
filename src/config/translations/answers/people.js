@@ -110,7 +110,6 @@ export const peopleAnswerTranslations = {
   "le doy de comer": "I feed him/her",
   "el impostor": "the imposter",
   "la depresión": "depression",
-  "el desamor": "heartbreak",
   "para que se haga lo correcto": "so that the right thing is done",
   "visito su tumba": "I visit their grave",
   "maldice": "he/she swears / curses"

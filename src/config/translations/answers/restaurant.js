@@ -105,5 +105,6 @@ export const restaurantAnswerTranslations = {
   "¡buen provecho!": "enjoy your meal!",
   "del vaso": "from the glass",
   "en el plato": "on the plate",
-  "fumar": "to smoke"
+  "fumar": "to smoke",
+  "las lámparas": "the lamps / lanterns"
 };

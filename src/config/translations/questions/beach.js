@@ -108,5 +108,7 @@ export const beachTranslations = {
   "beach_100": "What entertainment is it?",
   "beach_101": "What plant has spines and grows in the desert?",
   "beach_102": "What are you doing?",
-  "beach_103": "What do you do on a very hot day?"
+  "beach_103": "What do you do on a very hot day?",
+  "beach_104": "What water activity is it?",
+  "beach_105": "What structure do you find on the beach at a resort?"
 };

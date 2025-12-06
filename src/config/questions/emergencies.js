@@ -601,16 +601,5 @@ export const emergenciesQuestions = [
     points: 15,
     category: 'emergencies',
     difficulty: 'hard',
-  },
-  {
-    id: 'emergencies_055',
-    emoji: '🦯',
-    question: '¿Qué usa una persona ciega para caminar?',
-    options: ['el bastón blanco', 'el bastón', 'la guía'],
-    correctAnswer: 'el bastón blanco',
-    hint: 'White cane - mobility aid for blind/visually impaired, internationally recognized symbol',
-    points: 10,
-    category: 'emergencies',
-    difficulty: 'medium',
-  },
+  }
 ];

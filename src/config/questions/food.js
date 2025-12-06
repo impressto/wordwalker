@@ -1096,17 +1096,6 @@ export const foodQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'food_099',
-    emoji: '🍡',
-    question: '¿Qué dulce japonés está en palitos?',
-    options: ['el dango', 'el mochi', 'el wagashi'],
-    correctAnswer: 'el dango',
-    hint: 'Japanese rice dumpling on skewers - sweet, chewy, colorful',
-    points: 15,
-    category: 'food',
-    difficulty: 'hard',
-  },
-  {
     id: 'food_100',
     emoji: '🥮',
     question: '¿Qué pastel chino se come en otoño?',

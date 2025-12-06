@@ -163,5 +163,8 @@ export const shoppingTranslations = {
   "shopping_156": "What do you need to charge your phone?",
   "shopping_157": "What cable connects the charger to the phone?",
   "shopping_158": "Where do you go to get your hair cut?",
-  "shopping_159": "What do you do when you exchange dollars for euros?"
+  "shopping_159": "What do you do when you exchange dollars for euros?",
+  "shopping_160": "What do you use to cut paper?",
+  "shopping_161": "What do you put on your nails?",
+  "shopping_162": "Where do you take money out from the bank?"
 };

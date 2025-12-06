@@ -64,5 +64,10 @@ export const animalsAnswerTranslations = {
   "el gallo": "the rooster",
   "la gallina": "the chicken/hen",
   "el pollito": "the chick",
-  "el zorrillo": "the skunk"
+  "el zorrillo": "the skunk",
+  "el pingüino": "the penguin",
+  "la nutria": "the otter",
+  "el gorrión": "the sparrow",
+  "el ganso": "the goose",
+  "la mosca": "the fly"
 };

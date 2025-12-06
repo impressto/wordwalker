@@ -66,5 +66,10 @@ export const animalsTranslations = {
   "animals_063": "What is the male chicken that crows in the morning called?",
   "animals_064": "What farm bird lays eggs?",
   "animals_065": "What is the baby that comes out of the egg called?",
-  "animals_066": "What animal has black and white stripes and produces a bad smell?"
+  "animals_066": "What animal has black and white stripes and produces a bad smell?",
+  "animals_067": "What bird swims but doesn't fly?",
+  "animals_068": "What playful animal swims in rivers?",
+  "animals_069": "What small bird is common in cities?",
+  "animals_070": "What bird has a long neck and goes 'honk'?",
+  "animals_071": "What annoying insect flies around the house?"
 };
