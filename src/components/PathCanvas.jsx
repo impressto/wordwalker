@@ -1693,7 +1693,7 @@ const PathCanvas = () => {
       />
 
       {/* Top Logo */}
-      <TopLogo />
+      <TopLogo onClick={() => setShowResumeDialog(true)} />
 
       {/* Search Button - Top Right */}
       <SearchButton onClick={handleSearchClick} />

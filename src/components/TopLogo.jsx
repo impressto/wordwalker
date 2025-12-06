@@ -1,4 +1,4 @@
-const TopLogo = () => {
+const TopLogo = ({ onClick }) => {
   return (
     <div style={{
       position: 'absolute',
@@ -10,10 +10,12 @@ const TopLogo = () => {
       <img 
         src={`${import.meta.env.BASE_URL || '/'}images/top-logo.png`}
         alt="WordWalk Logo"
+        onClick={onClick}
         style={{
           maxWidth: '200px',
           height: 'auto',
           display: 'block',
+          cursor: 'pointer',
         }}
       />
     </div>
