@@ -601,5 +601,16 @@ export const emergenciesQuestions = [
     points: 15,
     category: 'emergencies',
     difficulty: 'hard',
+  },
+  {
+    id: 'emergencies_055',
+    emoji: '🩻',
+    question: '¿Qué imagen médica te toman para ver los huesos?',
+    options: ['la radiografía', 'los rayos X', 'la placa'],
+    correctAnswer: 'la radiografía',
+    hint: 'X-ray - medical imaging to see bones, "rayos X" is X-rays, "placa" colloquial',
+    points: 10,
+    category: 'emergencies',
+    difficulty: 'medium',
   }
 ];

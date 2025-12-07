@@ -1810,4 +1810,15 @@ export const foodQuestions = [
     category: 'food',
     difficulty: 'medium',
   },
+  {
+    id: 'food_164',
+    emoji: '🍋‍🟩',
+    question: '¿Qué fruta cítrica verde usas en tacos y ceviche?',
+    options: ['el limón', 'la lima', 'el limón verde'],
+    correctAnswer: 'el limón',
+    hint: 'Lime - green citrus fruit, essential in Mexican cuisine for tacos and ceviche, "limón" in Spanish',
+    points: 10,
+    category: 'food',
+    difficulty: 'medium',
+  },
 ];

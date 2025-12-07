@@ -167,5 +167,6 @@ export const foodTranslations = {
   "food_160": "What spicy red sauce accompanies many meals?",
   "food_161": "What red condiment comes in a bottle?",
   "food_162": "What small green vegetable comes in a pod?",
-  "food_163": "What do babies drink?"
+  "food_163": "What do babies drink?",
+  "food_164": "What green citrus fruit do you use in tacos and ceviche?"
 };

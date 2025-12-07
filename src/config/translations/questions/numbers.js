@@ -94,6 +94,10 @@ export const numbersTranslations = {
   "numbers_73": "How do you say 'rainbow'?",
   "numbers_74": "How do you say 'light' (color)?",
   "numbers_75": "How do you say 'dark' (color)?",
+  "numbers_76": "What time is it?",
+  "numbers_77": "What time is it?",
+  "numbers_78": "What time is it?",
+  "numbers_79": "What time is it?",
 
   // GRAMMAR CATEGORY
   // Subject Pronouns (8 questions)

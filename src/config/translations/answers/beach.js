@@ -109,5 +109,9 @@ export const beachAnswerTranslations = {
   "el campo de golf": "the golf course",
   "visitar monumentos": "visit monuments",
   "tirar basura": "litter/throw trash",
-  "el parque de diversiones": "the amusement park"
+  "el parque de diversiones": "the amusement park",
+  "la montaña rusa": "the roller coaster",
+  "la noria": "the ferris wheel",
+  "el voleibol de playa": "beach volleyball",
+  "las toallas": "the towels"
 };

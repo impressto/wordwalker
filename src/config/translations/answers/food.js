@@ -146,5 +146,6 @@ export const foodAnswerTranslations = {
   "la salsa picante": "hot sauce",
   "el ketchup": "ketchup",
   "los guisantes": "the peas",
-  "la fórmula para bebés": "baby formula"
+  "la fórmula para bebés": "baby formula",
+  "el limón": "the lime"
 };

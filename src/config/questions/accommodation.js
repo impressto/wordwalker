@@ -1759,4 +1759,15 @@ export const accommodationQuestions = [
     category: 'accommodation',
     difficulty: 'easy',
   },
+  {
+    id: 'accommodation_161',
+    emoji: '⛲️',
+    question: '¿Qué decoración de agua encuentras en el hotel o resort?',
+    options: ['la fuente', 'la piscina', 'el jacuzzi'],
+    correctAnswer: 'la fuente',
+    hint: 'Fountain - decorative water feature at hotels/resorts, from Latin "fons" (spring)',
+    points: 10,
+    category: 'accommodation',
+    difficulty: 'medium',
+  },
 ];

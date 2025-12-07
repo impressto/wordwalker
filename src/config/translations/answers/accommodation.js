@@ -157,5 +157,6 @@ export const accommodationAnswerTranslations = {
   "el destapacaños": "the plunger",
   "está deteriorado": "it's run-down/deteriorated",
   "un masaje": "a massage",
-  "el wifi": "the WiFi"
+  "el wifi": "the WiFi",
+  "la fuente": "the fountain"
 };

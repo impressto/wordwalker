@@ -115,5 +115,9 @@ export const beachTranslations = {
   "beach_107": "Where do you play golf?",
   "beach_108": "What do you do when you visit historical places?",
   "beach_109": "What is prohibited to do at the beach?",
-  "beach_110": "Where do you take kids to ride attractions?"
+  "beach_110": "Where do you take kids to ride attractions?",
+  "beach_111": "What thrilling attraction do you find at the amusement park?",
+  "beach_112": "What attraction rotates slowly and has seats to sit in?",
+  "beach_113": "What team sport do you play on the sand?",
+  "beach_114": "What do you ask for at the resort to dry off after swimming?"
 };
