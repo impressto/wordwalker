@@ -1,3 +1,4 @@
+
 ![logoscreen](https://github.com/user-attachments/assets/038ca3b7-e58b-4411-921e-2007735e8d9b)
 
 # WordWalker 🚶‍♂️📚
@@ -39,7 +40,32 @@ WordWalker is a gamified Spanish language learning application that transforms v
 
 ---
 
-## 🚀 Getting Started
+### Screenshots
+
+**Northern Japanese Countryside** - feels cool and crisp, with paths winding past deciduous and conifer forests and snow-tipped hills. The air smells of pine and damp earth, a mountain stream runs clear beside you, and the only sounds are distant crows, rustling trees, and your own footsteps.
+
+![scene](https://github.com/user-attachments/assets/b6a78562-74bc-4838-8bce-92770f6c9ce7)
+
+--------------------------------------------------------------
+**Jamaican Beach** - usually curves in a soft stretches beside calm turquoise water.  They usually have a warm breeze, and loungers  lining the shore.  Light reggae music drifts from a nearby bar.
+
+![scene](https://github.com/user-attachments/assets/8e1dd765-7b85-4847-b818-98e78933da5d)
+
+--------------------------------------------------------------
+**Hong Kong Market** - some of the liveliest, most colorful places in the city with a mix of food, culture, noise, and music.
+
+![scene](https://github.com/user-attachments/assets/8c1983d3-2c18-470b-8cb7-216db2491fc0)
+
+--------------------------------------------------------------
+**Día de (los) Muertos in a Mexican Village** - a holiday traditionally celebrated in early November. The multi-day holiday involves family and friends gathering to pay respects and remember friends and family members who have died.
+
+![scene](https://github.com/user-attachments/assets/d8112f3f-f662-465e-9b8d-46a97ab2c383)
+
+--------------------------------------------------------------
+## 🚀 Build Your Own Version
+
+WordWalker is built for educators, language teachers, and hobbyists who want to learn by doing.  Customize the app for any language, edit images and audio assets, modify game mechanics, or expand the question  while developing practical skills in web development, digital media, and language learning.  It's a multi-level learning platform disguised as a game.
+
 
 ### Prerequisites
 - **Node.js** 16+ and **npm** or **yarn**
