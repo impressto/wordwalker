@@ -41,11 +41,17 @@ WordWalker is a gamified Spanish language learning application that transforms v
 
 ### Screenshots
 
-![scene](https://github.com/user-attachments/assets/1c830756-bda1-44f8-8069-6f427323fe92)
-![scene](https://github.com/user-attachments/assets/51004019-19eb-4ad3-9f58-3b02babed978)
-![scene](https://github.com/user-attachments/assets/ef311eb9-c0eb-4bc7-a719-8918cc3aae76)
-![scene](https://github.com/user-attachments/assets/79ae49ab-4570-4aa7-96bc-e83d5c60b01e)
+Japanese Countryside
+![scene](https://github.com/user-attachments/assets/b6a78562-74bc-4838-8bce-92770f6c9ce7)
 
+Jamaican Beach
+![scene](https://github.com/user-attachments/assets/8e1dd765-7b85-4847-b818-98e78933da5d)
+
+Hong Kong Market
+![scene](https://github.com/user-attachments/assets/8c1983d3-2c18-470b-8cb7-216db2491fc0)
+
+Día de (los) Muertos in a Mexican Village
+![scene](https://github.com/user-attachments/assets/d8112f3f-f662-465e-9b8d-46a97ab2c383)
 
 
 ## 🚀 Build your own version for other language - perfect of educators and hobbyists
