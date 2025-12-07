@@ -71,5 +71,17 @@ export const animalsTranslations = {
   "animals_068": "What playful animal swims in rivers?",
   "animals_069": "What small bird is common in cities?",
   "animals_070": "What bird has a long neck and goes 'honk'?",
-  "animals_071": "What annoying insect flies around the house?"
+  "animals_071": "What annoying insect flies around the house?",
+  "animals_072": "What amphibian animal jumps and says 'croak'?",
+  "animals_073": "What insect has a hard shell?",
+  "animals_074": "What giant prehistoric animal is extinct?",
+  "animals_075": "What marine organism forms reefs?",
+  "animals_076": "What primate has orange fur and lives in trees?",
+  "animals_077": "What large animal has antlers and lives in cold forests?",
+  "animals_078": "What animal has antlers and lives in the forest?",
+  "animals_079": "What dog helps people with disabilities?",
+  "animals_080": "What pink bird has long legs?",
+  "animals_081": "What animal builds dams in rivers?",
+  "animals_082": "Where do birds lay their eggs?",
+  "animals_083": "What white bear lives in the Arctic?"
 };

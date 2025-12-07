@@ -69,5 +69,17 @@ export const animalsAnswerTranslations = {
   "la nutria": "the otter",
   "el gorrión": "the sparrow",
   "el ganso": "the goose",
-  "la mosca": "the fly"
+  "la mosca": "the fly",
+  "la rana": "the frog",
+  "el escarabajo": "the beetle",
+  "el dinosaurio": "the dinosaur",
+  "el coral": "the coral",
+  "el orangután": "the orangutan",
+  "el alce": "the moose",
+  "el ciervo": "the deer",
+  "el perro guía": "the guide dog",
+  "el flamenco": "the flamingo",
+  "el castor": "the beaver",
+  "el nido": "the nest",
+  "el oso polar": "the polar bear"
 };
