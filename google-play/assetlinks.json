@@ -2,7 +2,7 @@
       "relation": ["delegate_permission/common.handle_all_urls"],
       "target": {
         "namespace": "android_app",
-        "package_name": "ca.impresstowordwalkeres.twa",
-        "sha256_cert_fingerprints": ["F0:CD:B9:1D:43:57:E9:9A:C7:02:0C:18:33:D5:14:9C:41:D1:35:B6:A2:6E:B5:46:54:A5:76:9A:76:55:EF:37"]
+        "package_name": "ca.impressto.wordwalkeres",
+        "sha256_cert_fingerprints": ["DC:E5:D4:7F:B9:76:40:CE:E9:5E:75:8A:94:52:EA:68:93:00:DD:DE:DC:CF:42:3E:FB:33:20:52:E1:C7:96:6C"]
       }
     }]

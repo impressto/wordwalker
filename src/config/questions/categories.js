@@ -46,10 +46,10 @@ export const categories = {
   },
   emergencies: {
     id: 'emergencies',
-    name: 'Emergencies',
-    displayName: 'Emergencias',
+    name: 'Medical & Emergencies',
+    displayName: 'Médico y Emergencias',
     emoji: '🚑',
-    description: 'Learn emergency and health vocabulary',
+    description: 'Learn medical and emergency vocabulary',
   },
   greetings: {
     id: 'greetings',
