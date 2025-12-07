@@ -113,5 +113,7 @@ export const beachAnswerTranslations = {
   "la montaña rusa": "the roller coaster",
   "la noria": "the ferris wheel",
   "el voleibol de playa": "beach volleyball",
-  "las toallas": "the towels"
+  "las toallas": "the towels",
+  "correr": "run/running",
+  "observar las estrellas": "star gazing"
 };

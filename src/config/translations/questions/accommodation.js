@@ -164,5 +164,6 @@ export const accommodationTranslations = {
   "accommodation_158": "How do you describe accommodation in poor condition?",
   "accommodation_159": "What relaxation service do you book at the hotel spa?",
   "accommodation_160": "What do you need to connect to the internet at the hotel?",
-  "accommodation_161": "What water decoration do you find at the hotel or resort?"
+  "accommodation_161": "What water decoration do you find at the hotel or resort?",
+  "accommodation_162": "What do you ask about tap water?"
 };

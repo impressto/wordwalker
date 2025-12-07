@@ -158,5 +158,6 @@ export const accommodationAnswerTranslations = {
   "está deteriorado": "it's run-down/deteriorated",
   "un masaje": "a massage",
   "el wifi": "the WiFi",
-  "la fuente": "the fountain"
+  "la fuente": "the fountain",
+  "¿es potable el agua?": "is the water drinkable?"
 };

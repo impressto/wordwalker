@@ -119,5 +119,7 @@ export const beachTranslations = {
   "beach_111": "What thrilling attraction do you find at the amusement park?",
   "beach_112": "What attraction rotates slowly and has seats to sit in?",
   "beach_113": "What team sport do you play on the sand?",
-  "beach_114": "What do you ask for at the resort to dry off after swimming?"
+  "beach_114": "What do you ask for at the resort to dry off after swimming?",
+  "beach_115": "What is prohibited to do near the hotel pool?",
+  "beach_116": "What nighttime activity do you do to see the stars?"
 };

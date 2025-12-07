@@ -1770,4 +1770,15 @@ export const accommodationQuestions = [
     category: 'accommodation',
     difficulty: 'medium',
   },
+  {
+    id: 'accommodation_162',
+    emoji: '🚱',
+    question: '¿Qué preguntas sobre el agua del grifo?',
+    options: ['¿es potable el agua?', '¿hay agua caliente?', '¿funciona el agua?'],
+    correctAnswer: '¿es potable el agua?',
+    hint: 'Is the water drinkable? - important safety question when traveling, tap water safety varies by location',
+    points: 10,
+    category: 'accommodation',
+    difficulty: 'medium',
+  },
 ];
