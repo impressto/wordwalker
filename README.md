@@ -62,7 +62,10 @@ WordWalker is a gamified Spanish language learning application that transforms v
 ![scene](https://github.com/user-attachments/assets/d8112f3f-f662-465e-9b8d-46a97ab2c383)
 
 --------------------------------------------------------------
-## 🚀 Build your own version for other language - perfect of educators and hobbyists
+## 🚀 Build Your Own Version
+
+WordWalker is built for educators, language teachers, and hobbyists who want to learn by doing.  Customize the app for any language, edit images and audio assets, modify game mechanics, or expand the question  while developing practical skills in web development, digital media, and language learning.  It's a multi-level learning platform disguised as a game.
+
 
 ### Prerequisites
 - **Node.js** 16+ and **npm** or **yarn**
