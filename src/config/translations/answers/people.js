@@ -112,5 +112,8 @@ export const peopleAnswerTranslations = {
   "la depresión": "depression",
   "para que se haga lo correcto": "so that the right thing is done",
   "visito su tumba": "I visit their grave",
-  "maldice": "he/she swears / curses"
+  "maldice": "he/she swears / curses",
+  "el juez": "the judge",
+  "el estudiante": "the student",
+  "voto": "I vote"
 };

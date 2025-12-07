@@ -166,5 +166,6 @@ export const shoppingTranslations = {
   "shopping_159": "What do you do when you exchange dollars for euros?",
   "shopping_160": "What do you use to cut paper?",
   "shopping_161": "What do you put on your nails?",
-  "shopping_162": "Where do you take money out from the bank?"
+  "shopping_162": "Where do you take money out from the bank?",
+  "shopping_163": "What service do you ask for at the barbershop?"
 };

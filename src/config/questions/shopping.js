@@ -1785,4 +1785,15 @@ export const shoppingQuestions = [
     category: 'shopping',
     difficulty: 'easy',
   },
+  {
+    id: 'shopping_163',
+    emoji: '💇🏻‍♂️',
+    question: '¿Qué servicio pides en la barbería?',
+    options: ['un corte de pelo', 'un corte de cabello', 'cortarse el pelo'],
+    correctAnswer: 'un corte de pelo',
+    hint: 'Haircut - service at barbershop or salon, "cortar el pelo" means to cut hair',
+    points: 5,
+    category: 'shopping',
+    difficulty: 'easy',
+  },
 ];

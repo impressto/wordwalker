@@ -158,5 +158,10 @@ export const accommodationTranslations = {
   "accommodation_152": "When do you open the restaurant?",
   "accommodation_153": "I need to checkout",
   "accommodation_154": "Can you call me a taxi?",
-  "accommodation_155": "We need towels"
+  "accommodation_155": "We need towels",
+  "accommodation_156": "What do you ask for if you want to relax with a bath?",
+  "accommodation_157": "What do you use to unclog the toilet?",
+  "accommodation_158": "How do you describe accommodation in poor condition?",
+  "accommodation_159": "What relaxation service do you book at the hotel spa?",
+  "accommodation_160": "What do you need to connect to the internet at the hotel?"
 };

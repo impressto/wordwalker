@@ -110,5 +110,10 @@ export const beachTranslations = {
   "beach_102": "What are you doing?",
   "beach_103": "What do you do on a very hot day?",
   "beach_104": "What water activity is it?",
-  "beach_105": "What structure do you find on the beach at a resort?"
+  "beach_105": "What structure do you find on the beach at a resort?",
+  "beach_106": "What sport do you play with a club and a small ball?",
+  "beach_107": "Where do you play golf?",
+  "beach_108": "What do you do when you visit historical places?",
+  "beach_109": "What is prohibited to do at the beach?",
+  "beach_110": "Where do you take kids to ride attractions?"
 };

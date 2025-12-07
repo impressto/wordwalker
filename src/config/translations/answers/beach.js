@@ -104,5 +104,10 @@ export const beachAnswerTranslations = {
   "el paravelismo": "paragliding",
   "la cabaña": "the hut/cabin",
   "la palapa": "the palapa/thatched hut",
-  "el chiringuito": "the beach bar/hut"
+  "el chiringuito": "the beach bar/hut",
+  "el golf": "golf",
+  "el campo de golf": "the golf course",
+  "visitar monumentos": "visit monuments",
+  "tirar basura": "litter/throw trash",
+  "el parque de diversiones": "the amusement park"
 };

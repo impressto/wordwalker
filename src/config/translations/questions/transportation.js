@@ -156,5 +156,7 @@ export const transportationTranslations = {
   "transportation_148": "What vehicle uses electricity?",
   "transportation_149": "Where do you charge the electric car?",
   "transportation_150": "What car drives itself?",
-  "transportation_151": "What structure crosses a river or valley?"
+  "transportation_151": "What structure crosses a river or valley?",
+  "transportation_152": "Where do you fill up the gas tank?",
+  "transportation_153": "Who repairs your car when it breaks down?"
 };

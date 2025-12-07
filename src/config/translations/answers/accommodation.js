@@ -152,5 +152,10 @@ export const accommodationAnswerTranslations = {
   "¿cuándo abren el restaurante?": "when do you open the restaurant?",
   "necesito hacer el checkout": "I need to checkout",
   "¿puede llamarme un taxi?": "can you call me a taxi?",
-  "necesitamos toallas": "we need towels"
+  "necesitamos toallas": "we need towels",
+  "una habitación con bañera": "a room with bathtub",
+  "el destapacaños": "the plunger",
+  "está deteriorado": "it's run-down/deteriorated",
+  "un masaje": "a massage",
+  "el wifi": "the WiFi"
 };

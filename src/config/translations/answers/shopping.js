@@ -152,5 +152,6 @@ export const shoppingAnswerTranslations = {
   "cambio moneda": "I exchange currency",
   "las tijeras": "the scissors",
   "el esmalte de uñas": "the nail polish",
-  "el cajero automático": "the ATM"
+  "el cajero automático": "the ATM",
+  "un corte de pelo": "a haircut"
 };

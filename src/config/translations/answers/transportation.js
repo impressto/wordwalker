@@ -146,5 +146,7 @@ export const transportationAnswerTranslations = {
   "el coche eléctrico": "the electric car",
   "la estación de carga": "the charging station",
   "el coche autónomo": "the autonomous car",
-  "el puente": "the bridge"
+  "el puente": "the bridge",
+  "la gasolinera": "the petrol station",
+  "el mecánico": "the mechanic"
 };
