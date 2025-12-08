@@ -36,6 +36,7 @@ export const saveGameState = (gameState) => {
       ...gameState,
       usedQuestionIds: gameState.usedQuestionIds || {}, // Now an object organized by category
       completedCategories: Array.from(gameState.completedCategories || []),
+      presentedCategories: Array.from(gameState.presentedCategories || []),
       correctFirstTryIds: gameState.correctFirstTryIds || {}, // Now an object organized by category
       correctAnswersByCategory: gameState.correctAnswersByCategory || {}, // Persistent tracking across sessions
     };
@@ -100,6 +101,7 @@ export const convertLoadedState = (loadedState) => {
     ...loadedState,
     usedQuestionIds: loadedState.usedQuestionIds || {}, // Now an object organized by category
     completedCategories: new Set(loadedState.completedCategories || []),
+    presentedCategories: new Set(loadedState.presentedCategories || []),
     correctFirstTryIds: loadedState.correctFirstTryIds || {}, // Now an object organized by category
     correctAnswersByCategory: loadedState.correctAnswersByCategory || {}, // Restore category-based correct answer tracking
     forkCategories: validForkCategories, // Validate fork categories
@@ -120,6 +122,7 @@ export const extractGameState = (componentState) => {
     checkpointsAnswered: componentState.checkpointsAnswered,
     usedQuestionIds: componentState.usedQuestionIds,
     completedCategories: componentState.completedCategories,
+    presentedCategories: componentState.presentedCategories,
     forkCategories: componentState.forkCategories,
     soundEnabled: componentState.soundEnabled,
     volume: componentState.volume,

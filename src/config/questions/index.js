@@ -107,7 +107,8 @@ export const getRandomUnusedQuestionByCategory = (
   const excludedIds = new Set([...usedThisSession, ...answeredCorrectly]);
   
   const availableQuestions = categoryQuestions.filter(q => {
-    const numericId = parseInt(q.id.split('_')[1], 10);
+    // Extract numeric ID as string to match the format stored in tracking arrays
+    const numericId = q.id.split('_')[1] || q.id;
     return !excludedIds.has(numericId);
   });
   
