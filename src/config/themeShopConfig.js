@@ -38,6 +38,14 @@ const themeShopConfig = {
       thumbnail: 'scene.jpg', // Located at public/images/themes/dia-de-los-muertos/scene.jpg
       enabled: true,
     },
+    {
+      id: 'paris',
+      name: 'Paris',
+      description: 'Iconic Parisian cityscape',
+      cost: 100,
+      thumbnail: 'scene.jpg', // Located at public/images/themes/paris/scene.jpg
+      enabled: true,
+    },
     // Add more themes here following the same structure
     // {
     //   id: 'mountain',

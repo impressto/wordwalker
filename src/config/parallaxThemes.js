@@ -187,6 +187,48 @@ const parallaxThemes = {
     layer2OffsetY: 30,
   },
 
+  // Paris theme - Parisian cityscape
+  'paris': {
+    name: 'Paris',
+    description: 'Iconic Parisian cityscape',
+    imagePath: 'paris',
+    // Whether to use separate path.png and path-fork.png images
+    usePathImages: false,
+    // Canvas background colors for fallback when layer images aren't loaded
+    canvasColors: {
+      aboveHorizon: '#a7c5e8',  // Light blue sky
+      belowHorizon: '#8b7d6b',  // Cobblestone street color
+    },
+    // Layer positions for Paris theme
+    layerPositions: {
+      layer1: 0,      // fence with flowers
+      layer2: 0,      // street
+      layer3: -50,    // sidewalk with tables and musicians
+      layer4: 20,     // river with boats
+      layer5: -90,    // buildings on far bank
+      layer6: -30,    // eiffel tower and otherbackground buildings
+      layer7: 0,      // Sky/rear
+    },
+    layerSpeeds: {
+      layer1: 0.8,    // fence with flowers
+      layer2: 0.6,    // street
+      layer3: 0.57,    // sidewalk with tables and musicians
+      layer4: 0.4,    // river with boats
+      layer5: 0.3,    // buildings on far banMid layerk
+      layer6: 0.15,   // eiffel tower and otherbackground buildings
+      layer7: 0.0,    // Static background/sky
+    },
+    positioning: {
+      horizonY: 0.35,        // Horizon positioning
+      pathTopOffset: 0.55,   // Path top as proportion of canvas height
+      pathTopAdditional: 90, // Additional pixel offset for path top
+    },
+    // Layer 2 vertical stretch control
+    layer2StretchFactor: 0.8,
+    // Layer 2 vertical offset
+    layer2OffsetY: 30,
+  },
+
   // Add more themes below following the same structure
   // Template for new theme:
   // 'theme-id': {
