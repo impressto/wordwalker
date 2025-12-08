@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 import { getAllCategoryIds } from '../config/questions';
 import { isCategoryFullyMastered } from '../utils/questionTracking';
 
-const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpenShop, currentCategory = null, correctAnswersByCategory = {} }) => {
+const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpenShop, currentCategory = null, correctAnswersByCategory = {}, completedCategories = new Set() }) => {
   const [dialogTop, setDialogTop] = useState('100px');
   const [currentPage, setCurrentPage] = useState(0);
   
@@ -117,15 +117,28 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
     
     // Check if this category is fully mastered (all questions answered correctly on first try)
     const isFullyMastered = isCategoryFullyMastered(categoryId, correctAnswersByCategory);
+    // Check if this category was just completed in this session
+    const isJustCompleted = completedCategories.has(categoryId);
     const isCurrentCategory = categoryId === currentCategory;
-    const isDisabled = isFullyMastered || isCurrentCategory;
+    // Disable if fully mastered, just completed, or currently playing
+    const isDisabled = isFullyMastered || isJustCompleted || isCurrentCategory;
+    
+    // Determine the title message
+    let titleMessage = '';
+    if (isFullyMastered) {
+      titleMessage = 'Category Mastered! ✨ All questions answered correctly';
+    } else if (isJustCompleted) {
+      titleMessage = 'Category Completed! 🎉 Already finished in this session';
+    } else if (isCurrentCategory) {
+      titleMessage = 'Currently playing this category';
+    }
     
     return (
       <button
         key={categoryId}
         onClick={() => !isDisabled && onPathChoice(categoryId)}
         disabled={isDisabled}
-        title={isFullyMastered ? 'Category Mastered! ✨ All questions answered correctly' : (isCurrentCategory ? 'Currently playing this category' : '')}
+        title={titleMessage}
         style={{
           padding: '10px 15px',
           fontSize: '18px',
@@ -162,6 +175,9 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
         <span style={{ fontSize: '14px', textAlign: 'center' }}>{category.displayName}</span>
         {isFullyMastered && (
           <span style={{ fontSize: '16px', position: 'absolute', top: '5px', right: '5px' }}>✨</span>
+        )}
+        {isJustCompleted && !isFullyMastered && (
+          <span style={{ fontSize: '16px', position: 'absolute', top: '5px', right: '5px' }}>🎉</span>
         )}
       </button>
     );

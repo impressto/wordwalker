@@ -1616,6 +1616,7 @@ const PathCanvas = () => {
           onOpenShop={handleOpenShop}
           currentCategory={selectedPath ? (forkCategories[selectedPath] || selectedPath) : null}
           correctAnswersByCategory={correctAnswersByCategory}
+          completedCategories={completedCategories}
         />
       )}
 
