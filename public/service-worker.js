@@ -1,5 +1,5 @@
 // Service Worker for WordWalker PWA
-const CACHE_NAME = 'wordwalker-v1.4.3';
+const CACHE_NAME = 'wordwalker-v1.5.0';
 const ASSETS_CACHE = 'wordwalker-assets-v1';
 const AUDIO_CACHE = 'wordwalker-audio-v1';
 const IMAGE_CACHE = 'wordwalker-images-v1';
@@ -65,6 +65,17 @@ const CORE_ASSETS = [
   '/wordwalker/dist/images/themes/jamaica/path-fork.png',
   '/wordwalker/dist/images/themes/jamaica/path-fork2.png',
   '/wordwalker/dist/images/themes/jamaica/scene.jpg',
+  // Paris theme - parallax layers
+  '/wordwalker/dist/images/themes/paris/parallax-layer1.png',
+  '/wordwalker/dist/images/themes/paris/parallax-layer2.png',
+  '/wordwalker/dist/images/themes/paris/parallax-layer3.png',
+  '/wordwalker/dist/images/themes/paris/parallax-layer4.png',
+  '/wordwalker/dist/images/themes/paris/parallax-layer5.png',
+  '/wordwalker/dist/images/themes/paris/parallax-layer6.png',
+  '/wordwalker/dist/images/themes/paris/parallax-layer7.png',
+  '/wordwalker/dist/images/themes/paris/path.png',
+  '/wordwalker/dist/images/themes/paris/path-fork.png',
+  '/wordwalker/dist/images/themes/paris/scene.jpg',
   // Dia-de-los-muertos theme - parallax layers
   '/wordwalker/dist/images/themes/dia-de-los-muertos/parallax-layer1.png',
   '/wordwalker/dist/images/themes/dia-de-los-muertos/parallax-layer2.png',
@@ -82,6 +93,7 @@ const CORE_ASSETS = [
   '/wordwalker/dist/audio/themes/default/background.mp3',
   '/wordwalker/dist/audio/themes/hong-kong/background.mp3',
   '/wordwalker/dist/audio/themes/jamaica/background.mp3',
+  '/wordwalker/dist/audio/themes/paris/background.mp3',
   '/wordwalker/dist/audio/themes/dia-de-los-muertos/background.mp3',
 ];
 
