@@ -1,5 +1,5 @@
 // Service Worker for WordWalker PWA
-const CACHE_NAME = 'wordwalker-v1.4.3';
+const CACHE_NAME = 'wordwalker-v1.4.4';
 const ASSETS_CACHE = 'wordwalker-assets-v1';
 const AUDIO_CACHE = 'wordwalker-audio-v1';
 const IMAGE_CACHE = 'wordwalker-images-v1';
@@ -53,18 +53,18 @@ const CORE_ASSETS = [
   '/wordwalker/dist/images/themes/hong-kong/path.png',
   '/wordwalker/dist/images/themes/hong-kong/path-fork.png',
   '/wordwalker/dist/images/themes/hong-kong/scene.jpg',
-  // Jamaica theme - parallax layers
-  '/wordwalker/dist/images/themes/jamaica/parallax-layer1.png',
-  '/wordwalker/dist/images/themes/jamaica/parallax-layer2.png',
-  '/wordwalker/dist/images/themes/jamaica/parallax-layer3.png',
-  '/wordwalker/dist/images/themes/jamaica/parallax-layer4.png',
-  '/wordwalker/dist/images/themes/jamaica/parallax-layer5.png',
-  '/wordwalker/dist/images/themes/jamaica/parallax-layer6.png',
-  '/wordwalker/dist/images/themes/jamaica/parallax-layer7.png',
-  '/wordwalker/dist/images/themes/jamaica/path.png',
-  '/wordwalker/dist/images/themes/jamaica/path-fork.png',
-  '/wordwalker/dist/images/themes/jamaica/path-fork2.png',
-  '/wordwalker/dist/images/themes/jamaica/scene.jpg',
+  //  theme - parallax layers
+  '/wordwalker/dist/images/themes//parallax-layer1.png',
+  '/wordwalker/dist/images/themes//parallax-layer2.png',
+  '/wordwalker/dist/images/themes//parallax-layer3.png',
+  '/wordwalker/dist/images/themes//parallax-layer4.png',
+  '/wordwalker/dist/images/themes//parallax-layer5.png',
+  '/wordwalker/dist/images/themes//parallax-layer6.png',
+  '/wordwalker/dist/images/themes//parallax-layer7.png',
+  '/wordwalker/dist/images/themes//path.png',
+  '/wordwalker/dist/images/themes//path-fork.png',
+  '/wordwalker/dist/images/themes//path-fork2.png',
+  '/wordwalker/dist/images/themes//scene.jpg',
   // Dia-de-los-muertos theme - parallax layers
   '/wordwalker/dist/images/themes/dia-de-los-muertos/parallax-layer1.png',
   '/wordwalker/dist/images/themes/dia-de-los-muertos/parallax-layer2.png',
@@ -81,7 +81,7 @@ const CORE_ASSETS = [
   // Theme background audio files
   '/wordwalker/dist/audio/themes/default/background.mp3',
   '/wordwalker/dist/audio/themes/hong-kong/background.mp3',
-  '/wordwalker/dist/audio/themes/jamaica/background.mp3',
+  '/wordwalker/dist/audio/themes//background.mp3',
   '/wordwalker/dist/audio/themes/dia-de-los-muertos/background.mp3',
 ];
 
