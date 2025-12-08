@@ -1673,6 +1673,9 @@ const PathCanvas = () => {
           onPurchaseTheme={handlePurchaseThemeWrapper}
           onSelectTheme={handleSelectTheme}
           onClose={handleCloseShop}
+          streak={streak}
+          correctFirstTryIds={correctFirstTryIds}
+          correctAnswersByCategory={correctAnswersByCategory}
         />
       )}
 

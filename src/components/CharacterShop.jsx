@@ -6,12 +6,29 @@
 import { useState, useEffect } from 'react';
 import { getShopThemes } from '../config/themeShopConfig';
 import { getAllCharacters } from '../config/characterConfig';
+import { questions } from '../config/questions';
+import { getTotalMasteredQuestions } from '../utils/questionTracking';
 import './CharacterShop.css';
 
-const CharacterShop = ({ totalPoints, ownedCharacters, currentCharacter, onPurchase, onSelectCharacter, ownedThemes, currentTheme, onPurchaseTheme, onSelectTheme, onClose }) => {
+const CharacterShop = ({ 
+  totalPoints, 
+  ownedCharacters, 
+  currentCharacter, 
+  onPurchase, 
+  onSelectCharacter, 
+  ownedThemes, 
+  currentTheme, 
+  onPurchaseTheme, 
+  onSelectTheme, 
+  onClose,
+  // Stats data
+  streak,
+  correctFirstTryIds,
+  correctAnswersByCategory,
+}) => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   const [isReady, setIsReady] = useState(false);
-  const [activeTab, setActiveTab] = useState('characters'); // 'characters' or 'themes'
+  const [activeTab, setActiveTab] = useState('characters'); // 'characters', 'themes', or 'stats'
 
   useEffect(() => {
     const handleResize = () => {
@@ -66,6 +83,12 @@ const CharacterShop = ({ totalPoints, ownedCharacters, currentCharacter, onPurch
             onClick={() => setActiveTab('themes')}
           >
             Themes
+          </button>
+          <button
+            className={`tab-btn ${activeTab === 'stats' ? 'active' : ''}`}
+            onClick={() => setActiveTab('stats')}
+          >
+            Stats
           </button>
         </div>
 
@@ -194,6 +217,38 @@ const CharacterShop = ({ totalPoints, ownedCharacters, currentCharacter, onPurch
                 </div>
               );
             })}
+          </div>
+        )}
+
+        {/* Stats Tab */}
+        {activeTab === 'stats' && (
+          <div className="stats-content">
+            <div className="saved-stats">
+              <div className="stat-item">
+                <span className="stat-label">Points:</span>
+                <span className="stat-value">{totalPoints}</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-label">Current Streak:</span>
+                <span className="stat-value">{streak || 0}</span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-label">Learning Progress:</span>
+                <span className="stat-value">
+                  {Object.values(correctFirstTryIds || {}).reduce((total, categoryIds) => total + categoryIds.length, 0)}/{questions.length} mastered
+                </span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-label">Remaining:</span>
+                <span className="stat-value">
+                  {questions.length - Object.values(correctFirstTryIds || {}).reduce((total, categoryIds) => total + categoryIds.length, 0)} to master
+                </span>
+              </div>
+              <div className="stat-item">
+                <span className="stat-label">Permanent Mastery:</span>
+                <span className="stat-value">{getTotalMasteredQuestions(correctAnswersByCategory || {})}</span>
+              </div>
+            </div>
           </div>
         )}
 
