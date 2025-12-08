@@ -57,7 +57,7 @@ const characterConfig = {
       name: 'Asuka',
       spriteFile: 'walker-asuka.png',
       avatarFile: 'walker-asuka-avatar.png',
-      cost: 300,
+      cost: 30,
       description: 'A spirited adventurer',
     },
   ],

@@ -196,16 +196,16 @@ const parallaxThemes = {
     usePathImages: false,
     // Canvas background colors for fallback when layer images aren't loaded
     canvasColors: {
-      aboveHorizon: '#a7c5e8',  // Light blue sky
-      belowHorizon: '#8b7d6b',  // Cobblestone street color
+      aboveHorizon: '#4c99cc',  // Light blue sky
+      belowHorizon: '#245da3',  // dark water near sidewalk
     },
     // Layer positions for Paris theme
     layerPositions: {
       layer1: 0,      // fence with flowers
       layer2: 0,      // street
-      layer3: -50,    // sidewalk with tables and musicians
-      layer4: 20,     // river with boats
-      layer5: -90,    // buildings on far bank
+      layer3: -40,    // sidewalk with tables and musicians
+      layer4: -20,     // river with boats
+      layer5: -100,    // buildings on far bank
       layer6: -30,    // eiffel tower and otherbackground buildings
       layer7: 0,      // Sky/rear
     },
