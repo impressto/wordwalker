@@ -5,7 +5,7 @@
 
 export const numbersQuestions = [
 {
-    id: 'numbers_1',
+    id: 'numbers_001',
     emoji: '0️⃣',
     question: '¿Cómo se dice "zero"?',
     options: ['cero', 'nada', 'ninguno'],
@@ -16,7 +16,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_2',
+    id: 'numbers_002',
     emoji: '1️⃣',
     question: '¿Cómo se dice "one"?',
     options: ['uno', 'un', 'una'],
@@ -27,7 +27,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_3',
+    id: 'numbers_003',
     emoji: '2️⃣',
     question: '¿Cómo se dice "two"?',
     options: ['dos', 'doce', 'veinte'],
@@ -38,7 +38,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_4',
+    id: 'numbers_004',
     emoji: '3️⃣',
     question: '¿Cómo se dice "three"?',
     options: ['tres', 'trece', 'treinta'],
@@ -49,7 +49,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_5',
+    id: 'numbers_005',
     emoji: '4️⃣',
     question: '¿Cómo se dice "four"?',
     options: ['cuatro', 'catorce', 'cuarenta'],
@@ -60,7 +60,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_6',
+    id: 'numbers_006',
     emoji: '5️⃣',
     question: '¿Cómo se dice "five"?',
     options: ['cinco', 'quince', 'cincuenta'],
@@ -71,7 +71,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_7',
+    id: 'numbers_007',
     emoji: '6️⃣',
     question: '¿Cómo se dice "six"?',
     options: ['seis', 'dieciséis', 'sesenta'],
@@ -82,7 +82,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_8',
+    id: 'numbers_008',
     emoji: '7️⃣',
     question: '¿Cómo se dice "seven"?',
     options: ['siete', 'diecisiete', 'setenta'],
@@ -93,7 +93,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_9',
+    id: 'numbers_009',
     emoji: '8️⃣',
     question: '¿Cómo se dice "eight"?',
     options: ['ocho', 'dieciocho', 'ochenta'],
@@ -104,7 +104,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_10',
+    id: 'numbers_010',
     emoji: '9️⃣',
     question: '¿Cómo se dice "nine"?',
     options: ['nueve', 'diecinueve', 'noventa'],
@@ -117,7 +117,7 @@ export const numbersQuestions = [
 
   // Numbers 10-20 (10 questions)
   {
-    id: 'numbers_11',
+    id: 'numbers_011',
     emoji: '🔟',
     question: '¿Cómo se dice "ten"?',
     options: ['diez', 'dieci', 'dies'],
@@ -128,7 +128,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_12',
+    id: 'numbers_012',
     emoji: '🔢',
     question: '¿Cómo se dice "eleven"?',
     options: ['once', 'uno', 'diez y uno'],
@@ -139,7 +139,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_13',
+    id: 'numbers_013',
     emoji: '🔢',
     question: '¿Cómo se dice "twelve"?',
     options: ['doce', 'dos', 'diez y dos'],
@@ -150,7 +150,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_14',
+    id: 'numbers_014',
     emoji: '🔢',
     question: '¿Cómo se dice "thirteen"?',
     options: ['trece', 'tres', 'diez y tres'],
@@ -161,7 +161,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_15',
+    id: 'numbers_015',
     emoji: '🔢',
     question: '¿Cómo se dice "fourteen"?',
     options: ['catorce', 'cuatro', 'diez y cuatro'],
@@ -172,7 +172,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_16',
+    id: 'numbers_016',
     emoji: '🔢',
     question: '¿Cómo se dice "fifteen"?',
     options: ['quince', 'cinco', 'diez y cinco'],
@@ -183,7 +183,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_17',
+    id: 'numbers_017',
     emoji: '🔢',
     question: '¿Cómo se dice "sixteen"?',
     options: ['dieciséis', 'diez y seis', 'dieciseis'],
@@ -194,7 +194,7 @@ export const numbersQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'numbers_18',
+    id: 'numbers_018',
     emoji: '🔢',
     question: '¿Cómo se dice "seventeen"?',
     options: ['diecisiete', 'diez y siete', 'dieciseis'],
@@ -205,7 +205,7 @@ export const numbersQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'numbers_19',
+    id: 'numbers_019',
     emoji: '🔢',
     question: '¿Cómo se dice "eighteen"?',
     options: ['dieciocho', 'diez y ocho', 'diecisiete'],
@@ -216,7 +216,7 @@ export const numbersQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'numbers_20',
+    id: 'numbers_020',
     emoji: '🔢',
     question: '¿Cómo se dice "nineteen"?',
     options: ['diecinueve', 'diez y nueve', 'diecinuebe'],
@@ -229,7 +229,7 @@ export const numbersQuestions = [
 
   // Larger Numbers (10 questions)
   {
-    id: 'numbers_21',
+    id: 'numbers_021',
     emoji: '🔢',
     question: '¿Cómo se dice "twenty"?',
     options: ['veinte', 'vente', 'beinte'],
@@ -240,7 +240,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_22',
+    id: 'numbers_022',
     emoji: '🔢',
     question: '¿Cómo se dice "thirty"?',
     options: ['treinta', 'trenta', 'treynta'],
@@ -251,7 +251,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_23',
+    id: 'numbers_023',
     emoji: '🔢',
     question: '¿Cómo se dice "forty"?',
     options: ['cuarenta', 'quarenta', 'cuatrenta'],
@@ -262,7 +262,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_24',
+    id: 'numbers_024',
     emoji: '🔢',
     question: '¿Cómo se dice "fifty"?',
     options: ['cincuenta', 'cinquenta', 'cincenta'],
@@ -273,7 +273,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_25',
+    id: 'numbers_025',
     emoji: '🔢',
     question: '¿Cómo se dice "sixty"?',
     options: ['sesenta', 'seisenta', 'secenta'],
@@ -284,7 +284,7 @@ export const numbersQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'numbers_26',
+    id: 'numbers_026',
     emoji: '🔢',
     question: '¿Cómo se dice "seventy"?',
     options: ['setenta', 'sietenta', 'septenta'],
@@ -295,7 +295,7 @@ export const numbersQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'numbers_27',
+    id: 'numbers_027',
     emoji: '🔢',
     question: '¿Cómo se dice "eighty"?',
     options: ['ochenta', 'ochocenta', 'ochoenta'],
@@ -306,7 +306,7 @@ export const numbersQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'numbers_28',
+    id: 'numbers_028',
     emoji: '🔢',
     question: '¿Cómo se dice "ninety"?',
     options: ['noventa', 'nueventa', 'noventay'],
@@ -317,7 +317,7 @@ export const numbersQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'numbers_29',
+    id: 'numbers_029',
     emoji: '💯',
     question: '¿Cómo se dice "one hundred"?',
     options: ['cien', 'ciento', 'cientos'],
@@ -328,7 +328,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_30',
+    id: 'numbers_030',
     emoji: '🔢',
     question: '¿Cómo se dice "one thousand"?',
     options: ['mil', 'miles', 'mille'],
@@ -341,7 +341,7 @@ export const numbersQuestions = [
 
   // Days of the Week (7 questions)
   {
-    id: 'numbers_31',
+    id: 'numbers_031',
     emoji: '📅',
     question: '¿Cómo se dice "Monday"?',
     options: ['lunes', 'el lunes', 'los lunes'],
@@ -352,7 +352,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_32',
+    id: 'numbers_032',
     emoji: '📅',
     question: '¿Cómo se dice "Tuesday"?',
     options: ['martes', 'el martes', 'los martes'],
@@ -363,7 +363,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_33',
+    id: 'numbers_033',
     emoji: '📅',
     question: '¿Cómo se dice "Wednesday"?',
     options: ['miércoles', 'el miércoles', 'los miércoles'],
@@ -374,7 +374,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_34',
+    id: 'numbers_034',
     emoji: '📅',
     question: '¿Cómo se dice "Thursday"?',
     options: ['jueves', 'el jueves', 'los jueves'],
@@ -385,7 +385,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_35',
+    id: 'numbers_035',
     emoji: '📅',
     question: '¿Cómo se dice "Friday"?',
     options: ['viernes', 'el viernes', 'los viernes'],
@@ -396,7 +396,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_36',
+    id: 'numbers_036',
     emoji: '📅',
     question: '¿Cómo se dice "Saturday"?',
     options: ['sábado', 'el sábado', 'los sábados'],
@@ -407,7 +407,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_37',
+    id: 'numbers_037',
     emoji: '📅',
     question: '¿Cómo se dice "Sunday"?',
     options: ['domingo', 'el domingo', 'los domingos'],
@@ -420,7 +420,7 @@ export const numbersQuestions = [
 
   // Months of the Year (12 questions)
   {
-    id: 'numbers_38',
+    id: 'numbers_038',
     emoji: '📆',
     question: '¿Cómo se dice "January"?',
     options: ['enero', 'el enero', 'januario'],
@@ -431,7 +431,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_39',
+    id: 'numbers_039',
     emoji: '📆',
     question: '¿Cómo se dice "February"?',
     options: ['febrero', 'el febrero', 'februario'],
@@ -442,7 +442,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_40',
+    id: 'numbers_040',
     emoji: '📆',
     question: '¿Cómo se dice "March"?',
     options: ['marzo', 'el marzo', 'marcho'],
@@ -453,7 +453,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_41',
+    id: 'numbers_041',
     emoji: '📆',
     question: '¿Cómo se dice "April"?',
     options: ['abril', 'el abril', 'abrel'],
@@ -464,7 +464,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_42',
+    id: 'numbers_042',
     emoji: '📆',
     question: '¿Cómo se dice "May"?',
     options: ['mayo', 'el mayo', 'mai'],
@@ -475,7 +475,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_43',
+    id: 'numbers_043',
     emoji: '📆',
     question: '¿Cómo se dice "June"?',
     options: ['junio', 'el junio', 'junho'],
@@ -486,7 +486,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_44',
+    id: 'numbers_044',
     emoji: '📆',
     question: '¿Cómo se dice "July"?',
     options: ['julio', 'el julio', 'jullio'],
@@ -497,7 +497,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_45',
+    id: 'numbers_045',
     emoji: '📆',
     question: '¿Cómo se dice "August"?',
     options: ['agosto', 'el agosto', 'augusto'],
@@ -508,7 +508,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_46',
+    id: 'numbers_046',
     emoji: '📆',
     question: '¿Cómo se dice "September"?',
     options: ['septiembre', 'setiembre', 'el septiembre'],
@@ -519,7 +519,7 @@ export const numbersQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'numbers_47',
+    id: 'numbers_047',
     emoji: '📆',
     question: '¿Cómo se dice "October"?',
     options: ['octubre', 'otubre', 'el octubre'],
@@ -530,7 +530,7 @@ export const numbersQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'numbers_48',
+    id: 'numbers_048',
     emoji: '📆',
     question: '¿Cómo se dice "November"?',
     options: ['noviembre', 'nobiembre', 'el noviembre'],
@@ -541,7 +541,7 @@ export const numbersQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'numbers_49',
+    id: 'numbers_049',
     emoji: '📆',
     question: '¿Cómo se dice "December"?',
     options: ['diciembre', 'disiembre', 'el diciembre'],
@@ -554,7 +554,7 @@ export const numbersQuestions = [
 
   // Time Expressions (11 questions)
   {
-    id: 'numbers_50',
+    id: 'numbers_050',
     emoji: '⏰',
     question: '¿Cómo se dice "hour"?',
     options: ['hora', 'la hora', 'horas'],
@@ -565,7 +565,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_51',
+    id: 'numbers_051',
     emoji: '⏱️',
     question: '¿Cómo se dice "minute"?',
     options: ['minuto', 'el minuto', 'minutos'],
@@ -576,7 +576,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_52',
+    id: 'numbers_052',
     emoji: '⏱️',
     question: '¿Cómo se dice "second"?',
     options: ['segundo', 'el segundo', 'segundos'],
@@ -587,7 +587,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_53',
+    id: 'numbers_053',
     emoji: '🌅',
     question: '¿Cómo se dice "morning"?',
     options: ['mañana', 'la mañana', 'mañanita'],
@@ -598,7 +598,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_54',
+    id: 'numbers_054',
     emoji: '☀️',
     question: '¿Cómo se dice "afternoon"?',
     options: ['tarde', 'la tarde', 'tardecita'],
@@ -609,7 +609,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_55',
+    id: 'numbers_055',
     emoji: '🌙',
     question: '¿Cómo se dice "night"?',
     options: ['noche', 'la noche', 'nochecita'],
@@ -620,7 +620,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_56',
+    id: 'numbers_056',
     emoji: '📅',
     question: '¿Cómo se dice "today"?',
     options: ['hoy', 'hoY', 'oy'],
@@ -631,7 +631,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_57',
+    id: 'numbers_057',
     emoji: '📅',
     question: '¿Cómo se dice "yesterday"?',
     options: ['ayer', 'anteayer', 'ayér'],
@@ -642,7 +642,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_58',
+    id: 'numbers_058',
     emoji: '📅',
     question: '¿Cómo se dice "tomorrow"?',
     options: ['mañana', 'la mañana', 'mañanita'],
@@ -653,7 +653,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_59',
+    id: 'numbers_059',
     emoji: '📅',
     question: '¿Cómo se dice "week"?',
     options: ['semana', 'la semana', 'semanita'],
@@ -664,7 +664,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_60',
+    id: 'numbers_060',
     emoji: '📆',
     question: '¿Cómo se dice "year"?',
     options: ['año', 'el año', 'añito'],
@@ -677,7 +677,7 @@ export const numbersQuestions = [
 
   // Colors (15 questions)
   {
-    id: 'numbers_61',
+    id: 'numbers_061',
     emoji: '🔴',
     question: '¿Cómo se dice "red"?',
     options: ['rojo', 'roja', 'rojos'],
@@ -688,7 +688,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_62',
+    id: 'numbers_062',
     emoji: '🔵',
     question: '¿Cómo se dice "blue"?',
     options: ['azul', 'azules', 'azulado'],
@@ -699,7 +699,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_63',
+    id: 'numbers_063',
     emoji: '🟢',
     question: '¿Cómo se dice "green"?',
     options: ['verde', 'verdes', 'verdoso'],
@@ -710,7 +710,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_64',
+    id: 'numbers_064',
     emoji: '🟡',
     question: '¿Cómo se dice "yellow"?',
     options: ['amarillo', 'amarilla', 'amarillos'],
@@ -721,7 +721,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_65',
+    id: 'numbers_065',
     emoji: '🟠',
     question: '¿Cómo se dice "orange"?',
     options: ['naranja', 'anaranjado', 'naranjas'],
@@ -732,7 +732,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_66',
+    id: 'numbers_066',
     emoji: '🟣',
     question: '¿Cómo se dice "purple"?',
     options: ['morado', 'púrpura', 'violeta'],
@@ -743,7 +743,7 @@ export const numbersQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'numbers_67',
+    id: 'numbers_067',
     emoji: '🩷',
     question: '¿Cómo se dice "pink"?',
     options: ['rosa', 'rosado', 'rosada'],
@@ -754,7 +754,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_68',
+    id: 'numbers_068',
     emoji: '⚫',
     question: '¿Cómo se dice "black"?',
     options: ['negro', 'negra', 'negros'],
@@ -765,7 +765,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_69',
+    id: 'numbers_069',
     emoji: '⚪',
     question: '¿Cómo se dice "white"?',
     options: ['blanco', 'blanca', 'blancos'],
@@ -776,7 +776,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_70',
+    id: 'numbers_070',
     emoji: '🩶',
     question: '¿Cómo se dice "gray"?',
     options: ['gris', 'grises', 'grisáceo'],
@@ -787,7 +787,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_71',
+    id: 'numbers_071',
     emoji: '🟤',
     question: '¿Cómo se dice "brown"?',
     options: ['marrón', 'café', 'pardo'],
@@ -798,7 +798,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_72',
+    id: 'numbers_072',
     emoji: '🎨',
     question: '¿Cómo se dice "color"?',
     options: ['color', 'el color', 'los colores'],
@@ -809,7 +809,7 @@ export const numbersQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'numbers_73',
+    id: 'numbers_073',
     emoji: '🌈',
     question: '¿Cómo se dice "rainbow"?',
     options: ['arcoíris', 'arco iris', 'el arcoíris'],
@@ -820,7 +820,7 @@ export const numbersQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'numbers_74',
+    id: 'numbers_074',
     emoji: '💡',
     question: '¿Cómo se dice "light" (color)?',
     options: ['claro', 'oscuro', 'brillante'],
@@ -831,7 +831,7 @@ export const numbersQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'numbers_75',
+    id: 'numbers_075',
     emoji: '🌑',
     question: '¿Cómo se dice "dark" (color)?',
     options: ['oscuro', 'claro', 'negro'],
@@ -842,7 +842,7 @@ export const numbersQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'numbers_76',
+    id: 'numbers_076',
     emoji: '🕘',
     question: '¿Qué hora es?',
     options: ['las nueve', 'son las nueve', 'nueve en punto'],
@@ -853,7 +853,7 @@ export const numbersQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'numbers_77',
+    id: 'numbers_077',
     emoji: '🕛',
     question: '¿Qué hora es?',
     options: ['las doce', 'son las doce', 'mediodía'],
@@ -864,7 +864,7 @@ export const numbersQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'numbers_78',
+    id: 'numbers_078',
     emoji: '🕒',
     question: '¿Qué hora es?',
     options: ['las tres', 'son las tres', 'tres en punto'],
@@ -875,7 +875,7 @@ export const numbersQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'numbers_79',
+    id: 'numbers_079',
     emoji: '🕕',
     question: '¿Qué hora es?',
     options: ['las seis', 'son las seis', 'seis en punto'],

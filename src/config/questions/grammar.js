@@ -6,7 +6,7 @@
 export const grammarQuestions = [
 // Subject Pronouns (8 questions)
   {
-    id: 'grammar_1',
+    id: 'grammar_001',
     emoji: '📝',
     question: '¿Cómo se dice "I" (subject pronoun)?',
     options: ['yo', 'yó', 'io'],
@@ -17,7 +17,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_2',
+    id: 'grammar_002',
     emoji: '📝',
     question: '¿Cómo se dice "you" (informal)?',
     options: ['tú', 'tu', 'usted'],
@@ -28,7 +28,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_3',
+    id: 'grammar_003',
     emoji: '📝',
     question: '¿Cómo se dice "he"?',
     options: ['él', 'el', 'ella'],
@@ -39,7 +39,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_4',
+    id: 'grammar_004',
     emoji: '📝',
     question: '¿Cómo se dice "she"?',
     options: ['ella', 'élla', 'él'],
@@ -50,7 +50,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_5',
+    id: 'grammar_005',
     emoji: '📝',
     question: '¿Cómo se dice "we"?',
     options: ['nosotros', 'nosotras', 'nos'],
@@ -61,7 +61,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_6',
+    id: 'grammar_006',
     emoji: '📝',
     question: '¿Cómo se dice "they" (masculine)?',
     options: ['ellos', 'ellas', 'elles'],
@@ -72,7 +72,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_7',
+    id: 'grammar_007',
     emoji: '📝',
     question: '¿Cómo se dice "they" (feminine)?',
     options: ['ellas', 'ellos', 'elles'],
@@ -83,7 +83,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_8',
+    id: 'grammar_008',
     emoji: '📝',
     question: '¿Cómo se dice "you" (formal)?',
     options: ['usted', 'ustéd', 'ustedes'],
@@ -96,7 +96,7 @@ export const grammarQuestions = [
 
   // Verb "SER" (to be) - Present Tense (7 questions)
   {
-    id: 'grammar_9',
+    id: 'grammar_009',
     emoji: '✍️',
     question: 'Yo ___ estudiante. (to be)',
     options: ['soy', 'estoy', 'so'],
@@ -107,7 +107,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_10',
+    id: 'grammar_010',
     emoji: '✍️',
     question: 'Tú ___ inteligente. (to be)',
     options: ['eres', 'estás', 'erés'],
@@ -118,7 +118,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_11',
+    id: 'grammar_011',
     emoji: '✍️',
     question: 'Él ___ médico. (to be)',
     options: ['es', 'está', 'eres'],
@@ -129,7 +129,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_12',
+    id: 'grammar_012',
     emoji: '✍️',
     question: 'Ella ___ profesora. (to be)',
     options: ['es', 'está', 'son'],
@@ -140,7 +140,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_13',
+    id: 'grammar_013',
     emoji: '✍️',
     question: 'Nosotros ___ amigos. (to be)',
     options: ['somos', 'estamos', 'semos'],
@@ -151,7 +151,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_14',
+    id: 'grammar_014',
     emoji: '✍️',
     question: 'Ellos ___ estudiantes. (to be)',
     options: ['son', 'están', 'es'],
@@ -162,7 +162,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_15',
+    id: 'grammar_015',
     emoji: '✍️',
     question: 'Usted ___ muy amable. (to be)',
     options: ['es', 'está', 'eres'],
@@ -175,7 +175,7 @@ export const grammarQuestions = [
 
   // Verb "ESTAR" (to be) - Present Tense (7 questions)
   {
-    id: 'grammar_16',
+    id: 'grammar_016',
     emoji: '✍️',
     question: 'Yo ___ en casa. (to be/location)',
     options: ['estoy', 'soy', 'esto'],
@@ -186,7 +186,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_17',
+    id: 'grammar_017',
     emoji: '✍️',
     question: 'Tú ___ cansado. (to be/condition)',
     options: ['estás', 'eres', 'estas'],
@@ -197,7 +197,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_18',
+    id: 'grammar_018',
     emoji: '✍️',
     question: 'Él ___ contento. (to be/emotion)',
     options: ['está', 'es', 'ésta'],
@@ -208,7 +208,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_19',
+    id: 'grammar_019',
     emoji: '✍️',
     question: 'Nosotros ___ aquí. (to be/location)',
     options: ['estamos', 'somos', 'estemos'],
@@ -219,7 +219,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_20',
+    id: 'grammar_020',
     emoji: '✍️',
     question: 'Ellos ___ ocupados. (to be/condition)',
     options: ['están', 'son', 'estan'],
@@ -230,7 +230,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_21',
+    id: 'grammar_021',
     emoji: '✍️',
     question: '¿Dónde ___ el banco? (to be/location)',
     options: ['está', 'es', 'ésta'],
@@ -241,7 +241,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_22',
+    id: 'grammar_022',
     emoji: '✍️',
     question: 'La comida ___ caliente. (to be/condition)',
     options: ['está', 'es', 'ésta'],
@@ -254,7 +254,7 @@ export const grammarQuestions = [
 
   // Regular -AR Verbs (5 questions)
   {
-    id: 'grammar_23',
+    id: 'grammar_023',
     emoji: '📖',
     question: 'Yo ___ español. (hablar - to speak)',
     options: ['hablo', 'hablé', 'hable'],
@@ -265,7 +265,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_24',
+    id: 'grammar_024',
     emoji: '📖',
     question: 'Tú ___ música. (escuchar - to listen)',
     options: ['escuchas', 'escucha', 'escuchás'],
@@ -276,7 +276,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_25',
+    id: 'grammar_025',
     emoji: '📖',
     question: 'Ella ___ la casa. (limpiar - to clean)',
     options: ['limpia', 'limpio', 'limpía'],
@@ -287,7 +287,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_26',
+    id: 'grammar_026',
     emoji: '📖',
     question: 'Nosotros ___ en el parque. (caminar - to walk)',
     options: ['caminamos', 'caminemos', 'caminábamos'],
@@ -298,7 +298,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_27',
+    id: 'grammar_027',
     emoji: '📖',
     question: 'Ellos ___ temprano. (trabajar - to work)',
     options: ['trabajan', 'trabaja', 'trabajen'],
@@ -311,7 +311,7 @@ export const grammarQuestions = [
 
   // Regular -ER Verbs (3 questions)
   {
-    id: 'grammar_28',
+    id: 'grammar_028',
     emoji: '📖',
     question: 'Yo ___ mucho. (comer - to eat)',
     options: ['como', 'comó', 'come'],
@@ -322,7 +322,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_29',
+    id: 'grammar_029',
     emoji: '📖',
     question: 'Tú ___ libros. (leer - to read)',
     options: ['lees', 'leés', 'lee'],
@@ -333,7 +333,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_30',
+    id: 'grammar_030',
     emoji: '📖',
     question: 'Nosotros ___ café. (beber - to drink)',
     options: ['bebemos', 'bebamos', 'bebíamos'],
@@ -346,7 +346,7 @@ export const grammarQuestions = [
 
   // Regular -IR Verbs (3 questions)
   {
-    id: 'grammar_31',
+    id: 'grammar_031',
     emoji: '📖',
     question: 'Yo ___ en Madrid. (vivir - to live)',
     options: ['vivo', 'vivó', 'vive'],
@@ -357,7 +357,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_32',
+    id: 'grammar_032',
     emoji: '📖',
     question: 'Tú ___ la puerta. (abrir - to open)',
     options: ['abres', 'abrís', 'abre'],
@@ -368,7 +368,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_33',
+    id: 'grammar_033',
     emoji: '📖',
     question: 'Ellos ___ cartas. (escribir - to write)',
     options: ['escriben', 'escriban', 'escribieron'],
@@ -381,7 +381,7 @@ export const grammarQuestions = [
 
   // Articles & Gender (6 questions)
   {
-    id: 'grammar_34',
+    id: 'grammar_034',
     emoji: '🔤',
     question: '___ libro (the book - masculine)',
     options: ['el', 'él', 'la'],
@@ -392,7 +392,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_35',
+    id: 'grammar_035',
     emoji: '🔤',
     question: '___ casa (the house - feminine)',
     options: ['la', 'el', 'él'],
@@ -403,7 +403,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_36',
+    id: 'grammar_036',
     emoji: '🔤',
     question: '___ libros (the books - masculine plural)',
     options: ['los', 'les', 'las'],
@@ -414,7 +414,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_37',
+    id: 'grammar_037',
     emoji: '🔤',
     question: '___ casas (the houses - feminine plural)',
     options: ['las', 'los', 'les'],
@@ -425,7 +425,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_38',
+    id: 'grammar_038',
     emoji: '🔤',
     question: '___ manzana (an apple - indefinite)',
     options: ['una', 'un', 'uno'],
@@ -436,7 +436,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_39',
+    id: 'grammar_039',
     emoji: '🔤',
     question: '___ perro (a dog - indefinite)',
     options: ['un', 'uno', 'una'],
@@ -449,7 +449,7 @@ export const grammarQuestions = [
 
   // Question Words (6 questions)
   {
-    id: 'grammar_40',
+    id: 'grammar_040',
     emoji: '❓',
     question: '¿___ te llamas? (What is your name?)',
     options: ['cómo', 'como', 'cómo'],
@@ -460,7 +460,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_41',
+    id: 'grammar_041',
     emoji: '❓',
     question: '¿___ estás? (Where are you?)',
     options: ['dónde', 'donde', 'dóndé'],
@@ -471,7 +471,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_42',
+    id: 'grammar_042',
     emoji: '❓',
     question: '¿___ años tienes? (How many years do you have?)',
     options: ['cuántos', 'cuantos', 'cuántas'],
@@ -482,7 +482,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_43',
+    id: 'grammar_043',
     emoji: '❓',
     question: '¿___ es tu cumpleaños? (When is your birthday?)',
     options: ['cuándo', 'cuando', 'cuándó'],
@@ -493,7 +493,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_44',
+    id: 'grammar_044',
     emoji: '❓',
     question: '¿___ es esto? (What is this?)',
     options: ['qué', 'que', 'quién'],
@@ -504,7 +504,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_45',
+    id: 'grammar_045',
     emoji: '❓',
     question: '¿___ es él? (Who is he?)',
     options: ['quién', 'quien', 'qué'],
@@ -517,7 +517,7 @@ export const grammarQuestions = [
 
   // Possessive Adjectives (5 questions)
   {
-    id: 'grammar_46',
+    id: 'grammar_046',
     emoji: '✋',
     question: '___ libro (my book)',
     options: ['mi', 'mí', 'mis'],
@@ -528,7 +528,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_47',
+    id: 'grammar_047',
     emoji: '✋',
     question: '___ casa (your house - informal)',
     options: ['tu', 'tú', 'tus'],
@@ -539,7 +539,7 @@ export const grammarQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'grammar_48',
+    id: 'grammar_048',
     emoji: '✋',
     question: '___ amigos (our friends)',
     options: ['nuestros', 'nuestro', 'nuestra'],
@@ -550,7 +550,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_49',
+    id: 'grammar_049',
     emoji: '✋',
     question: '___ perro (his/her dog)',
     options: ['su', 'sú', 'sus'],
@@ -561,7 +561,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_50',
+    id: 'grammar_050',
     emoji: '✋',
     question: '___ libros (my books - plural)',
     options: ['mis', 'mi', 'mí'],
@@ -574,7 +574,7 @@ export const grammarQuestions = [
 
   // PRETERITE TENSE (Past - Completed Actions) - 10 questions
   {
-    id: 'grammar_51',
+    id: 'grammar_051',
     emoji: '⏪',
     question: 'Ayer yo ___ en el restaurante. (comer - to eat)',
     options: ['comí', 'como', 'comía'],
@@ -585,7 +585,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_52',
+    id: 'grammar_052',
     emoji: '⏪',
     question: 'Tú ___ con María anoche. (hablar - to speak)',
     options: ['hablaste', 'hablas', 'hablabas'],
@@ -596,7 +596,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_53',
+    id: 'grammar_053',
     emoji: '⏪',
     question: 'Ella ___ a España el año pasado. (viajar - to travel)',
     options: ['viajó', 'viaja', 'viajaba'],
@@ -607,7 +607,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_54',
+    id: 'grammar_054',
     emoji: '⏪',
     question: 'Nosotros ___ la película. (ver - to see/watch)',
     options: ['vimos', 'vemos', 'veíamos'],
@@ -618,7 +618,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_55',
+    id: 'grammar_055',
     emoji: '⏪',
     question: 'Ellos ___ temprano esta mañana. (salir - to leave)',
     options: ['salieron', 'salen', 'salían'],
@@ -629,7 +629,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_56',
+    id: 'grammar_056',
     emoji: '⏪',
     question: 'Ayer yo ___ al médico. (ir - to go)',
     options: ['fui', 'voy', 'iba'],
@@ -640,7 +640,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_57',
+    id: 'grammar_057',
     emoji: '⏪',
     question: 'Tú ___ tarde a la reunión. (llegar - to arrive)',
     options: ['llegaste', 'llegas', 'llegabas'],
@@ -651,7 +651,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_58',
+    id: 'grammar_058',
     emoji: '⏪',
     question: 'Él ___ un regalo. (traer - to bring)',
     options: ['trajo', 'trae', 'traía'],
@@ -662,7 +662,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_59',
+    id: 'grammar_059',
     emoji: '⏪',
     question: 'Nosotros ___ en ese hotel. (estar - to be)',
     options: ['estuvimos', 'estamos', 'estábamos'],
@@ -673,7 +673,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_60',
+    id: 'grammar_060',
     emoji: '⏪',
     question: 'Ellos no ___ la verdad. (decir - to say/tell)',
     options: ['dijeron', 'dicen', 'decían'],
@@ -686,7 +686,7 @@ export const grammarQuestions = [
 
   // IMPERFECT TENSE (Past - Ongoing/Habitual) - 10 questions
   {
-    id: 'grammar_61',
+    id: 'grammar_061',
     emoji: '🔄',
     question: 'Cuando era niño, yo ___ mucho. (jugar - to play)',
     options: ['jugaba', 'jugué', 'juego'],
@@ -697,7 +697,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_62',
+    id: 'grammar_062',
     emoji: '🔄',
     question: 'Tú siempre ___ café por la mañana. (beber - to drink)',
     options: ['bebías', 'bebiste', 'bebes'],
@@ -708,7 +708,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_63',
+    id: 'grammar_063',
     emoji: '🔄',
     question: 'Ella ___ en Madrid antes. (vivir - to live)',
     options: ['vivía', 'vivió', 'vive'],
@@ -719,7 +719,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_64',
+    id: 'grammar_064',
     emoji: '🔄',
     question: 'Nosotros ___ al parque cada domingo. (ir - to go)',
     options: ['íbamos', 'fuimos', 'vamos'],
@@ -730,7 +730,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_65',
+    id: 'grammar_065',
     emoji: '🔄',
     question: 'Ellos ___ muy felices juntos. (ser - to be)',
     options: ['eran', 'fueron', 'son'],
@@ -741,7 +741,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_66',
+    id: 'grammar_066',
     emoji: '🔄',
     question: 'Mientras yo ___, sonó el teléfono. (cocinar - to cook)',
     options: ['cocinaba', 'cociné', 'cocino'],
@@ -752,7 +752,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_67',
+    id: 'grammar_067',
     emoji: '🔄',
     question: 'Tú ___ la televisión cuando llegué. (ver - to watch)',
     options: ['veías', 'viste', 'ves'],
@@ -763,7 +763,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_68',
+    id: 'grammar_068',
     emoji: '🔄',
     question: '¿Qué hora ___ cuando saliste? (ser - to be)',
     options: ['era', 'fue', 'es'],
@@ -774,7 +774,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_69',
+    id: 'grammar_069',
     emoji: '🔄',
     question: 'Nosotros ___ mucho cuando éramos jóvenes. (bailar - to dance)',
     options: ['bailábamos', 'bailamos', 'bailamos'],
@@ -785,7 +785,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_70',
+    id: 'grammar_070',
     emoji: '🔄',
     question: 'El niño ___ cuando lo encontraron. (llorar - to cry)',
     options: ['lloraba', 'lloró', 'llora'],
@@ -798,7 +798,7 @@ export const grammarQuestions = [
 
   // FUTURE TENSE - 10 questions
   {
-    id: 'grammar_71',
+    id: 'grammar_071',
     emoji: '⏩',
     question: 'Mañana yo ___ con mi familia. (comer - to eat)',
     options: ['comeré', 'como', 'comí'],
@@ -809,7 +809,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_72',
+    id: 'grammar_072',
     emoji: '⏩',
     question: 'Tú ___ español muy bien. (hablar - to speak)',
     options: ['hablarás', 'hablas', 'hablaste'],
@@ -820,7 +820,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_73',
+    id: 'grammar_073',
     emoji: '⏩',
     question: 'Ella ___ en París el próximo año. (vivir - to live)',
     options: ['vivirá', 'vive', 'vivió'],
@@ -831,7 +831,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_74',
+    id: 'grammar_074',
     emoji: '⏩',
     question: 'Nosotros ___ mañana. (salir - to leave)',
     options: ['saldremos', 'salimos', 'salíamos'],
@@ -842,7 +842,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_75',
+    id: 'grammar_075',
     emoji: '⏩',
     question: 'Ellos ___ la verdad. (decir - to say/tell)',
     options: ['dirán', 'dicen', 'dijeron'],
@@ -853,7 +853,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_76',
+    id: 'grammar_076',
     emoji: '⏩',
     question: '¿Qué ___ tú este fin de semana? (hacer - to do)',
     options: ['harás', 'haces', 'hiciste'],
@@ -864,7 +864,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_77',
+    id: 'grammar_077',
     emoji: '⏩',
     question: 'Yo ___ dinero para el viaje. (tener - to have)',
     options: ['tendré', 'tengo', 'tuve'],
@@ -875,7 +875,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_78',
+    id: 'grammar_078',
     emoji: '⏩',
     question: 'Nosotros ___ a tiempo. (llegar - to arrive)',
     options: ['llegaremos', 'llegamos', 'llegábamos'],
@@ -886,7 +886,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_79',
+    id: 'grammar_079',
     emoji: '⏩',
     question: '¿Cuándo ___ ellos? (venir - to come)',
     options: ['vendrán', 'vienen', 'vinieron'],
@@ -897,7 +897,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_80',
+    id: 'grammar_080',
     emoji: '⏩',
     question: 'Ella no ___ ir a la fiesta. (poder - to be able)',
     options: ['podrá', 'puede', 'pudo'],
@@ -910,7 +910,7 @@ export const grammarQuestions = [
 
   // PRESENT PROGRESSIVE (estar + gerund) - 8 questions
   {
-    id: 'grammar_81',
+    id: 'grammar_081',
     emoji: '▶️',
     question: 'Yo ___ un libro ahora. (leer - to read)',
     options: ['estoy leyendo', 'leo', 'leí'],
@@ -921,7 +921,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_82',
+    id: 'grammar_082',
     emoji: '▶️',
     question: 'Tú ___ español muy rápido. (aprender - to learn)',
     options: ['estás aprendiendo', 'aprendes', 'aprendiste'],
@@ -932,7 +932,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_83',
+    id: 'grammar_083',
     emoji: '▶️',
     question: 'Ella ___ la cena en este momento. (cocinar - to cook)',
     options: ['está cocinando', 'cocina', 'cocinó'],
@@ -943,7 +943,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_84',
+    id: 'grammar_084',
     emoji: '▶️',
     question: 'Nosotros ___ una película. (ver - to watch)',
     options: ['estamos viendo', 'vemos', 'vimos'],
@@ -954,7 +954,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_85',
+    id: 'grammar_085',
     emoji: '▶️',
     question: '¿Qué ___ ellos? (hacer - to do)',
     options: ['están haciendo', 'hacen', 'hicieron'],
@@ -965,7 +965,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_86',
+    id: 'grammar_086',
     emoji: '▶️',
     question: 'Yo ___ para el examen. (estudiar - to study)',
     options: ['estoy estudiando', 'estudio', 'estudié'],
@@ -976,7 +976,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_87',
+    id: 'grammar_087',
     emoji: '▶️',
     question: 'Ellos ___ al fútbol. (jugar - to play)',
     options: ['están jugando', 'juegan', 'jugaron'],
@@ -987,7 +987,7 @@ export const grammarQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'grammar_88',
+    id: 'grammar_088',
     emoji: '▶️',
     question: '¿Por qué ___ tú? (llorar - to cry)',
     options: ['estás llorando', 'lloras', 'lloraste'],
@@ -1000,7 +1000,7 @@ export const grammarQuestions = [
 
   // CONDITIONAL TENSE (would) - 8 questions
   {
-    id: 'grammar_89',
+    id: 'grammar_089',
     emoji: '🤔',
     question: 'Yo ___ a España si tuviera dinero. (ir - to go)',
     options: ['iría', 'voy', 'fui'],
@@ -1011,7 +1011,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_90',
+    id: 'grammar_090',
     emoji: '🤔',
     question: 'Tú ___ feliz allí. (ser - to be)',
     options: ['serías', 'eres', 'fuiste'],
@@ -1022,7 +1022,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_91',
+    id: 'grammar_091',
     emoji: '🤔',
     question: 'Ella ___ más temprano. (salir - to leave)',
     options: ['saldría', 'sale', 'salió'],
@@ -1033,7 +1033,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_92',
+    id: 'grammar_092',
     emoji: '🤔',
     question: 'Nosotros ___ más si pudiéramos. (trabajar - to work)',
     options: ['trabajaríamos', 'trabajamos', 'trabajábamos'],
@@ -1044,7 +1044,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_93',
+    id: 'grammar_093',
     emoji: '🤔',
     question: '¿Qué ___ tú en mi lugar? (hacer - to do)',
     options: ['harías', 'haces', 'hiciste'],
@@ -1055,7 +1055,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_94',
+    id: 'grammar_094',
     emoji: '🤔',
     question: 'Ellos ___ ayudarnos. (poder - to be able)',
     options: ['podrían', 'pueden', 'pudieron'],
@@ -1066,7 +1066,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_95',
+    id: 'grammar_095',
     emoji: '🤔',
     question: 'Yo ___ más cuidado. (tener - to have)',
     options: ['tendría', 'tengo', 'tuve'],
@@ -1077,7 +1077,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_96',
+    id: 'grammar_096',
     emoji: '🤔',
     question: '¿___ usted ayudarme? (poder - could you)',
     options: ['Podría', 'Puede', 'Pudo'],
@@ -1090,7 +1090,7 @@ export const grammarQuestions = [
 
   // SUBJUNCTIVE BASICS (Present) - 14 questions
   {
-    id: 'grammar_97',
+    id: 'grammar_097',
     emoji: '💭',
     question: 'Espero que tú ___ bien. (estar - to be)',
     options: ['estés', 'estás', 'estas'],
@@ -1101,7 +1101,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_98',
+    id: 'grammar_098',
     emoji: '💭',
     question: 'Es importante que nosotros ___ español. (hablar - to speak)',
     options: ['hablemos', 'hablamos', 'hablaremos'],
@@ -1112,7 +1112,7 @@ export const grammarQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'grammar_99',
+    id: 'grammar_099',
     emoji: '💭',
     question: 'Quiero que ella ___ la verdad. (decir - to say)',
     options: ['diga', 'dice', 'dirá'],

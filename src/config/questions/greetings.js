@@ -6,7 +6,7 @@
 export const greetingsQuestions = [
 // Basic Greetings (10 questions)
   {
-    id: 'greetings_1',
+    id: 'greetings_001',
     emoji: '👋',
     question: '¿Cómo saludas a alguien por la mañana?',
     options: ['buenos días', 'buen día', 'buen día tengas'],
@@ -17,7 +17,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_2',
+    id: 'greetings_002',
     emoji: '🌅',
     question: '¿Qué dices por la tarde?',
     options: ['buenas tardes', 'buena tarde', 'tardes buenas'],
@@ -28,7 +28,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_3',
+    id: 'greetings_003',
     emoji: '🌙',
     question: '¿Qué dices cuando es de noche?',
     options: ['buenas noches', 'buena noche', 'noches buenas'],
@@ -39,7 +39,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_4',
+    id: 'greetings_004',
     emoji: '👋',
     question: '¿Cómo dices "hello" informalmente?',
     options: ['hola', 'ola', 'holaa'],
@@ -50,7 +50,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_5',
+    id: 'greetings_005',
     emoji: '👋',
     question: '¿Cómo dices "goodbye"?',
     options: ['adiós', 'a dios', 'adios'],
@@ -61,7 +61,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_6',
+    id: 'greetings_006',
     emoji: '🌅',
     question: '¿Qué es otra forma de decir "adiós"?',
     options: ['hasta luego', 'hasta la vista', 'hasta pronto'],
@@ -72,7 +72,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_7',
+    id: 'greetings_007',
     emoji: '💤',
     question: '¿Qué dices antes de dormir?',
     options: ['buenas noches', 'buena noche', 'dulces sueños'],
@@ -83,7 +83,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_8',
+    id: 'greetings_008',
     emoji: '🌄',
     question: '¿Qué significa "hasta mañana"?',
     options: ['see you tomorrow', 'until tomorrow', 'see you later'],
@@ -94,7 +94,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_9',
+    id: 'greetings_009',
     emoji: '👋',
     question: '¿Cómo preguntas "how are you?"',
     options: ['¿cómo estás?', '¿cómo está?', '¿cómo estáis?'],
@@ -105,7 +105,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_10',
+    id: 'greetings_010',
     emoji: '👍',
     question: '¿Cómo respondes "I am fine"?',
     options: ['estoy bien', 'muy bien', 'todo bien'],
@@ -118,7 +118,7 @@ export const greetingsQuestions = [
 
   // Politeness & Courtesy (10 questions)
   {
-    id: 'greetings_11',
+    id: 'greetings_011',
     emoji: '🙏',
     question: '¿Cómo dices "please"?',
     options: ['por favor', 'de favor', 'con favor'],
@@ -129,7 +129,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_12',
+    id: 'greetings_012',
     emoji: '😊',
     question: '¿Cómo dices "thank you"?',
     options: ['gracias', 'muchas gracias', 'mil gracias'],
@@ -140,7 +140,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_13',
+    id: 'greetings_013',
     emoji: '👍',
     question: '¿Cómo respondes a "gracias"?',
     options: ['de nada', 'no hay de qué', 'con gusto'],
@@ -151,7 +151,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_14',
+    id: 'greetings_014',
     emoji: '🙇',
     question: '¿Cómo dices "excuse me"?',
     options: ['perdón', 'disculpa', 'perdone'],
@@ -162,7 +162,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_15',
+    id: 'greetings_015',
     emoji: '😔',
     question: '¿Cómo dices "I am sorry"?',
     options: ['lo siento', 'lo lamento', 'siento mucho'],
@@ -173,7 +173,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_16',
+    id: 'greetings_016',
     emoji: '🤝',
     question: '¿Cómo dices "nice to meet you"?',
     options: ['mucho gusto', 'encantado', 'un placer'],
@@ -184,7 +184,7 @@ export const greetingsQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'greetings_17',
+    id: 'greetings_017',
     emoji: '🙏',
     question: '¿Qué es otra forma de decir "gracias"?',
     options: ['muchas gracias', 'muchísimas gracias', 'mil gracias'],
@@ -195,7 +195,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_18',
+    id: 'greetings_018',
     emoji: '👋',
     question: '¿Cómo respondes a "mucho gusto"?',
     options: ['igualmente', 'el gusto es mío', 'encantado'],
@@ -206,7 +206,7 @@ export const greetingsQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'greetings_19',
+    id: 'greetings_019',
     emoji: '🙏',
     question: '¿Cómo pides permiso para pasar?',
     options: ['con permiso', 'permiso', 'disculpe'],
@@ -217,7 +217,7 @@ export const greetingsQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'greetings_20',
+    id: 'greetings_020',
     emoji: '😇',
     question: '¿Cómo deseas buena suerte?',
     options: ['buena suerte', 'mucha suerte', 'que tengas suerte'],
@@ -230,7 +230,7 @@ export const greetingsQuestions = [
 
   // Common Questions (10 questions)
   {
-    id: 'greetings_21',
+    id: 'greetings_021',
     emoji: '❓',
     question: '¿Cómo preguntas "what is your name?"',
     options: ['¿cómo te llamas?', '¿cómo se llama?', '¿cuál es tu nombre?'],
@@ -241,7 +241,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_22',
+    id: 'greetings_022',
     emoji: '🗣️',
     question: '¿Cómo dices "my name is..."?',
     options: ['me llamo', 'mi nombre es', 'yo soy'],
@@ -252,7 +252,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_23',
+    id: 'greetings_023',
     emoji: '🌍',
     question: '¿Cómo preguntas "where are you from?"',
     options: ['¿de dónde eres?', '¿de dónde es?', '¿de dónde vienes?'],
@@ -263,7 +263,7 @@ export const greetingsQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'greetings_24',
+    id: 'greetings_024',
     emoji: '🏠',
     question: '¿Cómo respondes "I am from..."?',
     options: ['soy de', 'vengo de', 'provengo de'],
@@ -274,7 +274,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_25',
+    id: 'greetings_025',
     emoji: '🗨️',
     question: '¿Cómo preguntas "what\'s up?"',
     options: ['¿qué tal?', '¿qué pasa?', '¿qué onda?'],
@@ -285,7 +285,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_26',
+    id: 'greetings_026',
     emoji: '🎂',
     question: '¿Cuántos años tienes? means what?',
     options: ['how old are you?', 'how many years do you have?', 'what is your age?'],
@@ -296,7 +296,7 @@ export const greetingsQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'greetings_27',
+    id: 'greetings_027',
     emoji: '🔢',
     question: '¿Cómo respondes "I am 25 years old"?',
     options: ['tengo 25 años', 'tengo veinticinco años', 'cumplo 25 años'],
@@ -307,7 +307,7 @@ export const greetingsQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'greetings_28',
+    id: 'greetings_028',
     emoji: '🗣️',
     question: '¿Cómo preguntas "do you speak Spanish?"',
     options: ['¿hablas español?', '¿habla español?', '¿sabes español?'],
@@ -318,7 +318,7 @@ export const greetingsQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'greetings_29',
+    id: 'greetings_029',
     emoji: '🇬🇧',
     question: '¿Cómo preguntas "do you speak English?"',
     options: ['¿hablas inglés?', '¿habla inglés?', '¿sabes inglés?'],
@@ -329,7 +329,7 @@ export const greetingsQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'greetings_30',
+    id: 'greetings_030',
     emoji: '❌',
     question: '¿Cómo dices "I don\'t understand"?',
     options: ['no entiendo', 'no comprendo', 'no capto'],
@@ -342,7 +342,7 @@ export const greetingsQuestions = [
 
   // Conversation Basics (10 questions)
   {
-    id: 'greetings_31',
+    id: 'greetings_031',
     emoji: '✅',
     question: '¿Cómo dices "yes"?',
     options: ['sí', 'síí', 'siii'],
@@ -353,7 +353,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_32',
+    id: 'greetings_032',
     emoji: '❌',
     question: '¿Cómo dices "no"?',
     options: ['no', 'noo', 'nooo'],
@@ -364,7 +364,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_33',
+    id: 'greetings_033',
     emoji: '🤷',
     question: '¿Cómo dices "maybe"?',
     options: ['tal vez', 'quizás', 'a lo mejor'],
@@ -375,7 +375,7 @@ export const greetingsQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'greetings_34',
+    id: 'greetings_034',
     emoji: '👍',
     question: '¿Cómo dices "okay" o "fine"?',
     options: ['vale', 'está bien', 'ok'],
@@ -386,7 +386,7 @@ export const greetingsQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'greetings_35',
+    id: 'greetings_035',
     emoji: '👌',
     question: '¿Cómo dices "of course"?',
     options: ['claro', 'por supuesto', 'desde luego'],
@@ -397,7 +397,7 @@ export const greetingsQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'greetings_36',
+    id: 'greetings_036',
     emoji: '⏰',
     question: '¿Cómo preguntas "what time is it?"',
     options: ['¿qué hora es?', '¿qué horas son?', '¿cuál es la hora?'],
@@ -408,7 +408,7 @@ export const greetingsQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'greetings_37',
+    id: 'greetings_037',
     emoji: '📅',
     question: '¿Cómo preguntas "what day is today?"',
     options: ['¿qué día es hoy?', '¿qué día es?', '¿cuál día es hoy?'],
@@ -419,7 +419,7 @@ export const greetingsQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'greetings_38',
+    id: 'greetings_038',
     emoji: '🔍',
     question: '¿Cómo dices "I don\'t know"?',
     options: ['no sé', 'no lo sé', 'ni idea'],
@@ -430,7 +430,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_39',
+    id: 'greetings_039',
     emoji: '🙋',
     question: '¿Cómo dices "help" o "help me"?',
     options: ['ayuda', 'ayúdame', 'socorro'],
@@ -441,7 +441,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_40',
+    id: 'greetings_040',
     emoji: '⏸️',
     question: '¿Cómo dices "wait"?',
     options: ['espera', 'espérate', 'un momento'],
@@ -454,7 +454,7 @@ export const greetingsQuestions = [
 
   // Special Occasions (10 questions)
   {
-    id: 'greetings_41',
+    id: 'greetings_041',
     emoji: '🎉',
     question: '¿Cómo felicitas a alguien?',
     options: ['felicidades', 'felicitaciones', 'enhorabuena'],
@@ -465,7 +465,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_42',
+    id: 'greetings_042',
     emoji: '🎂',
     question: '¿Cómo dices "happy birthday"?',
     options: ['feliz cumpleaños', 'feliz cumple', 'que cumplas muchos más'],
@@ -476,7 +476,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_43',
+    id: 'greetings_043',
     emoji: '🎄',
     question: '¿Cómo dices "merry Christmas"?',
     options: ['feliz navidad', 'felices navidades', 'feliz pascua'],
@@ -487,7 +487,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_44',
+    id: 'greetings_044',
     emoji: '🎊',
     question: '¿Cómo dices "happy new year"?',
     options: ['feliz año nuevo', 'próspero año nuevo', 'felices fiestas'],
@@ -498,7 +498,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_45',
+    id: 'greetings_045',
     emoji: '🛫',
     question: '¿Cómo deseas "have a good trip"?',
     options: ['buen viaje', 'que tengas buen viaje', 'feliz viaje'],
@@ -509,7 +509,7 @@ export const greetingsQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'greetings_46',
+    id: 'greetings_046',
     emoji: '🍽️',
     question: '¿Qué dices antes de comer?',
     options: ['buen provecho', 'que aproveche', 'provecho'],
@@ -520,7 +520,7 @@ export const greetingsQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'greetings_47',
+    id: 'greetings_047',
     emoji: '🌟',
     question: '¿Cómo deseas "good luck"?',
     options: ['buena suerte', 'mucha suerte', 'que tengas suerte'],
@@ -531,7 +531,7 @@ export const greetingsQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'greetings_48',
+    id: 'greetings_048',
     emoji: '🏥',
     question: '¿Cómo dices "get well soon"?',
     options: ['que te mejores', 'que se mejore', 'mejórate pronto'],
@@ -542,7 +542,7 @@ export const greetingsQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'greetings_49',
+    id: 'greetings_049',
     emoji: '💑',
     question: '¿Cómo dices "I love you"?',
     options: ['te quiero', 'te amo', 'te adoro'],
@@ -553,7 +553,7 @@ export const greetingsQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'greetings_50',
+    id: 'greetings_050',
     emoji: '😘',
     question: '¿Cómo dices "I miss you"?',
     options: ['te extraño', 'te echo de menos', 'me haces falta'],
@@ -566,7 +566,7 @@ export const greetingsQuestions = [
 
   // Additional Conversation Phrases (4 questions)
   {
-    id: 'greetings_51',
+    id: 'greetings_051',
     emoji: '❓',
     question: '¿Cómo dices "I have a question for you"?',
     options: ['tengo una pregunta para ti', 'tengo una pregunta por ti', 'tengo pregunta para ti'],
@@ -577,7 +577,7 @@ export const greetingsQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'greetings_52',
+    id: 'greetings_052',
     emoji: '🛑',
     question: '¿Cómo dices "that is enough"?',
     options: ['eso es suficiente', 'es suficiente', 'basta'],
@@ -588,7 +588,7 @@ export const greetingsQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'greetings_53',
+    id: 'greetings_053',
     emoji: '🏨',
     question: '¿Cómo dices "we are staying here for two weeks"?',
     options: ['nos quedamos aquí por dos semanas', 'estamos quedando aquí por dos semanas', 'quedamos aquí dos semanas'],
@@ -599,7 +599,7 @@ export const greetingsQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'greetings_54',
+    id: 'greetings_054',
     emoji: '💡',
     question: '¿Cómo dices "the answer is..." (___)?',
     options: ['la respuesta es', 'la respuesta está', 'el respuesto es'],
