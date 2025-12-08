@@ -4,10 +4,16 @@
  * Also displays streak bonus when a milestone is reached
  */
 
+import { useState, useEffect } from 'react';
 import { translations } from '../config/translations/answers/index';
 import gameSettings, { getStreakColor, getStreakGradientColor } from '../config/gameSettings';
+import pronunciationAudio from '../utils/pronunciationAudio';
 
 const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, hintUsed = false }) => {
+  const [audioAvailable, setAudioAvailable] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
+
   if (!currentQuestion) return null;
 
   // Get the English translation
@@ -24,6 +30,60 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, 
   const pointsEarned = hintUsed 
     ? Math.floor(currentQuestion.points / 2) 
     : currentQuestion.points;
+
+  // Listen for online/offline status changes
+  useEffect(() => {
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+
+  // Check if audio file exists for this word
+  useEffect(() => {
+    if (!isOnline) {
+      setAudioAvailable(false);
+      return;
+    }
+
+    let isMounted = true;
+
+    const checkAudio = async () => {
+      const exists = await pronunciationAudio.checkAudioExists(currentQuestion);
+      if (isMounted) {
+        setAudioAvailable(exists);
+        // Preload if available for faster playback
+        if (exists) {
+          pronunciationAudio.preloadAudio(currentQuestion);
+        }
+      }
+    };
+
+    checkAudio();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [currentQuestion, isOnline]);
+
+  // Handle play button click
+  const handlePlayAudio = async () => {
+    if (isPlaying) return; // Prevent multiple clicks
+    
+    setIsPlaying(true);
+    const success = await pronunciationAudio.playPronunciation(currentQuestion);
+    
+    // Reset playing state after a short delay (assume 2-3 seconds for most pronunciations)
+    setTimeout(() => {
+      setIsPlaying(false);
+    }, 3000);
+  };
 
   return (
     <div id="translation-overlay" style={{
@@ -51,13 +111,61 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, 
         ✅
       </div>
       
-      <div id="translation-text" style={{
-        fontSize: '28px',
-        fontWeight: 'bold',
-        color: 'white',
-        textAlign: 'center',
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        gap: '10px',
+        width: '100%',
       }}>
-        {wordsAreSame ? spanishWord : `${spanishWord} = ${englishTranslation}`}
+        <div id="translation-text" style={{
+          fontSize: '28px',
+          fontWeight: 'bold',
+          color: 'white',
+          textAlign: 'center',
+        }}>
+          {wordsAreSame ? spanishWord : `${spanishWord} = ${englishTranslation}`}
+        </div>
+
+        {/* Audio play button - only show if online and audio exists */}
+        {audioAvailable && isOnline && (
+          <button
+            onClick={handlePlayAudio}
+            disabled={isPlaying}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '8px 16px',
+              backgroundColor: isPlaying ? 'rgba(255, 255, 255, 0.3)' : 'rgba(255, 255, 255, 0.2)',
+              border: '2px solid white',
+              borderRadius: '20px',
+              color: 'white',
+              fontSize: '14px',
+              fontWeight: '600',
+              cursor: isPlaying ? 'not-allowed' : 'pointer',
+              transition: 'all 0.2s ease',
+              opacity: isPlaying ? 0.7 : 1,
+            }}
+            onMouseEnter={(e) => {
+              if (!isPlaying) {
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.3)';
+                e.currentTarget.style.transform = 'scale(1.05)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (!isPlaying) {
+                e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
+                e.currentTarget.style.transform = 'scale(1)';
+              }
+            }}
+          >
+            <span style={{ fontSize: '18px' }}>
+              {isPlaying ? '🔊' : '🔉'}
+            </span>
+            <span>{isPlaying ? 'Playing...' : 'Hear pronunciation'}</span>
+          </button>
+        )}
       </div>
       
       {firstAttempt && (
