@@ -2,6 +2,9 @@
  * Parallax Themes Configuration
  * Defines different parallax scene themes with their positioning and speed settings
  * Each theme can have different vertical positions for layers to account for different artwork
+ * 
+ * usePathImages: Set to false if parallax-layer2 already includes the path artwork.
+ *                This prevents loading separate path.png and path-fork.png files.
  */
 
 const parallaxThemes = {
@@ -10,6 +13,9 @@ const parallaxThemes = {
     name: 'Default Forest',
     description: 'Original forest landscape',
     imagePath: 'default',
+    // Whether to use separate path.png and path-fork.png images
+    // Set to false if parallax-layer2 already includes the path
+    usePathImages: true,
     // Canvas background colors for fallback when layer images aren't loaded
     canvasColors: {
       aboveHorizon: '#a7dbf6',  // Light blue sky
@@ -59,6 +65,8 @@ const parallaxThemes = {
     name: 'Hong Kong Harbor',
     description: 'Urban harbor landscape',
     imagePath: 'hong-kong',
+    // Whether to use separate path.png and path-fork.png images
+    usePathImages: false,
     // Canvas background colors for fallback when layer images aren't loaded
     canvasColors: {
       aboveHorizon: '#f9b858',  // Light blue sky for harbor
@@ -100,6 +108,8 @@ const parallaxThemes = {
     name: 'Jamaica Beach',
     description: 'Tropical beach landscape',
     imagePath: 'jamaica',
+    // Whether to use separate path.png and path-fork.png images
+    usePathImages: true,
     // Canvas background colors for fallback when layer images aren't loaded
     canvasColors: {
       aboveHorizon: '#b7dbed',  // Light blue tropical sky
@@ -140,6 +150,8 @@ const parallaxThemes = {
     name: 'Día de los Muertos',
     description: 'Colorful Day of the Dead celebration',
     imagePath: 'dia-de-los-muertos',
+    // Whether to use separate path.png and path-fork.png images
+    usePathImages: true,
     // Canvas background colors for fallback when layer images aren't loaded
     canvasColors: {
       aboveHorizon: '#39486a',  // dark blue
@@ -181,6 +193,8 @@ const parallaxThemes = {
   //   name: 'Theme Display Name',
   //   description: 'Short description',
   //   imagePath: 'folder-name-in-public/images/themes/',
+  //   usePathImages: true, // Set to false if parallax-layer2 already includes the path
+  //   canvasColors: { /* ... */ },
   //   layerPositions: { /* ... */ },
   //   layerSpeeds: { /* ... */ },
   //   positioning: { /* ... */ },

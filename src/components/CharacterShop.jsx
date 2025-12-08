@@ -130,7 +130,9 @@ const CharacterShop = ({ totalPoints, ownedCharacters, currentCharacter, onPurch
         {/* Themes Tab */}
         {activeTab === 'themes' && (
           <div className="themes-grid">
-            {getShopThemes().map((theme) => {
+            {getShopThemes()
+              .filter(theme => theme.enabled !== false)
+              .map((theme) => {
               const ownedList = Array.isArray(ownedThemes) ? ownedThemes : [];
               const isOwned = theme.id === 'default' || ownedList.includes(theme.id);
               const isSelected = theme.id === currentTheme;

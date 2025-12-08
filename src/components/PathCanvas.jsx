@@ -460,19 +460,26 @@ const PathCanvas = () => {
       setParallaxLayer2Image(parallaxLayer2);
     };
     
-    // Load path image
-    const path = new Image();
-    path.src = `${themePath}path.png`;
-    path.onload = () => {
-      setPathImage(path);
-    };
-    
-    // Load path fork image
-    const pathFork = new Image();
-    pathFork.src = `${themePath}path-fork.png`;
-    pathFork.onload = () => {
-      setPathForkImage(pathFork);
-    };
+    // Only load path images if theme uses them
+    if (theme.usePathImages !== false) {
+      // Load path image
+      const path = new Image();
+      path.src = `${themePath}path.png`;
+      path.onload = () => {
+        setPathImage(path);
+      };
+      
+      // Load path fork image
+      const pathFork = new Image();
+      pathFork.src = `${themePath}path-fork.png`;
+      pathFork.onload = () => {
+        setPathForkImage(pathFork);
+      };
+    } else {
+      // Clear path images if theme doesn't use them
+      setPathImage(null);
+      setPathForkImage(null);
+    }
     
     // Load parallax-layer6 image (mountains)
     const parallaxLayer6 = new Image();
@@ -527,14 +534,18 @@ const PathCanvas = () => {
 
   // Check if all critical assets are loaded
   useEffect(() => {
-    // Consider loading complete when we have at least the path image and walker sprite sheet
-    // Other parallax layers are optional fallbacks
-    const criticalAssetsLoaded = pathImage && pathForkImage && walkerSpriteSheet;
+    // Get current theme configuration
+    const theme = getTheme(currentTheme);
+    
+    // Consider loading complete based on whether theme uses path images
+    const criticalAssetsLoaded = theme.usePathImages !== false
+      ? pathImage && pathForkImage && walkerSpriteSheet  // Need path images
+      : walkerSpriteSheet;  // Don't need path images
     
     if (criticalAssetsLoaded && isLoading) {
       setIsLoading(false);
     }
-  }, [pathImage, pathForkImage, walkerSpriteSheet, isLoading]);
+  }, [pathImage, pathForkImage, walkerSpriteSheet, isLoading, currentTheme]);
 
   // Adjust camera position when choice dialog is shown/hidden
   // When dialog is visible AND animation is paused, smoothly pan the fork to the right side

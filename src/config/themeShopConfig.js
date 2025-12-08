@@ -12,6 +12,7 @@ const themeShopConfig = {
       description: 'Original forest landscape',
       cost: 0,
       thumbnail: 'scene.jpg', // Located at public/images/themes/default/scene.jpg
+      enabled: true,
     },
     {
       id: 'hong-kong',
@@ -19,6 +20,7 @@ const themeShopConfig = {
       description: 'Urban harbor landscape',
       cost: 150,
       thumbnail: 'scene.jpg', // Located at public/images/themes/hong-kong/scene.jpg
+      enabled: true,
     },
     {
       id: 'jamaica',
@@ -26,6 +28,7 @@ const themeShopConfig = {
       description: 'Tropical beach landscape',
       cost: 300,
       thumbnail: 'scene.jpg', // Located at public/images/themes/jamaica/scene.jpg
+      enabled: true,
     },
     {
       id: 'dia-de-los-muertos',
@@ -33,6 +36,7 @@ const themeShopConfig = {
       description: 'Colorful Day of the Dead celebration',
       cost: 500,
       thumbnail: 'scene.jpg', // Located at public/images/themes/dia-de-los-muertos/scene.jpg
+      enabled: true,
     },
     // Add more themes here following the same structure
     // {
@@ -41,6 +45,7 @@ const themeShopConfig = {
     //   description: 'High altitude mountain landscape',
     //   cost: 175,
     //   thumbnail: 'scene.jpg',
+    //   enabled: true, // Set to false to hide theme from shop
     // },
   ],
 };
