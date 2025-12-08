@@ -777,7 +777,8 @@ const PathCanvas = () => {
       // Draw parallax layer 2 (grass) for entire area (path + foreground) - single unified tile
       if (parallaxLayer2Image) {
         const tileWidth = parallaxLayer2Image.width;
-        const scrollOffset = offsetRef.current % tileWidth;
+        const layer2Speed = getLayerSpeed('layer2');
+        const scrollOffset = (offsetRef.current * layer2Speed) % tileWidth;
         
         // Draw layer 2 tiles - repeat horizontally, stretch vertically from pathTop to bottom
         // Layer 2 always fills from pathTop to bottom of canvas

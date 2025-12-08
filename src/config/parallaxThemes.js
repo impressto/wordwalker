@@ -36,8 +36,8 @@ const parallaxThemes = {
     // Speed is relative to the main walker movement (1.0 = no parallax, 0.0 = no movement)
     // Lower values = farther away = less movement
     layerSpeeds: {
-      layer1: 0.8,    // Foreground (closest) - fast movement
-      layer2: 0.6,    // Mid-foreground
+      layer1: 1.4,    // Foreground (closest) - fastest movement
+      layer2: 1.0,    // Mid-foreground
       layer3: 0.5,    // Mid layer
       layer4: 0.4,    // Mid-distant
       layer5: 0.3,    // Distant layer
@@ -84,8 +84,8 @@ const parallaxThemes = {
       layer7: 0,      // Sky/rear - adjust as needed
     },
     layerSpeeds: {
-      layer1: 0.8,    // Foreground
-      layer2: 0.6,    // Mid-foreground
+      layer1: 1.4,    // Foreground (closest) - fastest movement
+      layer2: 1.0,    // Mid-foreground
       layer3: 0.6,    // Mid layer
       layer4: 0.4,    // Mid-distant
       layer5: 0.3,    // Distant layer
@@ -126,8 +126,8 @@ const parallaxThemes = {
       layer7: 0,      // Sky/rear
     },
     layerSpeeds: {
-      layer1: 0.8,    // Foreground
-      layer2: 0.6,    // Mid-foreground
+      layer1: 1.4,    // Foreground (closest) - fastest movement
+      layer2: 1.0,    // Mid-foreground
       layer3: 0.5,    // Mid layer
       layer4: 0.4,    // Mid-distant
       layer5: 0.3,    // Distant layer
@@ -168,8 +168,8 @@ const parallaxThemes = {
       layer7: 0,      // Sky/rear
     },
     layerSpeeds: {
-      layer1: 0.8,    // Foreground (closest) - fast movement
-      layer2: 0.6,    // Mid-foreground
+      layer1: 1.4,    // Foreground (closest) - fastest movement
+      layer2: 1.0,    // Mid-foreground
       layer3: 0.5,    // Mid layer
       layer4: 0.4,    // Mid-distant
       layer5: 0.3,    // Distant layer
@@ -210,11 +210,11 @@ const parallaxThemes = {
       layer7: 0,      // Sky/rear
     },
     layerSpeeds: {
-      layer1: 0.8,    // fence with flowers
-      layer2: 0.6,    // street
+      layer1: 1.4,    // fence with flowers (closest) - fastest movement
+      layer2: 1.0,    // street
       layer3: 0.57,    // sidewalk with tables and musicians
       layer4: 0.4,    // river with boats
-      layer5: 0.3,    // buildings on far banMid layerk
+      layer5: 0.3,    // buildings on far bank
       layer6: 0.15,   // eiffel tower and otherbackground buildings
       layer7: 0.0,    // Static background/sky
     },
