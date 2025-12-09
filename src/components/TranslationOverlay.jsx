@@ -47,7 +47,14 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, 
 
   // Check if audio file exists for this word
   useEffect(() => {
+    console.log('🔍 Audio check starting...', {
+      isOnline,
+      questionId: currentQuestion?.id,
+      category: currentQuestion?.category
+    });
+
     if (!isOnline) {
+      console.log('❌ Offline - hiding audio');
       setAudioAvailable(false);
       return;
     }
@@ -55,11 +62,15 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, 
     let isMounted = true;
 
     const checkAudio = async () => {
+      console.log('📡 Checking audio exists for:', currentQuestion);
       const exists = await pronunciationAudio.checkAudioExists(currentQuestion);
+      console.log('✅ Audio check result:', exists);
+      
       if (isMounted) {
         setAudioAvailable(exists);
         // Preload if available for faster playback
         if (exists) {
+          console.log('📥 Preloading audio...');
           pronunciationAudio.preloadAudio(currentQuestion);
         }
       }

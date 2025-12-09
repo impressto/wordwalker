@@ -42,7 +42,7 @@ const themeShopConfig = {
       id: 'paris',
       name: 'Paris',
       description: 'Iconic Parisian cityscape',
-      cost: 500,
+      cost: 50,
       thumbnail: 'scene.jpg', // Located at public/images/themes/paris/scene.jpg
       enabled: true,
     },

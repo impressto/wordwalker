@@ -29,6 +29,7 @@ class PronunciationAudioManager {
 
   /**
    * Get the full URL for an audio file based on question
+   * Uses the question ID directly as it's already properly formatted
    * @param {Object} question - The question object containing id and category
    * @returns {string} The full URL to the audio file
    */
@@ -36,53 +37,86 @@ class PronunciationAudioManager {
     if (!question || !question.id || !question.category) {
       return null;
     }
+    
+    // Use the ID directly - it's already properly formatted (e.g., numbers_001, grammar_015)
     return `${this.baseUrl}${question.category}/${question.id}.${this.fileFormat}`;
   }
 
   /**
    * Check if audio file exists on the remote server
-   * Uses HEAD request to avoid downloading the entire file
+   * In development (localhost), assumes files exist to avoid CORS issues
+   * In production, uses Audio element to check existence
    * Results are cached to avoid repeated network requests
    * @param {Object} question - The question object containing id and category
    * @returns {Promise<boolean>} True if file exists, false otherwise
    */
   async checkAudioExists(question) {
+    console.log('checkAudioExists called with question:', question);
+    
     // Return false immediately if offline
     if (!this.isOnline()) {
+      console.log('App is offline, returning false');
       return false;
     }
 
     const url = this.getAudioUrl(question);
+    console.log('Generated audio URL:', url);
     
     // Return false if we couldn't generate a valid URL
     if (!url) {
+      console.log('Could not generate valid URL, returning false');
       return false;
     }
     
     // Check cache first
     if (this.existenceCache.has(url)) {
-      return this.existenceCache.get(url);
+      const cachedResult = this.existenceCache.get(url);
+      console.log('Found in cache:', url, 'exists:', cachedResult);
+      return cachedResult;
     }
 
-    try {
-      const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), this.checkTimeout);
-
-      const response = await fetch(url, {
-        method: 'HEAD',
-        signal: controller.signal,
-      });
-
-      clearTimeout(timeoutId);
-
-      const exists = response.ok;
-      this.existenceCache.set(url, exists);
-      return exists;
-    } catch (error) {
-      // Network error, timeout, or file doesn't exist
-      this.existenceCache.set(url, false);
-      return false;
+    // In development (localhost), assume files exist to avoid CORS issues
+    // The audio will fail gracefully if file doesn't actually exist
+    const isDevelopment = window.location.hostname === 'localhost' || 
+                         window.location.hostname === '127.0.0.1' ||
+                         window.location.hostname.includes('local');
+    
+    if (isDevelopment) {
+      console.log('🔧 Development mode: Assuming audio exists (CORS bypass)');
+      this.existenceCache.set(url, true);
+      return true;
     }
+
+    // In production, use Audio element to check if file exists
+    return new Promise((resolve) => {
+      console.log('Creating Audio element to check:', url);
+      const audio = new Audio();
+      audio.crossOrigin = "anonymous"; // Enable CORS for proper audio loading
+      
+      const timeout = setTimeout(() => {
+        console.log('Audio check timed out for:', url);
+        audio.src = ''; // Clear source
+        this.existenceCache.set(url, false);
+        resolve(false);
+      }, this.checkTimeout);
+
+      audio.addEventListener('canplaythrough', () => {
+        console.log('✅ Audio file exists and can play:', url);
+        clearTimeout(timeout);
+        this.existenceCache.set(url, true);
+        resolve(true);
+      }, { once: true });
+
+      audio.addEventListener('error', (e) => {
+        console.log('❌ Audio file does not exist or cannot load:', url, e);
+        clearTimeout(timeout);
+        this.existenceCache.set(url, false);
+        resolve(false);
+      }, { once: true });
+
+      // Set the source to trigger loading
+      audio.src = url;
+    });
   }
 
   /**
@@ -113,7 +147,9 @@ class PronunciationAudioManager {
 
       if (!audio) {
         // Create new audio element
-        audio = new Audio(url);
+        audio = new Audio();
+        audio.crossOrigin = "anonymous"; // Enable CORS for proper audio loading
+        audio.src = url;
         audio.volume = playbackVolume;
         
         // Cache it for future use
@@ -124,10 +160,13 @@ class PronunciationAudioManager {
         audio.volume = playbackVolume;
       }
 
+      console.log('🎵 Attempting to play:', url);
       await audio.play();
+      console.log('✅ Audio playback started successfully');
       return true;
     } catch (error) {
       console.error('Error playing pronunciation audio:', error);
+      console.error('Failed URL:', url);
       // Remove from cache if it failed to play
       this.audioCache.delete(url);
       return false;
@@ -151,10 +190,15 @@ class PronunciationAudioManager {
     }
 
     try {
-      const audio = new Audio(url);
+      // Create audio element with CORS enabled
+      const audio = new Audio();
+      audio.crossOrigin = "anonymous";
+      audio.src = url;
       audio.preload = 'auto';
       this.audioCache.set(url, audio);
+      console.log('📥 Preloaded audio:', url);
     } catch (error) {
+      console.log('Failed to preload audio:', error);
       // Silently fail - not critical
     }
   }
