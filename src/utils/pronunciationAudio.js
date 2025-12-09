@@ -34,12 +34,17 @@ class PronunciationAudioManager {
    * @returns {string} The full URL to the audio file
    */
   getAudioUrl(question) {
+    console.log('🔍 getAudioUrl called with question:', question);
+    
     if (!question || !question.id || !question.category) {
+      console.log('❌ Invalid question object:', { question });
       return null;
     }
     
     // Use the ID directly - it's already properly formatted (e.g., numbers_001, grammar_015)
-    return `${this.baseUrl}${question.category}/${question.id}.${this.fileFormat}`;
+    const url = `${this.baseUrl}${question.category}/${question.id}.${this.fileFormat}`;
+    console.log('📍 Generated URL:', url);
+    return url;
   }
 
   /**
