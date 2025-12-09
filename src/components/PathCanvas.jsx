@@ -949,6 +949,11 @@ const PathCanvas = () => {
       // Position roughly in the middle-left of the path (personX already defined above)
       const personY = pathTop + (pathBottom - pathTop) * 0.5 - 50; // Middle of the path vertically, moved up 50 pixels
       
+      // Get character config to access scale and offset properties for positioning calculations
+      const characterData = getCharacterById(currentCharacter);
+      const characterScale = characterData?.scale || 1.0; // Default to 1.0 if not found
+      const characterYOffset = characterData?.yOffset || 0; // Default to 0 if not found
+      
       // Draw streak diamond behind the walker if streak is active
       if (streak > 0) {
         // Update diamond glow animation (smooth fade in/out)
@@ -961,7 +966,8 @@ const PathCanvas = () => {
         
         // Position diamond behind and to the left of the walker
         const diamondX = personX - 35; // 35 pixels to the left of walker
-        const diamondY = personY;
+        // Adjust diamond Y position based on character scale and Y offset to keep it properly aligned
+        const diamondY = personY + characterYOffset;
         const diamondSize = 25; // Base size of diamond
         
         drawStreakDiamond(diamondX, diamondY, diamondSize, glowIntensity, streak);
@@ -1007,11 +1013,6 @@ const PathCanvas = () => {
         // Calculate source position in sprite sheet
         const sourceX = walkerFrameRef.current * spriteConfig.frameWidth;
         const sourceY = currentRow * spriteConfig.frameHeight;
-        
-        // Get character config to access scale property
-        const characterData = getCharacterById(currentCharacter);
-        const characterScale = characterData?.scale || 1.0; // Default to 1.0 if not found
-        const characterYOffset = characterData?.yOffset || 0; // Default to 0 if not found
         
         // Calculate size to draw on canvas (scaled appropriately)
         const baseDrawWidth = 80;  // Base size
