@@ -7,6 +7,10 @@
  * - Height: 600px (2 rows × 300px each)
  *   - Row 1: Walking animation (6 frames)
  *   - Row 2: Victory animation (6 frames)
+ * 
+ * Character properties:
+ * - scale: Render size multiplier (1.0 = default, 0.8 = 20% smaller, 1.2 = 20% larger)
+ * - yOffset: Vertical position adjustment in pixels (0 = default, negative = up, positive = down)
  */
 
 const characterConfig = {
@@ -19,6 +23,8 @@ const characterConfig = {
       avatarFile: 'walker-default-avatar.png',
       cost: 0,
       description: 'Your starting character',
+      scale: 1.0, // Render scale multiplier (1.0 = default size)
+      yOffset: 0, // Vertical position adjustment in pixels
     },
     {
       id: 'blue',
@@ -27,6 +33,8 @@ const characterConfig = {
       avatarFile: 'walker-blue-avatar.png',
       cost: 100,
       description: 'A speedy blue character',
+      scale: 1.0,
+      yOffset: 0,
     },
     {
       id: 'dog',
@@ -35,6 +43,8 @@ const characterConfig = {
       avatarFile: 'walker-dog-avatar.png',
       cost: 200,
       description: 'A loyal canine companion',
+      scale: 0.8,
+      yOffset: 10,
     },
     {
       id: 'cat',
@@ -43,22 +53,28 @@ const characterConfig = {
       avatarFile: 'walker-cat-avatar.png',
       cost: 200,
       description: 'An independent feline friend',
+      scale: 1.0,
+      yOffset: 0,
     },
     {
       id: 'emma',
       name: 'Emma',
       spriteFile: 'walker-emma.png',
       avatarFile: 'walker-emma-avatar.png',
-      cost: 300,
+      cost: 30,
       description: 'A charming character',
+      scale: 1.4,
+      yOffset: -25,
     },
     {
       id: 'asuka',
       name: 'Asuka',
       spriteFile: 'walker-asuka.png',
       avatarFile: 'walker-asuka-avatar.png',
-      cost: 300,
+      cost: 30,
       description: 'A spirited adventurer',
+      scale: 1.4,
+      yOffset: -20,
     },
   ],
 

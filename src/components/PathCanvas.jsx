@@ -6,7 +6,7 @@ import { translations } from '../config/translations/answers/index';
 import { questionTranslations } from '../config/translations';
 import gameSettings, { getStreakColor, getTranslationBoxDuration } from '../config/gameSettings';
 import { getTheme } from '../config/parallaxThemes';
-import { getSpriteSheetConfig } from '../config/characterConfig';
+import { getSpriteSheetConfig, getCharacterById } from '../config/characterConfig';
 import { setActiveTheme } from '../utils/themeManager';
 import SoundManager from '../utils/soundManager';
 import { loadGameState, saveGameState, clearGameState, hasSavedGameState, convertLoadedState } from '../utils/gameStatePersistence';
@@ -1008,8 +1008,14 @@ const PathCanvas = () => {
         const sourceX = walkerFrameRef.current * spriteConfig.frameWidth;
         const sourceY = currentRow * spriteConfig.frameHeight;
         
+        // Get character config to access scale property
+        const characterData = getCharacterById(currentCharacter);
+        const characterScale = characterData?.scale || 1.0; // Default to 1.0 if not found
+        const characterYOffset = characterData?.yOffset || 0; // Default to 0 if not found
+        
         // Calculate size to draw on canvas (scaled appropriately)
-        const drawWidth = 80;  // Adjust size as needed
+        const baseDrawWidth = 80;  // Base size
+        const drawWidth = baseDrawWidth * characterScale;  // Apply character-specific scale
         const drawHeight = (spriteConfig.frameHeight / spriteConfig.frameWidth) * drawWidth;
         
         // Add bounce effect during victory animation
@@ -1024,7 +1030,7 @@ const PathCanvas = () => {
         
         // Calculate walker position
         const walkerX = personX - drawWidth / 2 + 10;
-        const walkerY = personY - drawHeight / 2 + bounceOffset;
+        const walkerY = personY - drawHeight / 2 + bounceOffset + characterYOffset; // Apply Y-offset
         
         // Draw the current frame from sprite sheet
         ctx.drawImage(
