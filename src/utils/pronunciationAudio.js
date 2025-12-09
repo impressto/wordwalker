@@ -3,8 +3,8 @@
  * Handles remote audio playback for word pronunciations
  * Only fetches audio when online and checks for file existence before displaying play button
  * 
- * Files are organized by category: /audio-samples/{category}/{questionId}.mp3
- * Example: https://impressto.ca/wordwalker/audio-samples/grammar/grammar_001.mp3
+ * Files are organized by category: /audio-samples/{category}/{correctAnswer}.mp3
+ * Example: https://impressto.ca/wordwalker/audio-samples/grammar/yo.mp3
  */
 
 import audioConfig from '../config/audioConfig';
@@ -29,20 +29,20 @@ class PronunciationAudioManager {
 
   /**
    * Get the full URL for an audio file based on question
-   * Uses the question ID directly as it's already properly formatted
-   * @param {Object} question - The question object containing id and category
+   * Uses the question's correctAnswer as the filename
+   * @param {Object} question - The question object containing correctAnswer and category
    * @returns {string} The full URL to the audio file
    */
   getAudioUrl(question) {
     console.log('🔍 getAudioUrl called with question:', question);
     
-    if (!question || !question.id || !question.category) {
+    if (!question || !question.correctAnswer || !question.category) {
       console.log('❌ Invalid question object:', { question });
       return null;
     }
     
-    // Use the ID directly - it's already properly formatted (e.g., numbers_001, grammar_015)
-    const url = `${this.baseUrl}${question.category}/${question.id}.${this.fileFormat}`;
+    // Use the correctAnswer as the filename for better reusability across questions
+    const url = `${this.baseUrl}${question.category}/${question.correctAnswer}.${this.fileFormat}`;
     console.log('📍 Generated URL:', url);
     return url;
   }

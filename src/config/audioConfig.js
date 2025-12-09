@@ -5,7 +5,7 @@
 
 const audioConfig = {
   // Base URL for pronunciation audio files
-  // Files are organized by category: /audio-samples/{category}/{questionId}.mp3
+  // Files are organized by category: /audio-samples/{category}/{correctAnswer}.mp3
   pronunciationBaseUrl: 'https://impressto.ca/wordwalker/audio-samples/',
   
   // File format for pronunciation audio

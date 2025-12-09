@@ -120,17 +120,17 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
     // Check if this category was just completed in this session
     const isJustCompleted = completedCategories.has(categoryId);
     const isCurrentCategory = categoryId === currentCategory;
-    // Disable if fully mastered, just completed, or currently playing
-    const isDisabled = isFullyMastered || isJustCompleted || isCurrentCategory;
+    // Only disable if fully mastered - allow users to continue with current or just-completed categories
+    const isDisabled = isFullyMastered;
     
     // Determine the title message
     let titleMessage = '';
     if (isFullyMastered) {
       titleMessage = 'Category Mastered! ✨ All questions answered correctly';
-    } else if (isJustCompleted) {
-      titleMessage = 'Category Completed! 🎉 Already finished in this session';
     } else if (isCurrentCategory) {
-      titleMessage = 'Currently playing this category';
+      titleMessage = 'Continue with this category';
+    } else if (isJustCompleted) {
+      titleMessage = 'Category Completed! 🎉 Select to continue practicing';
     }
     
     return (

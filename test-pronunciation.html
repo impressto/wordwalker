@@ -140,10 +140,10 @@
       }
 
       getAudioUrl(question) {
-        if (!question || !question.id || !question.category) {
+        if (!question || !question.correctAnswer || !question.category) {
           return null;
         }
-        return `${this.baseUrl}${question.category}/${question.id}.${this.fileFormat}`;
+        return `${this.baseUrl}${question.category}/${question.correctAnswer}.${this.fileFormat}`;
       }
 
       async checkAudioExists(question) {
