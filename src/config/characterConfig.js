@@ -76,6 +76,16 @@ const characterConfig = {
       scale: 1.4,
       yOffset: -20,
     },
+    {
+      id: 'elvis',
+      name: 'Elvis',
+      spriteFile: 'walker-elvis.png',
+      avatarFile: 'walker-elvis-avatar.png',
+      cost: 50,
+      description: 'The King of Rock and Roll',
+      scale: 1.5,
+      yOffset: -20,
+    },
   ],
 
   // Sprite sheet configuration (same for all characters)

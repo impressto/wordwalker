@@ -1003,8 +1003,8 @@ const PathCanvas = () => {
             }
           }
         } else {
-          // When stopped, reset to first frame of walking animation for idle pose
-          walkerFrameRef.current = 0;
+          // When stopped at checkpoint, use the rightmost (6th) frame for idle pose
+          walkerFrameRef.current = 5; // Frame 5 is the 6th frame (0-indexed)
         }
         
         // Calculate which row to use (walking or victory)
