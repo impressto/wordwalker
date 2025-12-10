@@ -73,6 +73,12 @@ const ResumeDialog = ({ onResume, onNewGame, savedStats }) => {
             ✨ New Game
           </button>
         </div>
+        
+        <div className="github-link">
+          <a href="https://github.com/impressto/wordwalker" target="_blank" rel="noopener noreferrer">
+            ⭐ View Source Code on GitHub
+          </a>
+        </div>
       </div>
       
       {showConfirmation && (
