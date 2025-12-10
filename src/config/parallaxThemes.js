@@ -18,8 +18,8 @@ const parallaxThemes = {
     usePathImages: true,
     // Canvas background colors for fallback when layer images aren't loaded
     canvasColors: {
-      aboveHorizon: '#a7dbf6',  // Light blue sky
-      belowHorizon: '#616e3f',  // Dark green ground
+      aboveHorizon: '#7c8799',  // Light blue sky
+      belowHorizon: '#717d3d',  // Dark green ground
     },
     // Layer positions (Y coordinate adjustments from base positions)
     // These are offsets from the calculated horizon and path positions
