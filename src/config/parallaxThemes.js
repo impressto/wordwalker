@@ -77,7 +77,7 @@ const parallaxThemes = {
     layerPositions: {
       layer1: 0,      // Foreground - adjust as needed
       layer2: 0,      // Grass/street level - adjust as needed
-      layer3: -20,    // Buildings/structures - adjust as needed
+      layer3: -25,    // Buildings/structures - adjust as needed
       layer4: -140,   // Mid-distant buildings - adjust as needed
       layer5: -90,    // high rises in the distance - adjust as needed
       layer6: 80,   // mountains- adjust as needed
