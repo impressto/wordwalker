@@ -86,6 +86,16 @@ const characterConfig = {
       scale: 1.5,
       yOffset: -20,
     },
+    {
+      id: 'steamboatwillie',
+      name: 'Steamboat Willie',
+      spriteFile: 'walker-steamboatwillie.png',
+      avatarFile: 'walker-steamboatwillie-avatar.png',
+      cost: 75,
+      description: 'Classic 1928 cartoon character',
+      scale: 1.3,
+      yOffset: -15,
+    },
   ],
 
   // Sprite sheet configuration (same for all characters)
