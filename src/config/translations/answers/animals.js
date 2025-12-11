@@ -2,7 +2,7 @@
  * Animals Category Answer Translations
  * Auto-generated
  * Category: animals
- * Total translations: 53
+ * Total translations: 74
  */
 
 export const animalsAnswerTranslations = {
@@ -81,5 +81,40 @@ export const animalsAnswerTranslations = {
   "el flamenco": "the flamingo",
   "el castor": "the beaver",
   "el nido": "the nest",
-  "el oso polar": "the polar bear"
+  "el oso polar": "the polar bear",
+  "el guepardo": "the cheetah",
+  "el camello": "the camel",
+  "el camello bactriano": "the Bactrian camel",
+  "el dromedario": "the dromedary",
+  "la llama": "the llama",
+  "la alpaca": "the alpaca",
+  "la vicuña": "the vicuña",
+  "el wombat": "the wombat",
+  "el perezoso": "the sloth",
+  "la mofeta": "the skunk",
+  "el tejón": "the badger",
+  "el mapache": "the raccoon",
+  "el panda rojo": "the red panda",
+  "el caimán": "the alligator",
+  "el caracol": "the snail",
+  "el cangrejo ermitaño": "the hermit crab",
+  "el camaleón": "the chameleon",
+  "la iguana": "the iguana",
+  "la ballena azul": "the blue whale",
+  "el tiburón ballena": "the whale shark",
+  "la orca": "the orca",
+  "la lechuza": "the barn owl",
+  "el leopardo": "the leopard",
+  "el gato montés": "the wildcat",
+  "el burro": "the donkey",
+  "la mula": "the mule",
+  "el avestruz": "the ostrich",
+  "el hipopótamo": "the hippopotamus",
+  "el búfalo": "the buffalo",
+  "el oso pardo": "the brown bear",
+  "el oso negro": "the black bear",
+  "el perro policía": "the police dog",
+  "el perro pastor": "the shepherd dog",
+  "la garza": "the heron",
+  "el lagarto": "the lizard"
 };
