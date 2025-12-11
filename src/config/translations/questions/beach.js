@@ -121,5 +121,9 @@ export const beachTranslations = {
   "beach_113": "What team sport do you play on the sand?",
   "beach_114": "What do you ask for at the resort to dry off after swimming?",
   "beach_115": "What is prohibited to do near the hotel pool?",
-  "beach_116": "What nighttime activity do you do to see the stars?"
+  "beach_116": "What nighttime activity do you do to see the stars?",
+  "beach_117": "What sport is this?",
+  "beach_118": "What activity is this?",
+  "beach_119": "What sport do you do on the waves?",
+  "beach_120": "What sport do you do in the pool?"
 };

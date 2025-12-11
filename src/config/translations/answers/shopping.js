@@ -154,5 +154,7 @@ export const shoppingAnswerTranslations = {
   "el esmalte de uñas": "the nail polish",
   "el cajero automático": "the ATM",
   "un corte de pelo": "a haircut",
-  "grande": "large"
+  "grande": "large",
+  "la galería": "the gallery",
+  "los libros": "the books"
 };

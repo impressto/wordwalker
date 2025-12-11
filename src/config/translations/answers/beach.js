@@ -115,5 +115,7 @@ export const beachAnswerTranslations = {
   "el voleibol de playa": "beach volleyball",
   "las toallas": "the towels",
   "correr": "run/running",
-  "observar las estrellas": "star gazing"
+  "observar las estrellas": "star gazing",
+  "la natación": "the swimming",
+  "el surf": "the surf"
 };
