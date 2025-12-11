@@ -7,7 +7,7 @@
 
 import { useState, useEffect } from 'react';
 import { getAllCategoryIds } from '../config/questions';
-import { isCategoryFullyMastered } from '../utils/questionTracking';
+import { isCategoryFullyMastered, getCategoryCorrectAnswerCount, getCategoryQuestionCount } from '../utils/questionTracking';
 
 const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpenShop, currentCategory = null, correctAnswersByCategory = {}, completedCategories = new Set() }) => {
   const [dialogTop, setDialogTop] = useState('100px');
@@ -123,6 +123,10 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
     // Only disable if fully mastered - allow users to continue with current or just-completed categories
     const isDisabled = isFullyMastered;
     
+    // Get mastered and total question counts for this category
+    const masteredCount = getCategoryCorrectAnswerCount(categoryId, correctAnswersByCategory);
+    const totalCount = getCategoryQuestionCount(categoryId);
+    
     // Determine the title message
     let titleMessage = '';
     if (isFullyMastered) {
@@ -173,6 +177,14 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
       >
         <span style={{ fontSize: '32px' }}>{category.emoji}</span>
         <span style={{ fontSize: '14px', textAlign: 'center' }}>{category.displayName}</span>
+        <span style={{ 
+          fontSize: '11px', 
+          textAlign: 'center',
+          opacity: 0.9,
+          marginTop: '2px'
+        }}>
+          {masteredCount}/{totalCount}
+        </span>
         {isFullyMastered && (
           <span style={{ fontSize: '16px', position: 'absolute', top: '5px', right: '5px' }}>✨</span>
         )}
