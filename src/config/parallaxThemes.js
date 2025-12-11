@@ -234,6 +234,49 @@ const parallaxThemes = {
     layer2OffsetY: 30,
   },
 
+  // Nassau theme - Pirates burying treasure on beach at night in the Bahamas
+  'nassau': {
+    name: 'Nassau Nights',
+    description: 'Pirates burying treasure on a Bahamian beach at night',
+    imagePath: 'nassau',
+    // Whether to use separate path.png and path-fork.png images
+    usePathImages: true,
+    // Canvas background colors for fallback when layer images aren't loaded
+    canvasColors: {
+      aboveHorizon: '#1a1d3a',  // Dark night sky
+      belowHorizon: '#3d4a5c',  // Dark beach sand at night
+    },
+    // Layer positions for Nassau theme
+    layerPositions: {
+      layer1: 0,      // Foreground - beach elements
+      layer2: 40,      // Sand/beach level
+      layer3: -20,    // Mid-ground beach elements
+      layer4: -40,    // Pirates/treasure scene
+      layer5: 20,    // ship
+      layer6: -80,    // Ocean/horizon
+      layer7: 0,      // Night sky/stars
+    },
+    layerSpeeds: {
+      layer1: 1.4,    // Foreground (closest) - fastest movement
+      layer2: 1.0,    // Beach sand level
+      layer3: 0.6,    // Mid-ground elements
+      layer4: 0.45,   // Pirates/treasure
+      layer5: 0.3,   // ship
+      layer6: 0.2,    // Ocean/horizon
+      layer7: 0.0,    // Static night sky
+    },
+    positioning: {
+      horizonY: 0.35,        // Horizon at ocean line
+      pathTopOffset: 0.55,   // Path on sandy beach
+      pathTopAdditional: 90, // Additional pixel offset for path top
+      pathYOffset: 20,       // Additional Y offset for path tiles only
+    },
+    // Layer 2 vertical stretch control
+    layer2StretchFactor: 0.8,
+    // Layer 2 vertical offset
+    layer2OffsetY: 30,
+  },
+
   // Add more themes below following the same structure
   // Template for new theme:
   // 'theme-id': {

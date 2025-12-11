@@ -46,6 +46,14 @@ const themeShopConfig = {
       thumbnail: 'scene.jpg', // Located at public/images/themes/paris/scene.jpg
       enabled: true,
     },
+    {
+      id: 'nassau',
+      name: 'Nassau Nights',
+      description: 'Pirates burying treasure on a Bahamian beach at night',
+      cost: 40,
+      thumbnail: 'scene.jpg', // Located at public/images/themes/nassau/scene.jpg
+      enabled: true,
+    },
     // Add more themes here following the same structure
     // {
     //   id: 'mountain',
