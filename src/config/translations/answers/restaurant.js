@@ -17,8 +17,6 @@ export const restaurantAnswerTranslations = {
   "el entrante": "the appetizer / starter",
   "el postre": "the dessert",
   "los cubiertos": "the cutlery / silverware",
-  "la sal": "the salt",
-  "la pimienta": "the pepper",
   "quisiera una hamburguesa": "I would like a hamburger",
   "bien cocida": "well done",
   "una pizza, por favor": "a pizza, please",

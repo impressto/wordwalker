@@ -18,8 +18,6 @@ export const restaurantTranslations = {
   "restaurant_009": "What do you eat before the main course?",
   "restaurant_010": "What do you eat after the main course?",
   "restaurant_011": "What do you eat with?",
-  "restaurant_012": "What do you put on food for more flavor?",
-  "restaurant_013": "What do you put on food to make it spicy?",
   "restaurant_014": "What do you drink water from?",
   "restaurant_015": "Where do they serve your food?",
 
