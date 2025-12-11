@@ -167,5 +167,6 @@ export const shoppingTranslations = {
   "shopping_160": "What do you use to cut paper?",
   "shopping_161": "What do you put on your nails?",
   "shopping_162": "Where do you take money out from the bank?",
-  "shopping_163": "What service do you ask for at the barbershop?"
+  "shopping_163": "What service do you ask for at the barbershop?",
+  "shopping_164": "What size is larger than medium?"
 };

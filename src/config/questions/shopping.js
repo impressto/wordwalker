@@ -1796,4 +1796,15 @@ export const shoppingQuestions = [
     category: 'shopping',
     difficulty: 'easy',
   },
+  {
+    id: 'shopping_164',
+    emoji: '📏',
+    question: '¿Qué talla es más grande que la mediana?',
+    options: ['grande', 'extra grande', 'XL'],
+    correctAnswer: 'grande',
+    hint: 'Size that\'s larger than medium but not yet extra large',
+    points: 5,
+    category: 'shopping',
+    difficulty: 'easy',
+  },
 ];
