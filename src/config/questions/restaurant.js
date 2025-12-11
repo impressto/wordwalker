@@ -6,7 +6,7 @@
 export const restaurantQuestions = [
   // Basic Restaurant Phrases (1-15)
   {
-    id: 'rest_001',
+    id: 'restaurant_001',
     emoji: '🍽️',
     question: '¿Qué dices al mesero para pedir?',
     options: ['quisiera', 'necesito', 'quiero'],
@@ -17,7 +17,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_002',
+    id: 'restaurant_002',
     emoji: '📋',
     question: '¿Qué necesitas para ver las opciones de comida?',
     options: ['el menú', 'la cuenta', 'el plato'],
@@ -28,7 +28,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_003',
+    id: 'restaurant_003',
     emoji: '👨‍🍳',
     question: '¿Quién te sirve en un restaurante?',
     options: ['el mesero', 'el cocinero', 'el gerente'],
@@ -39,7 +39,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_004',
+    id: 'restaurant_004',
     emoji: '💰',
     question: '¿Qué pides al final de la comida?',
     options: ['la cuenta', 'el menú', 'el postre'],
@@ -50,7 +50,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_005',
+    id: 'restaurant_005',
     emoji: '🪑',
     question: '¿Qué pides cuando llegas al restaurante?',
     options: ['una mesa', 'una silla', 'un plato'],
@@ -61,7 +61,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_006',
+    id: 'restaurant_006',
     emoji: '📅',
     question: '¿Qué haces para asegurar una mesa?',
     options: ['hacer una reserva', 'pagar una cuenta', 'leer el menú'],
@@ -72,7 +72,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_007',
+    id: 'restaurant_007',
     emoji: '💵',
     question: '¿Qué dejas para el mesero por buen servicio?',
     options: ['la propina', 'la cuenta', 'el cambio'],
@@ -83,7 +83,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_008',
+    id: 'restaurant_008',
     emoji: '🍷',
     question: '¿Qué pides primero para tomar?',
     options: ['una bebida', 'un postre', 'la cuenta'],
@@ -94,7 +94,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_009',
+    id: 'restaurant_009',
     emoji: '🥗',
     question: '¿Qué comes antes del plato principal?',
     options: ['el entrante', 'el postre', 'la cuenta'],
@@ -105,7 +105,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_010',
+    id: 'restaurant_010',
     emoji: '🍰',
     question: '¿Qué comes después del plato principal?',
     options: ['el postre', 'el entrante', 'la sopa'],
@@ -116,7 +116,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_011',
+    id: 'restaurant_011',
     emoji: '🍴',
     question: '¿Con qué comes?',
     options: ['los cubiertos', 'las servilletas', 'los vasos'],
@@ -127,7 +127,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_012',
+    id: 'restaurant_012',
     emoji: '🧂',
     question: '¿Qué le pones a la comida para más sabor?',
     options: ['la sal', 'el agua', 'el pan'],
@@ -138,7 +138,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_013',
+    id: 'restaurant_013',
     emoji: '🌶️',
     question: '¿Qué le pones a la comida para hacerla picante?',
     options: ['la pimienta', 'el azúcar', 'la sal'],
@@ -149,7 +149,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_014',
+    id: 'restaurant_014',
     emoji: '🥤',
     question: '¿De qué tomas agua?',
     options: ['del vaso', 'del plato', 'del tenedor'],
@@ -160,7 +160,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_015',
+    id: 'restaurant_015',
     emoji: '🍽️',
     question: '¿Dónde sirven tu comida?',
     options: ['en el plato', 'en el vaso', 'en la servilleta'],
@@ -173,7 +173,7 @@ export const restaurantQuestions = [
 
   // Ordering Food (16-30)
   {
-    id: 'rest_016',
+    id: 'restaurant_016',
     emoji: '🍔',
     question: '¿Cómo pides una hamburguesa?',
     options: ['quisiera una hamburguesa', 'necesito un plato', 'tomo la cuenta'],
@@ -184,7 +184,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_017',
+    id: 'restaurant_017',
     emoji: '🥩',
     question: '¿Cómo te gusta la carne?',
     options: ['bien cocida', 'cruda', 'quemada'],
@@ -195,7 +195,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_018',
+    id: 'restaurant_018',
     emoji: '🍕',
     question: '¿Qué dices cuando quieres pizza?',
     options: ['una pizza, por favor', 'la cuenta, por favor', 'el menú, por favor'],
@@ -206,7 +206,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_019',
+    id: 'restaurant_019',
     emoji: '🥙',
     question: '¿Qué comida mexicana pides?',
     options: ['un taco', 'una paella', 'un sushi'],
@@ -217,7 +217,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_020',
+    id: 'restaurant_020',
     emoji: '🍜',
     question: '¿Qué plato líquido pides cuando hace frío?',
     options: ['una sopa', 'un helado', 'una ensalada'],
@@ -228,7 +228,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_021',
+    id: 'restaurant_021',
     emoji: '🥗',
     question: '¿Qué pides si quieres comer vegetales?',
     options: ['una ensalada', 'un bistec', 'un pescado'],
@@ -239,7 +239,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_022',
+    id: 'restaurant_022',
     emoji: '🍝',
     question: '¿Qué comida italiana con salsa pides?',
     options: ['pasta', 'arroz', 'pan'],
@@ -250,7 +250,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_023',
+    id: 'restaurant_023',
     emoji: '🍚',
     question: '¿Qué acompaña muchos platos latinos?',
     options: ['el arroz', 'el helado', 'la sopa'],
@@ -261,7 +261,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_024',
+    id: 'restaurant_024',
     emoji: '🥖',
     question: '¿Qué te dan gratis en muchos restaurantes?',
     options: ['el pan', 'el postre', 'la bebida'],
@@ -272,7 +272,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_025',
+    id: 'restaurant_025',
     emoji: '🧈',
     question: '¿Qué le pones al pan?',
     options: ['la mantequilla', 'el agua', 'la sal'],
@@ -283,7 +283,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_026',
+    id: 'restaurant_026',
     emoji: '🍟',
     question: '¿Qué acompañamiento pides con hamburguesa?',
     options: ['papas fritas', 'helado', 'sopa'],
@@ -294,7 +294,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_027',
+    id: 'restaurant_027',
     emoji: '🐟',
     question: '¿Qué proteína del mar pides?',
     options: ['el pescado', 'el pollo', 'la carne'],
@@ -305,7 +305,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_028',
+    id: 'restaurant_028',
     emoji: '🦐',
     question: '¿Qué mariscos pequeños pides?',
     options: ['los camarones', 'las galletas', 'los huevos'],
@@ -316,7 +316,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_029',
+    id: 'restaurant_029',
     emoji: '🍗',
     question: '¿Qué carne de ave pides?',
     options: ['el pollo', 'el pescado', 'el cerdo'],
@@ -327,7 +327,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_030',
+    id: 'restaurant_030',
     emoji: '🥩',
     question: '¿Qué carne roja pides?',
     options: ['la carne de res', 'el pescado', 'el pollo'],
@@ -340,7 +340,7 @@ export const restaurantQuestions = [
 
   // Drinks (31-45)
   {
-    id: 'rest_031',
+    id: 'restaurant_031',
     emoji: '💧',
     question: '¿Qué bebida básica pides?',
     options: ['agua', 'vino', 'cerveza'],
@@ -351,7 +351,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_032',
+    id: 'restaurant_032',
     emoji: '🥤',
     question: '¿Qué bebida con gas pides?',
     options: ['un refresco', 'un café', 'un té'],
@@ -362,7 +362,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_033',
+    id: 'restaurant_033',
     emoji: '☕',
     question: '¿Qué bebida caliente pides después de comer?',
     options: ['un café', 'un jugo', 'una cerveza'],
@@ -373,7 +373,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_034',
+    id: 'restaurant_034',
     emoji: '🍵',
     question: '¿Qué otra bebida caliente pides?',
     options: ['un té', 'un jugo', 'una leche'],
@@ -384,7 +384,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_035',
+    id: 'restaurant_035',
     emoji: '🍷',
     question: '¿Qué bebida alcohólica de uvas pides?',
     options: ['vino', 'cerveza', 'agua'],
@@ -395,7 +395,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_036',
+    id: 'restaurant_036',
     emoji: '🍺',
     question: '¿Qué bebida alcohólica fría pides?',
     options: ['una cerveza', 'un café', 'un té'],
@@ -406,7 +406,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_037',
+    id: 'restaurant_037',
     emoji: '🧃',
     question: '¿Qué bebida de frutas pides?',
     options: ['un jugo', 'un café', 'una cerveza'],
@@ -417,7 +417,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_038',
+    id: 'restaurant_038',
     emoji: '🥛',
     question: '¿Qué bebida blanca pides con cereal?',
     options: ['leche', 'agua', 'café'],
@@ -428,7 +428,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_039',
+    id: 'restaurant_039',
     emoji: '🧊',
     question: '¿Qué le pides al mesero para enfriar tu bebida?',
     options: ['hielo', 'sal', 'azúcar'],
@@ -439,7 +439,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_040',
+    id: 'restaurant_040',
     emoji: '🍋',
     question: '¿Qué le pones al agua para sabor?',
     options: ['limón', 'sal', 'mantequilla'],
@@ -450,7 +450,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_041',
+    id: 'restaurant_041',
     emoji: '🍹',
     question: '¿Qué bebida tropical pides en la playa?',
     options: ['un cóctel', 'un café', 'una sopa'],
@@ -461,7 +461,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_042',
+    id: 'restaurant_042',
     emoji: '🥃',
     question: '¿Qué licor fuerte pides?',
     options: ['whisky', 'jugo', 'agua'],
@@ -472,7 +472,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_043',
+    id: 'restaurant_043',
     emoji: '🍾',
     question: '¿Qué bebida especial pides para celebrar?',
     options: ['champán', 'agua', 'café'],
@@ -483,7 +483,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_044',
+    id: 'restaurant_044',
     emoji: '🧋',
     question: '¿Qué bebida con burbujas es popular en Asia?',
     options: ['té de burbujas', 'café', 'cerveza'],
@@ -494,7 +494,7 @@ export const restaurantQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'rest_045',
+    id: 'restaurant_045',
     emoji: '☕',
     question: '¿Cómo pides café con leche?',
     options: ['un café con leche', 'un café solo', 'un té con limón'],
@@ -507,7 +507,7 @@ export const restaurantQuestions = [
 
   // Desserts (46-55)
   {
-    id: 'rest_046',
+    id: 'restaurant_046',
     emoji: '🍰',
     question: '¿Qué postre dulce y esponjoso pides?',
     options: ['el pastel', 'la sopa', 'la ensalada'],
@@ -518,7 +518,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_047',
+    id: 'restaurant_047',
     emoji: '🍦',
     question: '¿Qué postre frío pides en verano?',
     options: ['el helado', 'el café', 'la sopa'],
@@ -529,7 +529,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_048',
+    id: 'restaurant_048',
     emoji: '🍮',
     question: '¿Qué postre cremoso español pides?',
     options: ['el flan', 'la pizza', 'la sopa'],
@@ -540,7 +540,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_049',
+    id: 'restaurant_049',
     emoji: '🍪',
     question: '¿Qué postre crujiente y dulce pides con café?',
     options: ['las galletas', 'las papas', 'las verduras'],
@@ -551,7 +551,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_050',
+    id: 'restaurant_050',
     emoji: '🥧',
     question: '¿Qué postre con frutas pides?',
     options: ['el pie', 'el arroz', 'el pescado'],
@@ -562,7 +562,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_051',
+    id: 'restaurant_051',
     emoji: '🍫',
     question: '¿Qué postre de cacao pides?',
     options: ['el chocolate', 'el queso', 'el pan'],
@@ -573,7 +573,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_052',
+    id: 'restaurant_052',
     emoji: '🧁',
     question: '¿Qué postre pequeño individual pides?',
     options: ['el cupcake', 'la pizza', 'la sopa'],
@@ -584,7 +584,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_053',
+    id: 'restaurant_053',
     emoji: '🍩',
     question: '¿Qué postre frito y redondo pides?',
     options: ['la dona', 'la ensalada', 'la sopa'],
@@ -595,7 +595,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_054',
+    id: 'restaurant_054',
     emoji: '🍨',
     question: '¿Qué helado con frutas y crema pides?',
     options: ['el sundae', 'el café', 'la sopa'],
@@ -606,7 +606,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_055',
+    id: 'restaurant_055',
     emoji: '🍡',
     question: '¿Qué postre en palitos pides?',
     options: ['los dulces', 'las papas', 'los vegetales'],
@@ -619,7 +619,7 @@ export const restaurantQuestions = [
 
   // Restaurant Types & Situations (56-70)
   {
-    id: 'rest_056',
+    id: 'restaurant_056',
     emoji: '🍕',
     question: '¿A qué restaurante vas para pizza?',
     options: ['la pizzería', 'la cafetería', 'la panadería'],
@@ -630,7 +630,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_057',
+    id: 'restaurant_057',
     emoji: '☕',
     question: '¿Dónde tomas café y pastel?',
     options: ['la cafetería', 'la carnicería', 'la pescadería'],
@@ -641,7 +641,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_058',
+    id: 'restaurant_058',
     emoji: '🍔',
     question: '¿Qué tipo de restaurante sirve comida rápida?',
     options: ['comida rápida', 'comida gourmet', 'comida casera'],
@@ -652,7 +652,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_059',
+    id: 'restaurant_059',
     emoji: '🍱',
     question: '¿Qué restaurante sirve comida para llevar?',
     options: ['comida para llevar', 'comida para aquí', 'comida para mañana'],
@@ -663,7 +663,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_060',
+    id: 'restaurant_060',
     emoji: '🏪',
     question: '¿Dónde comes dentro del restaurante?',
     options: ['para comer aquí', 'para llevar', 'para mañana'],
@@ -674,7 +674,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_061',
+    id: 'restaurant_061',
     emoji: '🚗',
     question: '¿Dónde pides sin salir del carro?',
     options: ['servicio al auto', 'servicio a casa', 'servicio a pie'],
@@ -685,7 +685,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_062',
+    id: 'restaurant_062',
     emoji: '🏠',
     question: '¿Qué servicio trae comida a tu casa?',
     options: ['entrega a domicilio', 'comida para llevar', 'reservación'],
@@ -696,7 +696,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_063',
+    id: 'restaurant_063',
     emoji: '🍽️',
     question: '¿Qué tipo de restaurante es elegante?',
     options: ['restaurante fino', 'comida rápida', 'cafetería'],
@@ -707,7 +707,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_064',
+    id: 'restaurant_064',
     emoji: '🎉',
     question: '¿Dónde comes mucha variedad pagando una vez?',
     options: ['el buffet', 'la pizzería', 'la cafetería'],
@@ -718,7 +718,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_065',
+    id: 'restaurant_065',
     emoji: '🍜',
     question: '¿Qué restaurante sirve comida asiática?',
     options: ['restaurante asiático', 'restaurante mexicano', 'restaurante italiano'],
@@ -729,7 +729,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_066',
+    id: 'restaurant_066',
     emoji: '🌮',
     question: '¿Qué restaurante sirve tacos y burritos?',
     options: ['restaurante mexicano', 'restaurante chino', 'restaurante francés'],
@@ -740,7 +740,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_067',
+    id: 'restaurant_067',
     emoji: '🍝',
     question: '¿Qué restaurante sirve pasta y pizza?',
     options: ['restaurante italiano', 'restaurante mexicano', 'restaurante chino'],
@@ -751,7 +751,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_068',
+    id: 'restaurant_068',
     emoji: '🥘',
     question: '¿Qué restaurante sirve paella?',
     options: ['restaurante español', 'restaurante mexicano', 'restaurante chino'],
@@ -762,7 +762,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_069',
+    id: 'restaurant_069',
     emoji: '🍣',
     question: '¿Qué restaurante sirve sushi?',
     options: ['restaurante japonés', 'restaurante mexicano', 'restaurante italiano'],
@@ -773,7 +773,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_070',
+    id: 'restaurant_070',
     emoji: '🥖',
     question: '¿Qué restaurante sirve croissants?',
     options: ['restaurante francés', 'restaurante mexicano', 'restaurante chino'],
@@ -786,7 +786,7 @@ export const restaurantQuestions = [
 
   // Dining Preferences & Requests (71-85)
   {
-    id: 'rest_071',
+    id: 'restaurant_071',
     emoji: '🌱',
     question: '¿Qué pides si no comes carne?',
     options: ['comida vegetariana', 'comida con carne', 'solo carne'],
@@ -797,7 +797,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_072',
+    id: 'restaurant_072',
     emoji: '🥜',
     question: '¿Qué le dices al mesero si tienes alergia?',
     options: ['soy alérgico a', 'me gusta', 'quisiera más'],
@@ -808,7 +808,7 @@ export const restaurantQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'rest_073',
+    id: 'restaurant_073',
     emoji: '🌶️',
     question: '¿Qué dices si no quieres comida picante?',
     options: ['sin picante', 'muy picante', 'extra picante'],
@@ -819,7 +819,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_074',
+    id: 'restaurant_074',
     emoji: '🧂',
     question: '¿Qué dices si no quieres sal?',
     options: ['sin sal', 'con sal', 'mucha sal'],
@@ -830,7 +830,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_075',
+    id: 'restaurant_075',
     emoji: '🔥',
     question: '¿Cómo pides la comida caliente?',
     options: ['bien caliente', 'frío', 'congelado'],
@@ -841,7 +841,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_076',
+    id: 'restaurant_076',
     emoji: '❄️',
     question: '¿Cómo pides la bebida muy fría?',
     options: ['bien fría', 'caliente', 'sin hielo'],
@@ -852,7 +852,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_077',
+    id: 'restaurant_077',
     emoji: '🍴',
     question: '¿Qué pides si necesitas tenedor?',
     options: ['un tenedor', 'un vaso', 'un plato'],
@@ -863,7 +863,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_078',
+    id: 'restaurant_078',
     emoji: '🥄',
     question: '¿Qué pides para comer sopa?',
     options: ['una cuchara', 'un tenedor', 'un cuchillo'],
@@ -874,7 +874,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_079',
+    id: 'restaurant_079',
     emoji: '🔪',
     question: '¿Qué pides para cortar carne?',
     options: ['un cuchillo', 'una cuchara', 'un vaso'],
@@ -885,7 +885,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_080',
+    id: 'restaurant_080',
     emoji: '🧻',
     question: '¿Qué usas para limpiarte la boca?',
     options: ['la servilleta', 'el menú', 'el plato'],
@@ -896,7 +896,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_081',
+    id: 'restaurant_081',
     emoji: '🥤',
     question: '¿Qué pides para tomar tu refresco?',
     options: ['un popote', 'un plato', 'un tenedor'],
@@ -907,7 +907,7 @@ export const restaurantQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'rest_082',
+    id: 'restaurant_082',
     emoji: '📦',
     question: '¿Qué pides para llevar lo que sobra?',
     options: ['una caja para llevar', 'otro plato', 'la cuenta'],
@@ -918,7 +918,7 @@ export const restaurantQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'rest_083',
+    id: 'restaurant_083',
     emoji: '🧊',
     question: '¿Qué dices si no quieres hielo?',
     options: ['sin hielo', 'con hielo', 'mucho hielo'],
@@ -929,7 +929,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_084',
+    id: 'restaurant_084',
     emoji: '🍋',
     question: '¿Qué pides para tu té?',
     options: ['limón', 'carne', 'pescado'],
@@ -940,7 +940,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_085',
+    id: 'restaurant_085',
     emoji: '🍯',
     question: '¿Qué le pones al té para endulzar?',
     options: ['miel', 'sal', 'pimienta'],
@@ -953,7 +953,7 @@ export const restaurantQuestions = [
 
   // Final phrases & situations (86-100)
   {
-    id: 'rest_086',
+    id: 'restaurant_086',
     emoji: '👍',
     question: '¿Qué dices cuando la comida está deliciosa?',
     options: ['está delicioso', 'está horrible', 'está frío'],
@@ -964,7 +964,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_087',
+    id: 'restaurant_087',
     emoji: '😋',
     question: '¿Qué dices cuando tienes hambre?',
     options: ['tengo hambre', 'tengo sed', 'tengo sueño'],
@@ -975,7 +975,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_088',
+    id: 'restaurant_088',
     emoji: '🥤',
     question: '¿Qué dices cuando tienes sed?',
     options: ['tengo sed', 'tengo hambre', 'tengo frío'],
@@ -986,7 +986,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_089',
+    id: 'restaurant_089',
     emoji: '😊',
     question: '¿Qué dices al mesero al final?',
     options: ['gracias', 'hola', 'adiós'],
@@ -997,7 +997,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_090',
+    id: 'restaurant_090',
     emoji: '🙏',
     question: '¿Qué dices para ser cortés al pedir?',
     options: ['por favor', 'ahora', 'nunca'],
@@ -1008,7 +1008,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_091',
+    id: 'restaurant_091',
     emoji: '⏰',
     question: '¿A qué hora comes en la mañana?',
     options: ['el desayuno', 'el almuerzo', 'la cena'],
@@ -1019,7 +1019,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_092',
+    id: 'restaurant_092',
     emoji: '🌞',
     question: '¿A qué hora comes a mediodía?',
     options: ['el almuerzo', 'el desayuno', 'la cena'],
@@ -1030,7 +1030,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_093',
+    id: 'restaurant_093',
     emoji: '🌙',
     question: '¿A qué hora comes en la noche?',
     options: ['la cena', 'el desayuno', 'el almuerzo'],
@@ -1041,7 +1041,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_094',
+    id: 'restaurant_094',
     emoji: '🔄',
     question: '¿Qué dices para pedir más?',
     options: ['más, por favor', 'menos, por favor', 'nada más'],
@@ -1052,7 +1052,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_095',
+    id: 'restaurant_095',
     emoji: '✋',
     question: '¿Qué dices cuando no quieres más?',
     options: ['no más, gracias', 'más, por favor', 'todo'],
@@ -1063,7 +1063,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_096',
+    id: 'restaurant_096',
     emoji: '🙋',
     question: '¿Qué dices para llamar al mesero?',
     options: ['disculpe', 'adiós', 'hola'],
@@ -1074,7 +1074,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_097',
+    id: 'restaurant_097',
     emoji: '❓',
     question: '¿Qué preguntas para saber opciones?',
     options: ['¿qué me recomienda?', '¿cuánto cuesta?', '¿dónde está el baño?'],
@@ -1085,7 +1085,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_098',
+    id: 'restaurant_098',
     emoji: '💵',
     question: '¿Qué preguntas para saber el precio?',
     options: ['¿cuánto cuesta?', '¿qué me recomienda?', '¿dónde está?'],
@@ -1096,7 +1096,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_099',
+    id: 'restaurant_099',
     emoji: '🚻',
     question: '¿Qué preguntas para encontrar el baño?',
     options: ['¿dónde está el baño?', '¿cuánto cuesta?', '¿qué me recomienda?'],
@@ -1107,7 +1107,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_100',
+    id: 'restaurant_100',
     emoji: '🎊',
     question: '¿Qué dices para disfrutar la comida?',
     options: ['¡buen provecho!', '¡adiós!', '¡hola!'],
@@ -1118,7 +1118,7 @@ export const restaurantQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'rest_101',
+    id: 'restaurant_101',
     emoji: '🚬',
     question: '¿Qué está prohibido en muchos restaurantes?',
     options: ['fumar', 'comer', 'beber'],
@@ -1129,7 +1129,7 @@ export const restaurantQuestions = [
     difficulty: 'easy',
   },
   {
-    id: 'rest_102',
+    id: 'restaurant_102',
     emoji: '🏮',
     question: '¿Qué ilumina y decora un restaurante elegante?',
     options: ['las lámparas', 'las mesas', 'los platos'],
