@@ -221,9 +221,48 @@ Edit `src/config/gameSettings.js` to adjust:
 - Question mastery thresholds
 
 ### Adding New Questions
-1. Edit `src/config/questions.js` to add new questions
-2. Update translation files in `src/config/translations/` if needed
-3. Rebuild: `npm run build`
+Questions are now organized by category in separate files for easier maintenance:
+
+1. **Navigate to the category file** in `src/config/questions/`:
+   - `food.js` - Food and drink vocabulary
+   - `shopping.js` - Shopping and market terms
+   - `entertainment.js` - Entertainment and activities
+   - `accommodation.js` - Hotels and lodging
+   - `transportation.js` - Travel and vehicles
+   - `directions.js` - Navigation and location
+   - `emergencies.js` - Emergency situations
+   - `beach.js` - Beach and water activities
+   - `greetings.js` - Greetings and introductions
+   - `numbers.js` - Numbers and counting
+   - `grammar.js` - Grammar concepts
+   - `animals.js` - Animals and pets
+   - `people.js` - People and relationships
+   - `daily_routines.js` - Daily activities
+   - `restaurant.js` - Dining and restaurants
+   - `weather.js` - Weather conditions
+
+2. **Add your question** to the appropriate category array:
+   ```javascript
+   {
+     id: 'category_###',        // Unique ID (e.g., 'food_042')
+     emoji: '🎯',                // Visual emoji for the question
+     question: '¿Pregunta?',     // Spanish question
+     options: ['opt1', 'opt2', 'opt3'],  // Three answer choices
+     correctAnswer: 'opt1',      // Must match one option exactly
+     hint: 'Context or tip',     // English hint/explanation
+     points: 5,                  // Point value (typically 5 or 10)
+     category: 'category_name',  // Must match category ID
+     difficulty: 'easy',         // 'easy', 'medium', or 'hard'
+   }
+   ```
+
+3. **Update the combined export** (if adding a new category):
+   - Edit `src/config/questions/index.js` to import and export your new category
+   - Add category metadata to `src/config/questions/categories.js`
+
+4. **Rebuild the app**: `npm run build`
+
+**Note:** Questions automatically combine from all category files via `index.js`. No need to edit a central questions file anymore!
 
 ### Theme Shop Customization
 Edit `src/config/themeShopConfig.js` to:
