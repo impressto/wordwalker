@@ -255,7 +255,7 @@ export const grammarQuestions = [
   // Regular -AR Verbs (5 questions)
   {
     id: 'grammar_023',
-    emoji: '�',
+    emoji: '🗣',
     question: 'Yo ___ español. (hablar - to speak)',
     options: ['hablo', 'hablé', 'hable'],
     correctAnswer: 'hablo',
@@ -288,7 +288,7 @@ export const grammarQuestions = [
   },
   {
     id: 'grammar_026',
-    emoji: '�',
+    emoji: '👣',
     question: 'Nosotros ___ en el parque. (caminar - to walk)',
     options: ['caminamos', 'caminemos', 'caminábamos'],
     correctAnswer: 'caminamos',
@@ -358,7 +358,7 @@ export const grammarQuestions = [
   },
   {
     id: 'grammar_032',
-    emoji: '�',
+    emoji: '🚪',
     question: 'Tú ___ la puerta. (abrir - to open)',
     options: ['abres', 'abrís', 'abre'],
     correctAnswer: 'abres',
@@ -382,7 +382,7 @@ export const grammarQuestions = [
   // Articles & Gender (6 questions)
   {
     id: 'grammar_034',
-    emoji: '�',
+    emoji: '📗',
     question: '___ libro (the book - masculine)',
     options: ['el', 'él', 'la'],
     correctAnswer: 'el',
@@ -404,7 +404,7 @@ export const grammarQuestions = [
   },
   {
     id: 'grammar_036',
-    emoji: '�',
+    emoji: '📚',
     question: '___ libros (the books - masculine plural)',
     options: ['los', 'les', 'las'],
     correctAnswer: 'los',
@@ -437,7 +437,7 @@ export const grammarQuestions = [
   },
   {
     id: 'grammar_039',
-    emoji: '�',
+    emoji: '🐕',
     question: '___ perro (a dog - indefinite)',
     options: ['un', 'uno', 'una'],
     correctAnswer: 'un',
