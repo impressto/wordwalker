@@ -99,6 +99,29 @@ export const numbersTranslations = {
   "numbers_078": "What time is it?",
   "numbers_079": "What time is it?",
 
+  // Ordinal Numbers & More (21 questions)
+  "numbers_080": "How do you say 'first'?",
+  "numbers_081": "How do you say 'second'?",
+  "numbers_082": "How do you say 'third'?",
+  "numbers_083": "How do you say 'fourth'?",
+  "numbers_084": "How do you say 'fifth'?",
+  "numbers_085": "How do you say 'twenty-one'?",
+  "numbers_086": "How do you say 'thirty-one'?",
+  "numbers_087": "How do you say 'forty-five'?",
+  "numbers_088": "How do you say 'ninety-nine'?",
+  "numbers_089": "How do you say 'two hundred'?",
+  "numbers_090": "How do you say 'five hundred'?",
+  "numbers_091": "How do you say 'one million'?",
+  "numbers_092": "How do you say 'half an hour'?",
+  "numbers_093": "How do you say 'a quarter hour' (15 minutes)?",
+  "numbers_094": "How do you say 'weekend'?",
+  "numbers_095": "How do you say 'month'?",
+  "numbers_096": "How do you say 'day'?",
+  "numbers_097": "How do you say 'midnight'?",
+  "numbers_098": "How do you say 'noon/midday'?",
+  "numbers_099": "How do you say 'once' (one time)?",
+  "numbers_100": "How do you say 'twice' (two times)?",
+
   // GRAMMAR CATEGORY
   // Subject Pronouns (8 questions)
   "grammar_1": "How do you say 'I' (subject pronoun)?",

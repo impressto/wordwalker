@@ -2,7 +2,7 @@
  * Numbers Category Answer Translations
  * Auto-generated
  * Category: numbers
- * Total translations: 180
+ * Total translations: 207
  */
 
 export const numbersAnswerTranslations = {
@@ -189,5 +189,34 @@ export const numbersAnswerTranslations = {
   "esté": "I am/be (subjunctive)",
   "sepa": "know (subjunctive)",
   "vaya": "go (subjunctive)",
-  "sea": "be (subjunctive)"
+  "sea": "be (subjunctive)",
+  "primero": "first",
+  "primer": "first (before masculine noun)",
+  "segundo": "second",
+  "segunda": "second (feminine)",
+  "tercero": "third",
+  "tercer": "third (before masculine noun)",
+  "cuarto": "fourth/room/quarter",
+  "cuarta": "fourth (feminine)",
+  "quinto": "fifth",
+  "quinta": "fifth (feminine)",
+  "veintiuno": "twenty-one",
+  "treinta y uno": "thirty-one",
+  "cuarenta y cinco": "forty-five",
+  "noventa y nueve": "ninety-nine",
+  "doscientos": "two hundred",
+  "doscientas": "two hundred (feminine)",
+  "quinientos": "five hundred",
+  "quinientas": "five hundred (feminine)",
+  "un millón": "one million",
+  "media hora": "half an hour",
+  "un cuarto de hora": "a quarter hour",
+  "fin de semana": "weekend",
+  "mes": "month",
+  "día": "day",
+  "medianoche": "midnight",
+  "mediodía": "noon/midday",
+  "una vez": "once/one time",
+  "dos veces": "twice/two times",
+  "veces": "times (plural)"
 };
