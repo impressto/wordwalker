@@ -110,8 +110,6 @@ export const weatherTranslations = {
 
   // Advanced Weather & Climate (91-100)
   "weather_091": "What measures atmospheric pressure?",
-  "weather_092": "What measures wind speed?",
-  "weather_093": "What measures the amount of rain?",
   "weather_094": "What measures air humidity?",
   "weather_095": "What phenomenon causes the seasons?",
   "weather_096": "How many hours does it take for the Earth to rotate?",

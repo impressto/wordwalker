@@ -93,8 +93,6 @@ export const weatherAnswerTranslations = {
   "en los polos": "at the poles",
   "atmósfera": "atmosphere",
   "barómetro": "barometer",
-  "anemómetro": "anemometer",
-  "pluviómetro": "rain gauge",
   "higrómetro": "hygrometer",
   "inclinación de la Tierra": "Earth's tilt",
   "24 horas": "24 hours",
