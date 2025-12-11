@@ -24,7 +24,7 @@ const characterConfig = {
       cost: 0,
       description: 'Your starting character',
       scale: 1.0, // Render scale multiplier (1.0 = default size)
-      yOffset: 0, // Vertical position adjustment in pixels
+      yOffset: 20, // Vertical position adjustment in pixels
     },
     {
       id: 'blue',
@@ -34,7 +34,7 @@ const characterConfig = {
       cost: 100,
       description: 'A speedy blue character',
       scale: 1.0,
-      yOffset: 0,
+      yOffset: 20,
     },
     {
       id: 'dog',
@@ -44,7 +44,7 @@ const characterConfig = {
       cost: 200,
       description: 'A loyal canine companion',
       scale: 0.8,
-      yOffset: 10,
+      yOffset: 30,
     },
     {
       id: 'cat',
@@ -54,7 +54,7 @@ const characterConfig = {
       cost: 200,
       description: 'An independent feline friend',
       scale: 1.0,
-      yOffset: 0,
+      yOffset: 20,
     },
     {
       id: 'emma',
@@ -64,7 +64,7 @@ const characterConfig = {
       cost: 30,
       description: 'A charming character',
       scale: 1.4,
-      yOffset: -25,
+      yOffset: 0,
     },
     {
       id: 'asuka',
@@ -74,7 +74,7 @@ const characterConfig = {
       cost: 30,
       description: 'A spirited adventurer',
       scale: 1.4,
-      yOffset: -20,
+      yOffset: 0,
     },
     {
       id: 'elvis',
@@ -83,8 +83,8 @@ const characterConfig = {
       avatarFile: 'walker-elvis-avatar.png',
       cost: 50,
       description: 'The King of Rock and Roll',
-      scale: 1.5,
-      yOffset: -20,
+      scale: 1.7,
+      yOffset: -10,
     },
     {
       id: 'steamboatwillie',
@@ -94,7 +94,7 @@ const characterConfig = {
       cost: 75,
       description: 'Classic 1928 cartoon character',
       scale: 1.3,
-      yOffset: -15,
+      yOffset: 5
     },
   ],
 

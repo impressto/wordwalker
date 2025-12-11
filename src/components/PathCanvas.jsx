@@ -758,6 +758,9 @@ const PathCanvas = () => {
       const pathBottom = height * 0.75 + theme.positioning.pathTopAdditional; // Where path ends (in front)
       const pathHeight = pathBottom - pathTop;
       
+      // Path-specific vertical offset (independent of layer positioning)
+      const pathYOffset = theme.positioning.pathYOffset ?? 0;
+      
       // Draw parallax layer 3 (bushes) - before layer 2 so layer 2 appears in front
       if (parallaxLayer3Image) {
         const layer3Width = parallaxLayer3Image.width;
@@ -858,12 +861,12 @@ const PathCanvas = () => {
           }
           
           // Draw straight path with 1-pixel overlap to prevent vertical hairlines
-          ctx.drawImage(pathImage, tileX - tileOverlap, pathTop, tileSize + tileOverlap, pathHeight);
+          ctx.drawImage(pathImage, tileX - tileOverlap, pathTop + pathYOffset, tileSize + tileOverlap, pathHeight);
         }
         
         // Draw fork at fixed screen position with right edge aligned to canvas right edge
         if (showChoice && !selectedPath) {
-          ctx.drawImage(pathForkImage, forkScreenX, pathTop, tileSize, pathHeight);
+          ctx.drawImage(pathForkImage, forkScreenX, pathTop + pathYOffset, tileSize, pathHeight);
         }
       }
       

@@ -49,6 +49,7 @@ const parallaxThemes = {
       horizonY: 0.35,        // Horizon line as proportion of canvas height
       pathTopOffset: 0.55,   // Path top as proportion of canvas height
       pathTopAdditional: 90, // Additional pixel offset for path top
+      pathYOffset: 25,        // Additional Y offset for path tiles only (independent of layers)
     },
     // Layer 2 vertical stretch control (for grass/street level)
     // 1.0 = full stretch from path to bottom of canvas
@@ -96,6 +97,7 @@ const parallaxThemes = {
       horizonY: 0.35,        // Adjust based on Hong Kong artwork
       pathTopOffset: 0.55,
       pathTopAdditional: 90,
+      pathYOffset: 0,        // Additional Y offset for path tiles only (independent of layers)
     },
     // Layer 2 vertical stretch control
     layer2StretchFactor: 0.6,
@@ -138,6 +140,7 @@ const parallaxThemes = {
       horizonY: 0.35,        // Horizon at water line
       pathTopOffset: 0.55,   // Path on sand
       pathTopAdditional: 90,
+      pathYOffset: 20,        // Additional Y offset for path tiles only (independent of layers)
     },
     // Layer 2 vertical stretch control
     layer2StretchFactor: 0.8,
@@ -180,6 +183,7 @@ const parallaxThemes = {
       horizonY: 0.35,        // Horizon positioning
       pathTopOffset: 0.55,   // Path top as proportion of canvas height
       pathTopAdditional: 90, // Additional pixel offset for path top
+      pathYOffset: 20,        // Additional Y offset for path tiles only (independent of layers)
     },
     // Layer 2 vertical stretch control
     layer2StretchFactor: 0.8,
@@ -222,6 +226,7 @@ const parallaxThemes = {
       horizonY: 0.35,        // Horizon positioning
       pathTopOffset: 0.55,   // Path top as proportion of canvas height
       pathTopAdditional: 90, // Additional pixel offset for path top
+      pathYOffset: 0,        // Additional Y offset for path tiles only (independent of layers)
     },
     // Layer 2 vertical stretch control
     layer2StretchFactor: 0.8,
