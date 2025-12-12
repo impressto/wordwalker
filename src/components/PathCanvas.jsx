@@ -385,7 +385,9 @@ const PathCanvas = () => {
       const convertedState = convertLoadedState(loadedState);
       setTotalPoints(convertedState.totalPoints);
       setStreak(convertedState.streak);
-      setSelectedPath(convertedState.selectedPath);
+      // Don't restore selectedPath - let the user choose category again when resuming
+      // This fixes a bug where the choice dialog wouldn't show when resuming
+      setSelectedPath(null);
       setCheckpointsAnswered(convertedState.checkpointsAnswered);
       setUsedQuestionIds(convertedState.usedQuestionIds);
       setCompletedCategories(convertedState.completedCategories);

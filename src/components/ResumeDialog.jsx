@@ -4,6 +4,7 @@ import { questions } from '../config/questions';
 import gameSettings from '../config/gameSettings';
 import NewGameConfirmationDialog from './NewGameConfirmationDialog';
 import { getTotalMasteredQuestions } from '../utils/questionTracking';
+import packageJson from '../../package.json';
 
 const ResumeDialog = ({ onResume, onNewGame, savedStats }) => {
   const [showConfirmation, setShowConfirmation] = useState(false);
@@ -78,6 +79,7 @@ const ResumeDialog = ({ onResume, onNewGame, savedStats }) => {
           <a href="https://github.com/impressto/wordwalker" target="_blank" rel="noopener noreferrer">
             ⭐ View Source Code on GitHub
           </a>
+          <div className="version-info">v{packageJson.version}</div>
         </div>
       </div>
       
