@@ -53,6 +53,7 @@ export const useAnswerHandling = ({
   setCurrentQuestion,
   setForkCategories,
   setPresentedCategories,
+  setShowChoice,
   
   // Refs
   walkerFrameRef,
@@ -64,6 +65,7 @@ export const useAnswerHandling = ({
   checkpointSpacing,
   checkpointFadeStartTimeRef,
   checkpointSoundPlayedRef,
+  canvasRef,
   
   // Callbacks
   loadNewQuestion,
@@ -203,15 +205,18 @@ export const useAnswerHandling = ({
     
     setQuestionAnswered(true);
     setShowQuestion(false);
-    setIsPaused(false);
     setFirstAttempt(true); // Reset for next question
     setIncorrectAnswers([]); // Reset incorrect answers for next question
     setHintUsed(false); // Reset hint usage for next question
     
     // Check if we've completed all checkpoints for this category
     if (newCheckpointsAnswered >= checkpointsPerCategory) {
+      // Keep paused when category is completed - will unpause when user selects new category
+      setIsPaused(true);
       handleCategoryCompletion();
     } else {
+      // Only unpause if continuing in the same category
+      setIsPaused(false);
       handleNextCheckpoint();
     }
   };
@@ -259,6 +264,16 @@ export const useAnswerHandling = ({
     
     // Reset checkpoint position for after next fork
     checkpointPositionRef.current = forkPositionRef.current + 1500;
+    
+    // Position camera to show fork and trigger the choice dialog
+    // Use a small delay to ensure state updates have propagated
+    setTimeout(() => {
+      const canvas = canvasRef.current;
+      if (canvas) {
+        offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
+      }
+      setShowChoice(true);
+    }, 100);
   };
 
   /**

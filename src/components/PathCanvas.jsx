@@ -97,6 +97,7 @@ const PathCanvas = () => {
   const [hasCheckedSavedState, setHasCheckedSavedState] = useState(false);
   const [savedStats, setSavedStats] = useState(null);
   const autosaveTimerRef = useRef(null);
+  const [isJustResumed, setIsJustResumed] = useState(false); // Track if game was just resumed (for emergency stop)
   
   // Walker sprite animation state
   const walkerFrameRef = useRef(0); // Current frame index
@@ -414,6 +415,22 @@ const PathCanvas = () => {
       checkpointFadeStartTimeRef.current = null;
       checkpointSoundPlayedRef.current = false;
       
+      // Set flag to indicate game was just resumed (for emergency stop safeguard)
+      setIsJustResumed(true);
+      
+      // Pause the game on resume so animation doesn't start until user selects a category
+      setIsPaused(true);
+      
+      // Position camera to show fork and trigger the choice dialog
+      // We'll use a small delay to ensure the canvas is ready
+      setTimeout(() => {
+        const canvas = canvasRef.current;
+        if (canvas) {
+          offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
+        }
+        setShowChoice(true);
+      }, 100);
+      
       setShowResumeDialog(false);
     }
   };
@@ -450,6 +467,7 @@ const PathCanvas = () => {
     setHintUsed(false);
     setShowChoice(false);
     setIsPaused(false);
+    setIsJustResumed(false); // Clear the just-resumed flag
     setShowResumeDialog(false);
   };
 
@@ -1256,6 +1274,7 @@ const PathCanvas = () => {
     setCurrentQuestion,
     setForkCategories,
     setPresentedCategories,
+    setShowChoice,
     
     // Refs
     walkerFrameRef,
@@ -1267,6 +1286,7 @@ const PathCanvas = () => {
     checkpointSpacing,
     checkpointFadeStartTimeRef,
     checkpointSoundPlayedRef,
+    canvasRef,
     
     // Callbacks
     loadNewQuestion,
@@ -1287,6 +1307,7 @@ const PathCanvas = () => {
     setSelectedPath(choice);
     setShowChoice(false);
     setIsPaused(false);
+    setIsJustResumed(false); // Clear the just-resumed flag once user selects a path
     setCheckpointsAnswered(0); // Reset checkpoint counter for new category
     setUsedQuestionIds({}); // Reset used questions for new category
     
@@ -1384,6 +1405,23 @@ const PathCanvas = () => {
   const handleCanvasClick = (event) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
+
+    // Emergency stop: if game was just resumed and animation is running, stop and show category selector
+    if (isJustResumed && !selectedPath && !showChoice && !isPaused) {
+      // Stop the animation
+      setIsPaused(true);
+      velocityRef.current = 0;
+      
+      // Position camera to show fork on the right side
+      offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
+      
+      // Show the choice dialog
+      setTimeout(() => {
+        setShowChoice(true);
+      }, 50);
+      
+      return; // Don't process other click handlers
+    }
 
     const rect = canvas.getBoundingClientRect();
     const scaleX = canvas.width / rect.width;
@@ -1530,6 +1568,26 @@ const PathCanvas = () => {
   const handleCanvasTouchStart = (event) => {
     const canvas = canvasRef.current;
     if (!canvas || event.touches.length === 0) return;
+
+    // Emergency stop: if game was just resumed and animation is running, stop and show category selector
+    if (isJustResumed && !selectedPath && !showChoice && !isPaused) {
+      // Prevent default touch behavior
+      event.preventDefault();
+      
+      // Stop the animation
+      setIsPaused(true);
+      velocityRef.current = 0;
+      
+      // Position camera to show fork on the right side
+      offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
+      
+      // Show the choice dialog
+      setTimeout(() => {
+        setShowChoice(true);
+      }, 50);
+      
+      return; // Don't process other touch handlers
+    }
 
     const rect = canvas.getBoundingClientRect();
     const scaleX = canvas.width / rect.width;
