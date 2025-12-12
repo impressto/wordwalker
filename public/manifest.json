@@ -143,6 +143,18 @@
           "images/themes/dia-de-los-muertos/path-fork.png",
           "images/themes/dia-de-los-muertos/path.png",
           "images/themes/dia-de-los-muertos/scene.jpg"
+        ],
+        "nassau": [
+          "images/themes/nassau/parallax-layer1.png",
+          "images/themes/nassau/parallax-layer2.png",
+          "images/themes/nassau/parallax-layer3.png",
+          "images/themes/nassau/parallax-layer4.png",
+          "images/themes/nassau/parallax-layer5.png",
+          "images/themes/nassau/parallax-layer6.png",
+          "images/themes/nassau/parallax-layer7.png",
+          "images/themes/nassau/path-fork.png",
+          "images/themes/nassau/path.png",
+          "images/themes/nassau/scene.jpg"
         ]
       },
       "walkers": [
@@ -176,6 +188,9 @@
         ],
         "paris": [
           "audio/themes/paris/background.mp3"
+        ],
+        "nassau": [
+          "audio/themes/nassau/background.mp3"
         ]
       }
     }

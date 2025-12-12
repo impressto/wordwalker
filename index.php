@@ -9,7 +9,7 @@ $version = $packageJson['version'] ?? '1.0.0';
     <meta charset="UTF-8" />
     
     <!-- PWA Mobile Optimization -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <meta name="theme-color" content="#4CAF50" />
     <meta name="description" content="Learn Spanish vocabulary while walking through beautiful landscapes!" />
     <meta name="keywords" content="WordWalker, Spanish, learning, vocabulary, educational game, language" />
