@@ -107,6 +107,9 @@ export const getRandomUnusedQuestionByCategory = (
   const excludedIds = new Set([...usedThisSession, ...answeredCorrectly]);
   
   const availableQuestions = categoryQuestions.filter(q => {
+    // Skip questions without valid ID
+    if (!q || !q.id) return false;
+    
     // Extract numeric ID as string to match the format stored in tracking arrays
     const numericId = q.id.split('_')[1] || q.id;
     return !excludedIds.has(numericId);
@@ -124,9 +127,11 @@ export const getRandomUnusedQuestionByCategory = (
  * @returns {Array} Array of numeric question IDs (without category prefix)
  */
 export const getQuestionIdsByCategory = (category) => {
-  return getQuestionsByCategory(category).map(q => {
-    return parseInt(q.id.split('_')[1], 10);
-  });
+  return getQuestionsByCategory(category)
+    .filter(q => q && q.id) // Skip questions without valid ID
+    .map(q => {
+      return parseInt(q.id.split('_')[1], 10);
+    });
 };
 
 /**

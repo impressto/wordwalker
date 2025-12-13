@@ -1166,6 +1166,7 @@ export const foodQuestions = [
     difficulty: 'easy',
   },
   {
+    id: 'food_112',
     emoji: '🦞',
     question: '¿Qué marisco rojo tiene pinzas?',
     options: ['la langosta', 'el bogavante', 'el cangrejo'],
@@ -1176,6 +1177,7 @@ export const foodQuestions = [
     difficulty: 'medium',
   },
   {
+    id: 'food_113',
     emoji: '🦀',
     question: '¿Qué marisco camina de lado?',
     options: ['el cangrejo', 'la jaiba', 'el centollo'],
@@ -1186,6 +1188,7 @@ export const foodQuestions = [
     difficulty: 'medium',
   },
   {
+    id: 'food_114',
     emoji: '🦑',
     question: '¿Qué marisco tiene tentáculos?',
     options: ['el calamar', 'el pulpo', 'la sepia'],
@@ -1196,6 +1199,7 @@ export const foodQuestions = [
     difficulty: 'medium',
   },
   {
+    id: 'food_115',
     emoji: '🦐',
     question: '¿Qué marisco pequeño se fríe?',
     options: ['el camarón', 'la gamba', 'el langostino'],
@@ -1206,6 +1210,7 @@ export const foodQuestions = [
     difficulty: 'easy',
   },
   {
+    id: 'food_116',
     emoji: '🦪',
     question: '¿En qué marisco encuentras perlas?',
     options: ['la ostra', 'la almeja', 'el mejillón'],
@@ -1216,6 +1221,7 @@ export const foodQuestions = [
     difficulty: 'hard',
   },
   {
+    id: 'food_117',
     emoji: '🍖',
     question: '¿Qué corte de carne tiene hueso?',
     options: ['la chuleta', 'la costilla', 'el filete'],
@@ -1226,6 +1232,7 @@ export const foodQuestions = [
     difficulty: 'medium',
   },
   {
+    id: 'food_118',
     emoji: '🥩',
     question: '¿Qué carne se asa a la parrilla?',
     options: ['el bistec', 'el filete', 'la carne asada'],
@@ -1236,6 +1243,7 @@ export const foodQuestions = [
     difficulty: 'easy',
   },
   {
+    id: 'food_119',
     emoji: '🍗',
     question: '¿Qué parte del pollo se fríe?',
     options: ['el muslo', 'la pechuga', 'el ala'],
@@ -1246,6 +1254,7 @@ export const foodQuestions = [
     difficulty: 'medium',
   },
   {
+    id: 'food_120',
     emoji: '🥓',
     question: '¿Qué carne crujiente comes con huevos?',
     options: ['el tocino', 'la panceta', 'el jamón'],
@@ -1256,6 +1265,7 @@ export const foodQuestions = [
     difficulty: 'easy',
   },
   {
+    id: 'food_121',
     emoji: '🍤',
     question: '¿Qué marisco empanizado es delicioso?',
     options: ['el camarón empanizado', 'el camarón rebozado', 'el pescado empanizado'],
@@ -1266,6 +1276,7 @@ export const foodQuestions = [
     difficulty: 'medium',
   },
   {
+    id: 'food_122',
     emoji: '🌭',
     question: '¿Qué salchicha se come en pan?',
     options: ['la salchicha', 'el chorizo', 'la longaniza'],
@@ -1276,6 +1287,7 @@ export const foodQuestions = [
     difficulty: 'easy',
   },
   {
+    id: 'food_123',
     emoji: '🥙',
     question: '¿Qué comida mediterránea está en pan de pita?',
     options: ['el falafel', 'el kebab', 'el shawarma'],
@@ -1286,6 +1298,7 @@ export const foodQuestions = [
     difficulty: 'hard',
   },
   {
+    id: 'food_124',
     emoji: '🫔',
     question: '¿Qué comida mexicana está enrollada y bañada?',
     options: ['la enchilada', 'el burrito', 'la chimichanga'],
@@ -1296,6 +1309,7 @@ export const foodQuestions = [
     difficulty: 'medium',
   },
   {
+    id: 'food_125',
     emoji: '🥟',
     question: '¿Qué comida china rellena se cuece al vapor?',
     options: ['el dumpling', 'el wonton', 'el baozi'],
