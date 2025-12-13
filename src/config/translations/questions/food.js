@@ -148,7 +148,7 @@ export const foodTranslations = {
   "food_150": "What Spanish dish has saffron?",
   "food_151": "What Italian noodles are long and thin?",
   "food_152": "What Roman salad has croutons?",
-  "food_153": "What Middle Eastern food is made from chickpeas?",
+  "food_153": "What Middle Eastern food is made only from chickpeas?",
   "food_154": "What Mexican food has a crunchy tortilla?",
   "food_155": "What fried Middle Eastern ball is vegetarian?",
   "food_159": "What is added to food for flavor?",
