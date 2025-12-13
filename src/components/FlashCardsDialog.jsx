@@ -93,24 +93,36 @@ const FlashCardsDialog = ({ category, onComplete, streak }) => {
 
       // Draw animated glowing diamond in top-left corner
       if (streak > 0) {
-        const diamondSize = 30;
-        const diamondX = 20;
-        const diamondY = 20;
+        // Get diamond animation config
+        const diamondConfig = config.diamond || {};
+        const diamondSize = diamondConfig.size || 45;
+        const diamondX = diamondConfig.positionX || 30;
+        const diamondY = diamondConfig.positionY || 30;
+        const animationSpeed = diamondConfig.animationSpeed || 0.015;
+        const fadeMin = diamondConfig.fadeMin || 0.4;
+        const fadeMax = diamondConfig.fadeMax || 1.0;
         
-        // Animate glow (0 to 1 and back)
-        diamondGlowRef.current += 0.02;
+        // Animate glow (0 to 1 and back) - configurable speed
+        diamondGlowRef.current += animationSpeed;
         if (diamondGlowRef.current > 1) {
           diamondGlowRef.current = 0;
         }
         const glowIntensity = Math.sin(diamondGlowRef.current * Math.PI);
         
+        // Configurable fade intensity range
+        const fadeRange = fadeMax - fadeMin;
+        const fadeIntensity = fadeMin + (glowIntensity * fadeRange);
+        
         // Get streak color
         const streakColor = getStreakColor(streak);
         
-        // Draw glow effect
+        // Apply overall fade to the entire diamond
         ctx.save();
+        ctx.globalAlpha = fadeIntensity; // This makes the fade in/out more obvious
+        
+        // Draw outer glow effect - much more dramatic
         ctx.shadowColor = streakColor;
-        ctx.shadowBlur = 15 + (glowIntensity * 10);
+        ctx.shadowBlur = 30 + (glowIntensity * 30); // Increased from 20+15
         
         // Draw diamond shape
         ctx.beginPath();
@@ -120,14 +132,42 @@ const FlashCardsDialog = ({ category, onComplete, streak }) => {
         ctx.lineTo(diamondX - diamondSize / 2, diamondY);
         ctx.closePath();
         
-        // Fill diamond
-        ctx.fillStyle = streakColor;
+        // Create radial gradient from white center to streak color
+        const gradient = ctx.createRadialGradient(
+          diamondX, diamondY, 0,  // Inner circle (center)
+          diamondX, diamondY, diamondSize / 2  // Outer circle
+        );
+        
+        // Animate the white center size based on glow intensity - more dramatic
+        const whiteStop = 0.15 + (glowIntensity * 0.25); // Increased range
+        gradient.addColorStop(0, 'white');
+        gradient.addColorStop(whiteStop, streakColor);
+        gradient.addColorStop(1, streakColor);
+        
+        // Fill diamond with gradient
+        ctx.fillStyle = gradient;
         ctx.fill();
         
-        // Draw streak number inside diamond
-        ctx.shadowBlur = 0;
-        ctx.fillStyle = 'white';
-        ctx.font = 'bold 14px Arial';
+        // Add inner glow/shine effect - more dramatic
+        ctx.shadowBlur = 12 + (glowIntensity * 10); // Increased from 8+5
+        ctx.shadowColor = 'white';
+        ctx.fillStyle = `rgba(255, 255, 255, ${0.4 + (glowIntensity * 0.4)})`; // More intense shine
+        
+        // Draw smaller diamond for inner shine
+        const shineSize = diamondSize * 0.6;
+        ctx.beginPath();
+        ctx.moveTo(diamondX, diamondY - shineSize / 2);
+        ctx.lineTo(diamondX + shineSize / 2, diamondY);
+        ctx.lineTo(diamondX, diamondY + shineSize / 2);
+        ctx.lineTo(diamondX - shineSize / 2, diamondY);
+        ctx.closePath();
+        ctx.fill();
+        
+        // Draw streak number inside diamond - larger font for larger diamond
+        ctx.shadowBlur = 2;
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+        ctx.fillStyle = '#333';
+        ctx.font = 'bold 20px Arial'; // Increased from 14px
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText(streak.toString(), diamondX, diamondY);
