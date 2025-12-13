@@ -894,9 +894,13 @@ const PathCanvas = () => {
       if (selectedPath && !questionAnswered) {
         const checkpointScreenX = checkpointPositionRef.current - scrollPos;
         
+        // Get character config to access yOffset for checkpoint positioning
+        const characterData = getCharacterById(currentCharacter);
+        const characterYOffset = characterData?.yOffset || 0; // Default to 0 if not found
+        
         // Draw checkpoint emoji if it's visible on screen
         if (checkpointScreenX < width && checkpointScreenX > -100) {
-          const checkpointY = pathTop + (pathBottom - pathTop) * 0.5 - 30; // Positioned on the path, moved up 15 pixels
+          const checkpointY = pathTop + (pathBottom - pathTop) * 0.5 - 30 + characterYOffset; // Positioned on the path, adjusted by character yOffset
           const checkpointSize = 60;
           
           // Initialize fade-in start time if not set

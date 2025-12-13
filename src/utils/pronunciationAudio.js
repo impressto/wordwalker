@@ -29,7 +29,7 @@ class PronunciationAudioManager {
 
   /**
    * Get the full URL for an audio file based on question
-   * Uses the question's correctAnswer as the filename
+   * Uses the question's correctAnswer as the filename (converted to lowercase)
    * @param {Object} question - The question object containing correctAnswer and category
    * @returns {string} The full URL to the audio file
    */
@@ -41,8 +41,9 @@ class PronunciationAudioManager {
       return null;
     }
     
-    // Use the correctAnswer as the filename for better reusability across questions
-    const url = `${this.baseUrl}${question.category}/${question.correctAnswer}.${this.fileFormat}`;
+    // Convert correctAnswer to lowercase since all MP3 filenames are lowercase
+    const filename = question.correctAnswer.toLowerCase();
+    const url = `${this.baseUrl}${question.category}/${filename}.${this.fileFormat}`;
     console.log('📍 Generated URL:', url);
     return url;
   }
