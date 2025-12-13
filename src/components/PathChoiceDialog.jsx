@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 import { getAllCategoryIds } from '../config/questions';
 import { isCategoryFullyMastered, getCategoryCorrectAnswerCount, getCategoryQuestionCount } from '../utils/questionTracking';
 
-const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpenShop, currentCategory = null, correctAnswersByCategory = {}, completedCategories = new Set() }) => {
+const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpenShop, onOpenFlashCards, currentCategory = null, correctAnswersByCategory = {}, completedCategories = new Set() }) => {
   const [dialogTop, setDialogTop] = useState('100px');
   const [currentPage, setCurrentPage] = useState(0);
   
@@ -326,54 +326,96 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
         </div>
       )}
 
-      {/* Vendor Section */}
+      {/* Debug and Vendor Section */}
       <div style={{
-        position: 'relative',
-        width: '100%',
+        display: 'flex',
+        gap: '10px',
         marginTop: '6px',
         borderTop: '2px solid #ddd',
         paddingTop: '10px',
       }}>
-        <img 
-          src={`${import.meta.env.BASE_URL || '/'}images/vendor.png`}
-          alt="Vendor"
-          style={{
-            width: '28%',
-            height: 'auto',
-            borderRadius: '8px',
-            display: 'block',
-            margin: '0 auto',
-          }}
-        />
-        <button
-          onClick={onOpenShop}
-          style={{
-            position: 'absolute',
-            bottom: '5px',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            padding: '8px 20px',
-            fontSize: '12px',
-            fontWeight: 'bold',
-            backgroundColor: '#FF9800',
-            color: 'white',
-            border: 'none',
-            borderRadius: '20px',
-            cursor: 'pointer',
-            boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
-            transition: 'all 0.2s',
-          }}
-          onMouseEnter={(e) => {
-            e.target.style.transform = 'translateX(-50%) scale(1.1)';
-            e.target.style.backgroundColor = '#FB8C00';
-          }}
-          onMouseLeave={(e) => {
-            e.target.style.transform = 'translateX(-50%) scale(1)';
-            e.target.style.backgroundColor = '#FF9800';
-          }}
-        >
-          💰 TRADE
-        </button>
+        {/* Debug Flash Cards Button */}
+        {onOpenFlashCards && (
+          <button
+            onClick={onOpenFlashCards}
+            style={{
+              flex: 1,
+              padding: '10px',
+              fontSize: '12px',
+              fontWeight: 'bold',
+              backgroundColor: '#9C27B0',
+              color: 'white',
+              border: 'none',
+              borderRadius: '10px',
+              cursor: 'pointer',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
+              transition: 'all 0.2s',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '4px',
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.transform = 'scale(1.05)';
+              e.target.style.backgroundColor = '#7B1FA2';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.transform = 'scale(1)';
+              e.target.style.backgroundColor = '#9C27B0';
+            }}
+          >
+            <span style={{ fontSize: '20px' }}>🎴</span>
+            <span>Flash Cards</span>
+            <span style={{ fontSize: '10px', opacity: 0.8 }}>(Debug)</span>
+          </button>
+        )}
+
+        {/* Vendor Section */}
+        <div id = "vendor-section" style={{
+          position: 'relative',
+          flex: 1,
+        }}>
+          <img 
+            src={`${import.meta.env.BASE_URL || '/'}images/vendor.png`}
+            alt="Vendor"
+            style={{
+              width: '60%',
+              height: 'auto',
+              borderRadius: '8px',
+              display: 'block',
+              margin: '0 auto',
+            }}
+          />
+          <button
+            onClick={onOpenShop}
+            style={{
+              position: 'absolute',
+              bottom: '5px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              padding: '8px 20px',
+              fontSize: '12px',
+              fontWeight: 'bold',
+              backgroundColor: '#FF9800',
+              color: 'white',
+              border: 'none',
+              borderRadius: '20px',
+              cursor: 'pointer',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
+              transition: 'all 0.2s',
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.transform = 'translateX(-50%) scale(1.1)';
+              e.target.style.backgroundColor = '#FB8C00';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.transform = 'translateX(-50%) scale(1)';
+              e.target.style.backgroundColor = '#FF9800';
+            }}
+          >
+            💰 TRADE
+          </button>
+        </div>
       </div>
     </div>
   );

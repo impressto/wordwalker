@@ -54,6 +54,9 @@ export const useAnswerHandling = ({
   setForkCategories,
   setPresentedCategories,
   setShowChoice,
+  setShowFlashCardsOffer,
+  setCategoryForFlashCards,
+  setStreakAtCompletion,
   
   // Refs
   walkerFrameRef,
@@ -265,15 +268,28 @@ export const useAnswerHandling = ({
     // Reset checkpoint position for after next fork
     checkpointPositionRef.current = forkPositionRef.current + 1500;
     
-    // Position camera to show fork and trigger the choice dialog
-    // Use a small delay to ensure state updates have propagated
-    setTimeout(() => {
-      const canvas = canvasRef.current;
-      if (canvas) {
-        offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
-      }
-      setShowChoice(true);
-    }, 100);
+    // Check if player has a streak and offer flash cards
+    // Only offer flash cards for the 'food' category in this experimental feature
+    if (streak > 0 && currentCategory === 'food') {
+      // Store the category and streak for flash cards
+      setCategoryForFlashCards(currentCategory);
+      setStreakAtCompletion(streak);
+      
+      // Show flash cards offer dialog instead of going directly to category selector
+      setTimeout(() => {
+        setShowFlashCardsOffer(true);
+      }, 100);
+    } else {
+      // Position camera to show fork and trigger the choice dialog
+      // Use a small delay to ensure state updates have propagated
+      setTimeout(() => {
+        const canvas = canvasRef.current;
+        if (canvas) {
+          offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
+        }
+        setShowChoice(true);
+      }, 100);
+    }
   };
 
   /**

@@ -25,6 +25,8 @@ import LoadingScreen from './LoadingScreen';
 import VolumeControl from './VolumeControl';
 import TopLogo from './TopLogo';
 import SearchButton from './SearchButton';
+import FlashCardsOfferDialog from './FlashCardsOfferDialog';
+import FlashCardsDialog from './FlashCardsDialog';
 
 const PathCanvas = () => {
   // Character and theme management hook
@@ -82,6 +84,12 @@ const PathCanvas = () => {
   const [showSearch, setShowSearch] = useState(false); // Show search dialog
   const [isSearchPaused, setIsSearchPaused] = useState(false); // Track if paused by search
   const [showCheckpointHint, setShowCheckpointHint] = useState(false); // Show hint popup when checkpoint is clicked
+  
+  // Flash cards state
+  const [showFlashCardsOffer, setShowFlashCardsOffer] = useState(false);
+  const [showFlashCards, setShowFlashCards] = useState(false);
+  const [categoryForFlashCards, setCategoryForFlashCards] = useState(null);
+  const [streakAtCompletion, setStreakAtCompletion] = useState(0);
   
   // Volume control state
   const [soundEnabled, setSoundEnabled] = useState(true);
@@ -1279,6 +1287,9 @@ const PathCanvas = () => {
     setForkCategories,
     setPresentedCategories,
     setShowChoice,
+    setShowFlashCardsOffer,
+    setCategoryForFlashCards,
+    setStreakAtCompletion,
     
     // Refs
     walkerFrameRef,
@@ -1385,6 +1396,45 @@ const PathCanvas = () => {
 
   const handlePurchaseThemeWrapper = (themeId, cost) => {
     handlePurchaseTheme(themeId, cost, totalPoints, setTotalPoints);
+  };
+
+  // Flash cards handlers
+  const handleFlashCardsAccept = () => {
+    setShowFlashCardsOffer(false);
+    setShowFlashCards(true);
+  };
+
+  const handleFlashCardsDecline = () => {
+    setShowFlashCardsOffer(false);
+    // Continue to category selector
+    setTimeout(() => {
+      const canvas = canvasRef.current;
+      if (canvas) {
+        offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
+      }
+      setShowChoice(true);
+    }, 100);
+  };
+
+  const handleFlashCardsComplete = () => {
+    setShowFlashCards(false);
+    // Continue to category selector
+    setTimeout(() => {
+      const canvas = canvasRef.current;
+      if (canvas) {
+        offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
+      }
+      setShowChoice(true);
+    }, 100);
+  };
+
+  // Debug handler to open flash cards directly from category selector
+  const handleDebugOpenFlashCards = () => {
+    // Set default values for testing
+    setCategoryForFlashCards('food');
+    setStreakAtCompletion(streak || 5); // Use current streak or default to 5
+    setShowChoice(false);
+    setShowFlashCards(true);
   };
 
   // Check if coordinates are over checkpoint
@@ -1688,6 +1738,7 @@ const PathCanvas = () => {
           getCategoryById={getCategoryById}
           onPathChoice={handlePathChoice}
           onOpenShop={handleOpenShop}
+          onOpenFlashCards={handleDebugOpenFlashCards}
           currentCategory={selectedPath ? (forkCategories[selectedPath] || selectedPath) : null}
           correctAnswersByCategory={correctAnswersByCategory}
           completedCategories={completedCategories}
@@ -1756,6 +1807,24 @@ const PathCanvas = () => {
 
       {/* Install PWA Prompt */}
       <InstallPrompt />
+
+      {/* Flash Cards Offer Dialog */}
+      {showFlashCardsOffer && (
+        <FlashCardsOfferDialog
+          streak={streakAtCompletion}
+          onAccept={handleFlashCardsAccept}
+          onDecline={handleFlashCardsDecline}
+        />
+      )}
+
+      {/* Flash Cards Dialog */}
+      {showFlashCards && categoryForFlashCards && (
+        <FlashCardsDialog
+          category={categoryForFlashCards}
+          streak={streakAtCompletion}
+          onComplete={handleFlashCardsComplete}
+        />
+      )}
     </div>
   );
 };
