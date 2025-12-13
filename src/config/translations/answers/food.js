@@ -82,7 +82,7 @@ export const foodAnswerTranslations = {
   "el té": "the tea",
   "el jugo": "the juice",
   "el refresco": "the soda",
-  "el bubble tea": "the bubble tea",
+  "té de burbujas": "bubble tea",
   "el sake": "the sake",
   "la cerveza": "the beer",
   "el vino": "the wine",
