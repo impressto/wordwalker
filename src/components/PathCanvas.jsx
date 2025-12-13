@@ -81,6 +81,7 @@ const PathCanvas = () => {
   const [showHint, setShowHint] = useState(false); // Show hint after wrong answer
   const [hintUsed, setHintUsed] = useState(false); // Track if hint was used for current question
   const [streak, setStreak] = useState(0); // Track consecutive correct answers
+  const [maxStreakInCategory, setMaxStreakInCategory] = useState(0); // Track highest streak achieved in current category
   const [showSearch, setShowSearch] = useState(false); // Show search dialog
   const [isSearchPaused, setIsSearchPaused] = useState(false); // Track if paused by search
   const [showCheckpointHint, setShowCheckpointHint] = useState(false); // Show hint popup when checkpoint is clicked
@@ -364,6 +365,7 @@ const PathCanvas = () => {
       const gameState = {
         totalPoints,
         streak,
+        maxStreakInCategory,
         selectedPath,
         checkpointsAnswered,
         usedQuestionIds,
@@ -385,7 +387,7 @@ const PathCanvas = () => {
         clearInterval(autosaveTimerRef.current);
       }
     };
-  }, [totalPoints, streak, selectedPath, checkpointsAnswered, usedQuestionIds, completedCategories, forkCategories, presentedCategories, soundEnabled, volume, musicEnabled, correctFirstTryIds, correctAnswersByCategory]);
+  }, [totalPoints, streak, maxStreakInCategory, selectedPath, checkpointsAnswered, usedQuestionIds, completedCategories, forkCategories, presentedCategories, soundEnabled, volume, musicEnabled, correctFirstTryIds, correctAnswersByCategory]);
 
   // Handle resume game
   const handleResumeGame = () => {
@@ -394,6 +396,7 @@ const PathCanvas = () => {
       const convertedState = convertLoadedState(loadedState);
       setTotalPoints(convertedState.totalPoints);
       setStreak(convertedState.streak);
+      setMaxStreakInCategory(convertedState.maxStreakInCategory || 0);
       // Don't restore selectedPath - let the user choose category again when resuming
       // This fixes a bug where the choice dialog wouldn't show when resuming
       setSelectedPath(null);
@@ -452,6 +455,7 @@ const PathCanvas = () => {
     clearGameState();
     setTotalPoints(0);
     setStreak(0);
+    setMaxStreakInCategory(0);
     setSelectedPath(null);
     setCheckpointsAnswered(0);
     setUsedQuestionIds({});
@@ -1256,6 +1260,7 @@ const PathCanvas = () => {
     incorrectAnswers,
     hintUsed,
     streak,
+    maxStreakInCategory,
     checkpointsAnswered,
     checkpointsPerCategory,
     selectedPath,
@@ -1273,6 +1278,7 @@ const PathCanvas = () => {
     setCorrectAnswersByCategory,
     setTotalPoints,
     setStreak,
+    setMaxStreakInCategory,
     setIsVictoryAnimation,
     setCheckpointsAnswered,
     setQuestionAnswered,
@@ -1325,6 +1331,7 @@ const PathCanvas = () => {
     setIsJustResumed(false); // Clear the just-resumed flag once user selects a path
     setCheckpointsAnswered(0); // Reset checkpoint counter for new category
     setUsedQuestionIds({}); // Reset used questions for new category
+    setMaxStreakInCategory(0); // Reset max streak for new category
     
     // Position the first checkpoint to appear centered when walker stops
     // Walker stops 120px before checkpoint, walker is at 30% of screen

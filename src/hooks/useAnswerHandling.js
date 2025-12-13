@@ -23,6 +23,7 @@ export const useAnswerHandling = ({
   incorrectAnswers,
   hintUsed,
   streak,
+  maxStreakInCategory,
   checkpointsAnswered,
   checkpointsPerCategory,
   selectedPath,
@@ -40,6 +41,7 @@ export const useAnswerHandling = ({
   setCorrectAnswersByCategory,
   setTotalPoints,
   setStreak,
+  setMaxStreakInCategory,
   setIsVictoryAnimation,
   setCheckpointsAnswered,
   setQuestionAnswered,
@@ -151,6 +153,11 @@ export const useAnswerHandling = ({
       
       newStreak = streak + 1;
       setStreak(newStreak);
+      
+      // Update max streak if this is a new high for the current category
+      if (newStreak > maxStreakInCategory) {
+        setMaxStreakInCategory(newStreak);
+      }
       
       // Award points (full or half depending on hint usage)
       setTotalPoints(prevPoints => prevPoints + pointsToAward);
@@ -268,12 +275,12 @@ export const useAnswerHandling = ({
     // Reset checkpoint position for after next fork
     checkpointPositionRef.current = forkPositionRef.current + 1500;
     
-    // Check if player has a streak and offer flash cards
+    // Check if player achieved a streak at any point in this category and offer flash cards
     // Only offer flash cards for the 'food' category in this experimental feature
-    if (streak > 0 && currentCategory === 'food') {
-      // Store the category and streak for flash cards
+    if (maxStreakInCategory > 0 && currentCategory === 'food') {
+      // Store the category and the max streak achieved for flash cards
       setCategoryForFlashCards(currentCategory);
-      setStreakAtCompletion(streak);
+      setStreakAtCompletion(maxStreakInCategory);
       
       // Show flash cards offer dialog instead of going directly to category selector
       setTimeout(() => {
