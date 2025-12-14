@@ -8,6 +8,7 @@
 import { useState, useEffect } from 'react';
 import { getAllCategoryIds } from '../config/questions';
 import { isCategoryFullyMastered, getCategoryCorrectAnswerCount, getCategoryQuestionCount } from '../utils/questionTracking';
+import { FLASH_CARDS_ENABLED } from '../config/flashCardsConfig';
 
 const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpenShop, onOpenFlashCards, currentCategory = null, correctAnswersByCategory = {}, completedCategories = new Set() }) => {
   const [dialogTop, setDialogTop] = useState('100px');
@@ -327,7 +328,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
       )}
 
       {/* Debug and Vendor Section */}
-      <div style={{
+      <div id="debug-flash-cards-button" style={{
         display: 'flex',
         gap: '10px',
         marginTop: '6px',
@@ -335,7 +336,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
         paddingTop: '10px',
       }}>
         {/* Debug Flash Cards Button */}
-        {onOpenFlashCards && (
+        {FLASH_CARDS_ENABLED && onOpenFlashCards && (
           <button
             onClick={onOpenFlashCards}
             style={{
@@ -379,7 +380,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
             src={`${import.meta.env.BASE_URL || '/'}images/vendor.png`}
             alt="Vendor"
             style={{
-              width: '60%',
+              width: '30%',
               height: 'auto',
               borderRadius: '8px',
               display: 'block',

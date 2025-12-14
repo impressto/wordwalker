@@ -1,0 +1,48 @@
+/**
+ * Flash Cards Configuration - Animals Category
+ * 
+ * Defines flash card content and settings for the animals category
+ * Each card maps to a question ID from the animals questions
+ */
+
+export const animalsFlashCardsConfig = {
+  // Total number of cards in the sprite sheet
+  totalCards: 10,
+  
+  // Sprite sheet dimensions
+  spriteWidth: 3600,
+  spriteHeight: 240,
+  
+  // Canvas display size
+  canvasWidth: 360,
+  canvasHeight: 240,
+  
+  // Flash card data: Maps card indices to question IDs
+  // These are the featured vocabulary items shown in flash cards
+  cards: [
+    { questionId: 'animals_001' }, // Example - update with actual question IDs
+    { questionId: 'animals_002' },
+    { questionId: 'animals_003' },
+    { questionId: 'animals_004' },
+    { questionId: 'animals_005' },
+    { questionId: 'animals_006' },
+    { questionId: 'animals_007' },
+    { questionId: 'animals_008' },
+    { questionId: 'animals_009' },
+    { questionId: 'animals_010' },
+  ],
+  
+  // Category-specific text styling (optional - overrides defaults)
+  // Uncomment and customize if needed
+  // text: {
+  //   spanish: {
+  //     fontSize: 30,
+  //     color: '#2c5f2d',
+  //   },
+  // },
+  
+  // Diamond animation (optional - overrides defaults)
+  // diamond: {
+  //   animationSpeed: 0.01,
+  // },
+};

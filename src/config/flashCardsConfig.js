@@ -2,7 +2,17 @@
  * Flash Cards Configuration
  * 
  * Defines the layout and properties of flash card sprite sheets
+ * 
+ * NOTE: This file is deprecated. New configuration is in src/config/flash-cards/
+ * This file is kept for backward compatibility only.
  */
+
+/**
+ * FEATURE FLAG: Enable/Disable Flash Cards
+ * Set to false to disable flash cards feature globally
+ * This controls both the debug button and the category completion prompt
+ */
+export const FLASH_CARDS_ENABLED = true;
 
 export const flashCardsConfig = {
   // Default configuration for all flash card categories
@@ -28,6 +38,32 @@ export const flashCardsConfig = {
     
     // Spacing between cards in sprite (if there's padding)
     cardSpacing: 0,
+    
+    // Text rendering configuration
+    text: {
+      // Spanish text configuration (main text)
+      spanish: {
+        fontSize: 28,
+        fontFamily: 'Arial, sans-serif',
+        fontWeight: 'bold',
+        color: '#333',
+        maxWidth: 320, // Max width before wrapping
+        lineHeight: 1.3,
+      },
+      // English text configuration (translation below)
+      english: {
+        fontSize: 18,
+        fontFamily: 'Arial, sans-serif',
+        fontWeight: 'normal',
+        color: '#666',
+        maxWidth: 320,
+        lineHeight: 1.2,
+      },
+      // Vertical spacing
+      verticalSpacing: 15, // Space between Spanish and English text
+      // Top margin for text
+      topMargin: 60,
+    },
     
     // Diamond animation configuration
     diamond: {
@@ -61,6 +97,21 @@ export const flashCardsConfig = {
     // diamond: {
     //   animationSpeed: 0.02,  // Faster animation for food category
     // },
+    
+    // Flash card data: Maps card indices to question IDs
+    // These are the featured vocabulary items shown in flash cards
+    cards: [
+      { questionId: 'food_001' }, // la sandía - the watermelon
+      { questionId: 'food_002' }, // el plátano - the banana
+      { questionId: 'food_003' }, // la manzana - the apple
+      { questionId: 'food_004' }, // la naranja - the orange
+      { questionId: 'food_009' }, // la piña - the pineapple
+      { questionId: 'food_036' }, // la pizza - the pizza
+      { questionId: 'food_037' }, // la hamburguesa - the hamburger
+      { questionId: 'food_039' }, // el taco - the taco
+      { questionId: 'food_043' }, // el pollo - the chicken
+      { questionId: 'food_069' }, // el helado - the ice cream
+    ],
   },
   
   // Add more categories as needed
@@ -109,5 +160,43 @@ export const getCardSourceRect = (cardIndex, config) => {
     y: config.offsetY,
     width: config.cardWidth,
     height: config.cardHeight,
+  };
+};
+
+/**
+ * Get flash card data for a specific card index
+ * @param {string} category - The category ID
+ * @param {number} cardIndex - The index of the card (0-based)
+ * @param {Object} questionsData - Questions data from the questions config
+ * @param {Object} answerTranslations - Answer translations
+ * @returns {Object|null} Object with spanish and english text, or null if not found
+ */
+export const getFlashCardData = (category, cardIndex, questionsData, answerTranslations) => {
+  const config = getFlashCardConfig(category);
+  
+  // Check if category has card mappings
+  if (!config.cards || !config.cards[cardIndex]) {
+    return null;
+  }
+  
+  const cardConfig = config.cards[cardIndex];
+  const questionId = cardConfig.questionId;
+  
+  // Find the question in the questions data
+  const question = questionsData.find(q => q.id === questionId);
+  if (!question) {
+    return null;
+  }
+  
+  // Get the correct answer (Spanish text)
+  const spanishText = question.correctAnswer;
+  
+  // Get the English translation
+  const englishText = answerTranslations[spanishText] || '';
+  
+  return {
+    spanish: spanishText,
+    english: englishText,
+    emoji: question.emoji,
   };
 };

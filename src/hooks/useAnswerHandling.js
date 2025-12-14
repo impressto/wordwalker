@@ -10,6 +10,7 @@ import { addToFirstTryByCategory, addCorrectAnswer } from '../utils/questionTrac
 import { generateNewForkCategories, extractCategoryIds } from '../utils/categoryRotation';
 import { getAllCategoryIds } from '../config/questions';
 import gameSettings, { getTranslationBoxDuration } from '../config/gameSettings';
+import { FLASH_CARDS_ENABLED } from '../config/flashCardsConfig';
 
 /**
  * Custom hook for handling answer choices in the game
@@ -277,7 +278,7 @@ export const useAnswerHandling = ({
     
     // Check if player achieved a streak at any point in this category and offer flash cards
     // Only offer flash cards for the 'food' category in this experimental feature
-    if (maxStreakInCategory > 0 && currentCategory === 'food') {
+    if (FLASH_CARDS_ENABLED && maxStreakInCategory > 0 && currentCategory === 'food') {
       // Store the category and the max streak achieved for flash cards
       setCategoryForFlashCards(currentCategory);
       setStreakAtCompletion(maxStreakInCategory);

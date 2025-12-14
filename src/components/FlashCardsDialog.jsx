@@ -1,7 +1,52 @@
 import { useState, useEffect, useRef } from 'react';
 import './FlashCardsDialog.css';
 import { getStreakColor } from '../config/gameSettings';
-import { getFlashCardConfig, getCardSourceRect } from '../config/flashCardsConfig';
+import { getFlashCardConfig, getCardSourceRect, getFlashCardData } from '../config/flash-cards';
+import { foodQuestions } from '../config/questions/food';
+import { foodAnswerTranslations } from '../config/translations/answers/food';
+
+/**
+ * Helper function to draw wrapped text on canvas
+ * @param {CanvasRenderingContext2D} ctx - Canvas context
+ * @param {string} text - Text to draw
+ * @param {number} x - X position (center)
+ * @param {number} y - Y position (top)
+ * @param {number} maxWidth - Maximum width before wrapping
+ * @param {number} lineHeight - Line height multiplier
+ * @returns {number} Total height of drawn text
+ */
+const drawWrappedText = (ctx, text, x, y, maxWidth, lineHeight) => {
+  const words = text.split(' ');
+  let line = '';
+  let currentY = y;
+  const lines = [];
+  
+  // Build lines
+  for (let i = 0; i < words.length; i++) {
+    const testLine = line + words[i] + ' ';
+    const metrics = ctx.measureText(testLine);
+    const testWidth = metrics.width;
+    
+    if (testWidth > maxWidth && i > 0) {
+      lines.push(line.trim());
+      line = words[i] + ' ';
+    } else {
+      line = testLine;
+    }
+  }
+  lines.push(line.trim());
+  
+  // Draw lines
+  const fontSize = parseInt(ctx.font);
+  const actualLineHeight = fontSize * lineHeight;
+  
+  lines.forEach((line) => {
+    ctx.fillText(line, x, currentY);
+    currentY += actualLineHeight;
+  });
+  
+  return lines.length * actualLineHeight;
+};
 
 /**
  * FlashCardsDialog Component
@@ -19,6 +64,11 @@ const FlashCardsDialog = ({ category, onComplete, streak }) => {
 
   // Get flash card configuration for this category
   const config = getFlashCardConfig(category);
+  
+  // Get questions data based on category
+  // TODO: Make this dynamic for other categories
+  const questionsData = category === 'food' ? foodQuestions : [];
+  const answerTranslations = category === 'food' ? foodAnswerTranslations : {};
 
   // Get base path for assets
   const basePath = import.meta.env.BASE_URL || '/';
@@ -82,13 +132,70 @@ const FlashCardsDialog = ({ category, onComplete, streak }) => {
       // Get source rectangle for current card using config
       const sourceRect = getCardSourceRect(currentCardIndex, config);
 
-      // Draw the flash card image
+      // Draw the flash card image (background)
       if (flashCardImageRef.current.complete) {
         ctx.drawImage(
           flashCardImageRef.current,
           sourceRect.x, sourceRect.y, sourceRect.width, sourceRect.height,
           0, 0, canvas.width, canvas.height
         );
+      }
+      
+      // Get flash card data (Spanish and English text)
+      const cardData = getFlashCardData(
+        category, 
+        currentCardIndex, 
+        questionsData, 
+        answerTranslations
+      );
+      
+      // Draw text overlay if card data is available
+      if (cardData) {
+        const textConfig = config.text || {};
+        const spanishConfig = textConfig.spanish || {};
+        const englishConfig = textConfig.english || {};
+        const topMargin = textConfig.topMargin || 60;
+        const verticalSpacing = textConfig.verticalSpacing || 15;
+        
+        // Center position
+        const centerX = canvas.width / 2;
+        let currentY = topMargin;
+        
+        // Draw Spanish text (main text)
+        ctx.save();
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'top';
+        ctx.font = `${spanishConfig.fontWeight || 'bold'} ${spanishConfig.fontSize || 28}px ${spanishConfig.fontFamily || 'Arial'}`;
+        ctx.fillStyle = spanishConfig.color || '#333';
+        ctx.shadowColor = 'rgba(255, 255, 255, 0.8)';
+        ctx.shadowBlur = 3;
+        
+        const spanishHeight = drawWrappedText(
+          ctx,
+          cardData.spanish,
+          centerX,
+          currentY,
+          spanishConfig.maxWidth || 320,
+          spanishConfig.lineHeight || 1.3
+        );
+        
+        currentY += spanishHeight + verticalSpacing;
+        
+        // Draw English text (translation)
+        ctx.font = `${englishConfig.fontWeight || 'normal'} ${englishConfig.fontSize || 18}px ${englishConfig.fontFamily || 'Arial'}`;
+        ctx.fillStyle = englishConfig.color || '#666';
+        ctx.shadowBlur = 2;
+        
+        drawWrappedText(
+          ctx,
+          cardData.english,
+          centerX,
+          currentY,
+          englishConfig.maxWidth || 320,
+          englishConfig.lineHeight || 1.2
+        );
+        
+        ctx.restore();
       }
 
       // Draw animated glowing diamond in top-left corner
@@ -186,7 +293,7 @@ const FlashCardsDialog = ({ category, onComplete, streak }) => {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [currentCardIndex, streak, config]);
+  }, [currentCardIndex, streak, config, category, questionsData, answerTranslations]);
 
   return (
     <div className={`flash-cards-dialog ${isVisible ? 'visible' : ''}`}>
