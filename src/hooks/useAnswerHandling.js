@@ -256,7 +256,8 @@ export const useAnswerHandling = ({
       if (newCheckpointsAnswered >= checkpointsPerCategory) {
         // Keep paused when category is completed - will unpause when user selects new category
         setIsPaused(true);
-        handleCategoryCompletion();
+        // Prepare category completion but don't show choice dialog yet
+        handleCategoryCompletion(false); // Pass false to skip showing choice dialog
       } else {
         // Only unpause if continuing in the same category
         setIsPaused(false);
@@ -272,15 +273,20 @@ export const useAnswerHandling = ({
         console.log('✅ Loading new question immediately for correct checkpoint emoji');
       }
     } else {
-      // Second call (after translation hidden) - nothing to do, question already loaded
+      // Second call (after translation hidden)
       console.log('🎯 Second call to handleAfterCorrectAnswer - question already loaded');
+      // If category was completed, now show the choice dialog
+      if (newCheckpointsAnswered >= checkpointsPerCategory) {
+        handleCategoryCompletion(true); // Pass true to show choice dialog now
+      }
     }
   };
 
   /**
    * Handle category completion logic
+   * @param {boolean} shouldShowChoice - Whether to show the category choice dialog
    */
-  const handleCategoryCompletion = () => {
+  const handleCategoryCompletion = (shouldShowChoice = true) => {
     // Mark the current category as globally completed
     // selectedPath can be either a choice key or a categoryId directly
     const currentCategory = forkCategories[selectedPath] || selectedPath;
@@ -321,27 +327,30 @@ export const useAnswerHandling = ({
     // Reset checkpoint position for after next fork
     checkpointPositionRef.current = forkPositionRef.current + 1500;
     
-    // Check if player achieved a streak at any point in this category and offer flash cards
-    // Only offer flash cards for the 'food' category in this experimental feature
-    if (FLASH_CARDS_ENABLED && maxStreakInCategory > 0 && currentCategory === 'food') {
-      // Store the category and the max streak achieved for flash cards
-      setCategoryForFlashCards(currentCategory);
-      setStreakAtCompletion(maxStreakInCategory);
-      
-      // Show flash cards offer dialog instead of going directly to category selector
-      setTimeout(() => {
-        setShowFlashCardsOffer(true);
-      }, 100);
-    } else {
-      // Position camera to show fork and trigger the choice dialog
-      // Use a small delay to ensure state updates have propagated
-      setTimeout(() => {
-        const canvas = canvasRef.current;
-        if (canvas) {
-          offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
-        }
-        setShowChoice(true);
-      }, 100);
+    // Only show choice dialog if requested (after translation is hidden)
+    if (shouldShowChoice) {
+      // Check if player achieved a streak at any point in this category and offer flash cards
+      // Only offer flash cards for the 'food' category in this experimental feature
+      if (FLASH_CARDS_ENABLED && maxStreakInCategory > 0 && currentCategory === 'food') {
+        // Store the category and the max streak achieved for flash cards
+        setCategoryForFlashCards(currentCategory);
+        setStreakAtCompletion(maxStreakInCategory);
+        
+        // Show flash cards offer dialog instead of going directly to category selector
+        setTimeout(() => {
+          setShowFlashCardsOffer(true);
+        }, 100);
+      } else {
+        // Position camera to show fork and trigger the choice dialog
+        // Use a small delay to ensure state updates have propagated
+        setTimeout(() => {
+          const canvas = canvasRef.current;
+          if (canvas) {
+            offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
+          }
+          setShowChoice(true);
+        }, 100);
+      }
     }
   };
 
