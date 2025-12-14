@@ -22,10 +22,10 @@ export const foodFlashCardsConfig = {
   defaultBackground: 'purple.png',
   
   // Default character for all cards (can be overridden per card)
-  defaultCharacter: 'elvis',
+  defaultCharacter: 'emma',
   
   // Default emotion for all cards (can be overridden per card)
-  defaultEmotion: 'laughing.png',
+  defaultEmotion: 'happy.png',
   
   // Flash card data: Maps card indices to question IDs
   // These are the featured vocabulary items shown in flash cards
@@ -38,7 +38,7 @@ export const foodFlashCardsConfig = {
     { 
       questionId: 'food_002', // el plátano - the banana
       object: 'el plátano.svg', // TODO: Replace with .png once proper images are created
-      emotion: 'laughing.png',
+      emotion: 'happy.png',
     },
     { 
       questionId: 'food_003', // la manzana - the apple
@@ -48,12 +48,12 @@ export const foodFlashCardsConfig = {
     { 
       questionId: 'food_004', // la naranja - the orange
       object: 'la naranja.svg', // TODO: Replace with .png once proper images are created
-      emotion: 'welcoming.png',
+      emotion: 'excited.png',
     },
     { 
       questionId: 'food_009', // la piña - the pineapple
       object: 'la piña.svg', // TODO: Replace with .png once proper images are created
-      emotion: 'laughing.png',
+      emotion: 'happy.png',
     },
     { 
       questionId: 'food_036', // la pizza - the pizza
@@ -63,7 +63,7 @@ export const foodFlashCardsConfig = {
     { 
       questionId: 'food_037', // la hamburguesa - the hamburger
       object: 'la hamburguesa.svg', // TODO: Replace with .png once proper images are created
-      emotion: 'laughing.png',
+      emotion: 'happy.png',
     },
     { 
       questionId: 'food_039', // el taco - the taco
@@ -73,12 +73,12 @@ export const foodFlashCardsConfig = {
     { 
       questionId: 'food_043', // el pollo - the chicken
       object: 'el pollo.svg', // TODO: Replace with .png once proper images are created
-      emotion: 'welcoming.png',
+      emotion: 'excited.png',
     },
     { 
       questionId: 'food_069', // el helado - the ice cream
       object: 'el helado.svg', // TODO: Replace with .png once proper images are created
-      emotion: 'laughing.png',
+      emotion: 'happy.png',
     },
   ],
   

@@ -1,9 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import './FlashCardsDialog.css';
 import { getStreakColor } from '../config/gameSettings';
-import { getFlashCardConfig, getFlashCardData } from '../config/flash-cards';
-import { foodQuestions } from '../config/questions/food';
-import { foodAnswerTranslations } from '../config/translations/answers/food';
+import { getFlashCardConfig, getFlashCardData } from '../config/flashCardsConfig';
 
 /**
  * Helper function to check if an image is loaded and ready to draw
@@ -74,14 +72,12 @@ const FlashCardsDialog = ({ category, onComplete, streak }) => {
   const animationFrameRef = useRef(null);
   const diamondGlowRef = useRef(0);
 
-  // Get flash card configuration for this category
+  // Get flash card configuration (unified for all categories)
   const config = getFlashCardConfig(category);
   
-  // Get questions data based on category
-  // TODO: Make this dynamic for other categories
-  const questionsData = category === 'food' ? foodQuestions : [];
-  const answerTranslations = category === 'food' ? foodAnswerTranslations : {};
-
+  // Get total cards for this category
+  const totalCards = config.cards[category]?.length || 0;
+  
   // Get base path for assets
   const basePath = import.meta.env.BASE_URL || '/';
 
@@ -89,9 +85,7 @@ const FlashCardsDialog = ({ category, onComplete, streak }) => {
   useEffect(() => {
     const cardData = getFlashCardData(
       category, 
-      currentCardIndex, 
-      questionsData, 
-      answerTranslations
+      currentCardIndex
     );
     
     if (!cardData || !cardData.images) return;
@@ -166,7 +160,7 @@ const FlashCardsDialog = ({ category, onComplete, streak }) => {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [currentCardIndex, category, basePath, questionsData, answerTranslations]);
+  }, [currentCardIndex, category, basePath]);
 
   // Add a small delay before showing the dialog to allow DOM layout calculation
   useEffect(() => {
@@ -178,7 +172,7 @@ const FlashCardsDialog = ({ category, onComplete, streak }) => {
   }, []);
 
   const handleNext = () => {
-    if (currentCardIndex < config.totalCards - 1) {
+    if (currentCardIndex < totalCards - 1) {
       setCurrentCardIndex(currentCardIndex + 1);
     } else {
       // Completed all cards
@@ -210,9 +204,7 @@ const FlashCardsDialog = ({ category, onComplete, streak }) => {
       // Get flash card data (Spanish and English text, and image paths)
       const cardData = getFlashCardData(
         category, 
-        currentCardIndex, 
-        questionsData, 
-        answerTranslations
+        currentCardIndex
       );
       
       if (!cardData) {
@@ -405,7 +397,7 @@ const FlashCardsDialog = ({ category, onComplete, streak }) => {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [currentCardIndex, streak, config, category, questionsData, answerTranslations]);
+  }, [currentCardIndex, streak, config, category]);
 
   return (
     <div className={`flash-cards-dialog ${isVisible ? 'visible' : ''}`}>
@@ -413,7 +405,7 @@ const FlashCardsDialog = ({ category, onComplete, streak }) => {
         <div className="flash-cards-header">
           <h2>🎓 Flash Cards</h2>
           <p className="cards-progress">
-            Card {currentCardIndex + 1} of {config.totalCards}
+            Card {currentCardIndex + 1} of {totalCards}
           </p>
         </div>
 
@@ -446,7 +438,7 @@ const FlashCardsDialog = ({ category, onComplete, streak }) => {
             className="btn-next"
             onClick={handleNext}
           >
-            {currentCardIndex < config.totalCards - 1 ? 'Next →' : 'Finish ✓'}
+            {currentCardIndex < totalCards - 1 ? 'Next →' : 'Finish ✓'}
           </button>
         </div>
       </div>

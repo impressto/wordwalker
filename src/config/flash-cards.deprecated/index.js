@@ -1,14 +1,9 @@
 /**
- * Flash Cards Index
+ * Flash Cards Configuration
  * 
- * Central configuration for all flash card categories
- * Imports individual category configs and provides unified access
+ * Unified configuration for all flash card categories
+ * Card mappings are defined per category in the cards object
  */
-
-import { foodFlashCardsConfig } from './food.js';
-// Import other category configs as they are created
-// import { animalsFlashCardsConfig } from './animals.js';
-// import { numbersFlashCardsConfig } from './numbers.js';
 
 /**
  * FEATURE FLAG: Enable/Disable Flash Cards
@@ -18,20 +13,18 @@ import { foodFlashCardsConfig } from './food.js';
 export const FLASH_CARDS_ENABLED = false;
 
 /**
- * Default configuration applied to all categories
+ * Unified Flash Cards Configuration
+ * This configuration applies to ALL categories
  */
-export const defaultFlashCardsConfig = {
-  // Total number of cards
-  totalCards: 10,
-  
+export const flashCardsConfig = {
   // Canvas display size
   canvasWidth: 360,
   canvasHeight: 240,
   
   // Default assets for dynamic card generation
   defaultBackground: 'purple.png',
-  defaultCharacter: 'elvis',
-  defaultEmotion: 'laughing.png',
+  defaultCharacter: 'emma',
+  defaultEmotion: 'happy.png',
   
   // Text rendering configuration
   text: {
@@ -75,50 +68,77 @@ export const defaultFlashCardsConfig = {
     positionX: 30,
     positionY: 30,
   },
+
+  /**
+   * Card mappings by category
+   * Each category defines which question IDs to show and their visual properties
+   */
+  cards: {
+    food: [
+      { 
+        questionId: 'food_001', // la sandía - the watermelon
+        object: 'la sandía.svg',
+        emotion: 'pleased.png',
+      },
+      { 
+        questionId: 'food_002', // el plátano - the banana
+        object: 'el plátano.svg',
+        emotion: 'happy.png',
+      },
+      { 
+        questionId: 'food_003', // la manzana - the apple
+        object: 'la manzana.svg',
+        emotion: 'pleased.png',
+      },
+      { 
+        questionId: 'food_004', // la naranja - the orange
+        object: 'la naranja.svg',
+        emotion: 'excited.png',
+      },
+      { 
+        questionId: 'food_009', // la piña - the pineapple
+        object: 'la piña.svg',
+        emotion: 'happy.png',
+      },
+      { 
+        questionId: 'food_036', // la pizza - the pizza
+        object: 'la pizza.svg',
+        emotion: 'pleased.png',
+      },
+      { 
+        questionId: 'food_037', // la hamburguesa - the hamburger
+        object: 'la hamburguesa.svg',
+        emotion: 'happy.png',
+      },
+      { 
+        questionId: 'food_039', // el taco - the taco
+        object: 'el taco.svg',
+        emotion: 'pleased.png',
+      },
+      { 
+        questionId: 'food_043', // el pollo - the chicken
+        object: 'el pollo.svg',
+        emotion: 'excited.png',
+      },
+      { 
+        questionId: 'food_069', // el helado - the ice cream
+        object: 'el helado.svg',
+        emotion: 'happy.png',
+      },
+    ],
+    // Add other categories here as they are created
+    // animals: [ ... ],
+    // numbers: [ ... ],
+  },
 };
 
 /**
- * Flash card configurations by category
- */
-export const flashCardsConfigByCategory = {
-  food: foodFlashCardsConfig,
-  // Add other categories here as they are created
-  // animals: animalsFlashCardsConfig,
-  // numbers: numbersFlashCardsConfig,
-};
-
-/**
- * Get flash card configuration for a specific category
- * @param {string} category - The category ID
- * @returns {Object} Configuration object with defaults merged
+ * Get flash card configuration (always returns the unified config)
+ * @param {string} category - The category ID (for compatibility)
+ * @returns {Object} The unified flash cards configuration
  */
 export const getFlashCardConfig = (category) => {
-  const categoryConfig = flashCardsConfigByCategory[category] || {};
-  
-  // Deep merge default with category-specific config
-  const config = {
-    ...defaultFlashCardsConfig,
-    ...categoryConfig,
-    // Deep merge nested objects
-    text: {
-      ...defaultFlashCardsConfig.text,
-      ...(categoryConfig.text || {}),
-      spanish: {
-        ...defaultFlashCardsConfig.text.spanish,
-        ...(categoryConfig.text?.spanish || {}),
-      },
-      english: {
-        ...defaultFlashCardsConfig.text.english,
-        ...(categoryConfig.text?.english || {}),
-      },
-    },
-    diamond: {
-      ...defaultFlashCardsConfig.diamond,
-      ...(categoryConfig.diamond || {}),
-    },
-  };
-  
-  return config;
+  return flashCardsConfig;
 };
 
 /**
@@ -130,14 +150,15 @@ export const getFlashCardConfig = (category) => {
  * @returns {Object|null} Object with spanish text, english text, and image paths, or null if not found
  */
 export const getFlashCardData = (category, cardIndex, questionsData, answerTranslations) => {
-  const config = getFlashCardConfig(category);
+  // Get category cards from unified config
+  const categoryCards = flashCardsConfig.cards[category];
   
   // Check if category has card mappings
-  if (!config.cards || !config.cards[cardIndex]) {
+  if (!categoryCards || !categoryCards[cardIndex]) {
     return null;
   }
   
-  const cardConfig = config.cards[cardIndex];
+  const cardConfig = categoryCards[cardIndex];
   const questionId = cardConfig.questionId;
   
   // Find the question in the questions data
@@ -153,9 +174,9 @@ export const getFlashCardData = (category, cardIndex, questionsData, answerTrans
   const englishText = answerTranslations[spanishText] || '';
   
   // Get image paths (use card-specific or default)
-  const background = cardConfig.background || config.defaultBackground;
-  const character = cardConfig.character || config.defaultCharacter;
-  const emotion = cardConfig.emotion || config.defaultEmotion;
+  const background = cardConfig.background || flashCardsConfig.defaultBackground;
+  const character = cardConfig.character || flashCardsConfig.defaultCharacter;
+  const emotion = cardConfig.emotion || flashCardsConfig.defaultEmotion;
   const object = cardConfig.object;
   
   return {
@@ -173,6 +194,16 @@ export const getFlashCardData = (category, cardIndex, questionsData, answerTrans
 };
 
 /**
+ * Get total number of cards for a category
+ * @param {string} category - The category ID
+ * @returns {number} Number of cards in the category
+ */
+export const getCategoryCardCount = (category) => {
+  const categoryCards = flashCardsConfig.cards[category];
+  return categoryCards ? categoryCards.length : 0;
+};
+
+/**
  * Check if a category has flash cards configured
  * @param {string} category - The category ID
  * @returns {boolean} True if category has flash cards and feature is enabled
@@ -182,7 +213,7 @@ export const hasFlashCards = (category) => {
     console.log('[Flash Cards] Feature is DISABLED globally');
     return false;
   }
-  const hasConfig = !!flashCardsConfigByCategory[category];
+  const hasConfig = !!flashCardsConfig.cards[category];
   console.log(`[Flash Cards] Category "${category}" has config: ${hasConfig}, feature enabled: ${FLASH_CARDS_ENABLED}`);
   return hasConfig;
 };
@@ -193,5 +224,5 @@ export const hasFlashCards = (category) => {
  */
 export const getFlashCardCategories = () => {
   if (!FLASH_CARDS_ENABLED) return [];
-  return Object.keys(flashCardsConfigByCategory);
+  return Object.keys(flashCardsConfig.cards);
 };
