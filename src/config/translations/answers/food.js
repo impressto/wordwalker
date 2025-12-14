@@ -144,5 +144,6 @@ export const foodAnswerTranslations = {
   "el ketchup": "ketchup",
   "los guisantes": "the peas",
   "la fórmula para bebés": "baby formula",
-  "el limón": "the lime"
+  "el limón": "the lime",
+  "vino blanco": "white wine"
 };

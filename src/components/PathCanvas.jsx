@@ -9,6 +9,7 @@ import { getTheme } from '../config/parallaxThemes';
 import { getSpriteSheetConfig, getCharacterById } from '../config/characterConfig';
 import { setActiveTheme } from '../utils/themeManager';
 import SoundManager from '../utils/soundManager';
+import { isEmojiSvg, getEmojiSvgPath } from '../utils/emojiUtils.jsx';
 import { loadGameState, saveGameState, clearGameState, hasSavedGameState, convertLoadedState } from '../utils/gameStatePersistence';
 import { useCharacterAndTheme } from '../hooks/useCharacterAndTheme';
 import { useAnswerHandling } from '../hooks/useAnswerHandling';
@@ -64,6 +65,7 @@ const PathCanvas = () => {
   const [parallaxLayer7Image, setParallaxLayer7Image] = useState(null); // Rear layer (infinite distance, no parallax)
   const [walkerSpriteSheet, setWalkerSpriteSheet] = useState(null); // Walker sprite sheet
   const [isLoading, setIsLoading] = useState(true); // Track if assets are still loading
+  const emojiImageCache = useRef({}); // Cache for loaded SVG emoji images
   const offsetRef = useRef(-300); // Start scrolled back so fork appears more centered initially
   const velocityRef = useRef(0); // Current scroll velocity for smooth acceleration/deceleration
   const targetOffsetRef = useRef(null); // Target offset for smooth camera panning (null = no target)
@@ -388,6 +390,33 @@ const PathCanvas = () => {
       }
     };
   }, [totalPoints, streak, maxStreakInCategory, selectedPath, checkpointsAnswered, usedQuestionIds, completedCategories, forkCategories, presentedCategories, soundEnabled, volume, musicEnabled, correctFirstTryIds, correctAnswersByCategory]);
+
+  // Preload SVG emoji images when question changes
+  useEffect(() => {
+    if (currentQuestion && isEmojiSvg(currentQuestion.emoji)) {
+      const svgPath = getEmojiSvgPath(currentQuestion.emoji, currentQuestion.category);
+      console.log(`Loading SVG emoji for question ${currentQuestion.id}: ${svgPath}`);
+      
+      // Only load if not already in cache
+      if (!emojiImageCache.current[svgPath]) {
+        const img = new Image();
+        img.onload = () => {
+          emojiImageCache.current[svgPath] = img;
+          console.log(`✓ Successfully preloaded SVG emoji: ${svgPath}`);
+          // Force a re-render by updating a dummy state or trigger canvas redraw
+          // The canvas animation loop will pick up the loaded image
+        };
+        img.onerror = (error) => {
+          console.error(`✗ Failed to preload emoji SVG: ${svgPath}`, error);
+          console.error(`  Question ID: ${currentQuestion.id}, Category: ${currentQuestion.category}`);
+          emojiImageCache.current[svgPath] = null;
+        };
+        img.src = svgPath;
+      } else {
+        console.log(`✓ SVG emoji already cached: ${svgPath}`);
+      }
+    }
+  }, [currentQuestion]);
 
   // Handle resume game
   const handleResumeGame = () => {
@@ -930,28 +959,74 @@ const PathCanvas = () => {
           const pulseTime = Date.now() / 1000; // Convert to seconds
           const pulseIntensity = (Math.sin(pulseTime * 2) + 1) / 2; // 0 to 1
           
-          // Draw glow layers (subtle pulsing effect)
-          for (let i = 3; i > 0; i--) {
-            const glowSize = checkpointSize * (1 + i * 0.2 * pulseIntensity); // Reduced from 0.3 to 0.2
-            ctx.globalAlpha = fadeOpacity * 0.3 * pulseIntensity / i; // Reduced from 0.4 to 0.3
-            ctx.fillStyle = '#FFD700'; // Gold color for hint indicator
-            ctx.font = `${glowSize}px Arial`;
+          const emojiToDisplay = currentQuestion ? currentQuestion.emoji : '❓';
+          
+          // Check if emoji is an SVG file
+          if (currentQuestion && isEmojiSvg(emojiToDisplay)) {
+            const svgPath = getEmojiSvgPath(emojiToDisplay, currentQuestion.category);
+            
+            // Get cached image (should be preloaded by useEffect)
+            const emojiImg = emojiImageCache.current[svgPath];
+            
+            // Draw SVG image if loaded and ready
+            if (emojiImg && emojiImg.complete && emojiImg.naturalWidth > 0) {
+              // Draw glow layers for SVG
+              for (let i = 3; i > 0; i--) {
+                const glowSize = checkpointSize * (1 + i * 0.2 * pulseIntensity);
+                ctx.globalAlpha = fadeOpacity * 0.3 * pulseIntensity / i;
+                ctx.shadowColor = '#FFD700';
+                ctx.shadowBlur = 20 * i;
+                ctx.drawImage(
+                  emojiImg,
+                  checkpointScreenX - glowSize / 2,
+                  checkpointY - glowSize / 2,
+                  glowSize,
+                  glowSize
+                );
+              }
+              
+              // Draw main SVG emoji
+              ctx.globalAlpha = fadeOpacity;
+              ctx.shadowColor = 'transparent';
+              ctx.shadowBlur = 0;
+              ctx.drawImage(
+                emojiImg,
+                checkpointScreenX - checkpointSize / 2,
+                checkpointY - checkpointSize / 2,
+                checkpointSize,
+                checkpointSize
+              );
+            } else {
+              // Fallback to question mark while loading
+              ctx.globalAlpha = fadeOpacity;
+              ctx.fillStyle = 'black';
+              ctx.font = `${checkpointSize}px Arial`;
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'middle';
+              ctx.fillText('❓', checkpointScreenX, checkpointY);
+            }
+          } else {
+            // Regular emoji - draw as text
+            // Draw glow layers (subtle pulsing effect)
+            for (let i = 3; i > 0; i--) {
+              const glowSize = checkpointSize * (1 + i * 0.2 * pulseIntensity);
+              ctx.globalAlpha = fadeOpacity * 0.3 * pulseIntensity / i;
+              ctx.fillStyle = '#FFD700';
+              ctx.font = `${glowSize}px Arial`;
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'middle';
+              ctx.fillText(emojiToDisplay, checkpointScreenX, checkpointY);
+            }
+            
+            // Draw main emoji
+            ctx.globalAlpha = fadeOpacity;
+            ctx.fillStyle = 'black';
+            ctx.font = `${checkpointSize}px Arial`;
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
-            const emojiToDisplay = currentQuestion ? currentQuestion.emoji : '❓';
             ctx.fillText(emojiToDisplay, checkpointScreenX, checkpointY);
           }
           
-          // Draw main emoji
-          ctx.globalAlpha = fadeOpacity;
-          ctx.fillStyle = 'black';
-          ctx.font = `${checkpointSize}px Arial`;
-          ctx.textAlign = 'center';
-          ctx.textBaseline = 'middle';
-          
-          // Display the current question's emoji (should always be loaded now)
-          const emojiToDisplay = currentQuestion ? currentQuestion.emoji : '❓';
-          ctx.fillText(emojiToDisplay, checkpointScreenX, checkpointY);
           ctx.restore();
           
           // Store checkpoint bounds for click detection

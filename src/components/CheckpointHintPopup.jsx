@@ -3,6 +3,8 @@
  * Displays a hint popup when user clicks on a checkpoint emoji
  */
 
+import EmojiDisplay from './EmojiDisplay';
+
 const CheckpointHintPopup = ({ currentQuestion, onClose }) => {
   if (!currentQuestion) return null;
 
@@ -46,7 +48,11 @@ const CheckpointHintPopup = ({ currentQuestion, onClose }) => {
             alignItems: 'center',
             gap: '15px',
           }}>
-            <span style={{ fontSize: '48px' }}>{currentQuestion.emoji}</span>
+            <EmojiDisplay 
+              emoji={currentQuestion.emoji} 
+              category={currentQuestion.category}
+              size="48px"
+            />
             <h2 style={{
               margin: 0,
               color: '#2c5f2d',

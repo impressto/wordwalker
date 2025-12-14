@@ -5,6 +5,7 @@
 
 import { useState, useEffect } from 'react';
 import { getTranslationBoxDuration } from '../config/gameSettings';
+import EmojiDisplay from './EmojiDisplay';
 
 const QuestionDialog = ({ 
   currentQuestion, 
@@ -113,10 +114,13 @@ const QuestionDialog = ({
       maxWidth: 'min(85vw, 380px)',
     }}>
       <div id="question-emoji" style={{ 
-        fontSize: '60px',
         animation: 'fadeInScale 0.6s ease-out',
       }}>
-        {currentQuestion.emoji}
+        <EmojiDisplay 
+          emoji={currentQuestion.emoji} 
+          category={currentQuestion.category}
+          size="60px"
+        />
       </div>
       
       <div id="question-text" style={{

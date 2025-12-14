@@ -52,6 +52,7 @@ export const foodQuestions = [
   {
     id: 'food_005',
     emoji: '🍇',
+    
     question: '¿Con qué fruta se hace el vino?',
     options: ['las uvas', 'las ciruelas', 'las moras'],
     correctAnswer: 'las uvas',
@@ -74,6 +75,8 @@ export const foodQuestions = [
   {
     id: 'food_009',
     emoji: '🍍',
+      
+      
     question: '¿Qué fruta tropical es amarilla por dentro?',
     options: ['la piña', 'el mango', 'la guayaba'],
     correctAnswer: 'la piña',
@@ -85,6 +88,8 @@ export const foodQuestions = [
   {
     id: 'food_010',
     emoji: '🥝',
+      
+
     question: '¿Qué fruta es verde por dentro con semillas negras?',
     options: ['el kiwi', 'la guayaba', 'la papaya'],
     correctAnswer: 'el kiwi',
@@ -129,6 +134,7 @@ export const foodQuestions = [
   {
     id: 'food_014',
     emoji: '🥥',
+    
     question: '¿De qué fruta se obtiene leche vegetal?',
     options: ['el coco', 'la almendra', 'la avena'],
     correctAnswer: 'el coco',
@@ -140,6 +146,7 @@ export const foodQuestions = [
   {
     id: 'food_015',
     emoji: '🥑',
+    
     question: '¿Qué fruta verde se usa en guacamole?',
     options: ['el aguacate', 'el pepino', 'la lima'],
     correctAnswer: 'el aguacate',
@@ -151,6 +158,7 @@ export const foodQuestions = [
   {
     id: 'food_016',
     emoji: '🫐',
+    
     question: '¿Qué fruta pequeña es azul?',
     options: ['el arándano', 'la mora', 'la ciruela'],
     correctAnswer: 'el arándano',
@@ -162,6 +170,7 @@ export const foodQuestions = [
   {
     id: 'food_017',
     emoji: '🍈',
+    
     question: '¿Qué fruta es como una sandía pequeña?',
     options: ['el melón', 'la guayaba', 'la granada'],
     correctAnswer: 'el melón',
@@ -173,6 +182,7 @@ export const foodQuestions = [
   {
     id: 'food_018',
     emoji: '🍅',
+    
     question: '¿Qué fruta roja se usa en ensaladas?',
     options: ['el tomate', 'el pimiento', 'la remolacha'],
     correctAnswer: 'el tomate',
@@ -184,6 +194,7 @@ export const foodQuestions = [
   {
     id: 'food_019',
     emoji: '🫒',
+    
     question: '¿De qué fruta se hace el aceite de oliva?',
     options: ['la aceituna', 'la nuez', 'el aguacate'],
     correctAnswer: 'la aceituna',
@@ -195,6 +206,7 @@ export const foodQuestions = [
   {
     id: 'food_020',
     emoji: '🍆',
+    
     question: '¿Qué verdura es morada y larga?',
     options: ['la berenjena', 'la remolacha', 'la col morada'],
     correctAnswer: 'la berenjena',
@@ -208,6 +220,7 @@ export const foodQuestions = [
   {
     id: 'food_021',
     emoji: '🥕',
+    
     question: '¿Qué verdura naranja comen los conejos?',
     options: ['la zanahoria', 'la calabaza', 'el boniato'],
     correctAnswer: 'la zanahoria',
@@ -219,6 +232,7 @@ export const foodQuestions = [
   {
     id: 'food_022',
     emoji: '🥔',
+    
     question: '¿Con qué verdura se hacen las papas fritas?',
     options: ['la papa', 'el boniato', 'la yuca'],
     correctAnswer: 'la papa',
@@ -230,6 +244,7 @@ export const foodQuestions = [
   {
     id: 'food_023',
     emoji: '🧅',
+    
     question: '¿Qué verdura te hace llorar cuando la cortas?',
     options: ['la cebolla', 'el ajo', 'el cebollino'],
     correctAnswer: 'la cebolla',
@@ -241,6 +256,7 @@ export const foodQuestions = [
   {
     id: 'food_024',
     emoji: '🧄',
+    
     question: '¿Qué ingrediente pequeño tiene olor fuerte?',
     options: ['el ajo', 'la cebolla', 'el puerro'],
     correctAnswer: 'el ajo',
@@ -252,6 +268,7 @@ export const foodQuestions = [
   {
     id: 'food_025',
     emoji: '🌽',
+    
     question: '¿Qué verdura amarilla tiene granos?',
     options: ['el maíz', 'el elote', 'el choclo'],
     correctAnswer: 'el maíz',
@@ -263,6 +280,7 @@ export const foodQuestions = [
   {
     id: 'food_026',
     emoji: '🥒',
+    
     question: '¿Qué verdura verde y larga está en las ensaladas?',
     options: ['el pepino', 'el calabacín', 'el apio'],
     correctAnswer: 'el pepino',
@@ -274,6 +292,7 @@ export const foodQuestions = [
   {
     id: 'food_027',
     emoji: '🥬',
+    
     question: '¿Qué verdura verde se come en ensaladas?',
     options: ['la lechuga', 'la espinaca', 'la acelga'],
     correctAnswer: 'la lechuga',
@@ -285,6 +304,7 @@ export const foodQuestions = [
   {
     id: 'food_028',
     emoji: '🥦',
+    
     question: '¿Qué verdura verde parece un árbol pequeño?',
     options: ['el brócoli', 'la coliflor', 'el brócoli rabe'],
     correctAnswer: 'el brócoli',
@@ -296,6 +316,7 @@ export const foodQuestions = [
   {
     id: 'food_029',
     emoji: '🫑',
+    
     question: '¿Qué verdura puede ser roja, verde o amarilla?',
     options: ['el pimiento', 'el tomate', 'el chile'],
     correctAnswer: 'el pimiento',
@@ -307,6 +328,7 @@ export const foodQuestions = [
   {
     id: 'food_030',
     emoji: '🌶️',
+    
     question: '¿Qué ingrediente es muy picante?',
     options: ['el chile', 'el pimiento', 'el jalapeño'],
     correctAnswer: 'el chile',
@@ -318,6 +340,7 @@ export const foodQuestions = [
   {
     id: 'food_031',
     emoji: '🥜',
+    
     question: '¿De qué se hace la mantequilla de maní?',
     options: ['el cacahuate', 'la almendra', 'la avellana'],
     correctAnswer: 'el cacahuate',
@@ -329,6 +352,7 @@ export const foodQuestions = [
   {
     id: 'food_032',
     emoji: '🍄',
+    
     question: '¿Qué crece en lugares húmedos?',
     options: ['el champiñón', 'la seta', 'el hongo'],
     correctAnswer: 'el champiñón',
@@ -340,6 +364,7 @@ export const foodQuestions = [
   {
     id: 'food_033',
     emoji: '🫘',
+    
     question: '¿Qué se usa en los frijoles?',
     options: ['los frijoles', 'las habas', 'las lentejas'],
     correctAnswer: 'los frijoles',
@@ -351,6 +376,7 @@ export const foodQuestions = [
   {
     id: 'food_034',
     emoji: '🎃',
+    
     question: '¿Qué verdura naranja se usa en Halloween?',
     options: ['la calabaza', 'la zanahoria', 'el boniato'],
     correctAnswer: 'la calabaza',
@@ -362,6 +388,7 @@ export const foodQuestions = [
   {
     id: 'food_035',
     emoji: '🥗',
+    
     question: '¿Qué plato tiene muchas verduras frescas?',
     options: ['la ensalada', 'la sopa', 'el guiso'],
     correctAnswer: 'la ensalada',
@@ -375,6 +402,7 @@ export const foodQuestions = [
   {
     id: 'food_036',
     emoji: '🍕',
+    
     question: '¿Qué comida italiana es redonda?',
     options: ['la pizza', 'la focaccia', 'la calzone'],
     correctAnswer: 'la pizza',
@@ -386,6 +414,7 @@ export const foodQuestions = [
   {
     id: 'food_037',
     emoji: '🍔',
+    
     question: '¿Qué tiene carne entre dos panes?',
     options: ['la hamburguesa', 'el sándwich', 'el bocadillo'],
     correctAnswer: 'la hamburguesa',
@@ -397,6 +426,7 @@ export const foodQuestions = [
   {
     id: 'food_038',
     emoji: '🌭',
+    
     question: '¿Qué comida tiene salchicha en pan largo?',
     options: ['el hot dog', 'el chorizo', 'la salchicha'],
     correctAnswer: 'el hot dog',
@@ -408,6 +438,7 @@ export const foodQuestions = [
   {
     id: 'food_039',
     emoji: '🌮',
+    
     question: '¿Qué comida mexicana usa tortilla doblada?',
     options: ['el taco', 'la quesadilla', 'la enchilada'],
     correctAnswer: 'el taco',
@@ -419,6 +450,7 @@ export const foodQuestions = [
   {
     id: 'food_040',
     emoji: '🌯',
+    
     question: '¿Qué comida mexicana está enrollada?',
     options: ['el burrito', 'la enchilada', 'el taco'],
     correctAnswer: 'el burrito',
@@ -430,6 +462,7 @@ export const foodQuestions = [
   {
     id: 'food_041',
     emoji: '🥙',
+    
     question: '¿Qué pan árabe está relleno?',
     options: ['la pita', 'el naan', 'la tortilla'],
     correctAnswer: 'la pita',
@@ -441,6 +474,7 @@ export const foodQuestions = [
   {
     id: 'food_042',
     emoji: '🥪',
+    
     question: '¿Qué tiene ingredientes entre dos rebanadas de pan?',
     options: ['el sándwich', 'el bocadillo', 'el emparedado'],
     correctAnswer: 'el sándwich',
@@ -452,6 +486,7 @@ export const foodQuestions = [
   {
     id: 'food_043',
     emoji: '🍗',
+    
     question: '¿Qué carne de ave es muy común?',
     options: ['el pollo', 'el pavo', 'el pato'],
     correctAnswer: 'el pollo',
@@ -463,6 +498,7 @@ export const foodQuestions = [
   {
     id: 'food_044',
     emoji: '🥩',
+    
     question: '¿Qué comes en un asado?',
     options: ['la carne', 'el bistec', 'el filete'],
     correctAnswer: 'la carne',
@@ -474,6 +510,7 @@ export const foodQuestions = [
   {
     id: 'food_045',
     emoji: '🥓',
+    
     question: '¿Qué carne frita comes en el desayuno?',
     options: ['el tocino', 'el jamón', 'la panceta'],
     correctAnswer: 'el tocino',
@@ -485,6 +522,7 @@ export const foodQuestions = [
   {
     id: 'food_046',
     emoji: '🍖',
+    
     question: '¿Qué es carne con hueso?',
     options: ['la costilla', 'la chuleta', 'el filete'],
     correctAnswer: 'la costilla',
@@ -496,6 +534,7 @@ export const foodQuestions = [
   {
     id: 'food_047',
     emoji: '🍤',
+    
     question: '¿Qué marisco rosado es pequeño?',
     options: ['el camarón', 'la gamba', 'la langosta'],
     correctAnswer: 'el camarón',
@@ -507,6 +546,7 @@ export const foodQuestions = [
   {
     id: 'food_048',
     emoji: '🍣',
+    
     question: '¿Qué comida japonesa tiene pescado crudo?',
     options: ['el sushi', 'el sashimi', 'el ramen'],
     correctAnswer: 'el sushi',
@@ -518,6 +558,7 @@ export const foodQuestions = [
   {
     id: 'food_049',
     emoji: '🍜',
+    
     question: '¿Qué sopa asiática tiene fideos?',
     options: ['el ramen', 'el pho', 'el udon'],
     correctAnswer: 'el ramen',
@@ -529,6 +570,7 @@ export const foodQuestions = [
   {
     id: 'food_050',
     emoji: '🍝',
+    
     question: '¿Qué comida italiana tiene fideos?',
     options: ['la pasta', 'los espaguetis', 'los tallarines'],
     correctAnswer: 'la pasta',
@@ -540,6 +582,7 @@ export const foodQuestions = [
   {
     id: 'food_051',
     emoji: '🍲',
+    
     question: '¿Qué plato caliente tiene muchos ingredientes?',
     options: ['el guiso', 'el estofado', 'el cocido'],
     correctAnswer: 'el guiso',
@@ -551,6 +594,7 @@ export const foodQuestions = [
   {
     id: 'food_052',
     emoji: '🥘',
+    
     question: '¿Qué plato español tiene arroz y mariscos?',
     options: ['la paella', 'el arroz con pollo', 'el risotto'],
     correctAnswer: 'la paella',
@@ -562,6 +606,7 @@ export const foodQuestions = [
   {
     id: 'food_054',
     emoji: '🥚',
+    
     question: '¿Qué ponen las gallinas?',
     options: ['el huevo', 'el pollito', 'la pluma'],
     correctAnswer: 'el huevo',
@@ -573,6 +618,7 @@ export const foodQuestions = [
   {
     id: 'food_055',
     emoji: '🍟',
+    
     question: '¿Qué acompaña a la hamburguesa?',
     options: ['las papas fritas', 'las patatas bravas', 'el arroz'],
     correctAnswer: 'las papas fritas',
@@ -586,6 +632,7 @@ export const foodQuestions = [
   {
     id: 'food_056',
     emoji: '🍞',
+    
     question: '¿Qué haces con harina en el horno?',
     options: ['el pan', 'la galleta', 'el pastel'],
     correctAnswer: 'el pan',
@@ -597,6 +644,7 @@ export const foodQuestions = [
   {
     id: 'food_057',
     emoji: '🥖',
+    
     question: '¿Qué pan francés es largo?',
     options: ['la baguette', 'el baguette', 'la barra'],
     correctAnswer: 'la baguette',
@@ -608,6 +656,7 @@ export const foodQuestions = [
   {
     id: 'food_058',
     emoji: '🥐',
+    
     question: '¿Qué pan francés tiene forma de media luna?',
     options: ['el croissant', 'la medialuna', 'el brioche'],
     correctAnswer: 'el croissant',
@@ -619,6 +668,7 @@ export const foodQuestions = [
   {
     id: 'food_059',
     emoji: '🥨',
+    
     question: '¿Qué pan tiene forma de nudo?',
     options: ['el pretzel', 'el bretzel', 'el nudo'],
     correctAnswer: 'el pretzel',
@@ -630,6 +680,7 @@ export const foodQuestions = [
   {
     id: 'food_060',
     emoji: '🥯',
+    
     question: '¿Qué pan redondo tiene agujero?',
     options: ['el bagel', 'la dona', 'el rosquilla'],
     correctAnswer: 'el bagel',
@@ -641,6 +692,7 @@ export const foodQuestions = [
   {
     id: 'food_061',
     emoji: '🫓',
+    
     question: '¿Qué pan delgado y plano se usa en tacos?',
     options: ['la tortilla', 'la pita', 'el naan'],
     correctAnswer: 'la tortilla',
@@ -652,6 +704,7 @@ export const foodQuestions = [
   {
     id: 'food_062',
     emoji: '🥞',
+    
     question: '¿Qué comes en el desayuno con miel?',
     options: ['los panqueques', 'las crepes', 'los waffles'],
     correctAnswer: 'los panqueques',
@@ -663,6 +716,7 @@ export const foodQuestions = [
   {
     id: 'food_063',
     emoji: '🧇',
+    
     question: '¿Qué tiene cuadros y se come con miel?',
     options: ['el waffle', 'el panqueque', 'la crepe'],
     correctAnswer: 'el waffle',
@@ -674,6 +728,7 @@ export const foodQuestions = [
   {
     id: 'food_064',
     emoji: '🍚',
+    
     question: '¿Qué grano blanco se come en Asia?',
     options: ['el arroz', 'el trigo', 'la cebada'],
     correctAnswer: 'el arroz',
@@ -685,6 +740,7 @@ export const foodQuestions = [
   {
     id: 'food_065',
     emoji: '🥣',
+    
     question: '¿Qué desayuno tiene leche y cereal?',
     options: ['el cereal', 'la avena', 'el muesli'],
     correctAnswer: 'el cereal',
@@ -698,6 +754,7 @@ export const foodQuestions = [
   {
     id: 'food_066',
     emoji: '🥛',
+    
     question: '¿Qué bebida blanca dan las vacas?',
     options: ['la leche', 'el yogur', 'la crema'],
     correctAnswer: 'la leche',
@@ -709,6 +766,7 @@ export const foodQuestions = [
   {
     id: 'food_067',
     emoji: '🧀',
+    
     question: '¿Qué se hace con leche fermentada?',
     options: ['el queso', 'el yogur', 'la crema'],
     correctAnswer: 'el queso',
@@ -720,6 +778,7 @@ export const foodQuestions = [
   {
     id: 'food_068',
     emoji: '🧈',
+    
     question: '¿Qué untas en el pan tostado?',
     options: ['la mantequilla', 'la margarina', 'la mermelada'],
     correctAnswer: 'la mantequilla',
@@ -731,6 +790,7 @@ export const foodQuestions = [
   {
     id: 'food_069',
     emoji: '🍦',
+    
     question: '¿Qué postre frío de leche comes en verano?',
     options: ['el helado', 'el sorbete', 'el flan'],
     correctAnswer: 'el helado',
@@ -742,6 +802,7 @@ export const foodQuestions = [
   {
     id: 'food_070',
     emoji: '🍨',
+    
     question: '¿Qué postre frío se sirve en copa?',
     options: ['el helado', 'el sundae', 'la nieve'],
     correctAnswer: 'el helado',
@@ -753,6 +814,7 @@ export const foodQuestions = [
   {
     id: 'food_071',
     emoji: '🧊',
+    
     question: '¿Qué pones en las bebidas para enfriarlas?',
     options: ['el hielo', 'el agua fría', 'la nieve'],
     correctAnswer: 'el hielo',
@@ -764,6 +826,7 @@ export const foodQuestions = [
   {
     id: 'food_073',
     emoji: '🍮',
+    
     question: '¿Qué postre dulce tiene caramelo?',
     options: ['el flan', 'el pudín', 'la natilla'],
     correctAnswer: 'el flan',
@@ -777,6 +840,7 @@ export const foodQuestions = [
   {
     id: 'food_074',
     emoji: '☕',
+    
     question: '¿Qué bebida caliente tomas por la mañana?',
     options: ['el café', 'el té', 'el chocolate caliente'],
     correctAnswer: 'el café',
@@ -788,6 +852,7 @@ export const foodQuestions = [
   {
     id: 'food_075',
     emoji: '🍵',
+    
     question: '¿Qué bebida caliente tiene hierbas?',
     options: ['el té', 'la infusión', 'la manzanilla'],
     correctAnswer: 'el té',
@@ -799,6 +864,7 @@ export const foodQuestions = [
   {
     id: 'food_076',
     emoji: '🧃',
+    
     question: '¿Qué bebes de frutas?',
     options: ['el jugo', 'el zumo', 'el néctar'],
     correctAnswer: 'el jugo',
@@ -810,6 +876,7 @@ export const foodQuestions = [
   {
     id: 'food_077',
     emoji: '🥤',
+    
     question: '¿Qué bebida gaseosa tomas con popote?',
     options: ['el refresco', 'la gaseosa', 'la soda'],
     correctAnswer: 'el refresco',
@@ -821,6 +888,7 @@ export const foodQuestions = [
   {
     id: 'food_078',
     emoji: '🧋',
+    
     question: '¿Qué bebida taiwanesa tiene bolitas?',
     options: ['té de burbujas', 'boba', 'té con leche'],
     correctAnswer: 'té de burbujas',
@@ -832,6 +900,7 @@ export const foodQuestions = [
   {
     id: 'food_079',
     emoji: '🍶',
+    
     question: '¿Qué bebida japonesa se hace de arroz?',
     options: ['el sake', 'el shochu', 'el amazake'],
     correctAnswer: 'el sake',
@@ -843,6 +912,7 @@ export const foodQuestions = [
   {
     id: 'food_080',
     emoji: '🍺',
+    
     question: '¿Qué bebida alcohólica es amarilla?',
     options: ['la cerveza', 'la sidra', 'el vino blanco'],
     correctAnswer: 'la cerveza',
@@ -854,6 +924,7 @@ export const foodQuestions = [
   {
     id: 'food_081',
     emoji: '🍷',
+    
     question: '¿Qué bebida se hace de uvas?',
     options: ['el vino', 'el mosto', 'el jerez'],
     correctAnswer: 'el vino',
@@ -865,6 +936,7 @@ export const foodQuestions = [
   {
     id: 'food_082',
     emoji: '🥂',
+    
     question: '¿Qué bebes para celebrar?',
     options: ['el champán', 'el cava', 'el prosecco'],
     correctAnswer: 'el champán',
@@ -876,6 +948,7 @@ export const foodQuestions = [
   {
     id: 'food_083',
     emoji: '🍹',
+    
     question: '¿Qué bebida tropical tiene sombrilla?',
     options: ['el cóctel', 'el trago', 'la bebida'],
     correctAnswer: 'el cóctel',
@@ -887,6 +960,7 @@ export const foodQuestions = [
   {
     id: 'food_084',
     emoji: '🍸',
+    
     question: '¿Qué bebida se sirve en copa triangular?',
     options: ['el martini', 'el cosmopolitan', 'el manhattan'],
     correctAnswer: 'el martini',
@@ -898,6 +972,7 @@ export const foodQuestions = [
   {
     id: 'food_085',
     emoji: '🧉',
+    
     question: '¿Qué bebida tradicional argentina se toma con bombilla?',
     options: ['el mate', 'el tereré', 'la yerba'],
     correctAnswer: 'el mate',
@@ -911,6 +986,7 @@ export const foodQuestions = [
   {
     id: 'food_086',
     emoji: '🍰',
+    
     question: '¿Qué postre dulce comes en cumpleaños?',
     options: ['el pastel', 'la tarta', 'el bizcocho'],
     correctAnswer: 'el pastel',
@@ -922,6 +998,7 @@ export const foodQuestions = [
   {
     id: 'food_087',
     emoji: '🎂',
+    
     question: '¿Qué tiene velas en tu cumpleaños?',
     options: ['el pastel', 'la tarta', 'el bizcocho'],
     correctAnswer: 'el pastel',
@@ -933,6 +1010,7 @@ export const foodQuestions = [
   {
     id: 'food_088',
     emoji: '🧁',
+    
     question: '¿Qué es un pastel pequeño individual?',
     options: ['el cupcake', 'la magdalena', 'el muffin'],
     correctAnswer: 'el cupcake',
@@ -944,6 +1022,7 @@ export const foodQuestions = [
   {
     id: 'food_089',
     emoji: '🥧',
+    
     question: '¿Qué postre tiene frutas en masa?',
     options: ['el pay', 'la tarta', 'el pastel de manzana'],
     correctAnswer: 'el pay',
@@ -955,6 +1034,7 @@ export const foodQuestions = [
   {
     id: 'food_090',
     emoji: '🍫',
+    
     question: '¿Qué dulce marrón es de cacao?',
     options: ['el chocolate', 'el bombón', 'el cacao'],
     correctAnswer: 'el chocolate',
@@ -966,6 +1046,7 @@ export const foodQuestions = [
   {
     id: 'food_091',
     emoji: '🍬',
+    
     question: '¿Qué dulce pequeño chupas?',
     options: ['el caramelo', 'la paleta', 'el chicle'],
     correctAnswer: 'el caramelo',
@@ -977,6 +1058,7 @@ export const foodQuestions = [
   {
     id: 'food_092',
     emoji: '🍭',
+    
     question: '¿Qué dulce está en un palito?',
     options: ['la paleta', 'el chupete', 'el pirulí'],
     correctAnswer: 'la paleta',
@@ -988,6 +1070,7 @@ export const foodQuestions = [
   {
     id: 'food_093',
     emoji: '🍪',
+    
     question: '¿Qué postre crujiente tiene chispas de chocolate?',
     options: ['la galleta', 'la cookie', 'el biscocho'],
     correctAnswer: 'la galleta',
@@ -999,6 +1082,7 @@ export const foodQuestions = [
   {
     id: 'food_094',
     emoji: '🍩',
+    
     question: '¿Qué dulce redondo tiene agujero?',
     options: ['la dona', 'la rosquilla', 'el buñuelo'],
     correctAnswer: 'la dona',
@@ -1010,6 +1094,7 @@ export const foodQuestions = [
   {
     id: 'food_095',
     emoji: '🍯',
+    
     question: '¿Qué hacen las abejas?',
     options: ['la miel', 'la cera', 'el néctar'],
     correctAnswer: 'la miel',
@@ -1021,6 +1106,7 @@ export const foodQuestions = [
   {
     id: 'food_096',
     emoji: '🍿',
+    
     question: '¿Qué comes en el cine?',
     options: ['las palomitas', 'los nachos', 'las papas fritas'],
     correctAnswer: 'las palomitas',
@@ -1032,6 +1118,7 @@ export const foodQuestions = [
   {
     id: 'food_097',
     emoji: '🥠',
+    
     question: '¿Qué galleta china tiene mensaje dentro?',
     options: ['la galleta de la fortuna', 'el fortune cookie', 'la galleta china'],
     correctAnswer: 'la galleta de la fortuna',
@@ -1043,6 +1130,7 @@ export const foodQuestions = [
   {
     id: 'food_098',
     emoji: '🧁',
+    
     question: '¿Qué postre pequeño tiene papel rizado?',
     options: ['la magdalena', 'el cupcake', 'el muffin'],
     correctAnswer: 'la magdalena',
@@ -1054,6 +1142,7 @@ export const foodQuestions = [
   {
     id: 'food_100',
     emoji: '🥮',
+    
     question: '¿Qué pastel chino se come en otoño?',
     options: ['el pastel de luna', 'el mooncake', 'el pastel chino'],
     correctAnswer: 'el pastel de luna',
@@ -1067,6 +1156,7 @@ export const foodQuestions = [
   {
     id: 'food_101',
     emoji: '🍑',
+    
     question: '¿Qué fruta de verano tiene piel peluda?',
     options: ['el durazno', 'el melocotón', 'el albaricoque'],
     correctAnswer: 'el durazno',
@@ -1078,6 +1168,7 @@ export const foodQuestions = [
   {
     id: 'food_104',
     emoji: '🍋',
+    
     question: '¿Qué fruta usas para hacer limonada?',
     options: ['el limón', 'la lima', 'la toronja'],
     correctAnswer: 'el limón',
@@ -1089,6 +1180,7 @@ export const foodQuestions = [
   {
     id: 'food_105',
     emoji: '🥝',
+    
     question: '¿Qué fruta peluda es verde por dentro?',
     options: ['el kiwi', 'la guayaba', 'la papaya'],
     correctAnswer: 'el kiwi',
@@ -1100,6 +1192,7 @@ export const foodQuestions = [
   {
     id: 'food_106',
     emoji: '🍐',
+    
     question: '¿Qué fruta es dulce y tiene forma de bombilla?',
     options: ['la pera', 'la manzana', 'el higo'],
     correctAnswer: 'la pera',
@@ -1111,6 +1204,7 @@ export const foodQuestions = [
   {
     id: 'food_107',
     emoji: '🍓',
+    
     question: '¿Qué fruta roja tiene semillas por fuera?',
     options: ['la fresa', 'la mora', 'la frambuesa'],
     correctAnswer: 'la fresa',
@@ -1122,6 +1216,7 @@ export const foodQuestions = [
   {
     id: 'food_108',
     emoji: '🍇',
+    
     question: '¿Qué fruta crece en racimos?',
     options: ['las uvas', 'las moras', 'los arándanos'],
     correctAnswer: 'las uvas',
@@ -1133,6 +1228,7 @@ export const foodQuestions = [
   {
     id: 'food_109',
     emoji: '🍒',
+    
     question: '¿Qué fruta roja pequeña viene en pares?',
     options: ['la cereza', 'la aceituna', 'la ciruela'],
     correctAnswer: 'la cereza',
@@ -1144,6 +1240,7 @@ export const foodQuestions = [
   {
     id: 'food_110',
     emoji: '🍈',
+    
     question: '¿Qué fruta verde es dulce por dentro?',
     options: ['el melón', 'la sandía', 'la guayaba'],
     correctAnswer: 'el melón',
@@ -1157,6 +1254,7 @@ export const foodQuestions = [
   {
     id: 'food_111',
     emoji: '🐟',
+    
     question: '¿Qué comes del mar?',
     options: ['el pescado', 'el salmón', 'el atún'],
     correctAnswer: 'el pescado',
@@ -1168,6 +1266,7 @@ export const foodQuestions = [
   {
     id: 'food_112',
     emoji: '🦞',
+    
     question: '¿Qué marisco rojo tiene pinzas?',
     options: ['la langosta', 'el bogavante', 'el cangrejo'],
     correctAnswer: 'la langosta',
@@ -1179,6 +1278,7 @@ export const foodQuestions = [
   {
     id: 'food_113',
     emoji: '🦀',
+    
     question: '¿Qué marisco camina de lado?',
     options: ['el cangrejo', 'la jaiba', 'el centollo'],
     correctAnswer: 'el cangrejo',
@@ -1190,6 +1290,7 @@ export const foodQuestions = [
   {
     id: 'food_114',
     emoji: '🦑',
+    
     question: '¿Qué marisco tiene tentáculos?',
     options: ['el calamar', 'el pulpo', 'la sepia'],
     correctAnswer: 'el calamar',
@@ -1201,6 +1302,7 @@ export const foodQuestions = [
   {
     id: 'food_115',
     emoji: '🦐',
+    
     question: '¿Qué marisco pequeño se fríe?',
     options: ['el camarón', 'la gamba', 'el langostino'],
     correctAnswer: 'el camarón',
@@ -1212,6 +1314,7 @@ export const foodQuestions = [
   {
     id: 'food_116',
     emoji: '🦪',
+    
     question: '¿En qué marisco encuentras perlas?',
     options: ['la ostra', 'la almeja', 'el mejillón'],
     correctAnswer: 'la ostra',
@@ -1223,6 +1326,7 @@ export const foodQuestions = [
   {
     id: 'food_117',
     emoji: '🍖',
+    
     question: '¿Qué corte de carne tiene hueso?',
     options: ['la chuleta', 'la costilla', 'el filete'],
     correctAnswer: 'la chuleta',
@@ -1234,6 +1338,7 @@ export const foodQuestions = [
   {
     id: 'food_118',
     emoji: '🥩',
+    
     question: '¿Qué carne se asa a la parrilla?',
     options: ['el bistec', 'el filete', 'la carne asada'],
     correctAnswer: 'el bistec',
@@ -1245,6 +1350,7 @@ export const foodQuestions = [
   {
     id: 'food_119',
     emoji: '🍗',
+    
     question: '¿Qué parte del pollo se fríe?',
     options: ['el muslo', 'la pechuga', 'el ala'],
     correctAnswer: 'el muslo',
@@ -1256,6 +1362,7 @@ export const foodQuestions = [
   {
     id: 'food_120',
     emoji: '🥓',
+    
     question: '¿Qué carne crujiente comes con huevos?',
     options: ['el tocino', 'la panceta', 'el jamón'],
     correctAnswer: 'el tocino',
@@ -1267,6 +1374,7 @@ export const foodQuestions = [
   {
     id: 'food_121',
     emoji: '🍤',
+    
     question: '¿Qué marisco empanizado es delicioso?',
     options: ['el camarón empanizado', 'el camarón rebozado', 'el pescado empanizado'],
     correctAnswer: 'el camarón empanizado',
@@ -1278,6 +1386,7 @@ export const foodQuestions = [
   {
     id: 'food_122',
     emoji: '🌭',
+    
     question: '¿Qué salchicha se come en pan?',
     options: ['la salchicha', 'el chorizo', 'la longaniza'],
     correctAnswer: 'la salchicha',
@@ -1288,11 +1397,11 @@ export const foodQuestions = [
   },
   {
     id: 'food_123',
-    emoji: '🥙',
-    question: '¿Qué comida mediterránea está en pan de pita?',
-    options: ['el falafel', 'el kebab', 'el shawarma'],
-    correctAnswer: 'el falafel',
-  hint: 'Vegetarian chickpea patties served in pita with vegetables.',
+    
+    question: '¿Cómo se llama el vino elaborado con uvas amarillas?',
+    options: ['vino blanco', 'vino tinto', 'vino rosado'],
+    correctAnswer: 'vino blanco',
+  hint: 'Wine made from green or yellow grapes; often served chilled.',
     points: 15,
     category: 'food',
     difficulty: 'hard',
@@ -1300,6 +1409,7 @@ export const foodQuestions = [
   {
     id: 'food_124',
     emoji: '🫔',
+    
     question: '¿Qué comida mexicana está enrollada y bañada?',
     options: ['la enchilada', 'el burrito', 'la chimichanga'],
     correctAnswer: 'la enchilada',
@@ -1311,6 +1421,7 @@ export const foodQuestions = [
   {
     id: 'food_125',
     emoji: '🥟',
+    
     question: '¿Qué comida china rellena se cuece al vapor?',
     options: ['el dumpling', 'el wonton', 'el baozi'],
     correctAnswer: 'el dumpling',
@@ -1324,6 +1435,7 @@ export const foodQuestions = [
   {
     id: 'food_126',
     emoji: '🧂',
+    
     question: '¿Qué condimento blanco usas para sazonar?',
     options: ['la sal', 'la pimienta', 'el azúcar'],
     correctAnswer: 'la sal',
@@ -1335,6 +1447,7 @@ export const foodQuestions = [
   {
     id: 'food_127',
     emoji: '🫙',
+    
     question: '¿En qué guardas la mermelada?',
     options: ['el frasco', 'el tarro', 'el bote'],
     correctAnswer: 'el frasco',
@@ -1346,6 +1459,7 @@ export const foodQuestions = [
   {
     id: 'food_128',
     emoji: '🍯',
+    
     question: '¿Qué producto dulce hacen las abejas?',
     options: ['la miel', 'el polen', 'la cera'],
     correctAnswer: 'la miel',
@@ -1357,6 +1471,7 @@ export const foodQuestions = [
   {
     id: 'food_129',
     emoji: '🥫',
+    
     question: '¿En qué recipiente viene la sopa enlatada?',
     options: ['la lata', 'la caja', 'el frasco'],
     correctAnswer: 'la lata',
@@ -1368,6 +1483,7 @@ export const foodQuestions = [
   {
     id: 'food_130',
     emoji: '🫗',
+    
     question: '¿Qué haces cuando sirves agua?',
     options: ['verter', 'servir', 'echar'],
     correctAnswer: 'verter',
@@ -1379,6 +1495,7 @@ export const foodQuestions = [
   {
     id: 'food_131',
     emoji: '🧈',
+    
     question: '¿Qué grasa amarilla untas en pan?',
     options: ['la mantequilla', 'la margarina', 'la manteca'],
     correctAnswer: 'la mantequilla',
@@ -1390,6 +1507,7 @@ export const foodQuestions = [
   {
     id: 'food_132',
     emoji: '🫚',
+    
     question: '¿Qué raíz picante se usa en la cocina asiática?',
     options: ['el jengibre', 'la cúrcuma', 'el rábano'],
     correctAnswer: 'el jengibre',
@@ -1401,6 +1519,7 @@ export const foodQuestions = [
   {
     id: 'food_133',
     emoji: '🌶️',
+    
     question: '¿Qué ingrediente hace la comida picante?',
     options: ['el chile', 'el jalapeño', 'el pimiento'],
     correctAnswer: 'el chile',
@@ -1412,6 +1531,7 @@ export const foodQuestions = [
   {
     id: 'food_134',
     emoji: '🧄',
+    
     question: '¿Qué bulbo blanco tiene olor fuerte?',
     options: ['el ajo', 'la cebolla', 'el chalote'],
     correctAnswer: 'el ajo',
@@ -1423,6 +1543,7 @@ export const foodQuestions = [
   {
     id: 'food_135',
     emoji: '🧅',
+    
     question: '¿Qué verdura redonda te hace llorar?',
     options: ['la cebolla', 'el puerro', 'el cebollino'],
     correctAnswer: 'la cebolla',
@@ -1434,6 +1555,7 @@ export const foodQuestions = [
   {
     id: 'food_136',
     emoji: '🥜',
+    
     question: '¿De qué nuez se hace la mantequilla de maní?',
     options: ['el maní', 'el cacahuate', 'la almendra'],
     correctAnswer: 'el maní',
@@ -1445,6 +1567,7 @@ export const foodQuestions = [
   {
     id: 'food_137',
     emoji: '🌰',
+    
     question: '¿Qué fruto seco comen las ardillas?',
     options: ['la castaña', 'la bellota', 'la nuez'],
     correctAnswer: 'la castaña',
@@ -1456,6 +1579,7 @@ export const foodQuestions = [
   {
     id: 'food_138',
     emoji: '🥥',
+    
     question: '¿De qué fruta tropical sale leche vegetal?',
     options: ['el coco', 'la almendra', 'la avena'],
     correctAnswer: 'el coco',
@@ -1467,6 +1591,7 @@ export const foodQuestions = [
   {
     id: 'food_139',
     emoji: '🍄',
+    
     question: '¿Qué hongo comestible crece en bosques?',
     options: ['la seta', 'el champiñón', 'el portobello'],
     correctAnswer: 'la seta',
@@ -1478,6 +1603,7 @@ export const foodQuestions = [
   {
     id: 'food_140',
     emoji: '🫘',
+    
     question: '¿Qué legumbre se usa en chili?',
     options: ['el frijol', 'la alubia', 'el garbanzo'],
     correctAnswer: 'el frijol',
@@ -1492,6 +1618,7 @@ export const foodQuestions = [
   {
     id: 'food_142',
     emoji: '🍙',
+    
     question: '¿Qué triángulo de arroz japonés tiene alga?',
     options: ['el onigiri', 'el musubi', 'el maki'],
     correctAnswer: 'el onigiri',
@@ -1503,6 +1630,7 @@ export const foodQuestions = [
   {
     id: 'food_143',
     emoji: '🍘',
+    
     question: '¿Qué galleta japonesa de arroz es crujiente?',
     options: ['el senbei', 'el arare', 'el okaki'],
     correctAnswer: 'el senbei',
@@ -1514,6 +1642,7 @@ export const foodQuestions = [
   {
     id: 'food_144',
     emoji: '🍥',
+    
     question: '¿Qué ingrediente blanco y rosado va en ramen?',
     options: ['el narutomaki', 'el kamaboko', 'el surimi'],
     correctAnswer: 'el narutomaki',
@@ -1525,6 +1654,7 @@ export const foodQuestions = [
   {
     id: 'food_147',
     emoji: '🍛',
+    
     question: '¿Qué plato picante indio tiene arroz?',
     options: ['el curry', 'el masala', 'el korma'],
     correctAnswer: 'el curry',
@@ -1536,6 +1666,7 @@ export const foodQuestions = [
   {
     id: 'food_148',
     emoji: '🍲',
+    
     question: '¿Qué plato caliente cocinas en olla?',
     options: ['el estofado', 'el cocido', 'el potaje'],
     correctAnswer: 'el estofado',
@@ -1547,6 +1678,7 @@ export const foodQuestions = [
   {
     id: 'food_149',
     emoji: '🫕',
+    
     question: '¿Qué comida suiza sumerges en queso derretido?',
     options: ['el fondue', 'la raclette', 'el fondue de queso'],
     correctAnswer: 'el fondue',
@@ -1558,6 +1690,7 @@ export const foodQuestions = [
   {
     id: 'food_150',
     emoji: '🥘',
+    
     question: '¿Qué plato español tiene azafrán?',
     options: ['la paella', 'el arroz al horno', 'la fideuá'],
     correctAnswer: 'la paella',
@@ -1569,6 +1702,7 @@ export const foodQuestions = [
   {
     id: 'food_151',
     emoji: '🍝',
+    
     question: '¿Qué fideos italianos son largos y delgados?',
     options: ['el espagueti', 'los tallarines', 'los fideos'],
     correctAnswer: 'el espagueti',
@@ -1580,6 +1714,7 @@ export const foodQuestions = [
   {
     id: 'food_152',
     emoji: '🥗',
+    
     question: '¿Qué ensalada romana tiene crutones?',
     options: ['la César', 'la ensalada César', 'la ensalada romana'],
     correctAnswer: 'la César',
@@ -1591,6 +1726,7 @@ export const foodQuestions = [
   {
     id: 'food_153',
     emoji: '🥙',
+    
     question: '¿Qué comida de Oriente Medio se elabora únicamente con garbanzos?',
     options: ['el hummus', 'el falafel', 'el baba ganoush'],
     correctAnswer: 'el hummus',
@@ -1602,6 +1738,7 @@ export const foodQuestions = [
   {
     id: 'food_154',
     emoji: '🌮',
+    
     question: '¿Qué comida mexicana tiene tortilla crujiente?',
     options: ['el taco duro', 'la tostada', 'el taco dorado'],
     correctAnswer: 'el taco duro',
@@ -1613,6 +1750,7 @@ export const foodQuestions = [
   {
     id: 'food_155',
     emoji: '🧆',
+    
     question: '¿Qué bola frita del Medio Oriente es vegetariana?',
     options: ['el falafel', 'el taameya', 'la kofta'],
     correctAnswer: 'el falafel',
@@ -1626,6 +1764,7 @@ export const foodQuestions = [
   {
     id: 'food_159',
     emoji: '🧂',
+    
     question: '¿Qué se añade a la comida para el sabor?',
     options: ['las especias', 'la sal', 'el condimento'],
     correctAnswer: 'las especias',
@@ -1636,7 +1775,7 @@ export const foodQuestions = [
   },
   {
     id: 'food_160',
-    emoji: '🌶️',
+    emoji: 'la-salsa-picante.png',
     question: '¿Qué salsa roja picante acompaña muchas comidas?',
     options: ['la salsa picante', 'la salsa de tomate', 'la salsa de chile'],
     correctAnswer: 'la salsa picante',
@@ -1670,6 +1809,7 @@ export const foodQuestions = [
   {
     id: 'food_163',
     emoji: '🍼',
+    
     question: '¿Qué toman los bebés?',
     options: ['la fórmula para bebés', 'la leche de fórmula', 'la fórmula infantil'],
     correctAnswer: 'la fórmula para bebés',

@@ -121,7 +121,7 @@ export const foodTranslations = {
   "food_120": "What crispy meat do you eat with eggs?",
   "food_121": "What breaded seafood is delicious?",
   "food_122": "What sausage is eaten in bread?",
-  "food_123": "What Mediterranean food is in pita bread?",
+  "food_123": "What do you call wine made from yellow grapes?",
   "food_124": "What Mexican food is rolled and covered in sauce?",
   "food_125": "What filled Chinese food is steamed?",
   "food_126": "What white condiment do you use to season?",
