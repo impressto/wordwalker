@@ -1591,7 +1591,7 @@ export const foodQuestions = [
   {
     id: 'food_153',
     emoji: '🥙',
-    question: '¿Qué comida del Medio Oriente es de garbanzos?',
+    question: '¿Qué comida de Oriente Medio se elabora únicamente con garbanzos?',
     options: ['el hummus', 'el falafel', 'el baba ganoush'],
     correctAnswer: 'el hummus',
     hint: 'Creamy chickpea spread with sesame paste and olive oil.',
