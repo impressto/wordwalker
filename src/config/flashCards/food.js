@@ -5,14 +5,25 @@
  * Each card contains all necessary information (no dependency on questions data)
  */
 
+/**
+ * Global values applied to all cards in this category
+ * Individual cards can override these values
+ */
+export const foodGlobalValues = {
+  spanishColor: '#FFFFFF',
+  // englishColor: '#ff1313ff',
+   background: 'food-2',
+  // textAlign: 'left',
+  // leftMargin: 20,
+};
+
 export const foodFlashCards = [
   { 
     spanish: 'la sandía',
     english: 'the watermelon',
-    background: 'food-1',      // Theme-specific background (e.g., nassau/food-1.png)
+    background: 'food-2',      // Theme-specific background (e.g., nassau/food-1.png)
     emoji: '🍉',               // Use emoji instead of image file
-    emotion: 'happy.png',
-    spanishColor: '#FFFFFF',
+    emotion: 'pleased.png',
     // Optional: Custom emoji positioning and size
     // emojiPosition: { x: 260, y: 60, size: 96 },  // x, y in pixels, size in px
     // Optional: Use PNG image instead of emoji
@@ -30,17 +41,15 @@ export const foodFlashCards = [
     background: 'food-2',
     emoji: '🍌',
     emotion: 'surprised.png',
-      spanishColor: '#FFFFFF',
     // Optional: Custom emoji position
     // emojiPosition: { x: 270, y: 50, size: 100 },
   },
   { 
     spanish: 'la manzana',
     english: 'the apple',
-    background: 'food-1',
+    background: 'food-2',
     emoji: '🍎',
     emotion: 'confused.png',
-      spanishColor: '#FFFFFF',
   },
   { 
     spanish: 'la naranja',
@@ -52,42 +61,42 @@ export const foodFlashCards = [
   { 
     spanish: 'la piña',
     english: 'the pineapple',
-    background: 'food-1',
+    background: 'food-2',
     emoji: '🍍',
-    emotion: 'angry.png',
+    emotion: 'pleased.png',
   },
   { 
     spanish: 'la pizza',
     english: 'the pizza',
-    background: 'food-1',
+    background: 'food-2',
     emoji: '🍕',
-    emotion: 'sad.png',
+    emotion: 'pleased.png',
   },
   { 
     spanish: 'la hamburguesa',
     english: 'the hamburger',
-    background: 'food-1',
+    background: 'food-2',
     emoji: '🍔',
     emotion: 'hurt.png',
   },
   { 
     spanish: 'el taco',
     english: 'the taco',
-    background: 'food-1',
+    background: 'food-2',
     emoji: '🌮',
     emotion: 'pleased.png',
   },
   { 
     spanish: 'el pollo',
     english: 'the chicken',
-    background: 'food-1',
+    background: 'food-2',
     emoji: '🍗',
     emotion: 'excited.png',
   },
   { 
     spanish: 'el helado',
     english: 'the ice cream',
-    background: 'food-1',
+    background: 'food-2',
     emoji: '🍦',
     emotion: 'afraid.png',
   },

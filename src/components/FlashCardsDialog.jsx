@@ -383,8 +383,8 @@ const FlashCardsDialog = ({ category, onComplete, streak, currentTheme = 'defaul
         const defaultDiamondX = textAlign === 'left' 
           ? canvas.width - 30  // Top-right corner when text is left-aligned
           : 30;                // Top-left corner when text is right-aligned (default)
-        const diamondX = diamondConfig.positionX || defaultDiamondX;
-        const diamondY = diamondConfig.positionY || 30;
+        const diamondX = diamondConfig.positionX !== undefined ? diamondConfig.positionX : defaultDiamondX;
+        const diamondY = diamondConfig.positionY !== undefined ? diamondConfig.positionY : 30;
         
         console.log('Diamond position - textAlign:', textAlign, 'diamondX:', diamondX, 'canvas.width:', canvas.width);
         const animationSpeed = diamondConfig.animationSpeed || 0.015;

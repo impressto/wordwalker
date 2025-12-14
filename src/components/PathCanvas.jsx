@@ -1253,7 +1253,7 @@ const PathCanvas = () => {
   };
 
   // Use the answer handling hook
-  const { handleAnswerChoice } = useAnswerHandling({
+  const { handleAnswerChoice, answeredQuestionRef } = useAnswerHandling({
     // Current state
     currentQuestion,
     firstAttempt,
@@ -1770,9 +1770,9 @@ const PathCanvas = () => {
       )}
 
       {/* Translation Overlay Component */}
-      {showTranslation && currentQuestion && (
+      {showTranslation && answeredQuestionRef.current && (
         <TranslationOverlay 
-          currentQuestion={currentQuestion} 
+          currentQuestion={answeredQuestionRef.current} 
           firstAttempt={firstAttempt}
           streak={streak}
           hintUsed={hintUsed}

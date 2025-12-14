@@ -98,7 +98,7 @@ const gameSettings = {
     // Duration (in milliseconds) to display the translation/hint box
     // Set to 0 to disable auto-hide (translation stays visible until next question)
     // Set to a value like 3000 (5 seconds) to auto-hide after that duration
-    displayDuration: 4000,  // Short exposures (around 4 sec) strengthen quick recall.
+    displayDuration: 3000,  // Short exposures (around 4 sec) strengthen quick recall.
   },
 
   // Parallax/Theme Settings

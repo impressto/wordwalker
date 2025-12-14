@@ -79,6 +79,9 @@ export const useAnswerHandling = ({
 }) => {
   // Prevent double-processing of answers
   const processingAnswerRef = useRef(false);
+  
+  // Store the answered question for translation overlay (before loading next question)
+  const answeredQuestionRef = useRef(null);
 
   /**
    * Handle answer choice selection
@@ -122,7 +125,13 @@ export const useAnswerHandling = ({
    * Handle correct answer logic
    */
   const handleCorrectAnswer = () => {
-    // Show translation and pause
+    // Store the current question for the translation overlay
+    // (we'll load the next question but overlay needs to show this one)
+    answeredQuestionRef.current = currentQuestion;
+    
+    // Immediately hide question dialog and show translation overlay
+    setShowQuestion(false);
+    setQuestionAnswered(true); // Mark as answered to prevent question dialog from reappearing
     setShowTranslation(true);
     setShowHint(false); // Clear hint on correct answer
     
@@ -185,50 +194,86 @@ export const useAnswerHandling = ({
     walkerFrameRef.current = 0; // Start victory animation from first frame
     victoryAnimationCounterRef.current = 0;
     
-    // Determine pause duration - use configured translation box duration
-    // If duration is 0 (infinite), use a minimum of 2 seconds for the victory animation
+    // Determine translation display duration using configured setting
+    // translationBox.displayDuration controls how long overlay stays visible
     const configuredDuration = getTranslationBoxDuration();
-    const baseTranslationPause = configuredDuration === 0 ? 2000 : configuredDuration;
     const streakBonusPause = (newStreak > 0 && newStreak % gameSettings.streak.bonusThreshold === 0) 
       ? gameSettings.streak.extraPauseDuration 
       : 0;
-    const pauseDuration = baseTranslationPause + streakBonusPause;
+    const translationDisplayDuration = configuredDuration + streakBonusPause;
     
-    // Pause to show the translation, then continue
+    // Calculate the new checkpoint count for passing to both timeout handlers
+    const newCheckpointsAnswered = checkpointsAnswered + 1;
+    
+    // Resume walking after the victory animation completes
+    // Victory animation: 6 frames * 12 loops * ~16.67ms per frame ≈ 1200ms
+    // This allows the walker to continue moving while translation is still visible
+    const victoryAnimationDuration = 1300; // ~1.3 seconds to ensure victory animation completes
     setTimeout(() => {
-      handleAfterCorrectAnswer(newStreak);
-    }, pauseDuration);
+      // Continue to next checkpoint/question logic (but don't load new question yet)
+      handleAfterCorrectAnswer(newStreak, newCheckpointsAnswered, false); // Pass false to skip loading new question
+    }, victoryAnimationDuration);
+    
+    // Hide translation overlay after the full display duration
+    // This runs independently, keeping the overlay visible while walker moves
+    // Controlled by gameSettings.translationBox.displayDuration
+    setTimeout(() => {
+      console.log('🔔 Translation overlay hiding, loading new question...', { 
+        newCheckpointsAnswered, 
+        checkpointsPerCategory,
+        willLoadQuestion: newCheckpointsAnswered < checkpointsPerCategory 
+      });
+      setShowTranslation(false);
+      // Now load the new question after translation is hidden
+      handleAfterCorrectAnswer(newStreak, newCheckpointsAnswered, true); // Pass true to load new question
+    }, translationDisplayDuration);
   };
 
   /**
    * Handle logic after correct answer pause
    * @param {number} newStreak - The updated streak value
+   * @param {number} newCheckpointsAnswered - The new checkpoint count
+   * @param {boolean} shouldLoadNewQuestion - Whether to load the new question
    */
-  const handleAfterCorrectAnswer = (newStreak) => {
-    setShowTranslation(false);
+  const handleAfterCorrectAnswer = (newStreak, newCheckpointsAnswered, shouldLoadNewQuestion = true) => {
+    // Note: setShowTranslation is now handled separately in handleCorrectAnswer
+    // to allow translation to remain visible while walker continues moving
     
-    // Reset processing flag to allow next answer
-    processingAnswerRef.current = false;
-    
-    // Increment checkpoint counter
-    const newCheckpointsAnswered = checkpointsAnswered + 1;
-    setCheckpointsAnswered(newCheckpointsAnswered);
-    
-    setQuestionAnswered(true);
-    setShowQuestion(false);
-    setFirstAttempt(true); // Reset for next question
-    setIncorrectAnswers([]); // Reset incorrect answers for next question
-    setHintUsed(false); // Reset hint usage for next question
-    
-    // Check if we've completed all checkpoints for this category
-    if (newCheckpointsAnswered >= checkpointsPerCategory) {
-      // Keep paused when category is completed - will unpause when user selects new category
-      setIsPaused(true);
-      handleCategoryCompletion();
+    // Only run the full logic once (when shouldLoadNewQuestion is false for the first call)
+    if (!shouldLoadNewQuestion) {
+      // First call (after victory animation) - just unpause and set up for next checkpoint
+      // Reset processing flag to allow next answer
+      processingAnswerRef.current = false;
+      
+      // Update checkpoint counter
+      setCheckpointsAnswered(newCheckpointsAnswered);
+      
+      setFirstAttempt(true); // Reset for next question
+      setIncorrectAnswers([]); // Reset incorrect answers for next question
+      setHintUsed(false); // Reset hint usage for next question
+      
+      // Check if we've completed all checkpoints for this category
+      if (newCheckpointsAnswered >= checkpointsPerCategory) {
+        // Keep paused when category is completed - will unpause when user selects new category
+        setIsPaused(true);
+        handleCategoryCompletion();
+      } else {
+        // Only unpause if continuing in the same category
+        setIsPaused(false);
+        // Prepare for next checkpoint and load new question immediately
+        checkpointPositionRef.current += checkpointSpacing;
+        checkpointFadeStartTimeRef.current = null;
+        checkpointSoundPlayedRef.current = false;
+        // Load new question NOW so checkpoint shows correct emoji
+        const category = forkCategories[selectedPath] || selectedPath;
+        loadNewQuestion(category);
+        // Set questionAnswered to false so checkpoint appears with new emoji
+        setQuestionAnswered(false);
+        console.log('✅ Loading new question immediately for correct checkpoint emoji');
+      }
     } else {
-      // Only unpause if continuing in the same category
-      setIsPaused(false);
-      handleNextCheckpoint();
+      // Second call (after translation hidden) - nothing to do, question already loaded
+      console.log('🎯 Second call to handleAfterCorrectAnswer - question already loaded');
     }
   };
 
@@ -301,26 +346,6 @@ export const useAnswerHandling = ({
   };
 
   /**
-   * Handle moving to next checkpoint in the same category
-   */
-  const handleNextCheckpoint = () => {
-    // Move to next checkpoint in the same category
-    checkpointPositionRef.current += checkpointSpacing;
-    setQuestionAnswered(false); // Ready for next checkpoint
-    
-    // Reset fade-in timer for new checkpoint
-    checkpointFadeStartTimeRef.current = null;
-    
-    // Reset checkpoint sound flag for next checkpoint
-    checkpointSoundPlayedRef.current = false;
-    
-    // Load the next question immediately for the next checkpoint
-    // selectedPath can be either a choice key or a categoryId directly
-    const category = forkCategories[selectedPath] || selectedPath;
-    loadNewQuestion(category);
-  };
-
-  /**
    * Handle incorrect answer logic
    * @param {string} answer - The incorrect answer
    */
@@ -349,5 +374,6 @@ export const useAnswerHandling = ({
 
   return {
     handleAnswerChoice,
+    answeredQuestionRef,
   };
 };

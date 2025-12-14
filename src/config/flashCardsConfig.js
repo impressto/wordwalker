@@ -5,14 +5,14 @@
  * Card content is imported from individual category files in flashCards/
  */
 
-import { foodFlashCards } from './flashCards/food.js';
+import { foodFlashCards, foodGlobalValues } from './flashCards/food.js';
 
 /**
  * FEATURE FLAG: Enable/Disable Flash Cards
  * Set to false to disable flash cards feature globally
  * Useful for testing or temporarily disabling the feature
  */
-export const FLASH_CARDS_ENABLED = true;
+export const FLASH_CARDS_ENABLED = false;
 
 /**
  * Unified Flash Cards Configuration
@@ -70,8 +70,8 @@ export const flashCardsConfig = {
     // Diamond size in pixels
     size: 45,
     
-    // Position from top-left corner
-    positionX: 30,
+    // Position from top-left corner (auto-positioned based on textAlign unless overridden per card)
+    // positionX: auto (top-right when textAlign='left', top-left when textAlign='right')
     positionY: 30,
   },
 
@@ -84,6 +84,17 @@ export const flashCardsConfig = {
     // Add other categories here as they are created
     // animals: animalsFlashCards,
     // numbers: numbersFlashCards,
+  },
+  
+  /**
+   * Global values by category
+   * These values are applied to all cards in a category
+   * Individual cards can override these values
+   */
+  globalValues: {
+    food: foodGlobalValues,
+    // animals: animalsGlobalValues,
+    // numbers: numbersGlobalValues,
   },
 };
 
@@ -113,24 +124,30 @@ export const getFlashCardData = (category, cardIndex) => {
   
   const cardConfig = categoryCards[cardIndex];
   
+  // Get global values for this category
+  const globalValues = flashCardsConfig.globalValues?.[category] || {};
+  
+  // Merge global values with card config (card config takes precedence)
+  const mergedConfig = { ...globalValues, ...cardConfig };
+  
   // Get image paths (use card-specific or default)
-  const background = cardConfig.background || flashCardsConfig.defaultBackground;
-  const character = cardConfig.character || flashCardsConfig.defaultCharacter;
-  const emotion = cardConfig.emotion || flashCardsConfig.defaultEmotion;
-  const object = cardConfig.object;
+  const background = mergedConfig.background || flashCardsConfig.defaultBackground;
+  const character = mergedConfig.character || flashCardsConfig.defaultCharacter;
+  const emotion = mergedConfig.emotion || flashCardsConfig.defaultEmotion;
+  const object = mergedConfig.object;
   
   return {
-    spanish: cardConfig.spanish,
-    english: cardConfig.english,
-    emoji: cardConfig.emoji, // Emoji string (e.g., '🍕')
-    emojiPosition: cardConfig.emojiPosition, // Optional emoji positioning { x, y, size }
-    // Optional card-specific overrides
-    textAlign: cardConfig.textAlign,
-    leftMargin: cardConfig.leftMargin,
-    spanishColor: cardConfig.spanishColor,
-    englishColor: cardConfig.englishColor,
-    spanishPosition: cardConfig.spanishPosition,
-    englishPosition: cardConfig.englishPosition,
+    spanish: mergedConfig.spanish,
+    english: mergedConfig.english,
+    emoji: mergedConfig.emoji, // Emoji string (e.g., '🍕')
+    emojiPosition: mergedConfig.emojiPosition, // Optional emoji positioning { x, y, size }
+    // Optional card-specific overrides (can come from global or card-specific)
+    textAlign: mergedConfig.textAlign,
+    leftMargin: mergedConfig.leftMargin,
+    spanishColor: mergedConfig.spanishColor,
+    englishColor: mergedConfig.englishColor,
+    spanishPosition: mergedConfig.spanishPosition,
+    englishPosition: mergedConfig.englishPosition,
     // Image paths for dynamic composition
     images: {
       background,
