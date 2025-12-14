@@ -1,9 +1,21 @@
 import { useState, useEffect, useRef } from 'react';
 import './FlashCardsDialog.css';
 import { getStreakColor } from '../config/gameSettings';
-import { getFlashCardConfig, getCardSourceRect, getFlashCardData } from '../config/flash-cards';
+import { getFlashCardConfig, getFlashCardData } from '../config/flash-cards';
 import { foodQuestions } from '../config/questions/food';
 import { foodAnswerTranslations } from '../config/translations/answers/food';
+
+/**
+ * Helper function to check if an image is loaded and ready to draw
+ * @param {HTMLImageElement} img - Image element to check
+ * @returns {boolean} True if image is ready to draw
+ */
+const isImageReady = (img) => {
+  if (!img) return false;
+  if (!img.complete) return false;
+  if (img.naturalWidth === 0) return false; // Image failed to load
+  return true;
+};
 
 /**
  * Helper function to draw wrapped text on canvas
@@ -58,7 +70,7 @@ const FlashCardsDialog = ({ category, onComplete, streak }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const canvasRef = useRef(null);
-  const flashCardImageRef = useRef(null);
+  const imagesRef = useRef({});
   const animationFrameRef = useRef(null);
   const diamondGlowRef = useRef(0);
 
@@ -72,23 +84,89 @@ const FlashCardsDialog = ({ category, onComplete, streak }) => {
 
   // Get base path for assets
   const basePath = import.meta.env.BASE_URL || '/';
-  const flashCardImagePath = `${basePath}images/flash-cards/${category}/flash-cards-1.png`;
 
-  // Load flash card image
+  // Preload all images for the current card
   useEffect(() => {
-    const img = new Image();
-    img.src = flashCardImagePath;
-    img.onload = () => {
-      flashCardImageRef.current = img;
-    };
-    flashCardImageRef.current = img;
+    const cardData = getFlashCardData(
+      category, 
+      currentCardIndex, 
+      questionsData, 
+      answerTranslations
+    );
+    
+    if (!cardData || !cardData.images) return;
+
+    const imagesToLoad = {};
+    const imagePromises = [];
+
+    // Load background
+    if (cardData.images.background) {
+      const bgPath = `${basePath}images/flash-cards/backgrounds/${cardData.images.background}`;
+      const bgImg = new Image();
+      imagePromises.push(
+        new Promise((resolve) => {
+          bgImg.onload = () => {
+            imagesToLoad.background = bgImg;
+            resolve();
+          };
+          bgImg.onerror = (error) => {
+            console.warn(`Failed to load background: ${bgPath}`, error);
+            resolve(); // Continue even if image fails
+          };
+          bgImg.src = bgPath;
+        })
+      );
+    }
+
+    // Load character
+    if (cardData.images.character && cardData.images.emotion) {
+      const charPath = `${basePath}images/flash-cards/characters/${cardData.images.character}/${cardData.images.emotion}`;
+      const charImg = new Image();
+      imagePromises.push(
+        new Promise((resolve) => {
+          charImg.onload = () => {
+            imagesToLoad.character = charImg;
+            resolve();
+          };
+          charImg.onerror = (error) => {
+            console.warn(`Failed to load character: ${charPath}`, error);
+            resolve(); // Continue even if image fails
+          };
+          charImg.src = charPath;
+        })
+      );
+    }
+
+    // Load object
+    if (cardData.images.object) {
+      const objPath = `${basePath}images/flash-cards/objects/${cardData.images.object}`;
+      const objImg = new Image();
+      imagePromises.push(
+        new Promise((resolve) => {
+          objImg.onload = () => {
+            imagesToLoad.object = objImg;
+            resolve();
+          };
+          objImg.onerror = (error) => {
+            console.warn(`Failed to load object: ${objPath}`, error);
+            resolve(); // Continue even if image fails
+          };
+          objImg.src = objPath;
+        })
+      );
+    }
+
+    // Wait for all images to load (or fail)
+    Promise.all(imagePromises).then(() => {
+      imagesRef.current = imagesToLoad;
+    });
 
     return () => {
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [flashCardImagePath]);
+  }, [currentCardIndex, category, basePath, questionsData, answerTranslations]);
 
   // Add a small delay before showing the dialog to allow DOM layout calculation
   useEffect(() => {
@@ -121,7 +199,7 @@ const FlashCardsDialog = ({ category, onComplete, streak }) => {
   // Draw flash card on canvas with animated diamond
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas || !flashCardImageRef.current) return;
+    if (!canvas) return;
 
     const ctx = canvas.getContext('2d');
     
@@ -129,19 +207,7 @@ const FlashCardsDialog = ({ category, onComplete, streak }) => {
       // Clear canvas
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Get source rectangle for current card using config
-      const sourceRect = getCardSourceRect(currentCardIndex, config);
-
-      // Draw the flash card image (background)
-      if (flashCardImageRef.current.complete) {
-        ctx.drawImage(
-          flashCardImageRef.current,
-          sourceRect.x, sourceRect.y, sourceRect.width, sourceRect.height,
-          0, 0, canvas.width, canvas.height
-        );
-      }
-      
-      // Get flash card data (Spanish and English text)
+      // Get flash card data (Spanish and English text, and image paths)
       const cardData = getFlashCardData(
         category, 
         currentCardIndex, 
@@ -149,7 +215,53 @@ const FlashCardsDialog = ({ category, onComplete, streak }) => {
         answerTranslations
       );
       
-      // Draw text overlay if card data is available
+      if (!cardData) {
+        animationFrameRef.current = requestAnimationFrame(drawCard);
+        return;
+      }
+
+      // Draw layers in order:
+      // 1. Background
+      if (isImageReady(imagesRef.current.background)) {
+        ctx.drawImage(
+          imagesRef.current.background,
+          0, 0, canvas.width, canvas.height
+        );
+      } else {
+        // Draw fallback background color if image not ready
+        ctx.fillStyle = '#9b59b6'; // Purple fallback
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      }
+
+      // 2. Character with emotion
+      if (isImageReady(imagesRef.current.character)) {
+        // Position character on the left side
+        const charWidth = canvas.width * 0.4; // 40% of canvas width
+        const charHeight = canvas.height * 0.8; // 80% of canvas height
+        const charX = canvas.width * 0.05; // 5% from left
+        const charY = canvas.height * 0.15; // 15% from top
+        
+        ctx.drawImage(
+          imagesRef.current.character,
+          charX, charY, charWidth, charHeight
+        );
+      }
+
+      // 3. Object
+      if (isImageReady(imagesRef.current.object)) {
+        // Position object on the right side
+        const objWidth = canvas.width * 0.35; // 35% of canvas width
+        const objHeight = canvas.height * 0.5; // 50% of canvas height
+        const objX = canvas.width * 0.55; // 55% from left (right side)
+        const objY = canvas.height * 0.25; // 25% from top
+        
+        ctx.drawImage(
+          imagesRef.current.object,
+          objX, objY, objWidth, objHeight
+        );
+      }
+      
+      // 4. Draw text overlay
       if (cardData) {
         const textConfig = config.text || {};
         const spanishConfig = textConfig.spanish || {};

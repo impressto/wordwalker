@@ -21,23 +21,17 @@ export const FLASH_CARDS_ENABLED = false;
  * Default configuration applied to all categories
  */
 export const defaultFlashCardsConfig = {
-  // Total number of cards in the sprite sheet
+  // Total number of cards
   totalCards: 10,
-  
-  // Sprite sheet dimensions
-  spriteWidth: 3600,
-  spriteHeight: 240,
   
   // Canvas display size
   canvasWidth: 360,
   canvasHeight: 240,
   
-  // Offset adjustments (if cards aren't perfectly aligned in sprite)
-  offsetX: 0,
-  offsetY: 0,
-  
-  // Spacing between cards in sprite (if there's padding)
-  cardSpacing: 0,
+  // Default assets for dynamic card generation
+  defaultBackground: 'purple.png',
+  defaultCharacter: 'elvis',
+  defaultEmotion: 'laughing.png',
   
   // Text rendering configuration
   text: {
@@ -124,30 +118,7 @@ export const getFlashCardConfig = (category) => {
     },
   };
   
-  // Calculate card dimensions if not specified
-  if (!config.cardWidth) {
-    config.cardWidth = config.spriteWidth / config.totalCards;
-  }
-  if (!config.cardHeight) {
-    config.cardHeight = config.spriteHeight;
-  }
-  
   return config;
-};
-
-/**
- * Calculate the source rectangle for a specific card
- * @param {number} cardIndex - The index of the card (0-based)
- * @param {Object} config - The flash card configuration
- * @returns {Object} Object with x, y, width, height for source rectangle
- */
-export const getCardSourceRect = (cardIndex, config) => {
-  return {
-    x: (cardIndex * config.cardWidth) + (cardIndex * config.cardSpacing) + config.offsetX,
-    y: config.offsetY,
-    width: config.cardWidth,
-    height: config.cardHeight,
-  };
 };
 
 /**
@@ -156,7 +127,7 @@ export const getCardSourceRect = (cardIndex, config) => {
  * @param {number} cardIndex - The index of the card (0-based)
  * @param {Object} questionsData - Questions data from the questions config
  * @param {Object} answerTranslations - Answer translations
- * @returns {Object|null} Object with spanish and english text, or null if not found
+ * @returns {Object|null} Object with spanish text, english text, and image paths, or null if not found
  */
 export const getFlashCardData = (category, cardIndex, questionsData, answerTranslations) => {
   const config = getFlashCardConfig(category);
@@ -181,10 +152,23 @@ export const getFlashCardData = (category, cardIndex, questionsData, answerTrans
   // Get the English translation
   const englishText = answerTranslations[spanishText] || '';
   
+  // Get image paths (use card-specific or default)
+  const background = cardConfig.background || config.defaultBackground;
+  const character = cardConfig.character || config.defaultCharacter;
+  const emotion = cardConfig.emotion || config.defaultEmotion;
+  const object = cardConfig.object;
+  
   return {
     spanish: spanishText,
     english: englishText,
     emoji: question.emoji,
+    // Image paths for dynamic composition
+    images: {
+      background,
+      character,
+      emotion,
+      object,
+    },
   };
 };
 

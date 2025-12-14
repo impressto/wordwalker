@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="126" height="120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="5" y="5" width="116" height="110" rx="15" ry="15" fill="#FFE135" opacity="0.9"/>
+  
+  <!-- Border -->
+  <rect x="5" y="5" width="116" height="110" rx="15" ry="15" 
+        fill="none" stroke="white" stroke-width="2"/>
+  
+  <!-- Emoji -->
+  <text x="63" y="50" font-size="40" text-anchor="middle" font-family="Arial, sans-serif">
+    🍌
+  </text>
+  
+  <!-- Text label -->
+  <text x="63" y="95" font-size="14" font-weight="bold" text-anchor="middle" 
+        font-family="Arial, sans-serif" fill="white" stroke="black" stroke-width="0.5">
+    el plátano
+  </text>
+</svg>
