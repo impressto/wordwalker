@@ -1830,6 +1830,7 @@ const PathCanvas = () => {
           category={categoryForFlashCards}
           streak={streakAtCompletion}
           onComplete={handleFlashCardsComplete}
+          currentTheme={currentTheme}
         />
       )}
     </div>

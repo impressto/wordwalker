@@ -12,7 +12,7 @@ import { foodFlashCards } from './flashCards/food.js';
  * Set to false to disable flash cards feature globally
  * Useful for testing or temporarily disabling the feature
  */
-export const FLASH_CARDS_ENABLED = false;
+export const FLASH_CARDS_ENABLED = true;
 
 /**
  * Unified Flash Cards Configuration
@@ -30,9 +30,13 @@ export const flashCardsConfig = {
   
   // Text rendering configuration
   text: {
+    // Text alignment configuration
+    align: 'right', // 'left' or 'right' only (character and emoji auto-position opposite to text)
+    leftMargin: 20, // Margin from edge (pixels from left when text is left-aligned, from right when right-aligned)
+    
     // Spanish text configuration (main text)
     spanish: {
-      fontSize: 28,
+      fontSize: 36,
       fontFamily: 'Arial, sans-serif',
       fontWeight: 'bold',
       color: '#333',
@@ -41,17 +45,17 @@ export const flashCardsConfig = {
     },
     // English text configuration (translation below)
     english: {
-      fontSize: 18,
+      fontSize: 24,
       fontFamily: 'Arial, sans-serif',
       fontWeight: 'normal',
-      color: '#666',
+      color: '#ff1313ff',
       maxWidth: 320,
       lineHeight: 1.2,
     },
     // Vertical spacing
     verticalSpacing: 15, // Space between Spanish and English text
     // Top margin for text
-    topMargin: 60,
+    topMargin: 20,
   },
   
   // Diamond animation configuration
@@ -118,6 +122,15 @@ export const getFlashCardData = (category, cardIndex) => {
   return {
     spanish: cardConfig.spanish,
     english: cardConfig.english,
+    emoji: cardConfig.emoji, // Emoji string (e.g., '🍕')
+    emojiPosition: cardConfig.emojiPosition, // Optional emoji positioning { x, y, size }
+    // Optional card-specific overrides
+    textAlign: cardConfig.textAlign,
+    leftMargin: cardConfig.leftMargin,
+    spanishColor: cardConfig.spanishColor,
+    englishColor: cardConfig.englishColor,
+    spanishPosition: cardConfig.spanishPosition,
+    englishPosition: cardConfig.englishPosition,
     // Image paths for dynamic composition
     images: {
       background,
