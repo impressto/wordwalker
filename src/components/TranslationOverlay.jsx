@@ -106,7 +106,7 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, 
       flexDirection: 'column',
       alignItems: 'center',
       gap: '15px',
-      backgroundColor: 'rgba(76, 175, 80, 0.95)',
+      backgroundColor: 'rgba(76, 175, 80, 0.85)', // Semi-transparent green
       padding: '20px',
       borderRadius: '15px',
       boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
@@ -206,7 +206,7 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, 
             animation: 'streakPulse 2.5s ease-in-out',
             position: 'relative',
             boxShadow: `0 8px 32px rgba(0, 0, 0, 0.4)`, // Neutral glow effect
-            opacity: 0.95,
+            opacity: 0.85,
           }}>
           <style>
             {`

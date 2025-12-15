@@ -1725,11 +1725,10 @@ export const foodQuestions = [
   },
   {
     id: 'food_153',
-    emoji: '🥙',
-    
+    emoji: 'hummus.png',
     question: '¿Qué comida de Oriente Medio se elabora únicamente con garbanzos?',
-    options: ['el hummus', 'el falafel', 'el baba ganoush'],
-    correctAnswer: 'el hummus',
+    options: ['hummus', 'el baba ganoush','el mutabbal'],
+    correctAnswer: 'hummus',
     hint: 'Creamy chickpea spread with sesame paste and olive oil.',
     points: 10,
     category: 'food',

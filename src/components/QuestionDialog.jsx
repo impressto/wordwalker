@@ -104,7 +104,7 @@ const QuestionDialog = ({
       flexDirection: 'column',
       alignItems: 'center',
       gap: '15px',
-      backgroundColor: 'rgba(255, 255, 255, 0.95)',
+      backgroundColor: 'rgba(255, 255, 255, 0.85)',
       padding: '20px',
       borderRadius: '15px',
       boxShadow: '0 8px 16px rgba(0,0,0,0.3)',

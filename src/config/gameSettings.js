@@ -104,8 +104,8 @@ const gameSettings = {
   // Parallax/Theme Settings
   parallax: {
     // Current active theme - can be changed to switch scenes
-    // Options: 'default', 'hong-kong', or other theme IDs defined in parallaxThemes.js
-    currentTheme: 'default',
+    // Options: 'default', 'hong-kong', 'nassau', or other theme IDs defined in parallaxThemes.js
+    currentTheme: 'nassau',
 
     // Default parallax speed multipliers for each layer
     // Speed is relative to the main walker movement (1.0 = no parallax, 0.0 = no movement)

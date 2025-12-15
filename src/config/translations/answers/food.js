@@ -137,7 +137,7 @@ export const foodAnswerTranslations = {
   "el fondue": "the fondue",
   "el espagueti": "the spaghetti",
   "la César": "the caesar",
-  "el hummus": "the hummus",
+  "hummus": "hummus",
   "el taco duro": "the hard taco",
   "las especias": "spices",
   "la salsa picante": "hot sauce",
