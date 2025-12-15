@@ -229,7 +229,7 @@ export const accommodationQuestions = [
   // Hotel Rooms & Types (30 questions)
   {
     id: 'accommodation_022',
-    emoji: '🛏️',
+    emoji: 'la habitación doble.png',
     question: '¿Qué habitación tiene dos camas?',
     options: ['la habitación doble', 'la doble con dos camas', 'la habitación twin'],
     correctAnswer: 'la habitación doble',
@@ -240,7 +240,7 @@ export const accommodationQuestions = [
   },
   {
     id: 'accommodation_023',
-    emoji: '👤',
+    emoji: '🛌',
     question: '¿Qué habitación es para una persona?',
     options: ['la habitación individual', 'la habitación sencilla', 'la habitación simple'],
     correctAnswer: 'la habitación individual',
@@ -251,7 +251,7 @@ export const accommodationQuestions = [
   },
   {
     id: 'accommodation_024',
-    emoji: '🏨',
+    emoji: 'la suite.png',
     question: '¿Qué habitación de lujo tiene sala de estar?',
     options: ['la suite', 'la suite ejecutiva', 'la suite presidencial'],
     correctAnswer: 'la suite',
@@ -306,7 +306,7 @@ export const accommodationQuestions = [
   },
   {
     id: 'accommodation_030',
-    emoji: '🛏️',
+    emoji: 'la almohada.png',
     question: '¿Qué pones en la cama para dormir cómodo?',
     options: ['la almohada', 'el cojín', 'la almohada de plumas'],
     options: ['la almohada', 'el cojín', 'la almohada de plumas'],
@@ -318,7 +318,7 @@ export const accommodationQuestions = [
   },
   {
     id: 'accommodation_031',
-    emoji: '🛏️',
+    emoji: 'la manta.png',
     question: '¿Qué usas para cubrirte cuando hace frío?',
     options: ['la manta', 'la cobija', 'la frazada'],
     correctAnswer: 'la manta',
@@ -329,7 +329,7 @@ export const accommodationQuestions = [
   },
   {
     id: 'accommodation_032',
-    emoji: '🛏️',
+    emoji: 'el colchón.png',
     question: '¿Qué cubres con sábanas?',
     options: ['el colchón', 'el somier', 'la base de la cama'],
     correctAnswer: 'el colchón',
@@ -340,7 +340,7 @@ export const accommodationQuestions = [
   },
   {
     id: 'accommodation_033',
-    emoji: '🪟',
+    emoji: 'las cortinas.png',
     question: '¿Qué cierras para tener privacidad?',
     options: ['las cortinas', 'las persianas', 'las contraventanas'],
     correctAnswer: 'las cortinas',
@@ -495,7 +495,7 @@ export const accommodationQuestions = [
   },
   {
     id: 'accommodation_047',
-    emoji: '🧴',
+    emoji: 'la pasta de dientes.png',
     question: '¿Qué pasta usas con el cepillo de dientes?',
     options: ['la pasta de dientes', 'la pasta dental', 'el dentífrico'],
     correctAnswer: 'la pasta de dientes',
@@ -528,7 +528,7 @@ export const accommodationQuestions = [
   },
   {
     id: 'accommodation_050',
-    emoji: '🚪',
+    emoji: 'la habitación con vista.png',
     question: '¿Qué habitación tiene vista al mar?',
     options: ['la habitación con vista', 'la habitación con vista al mar', 'la habitación frente al mar'],
     correctAnswer: 'la habitación con vista',
@@ -563,7 +563,7 @@ export const accommodationQuestions = [
   },
   {
     id: 'accommodation_053',
-    emoji: '🏨',
+    emoji: 'la recepción.png',
     question: '¿Dónde haces check-in en el hotel?',
     options: ['la recepción', 'el mostrador', 'la conserjería'],
     correctAnswer: 'la recepción',
@@ -707,7 +707,7 @@ export const accommodationQuestions = [
   },
   {
     id: 'accommodation_066',
-    emoji: '📶',
+    emoji: 'el wifi.png',
     question: '¿Qué internet gratis ofrece el hotel?',
     options: ['el wifi', 'el Wi-Fi', 'la conexión inalámbrica'],
     correctAnswer: 'el wifi',
@@ -1007,7 +1007,7 @@ export const accommodationQuestions = [
   },
   {
     id: 'accommodation_093',
-    emoji: '🏨',
+    emoji: 'el check-in.png',
     question: '¿Qué proceso haces al llegar?',
     options: ['el check-in', 'el registro', 'la entrada'],
     correctAnswer: 'el check-in',
@@ -1018,7 +1018,7 @@ export const accommodationQuestions = [
   },
   {
     id: 'accommodation_094',
-    emoji: '👋',
+    emoji: 'el check-in.png',
     question: '¿Qué proceso haces al salir?',
     options: ['el check-out', 'la salida', 'el cierre'],
     correctAnswer: 'el check-out',
@@ -1673,7 +1673,7 @@ export const accommodationQuestions = [
   },
   {
     id: 'accommodation_153',
-    emoji: '🚪',
+    emoji: 'el check-in.png',
     question: '¿Cómo dices "I need to checkout"?',
     options: ['necesito hacer el checkout', 'necesito salir de la habitación', 'tengo que hacer checkout'],
     correctAnswer: 'necesito hacer el checkout',
@@ -1728,7 +1728,7 @@ export const accommodationQuestions = [
   },
   {
     id: 'accommodation_158',
-    emoji: '🏚',
+    emoji: 'está deteriorado.png',
     question: '¿Cómo describes un alojamiento en mal estado?',
     options: ['está deteriorado', 'está abandonado', 'está descuidado'],
     correctAnswer: 'está deteriorado',
