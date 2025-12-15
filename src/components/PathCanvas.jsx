@@ -961,18 +961,24 @@ const PathCanvas = () => {
           
           const emojiToDisplay = currentQuestion ? currentQuestion.emoji : '❓';
           
-          // Check if emoji is an SVG file
+          // Check if emoji is an SVG/PNG file
           if (currentQuestion && isEmojiSvg(emojiToDisplay)) {
             const svgPath = getEmojiSvgPath(emojiToDisplay, currentQuestion.category);
             
             // Get cached image (should be preloaded by useEffect)
             const emojiImg = emojiImageCache.current[svgPath];
             
-            // Draw SVG image if loaded and ready
+            // Draw SVG/PNG image if loaded and ready
             if (emojiImg && emojiImg.complete && emojiImg.naturalWidth > 0) {
-              // Draw glow layers for SVG
+              // PNG images (150x150px) need to be rendered larger to match text emoji size
+              // Apply 1.4x scale for PNG images to appear similar to regular emojis
+              const isPng = emojiToDisplay.endsWith('.png');
+              const imageScale = isPng ? 1.4 : 1.0;
+              const scaledSize = checkpointSize * imageScale;
+              
+              // Draw glow layers for image
               for (let i = 3; i > 0; i--) {
-                const glowSize = checkpointSize * (1 + i * 0.2 * pulseIntensity);
+                const glowSize = scaledSize * (1 + i * 0.2 * pulseIntensity);
                 ctx.globalAlpha = fadeOpacity * 0.3 * pulseIntensity / i;
                 ctx.shadowColor = '#FFD700';
                 ctx.shadowBlur = 20 * i;
@@ -985,16 +991,16 @@ const PathCanvas = () => {
                 );
               }
               
-              // Draw main SVG emoji
+              // Draw main image
               ctx.globalAlpha = fadeOpacity;
               ctx.shadowColor = 'transparent';
               ctx.shadowBlur = 0;
               ctx.drawImage(
                 emojiImg,
-                checkpointScreenX - checkpointSize / 2,
-                checkpointY - checkpointSize / 2,
-                checkpointSize,
-                checkpointSize
+                checkpointScreenX - scaledSize / 2,
+                checkpointY - scaledSize / 2,
+                scaledSize,
+                scaledSize
               );
             } else {
               // Fallback to question mark while loading
