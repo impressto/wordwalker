@@ -306,7 +306,7 @@ export const accommodationQuestions = [
   },
   {
     id: 'accommodation_030',
-    emoji: 'la almohada.png',
+    emoji: 'almohada.png',
     question: '¿Qué pones en la cama para dormir cómodo?',
     options: ['la almohada', 'el cojín', 'la almohada de plumas'],
     options: ['la almohada', 'el cojín', 'la almohada de plumas'],
@@ -1695,7 +1695,7 @@ export const accommodationQuestions = [
   },
   {
     id: 'accommodation_155',
-    emoji: '🧴',
+    emoji: 'toallas.png',
     question: '¿Cómo dices "We need towels"?',
     options: ['necesitamos toallas', 'nos hacen falta toallas', 'queremos toallas'],
     correctAnswer: 'necesitamos toallas',

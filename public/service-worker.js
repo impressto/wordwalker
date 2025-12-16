@@ -1,5 +1,5 @@
 // Service Worker for WordWalker PWA
-const CACHE_NAME = 'wordwalker-v1.4.28';
+const CACHE_NAME = 'wordwalker-v1.4.29';
 const ASSETS_CACHE = 'wordwalker-assets-v1';
 const AUDIO_CACHE = 'wordwalker-audio-v1';
 const IMAGE_CACHE = 'wordwalker-images-v1';
