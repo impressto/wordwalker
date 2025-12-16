@@ -6,7 +6,7 @@
 export const entertainmentQuestions = [
 {
     id: 'entertainment_001',
-    emoji: '🎬',
+    emoji: 'cine.png',
     question: '¿Dónde vas a ver películas?',
     options: ['el cine', 'el teatro', 'el auditorio'],
     correctAnswer: 'el cine',
@@ -23,7 +23,7 @@ export const entertainmentQuestions = [
     correctAnswer: 'el videojuego',
     hint: 'Video game - electronic entertainment, "consola" for game console',
     points: 5,
-    category: 'entertainment',
+    category: 'duplicate entertainment',
     difficulty: 'easy',
   },
   {
@@ -56,7 +56,7 @@ export const entertainmentQuestions = [
     correctAnswer: 'el baloncesto',
     hint: 'Basketball - "baloncesto" from "balón" (ball) + "cesto" (basket)',
     points: 5,
-    category: 'entertainment',
+    category: 'duplicate entertainment',
     difficulty: 'easy',
   },
   {
@@ -133,7 +133,7 @@ export const entertainmentQuestions = [
     correctAnswer: 'el circo',
     hint: 'Circus - acrobats, clowns, animals performing under tent',
     points: 10,
-    category: 'entertainment',
+    category: 'duplicate entertainment',
     difficulty: 'medium',
   },
   {
@@ -171,7 +171,7 @@ export const entertainmentQuestions = [
   },
   {
     id: 'entertainment_019',
-    emoji: '🧑�‍💻',
+    emoji: 'una celebridad musical.png',
     question: '¿Cómo se llama una persona famosa en la música?',
     options: ['una celebridad musical', 'un músico callejero', 'un estudiante'],
     correctAnswer: 'una celebridad musical',
@@ -195,7 +195,7 @@ export const entertainmentQuestions = [
   // More Musical Instruments (20 questions)
   {
     id: 'entertainment_021',
-    emoji: '🎸',
+    emoji: 'guitarra.png',
     question: '¿Qué instrumento de cuerdas se toca con los dedos?',
     options: ['la guitarra', 'el bajo', 'el ukelele'],
     correctAnswer: 'la guitarra',
@@ -423,7 +423,7 @@ export const entertainmentQuestions = [
     correctAnswer: 'el fútbol',
     hint: 'Soccer - world\'s most popular sport, kick ball into goal',
     points: 5,
-    category: 'entertainment',
+    category: 'duplicate entertainment',
     difficulty: 'easy',
   },
   {
@@ -733,12 +733,12 @@ export const entertainmentQuestions = [
     correctAnswer: 'el cine',
     hint: 'Movie theater - cinema from cinematography, Spain has strong film culture',
     points: 5,
-    category: 'entertainment',
+    category: 'duplicate entertainment',
     difficulty: 'easy',
   },
   {
     id: 'entertainment_072',
-    emoji: '🎥',
+    emoji: 'cámara.png',
     question: '¿Con qué grabas una película?',
     options: ['la cámara', 'la cámara de cine', 'la videocámara'],
     correctAnswer: 'la cámara',
@@ -793,7 +793,7 @@ export const entertainmentQuestions = [
   },
   {
     id: 'entertainment_077',
-    emoji: '🎨',
+    emoji: 'pintar.png',
     question: '¿Qué haces cuando creas imágenes con colores?',
     options: ['pintar', 'dibujar', 'colorear'],
     correctAnswer: 'pintar',
@@ -826,7 +826,7 @@ export const entertainmentQuestions = [
   },
   {
     id: 'entertainment_081',
-    emoji: '🎬',
+    emoji: 'comedia.png',
     question: '¿Qué película te hace reír?',
     options: ['la comedia', 'la película cómica', 'la película graciosa'],
     correctAnswer: 'la comedia',
@@ -881,7 +881,7 @@ export const entertainmentQuestions = [
   },
   {
     id: 'entertainment_086',
-    emoji: '🎬',
+    emoji: 'documental.png',
     question: '¿Qué película cuenta una historia real?',
     options: ['el documental', 'el documento', 'el reportaje'],
     correctAnswer: 'el documental',
@@ -892,7 +892,7 @@ export const entertainmentQuestions = [
   },
   {
     id: 'entertainment_087',
-    emoji: '🎨',
+    emoji: 'animada.png',
     question: '¿Qué película está dibujada?',
     options: ['la animada', 'la película animada', 'la animación'],
     correctAnswer: 'la animada',
@@ -914,7 +914,7 @@ export const entertainmentQuestions = [
   },
   {
     id: 'entertainment_089',
-    emoji: '🎬',
+    emoji: 'director.png',
     question: '¿Quién dirige una película?',
     options: ['el director', 'el realizador', 'el cineasta'],
     correctAnswer: 'el director',
@@ -1048,7 +1048,7 @@ export const entertainmentQuestions = [
   },
   {
     id: 'entertainment_101',
-    emoji: '🎨',
+    emoji: 'pincel.png',
     question: '¿Qué usas para pintar?',
     options: ['el pincel', 'la brocha', 'el cepillo'],
     correctAnswer: 'el pincel',
@@ -1180,7 +1180,7 @@ export const entertainmentQuestions = [
   },
   {
     id: 'entertainment_113',
-    emoji: '🎪',
+    emoji: 'hacer malabares.png',
     question: '¿Qué haces cuando practicas malabarismo?',
     options: ['hacer malabares', 'malabarear', 'el malabarismo'],
     correctAnswer: 'hacer malabares',
@@ -1224,7 +1224,7 @@ export const entertainmentQuestions = [
   },
   {
     id: 'entertainment_117',
-    emoji: '🎪',
+    emoji: 'comedia.png',
     question: '¿Quién hace reír en el circo?',
     options: ['el payaso', 'el clown', 'el bufón'],
     correctAnswer: 'el payaso',
@@ -1246,7 +1246,7 @@ export const entertainmentQuestions = [
   },
   {
     id: 'entertainment_119',
-    emoji: '🎪',
+    emoji: 'acrobacia.png',
     question: '¿Qué hacen las personas que vuelan en trapecio?',
     options: ['la acrobacia', 'las acrobacias', 'el acróbata'],
     correctAnswer: 'la acrobacia',
@@ -1336,7 +1336,7 @@ export const entertainmentQuestions = [
   },
   {
     id: 'entertainment_127',
-    emoji: '♟️',
+    emoji: 'ajedrez.png',
     question: '¿Qué juego de estrategia tiene rey y reina?',
     options: ['el ajedrez', 'el chess', 'las piezas'],
     correctAnswer: 'el ajedrez',
@@ -1503,7 +1503,7 @@ export const entertainmentQuestions = [
   },
   {
     id: 'entertainment_142',
-    emoji: '🎸',
+    emoji: 'concierto.png',
     question: '¿Qué evento tiene músicos en vivo?',
     options: ['el concierto', 'el recital', 'el show'],
     correctAnswer: 'el concierto',
@@ -1514,7 +1514,7 @@ export const entertainmentQuestions = [
   },
   {
     id: 'entertainment_143',
-    emoji: '🎪',
+    emoji: 'festival.png',
     question: '¿Qué festival de música dura varios días?',
     options: ['el festival', 'el festival de música', 'el evento'],
     correctAnswer: 'el festival',
@@ -1536,7 +1536,7 @@ export const entertainmentQuestions = [
   },
   {
     id: 'entertainment_145',
-    emoji: '🎪',
+    emoji: 'equilibrista.png',
     question: '¿Quién camina en cuerda alta?',
     options: ['el equilibrista', 'el funámbulo', 'el acróbata'],
     correctAnswer: 'el equilibrista',
@@ -1547,7 +1547,7 @@ export const entertainmentQuestions = [
   },
   {
     id: 'entertainment_146',
-    emoji: '🎨',
+    emoji: 'bosquejar.png',
     question: '¿Qué haces cuando dibujas rápidamente?',
     options: ['bosquejar', 'esbozar', 'el boceto'],
     correctAnswer: 'bosquejar',
@@ -1569,7 +1569,7 @@ export const entertainmentQuestions = [
   },
   {
     id: 'entertainment_149',
-    emoji: '🎨',
+    emoji: 'pintura.png',
     question: '¿Qué mezclas para crear nuevos colores?',
     options: ['la pintura', 'los colores', 'los pigmentos'],
     correctAnswer: 'la pintura',
