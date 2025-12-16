@@ -7,10 +7,15 @@
 
 export const entertainmentAnswerTranslations = {
   "el cine": "the cinema",
+  "el cine al aire libre": "the outdoor cinema",
   "el videojuego": "the video game",
   "la guitarra": "the guitar",
   "el fútbol": "the soccer",
   "el baloncesto": "the basketball",
+  "el parque de atracciones": "the amusement park",
+  "el zoológico": "the zoo",
+  "el minigolf": "the miniature golf",
+  "el castillo inflable": "the bouncy castle",
   "la música": "the music",
   "la televisión": "the television",
   "el teatro": "the theater",

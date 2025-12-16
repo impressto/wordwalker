@@ -63,20 +63,18 @@ export const foodQuestions = [
   },
   {
     id: 'food_008',
-    emoji: '🍑',
-    question: '¿Qué fruta es rosada y peluda?',
-    options: ['el melocotón', 'el durazno', 'el albaricoque'],
-    correctAnswer: 'el melocotón',
-    hint: 'Soft fruit with fuzzy skin and sweet, fragrant flesh; pinkish/orange.',
-    points: 10,
+    emoji: 'fideos instantáneos.png',
+    question: '¿Qué comida rápida preparas con agua caliente?',
+    options: ['los fideos instantáneos', 'la sopa instantánea', 'el ramen instantáneo'],
+    correctAnswer: 'los fideos instantáneos',
+    hint: 'Instant noodles - quick meal prepared by adding hot water to dried noodles',
+    points: 5,
     category: 'food',
-    difficulty: 'medium',
+    difficulty: 'easy',
   },
   {
     id: 'food_009',
     emoji: '🍍',
-      
-      
     question: '¿Qué fruta tropical es amarilla por dentro?',
     options: ['la piña', 'el mango', 'la guayaba'],
     correctAnswer: 'la piña',
@@ -88,8 +86,6 @@ export const foodQuestions = [
   {
     id: 'food_010',
     emoji: '🥝',
-      
-
     question: '¿Qué fruta es verde por dentro con semillas negras?',
     options: ['el kiwi', 'la guayaba', 'la papaya'],
     correctAnswer: 'el kiwi',
@@ -100,11 +96,11 @@ export const foodQuestions = [
   },
   {
     id: 'food_011',
-    emoji: '🍋',
-    question: '¿Qué fruta ácida es amarilla?',
-    options: ['el limón', 'la lima', 'la toronja'],
-    correctAnswer: 'el limón',
-    hint: 'Tangy yellow citrus commonly used in drinks and cooking; very sour taste.',
+    emoji: 'sopa.png',
+    question: '¿Qué comida líquida y caliente tomas cuando estás enfermo?',
+    options: ['la sopa', 'el caldo', 'el consomé'],
+    correctAnswer: 'la sopa',
+    hint: 'Soup - hot liquid food often eaten when sick or for comfort',
     points: 5,
     category: 'food',
     difficulty: 'easy',
@@ -134,7 +130,6 @@ export const foodQuestions = [
   {
     id: 'food_014',
     emoji: '🥥',
-    
     question: '¿De qué fruta se obtiene leche vegetal?',
     options: ['el coco', 'la almendra', 'la avena'],
     correctAnswer: 'el coco',
@@ -146,7 +141,6 @@ export const foodQuestions = [
   {
     id: 'food_015',
     emoji: '🥑',
-    
     question: '¿Qué fruta verde se usa en guacamole?',
     options: ['el aguacate', 'el pepino', 'la lima'],
     correctAnswer: 'el aguacate',
@@ -158,7 +152,6 @@ export const foodQuestions = [
   {
     id: 'food_016',
     emoji: '🫐',
-    
     question: '¿Qué fruta pequeña es azul?',
     options: ['el arándano', 'la mora', 'la ciruela'],
     correctAnswer: 'el arándano',
@@ -170,7 +163,6 @@ export const foodQuestions = [
   {
     id: 'food_017',
     emoji: '🍈',
-    
     question: '¿Qué fruta es como una sandía pequeña?',
     options: ['el melón', 'la guayaba', 'la granada'],
     correctAnswer: 'el melón',
@@ -182,7 +174,6 @@ export const foodQuestions = [
   {
     id: 'food_018',
     emoji: '🍅',
-    
     question: '¿Qué fruta roja se usa en ensaladas?',
     options: ['el tomate', 'el pimiento', 'la remolacha'],
     correctAnswer: 'el tomate',
@@ -790,14 +781,13 @@ export const foodQuestions = [
   {
     id: 'food_069',
     emoji: '🍦',
-    
-    question: '¿Qué postre frío de leche comes en verano?',
-    options: ['el helado', 'el sorbete', 'el flan'],
-    correctAnswer: 'el helado',
-    hint: 'Cold, creamy dessert made from dairy; many flavors available.',
-    points: 5,
+    question: '¿Qué helado cremoso sale de una máquina?',
+    options: ['el helado suave', 'el helado soft', 'el helado de máquina'],
+    correctAnswer: 'el helado suave',
+    hint: 'Soft serve ice cream - creamy frozen dessert dispensed from a machine in a swirl',
+    points: 10,
     category: 'food',
-    difficulty: 'easy',
+    difficulty: 'medium',
   },
   {
     id: 'food_070',
@@ -814,7 +804,6 @@ export const foodQuestions = [
   {
     id: 'food_071',
     emoji: '🧊',
-    
     question: '¿Qué pones en las bebidas para enfriarlas?',
     options: ['el hielo', 'el agua fría', 'la nieve'],
     correctAnswer: 'el hielo',
@@ -840,7 +829,6 @@ export const foodQuestions = [
   {
     id: 'food_074',
     emoji: '☕',
-    
     question: '¿Qué bebida caliente tomas por la mañana?',
     options: ['el café', 'el té', 'el chocolate caliente'],
     correctAnswer: 'el café',
@@ -960,7 +948,6 @@ export const foodQuestions = [
   {
     id: 'food_084',
     emoji: '🍸',
-    
     question: '¿Qué bebida se sirve en copa triangular?',
     options: ['el martini', 'el cosmopolitan', 'el manhattan'],
     correctAnswer: 'el martini',
@@ -972,7 +959,6 @@ export const foodQuestions = [
   {
     id: 'food_085',
     emoji: '🧉',
-    
     question: '¿Qué bebida tradicional argentina se toma con bombilla?',
     options: ['el mate', 'el tereré', 'la yerba'],
     correctAnswer: 'el mate',
@@ -986,7 +972,6 @@ export const foodQuestions = [
   {
     id: 'food_086',
     emoji: '🍰',
-    
     question: '¿Qué postre dulce comes en cumpleaños?',
     options: ['el pastel', 'la tarta', 'el bizcocho'],
     correctAnswer: 'el pastel',
@@ -998,7 +983,6 @@ export const foodQuestions = [
   {
     id: 'food_087',
     emoji: '🎂',
-    
     question: '¿Qué tiene velas en tu cumpleaños?',
     options: ['el pastel', 'la tarta', 'el bizcocho'],
     correctAnswer: 'el pastel',
@@ -1010,7 +994,6 @@ export const foodQuestions = [
   {
     id: 'food_088',
     emoji: '🧁',
-    
     question: '¿Qué es un pastel pequeño individual?',
     options: ['el cupcake', 'la magdalena', 'el muffin'],
     correctAnswer: 'el cupcake',
@@ -1129,20 +1112,18 @@ export const foodQuestions = [
   },
   {
     id: 'food_098',
-    emoji: '🧁',
-    
-    question: '¿Qué postre pequeño tiene papel rizado?',
-    options: ['la magdalena', 'el cupcake', 'el muffin'],
-    correctAnswer: 'la magdalena',
-    hint: 'Small sponge cake baked in a ridged paper cup; classic teatime treat.',
-    points: 10,
+    emoji: 'tostada.png',
+    question: '¿Qué pan tostado comes en el desayuno?',
+    options: ['la tostada', 'el pan tostado', 'el toast'],
+    correctAnswer: 'la tostada',
+    hint: 'Toast - toasted bread commonly eaten at breakfast with butter or spreads',
+    points: 5,
     category: 'food',
-    difficulty: 'medium',
+    difficulty: 'easy',
   },
   {
     id: 'food_100',
     emoji: '🥮',
-    
     question: '¿Qué pastel chino se come en otoño?',
     options: ['el pastel de luna', 'el mooncake', 'el pastel chino'],
     correctAnswer: 'el pastel de luna',
@@ -1156,7 +1137,6 @@ export const foodQuestions = [
   {
     id: 'food_101',
     emoji: '🍑',
-    
     question: '¿Qué fruta de verano tiene piel peluda?',
     options: ['el durazno', 'el melocotón', 'el albaricoque'],
     correctAnswer: 'el durazno',
@@ -1385,8 +1365,7 @@ export const foodQuestions = [
   },
   {
     id: 'food_122',
-    emoji: '🌭',
-    
+    emoji: 'salchicha.png',
     question: '¿Qué salchicha se come en pan?',
     options: ['la salchicha', 'el chorizo', 'la longaniza'],
     correctAnswer: 'la salchicha',
@@ -1397,7 +1376,7 @@ export const foodQuestions = [
   },
   {
     id: 'food_123',
-    
+    emoji: 'vino-blanco.png',
     question: '¿Cómo se llama el vino elaborado con uvas amarillas?',
     options: ['vino blanco', 'vino tinto', 'vino rosado'],
     correctAnswer: 'vino blanco',
@@ -1762,7 +1741,7 @@ export const foodQuestions = [
   // Additional Food/Utensil Phrases (3 questions)
   {
     id: 'food_159',
-    emoji: '🧂',
+    emoji: 'especias.png',
     
     question: '¿Qué se añade a la comida para el sabor?',
     options: ['las especias', 'la sal', 'el condimento'],
@@ -1785,7 +1764,7 @@ export const foodQuestions = [
   },
   {
     id: 'food_161',
-    emoji: '🍅',
+    emoji: 'ketchup.png',
     question: '¿Qué condimento rojo viene en una botella?',
     options: ['la salsa de tomate', 'la catsup', 'el ketchup'],
     correctAnswer: 'el ketchup',
