@@ -512,8 +512,7 @@ export const foodQuestions = [
   },
   {
     id: 'food_046',
-    emoji: '🍖',
-    
+    emoji: 'costilla.png',
     question: '¿Qué es carne con hueso?',
     options: ['la costilla', 'la chuleta', 'el filete'],
     correctAnswer: 'la costilla',
@@ -1140,93 +1139,86 @@ export const foodQuestions = [
     question: '¿Qué fruta de verano tiene piel peluda?',
     options: ['el durazno', 'el melocotón', 'el albaricoque'],
     correctAnswer: 'el durazno',
-  hint: 'Summer stone fruit with fuzzy skin and sweet, fragrant flesh.',
+    hint: 'Summer stone fruit with fuzzy skin and sweet, fragrant flesh.',
     points: 10,
-    
+    category: 'food',
     difficulty: 'medium',
   },
   {
     id: 'food_104',
     emoji: '🍋',
-    
     question: '¿Qué fruta usas para hacer limonada?',
     options: ['el limón', 'la lima', 'la toronja'],
     correctAnswer: 'el limón',
-  hint: 'Citrus fruit used to make a tart, refreshing summer drink.',
+    hint: 'Citrus fruit used to make a tart, refreshing summer drink.',
     points: 5,
-    
+    category: 'food',
     difficulty: 'easy',
   },
   {
     id: 'food_105',
     emoji: '🥝',
-    
     question: '¿Qué fruta peluda es verde por dentro?',
     options: ['el kiwi', 'la guayaba', 'la papaya'],
     correctAnswer: 'el kiwi',
-  hint: 'Small fruit with brown fuzzy skin and bright green flesh with tiny seeds.',
+    hint: 'Small fruit with brown fuzzy skin and bright green flesh with tiny seeds.',
     points: 5,
-    
+    category: 'food',
     difficulty: 'easy',
   },
   {
     id: 'food_106',
     emoji: '🍐',
-    
     question: '¿Qué fruta es dulce y tiene forma de bombilla?',
     options: ['la pera', 'la manzana', 'el higo'],
     correctAnswer: 'la pera',
-  hint: 'Sweet fruit with a light-bulb shape; juicy and soft.',
+    hint: 'Sweet fruit with a light-bulb shape; juicy and soft.',
     points: 5,
-    
+    category: 'food',
     difficulty: 'easy',
   },
   {
     id: 'food_107',
     emoji: '🍓',
-    
     question: '¿Qué fruta roja tiene semillas por fuera?',
     options: ['la fresa', 'la mora', 'la frambuesa'],
     correctAnswer: 'la fresa',
-  hint: 'Red berry with seeds on the outside; aromatic and sweet.',
+    hint: 'Red berry with seeds on the outside; aromatic and sweet.',
     points: 10,
-    
+    category: 'food',
     difficulty: 'medium',
   },
   {
     id: 'food_108',
     emoji: '🍇',
-    
     question: '¿Qué fruta crece en racimos?',
     options: ['las uvas', 'las moras', 'los arándanos'],
     correctAnswer: 'las uvas',
-  hint: 'Small round fruits that grow in clusters; used for wine and raisins.',
+    hint: 'Small round fruits that grow in clusters; used for wine and raisins.',
     points: 5,
-    
+    category: 'food',
     difficulty: 'easy',
   },
   {
     id: 'food_109',
     emoji: '🍒',
-    
     question: '¿Qué fruta roja pequeña viene en pares?',
     options: ['la cereza', 'la aceituna', 'la ciruela'],
     correctAnswer: 'la cereza',
-  hint: 'Small red stone fruit often seen in pairs; sweet or tart varieties.',
+    hint: 'Small red stone fruit often seen in pairs; sweet or tart varieties.',
     points: 5,
-    
+    category: 'food',
     difficulty: 'easy',
   },
   {
     id: 'food_110',
     emoji: '🍈',
-    
     question: '¿Qué fruta verde es dulce por dentro?',
     options: ['el melón', 'la sandía', 'la guayaba'],
     correctAnswer: 'el melón',
-  hint: 'Green-skinned melon with sweet, juicy interior.',
+    hint: 'Green-skinned melon with sweet, juicy interior.',
     points: 5,
-    
+    category: 'food',
     difficulty: 'easy',
   },
 
@@ -1609,7 +1601,6 @@ export const foodQuestions = [
   {
     id: 'food_143',
     emoji: '🍘',
-    
     question: '¿Qué galleta japonesa de arroz es crujiente?',
     options: ['el senbei', 'el arare', 'el okaki'],
     correctAnswer: 'el senbei',
@@ -1621,7 +1612,6 @@ export const foodQuestions = [
   {
     id: 'food_144',
     emoji: '🍥',
-    
     question: '¿Qué ingrediente blanco y rosado va en ramen?',
     options: ['el narutomaki', 'el kamaboko', 'el surimi'],
     correctAnswer: 'el narutomaki',
@@ -1633,7 +1623,6 @@ export const foodQuestions = [
   {
     id: 'food_147',
     emoji: '🍛',
-    
     question: '¿Qué plato picante indio tiene arroz?',
     options: ['el curry', 'el masala', 'el korma'],
     correctAnswer: 'el curry',
@@ -1645,7 +1634,6 @@ export const foodQuestions = [
   {
     id: 'food_148',
     emoji: '🍲',
-    
     question: '¿Qué plato caliente cocinas en olla?',
     options: ['el estofado', 'el cocido', 'el potaje'],
     correctAnswer: 'el estofado',
@@ -1657,7 +1645,6 @@ export const foodQuestions = [
   {
     id: 'food_149',
     emoji: '🫕',
-    
     question: '¿Qué comida suiza sumerges en queso derretido?',
     options: ['el fondue', 'la raclette', 'el fondue de queso'],
     correctAnswer: 'el fondue',
@@ -1669,7 +1656,6 @@ export const foodQuestions = [
   {
     id: 'food_150',
     emoji: '🥘',
-    
     question: '¿Qué plato español tiene azafrán?',
     options: ['la paella', 'el arroz al horno', 'la fideuá'],
     correctAnswer: 'la paella',
@@ -1681,7 +1667,6 @@ export const foodQuestions = [
   {
     id: 'food_151',
     emoji: '🍝',
-    
     question: '¿Qué fideos italianos son largos y delgados?',
     options: ['el espagueti', 'los tallarines', 'los fideos'],
     correctAnswer: 'el espagueti',
@@ -1693,7 +1678,6 @@ export const foodQuestions = [
   {
     id: 'food_152',
     emoji: '🥗',
-    
     question: '¿Qué ensalada romana tiene crutones?',
     options: ['la César', 'la ensalada César', 'la ensalada romana'],
     correctAnswer: 'la César',
@@ -1716,7 +1700,6 @@ export const foodQuestions = [
   {
     id: 'food_154',
     emoji: '🌮',
-    
     question: '¿Qué comida mexicana tiene tortilla crujiente?',
     options: ['el taco duro', 'la tostada', 'el taco dorado'],
     correctAnswer: 'el taco duro',
@@ -1728,7 +1711,6 @@ export const foodQuestions = [
   {
     id: 'food_155',
     emoji: '🧆',
-    
     question: '¿Qué bola frita del Medio Oriente es vegetariana?',
     options: ['el falafel', 'el taameya', 'la kofta'],
     correctAnswer: 'el falafel',
@@ -1742,7 +1724,6 @@ export const foodQuestions = [
   {
     id: 'food_159',
     emoji: 'especias.png',
-    
     question: '¿Qué se añade a la comida para el sabor?',
     options: ['las especias', 'la sal', 'el condimento'],
     correctAnswer: 'las especias',
@@ -1787,7 +1768,6 @@ export const foodQuestions = [
   {
     id: 'food_163',
     emoji: '🍼',
-    
     question: '¿Qué toman los bebés?',
     options: ['la fórmula para bebés', 'la leche de fórmula', 'la fórmula infantil'],
     correctAnswer: 'la fórmula para bebés',
