@@ -43,6 +43,7 @@ export {
   getQuestionsByCategory,
   getRandomQuestionByCategory,
   getRandomUnusedQuestionByCategory,
+  getUnmasteredQuestionCount,
   getQuestionIdsByCategory,
   shuffleOptions,
 } from './questions/index.js';

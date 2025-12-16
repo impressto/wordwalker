@@ -27,6 +27,7 @@ export const useAnswerHandling = ({
   maxStreakInCategory,
   checkpointsAnswered,
   checkpointsPerCategory,
+  defaultCheckpointLimit,
   selectedPath,
   forkCategories,
   completedCategories,
@@ -60,6 +61,7 @@ export const useAnswerHandling = ({
   setShowFlashCardsOffer,
   setCategoryForFlashCards,
   setStreakAtCompletion,
+  setCurrentCheckpointLimit,
   
   // Refs
   walkerFrameRef,
@@ -259,18 +261,29 @@ export const useAnswerHandling = ({
         // Prepare category completion but don't show choice dialog yet
         handleCategoryCompletion(false); // Pass false to skip showing choice dialog
       } else {
-        // Only unpause if continuing in the same category
-        setIsPaused(false);
         // Prepare for next checkpoint and load new question immediately
         checkpointPositionRef.current += checkpointSpacing;
         checkpointFadeStartTimeRef.current = null;
         checkpointSoundPlayedRef.current = false;
         // Load new question NOW so checkpoint shows correct emoji
         const category = forkCategories[selectedPath] || selectedPath;
-        loadNewQuestion(category);
-        // Set questionAnswered to false so checkpoint appears with new emoji
-        setQuestionAnswered(false);
-        console.log('✅ Loading new question immediately for correct checkpoint emoji');
+        const questionLoaded = loadNewQuestion(category);
+        
+        if (questionLoaded) {
+          // Question was loaded successfully - continue in the same category
+          setIsPaused(false);
+          // Set questionAnswered to false so checkpoint appears with new emoji
+          setQuestionAnswered(false);
+          console.log('✅ Loading new question immediately for correct checkpoint emoji');
+        } else {
+          // No questions available - complete the category immediately
+          console.log('⚠️ No questions available, completing category early');
+          setIsPaused(true);
+          setQuestionAnswered(true);
+          // Force checkpoint counter to max to trigger completion
+          setCheckpointsAnswered(checkpointsPerCategory);
+          handleCategoryCompletion(false); // Prepare completion, will show dialog after translation
+        }
       }
     } else {
       // Second call (after translation hidden)
@@ -297,6 +310,7 @@ export const useAnswerHandling = ({
     setSelectedPath(null);
     setQuestionAnswered(false);
     setCurrentQuestion(null); // Clear current question
+    setCurrentCheckpointLimit(defaultCheckpointLimit); // Reset to default checkpoint limit
     
     // Generate new random categories for the next fork, excluding the just-completed category
     // Pass the currentCategory as additionalCompleted to ensure it's excluded immediately

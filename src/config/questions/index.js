@@ -122,6 +122,37 @@ export const getRandomUnusedQuestionByCategory = (
 };
 
 /**
+ * Helper function to count unmastered questions in a category
+ * @param {string} category - The category to check
+ * @param {Object} usedQuestionIds - Object tracking used questions by category (numeric IDs only)
+ * @param {Object} correctAnswersByCategory - Object tracking questions answered correctly by category (numeric IDs only)
+ * @returns {number} Count of available unmastered questions
+ */
+export const getUnmasteredQuestionCount = (
+  category,
+  usedQuestionIds = {},
+  correctAnswersByCategory = {}
+) => {
+  const categoryQuestions = getQuestionsByCategory(category);
+  const usedThisSession = usedQuestionIds[category] || [];
+  const answeredCorrectly = correctAnswersByCategory[category] || [];
+  
+  // Combine both sets of excluded IDs
+  const excludedIds = new Set([...usedThisSession, ...answeredCorrectly]);
+  
+  const availableQuestions = categoryQuestions.filter(q => {
+    // Skip questions without valid ID
+    if (!q || !q.id) return false;
+    
+    // Extract numeric ID as string to match the format stored in tracking arrays
+    const numericId = q.id.split('_')[1] || q.id;
+    return !excludedIds.has(numericId);
+  });
+  
+  return availableQuestions.length;
+};
+
+/**
  * Helper function to get all question IDs in a category
  * @param {string} category - The category to get IDs from
  * @returns {Array} Array of numeric question IDs (without category prefix)

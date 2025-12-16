@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { getRandomQuestionByCategory, getRandomUnusedQuestionByCategory, shuffleOptions, getAllCategoryIds, getCategoryById } from '../config/questions';
+import { getRandomQuestionByCategory, getRandomUnusedQuestionByCategory, getUnmasteredQuestionCount, shuffleOptions, getAllCategoryIds, getCategoryById } from '../config/questions';
 import { isCategoryCompleted, addCorrectAnswer, addToCorrectFirstTry, addUsedQuestion, addToFirstTryByCategory } from '../utils/questionTracking';
 import { generateNewForkCategories, initializeForkCategories, extractCategoryIds } from '../utils/categoryRotation';
 import { translations } from '../config/translations/answers/index';
@@ -129,6 +129,9 @@ const PathCanvas = () => {
   // Checkpoint cycling - track how many checkpoints answered in current category
   const [checkpointsAnswered, setCheckpointsAnswered] = useState(0);
   const checkpointsPerCategory = gameSettings.persistence.checkpointsPerCategory;
+  
+  // Dynamic checkpoint limit - frozen when category is selected
+  const [currentCheckpointLimit, setCurrentCheckpointLimit] = useState(checkpointsPerCategory);
   
   // Track used question IDs to prevent duplicates within a category walk
   const [usedQuestionIds, setUsedQuestionIds] = useState({});
@@ -932,7 +935,8 @@ const PathCanvas = () => {
       }
       
       // Draw learning checkpoint (emoji on path) if path has been selected and not answered
-      if (selectedPath && !questionAnswered) {
+      // AND there's a valid question to display
+      if (selectedPath && !questionAnswered && currentQuestion) {
         const checkpointScreenX = checkpointPositionRef.current - scrollPos;
         
         // Get character config to access yOffset for checkpoint positioning
@@ -1310,6 +1314,7 @@ const PathCanvas = () => {
   }, [parallaxLayer2Image, pathImage, pathForkImage, parallaxLayer6Image, parallaxLayer1Image, parallaxLayer4Image, parallaxLayer5Image, parallaxLayer3Image, walkerSpriteSheet, isPaused, showChoice, showQuestion, selectedPath, questionAnswered, isVictoryAnimation, currentTheme, isPreviewMode]);
 
   // Helper function to load a new question for the current checkpoint
+  // Returns true if a question was loaded, false if no questions are available (category complete)
   const loadNewQuestion = (category) => {
     const question = getRandomUnusedQuestionByCategory(category, usedQuestionIds, correctAnswersByCategory);
     if (question) {
@@ -1330,6 +1335,15 @@ const PathCanvas = () => {
       if (isCategoryCompleted(category, updatedUsedIds)) {
         setCompletedCategories(prev => new Set([...prev, category]));
       }
+      return true; // Question was loaded successfully
+    } else {
+      // No questions available - category is completed
+      // This can happen when only a few questions remain and they've all been mastered
+      console.log(`No questions available for category: ${category}. Completing category.`);
+      setCompletedCategories(prev => new Set([...prev, category]));
+      // Clear any invalid question state
+      setCurrentQuestion(null);
+      return false; // No question available, category should be completed
     }
   };
 
@@ -1343,7 +1357,8 @@ const PathCanvas = () => {
     streak,
     maxStreakInCategory,
     checkpointsAnswered,
-    checkpointsPerCategory,
+    checkpointsPerCategory: currentCheckpointLimit,
+    defaultCheckpointLimit: checkpointsPerCategory,
     selectedPath,
     forkCategories,
     completedCategories,
@@ -1377,6 +1392,7 @@ const PathCanvas = () => {
     setShowFlashCardsOffer,
     setCategoryForFlashCards,
     setStreakAtCompletion,
+    setCurrentCheckpointLimit,
     
     // Refs
     walkerFrameRef,
@@ -1414,6 +1430,16 @@ const PathCanvas = () => {
     setUsedQuestionIds({}); // Reset used questions for new category
     setMaxStreakInCategory(0); // Reset max streak for new category
     
+    // Calculate and set the checkpoint limit for this category
+    // If less than 10 unmastered questions, use that count as the limit
+    const unmasteredCount = getUnmasteredQuestionCount(category, {}, correctAnswersByCategory);
+    const categoryCheckpointLimit = (unmasteredCount < 10 && unmasteredCount > 0) 
+      ? unmasteredCount 
+      : checkpointsPerCategory;
+    
+    console.log(`🎯 Setting checkpoint limit for ${category}: ${categoryCheckpointLimit} (unmastered: ${unmasteredCount})`);
+    setCurrentCheckpointLimit(categoryCheckpointLimit);
+    
     // Position the first checkpoint to appear centered when walker stops
     // Walker stops 120px before checkpoint, walker is at 30% of screen
     // So checkpoint should be at 30% + 120px = roughly 50% for centered appearance
@@ -1432,7 +1458,15 @@ const PathCanvas = () => {
     checkpointSoundPlayedRef.current = false;
     
     // Load the first question immediately so the correct emoji appears
-    loadNewQuestion(category);
+    const questionLoaded = loadNewQuestion(category);
+    
+    // If no questions are available in this category, immediately show completion
+    if (!questionLoaded) {
+      console.log('⚠️ No questions available in selected category, showing category choice again');
+      setIsPaused(true);
+      setShowChoice(true);
+      setSelectedPath(null);
+    }
   };
 
 
