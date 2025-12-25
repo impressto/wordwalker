@@ -3,7 +3,6 @@ import { getRandomQuestionByCategory, getRandomUnusedQuestionByCategory, getUnma
 import { isCategoryCompleted, addCorrectAnswer, addToCorrectFirstTry, addUsedQuestion, addToFirstTryByCategory } from '../utils/questionTracking';
 import { generateNewForkCategories, initializeForkCategories, extractCategoryIds } from '../utils/categoryRotation';
 import { translations } from '../config/translations/answers/index';
-import { questionTranslations } from '../config/translations';
 import gameSettings, { getStreakColor, getTranslationBoxDuration } from '../config/gameSettings';
 import { getTheme } from '../config/parallaxThemes';
 import { getSpriteSheetConfig, getCharacterById } from '../config/characterConfig';
@@ -1879,7 +1878,7 @@ const PathCanvas = () => {
             incorrectAnswers={incorrectAnswers}
             onAnswerChoice={handleAnswerChoice}
             onHintClick={handleHintClick}
-            questionTranslation={questionTranslations[currentQuestion.id]}
+            questionTranslation={currentQuestion.translation}
           />
         </div>
       )}

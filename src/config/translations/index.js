@@ -1,7 +1,10 @@
 /**
  * Translations Index
  * 
- * Re-exports question translations from the questions subdirectory
+ * Question translations have been moved directly into question objects.
+ * Each question now has a "translation" property with the English translation.
+ * 
+ * Answer translations are still available in ./answers/index.js
  */
 
-export { questionTranslations } from './questions/index.js';
+// No exports - question translations are now embedded in question objects
