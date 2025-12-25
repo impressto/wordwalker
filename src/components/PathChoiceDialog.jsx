@@ -12,7 +12,17 @@ import { FLASH_CARDS_ENABLED } from '../config/flashCardsConfig';
 
 const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpenShop, onOpenFlashCards, currentCategory = null, correctAnswersByCategory = {}, completedCategories = new Set() }) => {
   const [dialogTop, setDialogTop] = useState('100px');
-  const [currentPage, setCurrentPage] = useState(0);
+  
+  // Load saved page from localStorage or default to 0
+  const [currentPage, setCurrentPage] = useState(() => {
+    try {
+      const savedPage = localStorage.getItem('categoryGridPage');
+      return savedPage ? parseInt(savedPage, 10) : 0;
+    } catch (error) {
+      console.error('Error loading saved category page:', error);
+      return 0;
+    }
+  });
   
   // Get all categories - we now show all of them, just disable the mastered ones
   const allCategoryIds = getAllCategoryIds();
@@ -27,11 +37,19 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
   const currentPageCategories = categoriesToShow.slice(startIndex, endIndex);
   
   const handlePrevPage = () => {
-    setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
+    setCurrentPage((prev) => {
+      const newPage = (prev - 1 + totalPages) % totalPages;
+      localStorage.setItem('categoryGridPage', newPage.toString());
+      return newPage;
+    });
   };
   
   const handleNextPage = () => {
-    setCurrentPage((prev) => (prev + 1) % totalPages);
+    setCurrentPage((prev) => {
+      const newPage = (prev + 1) % totalPages;
+      localStorage.setItem('categoryGridPage', newPage.toString());
+      return newPage;
+    });
   };
 
   useEffect(() => {
@@ -267,7 +285,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
         </button>
         
         {/* Categories Grid */}
-        <div style={{
+        <div id="categories-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(2, 1fr)',
           gap: '10px',

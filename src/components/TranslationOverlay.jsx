@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react';
 import { translations } from '../config/translations/answers/index';
 import gameSettings, { getStreakColor, getStreakGradientColor } from '../config/gameSettings';
 import pronunciationAudio from '../utils/pronunciationAudio';
+import EmojiDisplay from './EmojiDisplay';
 
 const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, hintUsed = false }) => {
   const [audioAvailable, setAudioAvailable] = useState(false);
@@ -116,10 +117,14 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, 
       maxWidth: 'min(85vw, 380px)',
     }}>
       <div id="translation-checkmark" style={{
-        fontSize: '50px',
+        fontSize: '60px',
         marginBottom: '10px',
       }}>
-        ✅
+        <EmojiDisplay 
+          emoji={currentQuestion.emoji} 
+          category={currentQuestion.category}
+          size="60px"
+        />
       </div>
       
       <div style={{
