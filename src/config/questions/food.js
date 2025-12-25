@@ -9,6 +9,7 @@ export const foodQuestions = [
     id: 'food_001',
     emoji: '🍉',
     question: '¿Qué fruta roja comes en el verano?',
+    translation: 'What red fruit do you eat in summer?',
     options: ['la sandía', 'la fresa', 'la cereza'],
     correctAnswer: 'la sandía',
     hint: 'Summer fruit with green rind and red, juicy flesh; often eaten in slices.',
@@ -20,6 +21,7 @@ export const foodQuestions = [
     id: 'food_002',
     emoji: '🍌',
     question: '¿Qué fruta es amarilla y larga?',
+    translation: 'What fruit is yellow and long?',
     options: ['el plátano', 'el limón', 'el mango'],
     correctAnswer: 'el plátano',
     hint: 'Long, yellow fruit commonly eaten at breakfast; bends slightly and peels easily.',
@@ -31,6 +33,7 @@ export const foodQuestions = [
     id: 'food_003',
     emoji: '🍎',
     question: '¿Qué fruta puede ser roja o verde?',
+    translation: 'What fruit can be red or green?',
     options: ['la manzana', 'la pera', 'la uva'],
     correctAnswer: 'la manzana',
     hint: 'Common fruit that comes in red or green varieties; crisp and often eaten raw.',
@@ -42,6 +45,7 @@ export const foodQuestions = [
     id: 'food_004',
     emoji: '🍊',
     question: '¿Qué fruta tiene mucha vitamina C?',
+    translation: 'What fruit has lots of vitamin C?',
     options: ['la naranja', 'el limón', 'la mandarina'],
     correctAnswer: 'la naranja',
     hint: 'Citrus fruit known for vitamin C; round with a bright peel and segments inside.',
@@ -54,6 +58,7 @@ export const foodQuestions = [
     emoji: '🍇',
     
     question: '¿Con qué fruta se hace el vino?',
+    translation: 'What fruit is wine made from?',
     options: ['las uvas', 'las ciruelas', 'las moras'],
     correctAnswer: 'las uvas',
     hint: 'Small round fruits that grow in bunches; pressed to make wine.',
@@ -65,6 +70,7 @@ export const foodQuestions = [
     id: 'food_008',
     emoji: 'fideos instantáneos.png',
     question: '¿Qué comida rápida preparas con agua caliente?',
+    translation: 'What fast food do you prepare with hot water?',
     options: ['los fideos instantáneos', 'la sopa instantánea', 'el ramen instantáneo'],
     correctAnswer: 'los fideos instantáneos',
     hint: 'Instant noodles - quick meal prepared by adding hot water to dried noodles',
@@ -76,6 +82,7 @@ export const foodQuestions = [
     id: 'food_009',
     emoji: '🍍',
     question: '¿Qué fruta tropical es amarilla por dentro?',
+    translation: 'What tropical fruit is yellow inside?',
     options: ['la piña', 'el mango', 'la guayaba'],
     correctAnswer: 'la piña',
     hint: 'Tropical fruit with spiky skin and a sweet, yellow interior; often cut in rings.',
@@ -87,6 +94,7 @@ export const foodQuestions = [
     id: 'food_010',
     emoji: '🥝',
     question: '¿Qué fruta es verde por dentro con semillas negras?',
+    translation: 'What fruit is green inside with black seeds?',
     options: ['el kiwi', 'la guayaba', 'la papaya'],
     correctAnswer: 'el kiwi',
     hint: 'Small fruit with brown fuzzy skin and bright green flesh dotted with tiny black seeds.',
@@ -98,6 +106,7 @@ export const foodQuestions = [
     id: 'food_011',
     emoji: 'sopa.png',
     question: '¿Qué comida líquida y caliente tomas cuando estás enfermo?',
+    translation: 'What hot liquid food do you have when you\'re sick?',
     options: ['la sopa', 'el caldo', 'el consomé'],
     correctAnswer: 'la sopa',
     hint: 'Soup - hot liquid food often eaten when sick or for comfort',
@@ -109,6 +118,7 @@ export const foodQuestions = [
     id: 'food_012',
     emoji: '🥭',
     question: '¿Qué fruta tropical es dulce y anaranjada?',
+    translation: 'What tropical fruit is sweet and orange?',
     options: ['el mango', 'la papaya', 'el durazno'],
     correctAnswer: 'el mango',
     hint: 'Sweet tropical fruit with a large pit; turns orange when ripe.',
@@ -120,6 +130,7 @@ export const foodQuestions = [
     id: 'food_013',
     emoji: '🍐',
     question: '¿Qué fruta tiene forma de campana?',
+    translation: 'What fruit is shaped like a bell?',
     options: ['la pera', 'la manzana', 'el higo'],
     correctAnswer: 'la pera',
     hint: 'Fruit with a light-bulb shape; soft texture and juicy flesh.',
@@ -131,6 +142,7 @@ export const foodQuestions = [
     id: 'food_014',
     emoji: '🥥',
     question: '¿De qué fruta se obtiene leche vegetal?',
+    translation: 'What fruit do you get plant milk from?',
     options: ['el coco', 'la almendra', 'la avena'],
     correctAnswer: 'el coco',
     hint: 'Large tropical fruit with hard shell and white flesh; used to make dairy-free milk.',
@@ -142,6 +154,7 @@ export const foodQuestions = [
     id: 'food_015',
     emoji: '🥑',
     question: '¿Qué fruta verde se usa en guacamole?',
+    translation: 'What green fruit is used in guacamole?',
     options: ['el aguacate', 'el pepino', 'la lima'],
     correctAnswer: 'el aguacate',
     hint: 'Creamy green fruit used in a popular dip; soft texture when ripe.',
@@ -153,6 +166,7 @@ export const foodQuestions = [
     id: 'food_016',
     emoji: '🫐',
     question: '¿Qué fruta pequeña es azul?',
+    translation: 'What small fruit is blue?',
     options: ['el arándano', 'la mora', 'la ciruela'],
     correctAnswer: 'el arándano',
     hint: 'Small round blue berries; often used in muffins and breakfast bowls.',
@@ -164,6 +178,7 @@ export const foodQuestions = [
     id: 'food_017',
     emoji: '🍈',
     question: '¿Qué fruta es como una sandía pequeña?',
+    translation: 'What fruit is like a small watermelon?',
     options: ['el melón', 'la guayaba', 'la granada'],
     correctAnswer: 'el melón',
     hint: 'Refreshing melon; smaller than the striped kind and sweet inside.',
@@ -175,6 +190,7 @@ export const foodQuestions = [
     id: 'food_018',
     emoji: '🍅',
     question: '¿Qué fruta roja se usa en ensaladas?',
+    translation: 'What red fruit is used in salads?',
     options: ['el tomate', 'el pimiento', 'la remolacha'],
     correctAnswer: 'el tomate',
     hint: 'Red ingredient often added to salads and sauces; technically a fruit.',
@@ -187,6 +203,7 @@ export const foodQuestions = [
     emoji: '🫒',
     
     question: '¿De qué fruta se hace el aceite de oliva?',
+    translation: 'What fruit is olive oil made from?',
     options: ['la aceituna', 'la nuez', 'el aguacate'],
     correctAnswer: 'la aceituna',
     hint: 'Olive oil comes from a small, bitter fruit; widely grown around the Mediterranean.',
@@ -199,6 +216,7 @@ export const foodQuestions = [
     emoji: '🍆',
     
     question: '¿Qué verdura es morada y larga?',
+    translation: 'What vegetable is purple and long?',
     options: ['la berenjena', 'la remolacha', 'la col morada'],
     correctAnswer: 'la berenjena',
     hint: 'Purple vegetable with glossy skin; often roasted or used in Mediterranean dishes.',
@@ -213,6 +231,7 @@ export const foodQuestions = [
     emoji: '🥕',
     
     question: '¿Qué verdura naranja comen los conejos?',
+    translation: 'What orange vegetable do rabbits eat?',
     options: ['la zanahoria', 'la calabaza', 'el boniato'],
     correctAnswer: 'la zanahoria',
     hint: 'Orange root vegetable, good for eyes',
@@ -225,6 +244,7 @@ export const foodQuestions = [
     emoji: '🥔',
     
     question: '¿Con qué verdura se hacen las papas fritas?',
+    translation: 'What vegetable are french fries made from?',
     options: ['la papa', 'el boniato', 'la yuca'],
     correctAnswer: 'la papa',
     hint: 'Starchy tuber used to make fries; common side dish worldwide.',
@@ -237,6 +257,7 @@ export const foodQuestions = [
     emoji: '🧅',
     
     question: '¿Qué verdura te hace llorar cuando la cortas?',
+    translation: 'What vegetable makes you cry when you cut it?',
     options: ['la cebolla', 'el ajo', 'el cebollino'],
     correctAnswer: 'la cebolla',
     hint: 'Makes you cry when you cut it',
@@ -249,6 +270,7 @@ export const foodQuestions = [
     emoji: '🧄',
     
     question: '¿Qué ingrediente pequeño tiene olor fuerte?',
+    translation: 'What small ingredient has a strong smell?',
     options: ['el ajo', 'la cebolla', 'el puerro'],
     correctAnswer: 'el ajo',
   hint: 'Small aromatic ingredient with a strong smell; used to flavor many dishes.',
@@ -261,6 +283,7 @@ export const foodQuestions = [
     emoji: '🌽',
     
     question: '¿Qué verdura amarilla tiene granos?',
+    translation: 'What yellow vegetable has kernels?',
     options: ['el maíz', 'el elote', 'el choclo'],
     correctAnswer: 'el maíz',
     hint: 'Yellow kernels, makes popcorn',
@@ -273,6 +296,7 @@ export const foodQuestions = [
     emoji: '🥒',
     
     question: '¿Qué verdura verde y larga está en las ensaladas?',
+    translation: 'What long green vegetable is in salads?',
     options: ['el pepino', 'el calabacín', 'el apio'],
     correctAnswer: 'el pepino',
     hint: 'Crunchy green salad vegetable; high water content and mild taste.',
@@ -285,6 +309,7 @@ export const foodQuestions = [
     emoji: '🥬',
     
     question: '¿Qué verdura verde se come en ensaladas?',
+    translation: 'What green vegetable is eaten in salads?',
     options: ['la lechuga', 'la espinaca', 'la acelga'],
     correctAnswer: 'la lechuga',
     hint: 'Green leafy base for salads',
@@ -297,6 +322,7 @@ export const foodQuestions = [
     emoji: '🥦',
     
     question: '¿Qué verdura verde parece un árbol pequeño?',
+    translation: 'What green vegetable looks like a small tree?',
     options: ['el brócoli', 'la coliflor', 'el brócoli rabe'],
     correctAnswer: 'el brócoli',
     hint: 'Green florets that look like tiny trees; rich in fiber and vitamins.',
@@ -309,6 +335,7 @@ export const foodQuestions = [
     emoji: '🫑',
     
     question: '¿Qué verdura puede ser roja, verde o amarilla?',
+    translation: 'What vegetable can be red, green, or yellow?',
     options: ['el pimiento', 'el tomate', 'el chile'],
     correctAnswer: 'el pimiento',
     hint: 'Bell-shaped vegetable in red, green, or yellow; sweet, not spicy.',
@@ -321,6 +348,7 @@ export const foodQuestions = [
     emoji: '🌶️',
     
     question: '¿Qué ingrediente es muy picante?',
+    translation: 'What ingredient is very spicy?',
     options: ['el chile', 'el pimiento', 'el jalapeño'],
     correctAnswer: 'el chile',
   hint: 'Spicy pepper used to add heat; comes in many varieties.',
@@ -333,6 +361,7 @@ export const foodQuestions = [
     emoji: '🥜',
     
     question: '¿De qué se hace la mantequilla de maní?',
+    translation: 'What is peanut butter made from?',
     options: ['el cacahuate', 'la almendra', 'la avellana'],
     correctAnswer: 'el cacahuate',
     hint: 'Made from a legume that grows underground; commonly spread on toast.',
@@ -345,6 +374,7 @@ export const foodQuestions = [
     emoji: '🍄',
     
     question: '¿Qué crece en lugares húmedos?',
+    translation: 'What grows in humid places?',
     options: ['el champiñón', 'la seta', 'el hongo'],
     correctAnswer: 'el champiñón',
   hint: 'Common edible mushroom that grows in damp areas; mild flavor.',
@@ -357,6 +387,7 @@ export const foodQuestions = [
     emoji: '🫘',
     
     question: '¿Qué se usa en los frijoles?',
+    translation: 'What is used in beans?',
     options: ['los frijoles', 'las habas', 'las lentejas'],
     correctAnswer: 'los frijoles',
   hint: 'Staple legume in many dishes; often cooked and mashed.',
@@ -369,6 +400,7 @@ export const foodQuestions = [
     emoji: '🎃',
     
     question: '¿Qué verdura naranja se usa en Halloween?',
+    translation: 'What orange vegetable is used on Halloween?',
     options: ['la calabaza', 'la zanahoria', 'el boniato'],
     correctAnswer: 'la calabaza',
   hint: 'Large orange squash used for decorations and cooking.',
@@ -381,6 +413,7 @@ export const foodQuestions = [
     emoji: '🥗',
     
     question: '¿Qué plato tiene muchas verduras frescas?',
+    translation: 'What dish has many fresh vegetables?',
     options: ['la ensalada', 'la sopa', 'el guiso'],
     correctAnswer: 'la ensalada',
   hint: 'Plate of raw vegetables typically served with dressing.',
@@ -395,6 +428,7 @@ export const foodQuestions = [
     emoji: '🍕',
     
     question: '¿Qué comida italiana es redonda?',
+    translation: 'What Italian food is round?',
     options: ['la pizza', 'la focaccia', 'la calzone'],
     correctAnswer: 'la pizza',
     hint: 'Round dough base topped with sauce, cheese, and various toppings.',
@@ -407,6 +441,7 @@ export const foodQuestions = [
     emoji: '🍔',
     
     question: '¿Qué tiene carne entre dos panes?',
+    translation: 'What has meat between two breads?',
     options: ['la hamburguesa', 'el sándwich', 'el bocadillo'],
     correctAnswer: 'la hamburguesa',
     hint: 'Ground meat patty in a bun, often with cheese, lettuce, and tomato.',
@@ -419,6 +454,7 @@ export const foodQuestions = [
     emoji: '🌭',
     
     question: '¿Qué comida tiene salchicha en pan largo?',
+    translation: 'What food has a sausage in a long bread?',
     options: ['el hot dog', 'el chorizo', 'la salchicha'],
     correctAnswer: 'el hot dog',
     hint: 'Sausage served in a long bun, commonly topped with sauces.',
@@ -431,6 +467,7 @@ export const foodQuestions = [
     emoji: '🌮',
     
     question: '¿Qué comida mexicana usa tortilla doblada?',
+    translation: 'What Mexican food uses a folded tortilla?',
     options: ['el taco', 'la quesadilla', 'la enchilada'],
     correctAnswer: 'el taco',
     hint: 'Folded flatbread with fillings such as meat, poultry, or vegetables.',
@@ -443,6 +480,7 @@ export const foodQuestions = [
     emoji: '🌯',
     
     question: '¿Qué comida mexicana está enrollada?',
+    translation: 'What Mexican food is rolled up?',
     options: ['el burrito', 'la enchilada', 'el taco'],
     correctAnswer: 'el burrito',
     hint: 'Large rolled flatbread wrapped around a hearty filling.',
@@ -455,6 +493,7 @@ export const foodQuestions = [
     emoji: '🥙',
     
     question: '¿Qué pan árabe está relleno?',
+    translation: 'What Arabic bread is stuffed?',
     options: ['la pita', 'el naan', 'la tortilla'],
     correctAnswer: 'la pita',
     hint: 'Flatbread with a pocket for fillings like vegetables or proteins.',
@@ -467,6 +506,7 @@ export const foodQuestions = [
     emoji: '🥪',
     
     question: '¿Qué tiene ingredientes entre dos rebanadas de pan?',
+    translation: 'What has ingredients between two slices of bread?',
     options: ['el sándwich', 'el bocadillo', 'el emparedado'],
     correctAnswer: 'el sándwich',
     hint: 'Ingredients layered between two slices of bread; portable meal.',
@@ -479,6 +519,7 @@ export const foodQuestions = [
     emoji: '🍗',
     
     question: '¿Qué carne de ave es muy común?',
+    translation: 'What poultry meat is very common?',
     options: ['el pollo', 'el pavo', 'el pato'],
     correctAnswer: 'el pollo',
     hint: 'Common white poultry meat; versatile in many recipes.',
@@ -491,6 +532,7 @@ export const foodQuestions = [
     emoji: '🥩',
     
     question: '¿Qué comes en un asado?',
+    translation: 'What do you eat at a barbecue?',
     options: ['la carne', 'el bistec', 'el filete'],
     correctAnswer: 'la carne',
     hint: 'Grilled meat served at cookouts; includes cuts like steak or ribs.',
@@ -503,6 +545,7 @@ export const foodQuestions = [
     emoji: '🥓',
     
     question: '¿Qué carne frita comes en el desayuno?',
+    translation: 'What fried meat do you eat for breakfast?',
     options: ['el tocino', 'el jamón', 'la panceta'],
     correctAnswer: 'el tocino',
     hint: 'Crispy smoked strips commonly served at breakfast.',
@@ -514,6 +557,7 @@ export const foodQuestions = [
     id: 'food_046',
     emoji: 'costilla.png',
     question: '¿Qué es carne con hueso?',
+    translation: 'What is meat with bone?',
     options: ['la costilla', 'la chuleta', 'el filete'],
     correctAnswer: 'la costilla',
     hint: 'Cut of meat with bone attached; popular in barbecues.',
@@ -526,6 +570,7 @@ export const foodQuestions = [
     emoji: '🍤',
     
     question: '¿Qué marisco rosado es pequeño?',
+    translation: 'What small pink seafood?',
     options: ['el camarón', 'la gamba', 'la langosta'],
     correctAnswer: 'el camarón',
     hint: 'Small seafood that turns pink when cooked; often fried or grilled.',
@@ -538,6 +583,7 @@ export const foodQuestions = [
     emoji: '🍣',
     
     question: '¿Qué comida japonesa tiene pescado crudo?',
+    translation: 'What Japanese food has raw fish?',
     options: ['el sushi', 'el sashimi', 'el ramen'],
     correctAnswer: 'el sushi',
     hint: 'Rice-based dish often paired with raw seafood; sometimes served as rolls.',
@@ -550,6 +596,7 @@ export const foodQuestions = [
     emoji: '🍜',
     
     question: '¿Qué sopa asiática tiene fideos?',
+    translation: 'What Asian soup has noodles?',
     options: ['el ramen', 'el pho', 'el udon'],
     correctAnswer: 'el ramen',
     hint: 'Noodle soup with savory broth and toppings like egg or pork.',
@@ -562,6 +609,7 @@ export const foodQuestions = [
     emoji: '🍝',
     
     question: '¿Qué comida italiana tiene fideos?',
+    translation: 'What Italian food has noodles?',
     options: ['la pasta', 'los espaguetis', 'los tallarines'],
     correctAnswer: 'la pasta',
     hint: 'Italian noodles in many shapes; served with sauces or cheese.',
@@ -574,6 +622,7 @@ export const foodQuestions = [
     emoji: '🍲',
     
     question: '¿Qué plato caliente tiene muchos ingredientes?',
+    translation: 'What hot dish has many ingredients?',
     options: ['el guiso', 'el estofado', 'el cocido'],
     correctAnswer: 'el guiso',
     hint: 'Hearty one-pot dish with mixed ingredients simmered together.',
@@ -586,6 +635,7 @@ export const foodQuestions = [
     emoji: '🥘',
     
     question: '¿Qué plato español tiene arroz y mariscos?',
+    translation: 'What Spanish dish has rice and seafood?',
     options: ['la paella', 'el arroz con pollo', 'el risotto'],
     correctAnswer: 'la paella',
     hint: 'Spanish rice dish cooked in a wide pan; often includes seafood or meats.',
@@ -598,6 +648,7 @@ export const foodQuestions = [
     emoji: '🥚',
     
     question: '¿Qué ponen las gallinas?',
+    translation: 'What do hens lay?',
     options: ['el huevo', 'el pollito', 'la pluma'],
     correctAnswer: 'el huevo',
     hint: 'Round-shelled food laid by hens; name related to “oval.”',
@@ -610,6 +661,7 @@ export const foodQuestions = [
     emoji: '🍟',
     
     question: '¿Qué acompaña a la hamburguesa?',
+    translation: 'What accompanies the hamburger?',
     options: ['las papas fritas', 'las patatas bravas', 'el arroz'],
     correctAnswer: 'las papas fritas',
     hint: 'Crispy fried strips commonly served alongside burgers.',
@@ -624,6 +676,7 @@ export const foodQuestions = [
     emoji: '🍞',
     
     question: '¿Qué haces con harina en el horno?',
+    translation: 'What do you do with flour in the oven?',
     options: ['el pan', 'la galleta', 'el pastel'],
     correctAnswer: 'el pan',
     hint: 'Baked dough made from flour; staple food in many cultures.',
@@ -636,6 +689,7 @@ export const foodQuestions = [
     emoji: '🥖',
     
     question: '¿Qué pan francés es largo?',
+    translation: 'What French bread is long?',
     options: ['la baguette', 'el baguette', 'la barra'],
     correctAnswer: 'la baguette',
     hint: 'Long French loaf with a crisp crust and soft interior.',
@@ -648,6 +702,7 @@ export const foodQuestions = [
     emoji: '🥐',
     
     question: '¿Qué pan francés tiene forma de media luna?',
+    translation: 'What French bread has a crescent shape?',
     options: ['el croissant', 'la medialuna', 'el brioche'],
     correctAnswer: 'el croissant',
     hint: 'Buttery flaky pastry shaped like a crescent; breakfast favorite.',
@@ -660,6 +715,7 @@ export const foodQuestions = [
     emoji: '🥨',
     
     question: '¿Qué pan tiene forma de nudo?',
+    translation: 'What bread has a knot shape?',
     options: ['el pretzel', 'el bretzel', 'el nudo'],
     correctAnswer: 'el pretzel',
     hint: 'Twisted salty bread; often served with mustard in Germany.',
@@ -672,6 +728,7 @@ export const foodQuestions = [
     emoji: '🥯',
     
     question: '¿Qué pan redondo tiene agujero?',
+    translation: 'What round bread has a hole?',
     options: ['el bagel', 'la dona', 'el rosquilla'],
     correctAnswer: 'el bagel',
     hint: 'Round bread with a hole; boiled first, then baked.',
@@ -684,6 +741,7 @@ export const foodQuestions = [
     emoji: '🫓',
     
     question: '¿Qué pan delgado y plano se usa en tacos?',
+    translation: 'What thin and flat bread is used in tacos?',
     options: ['la tortilla', 'la pita', 'el naan'],
     correctAnswer: 'la tortilla',
     hint: 'Thin flatbread made from corn or wheat; used in many dishes.',
@@ -696,6 +754,7 @@ export const foodQuestions = [
     emoji: '🥞',
     
     question: '¿Qué comes en el desayuno con miel?',
+    translation: 'What do you eat for breakfast with honey?',
     options: ['los panqueques', 'las crepes', 'los waffles'],
     correctAnswer: 'los panqueques',
     hint: 'Flat, sweet breakfast cakes often served with syrup or honey.',
@@ -708,6 +767,7 @@ export const foodQuestions = [
     emoji: '🧇',
     
     question: '¿Qué tiene cuadros y se come con miel?',
+    translation: 'What has squares and is eaten with honey?',
     options: ['el waffle', 'el panqueque', 'la crepe'],
     correctAnswer: 'el waffle',
     hint: 'Grid-patterned breakfast pastry; crispy pockets hold syrup.',
@@ -720,6 +780,7 @@ export const foodQuestions = [
     emoji: '🍚',
     
     question: '¿Qué grano blanco se come en Asia?',
+    translation: 'What white grain is eaten in Asia?',
     options: ['el arroz', 'el trigo', 'la cebada'],
     correctAnswer: 'el arroz',
     hint: 'Small grains eaten worldwide; staple food in many Asian countries.',
@@ -732,6 +793,7 @@ export const foodQuestions = [
     emoji: '🥣',
     
     question: '¿Qué desayuno tiene leche y cereal?',
+    translation: 'What breakfast has milk and cereal?',
     options: ['el cereal', 'la avena', 'el muesli'],
     correctAnswer: 'el cereal',
     hint: 'Breakfast bowl with milk and processed grains or flakes.',
@@ -746,6 +808,7 @@ export const foodQuestions = [
     emoji: '🥛',
     
     question: '¿Qué bebida blanca dan las vacas?',
+    translation: 'What white drink do cows give?',
     options: ['la leche', 'el yogur', 'la crema'],
     correctAnswer: 'la leche',
     hint: 'White dairy drink produced by cows; base for many dairy products.',
@@ -758,6 +821,7 @@ export const foodQuestions = [
     emoji: '🧀',
     
     question: '¿Qué se hace con leche fermentada?',
+    translation: 'What is made with fermented milk?',
     options: ['el queso', 'el yogur', 'la crema'],
     correctAnswer: 'el queso',
     hint: 'Dairy product made from curdled milk; many styles and flavors.',
@@ -770,6 +834,7 @@ export const foodQuestions = [
     emoji: '🧈',
     
     question: '¿Qué untas en el pan tostado?',
+    translation: 'What do you spread on toast?',
     options: ['la mantequilla', 'la margarina', 'la mermelada'],
     correctAnswer: 'la mantequilla',
     hint: 'Creamy dairy spread used on toast or for cooking.',
@@ -781,6 +846,7 @@ export const foodQuestions = [
     id: 'food_069',
     emoji: '🍦',
     question: '¿Qué helado cremoso sale de una máquina?',
+    translation: 'What creamy ice cream comes from a machine?',
     options: ['el helado suave', 'el helado soft', 'el helado de máquina'],
     correctAnswer: 'el helado suave',
     hint: 'Soft serve ice cream - creamy frozen dessert dispensed from a machine in a swirl',
@@ -793,6 +859,7 @@ export const foodQuestions = [
     emoji: '🍨',
     
     question: '¿Qué postre frío se sirve en copa?',
+    translation: 'What cold dessert is served in a glass?',
     options: ['el helado', 'el sundae', 'la nieve'],
     correctAnswer: 'el helado',
     hint: 'Ice cream served in a dish with toppings and sauce (sundae style).',
@@ -804,6 +871,7 @@ export const foodQuestions = [
     id: 'food_071',
     emoji: '🧊',
     question: '¿Qué pones en las bebidas para enfriarlas?',
+    translation: 'What do you put in drinks to cool them?',
     options: ['el hielo', 'el agua fría', 'la nieve'],
     correctAnswer: 'el hielo',
     hint: 'Frozen water cubes added to drinks to keep them cold.',
@@ -816,6 +884,7 @@ export const foodQuestions = [
     emoji: '🍮',
     
     question: '¿Qué postre dulce tiene caramelo?',
+    translation: 'What sweet dessert has caramel?',
     options: ['el flan', 'el pudín', 'la natilla'],
     correctAnswer: 'el flan',
   hint: 'Caramel-topped custard dessert popular in many countries.',
@@ -829,6 +898,7 @@ export const foodQuestions = [
     id: 'food_074',
     emoji: '☕',
     question: '¿Qué bebida caliente tomas por la mañana?',
+    translation: 'What hot drink do you have in the morning?',
     options: ['el café', 'el té', 'el chocolate caliente'],
     correctAnswer: 'el café',
   hint: 'Hot, caffeinated drink often served as espresso, americano, or latte.',
@@ -841,6 +911,7 @@ export const foodQuestions = [
     emoji: '🍵',
     
     question: '¿Qué bebida caliente tiene hierbas?',
+    translation: 'What hot drink has herbs?',
     options: ['el té', 'la infusión', 'la manzanilla'],
     correctAnswer: 'el té',
   hint: 'Hot drink made by steeping leaves; varieties include green, black, and herbal.',
@@ -853,6 +924,7 @@ export const foodQuestions = [
     emoji: '🧃',
     
     question: '¿Qué bebes de frutas?',
+    translation: 'What do you drink made from fruits?',
     options: ['el jugo', 'el zumo', 'el néctar'],
     correctAnswer: 'el jugo',
   hint: 'Drink made from pressed fruits; often served at breakfast.',
@@ -865,6 +937,7 @@ export const foodQuestions = [
     emoji: '🥤',
     
     question: '¿Qué bebida gaseosa tomas con popote?',
+    translation: 'What fizzy drink do you have with a straw?',
     options: ['el refresco', 'la gaseosa', 'la soda'],
     correctAnswer: 'el refresco',
   hint: 'Sweet carbonated drink often served with a straw.',
@@ -877,6 +950,7 @@ export const foodQuestions = [
     emoji: '🧋',
     
     question: '¿Qué bebida taiwanesa tiene bolitas?',
+    translation: 'What Taiwanese drink has little balls?',
     options: ['té de burbujas', 'boba', 'té con leche'],
     correctAnswer: 'té de burbujas',
   hint: 'Tea with chewy tapioca pearls; popular Taiwanese drink.',
@@ -889,6 +963,7 @@ export const foodQuestions = [
     emoji: '🍶',
     
     question: '¿Qué bebida japonesa se hace de arroz?',
+    translation: 'What Japanese drink is made from rice?',
     options: ['el sake', 'el shochu', 'el amazake'],
     correctAnswer: 'el sake',
   hint: 'Japanese rice-based drink; served warm or chilled.',
@@ -901,6 +976,7 @@ export const foodQuestions = [
     emoji: '🍺',
     
     question: '¿Qué bebida alcohólica es amarilla?',
+    translation: 'What alcoholic drink is yellow?',
     options: ['la cerveza', 'la sidra', 'el vino blanco'],
     correctAnswer: 'la cerveza',
   hint: 'Fermented grain beverage; comes in pale, amber, or dark styles.',
@@ -913,6 +989,7 @@ export const foodQuestions = [
     emoji: '🍷',
     
     question: '¿Qué bebida se hace de uvas?',
+    translation: 'What drink is made from grapes?',
     options: ['el vino', 'el mosto', 'el jerez'],
     correctAnswer: 'el vino',
   hint: 'Alcoholic drink made from grapes; red, white, or rosé.',
@@ -925,6 +1002,7 @@ export const foodQuestions = [
     emoji: '🥂',
     
     question: '¿Qué bebes para celebrar?',
+    translation: 'What do you drink to celebrate?',
     options: ['el champán', 'el cava', 'el prosecco'],
     correctAnswer: 'el champán',
   hint: 'Sparkling wine served for celebrations; bubbly and festive.',
@@ -937,6 +1015,7 @@ export const foodQuestions = [
     emoji: '🍹',
     
     question: '¿Qué bebida tropical tiene sombrilla?',
+    translation: 'What tropical drink has an umbrella?',
     options: ['el cóctel', 'el trago', 'la bebida'],
     correctAnswer: 'el cóctel',
   hint: 'Mixed tropical drink often decorated with a small umbrella.',
@@ -948,6 +1027,7 @@ export const foodQuestions = [
     id: 'food_084',
     emoji: '🍸',
     question: '¿Qué bebida se sirve en copa triangular?',
+    translation: 'What drink is served in a triangular glass?',
     options: ['el martini', 'el cosmopolitan', 'el manhattan'],
     correctAnswer: 'el martini',
   hint: 'Classic mixed drink served in a V-shaped glass.',
@@ -959,6 +1039,7 @@ export const foodQuestions = [
     id: 'food_085',
     emoji: '🧉',
     question: '¿Qué bebida tradicional argentina se toma con bombilla?',
+    translation: 'What traditional Argentine drink is consumed with a bombilla?',
     options: ['el mate', 'el tereré', 'la yerba'],
     correctAnswer: 'el mate',
   hint: 'Traditional infusion sipped through a metal straw in a shared cup.',
@@ -972,6 +1053,7 @@ export const foodQuestions = [
     id: 'food_086',
     emoji: '🍰',
     question: '¿Qué postre dulce comes en cumpleaños?',
+    translation: 'What sweet dessert do you eat on birthdays?',
     options: ['el pastel', 'la tarta', 'el bizcocho'],
     correctAnswer: 'el pastel',
     hint: 'Baked celebration dessert often decorated for birthdays.',
@@ -983,6 +1065,7 @@ export const foodQuestions = [
     id: 'food_087',
     emoji: '🎂',
     question: '¿Qué tiene velas en tu cumpleaños?',
+    translation: 'What has candles on your birthday?',
     options: ['el pastel', 'la tarta', 'el bizcocho'],
     correctAnswer: 'el pastel',
     hint: 'Dessert topped with candles that you blow out to make a wish.',
@@ -994,6 +1077,7 @@ export const foodQuestions = [
     id: 'food_088',
     emoji: '🧁',
     question: '¿Qué es un pastel pequeño individual?',
+    translation: 'What is a small individual cake?',
     options: ['el cupcake', 'la magdalena', 'el muffin'],
     correctAnswer: 'el cupcake',
     hint: 'Individual mini cake with frosting; served in a paper cup.',
@@ -1006,6 +1090,7 @@ export const foodQuestions = [
     emoji: '🥧',
     
     question: '¿Qué postre tiene frutas en masa?',
+    translation: 'What dessert has fruits in dough?',
     options: ['el pay', 'la tarta', 'el pastel de manzana'],
     correctAnswer: 'el pay',
   hint: 'Dessert with a baked crust and a fruit or custard filling.',
@@ -1018,6 +1103,7 @@ export const foodQuestions = [
     emoji: '🍫',
     
     question: '¿Qué dulce marrón es de cacao?',
+    translation: 'What brown candy is made from cocoa?',
     options: ['el chocolate', 'el bombón', 'el cacao'],
     correctAnswer: 'el chocolate',
     hint: 'Sweet treat made from cacao; comes in dark, milk, or white varieties.',
@@ -1030,6 +1116,7 @@ export const foodQuestions = [
     emoji: '🍬',
     
     question: '¿Qué dulce pequeño chupas?',
+    translation: 'What small candy do you suck on?',
     options: ['el caramelo', 'la paleta', 'el chicle'],
     correctAnswer: 'el caramelo',
     hint: 'Small hard candy; also refers to melted sugar sauce in desserts.',
@@ -1042,6 +1129,7 @@ export const foodQuestions = [
     emoji: '🍭',
     
     question: '¿Qué dulce está en un palito?',
+    translation: 'What candy is on a stick?',
     options: ['la paleta', 'el chupete', 'el pirulí'],
     correctAnswer: 'la paleta',
     hint: 'Candy mounted on a stick; also used for frozen treats on sticks.',
@@ -1054,6 +1142,7 @@ export const foodQuestions = [
     emoji: '🍪',
     
     question: '¿Qué postre crujiente tiene chispas de chocolate?',
+    translation: 'What crunchy dessert has chocolate chips?',
     options: ['la galleta', 'la cookie', 'el biscocho'],
     correctAnswer: 'la galleta',
     hint: 'Small baked dessert; often has chocolate chips for crunch.',
@@ -1066,6 +1155,7 @@ export const foodQuestions = [
     emoji: '🍩',
     
     question: '¿Qué dulce redondo tiene agujero?',
+    translation: 'What round candy has a hole?',
     options: ['la dona', 'la rosquilla', 'el buñuelo'],
     correctAnswer: 'la dona',
     hint: 'Round fried dough with a hole; glazed or dusted with sugar.',
@@ -1078,6 +1168,7 @@ export const foodQuestions = [
     emoji: '🍯',
     
     question: '¿Qué hacen las abejas?',
+    translation: 'What do bees make?',
     options: ['la miel', 'la cera', 'el néctar'],
     correctAnswer: 'la miel',
     hint: 'Natural sweetener made by bees from flower nectar.',
@@ -1090,6 +1181,7 @@ export const foodQuestions = [
     emoji: '🍿',
     
     question: '¿Qué comes en el cine?',
+    translation: 'What do you eat at the movies?',
     options: ['las palomitas', 'los nachos', 'las papas fritas'],
     correctAnswer: 'las palomitas',
     hint: 'Puffed corn kernels enjoyed as a crunchy movie snack.',
@@ -1102,6 +1194,7 @@ export const foodQuestions = [
     emoji: '🥠',
     
     question: '¿Qué galleta china tiene mensaje dentro?',
+    translation: 'What Chinese cookie has a message inside?',
     options: ['la galleta de la fortuna', 'el fortune cookie', 'la galleta china'],
     correctAnswer: 'la galleta de la fortuna',
     hint: 'Crispy cookie that contains a small paper message inside.',
@@ -1113,6 +1206,7 @@ export const foodQuestions = [
     id: 'food_098',
     emoji: 'tostada.png',
     question: '¿Qué pan tostado comes en el desayuno?',
+    translation: 'What toasted bread do you eat for breakfast?',
     options: ['la tostada', 'el pan tostado', 'el toast'],
     correctAnswer: 'la tostada',
     hint: 'Toast - toasted bread commonly eaten at breakfast with butter or spreads',
@@ -1124,6 +1218,7 @@ export const foodQuestions = [
     id: 'food_100',
     emoji: '🥮',
     question: '¿Qué pastel chino se come en otoño?',
+    translation: 'What Chinese cake is eaten in autumn?',
     options: ['el pastel de luna', 'el mooncake', 'el pastel chino'],
     correctAnswer: 'el pastel de luna',
     hint: 'Dense round pastry eaten during the Mid-Autumn Festival; sweet filling inside.',
@@ -1137,6 +1232,7 @@ export const foodQuestions = [
     id: 'food_101',
     emoji: '🍑',
     question: '¿Qué fruta de verano tiene piel peluda?',
+    translation: 'What summer fruit has fuzzy skin?',
     options: ['el durazno', 'el melocotón', 'el albaricoque'],
     correctAnswer: 'el durazno',
     hint: 'Summer stone fruit with fuzzy skin and sweet, fragrant flesh.',
@@ -1148,6 +1244,7 @@ export const foodQuestions = [
     id: 'food_104',
     emoji: '🍋',
     question: '¿Qué fruta usas para hacer limonada?',
+    translation: 'What fruit do you use to make lemonade?',
     options: ['el limón', 'la lima', 'la toronja'],
     correctAnswer: 'el limón',
     hint: 'Citrus fruit used to make a tart, refreshing summer drink.',
@@ -1159,6 +1256,7 @@ export const foodQuestions = [
     id: 'food_105',
     emoji: '🥝',
     question: '¿Qué fruta peluda es verde por dentro?',
+    translation: 'What fuzzy fruit is green inside?',
     options: ['el kiwi', 'la guayaba', 'la papaya'],
     correctAnswer: 'el kiwi',
     hint: 'Small fruit with brown fuzzy skin and bright green flesh with tiny seeds.',
@@ -1170,6 +1268,7 @@ export const foodQuestions = [
     id: 'food_106',
     emoji: '🍐',
     question: '¿Qué fruta es dulce y tiene forma de bombilla?',
+    translation: 'What fruit is sweet and shaped like a light bulb?',
     options: ['la pera', 'la manzana', 'el higo'],
     correctAnswer: 'la pera',
     hint: 'Sweet fruit with a light-bulb shape; juicy and soft.',
@@ -1181,6 +1280,7 @@ export const foodQuestions = [
     id: 'food_107',
     emoji: '🍓',
     question: '¿Qué fruta roja tiene semillas por fuera?',
+    translation: 'What red fruit has seeds on the outside?',
     options: ['la fresa', 'la mora', 'la frambuesa'],
     correctAnswer: 'la fresa',
     hint: 'Red berry with seeds on the outside; aromatic and sweet.',
@@ -1192,6 +1292,7 @@ export const foodQuestions = [
     id: 'food_108',
     emoji: '🍇',
     question: '¿Qué fruta crece en racimos?',
+    translation: 'What fruit grows in bunches?',
     options: ['las uvas', 'las moras', 'los arándanos'],
     correctAnswer: 'las uvas',
     hint: 'Small round fruits that grow in clusters; used for wine and raisins.',
@@ -1203,6 +1304,7 @@ export const foodQuestions = [
     id: 'food_109',
     emoji: '🍒',
     question: '¿Qué fruta roja pequeña viene en pares?',
+    translation: 'What small red fruit comes in pairs?',
     options: ['la cereza', 'la aceituna', 'la ciruela'],
     correctAnswer: 'la cereza',
     hint: 'Small red stone fruit often seen in pairs; sweet or tart varieties.',
@@ -1214,6 +1316,7 @@ export const foodQuestions = [
     id: 'food_110',
     emoji: '🍈',
     question: '¿Qué fruta verde es dulce por dentro?',
+    translation: 'What green fruit is sweet on the inside?',
     options: ['el melón', 'la sandía', 'la guayaba'],
     correctAnswer: 'el melón',
     hint: 'Green-skinned melon with sweet, juicy interior.',
@@ -1228,6 +1331,7 @@ export const foodQuestions = [
     emoji: '🐟',
     
     question: '¿Qué comes del mar?',
+    translation: 'What do you eat from the sea?',
     options: ['el pescado', 'el salmón', 'el atún'],
     correctAnswer: 'el pescado',
     hint: 'Seafood commonly eaten grilled or baked; high in protein.',
@@ -1240,6 +1344,7 @@ export const foodQuestions = [
     emoji: '🦞',
     
     question: '¿Qué marisco rojo tiene pinzas?',
+    translation: 'What red seafood has claws?',
     options: ['la langosta', 'el bogavante', 'el cangrejo'],
     correctAnswer: 'la langosta',
     hint: 'Shellfish with large claws; turns bright red when cooked.',
@@ -1252,6 +1357,7 @@ export const foodQuestions = [
     emoji: '🦀',
     
     question: '¿Qué marisco camina de lado?',
+    translation: 'What seafood walks sideways?',
     options: ['el cangrejo', 'la jaiba', 'el centollo'],
     correctAnswer: 'el cangrejo',
     hint: 'Crustacean that scuttles sideways; hard shell and two claws.',
@@ -1264,6 +1370,7 @@ export const foodQuestions = [
     emoji: '🦑',
     
     question: '¿Qué marisco tiene tentáculos?',
+    translation: 'What seafood has tentacles?',
     options: ['el calamar', 'el pulpo', 'la sepia'],
     correctAnswer: 'el calamar',
     hint: 'Sea creature with long arms; commonly grilled or fried.',
@@ -1276,6 +1383,7 @@ export const foodQuestions = [
     emoji: '🦐',
     
     question: '¿Qué marisco pequeño se fríe?',
+    translation: 'What small seafood is fried?',
     options: ['el camarón', 'la gamba', 'el langostino'],
     correctAnswer: 'el camarón',
     hint: 'Small pink seafood often fried or grilled; turns pink when cooked.',
@@ -1288,6 +1396,7 @@ export const foodQuestions = [
     emoji: '🦪',
     
     question: '¿En qué marisco encuentras perlas?',
+    translation: 'In what seafood do you find pearls?',
     options: ['la ostra', 'la almeja', 'el mejillón'],
     correctAnswer: 'la ostra',
     hint: 'Shellfish sometimes containing pearls; eaten raw or cooked.',
@@ -1300,6 +1409,7 @@ export const foodQuestions = [
     emoji: '🍖',
     
     question: '¿Qué corte de carne tiene hueso?',
+    translation: 'What cut of meat has bone?',
     options: ['la chuleta', 'la costilla', 'el filete'],
     correctAnswer: 'la chuleta',
     hint: 'Meat cut with a bone attached; often grilled or pan-seared.',
@@ -1312,6 +1422,7 @@ export const foodQuestions = [
     emoji: '🥩',
     
     question: '¿Qué carne se asa a la parrilla?',
+    translation: 'What meat is grilled?',
     options: ['el bistec', 'el filete', 'la carne asada'],
     correctAnswer: 'el bistec',
   hint: 'Cut of meat cooked on a grill or pan; served as a hearty main.',
@@ -1324,6 +1435,7 @@ export const foodQuestions = [
     emoji: '🍗',
     
     question: '¿Qué parte del pollo se fríe?',
+    translation: 'What part of the chicken is fried?',
     options: ['el muslo', 'la pechuga', 'el ala'],
     correctAnswer: 'el muslo',
   hint: 'Juicy poultry cut often fried or roasted; flavorful and tender.',
@@ -1336,6 +1448,7 @@ export const foodQuestions = [
     emoji: '🥓',
     
     question: '¿Qué carne crujiente comes con huevos?',
+    translation: 'What crispy meat do you eat with eggs?',
     options: ['el tocino', 'la panceta', 'el jamón'],
     correctAnswer: 'el tocino',
   hint: 'Thin smoked pork slices that crisp when fried; breakfast favorite.',
@@ -1348,6 +1461,7 @@ export const foodQuestions = [
     emoji: '🍤',
     
     question: '¿Qué marisco empanizado es delicioso?',
+    translation: 'What breaded seafood is delicious?',
     options: ['el camarón empanizado', 'el camarón rebozado', 'el pescado empanizado'],
     correctAnswer: 'el camarón empanizado',
   hint: 'Seafood coated in crumbs and fried until crispy on the outside.',
@@ -1359,6 +1473,7 @@ export const foodQuestions = [
     id: 'food_122',
     emoji: 'salchicha.png',
     question: '¿Qué salchicha se come en pan?',
+    translation: 'What sausage is eaten in bread?',
     options: ['la salchicha', 'el chorizo', 'la longaniza'],
     correctAnswer: 'la salchicha',
   hint: 'Seasoned meat stuffed into a casing; eaten in a bun or with sides.',
@@ -1370,6 +1485,7 @@ export const foodQuestions = [
     id: 'food_123',
     emoji: 'vino-blanco.png',
     question: '¿Cómo se llama el vino elaborado con uvas amarillas?',
+    translation: 'What do you call wine made from yellow grapes?',
     options: ['vino blanco', 'vino tinto', 'vino rosado'],
     correctAnswer: 'vino blanco',
   hint: 'Wine made from green or yellow grapes; often served chilled.',
@@ -1382,6 +1498,7 @@ export const foodQuestions = [
     emoji: '🫔',
     
     question: '¿Qué comida mexicana está enrollada y bañada?',
+    translation: 'What Mexican food is rolled and covered in sauce?',
     options: ['la enchilada', 'el burrito', 'la chimichanga'],
     correctAnswer: 'la enchilada',
   hint: 'Rolled flatbread covered in a spicy sauce; baked or served warm.',
@@ -1394,6 +1511,7 @@ export const foodQuestions = [
     emoji: '🥟',
     
     question: '¿Qué comida china rellena se cuece al vapor?',
+    translation: 'What filled Chinese food is steamed?',
     options: ['el dumpling', 'el wonton', 'el baozi'],
     correctAnswer: 'el dumpling',
   hint: 'Small dough pockets with fillings; steamed, boiled, or fried.',
@@ -1408,6 +1526,7 @@ export const foodQuestions = [
     emoji: '🧂',
     
     question: '¿Qué condimento blanco usas para sazonar?',
+    translation: 'What white condiment do you use to season?',
     options: ['la sal', 'la pimienta', 'el azúcar'],
     correctAnswer: 'la sal',
   hint: 'Essential mineral used to season food; enhances flavor.',
@@ -1420,6 +1539,7 @@ export const foodQuestions = [
     emoji: '🫙',
     
     question: '¿En qué guardas la mermelada?',
+    translation: 'What do you keep jam in?',
     options: ['el frasco', 'el tarro', 'el bote'],
     correctAnswer: 'el frasco',
   hint: 'Glass container with a lid used for jams and preserves.',
@@ -1432,6 +1552,7 @@ export const foodQuestions = [
     emoji: '🍯',
     
     question: '¿Qué producto dulce hacen las abejas?',
+    translation: 'What sweet product do bees make?',
     options: ['la miel', 'el polen', 'la cera'],
     correctAnswer: 'la miel',
   hint: 'Natural sweetener made by bees from flower nectar.',
@@ -1444,6 +1565,7 @@ export const foodQuestions = [
     emoji: '🥫',
     
     question: '¿En qué recipiente viene la sopa enlatada?',
+    translation: 'What container does canned soup come in?',
     options: ['la lata', 'la caja', 'el frasco'],
     correctAnswer: 'la lata',
   hint: 'Metal container; canned foods are sealed and shelf-stable.',
@@ -1456,6 +1578,7 @@ export const foodQuestions = [
     emoji: '🫗',
     
     question: '¿Qué haces cuando sirves agua?',
+    translation: 'What do you do when you serve water?',
     options: ['verter', 'servir', 'echar'],
     correctAnswer: 'verter',
   hint: 'Action of pouring liquid from one container into another.',
@@ -1468,6 +1591,7 @@ export const foodQuestions = [
     emoji: '🧈',
     
     question: '¿Qué grasa amarilla untas en pan?',
+    translation: 'What yellow fat do you spread on bread?',
     options: ['la mantequilla', 'la margarina', 'la manteca'],
     correctAnswer: 'la mantequilla',
   hint: 'Yellow dairy fat used as a spread or for cooking.',
@@ -1480,6 +1604,7 @@ export const foodQuestions = [
     emoji: '🫚',
     
     question: '¿Qué raíz picante se usa en la cocina asiática?',
+    translation: 'What spicy root is used in Asian cooking?',
     options: ['el jengibre', 'la cúrcuma', 'el rábano'],
     correctAnswer: 'el jengibre',
   hint: 'Spicy, aromatic root used fresh or dried in cooking.',
@@ -1492,6 +1617,7 @@ export const foodQuestions = [
     emoji: '🌶️',
     
     question: '¿Qué ingrediente hace la comida picante?',
+    translation: 'What ingredient makes food spicy?',
     options: ['el chile', 'el jalapeño', 'el pimiento'],
     correctAnswer: 'el chile',
   hint: 'Contains capsaicin, which creates a spicy heat sensation.',
@@ -1504,6 +1630,7 @@ export const foodQuestions = [
     emoji: '🧄',
     
     question: '¿Qué bulbo blanco tiene olor fuerte?',
+    translation: 'What white bulb has a strong smell?',
     options: ['el ajo', 'la cebolla', 'el chalote'],
     correctAnswer: 'el ajo',
   hint: 'Pungent white bulb used to flavor many savory dishes.',
@@ -1516,6 +1643,7 @@ export const foodQuestions = [
     emoji: '🧅',
     
     question: '¿Qué verdura redonda te hace llorar?',
+    translation: 'What round vegetable makes you cry?',
     options: ['la cebolla', 'el puerro', 'el cebollino'],
     correctAnswer: 'la cebolla',
   hint: 'Releases compounds when cut that can make your eyes water.',
@@ -1528,6 +1656,7 @@ export const foodQuestions = [
     emoji: '🥜',
     
     question: '¿De qué nuez se hace la mantequilla de maní?',
+    translation: 'What nut is peanut butter made from?',
     options: ['el maní', 'el cacahuate', 'la almendra'],
     correctAnswer: 'el maní',
   hint: 'Technically a legume; ground into a creamy spread.',
@@ -1540,6 +1669,7 @@ export const foodQuestions = [
     emoji: '🌰',
     
     question: '¿Qué fruto seco comen las ardillas?',
+    translation: 'What nuts do squirrels eat?',
     options: ['la castaña', 'la bellota', 'la nuez'],
     correctAnswer: 'la castaña',
   hint: 'Nut often roasted in autumn; popular street snack in many cities.',
@@ -1552,6 +1682,7 @@ export const foodQuestions = [
     emoji: '🥥',
     
     question: '¿De qué fruta tropical sale leche vegetal?',
+    translation: 'What tropical fruit does plant milk come from?',
     options: ['el coco', 'la almendra', 'la avena'],
     correctAnswer: 'el coco',
     hint: 'Hard-shelled tropical fruit with white flesh and liquid; used for plant milk.',
@@ -1564,6 +1695,7 @@ export const foodQuestions = [
     emoji: '🍄',
     
     question: '¿Qué hongo comestible crece en bosques?',
+    translation: 'What edible fungus grows in forests?',
     options: ['la seta', 'el champiñón', 'el portobello'],
     correctAnswer: 'la seta',
   hint: 'Edible wild mushroom; “seta” is a generic term for mushrooms.',
@@ -1576,6 +1708,7 @@ export const foodQuestions = [
     emoji: '🫘',
     
     question: '¿Qué legumbre se usa en chili?',
+    translation: 'What legume is used in chili?',
     options: ['el frijol', 'la alubia', 'el garbanzo'],
     correctAnswer: 'el frijol',
   hint: 'Common bean used in spicy stews; often the red kidney variety.',
@@ -1591,6 +1724,7 @@ export const foodQuestions = [
     emoji: '🍙',
     
     question: '¿Qué triángulo de arroz japonés tiene alga?',
+    translation: 'What Japanese rice triangle has seaweed?',
     options: ['el onigiri', 'el musubi', 'el maki'],
     correctAnswer: 'el onigiri',
     hint: 'Rice triangle wrapped with seaweed; typically has a simple filling.',
@@ -1602,6 +1736,7 @@ export const foodQuestions = [
     id: 'food_143',
     emoji: '🍘',
     question: '¿Qué galleta japonesa de arroz es crujiente?',
+    translation: 'What Japanese rice cracker is crunchy?',
     options: ['el senbei', 'el arare', 'el okaki'],
     correctAnswer: 'el senbei',
     hint: 'Crispy Japanese rice cracker; sometimes flavored with soy sauce.',
@@ -1613,6 +1748,7 @@ export const foodQuestions = [
     id: 'food_144',
     emoji: '🍥',
     question: '¿Qué ingrediente blanco y rosado va en ramen?',
+    translation: 'What white and pink ingredient goes in ramen?',
     options: ['el narutomaki', 'el kamaboko', 'el surimi'],
     correctAnswer: 'el narutomaki',
     hint: 'White-and-pink fish cake with a spiral; commonly served in ramen.',
@@ -1624,6 +1760,7 @@ export const foodQuestions = [
     id: 'food_147',
     emoji: '🍛',
     question: '¿Qué plato picante indio tiene arroz?',
+    translation: 'What spicy Indian dish has rice?',
     options: ['el curry', 'el masala', 'el korma'],
     correctAnswer: 'el curry',
     hint: 'Spiced sauce dish; often served alongside or over rice.',
@@ -1635,6 +1772,7 @@ export const foodQuestions = [
     id: 'food_148',
     emoji: '🍲',
     question: '¿Qué plato caliente cocinas en olla?',
+    translation: 'What hot dish do you cook in a pot?',
     options: ['el estofado', 'el cocido', 'el potaje'],
     correctAnswer: 'el estofado',
     hint: 'Slow-cooked pot dish with meat and vegetables in broth.',
@@ -1646,6 +1784,7 @@ export const foodQuestions = [
     id: 'food_149',
     emoji: '🫕',
     question: '¿Qué comida suiza sumerges en queso derretido?',
+    translation: 'What Swiss food do you dip in melted cheese?',
     options: ['el fondue', 'la raclette', 'el fondue de queso'],
     correctAnswer: 'el fondue',
     hint: 'Melted cheese served for dipping bread or vegetables; Swiss dish.',
@@ -1657,6 +1796,7 @@ export const foodQuestions = [
     id: 'food_150',
     emoji: '🥘',
     question: '¿Qué plato español tiene azafrán?',
+    translation: 'What Spanish dish has saffron?',
     options: ['la paella', 'el arroz al horno', 'la fideuá'],
     correctAnswer: 'la paella',
     hint: 'Saffron-tinted rice dish cooked in a wide pan; includes seafood or meats.',
@@ -1668,6 +1808,7 @@ export const foodQuestions = [
     id: 'food_151',
     emoji: '🍝',
     question: '¿Qué fideos italianos son largos y delgados?',
+    translation: 'What Italian noodles are long and thin?',
     options: ['el espagueti', 'los tallarines', 'los fideos'],
     correctAnswer: 'el espagueti',
     hint: 'Long thin pasta noodles',
@@ -1679,6 +1820,7 @@ export const foodQuestions = [
     id: 'food_152',
     emoji: '🥗',
     question: '¿Qué ensalada romana tiene crutones?',
+    translation: 'What Roman salad has croutons?',
     options: ['la César', 'la ensalada César', 'la ensalada romana'],
     correctAnswer: 'la César',
     hint: 'Classic salad with romaine, croutons, cheese, and a tangy dressing.',
@@ -1690,6 +1832,7 @@ export const foodQuestions = [
     id: 'food_153',
     emoji: 'hummus.png',
     question: '¿Qué comida de Oriente Medio se elabora únicamente con garbanzos?',
+    translation: 'What Middle Eastern food is made only from chickpeas?',
     options: ['hummus', 'el baba ganoush','el mutabbal'],
     correctAnswer: 'hummus',
     hint: 'Creamy chickpea spread with sesame paste and olive oil.',
@@ -1701,6 +1844,7 @@ export const foodQuestions = [
     id: 'food_154',
     emoji: '🌮',
     question: '¿Qué comida mexicana tiene tortilla crujiente?',
+    translation: 'What Mexican food has a crunchy tortilla?',
     options: ['el taco duro', 'la tostada', 'el taco dorado'],
     correctAnswer: 'el taco duro',
     hint: 'Crunchy fried tortilla shell filled with savory ingredients.',
@@ -1712,6 +1856,7 @@ export const foodQuestions = [
     id: 'food_155',
     emoji: '🧆',
     question: '¿Qué bola frita del Medio Oriente es vegetariana?',
+    translation: 'What fried Middle Eastern ball is vegetarian?',
     options: ['el falafel', 'el taameya', 'la kofta'],
     correctAnswer: 'el falafel',
     hint: 'Deep-fried chickpea or fava bean balls; vegetarian.',
@@ -1725,6 +1870,7 @@ export const foodQuestions = [
     id: 'food_159',
     emoji: 'especias.png',
     question: '¿Qué se añade a la comida para el sabor?',
+    translation: 'What is added to food for flavor?',
     options: ['las especias', 'la sal', 'el condimento'],
     correctAnswer: 'las especias',
     hint: 'Spices - powdered or dried seasonings like cumin, paprika, etc.',
@@ -1736,6 +1882,7 @@ export const foodQuestions = [
     id: 'food_160',
     emoji: 'la-salsa-picante.png',
     question: '¿Qué salsa roja picante acompaña muchas comidas?',
+    translation: 'What spicy red sauce accompanies many meals?',
     options: ['la salsa picante', 'la salsa de tomate', 'la salsa de chile'],
     correctAnswer: 'la salsa picante',
     hint: 'Hot sauce - spicy condiment made from peppers, adds heat to dishes',
@@ -1747,6 +1894,7 @@ export const foodQuestions = [
     id: 'food_161',
     emoji: 'ketchup.png',
     question: '¿Qué condimento rojo viene en una botella?',
+    translation: 'What red condiment comes in a bottle?',
     options: ['la salsa de tomate', 'la catsup', 'el ketchup'],
     correctAnswer: 'el ketchup',
     hint: 'Ketchup - tomato condiment, popular on fries and burgers, American origin',
@@ -1758,6 +1906,7 @@ export const foodQuestions = [
     id: 'food_162',
     emoji: '🫛',
     question: '¿Qué verdura verde y pequeña viene en vaina?',
+    translation: 'What small green vegetable comes in a pod?',
     options: ['los guisantes', 'los chícharos', 'las arvejas'],
     correctAnswer: 'los guisantes',
     hint: 'Peas - small green legumes in pods, "chícharos" in Mexico, "arvejas" in South America',
@@ -1769,6 +1918,7 @@ export const foodQuestions = [
     id: 'food_163',
     emoji: '🍼',
     question: '¿Qué toman los bebés?',
+    translation: 'What do babies drink?',
     options: ['la fórmula para bebés', 'la leche de fórmula', 'la fórmula infantil'],
     correctAnswer: 'la fórmula para bebés',
     hint: 'Baby formula - infant milk substitute, nutritious for babies',
