@@ -3,7 +3,7 @@
  * Category: animals
  */
 
-export const animalsQuestions = [
+export const plantsAnimalsQuestions = [
 {
     id: 'animals_001',
     emoji: '🐕',
@@ -13,7 +13,7 @@ export const animalsQuestions = [
     correctAnswer: 'el perro',
     hint: 'Dog - man\'s best friend, "canis" in Latin',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -25,7 +25,7 @@ export const animalsQuestions = [
     correctAnswer: 'el gato',
     hint: 'Cat - independent pet, "felino" in scientific terms',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -37,7 +37,7 @@ export const animalsQuestions = [
     correctAnswer: 'el ratón',
     hint: 'Mouse - small rodent, "ratoncillo" is diminutive',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -49,7 +49,7 @@ export const animalsQuestions = [
     correctAnswer: 'la rata',
     hint: 'Rat - larger rodent, intelligent, often kept as pets',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -61,7 +61,7 @@ export const animalsQuestions = [
     correctAnswer: 'el hamster',
     hint: 'Hamster - small rodent, cheek pouches, stores food, popular pet',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -73,7 +73,7 @@ export const animalsQuestions = [
     correctAnswer: 'la ardilla',
     hint: 'Squirrel - bushy tail, climbs trees, collects nuts',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -85,7 +85,7 @@ export const animalsQuestions = [
     correctAnswer: 'el conejo',
     hint: 'Rabbit - hops around, "conej�🐇illo de indias" is guinea pig',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -97,7 +97,7 @@ export const animalsQuestions = [
     correctAnswer: 'el león',
     hint: 'Lion - has a mane, roars loudly, symbol of courage',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -109,7 +109,7 @@ export const animalsQuestions = [
     correctAnswer: 'el tigre',
     hint: 'Tiger - striped big cat, endangered species',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -121,7 +121,7 @@ export const animalsQuestions = [
     correctAnswer: 'el elefante',
     hint: 'Elephant - largest land animal, has tusks',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -133,7 +133,7 @@ export const animalsQuestions = [
     correctAnswer: 'la jirafa',
     hint: 'Giraffe - tallest land animal, African herbivore',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -145,7 +145,7 @@ export const animalsQuestions = [
     correctAnswer: 'la cebra',
     hint: 'Zebra - related to horses, African animal, striped',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -157,7 +157,7 @@ export const animalsQuestions = [
     correctAnswer: 'el rinoceronte',
     hint: 'Rhinoceros - large African animal, endangered',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -169,7 +169,7 @@ export const animalsQuestions = [
     correctAnswer: 'el oso',
     hint: 'Bear - large mammal, hibernates in winter',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -181,7 +181,7 @@ export const animalsQuestions = [
     correctAnswer: 'el zorro',
     hint: 'Fox - cunning animal, reddish fur, similar to dog',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -193,7 +193,7 @@ export const animalsQuestions = [
     correctAnswer: 'el lobo',
     hint: 'Wolf - wild canine, hunts in packs, endangered in many places',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -205,7 +205,7 @@ export const animalsQuestions = [
     correctAnswer: 'la vaca',
     hint: 'Cow - dairy animal, bovine, "ternera" for calf',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -217,7 +217,7 @@ export const animalsQuestions = [
     correctAnswer: 'el cerdo',
     hint: 'Pig - farm animal, curly tail, "cochinillo" for piglet',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -229,7 +229,7 @@ export const animalsQuestions = [
     correctAnswer: 'la oveja',
     hint: 'Sheep - woolly farm animal, "carnero" for ram',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -241,7 +241,7 @@ export const animalsQuestions = [
     correctAnswer: 'la cabra',
     hint: 'Goat - climbs steep terrain, agile, produces milk',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -253,7 +253,7 @@ export const animalsQuestions = [
     correctAnswer: 'el caballo',
     hint: 'Horse - large hoofed animal, rides quickly, "yegua" for mare',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -265,7 +265,7 @@ export const animalsQuestions = [
     correctAnswer: 'el canguro',
     hint: 'Kangaroo - jumps on hind legs, Australian, carries baby in pouch',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -277,7 +277,7 @@ export const animalsQuestions = [
     correctAnswer: 'el koala',
     hint: 'Koala - looks like bear, eats eucalyptus leaves, Australian marsupial',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -289,7 +289,7 @@ export const animalsQuestions = [
     correctAnswer: 'el oso panda',
     hint: 'Panda - endangered, eats bamboo, from China',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -301,7 +301,7 @@ export const animalsQuestions = [
     correctAnswer: 'la serpiente',
     hint: 'Snake - can be kept as exotic pet, some docile species',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -313,7 +313,7 @@ export const animalsQuestions = [
     correctAnswer: 'el jaguár',
     hint: 'Jaguar - spotted big cat, largest cat in Americas, endangered',
     points: 10,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'medium',
   },
   {
@@ -325,7 +325,7 @@ export const animalsQuestions = [
     correctAnswer: 'el mono',
     hint: 'Monkey - primate with tail, swings in trees, intelligent',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -337,7 +337,7 @@ export const animalsQuestions = [
     correctAnswer: 'el gorila',
     hint: 'Gorilla - largest primate, endangered, knuckle-walks, very strong',
     points: 10,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'medium',
   },
   {
@@ -349,7 +349,7 @@ export const animalsQuestions = [
     correctAnswer: 'el águila',
     hint: 'Eagle - large bird of prey, symbol of strength and freedom',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -361,7 +361,7 @@ export const animalsQuestions = [
     correctAnswer: 'el búho',
     hint: 'Owl - nocturnal bird of prey, large eyes, rotates head',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -373,7 +373,7 @@ export const animalsQuestions = [
     correctAnswer: 'el loro',
     hint: 'Parrot - intelligent, colorful, mimics sounds and words',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -385,7 +385,7 @@ export const animalsQuestions = [
     correctAnswer: 'el pato',
     hint: 'Duck - waterfowl, quacks, waddles on land',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -397,7 +397,7 @@ export const animalsQuestions = [
     correctAnswer: 'el cisne',
     hint: 'Swan - large water bird, elegant, white or black species',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -409,7 +409,7 @@ export const animalsQuestions = [
     correctAnswer: 'el pavo real',
     hint: 'Peacock - displays colorful feathers, Indian bird, very beautiful',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -421,7 +421,7 @@ export const animalsQuestions = [
     correctAnswer: 'la tortuga',
     hint: 'Turtle - reptile with hard shell, can live long time',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -433,7 +433,7 @@ export const animalsQuestions = [
     correctAnswer: 'la lagartija',
     hint: 'Lizard - small reptile, can detach tail, sunbathes',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -445,7 +445,7 @@ export const animalsQuestions = [
     correctAnswer: 'el cocodrilo',
     hint: 'Crocodile - large reptile, sharp teeth, ancient predator',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -457,7 +457,7 @@ export const animalsQuestions = [
     correctAnswer: 'el pulpo',
     hint: 'Octopus - eight tentacles, intelligent, changes color',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -469,7 +469,7 @@ export const animalsQuestions = [
     correctAnswer: 'el calamar',
     hint: 'Squid - similar to octopus, ten tentacles, emits ink',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -481,7 +481,7 @@ export const animalsQuestions = [
     correctAnswer: 'el pez',
     hint: 'Fish - aquatic animal, has gills and fins, "pescado" means cooked fish',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -493,7 +493,7 @@ export const animalsQuestions = [
     correctAnswer: 'el tiburón',
     hint: 'Shark - dangerous predator, sharp teeth, appears in all oceans',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -505,7 +505,7 @@ export const animalsQuestions = [
     correctAnswer: 'la ballena',
     hint: 'Whale - largest animal on Earth, marine mammal, endangered species',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -517,7 +517,7 @@ export const animalsQuestions = [
     correctAnswer: 'el delfín',
     hint: 'Dolphin - intelligent marine mammal, friendly to humans, playful',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -529,7 +529,7 @@ export const animalsQuestions = [
     correctAnswer: 'la foca',
     hint: 'Seal - marine mammal, whiskers, lives in cold waters',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -541,7 +541,7 @@ export const animalsQuestions = [
     correctAnswer: 'el cangrejo',
     hint: 'Crab - crustacean with claws, walks sideways, edible',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -553,7 +553,7 @@ export const animalsQuestions = [
     correctAnswer: 'la langosta',
     hint: 'Lobster - large crustacean, delicacy, expensive',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -565,7 +565,7 @@ export const animalsQuestions = [
     correctAnswer: 'el grillo',
     hint: 'Cricket - insect, chirps at night, jumps, used in sports',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -577,7 +577,7 @@ export const animalsQuestions = [
     correctAnswer: 'la mariposa',
     hint: 'Butterfly - colorful insect, goes through metamorphosis',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -589,7 +589,7 @@ export const animalsQuestions = [
     correctAnswer: 'la abeja',
     hint: 'Bee - produces honey, pollinates flowers, lives in colonies',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -601,7 +601,7 @@ export const animalsQuestions = [
     correctAnswer: 'la hormiga',
     hint: 'Ant - social insect, works in colonies, carries leaves',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -613,7 +613,7 @@ export const animalsQuestions = [
     correctAnswer: 'el saltamontes',
     hint: 'Grasshopper - jumps far, green color, eats plants',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -625,7 +625,7 @@ export const animalsQuestions = [
     correctAnswer: 'la oruga',
     hint: 'Caterpillar - larva stage of butterfly, eats leaves, colorful',
     points: 10,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'medium',
   },
   {
@@ -637,7 +637,7 @@ export const animalsQuestions = [
     correctAnswer: 'el murciélago',
     hint: 'Bat - only mammal that flies, uses echolocation, nocturnal',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -649,7 +649,7 @@ export const animalsQuestions = [
     correctAnswer: 'el cisne',
     hint: 'Swan - large water bird, elegant, white or black species',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -661,7 +661,7 @@ export const animalsQuestions = [
     correctAnswer: 'el pavo real',
     hint: 'Peacock - displays colorful feathers, Indian bird, very beautiful',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -673,7 +673,7 @@ export const animalsQuestions = [
     correctAnswer: 'la tortuga',
     hint: 'Turtle - reptile with hard shell, can live long time',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -685,7 +685,7 @@ export const animalsQuestions = [
     correctAnswer: 'el pavo',
     hint: 'Turkey - large bird traditionally eaten at Thanksgiving and Christmas',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -697,7 +697,7 @@ export const animalsQuestions = [
     correctAnswer: 'el toro',
     hint: 'Bull - male cow, strong and powerful animal',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -709,7 +709,7 @@ export const animalsQuestions = [
     correctAnswer: 'el gallo',
     hint: 'Rooster - male chicken, crows at dawn, has colorful feathers',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -721,7 +721,7 @@ export const animalsQuestions = [
     correctAnswer: 'la gallina',
     hint: 'Chicken/Hen - farm bird, lays eggs, female of rooster',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -733,7 +733,7 @@ export const animalsQuestions = [
     correctAnswer: 'el pollito',
     hint: 'Chick - baby bird that hatches from egg, young chicken',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -745,7 +745,7 @@ export const animalsQuestions = [
     correctAnswer: 'el zorrillo',
     hint: 'Skunk - black and white striped animal, sprays bad smell for defense',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -757,7 +757,7 @@ export const animalsQuestions = [
     correctAnswer: 'el pingüino',
     hint: 'Penguin - flightless bird, swims in cold waters, lives in Antarctica',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -769,7 +769,7 @@ export const animalsQuestions = [
     correctAnswer: 'la nutria',
     hint: 'Otter - playful aquatic mammal, swims in rivers and oceans, holds hands while sleeping',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -781,7 +781,7 @@ export const animalsQuestions = [
     correctAnswer: 'el gorrión',
     hint: 'Sparrow - small brown bird, common in cities and towns, chirps frequently',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -793,7 +793,7 @@ export const animalsQuestions = [
     correctAnswer: 'el ganso',
     hint: 'Goose - waterfowl with long neck, honks loudly, can be aggressive',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -805,7 +805,7 @@ export const animalsQuestions = [
     correctAnswer: 'la mosca',
     hint: 'Fly - common household insect, buzzes around, attracted to food',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -817,7 +817,7 @@ export const animalsQuestions = [
     correctAnswer: 'la rana',
     hint: 'Frog - amphibian that jumps, lives near water, croaks loudly',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -829,7 +829,7 @@ export const animalsQuestions = [
     correctAnswer: 'el escarabajo',
     hint: 'Beetle - insect with hard shell, many species, some can fly',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -841,7 +841,7 @@ export const animalsQuestions = [
     correctAnswer: 'el dinosaurio',
     hint: 'Dinosaur - prehistoric reptile, extinct millions of years ago, many species',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -853,7 +853,7 @@ export const animalsQuestions = [
     correctAnswer: 'el coral',
     hint: 'Coral - marine organism, forms reefs, provides habitat for fish',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -865,7 +865,7 @@ export const animalsQuestions = [
     correctAnswer: 'el orangután',
     hint: 'Orangutan - great ape with orange fur, lives in trees, found in Southeast Asia',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -877,7 +877,7 @@ export const animalsQuestions = [
     correctAnswer: 'el alce',
     hint: 'Moose - largest deer species, has big antlers, lives in cold forests',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -889,7 +889,7 @@ export const animalsQuestions = [
     correctAnswer: 'el ciervo',
     hint: 'Deer - graceful animal with antlers, lives in forests and meadows',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -901,7 +901,7 @@ export const animalsQuestions = [
     correctAnswer: 'el perro guía',
     hint: 'Guide dog - service dog trained to help people with disabilities, especially the blind',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -913,7 +913,7 @@ export const animalsQuestions = [
     correctAnswer: 'el flamenco',
     hint: 'Flamingo - pink bird with long legs, stands on one leg, lives near water',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -925,7 +925,7 @@ export const animalsQuestions = [
     correctAnswer: 'el castor',
     hint: 'Beaver - builds dams in rivers, has flat tail, strong teeth, gnaws trees',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -937,7 +937,7 @@ export const animalsQuestions = [
     correctAnswer: 'el nido',
     hint: 'Nest - birds build it with twigs and grass, used for laying eggs and raising chicks',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -949,7 +949,7 @@ export const animalsQuestions = [
     correctAnswer: 'el oso polar',
     hint: 'Polar bear - white bear, lives in Arctic, excellent swimmer, hunts seals',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -961,7 +961,7 @@ export const animalsQuestions = [
     correctAnswer: 'el guepardo',
     hint: 'Cheetah - fastest land animal, spotted coat, slender build',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -973,7 +973,7 @@ export const animalsQuestions = [
     correctAnswer: 'la cebra',
     hint: 'Zebra - black and white stripes, lives in Africa, related to horses',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -985,7 +985,7 @@ export const animalsQuestions = [
     correctAnswer: 'la jirafa',
     hint: 'Giraffe - tallest animal, long neck to reach high leaves, lives in Africa',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -997,7 +997,7 @@ export const animalsQuestions = [
     correctAnswer: 'el rinoceronte',
     hint: 'Rhinoceros - large animal with horn on nose, thick skin, herbivore',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -1009,7 +1009,7 @@ export const animalsQuestions = [
     correctAnswer: 'el hipopótamo',
     hint: 'Hippopotamus - large river animal, semi-aquatic, powerful jaws, lives in Africa',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -1021,7 +1021,7 @@ export const animalsQuestions = [
     correctAnswer: 'el camello',
     hint: 'Camel - has humps for storing fat, survives in desert, can go without water for days',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -1033,7 +1033,7 @@ export const animalsQuestions = [
     correctAnswer: 'el camello bactriano',
     hint: 'Bactrian camel - has two humps, from Central Asia, adapted to cold deserts',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'medium',
   },
   {
@@ -1045,7 +1045,7 @@ export const animalsQuestions = [
     correctAnswer: 'la llama',
     hint: 'Llama - South American camelid, used as pack animal, lives in Andes mountains',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -1057,7 +1057,7 @@ export const animalsQuestions = [
     correctAnswer: 'el canguro',
     hint: 'Kangaroo - hops on powerful hind legs, has pouch for babies, from Australia',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -1069,7 +1069,7 @@ export const animalsQuestions = [
     correctAnswer: 'el koala',
     hint: 'Koala - sleeps up to 20 hours, eats eucalyptus, lives in Australia',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -1081,7 +1081,7 @@ export const animalsQuestions = [
     correctAnswer: 'el perezoso',
     hint: 'Sloth - extremely slow movement, hangs from trees, lives in rainforests',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -1093,7 +1093,7 @@ export const animalsQuestions = [
     correctAnswer: 'la nutria',
     hint: 'Otter - playful aquatic mammal, uses rocks to open shells, lives near water',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -1105,7 +1105,7 @@ export const animalsQuestions = [
     correctAnswer: 'el zorrillo',
     hint: 'Skunk - sprays strong-smelling liquid as defense, black with white stripes',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -1117,7 +1117,7 @@ export const animalsQuestions = [
     correctAnswer: 'el tejón',
     hint: 'Badger - nocturnal, lives in burrows called setts, distinctive facial stripes',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'medium',
   },
   {
@@ -1129,7 +1129,7 @@ export const animalsQuestions = [
     correctAnswer: 'el mapache',
     hint: 'Raccoon - masked face, ringed tail, intelligent, washes food before eating',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -1141,7 +1141,7 @@ export const animalsQuestions = [
     correctAnswer: 'el caimán',
     hint: 'Alligator - large reptile, lives in swamps, powerful jaws, from Americas',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'medium',
   },
   {
@@ -1153,7 +1153,7 @@ export const animalsQuestions = [
     correctAnswer: 'la tortuga',
     hint: 'Turtle - reptile with protective shell, can be aquatic or terrestrial, long-lived',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -1165,7 +1165,7 @@ export const animalsQuestions = [
     correctAnswer: 'el camaleón',
     hint: 'Chameleon - changes color for camouflage and communication, long tongue, swivel eyes',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -1177,7 +1177,7 @@ export const animalsQuestions = [
     correctAnswer: 'el tiburón',
     hint: 'Shark - large predatory fish, multiple rows of teeth, cartilage skeleton',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -1189,7 +1189,7 @@ export const animalsQuestions = [
     correctAnswer: 'la ballena azul',
     hint: 'Blue whale - largest animal ever, can weigh up to 200 tons, eats krill',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
   {
@@ -1201,7 +1201,7 @@ export const animalsQuestions = [
     correctAnswer: 'el murciélago',
     hint: 'Bat - only flying mammal, uses echolocation, often nocturnal, eats insects or fruit',
     points: 5,
-    category: 'animals',
+    category: 'fauna_animals',
     difficulty: 'easy',
   },
 ];

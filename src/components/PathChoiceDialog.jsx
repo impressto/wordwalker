@@ -9,6 +9,7 @@ import { useState, useEffect } from 'react';
 import { getAllCategoryIds } from '../config/questions';
 import { isCategoryFullyMastered, getCategoryCorrectAnswerCount, getCategoryQuestionCount } from '../utils/questionTracking';
 import { FLASH_CARDS_ENABLED } from '../config/flashCardsConfig';
+import { getCategoryIconPath, isEmojiSvg } from '../utils/emojiUtils';
 
 const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpenShop, onOpenFlashCards, currentCategory = null, correctAnswersByCategory = {}, completedCategories = new Set() }) => {
   const [dialogTop, setDialogTop] = useState('100px');
@@ -194,7 +195,20 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
           }
         }}
       >
-        <span style={{ fontSize: '32px' }}>{category.emoji}</span>
+        {/* Render category icon - either as image or emoji */}
+        {isEmojiSvg(category.emoji) ? (
+          <img 
+            src={getCategoryIconPath(category.emoji)} 
+            alt={category.name}
+            style={{ 
+              width: '48px', 
+              height: '48px',
+              objectFit: 'contain'
+            }}
+          />
+        ) : (
+          <span style={{ fontSize: '32px' }}>{category.emoji}</span>
+        )}
         <span style={{ fontSize: '14px', textAlign: 'center' }}>{category.displayName}</span>
         <span style={{ 
           fontSize: '11px', 

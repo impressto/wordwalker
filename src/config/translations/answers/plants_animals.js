@@ -5,7 +5,7 @@
  * Total translations: 74
  */
 
-export const animalsAnswerTranslations = {
+export const plantsAnimalsAnswerTranslations = {
   "el perro": "the dog",
   "el gato": "the cat",
   "el ratón": "the mouse",

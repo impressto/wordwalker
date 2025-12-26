@@ -86,15 +86,15 @@ Import the questions and translations:
 
 ```javascript
 // Add imports
-import { animalsQuestions } from '../config/questions/animals';
-import { animalsAnswerTranslations } from '../config/translations/answers/animals';
+import { plantsAnimalsQuestions } from '../config/questions/plants_animals';
+import { plantsAnimalsAnswerTranslations } from '../config/translations/answers/plants_animals';
 
 // Update data selection logic
 const questionsData = category === 'food' ? foodQuestions 
                     : category === 'animals' ? animalsQuestions 
                     : [];
 const answerTranslations = category === 'food' ? foodAnswerTranslations
-                          : category === 'animals' ? animalsAnswerTranslations
+                          : category === 'plants_animals' ? plantsAnimalsAnswerTranslations
                           : {};
 ```
 

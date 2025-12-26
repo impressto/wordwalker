@@ -86,13 +86,33 @@ const QuestionDialog = ({
   // Get the hint from the question object, or fallback to a generic hint
   const hint = currentQuestion.hint || 'Think about the question carefully';
   
-  // Calculate potential points (accounting for hint usage)
-  const potentialPoints = hintUsed 
+  // Calculate penalty for next wrong answer (escalating system)
+  // 1st wrong: 1/2 points, 2nd wrong: full points, 3rd+ wrong: full points
+  const wrongAnswerCount = incorrectAnswers.length;
+  let nextPenalty;
+  if (wrongAnswerCount === 0) {
+    nextPenalty = Math.ceil(currentQuestion.points / 2);
+  } else {
+    nextPenalty = currentQuestion.points; // Full points for 2nd+ wrong answers
+  }
+  
+  // Calculate total penalties accumulated so far (with escalating system)
+  let totalPenalties = 0;
+  for (let i = 0; i < incorrectAnswers.length; i++) {
+    if (i === 0) {
+      totalPenalties += Math.ceil(currentQuestion.points / 2);
+    } else {
+      totalPenalties += currentQuestion.points;
+    }
+  }
+  
+  // Calculate current potential points after all penalties
+  // Start with original points (or half if hint used), then subtract all penalties
+  const basePoints = hintUsed 
     ? Math.floor(currentQuestion.points / 2) 
     : currentQuestion.points;
   
-  // Calculate penalty for displaying on hint button (negative value)
-  const penalty = Math.floor(currentQuestion.points / 2);
+  const currentPotentialPoints = basePoints - totalPenalties;
 
   return (
     <div id="question-dialog" style={{
@@ -166,7 +186,7 @@ const QuestionDialog = ({
             }
           }}
         >
-          💡 Show English (-{penalty}pts)
+          💡 Show English (-{Math.ceil(currentQuestion.points / 2)}pts)
         </button>
       )}
       
@@ -200,7 +220,7 @@ const QuestionDialog = ({
             textAlign: 'center',
             fontWeight: 'bold',
           }}>
-            Points reduced to {potentialPoints}
+            Points reduced to {basePoints}
           </div>
         </div>
       )}
@@ -270,8 +290,104 @@ const QuestionDialog = ({
             fontSize: '16px',
             fontWeight: 'bold',
           }}>
-            Try again! (No points for incorrect answers)
+            Try again! (Next wrong: -{nextPenalty} pts)
           </div>
+        </div>
+      )}
+      
+      {/* Points Indicator - show at bottom on first attempt, or if there are penalties */}
+      {(firstAttempt || incorrectAnswers.length > 0) && (
+        <div id="potential-points" style={{
+          marginTop: '8px',
+          padding: '6px 12px',
+          backgroundColor: currentPotentialPoints < 0 
+            ? 'rgba(211, 47, 47, 0.15)' 
+            : (hintUsed || incorrectAnswers.length > 0) 
+              ? 'rgba(255, 152, 0, 0.15)' 
+              : 'rgba(76, 175, 80, 0.15)',
+          borderRadius: '8px',
+          border: `2px solid ${
+            currentPotentialPoints < 0 
+              ? '#d32f2f' 
+              : (hintUsed || incorrectAnswers.length > 0) 
+                ? '#FF9800' 
+                : '#4CAF50'
+          }`,
+          animation: (hintUsed || incorrectAnswers.length > 0) ? 'pointsUpdate 0.4s ease-out' : 'none',
+        }}>
+          <style>
+            {`
+              @keyframes pointsUpdate {
+                0% {
+                  transform: scale(1);
+                }
+                50% {
+                  transform: scale(1.1);
+                  background-color: rgba(255, 152, 0, 0.3);
+                }
+                100% {
+                  transform: scale(1);
+                }
+              }
+            `}
+          </style>
+          <div id="potential-points-value" style={{
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: '6px',
+            color: currentPotentialPoints < 0 
+              ? '#d32f2f' 
+              : (hintUsed || incorrectAnswers.length > 0) 
+                ? '#E65100' 
+                : '#2E7D32',
+            fontSize: '15px',
+            fontWeight: 'bold',
+          }}>
+            <span id="potential-points-icon" style={{ fontSize: '18px' }}>
+              {currentPotentialPoints < 0 ? '⚠️' : '💎'}
+            </span>
+            <span id="potential-points-text">
+              {currentPotentialPoints < 0 
+                ? `${currentPotentialPoints} points (PENALTY!)` 
+                : firstAttempt && incorrectAnswers.length === 0 && !hintUsed
+                  ? `${currentPotentialPoints} points available`
+                  : `${currentPotentialPoints} points`
+              }
+            </span>
+          </div>
+          
+          {/* Show breakdown of penalties */}
+          {(hintUsed || incorrectAnswers.length > 0) && (
+            <div id="potential-points-breakdown" style={{
+              fontSize: '11px',
+              color: '#d32f2f',
+              textAlign: 'center',
+              marginTop: '4px',
+              lineHeight: '1.3',
+            }}>
+              {hintUsed && (
+                <div style={{ fontStyle: 'italic' }}>
+                  Hint: -{Math.ceil(currentQuestion.points / 2)} pts
+                </div>
+              )}
+              {incorrectAnswers.length > 0 && (
+                <div style={{ fontStyle: 'italic' }}>
+                  {incorrectAnswers.length} wrong answer{incorrectAnswers.length > 1 ? 's' : ''}: -{totalPenalties} pts
+                  {incorrectAnswers.length >= 2 && <span style={{ color: '#b71c1c', fontWeight: 'bold' }}> (escalating!)</span>}
+                </div>
+              )}
+              {currentPotentialPoints < 0 && (
+                <div style={{ 
+                  fontWeight: 'bold', 
+                  marginTop: '4px',
+                  color: '#b71c1c'
+                }}>
+                  You'll lose {Math.abs(currentPotentialPoints)} points if correct!
+                </div>
+              )}
+            </div>
+          )}
         </div>
       )}
     </div>

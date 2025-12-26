@@ -154,7 +154,7 @@ export const useAnswerHandling = ({
       let pointsToAward = currentQuestion.points;
       
       if (hintUsed) {
-        // If hint was used, award only half points
+        // If hint was used, award only half points (rounded down for rewards)
         pointsToAward = Math.floor(currentQuestion.points / 2);
       }
       
@@ -185,7 +185,31 @@ export const useAnswerHandling = ({
         }
       }
     } else {
-      // Correct answer on retry - no points, but play a softer sound
+      // Correct answer on retry - award remaining points after penalties
+      // Calculate remaining points: base points (accounting for hint) minus penalties already deducted
+      const basePoints = hintUsed 
+        ? Math.floor(currentQuestion.points / 2) 
+        : currentQuestion.points;
+      
+      // Calculate total penalties with escalating system
+      // 1st wrong: 1/2 points, 2nd wrong: full points, 3rd+ wrong: full points each
+      let totalPenaltiesAlreadyDeducted = 0;
+      for (let i = 0; i < incorrectAnswers.length; i++) {
+        if (i === 0) {
+          // First wrong answer penalty
+          totalPenaltiesAlreadyDeducted += Math.ceil(currentQuestion.points / 2);
+        } else {
+          // Second and subsequent wrong answers penalty (full points)
+          totalPenaltiesAlreadyDeducted += currentQuestion.points;
+        }
+      }
+      
+      const remainingPoints = basePoints - totalPenaltiesAlreadyDeducted;
+      
+      // Award the remaining points (can be negative!)
+      setTotalPoints(prevPoints => prevPoints + remainingPoints);
+      
+      // Play correct sound (softer sound for retry)
       if (soundManagerRef.current) {
         soundManagerRef.current.playCorrect();
       }
@@ -385,13 +409,29 @@ export const useAnswerHandling = ({
     
     if (firstAttempt) {
       setStreak(0); // Reset streak on first wrong answer
-      
-      // If hint was used and this is the first wrong answer, apply point penalty
-      if (hintUsed) {
-        const penalty = Math.floor(currentQuestion.points / 2);
-        setTotalPoints(prevPoints => Math.max(0, prevPoints - penalty)); // Can't go below 0
-      }
     }
+    
+    // Apply escalating penalty for each wrong answer
+    // 1st wrong answer: 1/2 of original points (rounded up)
+    // 2nd wrong answer: full original points (double penalty!)
+    // 3rd+ wrong answer: full original points (continues at max)
+    const wrongAnswerCount = incorrectAnswers.length; // Count before adding current one
+    let penalty;
+    
+    if (wrongAnswerCount === 0) {
+      // First wrong answer: 1/2 of original points
+      penalty = Math.ceil(currentQuestion.points / 2);
+    } else if (wrongAnswerCount === 1) {
+      // Second wrong answer: FULL original points (double the first penalty!)
+      penalty = currentQuestion.points;
+    } else {
+      // Third+ wrong answer: continues at full points
+      penalty = currentQuestion.points;
+    }
+    
+    setTotalPoints(prevPoints => prevPoints - penalty); // Can go negative!
+    
+    // Mark as not first attempt after wrong answer
     setFirstAttempt(false);
   };
 

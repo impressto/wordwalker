@@ -184,17 +184,6 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, 
         )}
       </div>
       
-      {firstAttempt && (
-        <div id="translation-points" style={{
-          fontSize: '16px',
-          color: 'white',
-          marginTop: '10px',
-          fontStyle: 'italic',
-        }}>
-          +{pointsEarned} points!
-        </div>
-      )}
-      
       {/* Show streak bonus message if milestone reached */}
       {isStreakMilestone && (
         <div 

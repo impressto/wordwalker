@@ -1,11 +1,11 @@
 /**
- * Beach Category Answer Translations
+ * Recreation Category Answer Translations
  * Auto-generated
- * Category: beach
+ * Category: recreation
  * Total translations: 90
  */
 
-export const beachAnswerTranslations = {
+export const recreationAnswerTranslations = {
   "la playa": "the beach",
   "nadar": "swim",
   "surf": "surfing",

@@ -13,8 +13,8 @@ import { emergenciesQuestions } from './emergencies.js';
 import { greetingsQuestions } from './greetings.js';
 import { numbersQuestions } from './numbers.js';
 import { grammarQuestions } from './grammar.js';
-import { beachQuestions } from './beach.js';
-import { animalsQuestions } from './animals.js';
+import { recreationQuestions } from './recreation.js';
+import { animalsQuestions } from './plants_animals.js';
 import { peopleQuestions } from './people.js';
 import { dailyRoutinesQuestions } from './daily_routines.js';
 import { restaurantQuestions } from './restaurant.js';
@@ -35,7 +35,7 @@ export {
   greetingsQuestions,
   numbersQuestions,
   grammarQuestions,
-  beachQuestions,
+  recreationQuestions,
   animalsQuestions,
   peopleQuestions,
   dailyRoutinesQuestions,
@@ -57,7 +57,7 @@ export const questions = [
   ...greetingsQuestions,
   ...numbersQuestions,
   ...grammarQuestions,
-  ...beachQuestions,
+  ...recreationQuestions,
   ...animalsQuestions,
   ...peopleQuestions,
   ...dailyRoutinesQuestions,

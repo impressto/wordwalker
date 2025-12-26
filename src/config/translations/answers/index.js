@@ -16,8 +16,8 @@ import { emergenciesAnswerTranslations } from './emergencies.js';
 import { greetingsAnswerTranslations } from './greetings.js';
 import { numbersAnswerTranslations } from './numbers.js';
 import { grammarAnswerTranslations } from './grammar.js';
-import { beachAnswerTranslations } from './beach.js';
-import { animalsAnswerTranslations } from './animals.js';
+import { recreationAnswerTranslations } from './recreation.js';
+import { plantsAnimalsAnswerTranslations } from './plants_animals.js';
 import { peopleAnswerTranslations } from './people.js';
 import { dailyroutinesAnswerTranslations } from './daily_routines.js';
 import { restaurantAnswerTranslations } from './restaurant.js';
@@ -38,8 +38,8 @@ export const translations = {
   ...greetingsAnswerTranslations,
   ...numbersAnswerTranslations,
   ...grammarAnswerTranslations,
-  ...beachAnswerTranslations,
-  ...animalsAnswerTranslations,
+  ...recreationAnswerTranslations,
+  ...plantsAnimalsAnswerTranslations,
   ...peopleAnswerTranslations,
   ...dailyroutinesAnswerTranslations,
   ...restaurantAnswerTranslations,

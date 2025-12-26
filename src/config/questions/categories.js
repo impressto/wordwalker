@@ -6,112 +6,131 @@ export const categories = {
     id: 'food',
     name: 'Food',
     displayName: 'Comida',
-    emoji: '🍎',
-    description: 'Learn food and drink vocabulary',
+    emoji: 'food.png',
+    description: 'Learn food and cooking vocabulary',
+  },
+  restaurant: {
+    id: 'restaurant',
+    name: 'Restaurants & Dining',
+    displayName: 'Restaurantes y Comida',
+    emoji: 'dining.png',
+    description: 'Learn restaurant vocabulary, ordering, and dining phrases',
   },
   shopping: {
     id: 'shopping',
     name: 'Shopping',
     displayName: 'Compras',
-    emoji: '🛍️',
+    emoji: 'shopping.png',
     description: 'Learn shopping and clothing vocabulary',
-  },
-  entertainment: {
-    id: 'entertainment',
-    name: 'Entertainment',
-    displayName: 'Entretenimiento',
-    emoji: '🎮',
-    description: 'Learn entertainment and hobby vocabulary',
-  },
-  accommodation: {
-    id: 'accommodation',
-    name: 'Accommodation',
-    displayName: 'Alojamiento',
-    emoji: '🏨',
-    description: 'Learn accommodation and lodging vocabulary',
   },
   transportation: {
     id: 'transportation',
     name: 'Transportation',
     displayName: 'Transporte',
-    emoji: '🚕',
+    emoji: 'transportation.png',
     description: 'Learn transportation and travel vocabulary',
   },
+
+
+  
+
+
+  accommodation: {
+    id: 'accommodation',
+    name: 'Accommodation',
+    displayName: 'Alojamiento',
+    emoji: 'accommodation.png',
+    description: 'Learn accommodation and lodging vocabulary',
+  },
+
+  entertainment: {
+    id: 'entertainment',
+    name: 'Entertainment',
+    displayName: 'Entretenimiento',
+    emoji: 'entertainment.png',
+    description: 'Learn entertainment and hobby vocabulary',
+  },
+
+
   directions: {
     id: 'directions',
     name: 'Directions',
     displayName: 'Direcciones',
-    emoji: '🗺️',
-    description: 'Learn directions and navigation vocabulary',
+    emoji: 'directions.png',
+    description: 'Learn sightseeing & landmarks vocabulary',
   },
-  emergencies: {
-    id: 'emergencies',
-    name: 'Medical & Emergencies',
-    displayName: 'Médico y Emergencias',
-    emoji: '🚑',
-    description: 'Learn medical and emergency vocabulary',
+
+    numbers: {
+    id: 'numbers',
+    name: 'Numbers, Dates & Time',
+    displayName: 'Números, Fechas y Hora',
+    emoji: 'numbers.png',
+    description: 'Learn numbers, dates, times, and calendar vocabulary',
   },
-  greetings: {
+
+
+
+
+      greetings: {
     id: 'greetings',
     name: 'Greetings & Conversations',
     displayName: 'Saludos y Conversaciones',
-    emoji: '👋',
+    emoji: 'greetings.png',
     description: 'Learn greetings, farewells, and common conversation phrases',
   },
-  numbers: {
-    id: 'numbers',
-    name: 'Numbers, Colors & Time',
-    displayName: 'Números, Colores y Hora',
-    emoji: '🔢',
-    description: 'Learn numbers, colors, dates, times, and calendar vocabulary',
-  },
+
+  
+
   grammar: {
     id: 'grammar',
     name: 'Grammar',
     displayName: 'Gramática',
-    emoji: '📝',
+    emoji: 'grammar.png',
     description: 'Learn Spanish grammar, verb conjugations, and sentence structure',
   },
-  beach: {
-    id: 'beach',
-    name: 'Beach & Activities',
-    displayName: 'Playa y Actividades',
-    emoji: '🏖️',
-    description: 'Learn beach and outdoor activity vocabulary',
-  },
-  animals: {
-    id: 'animals',
-    name: 'Animals',
-    displayName: 'Animales',
-    emoji: '🦁',
-    description: 'Learn animal names and characteristics',
-  },
-  people: {
+
+    people: {
     id: 'people',
     name: 'People & Relationships',
     displayName: 'Gente y Relaciones',
-    emoji: '👨‍👩‍👧‍👦',
+    emoji: 'people.png',
     description: 'Learn family, professions, and describing people',
   },
   daily_routines: {
     id: 'daily_routines',
     name: 'Daily Routines',
     displayName: 'Rutinas Diarias',
-    emoji: '🌅',
+    emoji: 'routines.png',
     description: 'Learn daily activities and reflexive verbs',
   },
-  restaurant: {
-    id: 'restaurant',
-    name: 'Restaurant & Dining',
-    displayName: 'Restaurante y Comida',
-    emoji: '🍽️',
-    description: 'Learn restaurant vocabulary, ordering, and dining phrases',
+
+    emergencies: {
+    id: 'emergencies',
+    name: 'Medical & Emergencies',
+    displayName: 'Médico y Emergencias',
+    emoji: 'emergencies.png',
+    description: 'Learn medical and emergency vocabulary',
+  },
+  
+  recreation: {
+    id: 'recreation',
+    name: 'Recreation',
+    displayName: 'Recreación',
+    emoji: 'recreation.png',
+    description: 'Learn leisure, beach, and outdoor activity vocabulary',
+  },
+  fauna_animals: {
+    id: 'fauna_animals',
+    name: 'Plants and  Animals',
+    displayName: 'Plantas y Animales',
+    emoji: 'plants_animals.png',
+    description: 'Learn plant and animal names and characteristics',
   },
   weather: {
     id: 'weather',
     name: 'Weather & Environment',
     displayName: 'Clima y Medio Ambiente',
-    emoji: '🌤️',
+    emoji: 'weather.png',
     description: 'Learn weather, climate, and environmental vocabulary',
   },
 };
