@@ -22,10 +22,10 @@ const QuestionDialog = ({
   const [isTranslationVisible, setIsTranslationVisible] = useState(true);
 
   useEffect(() => {
-    const duration = getTranslationBoxDuration();
+    const baseDuration = getTranslationBoxDuration();
     
     // If duration is 0, keep translation visible indefinitely
-    if (duration === 0) {
+    if (baseDuration === 0) {
       setIsTranslationVisible(true);
       return;
     }
@@ -38,13 +38,33 @@ const QuestionDialog = ({
     
     setIsTranslationVisible(true);
     
-    // Set timer to hide translation box after configured duration
+    // Calculate dynamic duration based on text length
+    // Average reading speed: ~200-250 words per minute = ~4 words per second
+    // We'll use ~3-4 words per second for comfortable reading
+    let duration = baseDuration;
+    if (questionTranslation) {
+      const wordCount = questionTranslation.trim().split(/\s+/).length;
+      const charCount = questionTranslation.length;
+      
+      // Calculate reading time: 
+      // - Use word count (250ms per word = 240 words/min)
+      // - Add extra time for longer words (using char count)
+      // - Minimum 2 seconds, maximum 10 seconds
+      const wordBasedTime = wordCount * 250; // 250ms per word
+      const charBasedTime = charCount * 50;  // 50ms per character for longer words
+      const calculatedTime = Math.max(wordBasedTime, charBasedTime);
+      
+      // Apply min/max bounds
+      duration = Math.max(2000, Math.min(10000, calculatedTime));
+    }
+    
+    // Set timer to hide translation box after calculated duration
     const timer = setTimeout(() => {
       setIsTranslationVisible(false);
     }, duration);
 
     return () => clearTimeout(timer);
-  }, [showHint, currentQuestion?.id]);
+  }, [showHint, currentQuestion?.id, questionTranslation]);
 
   useEffect(() => {
     const calculatePosition = () => {
