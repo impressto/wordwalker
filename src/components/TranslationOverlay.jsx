@@ -106,7 +106,7 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, 
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      gap: '15px',
+      gap: '0px',
       backgroundColor: 'rgba(76, 175, 80, 0.85)', // Semi-transparent green
       padding: '20px',
       borderRadius: '15px',
@@ -118,7 +118,7 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, 
     }}>
       <div id="translation-checkmark" style={{
         fontSize: '60px',
-        marginBottom: '10px',
+        marginBottom: '0px',
       }}>
         <EmojiDisplay 
           emoji={currentQuestion.emoji} 
@@ -139,6 +139,7 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, 
           fontWeight: 'bold',
           color: 'white',
           textAlign: 'center',
+          lineHeight: '1.1',
         }}>
           {wordsAreSame ? spanishWord : `${spanishWord} = ${englishTranslation}`}
         </div>
