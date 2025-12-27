@@ -89,8 +89,8 @@ const parallaxThemes = {
       layer2: 1.0,    // Mid-foreground
       layer3: 0.6,    // Mid layer
       layer4: 0.4,    // Mid-distant
-      layer5: 0.3,    // Distant layer
-      layer6: 0.15,   // Background
+      layer5: 0.2,    // Distant layer
+      layer6: 0.1,   // Background
       layer7: 0.0,    // Static background
     },
     positioning: {
@@ -261,7 +261,7 @@ const parallaxThemes = {
       layer2: 1.0,    // Beach sand level
       layer3: 0.6,    // Mid-ground elements
       layer4: 0.45,   // Pirates/treasure
-      layer5: 0.3,   // ship
+      layer5: 0.2,   // ship
       layer6: 0.1,    // Ocean/horizon
       layer7: 0.0,    // Static night sky
     },

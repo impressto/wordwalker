@@ -67,8 +67,8 @@ export const categories = {
 
   directions: {
     id: 'directions',
-    name: 'Directions',
-    displayName: 'Direcciones',
+    name: 'Places and Directions',
+    displayName: 'Lugares y Direcciones',
     emoji: 'directions.png',
     description: 'Learn sightseeing & landmarks vocabulary',
   },
@@ -120,14 +120,13 @@ export const categories = {
 
   business: {
     id: 'business',
-    name: 'Business',
-    displayName: 'Negocios',
+    name: 'Work and Business',
+    displayName: 'Negocios y Trabajo',
     emoji: 'business.png',
-    description: 'Learn business and office vocabulary',
+    description: 'Learn business, work, and office vocabulary',
   },
   
-
-    medical: {
+  medical: {
     id: 'medical',
     name: 'Medical & Emergencies',
     displayName: 'Médico y Emergencias',
