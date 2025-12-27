@@ -1,27 +1,22 @@
+import { businessQuestions } from "./business";
+
 /**
  * Category definitions for path choices
  */
 export const categories = {
   food: {
     id: 'food',
-    name: 'Food',
-    displayName: 'Comida',
+    name: 'Food and Dining',
+    displayName: 'Comida y Restaurantes',
     emoji: 'food.png',
-    description: 'Learn food and cooking vocabulary',
+    description: 'Learn food, dining, and restaurant vocabulary',
   },
-  restaurant: {
-    id: 'restaurant',
-    name: 'Restaurants & Dining',
-    displayName: 'Restaurantes y Comida',
-    emoji: 'dining.png',
-    description: 'Learn restaurant vocabulary, ordering, and dining phrases',
-  },
-  shopping: {
-    id: 'shopping',
-    name: 'Shopping',
-    displayName: 'Compras',
-    emoji: 'shopping.png',
-    description: 'Learn shopping and clothing vocabulary',
+  accommodation: {
+    id: 'accommodation',
+    name: 'Accommodation',
+    displayName: 'Alojamiento',
+    emoji: 'accommodation.png',
+    description: 'Learn accommodation and lodging vocabulary',
   },
   transportation: {
     id: 'transportation',
@@ -31,19 +26,16 @@ export const categories = {
     description: 'Learn transportation and travel vocabulary',
   },
 
-
-  
-
-
-  accommodation: {
-    id: 'accommodation',
-    name: 'Accommodation',
-    displayName: 'Alojamiento',
-    emoji: 'accommodation.png',
-    description: 'Learn accommodation and lodging vocabulary',
+  shopping: {
+    id: 'shopping',
+    name: 'Shopping',
+    displayName: 'Compras',
+    emoji: 'shopping.png',
+    description: 'Learn shopping and clothing vocabulary',
   },
 
-  entertainment: {
+
+    entertainment: {
     id: 'entertainment',
     name: 'Entertainment',
     displayName: 'Entretenimiento',
@@ -51,6 +43,27 @@ export const categories = {
     description: 'Learn entertainment and hobby vocabulary',
   },
 
+
+
+
+
+  
+
+  recreation: {
+    id: 'recreation',
+    name: 'Recreation',
+    displayName: 'Recreación',
+    emoji: 'recreation.png',
+    description: 'Learn leisure, beach, and outdoor activity vocabulary',
+  },
+
+  plants_animals: {
+    id: 'plants_animals',
+    name: 'Plants and  Animals',
+    displayName: 'Plantas y Animales',
+    emoji: 'plants_animals.png',
+    description: 'Learn plant and animal names and characteristics',
+  },
 
   directions: {
     id: 'directions',
@@ -71,7 +84,7 @@ export const categories = {
 
 
 
-      greetings: {
+  greetings: {
     id: 'greetings',
     name: 'Greetings & Conversations',
     displayName: 'Saludos y Conversaciones',
@@ -89,20 +102,30 @@ export const categories = {
     description: 'Learn Spanish grammar, verb conjugations, and sentence structure',
   },
 
-    people: {
-    id: 'people',
-    name: 'People & Relationships',
-    displayName: 'Gente y Relaciones',
-    emoji: 'people.png',
-    description: 'Learn family, professions, and describing people',
-  },
-  daily_routines: {
+    daily_routines: {
     id: 'daily_routines',
     name: 'Daily Routines',
     displayName: 'Rutinas Diarias',
     emoji: 'routines.png',
     description: 'Learn daily activities and reflexive verbs',
   },
+
+  people: {
+    id: 'people',
+    name: 'People & Relationships',
+    displayName: 'Gente y Relaciones',
+    emoji: 'people.png',
+    description: 'Learn family, professions, and describing people',
+  },
+
+  business: {
+    id: 'business',
+    name: 'Business',
+    displayName: 'Negocios',
+    emoji: 'business.png',
+    description: 'Learn business and office vocabulary',
+  },
+  
 
     emergencies: {
     id: 'emergencies',
@@ -112,20 +135,8 @@ export const categories = {
     description: 'Learn medical and emergency vocabulary',
   },
   
-  recreation: {
-    id: 'recreation',
-    name: 'Recreation',
-    displayName: 'Recreación',
-    emoji: 'recreation.png',
-    description: 'Learn leisure, beach, and outdoor activity vocabulary',
-  },
-  fauna_animals: {
-    id: 'fauna_animals',
-    name: 'Plants and  Animals',
-    displayName: 'Plantas y Animales',
-    emoji: 'plants_animals.png',
-    description: 'Learn plant and animal names and characteristics',
-  },
+
+
   weather: {
     id: 'weather',
     name: 'Weather & Environment',

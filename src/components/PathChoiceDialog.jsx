@@ -234,7 +234,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
       top: dialogTop,
       left: '50%',
       transform: 'translateX(-50%)',
-      backgroundColor: 'rgba(255, 255, 255, 0.95)',
+      backgroundColor: 'rgba(255, 255, 255, 0.85)',
       padding: '12px',
       borderRadius: '15px',
       boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
@@ -254,10 +254,9 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
       </h3>
       
       {/* Pagination Container */}
-      <div style={{
+      <div id="pagination-container" style={{
         display: 'flex',
         alignItems: 'center',
-        gap: '8px',
         marginBottom: '12px',
       }}>
         {/* Previous Button */}
@@ -265,8 +264,8 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
           onClick={handlePrevPage}
           disabled={totalPages <= 1}
           style={{
-            padding: '8px 12px',
-            fontSize: '20px',
+            padding: '6px 10px',
+            fontSize: '18px',
             fontWeight: 'bold',
             backgroundColor: totalPages <= 1 ? '#ccc' : '#2196F3',
             color: 'white',
@@ -279,7 +278,8 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            minWidth: '40px',
+            minWidth: '36px',
+            marginRight: '4px',
             opacity: totalPages <= 1 ? 0.5 : 1,
           }}
           onMouseEnter={(e) => {
@@ -302,7 +302,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
         <div id="categories-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(2, 1fr)',
-          gap: '10px',
+          gap: '8px',
           flex: 1,
         }}>
           {currentPageCategories.map(categoryId => createButton(categoryId))}
@@ -313,8 +313,8 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
           onClick={handleNextPage}
           disabled={totalPages <= 1}
           style={{
-            padding: '8px 12px',
-            fontSize: '20px',
+            padding: '6px 10px',
+            fontSize: '18px',
             fontWeight: 'bold',
             backgroundColor: totalPages <= 1 ? '#ccc' : '#2196F3',
             color: 'white',
@@ -327,7 +327,8 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            minWidth: '40px',
+            minWidth: '36px',
+            marginLeft: '4px',
             opacity: totalPages <= 1 ? 0.5 : 1,
           }}
           onMouseEnter={(e) => {

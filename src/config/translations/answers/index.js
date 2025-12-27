@@ -20,7 +20,7 @@ import { recreationAnswerTranslations } from './recreation.js';
 import { plantsAnimalsAnswerTranslations } from './plants_animals.js';
 import { peopleAnswerTranslations } from './people.js';
 import { dailyroutinesAnswerTranslations } from './daily_routines.js';
-import { restaurantAnswerTranslations } from './restaurant.js';
+import { businessAnswerTranslations } from './business.js';
 import { weatherAnswerTranslations } from './weather.js';
 
 /**
@@ -42,7 +42,7 @@ export const translations = {
   ...plantsAnimalsAnswerTranslations,
   ...peopleAnswerTranslations,
   ...dailyroutinesAnswerTranslations,
-  ...restaurantAnswerTranslations,
+  ...businessAnswerTranslations,
   ...weatherAnswerTranslations,
 };
 

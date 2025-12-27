@@ -14,10 +14,10 @@ import { greetingsQuestions } from './greetings.js';
 import { numbersQuestions } from './numbers.js';
 import { grammarQuestions } from './grammar.js';
 import { recreationQuestions } from './recreation.js';
-import { animalsQuestions } from './plants_animals.js';
+import { plantsAnimalsQuestions } from './plants_animals.js';
 import { peopleQuestions } from './people.js';
 import { dailyRoutinesQuestions } from './daily_routines.js';
-import { restaurantQuestions } from './restaurant.js';
+import { businessQuestions } from './business.js';
 import { weatherQuestions } from './weather.js';
 
 // Import and re-export category utilities
@@ -36,10 +36,10 @@ export {
   numbersQuestions,
   grammarQuestions,
   recreationQuestions,
-  animalsQuestions,
+  plantsAnimalsQuestions,
   peopleQuestions,
   dailyRoutinesQuestions,
-  restaurantQuestions,
+  businessQuestions,
   weatherQuestions,
 };
 
@@ -58,10 +58,10 @@ export const questions = [
   ...numbersQuestions,
   ...grammarQuestions,
   ...recreationQuestions,
-  ...animalsQuestions,
+  ...plantsAnimalsQuestions,
   ...peopleQuestions,
   ...dailyRoutinesQuestions,
-  ...restaurantQuestions,
+  ...businessQuestions,
   ...weatherQuestions,
 ];
 

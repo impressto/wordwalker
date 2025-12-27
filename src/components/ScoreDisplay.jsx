@@ -91,7 +91,7 @@ const ScoreDisplay = ({ totalPoints, streak, selectedPath, forkCategories, check
           gap: '5px',
           whiteSpace: 'nowrap',
         }}>
-          <span>{getCategoryById(forkCategories[selectedPath] || selectedPath)?.emoji}</span>
+          <span>{getCategoryById(forkCategories[selectedPath] || selectedPath)?.displayName}</span>
           <span>{checkpointsAnswered}/{checkpointsPerCategory}</span>
         </div>
       )}

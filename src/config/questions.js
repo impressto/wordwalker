@@ -39,7 +39,7 @@ export {
   numbersQuestions,
   grammarQuestions,
   recreationQuestions,
-  plantAnimalsQuestions,
+  plantsAnimalsQuestions,
   getQuestionsByCategory,
   getRandomQuestionByCategory,
   getRandomUnusedQuestionByCategory,
