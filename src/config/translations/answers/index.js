@@ -12,7 +12,7 @@ import { entertainmentAnswerTranslations } from './entertainment.js';
 import { accommodationAnswerTranslations } from './accommodation.js';
 import { transportationAnswerTranslations } from './transportation.js';
 import { directionsAnswerTranslations } from './directions.js';
-import { emergenciesAnswerTranslations } from './emergencies.js';
+import { medicalAnswerTranslations } from './medical.js';
 import { greetingsAnswerTranslations } from './greetings.js';
 import { numbersAnswerTranslations } from './numbers.js';
 import { grammarAnswerTranslations } from './grammar.js';
@@ -34,7 +34,7 @@ export const translations = {
   ...accommodationAnswerTranslations,
   ...transportationAnswerTranslations,
   ...directionsAnswerTranslations,
-  ...emergenciesAnswerTranslations,
+  ...medicalAnswerTranslations,
   ...greetingsAnswerTranslations,
   ...numbersAnswerTranslations,
   ...grammarAnswerTranslations,

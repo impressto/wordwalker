@@ -658,7 +658,7 @@ export const medicalQuestions = [
   },
   {
     id: 'medical_055',
-    emoji: '🩻',
+    emoji: 'x-ray.png',
     question: '¿Qué imagen médica te toman para ver los huesos?',
     translation: 'What medical image do they take to see bones?',
     options: ['la radiografía', 'los rayos X', 'la placa'],

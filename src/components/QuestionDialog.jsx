@@ -410,6 +410,22 @@ const QuestionDialog = ({
           )}
         </div>
       )}
+
+      {/* Development Mode: Display Question ID */}
+      {(window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && (
+        <div id="dev-question-id" style={{
+          marginTop: '8px',
+          padding: '4px 8px',
+          fontSize: '10px',
+          color: '#666',
+          backgroundColor: 'rgba(0, 0, 0, 0.05)',
+          borderRadius: '4px',
+          fontFamily: 'monospace',
+          textAlign: 'center',
+        }}>
+          ID: {currentQuestion.id}
+        </div>
+      )}
     </div>
   );
 };

@@ -9,7 +9,7 @@ import { entertainmentQuestions } from './entertainment.js';
 import { accommodationQuestions } from './accommodation.js';
 import { transportationQuestions } from './transportation.js';
 import { directionsQuestions } from './directions.js';
-import { emergenciesQuestions } from './emergencies.js';
+import { medicalQuestions } from './medical.js';
 import { greetingsQuestions } from './greetings.js';
 import { numbersQuestions } from './numbers.js';
 import { grammarQuestions } from './grammar.js';
@@ -31,7 +31,7 @@ export {
   accommodationQuestions,
   transportationQuestions,
   directionsQuestions,
-  emergenciesQuestions,
+  medicalQuestions,
   greetingsQuestions,
   numbersQuestions,
   grammarQuestions,
@@ -53,7 +53,7 @@ export const questions = [
   ...accommodationQuestions,
   ...transportationQuestions,
   ...directionsQuestions,
-  ...emergenciesQuestions,
+  ...medicalQuestions,
   ...greetingsQuestions,
   ...numbersQuestions,
   ...grammarQuestions,

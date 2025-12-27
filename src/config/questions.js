@@ -34,7 +34,7 @@ export {
   accommodationQuestions,
   transportationQuestions,
   directionsQuestions,
-  emergenciesQuestions,
+  medicalQuestions,
   greetingsQuestions,
   numbersQuestions,
   grammarQuestions,

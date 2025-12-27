@@ -127,11 +127,11 @@ export const categories = {
   },
   
 
-    emergencies: {
-    id: 'emergencies',
+    medical: {
+    id: 'medical',
     name: 'Medical & Emergencies',
     displayName: 'Médico y Emergencias',
-    emoji: 'emergencies.png',
+    emoji: 'medical.png',
     description: 'Learn medical and emergency vocabulary',
   },
   
