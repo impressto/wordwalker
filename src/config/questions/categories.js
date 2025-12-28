@@ -43,12 +43,6 @@ export const categories = {
     description: 'Learn entertainment and hobby vocabulary',
   },
 
-
-
-
-
-  
-
   recreation: {
     id: 'recreation',
     name: 'Recreation',
