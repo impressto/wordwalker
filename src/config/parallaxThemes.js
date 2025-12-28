@@ -132,7 +132,7 @@ const parallaxThemes = {
       layer2: 1.0,    // Mid-foreground
       layer3: 0.5,    // Mid layer
       layer4: 0.4,    // Mid-distant
-      layer5: 0.3,    // Distant layer
+      layer5: 0.2,    // Distant layer
       layer6: 0.15,   // Background
       layer7: 0.0,    // Static background
     },
