@@ -2174,7 +2174,7 @@ export const transportationQuestions = [
   },
   {
     id: 'transportation_181',
-    emoji: 'open-top-bus.png',
+    emoji: 'open-air-bus.png',
     question: '¿Qué autobús no tiene techo?',
     translation: 'What bus doesn\'t have a roof?',
     options: ['el autobús descubierto', 'el autobús abierto', 'el bus turístico'],
