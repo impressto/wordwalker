@@ -5,7 +5,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { translations } from '../config/translations/answers/index';
+import { getCategoryTranslation } from '../config/translations/answers/index';
 import gameSettings, { getStreakColor, getStreakGradientColor } from '../config/gameSettings';
 import pronunciationAudio from '../utils/pronunciationAudio';
 import EmojiDisplay from './EmojiDisplay';
@@ -17,8 +17,11 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, 
 
   if (!currentQuestion) return null;
 
-  // Get the English translation
-  const englishTranslation = translations[currentQuestion.correctAnswer] || currentQuestion.correctAnswer;
+  // Get the English translation using category-aware lookup
+  const englishTranslation = getCategoryTranslation(
+    currentQuestion.correctAnswer, 
+    currentQuestion.category
+  ) || currentQuestion.correctAnswer;
   const spanishWord = currentQuestion.correctAnswer;
   
   // Check if Spanish and English are the same (case-insensitive)

@@ -27,16 +27,39 @@ translations/answers/
 
 ## Usage
 
-### Import All Translations
+### ⭐ Recommended: Category-Aware Translation (NEW)
 
-The most common usage - imports the complete translations object:
+The best way to get translations - automatically handles words with different meanings across categories:
+
+```javascript
+import { getCategoryTranslation } from '../config/translations/answers';
+
+// Get translation with category context
+const kiwiFruit = getCategoryTranslation('el kiwi', 'food'); // Returns: 'the kiwi'
+const kiwiBird = getCategoryTranslation('el kiwi', 'plants_animals'); // Returns: 'the kiwi bird'
+
+// Works with any question object
+const english = getCategoryTranslation(question.correctAnswer, question.category);
+```
+
+**Benefits:**
+- ✅ Correctly handles words with multiple meanings (e.g., "el kiwi" as fruit vs. bird)
+- ✅ Only loads translations for the specific category (performance)
+- ✅ Prevents conflicts from merged translations
+- ✅ Falls back gracefully if category not found
+
+### Import All Translations (Legacy)
+
+For dictionary/search features that need to search across all categories:
 
 ```javascript
 import { translations } from '../config/translations/answers';
 
 // Use it to get English translation for Spanish answer
-const english = translations['la manzana']; // Returns: 'apple'
+const english = translations['la manzana']; // Returns: 'the apple'
 ```
+
+⚠️ **Note:** When the same Spanish word appears in multiple categories with different meanings, the combined object will only have one translation (whichever category is merged last).
 
 ### Import Specific Category
 
@@ -45,18 +68,27 @@ For performance optimization or when you only need one category:
 ```javascript
 import { foodAnswerTranslations } from '../config/translations/answers/food';
 
-const english = foodAnswerTranslations['la manzana']; // Returns: 'apple'
+const english = foodAnswerTranslations['la manzana']; // Returns: 'the apple'
 ```
 
-### Helper Functions
+### Access Category Map
 
-The index.js also exports utility functions:
+Get all translations organized by category:
+
+```javascript
+import { translationsByCategory } from '../config/translations/answers';
+
+const foodTranslations = translationsByCategory.food;
+const animalTranslations = translationsByCategory.plants_animals;
+```
+
+### Helper Functions (Legacy)
 
 ```javascript
 import { getTranslation, hasTranslation } from '../config/translations/answers';
 
-// Get a translation
-const english = getTranslation('la manzana'); // Returns: 'apple' or undefined
+// Get a translation (uses combined translations object)
+const english = getTranslation('la manzana'); // Returns: 'the apple' or undefined
 
 // Check if translation exists
 if (hasTranslation('la manzana')) {
@@ -84,6 +116,22 @@ export const [category]AnswerTranslations = {
 ```
 
 ## Maintenance
+
+### Handling Duplicate Keys Across Categories
+
+Some Spanish words have different meanings in different categories:
+
+| Spanish | Category | English |
+|---------|----------|---------|
+| el kiwi | food | the kiwi |
+| el kiwi | plants_animals | the kiwi bird |
+
+**Solution:** Use `getCategoryTranslation()` which looks up translations by category first, ensuring the correct translation is returned based on context.
+
+**Known Duplicates:**
+- `el kiwi`: food (fruit) vs. plants_animals (bird)
+
+When adding new translations, check for potential duplicates and document them here.
 
 ### Adding New Translations
 
