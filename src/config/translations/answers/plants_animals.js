@@ -2,7 +2,7 @@
  * Animals Category Answer Translations
  * Auto-generated
  * Category: animals
- * Total translations: 74
+ * Total translations: 120
  */
 
 export const plantsAnimalsAnswerTranslations = {
@@ -116,5 +116,48 @@ export const plantsAnimalsAnswerTranslations = {
   "el perro policía": "the police dog",
   "el perro pastor": "the shepherd dog",
   "la garza": "the heron",
-  "el lagarto": "the lizard"
+  "el lagarto": "the lizard",
+  "el mandril": "the baboon/mandrill",
+  "el águila calva": "the bald eagle",
+  "la libélula": "the dragonfly",
+  "el murciélago frugívoro": "the fruit bat",
+  "la medusa": "the jellyfish",
+  "el kiwi": "the kiwi bird",
+  "la lobina negra": "the largemouth bass",
+  "la leona": "the lioness",
+  "el manatí": "the manatee",
+  "el topo": "the mole",
+  "la polilla": "the moth",
+  "el lucio": "the pike",
+  "el pelícano": "the pelican",
+  "el escorpión": "the scorpion",
+  "el gato siamés": "the Siamese cat",
+  "la trucha": "the trout",
+  "el buitre": "the vulture",
+  "el lucioperca": "the walleye",
+  "el manzano": "the apple tree",
+  "el bambú": "the bamboo",
+  "la campanilla": "the bellflower",
+  "el abedul": "the birch tree",
+  "el cactus": "the cactus",
+  "la espadaña": "the cattail",
+  "el cerezo": "the cherry blossom tree",
+  "el narciso": "the daffodil",
+  "el helecho": "the fern",
+  "la lavanda": "the lavender",
+  "el limonero": "the lemon tree",
+  "el lirio": "the lily",
+  "el roble": "the oak tree",
+  "la palmera": "the palm tree",
+  "el bosque de pinos": "the pine forest",
+  "la amapola": "the poppy",
+  "el rododendro": "the rhododendron",
+  "la venus atrapamoscas": "the Venus flytrap",
+  "la violeta": "the violet",
+  "el nenúfar": "the water lily",
+  "el lirio blanco": "the white lily",
+  "las flores silvestres": "the wildflowers",
+  "el sauce": "the willow tree",
+  "la colonia de hormigas": "the ant colony",
+  "el nido de avispas": "the wasp nest"
 };
