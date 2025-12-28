@@ -111,7 +111,9 @@ export const getRandomUnusedQuestionByCategory = (
     if (!q || !q.id) return false;
     
     // Extract numeric ID as string to match the format stored in tracking arrays
-    const numericId = q.id.split('_')[1] || q.id;
+    // Split by underscore and get the last part (handles both 'daily_001' and 'plants_animals_001')
+    const parts = q.id.split('_');
+    const numericId = parts[parts.length - 1];
     return !excludedIds.has(numericId);
   });
   
@@ -145,7 +147,9 @@ export const getUnmasteredQuestionCount = (
     if (!q || !q.id) return false;
     
     // Extract numeric ID as string to match the format stored in tracking arrays
-    const numericId = q.id.split('_')[1] || q.id;
+    // Split by underscore and get the last part (handles both 'daily_001' and 'plants_animals_001')
+    const parts = q.id.split('_');
+    const numericId = parts[parts.length - 1];
     return !excludedIds.has(numericId);
   });
   
@@ -161,7 +165,9 @@ export const getQuestionIdsByCategory = (category) => {
   return getQuestionsByCategory(category)
     .filter(q => q && q.id) // Skip questions without valid ID
     .map(q => {
-      return parseInt(q.id.split('_')[1], 10);
+      // Split by underscore and get the last part (handles both 'daily_001' and 'plants_animals_001')
+      const parts = q.id.split('_');
+      return parseInt(parts[parts.length - 1], 10);
     });
 };
 
