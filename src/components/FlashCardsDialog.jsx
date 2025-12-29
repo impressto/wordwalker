@@ -204,8 +204,12 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
     if (currentCardIndex < totalCards - 1) {
       setCurrentCardIndex(currentCardIndex + 1);
     } else {
-      // Completed all cards
-      onComplete();
+      // Completed all cards - use onClose if available (same as X button), fallback to onComplete
+      if (onClose) {
+        onClose();
+      } else {
+        onComplete();
+      }
     }
   };
 
@@ -341,12 +345,15 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
         const spanishPositioning = cardData.spanishPosition || {};
         const englishPositioning = cardData.englishPosition || {};
         
-        // Determine default X position based on alignment (left or right only)
+        // Determine default X position based on alignment
         let defaultX;
         let canvasTextAlign;
         if (textAlign === 'left') {
           defaultX = margin;
           canvasTextAlign = 'left';
+        } else if (textAlign === 'center') {
+          defaultX = canvas.width / 2;
+          canvasTextAlign = 'center';
         } else {
           // Default to right alignment
           defaultX = canvas.width - margin;

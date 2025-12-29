@@ -32,7 +32,7 @@ export const flashCardsConfig = {
   // Text rendering configuration
   text: {
     // Text alignment configuration
-    align: 'right', // 'left' or 'right' only (character and emoji auto-position opposite to text)
+    align: 'center', // 'left', 'right', or 'center'
     leftMargin: 20, // Margin from edge (pixels from left when text is left-aligned, from right when right-aligned)
     
     // Spanish text configuration (main text)
@@ -41,8 +41,8 @@ export const flashCardsConfig = {
       fontFamily: 'Arial, sans-serif',
       fontWeight: 'bold',
       color: '#333',
-      maxWidth: 280, // Max width before wrapping
-      lineHeight: 1.3,
+      maxWidth: 300, // Max width before wrapping (increased with center alignment)
+      lineHeight: 1.0, // Reduced to minimize gap with English text
     },
     // English text configuration (translation below)
     english: {
@@ -50,13 +50,13 @@ export const flashCardsConfig = {
       fontFamily: 'Arial, sans-serif',
       fontWeight: 'normal',
       color: '#ff1313ff',
-      maxWidth: 320,
+      maxWidth: 300, // Increased to match Spanish
       lineHeight: 1.2,
     },
     // Vertical spacing
-    verticalSpacing: 15, // Space between Spanish and English text
+    verticalSpacing: 1, // Space between Spanish and English text
     // Top margin for text
-    topMargin: 20,
+    topMargin: 7, // Reduced to move text closer to top
   },
 };
 

@@ -32,6 +32,7 @@ const FlashCardsParallax = ({
   // Use theme-specific flash card parallax config if available, otherwise use provided config
   const themeFlashCardConfig = theme.flashCardParallax || {};
   const layerOffsets = themeFlashCardConfig.layerOffsets || parallaxConfig.layerOffsets || {};
+  const layerSpeedsOverride = themeFlashCardConfig.layerSpeeds || parallaxConfig.layerSpeeds || null;
   const scaleAdjustment = themeFlashCardConfig.scaleAdjustment ?? parallaxConfig.scaleAdjustment ?? 1.0;
   const layer7Scale = themeFlashCardConfig.layer7Scale ?? parallaxConfig.layer7Scale ?? 2.0;
   const customHorizonY = themeFlashCardConfig.horizonY ?? parallaxConfig.horizonY;
@@ -92,6 +93,10 @@ const FlashCardsParallax = ({
 
       // Helper function to get layer speed from theme
       const getLayerSpeed = (layerId) => {
+        // Use flash card override if available, otherwise use theme default
+        if (layerSpeedsOverride && layerSpeedsOverride[layerId] !== undefined) {
+          return layerSpeedsOverride[layerId];
+        }
         return theme.layerSpeeds[layerId] || 0.5;
       };
 
@@ -228,7 +233,7 @@ const FlashCardsParallax = ({
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [parallaxImages, currentTheme, width, height, layerOffsets, scaleAdjustment, layer7Scale, customHorizonY]);
+  }, [parallaxImages, currentTheme, width, height, layerOffsets, layerSpeedsOverride, scaleAdjustment, layer7Scale, customHorizonY]);
 
   return (
     <canvas

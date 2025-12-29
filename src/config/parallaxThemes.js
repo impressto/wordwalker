@@ -66,16 +66,25 @@ const parallaxThemes = {
       // Vertical positioning offsets for each layer (in pixels)
       // Positive values move layers down, negative values move them up
       layerOffsets: {
-        layer3: 90,   // Bushes - move down to be more visible
+        layer3: 55,   // Bushes - move down to be more visible
         layer4: 20,   // Trees - move down slightly
-        layer5: 20,   // Far trees - move down slightly
+        layer5: -10,   // Far trees - move down slightly
         layer6: 10,   // Mountains - move down slightly
         layer7: 0,    // Sky - no offset
       },
+      // Layer speeds for flash card parallax (optional override of theme speeds)
+      // Lower values = slower movement (farther away)
+      layerSpeeds: {
+        layer3: 0.5,   // Bushes - foreground
+        layer4: 0.4,   // Trees
+        layer5: 0.3,   // Far trees
+        layer6: 0.15,  // Mountains
+        layer7: 0.0,   // Sky - no movement
+      },
       // Scale adjustment for better fit in smaller canvas
-      scaleAdjustment: 0.5,
+      scaleAdjustment: 0.3,
       // Layer 7 (background) scale multiplier (width coverage)
-      layer7Scale: 1.7,
+      layer7Scale: 3,
       // Horizon adjustment (0.0 to 1.0, proportion of canvas height)
       horizonY: 0.5, // Middle of canvas for flash cards
     },
@@ -127,13 +136,14 @@ const parallaxThemes = {
     // Flash card mini parallax configuration for Hong Kong theme
     flashCardParallax: {
       layerOffsets: {
-        layer3: 96,   // Buildings - adjust for urban scene
-        layer4: 30,   // Mid-distant buildings
-        layer5: 10,   // High rises
-        layer6: 10,   // Mountains
+        layer3: 65,   // Buildings - adjust for urban scene
+        layer4: 60,   // Mid-distant buildings
+        layer5: 25,   // High rises
+        layer6: 20,   // Mountains
         layer7: 0,    // Sky
       },
-      scaleAdjustment: 1.0,
+      scaleAdjustment: 0.25,
+          layer7Scale: 6,
       horizonY: 0.5,
     },
   },
@@ -183,13 +193,14 @@ const parallaxThemes = {
     // Flash card mini parallax configuration for Jamaica theme
     flashCardParallax: {
       layerOffsets: {
-        layer3: 55,   // Umbrellas - move down more for beach scene
-        layer4: 35,   // Surf
-        layer5: 20,   // Cruise ship
+        layer3: 65,   // Umbrellas - move down more for beach scene
+        layer4: 15,   // Surf
+        layer5: -10,   // Cruise ship
         layer6: 10,   // Mountains
         layer7: 0,    // Sky
       },
-      scaleAdjustment: 1.0,
+      scaleAdjustment: 0.25,
+         layer7Scale: 3.5,
       horizonY: 0.5,
     },
   },
@@ -239,13 +250,14 @@ const parallaxThemes = {
     // Flash card mini parallax configuration for Día de los Muertos theme
     flashCardParallax: {
       layerOffsets: {
-        layer3: 95,   // Altars/decorations
-        layer4: 36,   // Buildings
-        layer5: 30,   // Graveyard
+        layer3: 55,   // Altars/decorations
+        layer4: 22,   // Buildings
+        layer5: -10,   // Graveyard
         layer6: 20,   // Mountains
-        layer7: 0,    // Sky
+        layer7: 20,    // Sky
       },
-      scaleAdjustment: 1.0,
+      scaleAdjustment: 0.4,
+        layer7Scale: 1.4,
       horizonY: 0.5,
     },
   },
@@ -295,13 +307,14 @@ const parallaxThemes = {
     // Flash card mini parallax configuration for Paris theme
     flashCardParallax: {
       layerOffsets: {
-        layer3: 95,   // Sidewalk with tables
+        layer3: 60,   // Sidewalk with tables
         layer4: 30,   // River with boats
-        layer5: 25,   // Buildings on far bank
+        layer5: 10,   // Buildings on far bank
         layer6: 15,   // Eiffel tower
         layer7: 0,    // Sky
       },
-      scaleAdjustment: 1.0,
+      scaleAdjustment: 0.3,
+        layer7Scale: 2.3,
       horizonY: 0.5,
     },
   },
@@ -351,12 +364,21 @@ const parallaxThemes = {
     // Flash card mini parallax configuration for Nassau theme
     flashCardParallax: {
       layerOffsets: {
-        layer3: 50,   // Pirates burying treasure
-        layer4: 35,   // Shoreline
+        layer3: 60,   // Pirates burying treasure
+        layer4: 20,   // Shoreline
         layer5: -10,   // Ship
         layer6: 40,   // Ocean/horizon
         layer7: 20,    // Night sky
       },
+
+      layerSpeeds: {
+        layer3: 0.8,   // Pirates burying treasure
+        layer4: 0.3,   // Shoreline
+        layer5: 0.2,   // Ship
+        layer6: 0.1,  // Ocean/horizon
+        layer7: 0.0,   // Night sky - no movement
+      },
+
       scaleAdjustment: 0.4,
       layer7Scale: 2.2,
       horizonY: 0.5,

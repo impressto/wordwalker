@@ -1561,6 +1561,9 @@ const PathCanvas = () => {
   const handleFlashCardsDecline = () => {
     setShowFlashCardsOffer(false);
     // Continue to category selector
+    // Pause immediately (should already be paused, but be explicit)
+    setIsPaused(true);
+    
     setTimeout(() => {
       const canvas = canvasRef.current;
       if (canvas) {
@@ -1594,12 +1597,16 @@ const PathCanvas = () => {
           if (canvas) {
             offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
           }
+          setIsPaused(true);
           setShowChoice(true);
           setSelectedPath(null);
         }, 100);
       }
     } else {
       // Debug mode or original flow - continue to category selector
+      // Pause immediately to stop walker movement
+      setIsPaused(true);
+      
       setTimeout(() => {
         const canvas = canvasRef.current;
         if (canvas) {
