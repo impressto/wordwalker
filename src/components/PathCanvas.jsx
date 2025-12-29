@@ -1441,7 +1441,13 @@ const PathCanvas = () => {
     
     setSelectedPath(choice);
     setShowChoice(false);
-    setIsPaused(false);
+    
+    // In flashcard mode, keep the game paused (no walker animation)
+    // In multichoice mode, unpause to start walker movement
+    if (mode !== 'flashcard') {
+      setIsPaused(false);
+    }
+    
     setIsJustResumed(false); // Clear the just-resumed flag once user selects a path
     setCheckpointsAnswered(0); // Reset checkpoint counter for new category
     setUsedQuestionIds({}); // Reset used questions for new category
@@ -1473,6 +1479,15 @@ const PathCanvas = () => {
     
     // Reset checkpoint sound flag for first checkpoint
     checkpointSoundPlayedRef.current = false;
+    
+    // In flashcard mode, show flash cards immediately
+    if (mode === 'flashcard') {
+      // Show flash cards immediately without walking or emoji
+      setCategoryForFlashCards(category);
+      setStreakAtCompletion(streak);
+      setShowFlashCards(true);
+      return;
+    }
     
     // Load the first question immediately so the correct emoji appears
     const questionLoaded = loadNewQuestion(category);

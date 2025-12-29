@@ -21,7 +21,7 @@ export const FLASH_CARDS_ENABLED = false;
  */
 export const flashCardsConfig = {
   // Canvas display size
-  canvasWidth: 360,
+  canvasWidth: 320,
   canvasHeight: 240,
   
   // Default assets for dynamic card generation
@@ -41,7 +41,7 @@ export const flashCardsConfig = {
       fontFamily: 'Arial, sans-serif',
       fontWeight: 'bold',
       color: '#333',
-      maxWidth: 320, // Max width before wrapping
+      maxWidth: 280, // Max width before wrapping
       lineHeight: 1.3,
     },
     // English text configuration (translation below)
@@ -57,23 +57,6 @@ export const flashCardsConfig = {
     verticalSpacing: 15, // Space between Spanish and English text
     // Top margin for text
     topMargin: 20,
-  },
-  
-  // Diamond animation configuration
-  diamond: {
-    // Animation speed (lower = slower fade, higher = faster fade)
-    animationSpeed: 0.008,
-    
-    // Fade intensity range (min to max opacity)
-    fadeMin: 0.4,
-    fadeMax: 1.0,
-    
-    // Diamond size in pixels
-    size: 45,
-    
-    // Position from top-left corner (auto-positioned based on textAlign unless overridden per card)
-    // positionX: auto (top-right when textAlign='left', top-left when textAlign='right')
-    positionY: 30,
   },
 };
 

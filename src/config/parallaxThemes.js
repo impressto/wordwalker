@@ -59,6 +59,26 @@ const parallaxThemes = {
     // Layer 2 vertical offset (moves layer up/down from path top)
     // Positive value = move down, negative = move up
     layer2OffsetY: 30,
+    
+    // Flash card mini parallax configuration
+    // These settings control how parallax layers appear in the smaller flash card display
+    flashCardParallax: {
+      // Vertical positioning offsets for each layer (in pixels)
+      // Positive values move layers down, negative values move them up
+      layerOffsets: {
+        layer3: 90,   // Bushes - move down to be more visible
+        layer4: 20,   // Trees - move down slightly
+        layer5: 20,   // Far trees - move down slightly
+        layer6: 10,   // Mountains - move down slightly
+        layer7: 0,    // Sky - no offset
+      },
+      // Scale adjustment for better fit in smaller canvas
+      scaleAdjustment: 0.5,
+      // Layer 7 (background) scale multiplier (width coverage)
+      layer7Scale: 1.7,
+      // Horizon adjustment (0.0 to 1.0, proportion of canvas height)
+      horizonY: 0.5, // Middle of canvas for flash cards
+    },
   },
 
   // Hong Kong theme - urban/harbor scene
@@ -103,6 +123,19 @@ const parallaxThemes = {
     layer2StretchFactor: 0.6,
     // Layer 2 vertical offset (moves layer up/down from path top)
     layer2OffsetY: 50,
+    
+    // Flash card mini parallax configuration for Hong Kong theme
+    flashCardParallax: {
+      layerOffsets: {
+        layer3: 96,   // Buildings - adjust for urban scene
+        layer4: 30,   // Mid-distant buildings
+        layer5: 10,   // High rises
+        layer6: 10,   // Mountains
+        layer7: 0,    // Sky
+      },
+      scaleAdjustment: 1.0,
+      horizonY: 0.5,
+    },
   },
 
   // Jamaica theme - tropical beach scene
@@ -146,6 +179,19 @@ const parallaxThemes = {
     layer2StretchFactor: 0.8,
     // Layer 2 vertical offset
     layer2OffsetY: 30,
+    
+    // Flash card mini parallax configuration for Jamaica theme
+    flashCardParallax: {
+      layerOffsets: {
+        layer3: 55,   // Umbrellas - move down more for beach scene
+        layer4: 35,   // Surf
+        layer5: 20,   // Cruise ship
+        layer6: 10,   // Mountains
+        layer7: 0,    // Sky
+      },
+      scaleAdjustment: 1.0,
+      horizonY: 0.5,
+    },
   },
 
   // Día de los Muertos theme - Day of the Dead celebration
@@ -189,6 +235,19 @@ const parallaxThemes = {
     layer2StretchFactor: 0.8,
     // Layer 2 vertical offset
     layer2OffsetY: 30,
+    
+    // Flash card mini parallax configuration for Día de los Muertos theme
+    flashCardParallax: {
+      layerOffsets: {
+        layer3: 95,   // Altars/decorations
+        layer4: 36,   // Buildings
+        layer5: 30,   // Graveyard
+        layer6: 20,   // Mountains
+        layer7: 0,    // Sky
+      },
+      scaleAdjustment: 1.0,
+      horizonY: 0.5,
+    },
   },
 
   // Paris theme - Parisian cityscape
@@ -232,6 +291,19 @@ const parallaxThemes = {
     layer2StretchFactor: 0.8,
     // Layer 2 vertical offset
     layer2OffsetY: 30,
+    
+    // Flash card mini parallax configuration for Paris theme
+    flashCardParallax: {
+      layerOffsets: {
+        layer3: 95,   // Sidewalk with tables
+        layer4: 30,   // River with boats
+        layer5: 25,   // Buildings on far bank
+        layer6: 15,   // Eiffel tower
+        layer7: 0,    // Sky
+      },
+      scaleAdjustment: 1.0,
+      horizonY: 0.5,
+    },
   },
 
   // Nassau theme - Pirates burying treasure on beach at night in the Bahamas
@@ -275,6 +347,20 @@ const parallaxThemes = {
     layer2StretchFactor: 0.8,
     // Layer 2 vertical offset
     layer2OffsetY: 30,
+    
+    // Flash card mini parallax configuration for Nassau theme
+    flashCardParallax: {
+      layerOffsets: {
+        layer3: 50,   // Pirates burying treasure
+        layer4: 35,   // Shoreline
+        layer5: -10,   // Ship
+        layer6: 40,   // Ocean/horizon
+        layer7: 20,    // Night sky
+      },
+      scaleAdjustment: 0.4,
+      layer7Scale: 2.2,
+      horizonY: 0.5,
+    },
   },
 
   // Add more themes below following the same structure
@@ -288,6 +374,19 @@ const parallaxThemes = {
   //   layerPositions: { /* ... */ },
   //   layerSpeeds: { /* ... */ },
   //   positioning: { /* ... */ },
+  //   layer2StretchFactor: 0.8,
+  //   layer2OffsetY: 30,
+  //   flashCardParallax: {
+  //     layerOffsets: {
+  //       layer3: 50,
+  //       layer4: 30,
+  //       layer5: 20,
+  //       layer6: 10,
+  //       layer7: 0,
+  //     },
+  //     scaleAdjustment: 1.0,
+  //     horizonY: 0.5,
+  //   },
   // }
 };
 

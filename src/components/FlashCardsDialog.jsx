@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import './FlashCardsDialog.css';
-import { getStreakColor } from '../config/gameSettings';
 import { getFlashCardConfig, getFlashCardData, getCategoryCardCount } from '../config/flashCardsConfig';
 import { isEmojiSvg, getEmojiSvgPath } from '../utils/emojiUtils.jsx';
+import FlashCardsParallax from './FlashCardsParallax';
 
 /**
  * Helper function to check if an image is loaded and ready to draw
@@ -63,9 +63,8 @@ const drawWrappedText = (ctx, text, x, y, maxWidth, lineHeight) => {
 
 /**
  * FlashCardsDialog Component
- * Shows flash cards after completing a category with a streak
- * Flash cards are extracted from a sprite sheet (3400x250px with 10 cards)
- * Rendered on canvas with animated glowing streak diamond
+ * Shows flash cards after completing a category
+ * Rendered on canvas with mini parallax background
  */
 const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme = 'default' }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -73,7 +72,6 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
   const canvasRef = useRef(null);
   const imagesRef = useRef({});
   const animationFrameRef = useRef(null);
-  const diamondGlowRef = useRef(0);
 
   // Get flash card configuration (unified for all categories)
   const config = getFlashCardConfig(category);
@@ -217,11 +215,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
     }
   };
 
-  const handleSkip = () => {
-    onComplete();
-  };
-
-  // Draw flash card on canvas with animated diamond
+  // Draw flash card on canvas
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -248,17 +242,9 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
       const textConfig = config.text || {};
       const textAlign = cardData.textAlign !== undefined ? cardData.textAlign : (textConfig.align || 'right');
       
-      // 1. Background
-      if (isImageReady(imagesRef.current.background)) {
-        ctx.drawImage(
-          imagesRef.current.background,
-          0, 0, canvas.width, canvas.height
-        );
-      } else {
-        // Draw fallback background color if image not ready
-        ctx.fillStyle = '#9b59b6'; // Purple fallback
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-      }
+      // 1. Background - SKIP drawing background to let parallax show through
+      // The mini parallax is now drawn as a separate layer behind this canvas
+      // No need to draw background here anymore
 
       // 2. Character with emotion (positioned based on text alignment)
       if (isImageReady(imagesRef.current.character)) {
@@ -280,25 +266,31 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
       // 3. Object (emoji or image) - positioned based on text alignment
       if (cardData.emoji) {
         // Check if emoji is an image file (PNG/SVG)
-        if (isEmojiSvg(cardData.emoji) && isImageReady(imagesRef.current.emojiImage)) {
-          // Render emoji as image
-          const emojiPosition = cardData.emojiPosition || {};
-          const defaultSize = canvas.height * 0.4; // 40% of canvas height by default
-          const emojiSize = emojiPosition.size !== undefined ? emojiPosition.size : defaultSize;
-          
-          // Position emoji on SAME side as text alignment
-          const defaultX = textAlign === 'left'
-            ? canvas.width * 0.275 - (emojiSize / 2)  // Left side when text is left
-            : canvas.width * 0.725 - (emojiSize / 2); // Right side when text is right
-          const defaultY = canvas.height - 20 - emojiSize; // 20px from bottom
-          
-          const emojiX = emojiPosition.x !== undefined ? emojiPosition.x : defaultX;
-          const emojiY = emojiPosition.y !== undefined ? emojiPosition.y : defaultY;
-          
-          ctx.drawImage(
-            imagesRef.current.emojiImage,
-            emojiX, emojiY, emojiSize, emojiSize
-          );
+        const isImageEmoji = isEmojiSvg(cardData.emoji);
+        
+        if (isImageEmoji) {
+          // Only render if image is loaded - don't show text fallback for PNG/SVG emojis
+          if (isImageReady(imagesRef.current.emojiImage)) {
+            // Render emoji as image
+            const emojiPosition = cardData.emojiPosition || {};
+            const defaultSize = canvas.height * 0.4; // 40% of canvas height by default
+            const emojiSize = emojiPosition.size !== undefined ? emojiPosition.size : defaultSize;
+            
+            // Position emoji on SAME side as text alignment
+            const defaultX = textAlign === 'left'
+              ? canvas.width * 0.275 - (emojiSize / 2)  // Left side when text is left
+              : canvas.width * 0.725 - (emojiSize / 2); // Right side when text is right
+            const defaultY = canvas.height - 20 - emojiSize; // 20px from bottom
+            
+            const emojiX = emojiPosition.x !== undefined ? emojiPosition.x : defaultX;
+            const emojiY = emojiPosition.y !== undefined ? emojiPosition.y : defaultY;
+            
+            ctx.drawImage(
+              imagesRef.current.emojiImage,
+              emojiX, emojiY, emojiSize, emojiSize
+            );
+          }
+          // If image not ready yet, don't draw anything (no text fallback)
         } else {
           // Render emoji as text (standard emoji character)
           const emojiPosition = cardData.emojiPosition || {};
@@ -418,96 +410,6 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
         ctx.restore();
       }
 
-      // Draw animated glowing diamond (position based on text alignment)
-      if (streak > 0) {
-        // Get diamond animation config
-        const diamondConfig = config.diamond || {};
-        const diamondSize = diamondConfig.size || 45;
-        // Position diamond: top-right when text is left, top-left when text is right
-        const defaultDiamondX = textAlign === 'left' 
-          ? canvas.width - 30  // Top-right corner when text is left-aligned
-          : 30;                // Top-left corner when text is right-aligned (default)
-        const diamondX = diamondConfig.positionX !== undefined ? diamondConfig.positionX : defaultDiamondX;
-        const diamondY = diamondConfig.positionY !== undefined ? diamondConfig.positionY : 30;
-        
-        console.log('Diamond position - textAlign:', textAlign, 'diamondX:', diamondX, 'canvas.width:', canvas.width);
-        const animationSpeed = diamondConfig.animationSpeed || 0.015;
-        const fadeMin = diamondConfig.fadeMin || 0.4;
-        const fadeMax = diamondConfig.fadeMax || 1.0;
-        
-        // Animate glow (0 to 1 and back) - configurable speed
-        diamondGlowRef.current += animationSpeed;
-        if (diamondGlowRef.current > 1) {
-          diamondGlowRef.current = 0;
-        }
-        const glowIntensity = Math.sin(diamondGlowRef.current * Math.PI);
-        
-        // Configurable fade intensity range
-        const fadeRange = fadeMax - fadeMin;
-        const fadeIntensity = fadeMin + (glowIntensity * fadeRange);
-        
-        // Get streak color
-        const streakColor = getStreakColor(streak);
-        
-        // Apply overall fade to the entire diamond
-        ctx.save();
-        ctx.globalAlpha = fadeIntensity; // This makes the fade in/out more obvious
-        
-        // Draw outer glow effect - much more dramatic
-        ctx.shadowColor = streakColor;
-        ctx.shadowBlur = 30 + (glowIntensity * 30); // Increased from 20+15
-        
-        // Draw diamond shape
-        ctx.beginPath();
-        ctx.moveTo(diamondX, diamondY - diamondSize / 2);
-        ctx.lineTo(diamondX + diamondSize / 2, diamondY);
-        ctx.lineTo(diamondX, diamondY + diamondSize / 2);
-        ctx.lineTo(diamondX - diamondSize / 2, diamondY);
-        ctx.closePath();
-        
-        // Create radial gradient from white center to streak color
-        const gradient = ctx.createRadialGradient(
-          diamondX, diamondY, 0,  // Inner circle (center)
-          diamondX, diamondY, diamondSize / 2  // Outer circle
-        );
-        
-        // Animate the white center size based on glow intensity - more dramatic
-        const whiteStop = 0.15 + (glowIntensity * 0.25); // Increased range
-        gradient.addColorStop(0, 'white');
-        gradient.addColorStop(whiteStop, streakColor);
-        gradient.addColorStop(1, streakColor);
-        
-        // Fill diamond with gradient
-        ctx.fillStyle = gradient;
-        ctx.fill();
-        
-        // Add inner glow/shine effect - more dramatic
-        ctx.shadowBlur = 12 + (glowIntensity * 10); // Increased from 8+5
-        ctx.shadowColor = 'white';
-        ctx.fillStyle = `rgba(255, 255, 255, ${0.4 + (glowIntensity * 0.4)})`; // More intense shine
-        
-        // Draw smaller diamond for inner shine
-        const shineSize = diamondSize * 0.6;
-        ctx.beginPath();
-        ctx.moveTo(diamondX, diamondY - shineSize / 2);
-        ctx.lineTo(diamondX + shineSize / 2, diamondY);
-        ctx.lineTo(diamondX, diamondY + shineSize / 2);
-        ctx.lineTo(diamondX - shineSize / 2, diamondY);
-        ctx.closePath();
-        ctx.fill();
-        
-        // Draw streak number inside diamond - larger font for larger diamond
-        ctx.shadowBlur = 2;
-        ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
-        ctx.fillStyle = '#333';
-        ctx.font = 'bold 20px Arial'; // Increased from 14px
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'middle';
-        ctx.fillText(streak.toString(), diamondX, diamondY);
-        
-        ctx.restore();
-      }
-
       // Continue animation
       animationFrameRef.current = requestAnimationFrame(drawCard);
     };
@@ -519,7 +421,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [currentCardIndex, streak, config, category]);
+  }, [currentCardIndex, config, category]);
 
   return (
     <div className={`flash-cards-dialog ${isVisible ? 'visible' : ''}`}>
@@ -540,6 +442,13 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
         </div>
 
         <div className="flash-card-container">
+          {/* Mini parallax background - uses theme-specific flash card parallax config */}
+          <FlashCardsParallax 
+            currentTheme={currentTheme}
+            width={config.canvasWidth}
+            height={config.canvasHeight}
+          />
+          
           <canvas
             ref={canvasRef}
             width={config.canvasWidth}
@@ -555,13 +464,6 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
             disabled={currentCardIndex === 0}
           >
             ← Previous
-          </button>
-          
-          <button
-            className="btn-skip"
-            onClick={handleSkip}
-          >
-            Skip
           </button>
 
           <button

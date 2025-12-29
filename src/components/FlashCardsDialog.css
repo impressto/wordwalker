@@ -24,7 +24,7 @@
   background: rgba(255, 255, 255, 0.85);
   border-radius: 15px;
   padding: 15px;
-  max-width: 500px;
+  max-width: 420px;
   width: 100%;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   animation: slideIn 0.3s ease-out;
@@ -97,14 +97,21 @@
   justify-content: center;
   align-items: center;
   min-height: 240px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .flash-card-canvas {
   border-radius: 15px;
-  background: white;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  background: transparent;
   display: block;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  width: 320px;
+  height: 240px;
 }
 
 .flash-cards-buttons {
