@@ -2,7 +2,7 @@
  * People Category Answer Translations
  * Auto-generated
  * Category: people
- * Total translations: 99
+ * Total translations: 138
  */
 
 export const peopleAnswerTranslations = {
@@ -115,5 +115,44 @@ export const peopleAnswerTranslations = {
   "maldice": "he/she swears / curses",
   "el juez": "the judge",
   "el estudiante": "the student",
-  "voto": "I vote"
+  "voto": "I vote",
+  "el amor": "love",
+  "el desamor": "heartbreak / lovelessness",
+  "la alegría": "joy / happiness",
+  "la tristeza": "sadness",
+  "el miedo": "fear",
+  "la ira": "anger / wrath",
+  "el enojo": "annoyance / anger",
+  "el asco": "disgust",
+  "el terror": "terror",
+  "el cariño": "affection / fondness",
+  "la indiferencia": "indifference",
+  "la amistad": "friendship",
+  "el odio": "hatred",
+  "la enemistad": "enmity / hostility",
+  "la envidia": "envy",
+  "los celos": "jealousy",
+  "el enamoramiento": "infatuation / falling in love",
+  "el romance": "romance",
+  "la pasión": "passion",
+  "la decepción": "disappointment",
+  "la desesperación": "despair / desperation",
+  "la compasión": "compassion",
+  "la lástima": "pity",
+  "el rencor": "resentment / grudge",
+  "la vergüenza": "shame / embarrassment",
+  "la gratitud": "gratitude",
+  "la animosidad": "animosity",
+  "el agradecimiento": "appreciation / thankfulness",
+  "la admiración": "admiration",
+  "el desprecio": "contempt / scorn",
+  "el remordimiento": "remorse",
+  "el perdón": "forgiveness",
+  "la confianza": "confidence / trust",
+  "la ansiedad": "anxiety",
+  "la diversión": "amusement / fun",
+  "la sorpresa": "surprise",
+  "la irritación": "irritation",
+  "el aburrimiento": "boredom",
+  "el estafador telefónico": "the phone scammer"
 };
