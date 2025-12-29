@@ -2,10 +2,11 @@
  * Flash Cards Configuration
  * 
  * Unified configuration for all flash card categories
- * Card content is imported from individual category files in flashCards/
+ * Flash cards now dynamically generated from questions data
  */
 
-import { foodFlashCards, foodGlobalValues } from './flashCards/food.js';
+import { getQuestionsByCategory } from './questions/index.js';
+import { getCategoryTranslation } from './translations/answers/index.js';
 
 /**
  * FEATURE FLAG: Enable/Disable Flash Cards
@@ -74,28 +75,6 @@ export const flashCardsConfig = {
     // positionX: auto (top-right when textAlign='left', top-left when textAlign='right')
     positionY: 30,
   },
-
-  /**
-   * Card content by category
-   * Imported from individual category files
-   */
-  cards: {
-    food: foodFlashCards,
-    // Add other categories here as they are created
-    // animals: animalsFlashCards,
-    // numbers: numbersFlashCards,
-  },
-  
-  /**
-   * Global values by category
-   * These values are applied to all cards in a category
-   * Individual cards can override these values
-   */
-  globalValues: {
-    food: foodGlobalValues,
-    // animals: animalsGlobalValues,
-    // numbers: numbersGlobalValues,
-  },
 };
 
 /**
@@ -109,85 +88,88 @@ export const getFlashCardConfig = (category) => {
 
 /**
  * Get flash card data for a specific card index
+ * Now dynamically generated from questions data
  * @param {string} category - The category ID
  * @param {number} cardIndex - The index of the card (0-based)
- * @returns {Object|null} Object with spanish text, english text, and image paths, or null if not found
+ * @returns {Object|null} Object with spanish text, english text, emoji, and image paths, or null if not found
  */
 export const getFlashCardData = (category, cardIndex) => {
-  // Get category cards from unified config
-  const categoryCards = flashCardsConfig.cards[category];
+  // Get questions for this category
+  const categoryQuestions = getQuestionsByCategory(category);
   
-  // Check if category has card mappings
-  if (!categoryCards || !categoryCards[cardIndex]) {
+  // Check if question exists at this index
+  if (!categoryQuestions || cardIndex >= categoryQuestions.length) {
     return null;
   }
   
-  const cardConfig = categoryCards[cardIndex];
+  const question = categoryQuestions[cardIndex];
   
-  // Get global values for this category
-  const globalValues = flashCardsConfig.globalValues?.[category] || {};
+  // Extract the correct answer as the Spanish text
+  const spanish = question.correctAnswer;
   
-  // Merge global values with card config (card config takes precedence)
-  const mergedConfig = { ...globalValues, ...cardConfig };
-  
-  // Get image paths (use card-specific or default)
-  const background = mergedConfig.background || flashCardsConfig.defaultBackground;
-  const character = mergedConfig.character || flashCardsConfig.defaultCharacter;
-  const emotion = mergedConfig.emotion || flashCardsConfig.defaultEmotion;
-  const object = mergedConfig.object;
+  // Get English translation using the category-specific translation system
+  const english = getCategoryTranslation(spanish, category) || spanish;
   
   return {
-    spanish: mergedConfig.spanish,
-    english: mergedConfig.english,
-    emoji: mergedConfig.emoji, // Emoji string (e.g., '🍕')
-    emojiPosition: mergedConfig.emojiPosition, // Optional emoji positioning { x, y, size }
-    // Optional card-specific overrides (can come from global or card-specific)
-    textAlign: mergedConfig.textAlign,
-    leftMargin: mergedConfig.leftMargin,
-    spanishColor: mergedConfig.spanishColor,
-    englishColor: mergedConfig.englishColor,
-    spanishPosition: mergedConfig.spanishPosition,
-    englishPosition: mergedConfig.englishPosition,
+    spanish: spanish,
+    english: english,
+    emoji: question.emoji, // Use the emoji from the question
+    emojiPosition: undefined, // Use default positioning
+    textAlign: undefined, // Use default from config
+    leftMargin: undefined,
+    spanishColor: undefined,
+    englishColor: undefined,
+    spanishPosition: undefined,
+    englishPosition: undefined,
     // Image paths for dynamic composition
     images: {
-      background,
-      character,
-      emotion,
-      object,
+      background: flashCardsConfig.defaultBackground,
+      character: flashCardsConfig.defaultCharacter,
+      emotion: flashCardsConfig.defaultEmotion,
+      object: undefined,
     },
   };
 };
 
 /**
  * Get total number of cards for a category
+ * Now based on the number of questions in the category
  * @param {string} category - The category ID
  * @returns {number} Number of cards in the category
  */
 export const getCategoryCardCount = (category) => {
-  const categoryCards = flashCardsConfig.cards[category];
-  return categoryCards ? categoryCards.length : 0;
+  const categoryQuestions = getQuestionsByCategory(category);
+  return categoryQuestions ? categoryQuestions.length : 0;
 };
 
 /**
  * Check if a category has flash cards configured
+ * Now checks if category has questions
  * @param {string} category - The category ID
- * @returns {boolean} True if category has flash cards and feature is enabled
+ * @returns {boolean} True if category has questions and feature is enabled
  */
 export const hasFlashCards = (category) => {
   if (!FLASH_CARDS_ENABLED) {
     console.log('[Flash Cards] Feature is DISABLED globally');
     return false;
   }
-  const hasConfig = !!flashCardsConfig.cards[category];
-  console.log(`[Flash Cards] Category "${category}" has config: ${hasConfig}, feature enabled: ${FLASH_CARDS_ENABLED}`);
-  return hasConfig;
+  const categoryQuestions = getQuestionsByCategory(category);
+  const hasQuestions = categoryQuestions && categoryQuestions.length > 0;
+  console.log(`[Flash Cards] Category "${category}" has questions: ${hasQuestions}, feature enabled: ${FLASH_CARDS_ENABLED}`);
+  return hasQuestions;
 };
 
 /**
  * Get all categories that have flash cards configured
+ * Now returns all categories that have questions
  * @returns {string[]} Array of category IDs (empty if feature is disabled)
  */
 export const getFlashCardCategories = () => {
   if (!FLASH_CARDS_ENABLED) return [];
-  return Object.keys(flashCardsConfig.cards);
+  // For now, return a static list of known categories
+  // This could be improved by scanning all question categories
+  return ['food', 'shopping', 'entertainment', 'accommodation', 'transportation', 
+          'directions', 'medical', 'greetings', 'numbers', 'grammar', 
+          'recreation', 'plants_animals', 'weather', 'daily_routines', 'people',
+          'emergencies', 'business', 'restaurant'];
 };

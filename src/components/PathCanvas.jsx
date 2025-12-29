@@ -87,6 +87,9 @@ const PathCanvas = () => {
   const [isSearchPaused, setIsSearchPaused] = useState(false); // Track if paused by search
   const [showCheckpointHint, setShowCheckpointHint] = useState(false); // Show hint popup when checkpoint is clicked
   
+  // Game mode state: 'multichoice' or 'flashcard'
+  const [gameMode, setGameMode] = useState('multichoice');
+  
   // Flash cards state
   const [showFlashCardsOffer, setShowFlashCardsOffer] = useState(false);
   const [showFlashCards, setShowFlashCards] = useState(false);
@@ -1053,9 +1056,21 @@ const PathCanvas = () => {
         // Check if checkpoint is just to the right of the person - trigger question dialog
         // Show question when checkpoint is within ~120px to the right of person (matches stopping distance)
         const distanceFromPerson = checkpointScreenX - personX;
-        if (distanceFromPerson <= 120 && distanceFromPerson > -50 && !showQuestion && currentQuestion) {
+        if (distanceFromPerson <= 120 && distanceFromPerson > -50 && !showQuestion && !showFlashCards && currentQuestion) {
           setIsPaused(true);
-          setShowQuestion(true);
+          
+          // Check game mode and show appropriate dialog
+          if (gameMode === 'flashcard') {
+            // Show flash cards instead of question dialog
+            // Get the actual category from selectedPath
+            const category = forkCategories[selectedPath] || selectedPath;
+            setCategoryForFlashCards(category);
+            setStreakAtCompletion(streak);
+            setShowFlashCards(true);
+          } else {
+            // Show regular question dialog
+            setShowQuestion(true);
+          }
           
           // Play checkpoint sound if not already played for this checkpoint
           if (!checkpointSoundPlayedRef.current && soundManagerRef.current) {
@@ -1410,11 +1425,14 @@ const PathCanvas = () => {
     soundManagerRef,
   });
 
-  const handlePathChoice = (choice) => {
+  const handlePathChoice = (choice, mode = 'multichoice') => {
     // Play choice sound
     if (soundManagerRef.current) {
       soundManagerRef.current.playChoice();
     }
+    
+    // Store the selected game mode
+    setGameMode(mode);
     
     // choice can now be either a categoryId directly or a choice key
     // If it's a choice key (choice1, choice2, etc.), look it up in forkCategories
@@ -1539,13 +1557,57 @@ const PathCanvas = () => {
 
   const handleFlashCardsComplete = () => {
     setShowFlashCards(false);
-    // Continue to category selector
+    
+    // Check if we're in flashcard mode as part of the game flow
+    if (gameMode === 'flashcard' && selectedPath) {
+      // Resume game and move to next checkpoint (similar to question flow)
+      setIsPaused(false);
+      setCheckpointsAnswered(prev => prev + 1);
+      
+      // Position next checkpoint
+      const canvas = canvasRef.current;
+      if (canvas) {
+        checkpointPositionRef.current = offsetRef.current + canvas.width * 0.5 + 95;
+      }
+      checkpointFadeStartTimeRef.current = null;
+      checkpointSoundPlayedRef.current = false;
+      
+      // Check if category is complete
+      if (checkpointsAnswered + 1 >= currentCheckpointLimit) {
+        // Category completed, return to fork
+        setTimeout(() => {
+          if (canvas) {
+            offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
+          }
+          setShowChoice(true);
+          setSelectedPath(null);
+        }, 100);
+      }
+    } else {
+      // Debug mode or original flow - continue to category selector
+      setTimeout(() => {
+        const canvas = canvasRef.current;
+        if (canvas) {
+          offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
+        }
+        setShowChoice(true);
+      }, 100);
+    }
+  };
+
+  const handleFlashCardsClose = () => {
+    // User clicked close button - return to path choice dialog
+    setShowFlashCards(false);
+    setIsPaused(true);
+    
+    // Return to fork/category selection
     setTimeout(() => {
       const canvas = canvasRef.current;
       if (canvas) {
         offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
       }
       setShowChoice(true);
+      setSelectedPath(null);
     }, 100);
   };
 
@@ -1944,6 +2006,7 @@ const PathCanvas = () => {
           category={categoryForFlashCards}
           streak={streakAtCompletion}
           onComplete={handleFlashCardsComplete}
+          onClose={handleFlashCardsClose}
           currentTheme={currentTheme}
         />
       )}

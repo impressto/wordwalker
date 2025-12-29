@@ -93,6 +93,13 @@ const gameSettings = {
     basePoints: 10,
   },
 
+  // Flash Cards Feature (Experimental)
+  flashCards: {
+    // Enable or disable the flash cards feature
+    // Set to true to enable, false to disable
+    enabled: true,
+  },
+
   // Translation Box Settings
   translationBox: {
     // Duration (in milliseconds) to display the translation/hint box

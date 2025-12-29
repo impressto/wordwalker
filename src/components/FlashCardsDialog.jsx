@@ -1,7 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import './FlashCardsDialog.css';
 import { getStreakColor } from '../config/gameSettings';
-import { getFlashCardConfig, getFlashCardData } from '../config/flashCardsConfig';
+import { getFlashCardConfig, getFlashCardData, getCategoryCardCount } from '../config/flashCardsConfig';
+import { isEmojiSvg, getEmojiSvgPath } from '../utils/emojiUtils.jsx';
 
 /**
  * Helper function to check if an image is loaded and ready to draw
@@ -66,7 +67,7 @@ const drawWrappedText = (ctx, text, x, y, maxWidth, lineHeight) => {
  * Flash cards are extracted from a sprite sheet (3400x250px with 10 cards)
  * Rendered on canvas with animated glowing streak diamond
  */
-const FlashCardsDialog = ({ category, onComplete, streak, currentTheme = 'default' }) => {
+const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme = 'default' }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const canvasRef = useRef(null);
@@ -77,8 +78,8 @@ const FlashCardsDialog = ({ category, onComplete, streak, currentTheme = 'defaul
   // Get flash card configuration (unified for all categories)
   const config = getFlashCardConfig(category);
   
-  // Get total cards for this category
-  const totalCards = config.cards[category]?.length || 0;
+  // Get total cards for this category (now from questions)
+  const totalCards = getCategoryCardCount(category);
   
   // Get base path for assets
   const basePath = import.meta.env.BASE_URL || '/';
@@ -156,6 +157,27 @@ const FlashCardsDialog = ({ category, onComplete, streak, currentTheme = 'defaul
         );
       } else {
         console.log(`Skipping non-PNG object: ${objectFileName}`);
+      }
+    }
+
+    // Load emoji image if emoji is a PNG/SVG file
+    if (cardData.emoji && isEmojiSvg(cardData.emoji)) {
+      const emojiPath = getEmojiSvgPath(cardData.emoji, category);
+      if (emojiPath) {
+        const emojiImg = new Image();
+        imagePromises.push(
+          new Promise((resolve) => {
+            emojiImg.onload = () => {
+              imagesToLoad.emojiImage = emojiImg;
+              resolve();
+            };
+            emojiImg.onerror = (error) => {
+              console.warn(`Failed to load emoji image: ${emojiPath}`, error);
+              resolve(); // Continue even if image fails
+            };
+            emojiImg.src = emojiPath;
+          })
+        );
       }
     }
 
@@ -257,26 +279,48 @@ const FlashCardsDialog = ({ category, onComplete, streak, currentTheme = 'defaul
 
       // 3. Object (emoji or image) - positioned based on text alignment
       if (cardData.emoji) {
-        // Render emoji with optional position overrides
-        const emojiPosition = cardData.emojiPosition || {};
-        const emojiFontSize = emojiPosition.size !== undefined ? emojiPosition.size : (canvas.height * 0.4); // 40% of canvas height by default
-        
-        // Position emoji on SAME side as text alignment
-        // If text is left-aligned, put emoji on left; if text is right-aligned, put emoji on right
-        const defaultX = textAlign === 'left'
-          ? canvas.width * 0.275  // Left side when text is left (5% + 22.5%)
-          : canvas.width * 0.725; // Right side when text is right (55% + 17.5%)
-        const defaultY = canvas.height - 20 - emojiFontSize; // 20px from bottom, accounting for emoji size
-        
-        const emojiX = emojiPosition.x !== undefined ? emojiPosition.x : defaultX;
-        const emojiY = emojiPosition.y !== undefined ? emojiPosition.y : defaultY;
-        
-        ctx.save();
-        ctx.font = `${emojiFontSize}px Arial`;
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'top';
-        ctx.fillText(cardData.emoji, emojiX, emojiY);
-        ctx.restore();
+        // Check if emoji is an image file (PNG/SVG)
+        if (isEmojiSvg(cardData.emoji) && isImageReady(imagesRef.current.emojiImage)) {
+          // Render emoji as image
+          const emojiPosition = cardData.emojiPosition || {};
+          const defaultSize = canvas.height * 0.4; // 40% of canvas height by default
+          const emojiSize = emojiPosition.size !== undefined ? emojiPosition.size : defaultSize;
+          
+          // Position emoji on SAME side as text alignment
+          const defaultX = textAlign === 'left'
+            ? canvas.width * 0.275 - (emojiSize / 2)  // Left side when text is left
+            : canvas.width * 0.725 - (emojiSize / 2); // Right side when text is right
+          const defaultY = canvas.height - 20 - emojiSize; // 20px from bottom
+          
+          const emojiX = emojiPosition.x !== undefined ? emojiPosition.x : defaultX;
+          const emojiY = emojiPosition.y !== undefined ? emojiPosition.y : defaultY;
+          
+          ctx.drawImage(
+            imagesRef.current.emojiImage,
+            emojiX, emojiY, emojiSize, emojiSize
+          );
+        } else {
+          // Render emoji as text (standard emoji character)
+          const emojiPosition = cardData.emojiPosition || {};
+          const emojiFontSize = emojiPosition.size !== undefined ? emojiPosition.size : (canvas.height * 0.4); // 40% of canvas height by default
+          
+          // Position emoji on SAME side as text alignment
+          // If text is left-aligned, put emoji on left; if text is right-aligned, put emoji on right
+          const defaultX = textAlign === 'left'
+            ? canvas.width * 0.275  // Left side when text is left (5% + 22.5%)
+            : canvas.width * 0.725; // Right side when text is right (55% + 17.5%)
+          const defaultY = canvas.height - 20 - emojiFontSize; // 20px from bottom, accounting for emoji size
+          
+          const emojiX = emojiPosition.x !== undefined ? emojiPosition.x : defaultX;
+          const emojiY = emojiPosition.y !== undefined ? emojiPosition.y : defaultY;
+          
+          ctx.save();
+          ctx.font = `${emojiFontSize}px Arial`;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'top';
+          ctx.fillText(cardData.emoji, emojiX, emojiY);
+          ctx.restore();
+        }
       } else if (isImageReady(imagesRef.current.object)) {
         // Render PNG image
         const objWidth = canvas.width * 0.35; // 35% of canvas width
@@ -482,6 +526,14 @@ const FlashCardsDialog = ({ category, onComplete, streak, currentTheme = 'defaul
       <div className="flash-cards-content">
         <div className="flash-cards-header">
           <h2>🎓 Flash Cards</h2>
+          <button
+            className="btn-close"
+            onClick={onClose || onComplete}
+            title="Close flash cards"
+            aria-label="Close"
+          >
+            ✕
+          </button>
           <p className="cards-progress">
             Card {currentCardIndex + 1} of {totalCards}
           </p>

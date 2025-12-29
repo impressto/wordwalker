@@ -10,9 +10,13 @@ import { getAllCategoryIds } from '../config/questions';
 import { isCategoryFullyMastered, getCategoryCorrectAnswerCount, getCategoryQuestionCount } from '../utils/questionTracking';
 import { FLASH_CARDS_ENABLED } from '../config/flashCardsConfig';
 import { getCategoryIconPath, isEmojiSvg } from '../utils/emojiUtils';
+import gameSettings from '../config/gameSettings';
 
 const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpenShop, onOpenFlashCards, currentCategory = null, correctAnswersByCategory = {}, completedCategories = new Set() }) => {
   const [dialogTop, setDialogTop] = useState('100px');
+  
+  // Game mode selection: 'multichoice' or 'flashcard'
+  const [gameMode, setGameMode] = useState('multichoice');
   
   // Load saved page from localStorage or default to 0
   const [currentPage, setCurrentPage] = useState(() => {
@@ -160,7 +164,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
     return (
       <button
         key={categoryId}
-        onClick={() => !isDisabled && onPathChoice(categoryId)}
+        onClick={() => !isDisabled && onPathChoice(categoryId, gameMode)}
         disabled={isDisabled}
         title={titleMessage}
         style={{
@@ -244,14 +248,89 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
       display: 'flex',
       flexDirection: 'column',
     }}>
-      <h3 style={{
-        margin: '0 0 12px 0',
-        textAlign: 'center',
-        fontSize: '22px',
-        color: '#333',
-      }}>
-        Choose Your Path 🛤️
-      </h3>
+      {/* Game Mode Toggle (only shown when flashCards feature is enabled) */}
+      {gameSettings.flashCards.enabled ? (
+        <div style={{
+          marginBottom: '12px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '8px',
+          alignItems: 'center',
+        }}>
+          <div style={{
+            display: 'flex',
+            backgroundColor: '#f0f0f0',
+            borderRadius: '12px',
+            padding: '4px',
+            gap: '4px',
+            width: '100%',
+            maxWidth: '300px',
+          }}>
+            <button
+              onClick={() => setGameMode('multichoice')}
+              style={{
+                flex: 1,
+                padding: '10px 16px',
+                fontSize: '14px',
+                fontWeight: gameMode === 'multichoice' ? 'bold' : 'normal',
+                backgroundColor: gameMode === 'multichoice' ? '#4CAF50' : 'transparent',
+                color: gameMode === 'multichoice' ? 'white' : '#333',
+                border: 'none',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '6px',
+              }}
+            >
+              <span>☑️</span>
+              <span>Multichoice</span>
+            </button>
+            <button
+              onClick={() => setGameMode('flashcard')}
+              style={{
+                flex: 1,
+                padding: '10px 16px',
+                fontSize: '14px',
+                fontWeight: gameMode === 'flashcard' ? 'bold' : 'normal',
+                backgroundColor: gameMode === 'flashcard' ? '#9C27B0' : 'transparent',
+                color: gameMode === 'flashcard' ? 'white' : '#333',
+                border: 'none',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '6px',
+              }}
+            >
+              <span>🎴</span>
+              <span>Flash Cards</span>
+            </button>
+          </div>
+          <div style={{
+            fontSize: '12px',
+            color: '#666',
+            textAlign: 'center',
+          }}>
+            {gameMode === 'multichoice' 
+              ? 'Answer questions to progress' 
+              : 'Study with interactive flash cards'}
+          </div>
+        </div>
+      ) : (
+        <h3 style={{
+          margin: '0 0 12px 0',
+          textAlign: 'center',
+          fontSize: '22px',
+          color: '#333',
+        }}>
+          Choose Your Path 🛤️
+        </h3>
+      )}
       
       {/* Pagination Container */}
       <div id="pagination-container" style={{
