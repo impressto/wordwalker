@@ -24,6 +24,11 @@ export const flashCardsConfig = {
   canvasWidth: 320,
   canvasHeight: 240,
   
+  // Character image dimensions (all character images are 220x220)
+  characterWidth: 220,
+  characterHeight: 220,
+  characterScale: 0.8, // Scale factor for character display (0.8 = 80% of original size)
+  
   // Available characters for random selection
   availableCharacters: ['asuka', 'emma', 'steamboatwillie', 'elvis'],
   

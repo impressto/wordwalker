@@ -299,19 +299,36 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
 
       // 2. Character with emotion (positioned based on layout orientation)
       if (isImageReady(imagesRef.current.character)) {
-        // Position character opposite to text alignment, aligned to bottom
-        const charWidth = canvas.width * 0.4; // 40% of canvas width
-        const charHeight = canvas.height * 0.8; // 80% of canvas height
+        // Use native character dimensions from config (220x220) with scale factor
+        const baseWidth = config.characterWidth || 220;
+        const baseHeight = config.characterHeight || 220;
+        const scale = config.characterScale || 0.8;
+        const charWidth = baseWidth * scale;
+        const charHeight = baseHeight * scale;
+        const charMargin = 10; // Margin from canvas edges
         // If reversed layout (text left), put character on right; otherwise put character on left
         const charX = isReversedLayout
-          ? canvas.width * 0.55  // Right side when text is left (reversed)
-          : canvas.width * 0.05; // Left side when text is right (normal)
+          ? canvas.width - charWidth - charMargin  // Right side - position from right edge
+          : charMargin; // Left side - position from left edge
         const charY = canvas.height - charHeight; // Align to bottom (bottom - height)
         
-        ctx.drawImage(
-          imagesRef.current.character,
-          charX, charY, charWidth, charHeight
-        );
+        // Flip character horizontally when on the right side to face the emoji
+        ctx.save();
+        if (isReversedLayout) {
+          // Translate to the center of where the image will be, flip, then translate back
+          ctx.translate(charX + charWidth, charY);
+          ctx.scale(-1, 1);
+          ctx.drawImage(
+            imagesRef.current.character,
+            0, 0, charWidth, charHeight
+          );
+        } else {
+          ctx.drawImage(
+            imagesRef.current.character,
+            charX, charY, charWidth, charHeight
+          );
+        }
+        ctx.restore();
       }
 
       // 3. Object (emoji or image) - positioned based on layout orientation
@@ -508,6 +525,11 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
             height={config.canvasHeight}
             className="flash-card-canvas"
           />
+          
+          {/* Debug: Display character name */}
+          <div className="flash-card-debug-character">
+            {selectedCharacter}
+          </div>
         </div>
 
         <div className="flash-cards-buttons">
