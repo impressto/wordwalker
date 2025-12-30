@@ -1,5 +1,5 @@
 // Service Worker for WordWalker PWA
-const CACHE_NAME = 'wordwalker-v1.6.0';
+const CACHE_NAME = 'wordwalker-v1.6.1';
 const ASSETS_CACHE = 'wordwalker-assets-v1';
 const AUDIO_CACHE = 'wordwalker-audio-v1';
 const IMAGE_CACHE = 'wordwalker-images-v1';
@@ -87,8 +87,6 @@ const CORE_ASSETS = [
   '/wordwalker/dist/images/themes/dia-de-los-muertos/path.png',
   '/wordwalker/dist/images/themes/dia-de-los-muertos/path-fork.png',
   '/wordwalker/dist/images/themes/dia-de-los-muertos/scene.jpg',
-  '/wordwalker/dist/images/themes/dia-de-los-muertos/day-of-the-dead.png',
-  '/wordwalker/dist/images/themes/dia-de-los-muertos/day-of-dead-parallax.png',
   // Theme background audio files
   '/wordwalker/dist/audio/themes/default/background.mp3',
   '/wordwalker/dist/audio/themes/hong-kong/background.mp3',
