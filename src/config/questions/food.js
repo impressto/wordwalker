@@ -16,6 +16,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'confused'
   },
   {
     id: 'food_002',
@@ -28,6 +29,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'excited'
   },
   {
     id: 'food_003',
@@ -40,6 +42,8 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'excited'
+
   },
   {
     id: 'food_004',

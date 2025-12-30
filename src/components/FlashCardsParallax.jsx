@@ -220,6 +220,10 @@ const FlashCardsParallax = ({
         }
       }
 
+      // Add a subtle dark overlay to make foreground elements stand out more
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
+      ctx.fillRect(0, 0, width, height);
+
       // Continue animation
       animationFrameRef.current = requestAnimationFrame(animate);
     };

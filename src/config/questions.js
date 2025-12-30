@@ -15,6 +15,9 @@
  *   points: points awarded for correct answer on first attempt
  *   category: topic category (food, shopping, entertainment, etc.)
  *   difficulty: easy, medium, hard
+ *   emotion: (optional) character emotion for flash cards (e.g., 'confused', 'happy', 'surprised')
+ *            Available emotions: afraid, angry, anxious, calm, confused, determined, 
+ *            disgusted, excited, happy, hurt, neutral, pleased, sad, surprised
  * }
  */
 

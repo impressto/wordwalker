@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import './FlashCardsDialog.css';
-import { getFlashCardConfig, getFlashCardData, getCategoryCardCount } from '../config/flashCardsConfig';
+import { getFlashCardConfig, getFlashCardData, getCategoryCardCount, flashCardsConfig } from '../config/flashCardsConfig';
 import { isEmojiSvg, getEmojiSvgPath } from '../utils/emojiUtils.jsx';
 import FlashCardsParallax from './FlashCardsParallax';
 
@@ -93,6 +93,14 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
   // Get total cards for this category (now from questions)
   const totalCards = getCategoryCardCount(category);
   
+  // Randomly select a character once when component mounts
+  const selectedCharacterRef = useRef(null);
+  if (selectedCharacterRef.current === null) {
+    const characters = flashCardsConfig.availableCharacters;
+    selectedCharacterRef.current = characters[Math.floor(Math.random() * characters.length)];
+  }
+  const selectedCharacter = selectedCharacterRef.current;
+  
   // Create a shuffled index array once when component mounts
   // This ensures cards are shown in random order each time dialog opens
   const shuffledIndicesRef = useRef(null);
@@ -120,7 +128,8 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
   useEffect(() => {
     const cardData = getFlashCardData(
       category, 
-      actualCardIndex
+      actualCardIndex,
+      selectedCharacter
     );
     
     if (!cardData || !cardData.images) return;
@@ -267,7 +276,8 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
       // Get flash card data (Spanish and English text, and image paths)
       const cardData = getFlashCardData(
         category, 
-        actualCardIndex
+        actualCardIndex,
+        selectedCharacter
       );
       
       if (!cardData) {
@@ -304,7 +314,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
         );
       }
 
-      // 3. Object (emoji or image) - positioned based on text alignment
+      // 3. Object (emoji or image) - positioned based on layout orientation
       if (cardData.emoji) {
         // Check if emoji is an image file (PNG/SVG)
         const isImageEmoji = isEmojiSvg(cardData.emoji);
@@ -318,9 +328,10 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
             const emojiSize = emojiPosition.size !== undefined ? emojiPosition.size : defaultSize;
             
             // Position emoji on SAME side as text alignment
-            const defaultX = textAlign === 'left'
-              ? canvas.width * 0.275 - (emojiSize / 2)  // Left side when text is left
-              : canvas.width * 0.725 - (emojiSize / 2); // Right side when text is right
+            // If reversed (text left), emoji on left; if normal (text right), emoji on right
+            const defaultX = isReversedLayout
+              ? canvas.width * 0.275 - (emojiSize / 2)  // Left side when reversed
+              : canvas.width * 0.725 - (emojiSize / 2); // Right side when normal
             const defaultY = canvas.height - 20 - emojiSize; // 20px from bottom
             
             const emojiX = emojiPosition.x !== undefined ? emojiPosition.x : defaultX;
@@ -338,10 +349,10 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
           const emojiFontSize = emojiPosition.size !== undefined ? emojiPosition.size : (canvas.height * 0.4); // 40% of canvas height by default
           
           // Position emoji on SAME side as text alignment
-          // If text is left-aligned, put emoji on left; if text is right-aligned, put emoji on right
-          const defaultX = textAlign === 'left'
-            ? canvas.width * 0.275  // Left side when text is left (5% + 22.5%)
-            : canvas.width * 0.725; // Right side when text is right (55% + 17.5%)
+          // If reversed (text left), emoji on left; if normal (text right), emoji on right
+          const defaultX = isReversedLayout
+            ? canvas.width * 0.275  // Left side when reversed
+            : canvas.width * 0.725; // Right side when normal
           const defaultY = canvas.height - 20 - emojiFontSize; // 20px from bottom, accounting for emoji size
           
           const emojiX = emojiPosition.x !== undefined ? emojiPosition.x : defaultX;
@@ -375,24 +386,22 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
         const topMargin = textConfig.topMargin || 60;
         const verticalSpacing = textConfig.verticalSpacing || 15;
         
-        // Get text alignment configuration (card-specific overrides global config)
-        const margin = cardData.leftMargin !== undefined ? cardData.leftMargin : (textConfig.leftMargin || 20);
+        // Get text alignment configuration based on layout orientation
+        const margin = textConfig.leftMargin || 20;
         
         // Get card-specific positioning overrides
         const spanishPositioning = cardData.spanishPosition || {};
         const englishPositioning = cardData.englishPosition || {};
         
-        // Determine default X position based on alignment
+        // Determine default X position based on layout orientation
         let defaultX;
         let canvasTextAlign;
-        if (textAlign === 'left') {
+        if (isReversedLayout) {
+          // Reversed: text on left
           defaultX = margin;
           canvasTextAlign = 'left';
-        } else if (textAlign === 'center') {
-          defaultX = canvas.width / 2;
-          canvasTextAlign = 'center';
         } else {
-          // Default to right alignment
+          // Normal: text on right
           defaultX = canvas.width - margin;
           canvasTextAlign = 'right';
         }

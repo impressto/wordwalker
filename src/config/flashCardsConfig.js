@@ -24,6 +24,9 @@ export const flashCardsConfig = {
   canvasWidth: 320,
   canvasHeight: 240,
   
+  // Available characters for random selection
+  availableCharacters: ['asuka', 'emma', 'steamboatwillie', 'elvis'],
+  
   // Default assets for dynamic card generation
   defaultBackground: 'purple.png',
   defaultCharacter: 'emma',
@@ -74,9 +77,10 @@ export const getFlashCardConfig = (category) => {
  * Now dynamically generated from questions data
  * @param {string} category - The category ID
  * @param {number} cardIndex - The index of the card (0-based)
+ * @param {string} selectedCharacter - Optional character name to use (if not provided, uses default)
  * @returns {Object|null} Object with spanish text, english text, emoji, and image paths, or null if not found
  */
-export const getFlashCardData = (category, cardIndex) => {
+export const getFlashCardData = (category, cardIndex, selectedCharacter = null) => {
   // Get questions for this category
   const categoryQuestions = getQuestionsByCategory(category);
   
@@ -93,6 +97,15 @@ export const getFlashCardData = (category, cardIndex) => {
   // Get English translation using the category-specific translation system
   const english = getCategoryTranslation(spanish, category) || spanish;
   
+  // Determine emotion to use - if question has emotion property, use it; otherwise use default
+  // Expected format: "confused" (which maps to confused.png)
+  const emotionFile = question.emotion 
+    ? `${question.emotion}.png` 
+    : flashCardsConfig.defaultEmotion;
+  
+  // Use selected character if provided, otherwise use default
+  const characterToUse = selectedCharacter || flashCardsConfig.defaultCharacter;
+  
   return {
     spanish: spanish,
     english: english,
@@ -107,8 +120,8 @@ export const getFlashCardData = (category, cardIndex) => {
     // Image paths for dynamic composition
     images: {
       background: flashCardsConfig.defaultBackground,
-      character: flashCardsConfig.defaultCharacter,
-      emotion: flashCardsConfig.defaultEmotion,
+      character: characterToUse,
+      emotion: emotionFile,
       object: undefined,
     },
   };
