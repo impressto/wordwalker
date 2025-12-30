@@ -60,7 +60,6 @@ export const foodQuestions = [
   {
     id: 'food_005',
     emoji: '🍇',
-    
     question: '¿Con qué fruta se hace el vino?',
     translation: 'What fruit is wine made from?',
     options: ['las uvas', 'las ciruelas', 'las moras'],
@@ -81,6 +80,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_009',
@@ -117,6 +117,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_012',
@@ -227,13 +228,13 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'confused'
   },
 
   // Vegetables (15 questions)
   {
     id: 'food_021',
     emoji: '🥕',
-    
     question: '¿Qué verdura naranja comen los conejos?',
     translation: 'What orange vegetable do rabbits eat?',
     options: ['la zanahoria', 'la calabaza', 'el boniato'],
@@ -242,6 +243,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_022',
@@ -255,6 +257,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_023',
@@ -268,6 +271,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'anxious'
   },
   {
     id: 'food_024',
@@ -281,6 +285,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'anxious'
   },
   {
     id: 'food_025',
@@ -294,6 +299,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_026',
@@ -307,6 +313,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'calm'
   },
   {
     id: 'food_027',
@@ -320,6 +327,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_028',
@@ -333,6 +341,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'calm'
   },
   {
     id: 'food_029',
@@ -346,6 +355,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'afraid'
   },
   {
     id: 'food_030',
@@ -359,6 +369,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'afraid'
   },
   {
     id: 'food_031',
@@ -439,6 +450,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'excited'
   },
   {
     id: 'food_037',
@@ -452,6 +464,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+     emotion: 'excited'
   },
   {
     id: 'food_038',
@@ -465,6 +478,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+     emotion: 'excited'
   },
   {
     id: 'food_039',
@@ -517,6 +531,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+     emotion: 'calm'
   },
   {
     id: 'food_043',
@@ -607,6 +622,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'sad'
   },
   {
     id: 'food_050',
@@ -672,6 +688,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+     emotion: 'sad'
   },
 
   // Bread & Grains (10 questions)
@@ -687,6 +704,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_057',
@@ -769,7 +787,6 @@ export const foodQuestions = [
   {
     id: 'food_063',
     emoji: '🧇',
-    
     question: '¿Qué tiene cuadros y se come con miel?',
     translation: 'What has squares and is eaten with honey?',
     options: ['el waffle', 'el panqueque', 'la crepe'],
@@ -791,6 +808,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_065',
@@ -804,13 +822,13 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
 
   // Dairy & Cheese (8 questions)
   {
     id: 'food_066',
     emoji: '🥛',
-    
     question: '¿Qué bebida blanca dan las vacas?',
     translation: 'What white drink do cows give?',
     options: ['la leche', 'el yogur', 'la crema'],
@@ -819,6 +837,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_067',
@@ -845,6 +864,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_069',
@@ -857,11 +877,11 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'surprised'
   },
   {
     id: 'food_070',
     emoji: '🍨',
-    
     question: '¿Qué postre frío se sirve en copa?',
     translation: 'What cold dessert is served in a glass?',
     options: ['el helado', 'el sundae', 'la nieve'],
@@ -870,6 +890,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'surprised'
   },
   {
     id: 'food_071',
@@ -882,11 +903,11 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'hurt'
   },
   {
     id: 'food_073',
     emoji: '🍮',
-    
     question: '¿Qué postre dulce tiene caramelo?',
     translation: 'What sweet dessert has caramel?',
     options: ['el flan', 'el pudín', 'la natilla'],
@@ -909,6 +930,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'anxious'
   },
   {
     id: 'food_075',
@@ -987,6 +1009,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'surprised'
   },
   {
     id: 'food_081',
