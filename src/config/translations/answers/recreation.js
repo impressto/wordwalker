@@ -72,7 +72,6 @@ export const recreationAnswerTranslations = {
   "el girasol": "the sunflower",
   "la rosa": "the rose",
   "caminar": "walk",
-  "correr": "run",
   "andar en bicicleta": "ride a bicycle",
   "montar a caballo": "ride a horse",
   "esquiar": "ski",

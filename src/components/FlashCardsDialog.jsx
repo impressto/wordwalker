@@ -62,6 +62,20 @@ const drawWrappedText = (ctx, text, x, y, maxWidth, lineHeight) => {
 };
 
 /**
+ * Helper function to shuffle an array using Fisher-Yates algorithm
+ * @param {Array} array - Array to shuffle
+ * @returns {Array} Shuffled copy of the array
+ */
+const shuffleArray = (array) => {
+  const shuffled = [...array];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled;
+};
+
+/**
  * FlashCardsDialog Component
  * Shows flash cards after completing a category
  * Rendered on canvas with mini parallax background
@@ -79,6 +93,26 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
   // Get total cards for this category (now from questions)
   const totalCards = getCategoryCardCount(category);
   
+  // Create a shuffled index array once when component mounts
+  // This ensures cards are shown in random order each time dialog opens
+  const shuffledIndicesRef = useRef(null);
+  if (shuffledIndicesRef.current === null) {
+    const indices = Array.from({ length: totalCards }, (_, i) => i);
+    shuffledIndicesRef.current = shuffleArray(indices);
+  }
+  
+  // Get the actual card index from the shuffled array
+  const actualCardIndex = shuffledIndicesRef.current[currentCardIndex];
+  
+  // Randomly determine layout orientation for each card (50% chance)
+  // true = reversed layout (character on right, text on left)
+  // false = normal layout (character on left, text on right)
+  const layoutOrientationRef = useRef(null);
+  if (layoutOrientationRef.current === null) {
+    layoutOrientationRef.current = Array.from({ length: totalCards }, () => Math.random() < 0.5);
+  }
+  const isReversedLayout = layoutOrientationRef.current[currentCardIndex];
+  
   // Get base path for assets
   const basePath = import.meta.env.BASE_URL || '/';
 
@@ -86,7 +120,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
   useEffect(() => {
     const cardData = getFlashCardData(
       category, 
-      currentCardIndex
+      actualCardIndex
     );
     
     if (!cardData || !cardData.images) return;
@@ -189,7 +223,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [currentCardIndex, category, basePath, currentTheme]);
+  }, [actualCardIndex, category, basePath, currentTheme]);
 
   // Add a small delay before showing the dialog to allow DOM layout calculation
   useEffect(() => {
@@ -233,7 +267,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
       // Get flash card data (Spanish and English text, and image paths)
       const cardData = getFlashCardData(
         category, 
-        currentCardIndex
+        actualCardIndex
       );
       
       if (!cardData) {
@@ -244,21 +278,24 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
       // Draw layers in order:
       // Determine text alignment for positioning elements
       const textConfig = config.text || {};
-      const textAlign = cardData.textAlign !== undefined ? cardData.textAlign : (textConfig.align || 'right');
+      // Use isReversedLayout to determine alignment:
+      // reversed = character on right, text on left
+      // normal = character on left, text on right
+      const textAlign = isReversedLayout ? 'left' : 'right';
       
       // 1. Background - SKIP drawing background to let parallax show through
       // The mini parallax is now drawn as a separate layer behind this canvas
       // No need to draw background here anymore
 
-      // 2. Character with emotion (positioned based on text alignment)
+      // 2. Character with emotion (positioned based on layout orientation)
       if (isImageReady(imagesRef.current.character)) {
         // Position character opposite to text alignment, aligned to bottom
         const charWidth = canvas.width * 0.4; // 40% of canvas width
         const charHeight = canvas.height * 0.8; // 80% of canvas height
-        // If text is left-aligned, put character on right; if text is right-aligned, put character on left
-        const charX = textAlign === 'left' 
-          ? canvas.width * 0.55  // Right side when text is left
-          : canvas.width * 0.05; // Left side when text is right
+        // If reversed layout (text left), put character on right; otherwise put character on left
+        const charX = isReversedLayout
+          ? canvas.width * 0.55  // Right side when text is left (reversed)
+          : canvas.width * 0.05; // Left side when text is right (normal)
         const charY = canvas.height - charHeight; // Align to bottom (bottom - height)
         
         ctx.drawImage(
@@ -428,7 +465,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [currentCardIndex, config, category]);
+  }, [actualCardIndex, config, category]);
 
   return (
     <div className={`flash-cards-dialog ${isVisible ? 'visible' : ''}`}>

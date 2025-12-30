@@ -611,7 +611,7 @@ export const peopleQuestions = [
   // Physical Descriptions (25 questions)
   {
     id: 'people_051',
-    emoji: '🧒',
+    emoji: 'young.png',
     question: '¿Cómo se dice "young"?',
     translation: 'How do you say \'young\'?',
     options: ['joven', 'viejo', 'nuevo'],
@@ -683,7 +683,7 @@ export const peopleQuestions = [
   },
   {
     id: 'people_057',
-    emoji: '😊',
+    emoji: 'pretty.png',
     question: '¿Cómo se dice "pretty" o "beautiful"?',
     translation: 'How do you say \'pretty\' or \'beautiful\'?',
     options: ['bonito', 'feo', 'hermoso'],

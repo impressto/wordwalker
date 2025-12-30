@@ -1334,7 +1334,7 @@ export const recreationQuestions = [
   },
   {
     id: 'recreation_111',
-    emoji: '🎢',
+    emoji: 'roller-coaster.png',
     question: '¿Qué atracción emocionante encuentras en el parque de diversiones?',
     translation: 'What thrilling attraction do you find at the amusement park?',
     options: ['la montaña rusa', 'el carrusel', 'la noria'],
