@@ -3,10 +3,29 @@
  * Centralized configuration for all audio settings including remote pronunciation files
  */
 
+/**
+ * Get the appropriate base URL for audio files based on current domain
+ * This prevents CORS issues when the app is hosted on multiple domains
+ */
+const getAudioBaseUrl = () => {
+  const hostname = window.location.hostname;
+  const protocol = window.location.protocol;
+  
+  // For wordwalker.ca domain
+  if (hostname === 'wordwalker.ca' || hostname === 'www.wordwalker.ca') {
+    return `${protocol}//wordwalker.ca/audio-samples/`;
+  }
+  
+  // For impressto.ca domain (or localhost development)
+  // Default to impressto.ca path structure
+  return `${protocol}//${hostname}/wordwalker/audio-samples/`;
+};
+
 const audioConfig = {
   // Base URL for pronunciation audio files
   // Files are organized by category: /audio-samples/{category}/{correctAnswer}.mp3
-  pronunciationBaseUrl: 'https://impressto.ca/wordwalker/audio-samples/',
+  // Dynamically determined based on current domain to avoid CORS issues
+  pronunciationBaseUrl: getAudioBaseUrl(),
   
   // File format for pronunciation audio
   pronunciationFormat: 'mp3',
