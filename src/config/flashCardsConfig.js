@@ -48,7 +48,7 @@ export const flashCardsConfig = {
       fontSize: 36,
       fontFamily: 'Arial, sans-serif',
       fontWeight: 'bold',
-      color: '#333',
+      color: '#FFFFFF',
       maxWidth: 300, // Max width before wrapping (increased with center alignment)
       lineHeight: 1.0, // Reduced to minimize gap with English text
     },
@@ -57,7 +57,7 @@ export const flashCardsConfig = {
       fontSize: 24,
       fontFamily: 'Arial, sans-serif',
       fontWeight: 'normal',
-      color: '#ff1313ff',
+      color: '#a7dcf1ff',
       maxWidth: 300, // Increased to match Spanish
       lineHeight: 1.2,
     },

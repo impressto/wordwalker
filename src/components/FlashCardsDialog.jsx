@@ -430,9 +430,9 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
         ctx.textAlign = canvasTextAlign;
         ctx.textBaseline = 'top';
         ctx.font = `${spanishConfig.fontWeight || 'bold'} ${spanishConfig.fontSize || 28}px ${spanishConfig.fontFamily || 'Arial'}`;
-        // Use card-specific color override or default
+        // Use card-specific color override or config color
         ctx.fillStyle = cardData.spanishColor || spanishConfig.color || '#333';
-        ctx.shadowColor = 'rgba(255, 255, 255, 0.8)';
+        ctx.shadowColor = 'rgba(0, 0, 0, 0.8)';
         ctx.shadowBlur = 3;
         
         // Use card-specific position or defaults
@@ -520,6 +520,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
           />
           
           <canvas
+            id="flash-card-canvas"
             ref={canvasRef}
             width={config.canvasWidth}
             height={config.canvasHeight}
