@@ -12,6 +12,7 @@ import { isEmojiSvg, getEmojiSvgPath } from '../utils/emojiUtils.jsx';
 import { loadGameState, saveGameState, clearGameState, hasSavedGameState, convertLoadedState } from '../utils/gameStatePersistence';
 import { useCharacterAndTheme } from '../hooks/useCharacterAndTheme';
 import { useAnswerHandling } from '../hooks/useAnswerHandling';
+import { trackCategorySelection, trackQuestionAnswer, trackCategoryCompletion } from '../utils/gtm';
 import ScoreDisplay from './ScoreDisplay';
 import PathChoiceDialog from './PathChoiceDialog';
 import QuestionDialog from './QuestionDialog';
@@ -1064,6 +1065,13 @@ const PathCanvas = () => {
             // Show flash cards instead of question dialog
             // Get the actual category from selectedPath
             const category = forkCategories[selectedPath] || selectedPath;
+            const categoryData = getCategoryById(category);
+            
+            // Track category selection in GTM
+            if (categoryData) {
+              trackCategorySelection(category, categoryData.displayName);
+            }
+            
             setCategoryForFlashCards(category);
             setStreakAtCompletion(streak);
             setShowFlashCards(true);
@@ -1438,6 +1446,12 @@ const PathCanvas = () => {
     // If it's a choice key (choice1, choice2, etc.), look it up in forkCategories
     // Otherwise, treat it as a categoryId directly
     const category = forkCategories[choice] || choice;
+    const categoryData = getCategoryById(category);
+    
+    // Track category selection in GTM (for multichoice mode)
+    if (mode !== 'flashcard' && categoryData) {
+      trackCategorySelection(category, categoryData.displayName);
+    }
     
     setSelectedPath(choice);
     setShowChoice(false);

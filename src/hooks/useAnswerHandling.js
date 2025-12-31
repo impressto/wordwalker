@@ -8,9 +8,10 @@
 import { useRef } from 'react';
 import { addToFirstTryByCategory, addCorrectAnswer } from '../utils/questionTracking';
 import { generateNewForkCategories, extractCategoryIds } from '../utils/categoryRotation';
-import { getAllCategoryIds } from '../config/questions';
+import { getAllCategoryIds, getCategoryById } from '../config/questions';
 import gameSettings, { getTranslationBoxDuration } from '../config/gameSettings';
 import { FLASH_CARDS_ENABLED } from '../config/flashCardsConfig';
+import { trackQuestionAnswer, trackCategoryCompletion, trackCategorySelection } from '../utils/gtm';
 
 /**
  * Custom hook for handling answer choices in the game
@@ -130,6 +131,19 @@ export const useAnswerHandling = ({
     // Store the current question for the translation overlay
     // (we'll load the next question but overlay needs to show this one)
     answeredQuestionRef.current = currentQuestion;
+    
+    // Track answer in GTM
+    const category = currentQuestion.category;
+    const categoryData = getCategoryById(category);
+    if (categoryData) {
+      trackQuestionAnswer(
+        category,
+        categoryData.displayName,
+        true, // correct
+        firstAttempt,
+        streak + (firstAttempt ? 1 : 0)
+      );
+    }
     
     // Immediately hide question dialog and show translation overlay
     setShowQuestion(false);
@@ -327,6 +341,13 @@ export const useAnswerHandling = ({
     // Mark the current category as globally completed
     // selectedPath can be either a choice key or a categoryId directly
     const currentCategory = forkCategories[selectedPath] || selectedPath;
+    
+    // Track category completion in GTM
+    const categoryData = getCategoryById(currentCategory);
+    if (categoryData) {
+      trackCategoryCompletion(currentCategory, categoryData.displayName, streak);
+    }
+    
     setCompletedCategories(prev => new Set([...prev, currentCategory]));
     
     // Reset for next fork
@@ -397,6 +418,19 @@ export const useAnswerHandling = ({
    * @param {string} answer - The incorrect answer
    */
   const handleIncorrectAnswer = (answer) => {
+    // Track incorrect answer in GTM
+    const category = currentQuestion.category;
+    const categoryData = getCategoryById(category);
+    if (categoryData) {
+      trackQuestionAnswer(
+        category,
+        categoryData.displayName,
+        false, // incorrect
+        firstAttempt,
+        streak
+      );
+    }
+    
     // Wrong answer - track it, play wrong sound, reset streak on first attempt
     setIncorrectAnswers(prev => [...prev, answer]);
     
