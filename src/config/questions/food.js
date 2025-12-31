@@ -2005,7 +2005,7 @@ export const foodQuestions = [
   },
   {
     id: 'food_168',
-    emoji: '🪑',
+    emoji: 'dining-table.png',
     question: '¿Qué pides cuando llegas al restaurante?',
     translation: 'What do you ask for when you arrive at the restaurant?',
     options: ['una mesa', 'una silla', 'un plato'],
@@ -2017,7 +2017,7 @@ export const foodQuestions = [
   },
   {
     id: 'food_169',
-    emoji: '📅',
+    emoji: 'reservation.png',
     question: '¿Qué haces para asegurar una mesa?',
     translation: 'What do you do to secure a table?',
     options: ['hacer una reserva', 'pagar una cuenta', 'leer el menú'],

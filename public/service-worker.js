@@ -63,7 +63,6 @@ const CORE_ASSETS = [
   '/wordwalker/dist/images/themes/jamaica/parallax-layer7.png',
   '/wordwalker/dist/images/themes/jamaica/path.png',
   '/wordwalker/dist/images/themes/jamaica/path-fork.png',
-  '/wordwalker/dist/images/themes/jamaica/path-fork2.png',
   '/wordwalker/dist/images/themes/jamaica/scene.jpg',
   // Paris theme - parallax layers
   '/wordwalker/dist/images/themes/paris/parallax-layer1.png',
