@@ -421,5 +421,6 @@ export const foodAnswerTranslations = {
   "el barril de vino": "the wine barrel",
   "la cata de vinos": "the wine tasting",
   "el sacacorchos": "the wing corkscrew",
-  "el calabacín": "the zucchini"
+  "el calabacín": "the zucchini",
+  "el chef": "the chef"
 };
