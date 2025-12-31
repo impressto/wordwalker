@@ -71,7 +71,7 @@ export const foodQuestions = [
   },
   {
     id: 'food_008',
-    emoji: 'fideos instantáneos.png',
+    emoji: 'instant-noodle.png',
     question: '¿Qué comida rápida preparas con agua caliente?',
     translation: 'What fast food do you prepare with hot water?',
     options: ['los fideos instantáneos', 'la sopa instantánea', 'el ramen instantáneo'],
@@ -2914,18 +2914,6 @@ export const foodQuestions = [
     difficulty: 'hard',
   },
   {
-    id: 'food_243',
-    emoji: '📦',
-    question: '¿Qué pides para llevar lo que sobra?',
-    translation: 'What do you ask for to take what\'s left over?',
-    options: ['una caja para llevar', 'otro plato', 'la cuenta'],
-    correctAnswer: 'una caja para llevar',
-    hint: 'Takeout box - "doggy bag"',
-    points: 15,
-    category: 'food',
-    difficulty: 'hard',
-  },
-  {
     id: 'food_244',
     emoji: '🧊',
     question: '¿Qué dices si no quieres hielo?',
@@ -3096,18 +3084,6 @@ export const foodQuestions = [
     difficulty: 'medium',
   },
   {
-    id: 'food_258',
-    emoji: '❓',
-    question: '¿Qué preguntas para saber opciones?',
-    translation: 'What do you ask to know the options?',
-    options: ['¿qué me recomienda?', '¿cuánto cuesta?', '¿dónde está el baño?'],
-    correctAnswer: '¿qué me recomienda?',
-    hint: 'What do you recommend? - ask for suggestion',
-    points: 10,
-    category: 'food',
-    difficulty: 'medium',
-  },
-  {
     id: 'food_259',
     emoji: '💵',
     question: '¿Qué preguntas para saber el precio?',
@@ -3169,7 +3145,7 @@ export const foodQuestions = [
   },
   {
     id: 'food_264',
-    emoji: 'food scale.png',
+    emoji: 'kitchen-scale.png',
     question: '¿Con qué pesas los ingredientes en la cocina?',
     translation: 'What do you weigh ingredients with in the kitchen?',
     options: ['la báscula de cocina', 'la taza medidora', 'la cuchara'],
@@ -3973,7 +3949,7 @@ export const foodQuestions = [
   },
   {
     id: 'food_331',
-    emoji: 'hard boiled egg.png',
+    emoji: 'hard-boiled-egg.png',
     question: '¿Qué huevo cocinas en agua hirviendo?',
     translation: 'What egg do you cook in boiling water?',
     options: ['el huevo duro', 'el huevo frito', 'el huevo revuelto'],
@@ -4009,7 +3985,7 @@ export const foodQuestions = [
   },
   {
     id: 'food_334',
-    emoji: 'Ice Cream Machine.png',
+    emoji: 'ice-cream-machine.png',
     question: '¿Qué máquina hace helado suave?',
     translation: 'What machine makes soft serve ice cream?',
     options: ['la máquina de helados', 'la licuadora', 'el congelador'],
@@ -4309,7 +4285,7 @@ export const foodQuestions = [
   },
   {
     id: 'food_359',
-    emoji: 'nut cracking tool.png',
+    emoji: 'nut-cracking-tool.png',
     question: '¿Con qué abres las nueces?',
     translation: 'What do you open nuts with?',
     options: ['el cascanueces', 'el cuchillo', 'el martillo'],
@@ -4573,7 +4549,7 @@ export const foodQuestions = [
   },
   {
     id: 'food_381',
-    emoji: 'rhubarb stick .png',
+    emoji: 'rhubarb-stick.png',
     question: '¿Qué tallo rosado y ácido usas en postres?',
     translation: 'What pink, tart stalk do you use in desserts?',
     options: ['el ruibarbo', 'el apio', 'el espárrago'],
@@ -4717,7 +4693,7 @@ export const foodQuestions = [
   },
   {
     id: 'food_394',
-    emoji: 'serving cart.png',
+    emoji: 'serving-cart.png',
     question: '¿En qué carrito sirven en restaurantes elegantes?',
     translation: 'What cart do they serve on in elegant restaurants?',
     options: ['el carrito de servicio', 'la bandeja', 'el plato'],
@@ -4765,7 +4741,7 @@ export const foodQuestions = [
   },
   {
     id: 'food_398',
-    emoji: 'soda fountain machine.png',
+    emoji: 'soda-fountain-machine.png',
     question: '¿De qué máquina sirves refrescos en restaurantes?',
     translation: 'From what machine do you serve sodas in restaurants?',
     options: ['la máquina de refrescos', 'la nevera', 'el refrigerador'],
@@ -4825,7 +4801,7 @@ export const foodQuestions = [
   },
   {
     id: 'food_403',
-    emoji: 'Spritz.png',
+    emoji: 'spritz.png',
     question: '¿Qué cóctel italiano tiene prosecco?',
     translation: 'What Italian cocktail has prosecco?',
     options: ['el spritz', 'la margarita', 'el mojito'],
@@ -4861,7 +4837,7 @@ export const foodQuestions = [
   },
   {
     id: 'food_406',
-    emoji: 'tea bag.png',
+    emoji: 'tea-bag.png',
     question: '¿Cómo preparas té rápidamente?',
     translation: 'How do you prepare tea quickly?',
     options: ['con bolsita de té', 'con hojas sueltas', 'con polvo'],
@@ -5005,7 +4981,7 @@ export const foodQuestions = [
   },
   {
     id: 'food_418',
-    emoji: 'wine barrel.png',
+    emoji: 'wine-barrel.png',
     question: '¿Dónde envejece el vino?',
     translation: 'Where does wine age?',
     options: ['el barril de vino', 'la botella', 'la copa'],
@@ -5029,7 +5005,7 @@ export const foodQuestions = [
   },
   {
     id: 'food_420',
-    emoji: 'wing corkscrew.png',
+    emoji: 'wing-corkscrew.png',
     question: '¿Con qué abres las botellas de vino?',
     translation: 'What do you open wine bottles with?',
     options: ['el sacacorchos', 'el cuchillo', 'las tijeras'],
