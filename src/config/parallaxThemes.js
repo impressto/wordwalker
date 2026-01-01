@@ -66,8 +66,8 @@ const parallaxThemes = {
       // Vertical positioning offsets for each layer (in pixels)
       // Positive values move layers down, negative values move them up
       layerOffsets: {
-        layer3: 55,   // Bushes - move down to be more visible
-        layer4: 20,   // Trees - move down slightly
+        layer3: 70,   // Bushes - move down to be more visible
+        layer4: 30,   // Trees - move down slightly
         layer5: -10,   // Far trees - move down slightly
         layer6: 10,   // Mountains - move down slightly
         layer7: 0,    // Sky - no offset
@@ -87,6 +87,63 @@ const parallaxThemes = {
       layer7Scale: 3.75,
       // Horizon adjustment (0.0 to 1.0, proportion of canvas height)
       horizonY: 0.5, // Middle of canvas for flash cards
+    },
+  },
+
+  // Jamaica theme - tropical beach scene
+  'jamaica': {
+    name: 'Jamaica Beach',
+    description: 'Tropical beach landscape',
+    imagePath: 'jamaica',
+    // Whether to use separate path.png and path-fork.png images
+    usePathImages: true,
+    // Canvas background colors for fallback when layer images aren't loaded
+    canvasColors: {
+      aboveHorizon: '#b7dbed',  // Light blue tropical sky
+      belowHorizon: '#fae19e',  // Sandy beach color
+    },
+    // Layer positions for Jamaica theme
+    layerPositions: {
+      layer1: 0,      // Foreground - sand dune
+      layer2: 0,      // beach level
+      layer3: -40,    // unbrellas
+      layer4: 40,      // surf
+      layer5: -15,      // cruise ship
+      layer6: 0,      // mountains
+      layer7: 0,      // Sky/rear
+    },
+    layerSpeeds: {
+      layer1: 1.4,    // Foreground (closest) - fastest movement
+      layer2: 1.0,    // Mid-foreground
+      layer3: 0.5,    // Mid layer
+      layer4: 0.4,    // Mid-distant
+      layer5: 0.2,    // Distant layer
+      layer6: 0.15,   // Background
+      layer7: 0.0,    // Static background
+    },
+    positioning: {
+      horizonY: 0.35,        // Horizon at water line
+      pathTopOffset: 0.55,   // Path on sand
+      pathTopAdditional: 90,
+      pathYOffset: 20,        // Additional Y offset for path tiles only (independent of layers)
+    },
+    // Layer 2 vertical stretch control
+    layer2StretchFactor: 0.8,
+    // Layer 2 vertical offset
+    layer2OffsetY: 30,
+    
+    // Flash card mini parallax configuration for Jamaica theme
+    flashCardParallax: {
+      layerOffsets: {
+        layer3: 65,   // Umbrellas - move down more for beach scene
+        layer4: 15,   // Surf
+        layer5: -10,   // Cruise ship
+        layer6: 10,   // Mountains
+        layer7: 0,    // Sky
+      },
+      scaleAdjustment: 0.25,
+         layer7Scale: 4.375,
+      horizonY: 0.5,
     },
   },
 
@@ -148,62 +205,7 @@ const parallaxThemes = {
     },
   },
 
-  // Jamaica theme - tropical beach scene
-  'jamaica': {
-    name: 'Jamaica Beach',
-    description: 'Tropical beach landscape',
-    imagePath: 'jamaica',
-    // Whether to use separate path.png and path-fork.png images
-    usePathImages: true,
-    // Canvas background colors for fallback when layer images aren't loaded
-    canvasColors: {
-      aboveHorizon: '#b7dbed',  // Light blue tropical sky
-      belowHorizon: '#fae19e',  // Sandy beach color
-    },
-    // Layer positions for Jamaica theme
-    layerPositions: {
-      layer1: 0,      // Foreground - sand dune
-      layer2: 0,      // beach level
-      layer3: -40,    // unbrellas
-      layer4: 40,      // surf
-      layer5: -15,      // cruise ship
-      layer6: 0,      // mountains
-      layer7: 0,      // Sky/rear
-    },
-    layerSpeeds: {
-      layer1: 1.4,    // Foreground (closest) - fastest movement
-      layer2: 1.0,    // Mid-foreground
-      layer3: 0.5,    // Mid layer
-      layer4: 0.4,    // Mid-distant
-      layer5: 0.2,    // Distant layer
-      layer6: 0.15,   // Background
-      layer7: 0.0,    // Static background
-    },
-    positioning: {
-      horizonY: 0.35,        // Horizon at water line
-      pathTopOffset: 0.55,   // Path on sand
-      pathTopAdditional: 90,
-      pathYOffset: 20,        // Additional Y offset for path tiles only (independent of layers)
-    },
-    // Layer 2 vertical stretch control
-    layer2StretchFactor: 0.8,
-    // Layer 2 vertical offset
-    layer2OffsetY: 30,
-    
-    // Flash card mini parallax configuration for Jamaica theme
-    flashCardParallax: {
-      layerOffsets: {
-        layer3: 65,   // Umbrellas - move down more for beach scene
-        layer4: 15,   // Surf
-        layer5: -10,   // Cruise ship
-        layer6: 10,   // Mountains
-        layer7: 0,    // Sky
-      },
-      scaleAdjustment: 0.25,
-         layer7Scale: 4.375,
-      horizonY: 0.5,
-    },
-  },
+
 
   // Día de los Muertos theme - Day of the Dead celebration
   'dia-de-los-muertos': {
