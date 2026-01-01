@@ -16,7 +16,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
-    emotion: 'confused'
+    emotion: 'happy'
   },
   {
     id: 'food_002',
@@ -56,6 +56,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_005',
@@ -68,6 +69,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_008',
@@ -93,6 +95,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_010',
@@ -105,6 +108,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'surprised'
   },
   {
     id: 'food_011',
@@ -130,6 +134,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_013',
@@ -142,6 +147,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_014',
@@ -154,6 +160,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'surprised'
   },
   {
     id: 'food_015',
@@ -166,6 +173,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_016',
@@ -178,6 +186,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_017',
@@ -190,6 +199,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_018',
@@ -202,6 +212,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'confused'
   },
   {
     id: 'food_019',
@@ -215,6 +226,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'surprised'
   },
   {
     id: 'food_020',
@@ -383,6 +395,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_032',
@@ -396,6 +409,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_033',
@@ -409,6 +423,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_034',
@@ -422,6 +437,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
 
   // Main Dishes & Proteins (20 questions)
@@ -479,6 +495,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'excited'
   },
   {
     id: 'food_040',
@@ -492,6 +509,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'excited'
   },
   {
     id: 'food_041',
@@ -505,6 +523,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_042',
@@ -532,6 +551,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_044',
@@ -545,6 +565,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'excited'
   },
   {
     id: 'food_045',
@@ -558,6 +579,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'excited'
   },
   {
     id: 'food_046',
@@ -570,6 +592,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'excited'
   },
   {
     id: 'food_047',
@@ -583,6 +606,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_048',
@@ -596,6 +620,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'excited'
   },
   {
     id: 'food_049',
@@ -623,6 +648,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_051',
@@ -636,6 +662,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'calm'
   },
   {
     id: 'food_052',
@@ -649,6 +676,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'excited'
   },
   {
     id: 'food_054',
@@ -662,6 +690,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_055',
@@ -705,6 +734,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_058',
@@ -718,6 +748,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_059',
@@ -731,6 +762,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'surprised'
   },
   {
     id: 'food_060',
@@ -744,6 +776,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_061',
@@ -757,6 +790,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_062',
@@ -770,6 +804,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_063',
@@ -782,6 +817,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_064',
@@ -838,6 +874,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_068',
@@ -903,6 +940,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
 
   // Drinks (12 questions)
@@ -931,6 +969,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_076',
@@ -944,6 +983,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_077',
@@ -957,6 +997,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_078',
@@ -970,6 +1011,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'excited'
   },
   {
     id: 'food_079',
@@ -983,6 +1025,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'calm'
   },
   {
     id: 'food_080',
@@ -1010,6 +1053,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_082',
@@ -1023,6 +1067,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'excited'
   },
   {
     id: 'food_083',
@@ -1036,6 +1081,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_084',
@@ -1048,6 +1094,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_085',
@@ -1060,9 +1107,8 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'calm'
   },
-
-  // Desserts & Sweets (15 questions)
   {
     id: 'food_086',
     emoji: '🍰',
@@ -1074,6 +1120,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'excited'
   },
   {
     id: 'food_087',
@@ -1086,6 +1133,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'excited'
   },
   {
     id: 'food_088',
@@ -1098,6 +1146,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_089',
@@ -1111,6 +1160,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_090',
@@ -1124,6 +1174,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'excited'
   },
   {
     id: 'food_091',
@@ -1137,6 +1188,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_092',
@@ -1150,6 +1202,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_093',
@@ -1163,6 +1216,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_094',
@@ -1176,6 +1230,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'excited'
   },
   {
     id: 'food_095',
@@ -1189,6 +1244,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_096',
@@ -1202,6 +1258,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'excited'
   },
   {
     id: 'food_097',
@@ -1215,6 +1272,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'surprised'
   },
   {
     id: 'food_098',
@@ -1227,6 +1285,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_100',
@@ -1239,6 +1298,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'surprised'
   },
 
   // More Fruits (10 questions)
@@ -1253,6 +1313,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_104',
@@ -1265,6 +1326,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_105',
@@ -1277,6 +1339,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_106',
@@ -1289,6 +1352,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_107',
@@ -1301,6 +1365,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_108',
@@ -1313,6 +1378,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_109',
@@ -1325,6 +1391,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_110',
@@ -1337,6 +1404,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
 
   // More Proteins & Seafood (15 questions)
@@ -1352,6 +1420,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_112',
@@ -1365,6 +1434,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_113',
@@ -1378,6 +1448,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_114',
@@ -1391,6 +1462,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_115',
@@ -1404,6 +1476,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_116',
@@ -1417,6 +1490,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'surprised'
   },
   {
     id: 'food_117',
@@ -1430,6 +1504,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_118',
@@ -1443,6 +1518,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_119',
@@ -1456,6 +1532,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_120',
@@ -1469,6 +1546,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_121',
@@ -1482,6 +1560,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_122',
@@ -1494,6 +1573,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_123',
@@ -1506,6 +1586,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_124',
@@ -1519,6 +1600,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_125',
@@ -1532,6 +1614,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
 
   // Condiments & Seasonings (15 questions)
@@ -1547,6 +1630,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_128',
@@ -1560,6 +1644,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_129',
@@ -1573,6 +1658,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_130',
@@ -1586,6 +1672,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_131',
@@ -1599,6 +1686,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_132',
@@ -1612,6 +1700,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'surprised'
   },
   {
     id: 'food_133',
@@ -1625,6 +1714,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'afraid'
   },
   {
     id: 'food_134',
@@ -1638,6 +1728,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'anxious'
   },
   {
     id: 'food_135',
@@ -1651,6 +1742,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'anxious'
   },
   {
     id: 'food_136',
@@ -1664,6 +1756,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_137',
@@ -1677,6 +1770,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_138',
@@ -1690,6 +1784,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_139',
@@ -1703,6 +1798,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_140',
@@ -1716,6 +1812,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
 
   // More International Dishes (15 questions)
@@ -1732,6 +1829,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'surprised'
   },
   {
     id: 'food_143',
@@ -1744,6 +1842,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'surprised'
   },
   {
     id: 'food_144',
@@ -1756,6 +1855,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'surprised'
   },
   {
     id: 'food_147',
@@ -1768,6 +1868,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'anxious'
   },
   {
     id: 'food_148',
@@ -1780,6 +1881,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'calm'
   },
   {
     id: 'food_149',
@@ -1792,6 +1894,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'excited'
   },
   {
     id: 'food_150',
@@ -1804,6 +1907,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_151',
@@ -1816,6 +1920,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_152',
@@ -1828,6 +1933,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_153',
@@ -1840,6 +1946,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_154',
@@ -1852,6 +1959,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'excited'
   },
   {
     id: 'food_155',
@@ -1864,6 +1972,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
 
   // Additional Food/Utensil Phrases (3 questions)
@@ -1878,6 +1987,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_160',
@@ -1890,6 +2000,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'afraid'
   },
   {
     id: 'food_161',
@@ -1902,6 +2013,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_162',
@@ -1914,6 +2026,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_163',
@@ -1926,6 +2039,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
 
    // Basic Restaurant Phrases (1-15)
@@ -1940,6 +2054,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_165',
@@ -1952,6 +2067,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_166',
@@ -1964,6 +2080,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_167',
@@ -1976,6 +2093,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_168',
@@ -1988,6 +2106,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_169',
@@ -2000,6 +2119,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'calm'
   },
   {
     id: 'food_170',
@@ -2012,6 +2132,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_171',
@@ -2024,6 +2145,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_172',
@@ -2036,6 +2158,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_173',
@@ -2048,6 +2171,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_174',
@@ -2060,6 +2184,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_175',
@@ -2072,6 +2197,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_176',
@@ -2084,6 +2210,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
 
   // Ordering Food (16-30)
@@ -2098,6 +2225,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'calm'
   },
   {
     id: 'food_178',
@@ -2110,6 +2238,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_180',
@@ -2122,6 +2251,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_181',
@@ -2134,6 +2264,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_182',
@@ -2146,6 +2277,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_183',
@@ -2158,6 +2290,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_184',
@@ -2170,6 +2303,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_185',
@@ -2182,6 +2316,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_186',
@@ -2194,6 +2329,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_187',
@@ -2206,6 +2342,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'calm'
   },
   {
     id: 'food_188',
@@ -2218,6 +2355,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_189',
@@ -2230,6 +2368,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_190',
@@ -2242,6 +2381,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_191',
@@ -2254,6 +2394,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
 
   // Drinks (31-45)
@@ -2268,6 +2409,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_193',
@@ -2280,6 +2422,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_194',
@@ -2292,6 +2435,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_195',
@@ -2304,6 +2448,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_196',
@@ -2316,6 +2461,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_197',
@@ -2328,6 +2474,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_198',
@@ -2340,6 +2487,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_199',
@@ -2352,6 +2500,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_200',
@@ -2364,6 +2513,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_201',
@@ -2376,6 +2526,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_202',
@@ -2388,6 +2539,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'excited'
   },
   {
     id: 'food_203',
@@ -2400,6 +2552,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_204',
@@ -2412,6 +2565,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'excited'
   },
   {
     id: 'food_205',
@@ -2424,6 +2578,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'excited'
   },
   {
     id: 'food_206',
@@ -2436,6 +2591,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'calm'
   },
 
   // Desserts (46-55)
@@ -2450,6 +2606,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_208',
@@ -2462,6 +2619,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'excited'
   },
   {
     id: 'food_209',
@@ -2474,6 +2632,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_210',
@@ -2486,6 +2645,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_211',
@@ -2498,6 +2658,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_212',
@@ -2510,6 +2671,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_213',
@@ -2522,6 +2684,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_214',
@@ -2534,6 +2697,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_215',
@@ -2546,6 +2710,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_216',
@@ -2558,6 +2723,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
 
   // Restaurant Types & Situations (56-70)
@@ -2572,6 +2738,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_218',
@@ -2584,6 +2751,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_219',
@@ -2596,6 +2764,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_220',
@@ -2608,6 +2777,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_221',
@@ -2620,6 +2790,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'calm'
   },
   {
     id: 'food_222',
@@ -2632,6 +2803,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_224',
@@ -2644,6 +2816,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_225',
@@ -2656,6 +2829,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'excited'
   },
   {
     id: 'food_226',
@@ -2668,6 +2842,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_227',
@@ -2680,6 +2855,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_228',
@@ -2692,6 +2868,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_229',
@@ -2704,6 +2881,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_230',
@@ -2716,6 +2894,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_231',
@@ -2728,6 +2907,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
 
   // Dining Preferences & Requests (71-85)
@@ -2742,6 +2922,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'calm'
   },
   {
     id: 'food_233',
@@ -2754,6 +2935,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'anxious'
   },
   {
     id: 'food_234',
@@ -2766,6 +2948,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_235',
@@ -2778,6 +2961,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_236',
@@ -2790,6 +2974,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_237',
@@ -2802,6 +2987,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_238',
@@ -2814,6 +3000,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_239',
@@ -2826,6 +3013,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_240',
@@ -2838,6 +3026,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_241',
@@ -2850,6 +3039,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_242',
@@ -2862,6 +3052,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_244',
@@ -2874,6 +3065,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_245',
@@ -2886,6 +3078,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_246',
@@ -2898,6 +3091,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
 
   // Final phrases & situations (86-100)
@@ -2912,6 +3106,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'happy'
   },
   {
     id: 'food_248',
@@ -2924,6 +3119,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'anxious'
   },
   {
     id: 'food_249',
@@ -2936,6 +3132,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'anxious'
   },
   {
     id: 'food_250',
@@ -2948,6 +3145,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_251',
@@ -2960,6 +3158,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_252',
@@ -2972,6 +3171,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_253',
@@ -2984,6 +3184,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_254',
@@ -2996,6 +3197,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_255',
@@ -3008,6 +3210,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_256',
@@ -3020,6 +3223,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_257',
@@ -3032,6 +3236,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'calm'
   },
   {
     id: 'food_259',
@@ -3044,6 +3249,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_260',
@@ -3056,6 +3262,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'anxious'
   },
   {
     id: 'food_261',
@@ -3068,6 +3275,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_264',
@@ -3080,6 +3288,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_265',
@@ -3092,6 +3301,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_266',
@@ -3104,6 +3314,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'surprised'
   },
   {
     id: 'food_267',
@@ -3116,6 +3327,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_268',
@@ -3128,18 +3340,20 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_269',
     emoji: 'apple-slices.png',
     question: '¿Cómo se llaman las manzanas cortadas?',
     translation: 'What are cut apples called?',
-    options: ['las rebanadas de manzana', 'las manzanas enteras', 'el puré de manzana'],
-    correctAnswer: 'las rebanadas de manzana',
+    options: ['las rodajas de manzana', 'las manzanas enteras', 'el puré de manzana'],
+    correctAnswer: 'las rodajas de manzana',
     hint: 'Apples cut into thin pieces for snacking',
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_270',
@@ -3152,6 +3366,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_271',
@@ -3164,6 +3379,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_272',
@@ -3176,6 +3392,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_273',
@@ -3188,6 +3405,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'excited'
   },
   {
     id: 'food_274',
@@ -3200,6 +3418,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'excited'
   },
   {
     id: 'food_275',
@@ -3212,6 +3431,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'excited'
   },
   {
     id: 'food_276',
@@ -3224,6 +3444,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'excited'
   },
   {
     id: 'food_277',
@@ -3236,6 +3457,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'excited'
   },
   {
     id: 'food_278',
@@ -3248,6 +3470,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_279',
@@ -3260,6 +3483,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_280',
@@ -3272,6 +3496,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_281',
@@ -3284,6 +3509,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_282',
@@ -3296,6 +3522,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_283',
@@ -3308,6 +3535,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_284',
@@ -3320,6 +3548,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'calm'
   },
   {
     id: 'food_285',
@@ -3332,6 +3561,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'excited'
   },
   {
     id: 'food_286',
@@ -3344,6 +3574,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_287',
@@ -3356,6 +3587,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_288',
@@ -3368,6 +3600,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_289',
@@ -3380,6 +3613,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_290',
@@ -3392,6 +3626,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_291',
@@ -3404,6 +3639,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_292',
@@ -3416,6 +3652,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_293',
@@ -3428,6 +3665,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_294',
@@ -3440,6 +3678,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_295',
@@ -3452,6 +3691,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_296',
@@ -3464,6 +3704,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_297',
@@ -3476,6 +3717,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_298',
@@ -3488,6 +3730,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_299',
@@ -3500,6 +3743,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_300',
@@ -3512,6 +3756,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'excited'
   },
   {
     id: 'food_301',
@@ -3524,6 +3769,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_302',
@@ -3536,6 +3782,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_303',
@@ -3548,6 +3795,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_304',
@@ -3560,6 +3808,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_305',
@@ -3572,6 +3821,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_306',
@@ -3584,6 +3834,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_307',
@@ -3596,6 +3847,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_308',
@@ -3608,6 +3860,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_309',
@@ -3620,6 +3873,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_310',
@@ -3632,6 +3886,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_311',
@@ -3644,6 +3899,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_312',
@@ -3656,6 +3912,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_313',
@@ -3668,6 +3925,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_314',
@@ -3680,6 +3938,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_315',
@@ -3692,6 +3951,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_316',
@@ -3704,6 +3964,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'surprised'
   },
   {
     id: 'food_317',
@@ -3716,6 +3977,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_318',
@@ -3728,6 +3990,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_319',
@@ -3740,6 +4003,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_320',
@@ -3752,6 +4016,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'calm'
   },
   {
     id: 'food_321',
@@ -3764,6 +4029,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_322',
@@ -3776,6 +4042,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_323',
@@ -3788,6 +4055,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_324',
@@ -3800,6 +4068,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_325',
@@ -3812,6 +4081,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_326',
@@ -3824,6 +4094,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_327',
@@ -3836,6 +4107,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_328',
@@ -3848,6 +4120,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_329',
@@ -3860,6 +4133,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_330',
@@ -3872,6 +4146,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_331',
@@ -3884,6 +4159,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'calm'
   },
   {
     id: 'food_332',
@@ -3896,6 +4172,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_333',
@@ -3908,6 +4185,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_334',
@@ -3920,6 +4198,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_335',
@@ -3932,6 +4211,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_336',
@@ -3944,6 +4224,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'surprised'
   },
   {
     id: 'food_337',
@@ -3956,6 +4237,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_338',
@@ -3968,6 +4250,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_339',
@@ -3980,6 +4263,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_340',
@@ -3992,6 +4276,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'anxious'
   },
   {
     id: 'food_341',
@@ -4004,6 +4289,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_342',
@@ -4016,6 +4302,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_343',
@@ -4028,6 +4315,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_344',
@@ -4040,6 +4328,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'surprised'
   },
   {
     id: 'food_345',
@@ -4052,6 +4341,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_346',
@@ -4064,6 +4354,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'surprised'
   },
   {
     id: 'food_347',
@@ -4076,6 +4367,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_348',
@@ -4088,6 +4380,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_349',
@@ -4100,6 +4393,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_350',
@@ -4112,6 +4406,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'excited'
   },
   {
     id: 'food_351',
@@ -4124,6 +4419,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_352',
@@ -4136,6 +4432,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_353',
@@ -4148,6 +4445,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_354',
@@ -4160,6 +4458,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'calm'
   },
   {
     id: 'food_355',
@@ -4172,6 +4471,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'surprised'
   },
   {
     id: 'food_356',
@@ -4184,6 +4484,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_357',
@@ -4196,6 +4497,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_358',
@@ -4208,6 +4510,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_359',
@@ -4220,6 +4523,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_360',
@@ -4232,6 +4536,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_361',
@@ -4244,6 +4549,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_362',
@@ -4256,6 +4562,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_363',
@@ -4268,6 +4575,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_364',
@@ -4280,6 +4588,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_365',
@@ -4292,6 +4601,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_366',
@@ -4304,6 +4614,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_367',
@@ -4316,6 +4627,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_368',
@@ -4328,6 +4640,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_369',
@@ -4340,6 +4653,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_370',
@@ -4352,6 +4666,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_371',
@@ -4364,6 +4679,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_372',
@@ -4376,6 +4692,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_373',
@@ -4388,6 +4705,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_374',
@@ -4400,6 +4718,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_375',
@@ -4412,6 +4731,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_376',
@@ -4424,6 +4744,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_377',
@@ -4436,6 +4757,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_378',
@@ -4448,6 +4770,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_379',
@@ -4460,6 +4783,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_380',
@@ -4472,6 +4796,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_381',
@@ -4484,6 +4809,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_383',
@@ -4496,6 +4822,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_384',
@@ -4508,6 +4835,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_385',
@@ -4520,6 +4848,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_386',
@@ -4532,6 +4861,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_387',
@@ -4544,6 +4874,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_388',
@@ -4556,6 +4887,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_389',
@@ -4568,6 +4900,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_390',
@@ -4580,6 +4913,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_391',
@@ -4592,6 +4926,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_392',
@@ -4604,6 +4939,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_393',
@@ -4616,6 +4952,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_394',
@@ -4628,6 +4965,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_395',
@@ -4640,6 +4978,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'neutral'
   },
   {
     id: 'food_396',
@@ -4652,6 +4991,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_397',
@@ -4664,6 +5004,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_398',
@@ -4676,6 +5017,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_399',
@@ -4688,6 +5030,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_400',
@@ -4700,6 +5043,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_401',
@@ -4712,6 +5056,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_402',
@@ -4724,6 +5069,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_403',
@@ -4736,6 +5082,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_404',
@@ -4748,6 +5095,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_405',
@@ -4760,6 +5108,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_406',
@@ -4772,6 +5121,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_407',
@@ -4784,6 +5134,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'calm'
   },
   {
     id: 'food_408',
@@ -4796,6 +5147,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_409',
@@ -4808,6 +5160,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_410',
@@ -4820,6 +5173,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
   {
     id: 'food_411',
@@ -4832,6 +5186,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_412',
@@ -4844,6 +5199,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_413',
@@ -4856,6 +5212,7 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'pleased'
   },
   {
     id: 'food_414',
@@ -4868,6 +5225,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_415',
@@ -4880,6 +5238,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_416',
@@ -4892,6 +5251,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_417',
@@ -4904,6 +5264,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'pleased'
   },
   {
     id: 'food_418',
@@ -4916,6 +5277,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_419',
@@ -4928,6 +5290,7 @@ export const foodQuestions = [
     points: 15,
     category: 'food',
     difficulty: 'hard',
+    emotion: 'pleased'
   },
   {
     id: 'food_420',
@@ -4940,6 +5303,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_421',
@@ -4952,6 +5316,7 @@ export const foodQuestions = [
     points: 10,
     category: 'food',
     difficulty: 'medium',
+    emotion: 'neutral'
   },
   {
     id: 'food_422',
@@ -4964,5 +5329,6 @@ export const foodQuestions = [
     points: 5,
     category: 'food',
     difficulty: 'easy',
+    emotion: 'neutral'
   },
 ];
