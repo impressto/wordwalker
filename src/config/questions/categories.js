@@ -130,11 +130,11 @@ export const categories = {
   
 
 
-  weather: {
-    id: 'weather',
+  environment: {
+    id: 'environment',
     name: 'Weather & Environment',
     displayName: 'Clima y Medio Ambiente',
-    emoji: 'weather.png',
+    emoji: 'environment.png',
     description: 'Learn weather, climate, and environmental vocabulary',
   },
 };

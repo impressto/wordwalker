@@ -21,7 +21,7 @@ The following PNG files should be placed in this directory:
 13. ⚠️  `people.png` - People & Relationships category icon
 14. ⚠️  `routines.png` - Daily Routines category icon
 15. ⚠️  `dining.png` - Restaurant & Dining category icon
-16. ⚠️  `weather.png` - Weather & Environment category icon
+16. ⚠️  `environment.png` - Weather & Environment category icon
 
 ## Image Specifications
 

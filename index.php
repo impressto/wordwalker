@@ -224,7 +224,7 @@ $version = $packageJson['version'] ?? '1.0.0';
             <li>200+ Spanish vocabulary words with English translations</li>
             <li>Audio pronunciation for every word</li>
             <li>Interactive flashcard system</li>
-            <li>14 themed categories: Greetings, Numbers, Food, Transportation, Weather, and more</li>
+            <li>14 themed categories: Greetings, Numbers, Food, Transportation, Environment, and more</li>
             <li>Beautiful parallax themed landscapes</li>
             <li>Progress tracking and achievements</li>
             <li>Works offline as a Progressive Web App (PWA)</li>

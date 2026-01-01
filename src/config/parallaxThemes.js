@@ -84,7 +84,7 @@ const parallaxThemes = {
       // Scale adjustment for better fit in smaller canvas
       scaleAdjustment: 0.3,
       // Layer 7 (background) scale multiplier (width coverage)
-      layer7Scale: 3,
+      layer7Scale: 3.75,
       // Horizon adjustment (0.0 to 1.0, proportion of canvas height)
       horizonY: 0.5, // Middle of canvas for flash cards
     },
@@ -143,7 +143,7 @@ const parallaxThemes = {
         layer7: 0,    // Sky
       },
       scaleAdjustment: 0.25,
-          layer7Scale: 6,
+          layer7Scale: 7.5,
       horizonY: 0.5,
     },
   },
@@ -200,7 +200,7 @@ const parallaxThemes = {
         layer7: 0,    // Sky
       },
       scaleAdjustment: 0.25,
-         layer7Scale: 3.5,
+         layer7Scale: 4.375,
       horizonY: 0.5,
     },
   },
@@ -257,7 +257,7 @@ const parallaxThemes = {
         layer7: 20,    // Sky
       },
       scaleAdjustment: 0.4,
-        layer7Scale: 1.4,
+        layer7Scale: 1.75,
       horizonY: 0.5,
     },
   },
@@ -314,7 +314,7 @@ const parallaxThemes = {
         layer7: 0,    // Sky
       },
       scaleAdjustment: 0.3,
-        layer7Scale: 2.3,
+        layer7Scale: 2.875,
       horizonY: 0.5,
     },
   },
@@ -368,7 +368,7 @@ const parallaxThemes = {
         layer4: 20,   // Shoreline
         layer5: -10,   // Ship
         layer6: 40,   // Ocean/horizon
-        layer7: 20,    // Night sky
+        layer7: 0,    // Night sky
       },
 
       layerSpeeds: {
@@ -380,7 +380,7 @@ const parallaxThemes = {
       },
 
       scaleAdjustment: 0.4,
-      layer7Scale: 2.2,
+      layer7Scale: 2.75,
       horizonY: 0.5,
     },
   },

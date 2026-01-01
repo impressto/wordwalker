@@ -16,12 +16,40 @@ import { getCategoryTranslation } from './translations/answers/index.js';
 export const FLASH_CARDS_ENABLED = false;
 
 /**
+ * Available emotions for character expressions
+ * Used when no emotion is specified for a question
+ */
+const AVAILABLE_EMOTIONS = [
+  'afraid',
+  'anxious',
+  'calm',
+  'confused',
+  'determined',
+  'disgusted',
+  'excited',
+  'happy',
+  'hurt',
+  'neutral',
+  'pleased',
+  'sad',
+  'surprised'
+];
+
+/**
+ * Get a random emotion from available emotions
+ * @returns {string} Random emotion name (without .png extension)
+ */
+const getRandomEmotion = () => {
+  return AVAILABLE_EMOTIONS[Math.floor(Math.random() * AVAILABLE_EMOTIONS.length)];
+};
+
+/**
  * Unified Flash Cards Configuration
  * This configuration applies to ALL categories
  */
 export const flashCardsConfig = {
   // Canvas display size
-  canvasWidth: 320,
+  canvasWidth: 400,
   canvasHeight: 240,
   
   // Character image dimensions (all character images are 220x220)
@@ -49,7 +77,7 @@ export const flashCardsConfig = {
       fontFamily: 'Arial, sans-serif',
       fontWeight: 'bold',
       color: '#FFFFFF',
-      maxWidth: 300, // Max width before wrapping (increased with center alignment)
+      maxWidth: 350, // Max width before wrapping (adjusted for 380px canvas)
       lineHeight: 1.0, // Reduced to minimize gap with English text
     },
     // English text configuration (translation below)
@@ -58,7 +86,7 @@ export const flashCardsConfig = {
       fontFamily: 'Arial, sans-serif',
       fontWeight: 'normal',
       color: '#a7dcf1ff',
-      maxWidth: 300, // Increased to match Spanish
+      maxWidth: 350, // Adjusted to match Spanish
       lineHeight: 1.2,
     },
     // Vertical spacing
@@ -102,11 +130,13 @@ export const getFlashCardData = (category, cardIndex, selectedCharacter = null) 
   // Get English translation using the category-specific translation system
   const english = getCategoryTranslation(spanish, category) || spanish;
   
-  // Determine emotion to use - if question has emotion property, use it; otherwise use default
+  // Determine emotion to use:
+  // 1. If question has emotion property, use it
+  // 2. Otherwise, use a random emotion from available emotions
   // Expected format: "confused" (which maps to confused.png)
   const emotionFile = question.emotion 
     ? `${question.emotion}.png` 
-    : flashCardsConfig.defaultEmotion;
+    : `${getRandomEmotion()}.png`;
   
   // Use selected character if provided, otherwise use default
   const characterToUse = selectedCharacter || flashCardsConfig.defaultCharacter;
@@ -171,6 +201,6 @@ export const getFlashCardCategories = () => {
   // This could be improved by scanning all question categories
   return ['food', 'shopping', 'entertainment', 'accommodation', 'transportation', 
           'directions', 'medical', 'greetings', 'numbers', 'grammar', 
-          'recreation', 'plants_animals', 'weather', 'daily_routines', 'people',
+          'recreation', 'plants_animals', 'environment', 'daily_routines', 'people',
           'emergencies', 'business', 'restaurant'];
 };

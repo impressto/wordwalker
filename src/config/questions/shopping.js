@@ -1708,7 +1708,7 @@ export const shoppingQuestions = [
   },
   {
     id: 'shopping_142',
-    emoji: '🔥',
+    emoji: 'clothes-iron.png',
     question: '¿Qué haces para quitar arrugas de la ropa?',
     translation: 'What do you do to remove wrinkles from clothes?',
     options: ['planchar', 'lavar', 'secar'],
