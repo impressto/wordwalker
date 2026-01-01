@@ -22,7 +22,7 @@ import { plantsAnimalsAnswerTranslations } from './plants_animals.js';
 import { peopleAnswerTranslations } from './people.js';
 import { dailyroutinesAnswerTranslations } from './daily_routines.js';
 import { businessAnswerTranslations } from './business.js';
-import { weatherAnswerTranslations } from './weather.js';
+import { environmentAnswerTranslations } from './environment.js';
 
 /**
  * Category-specific translations map
@@ -44,7 +44,7 @@ export const translationsByCategory = {
   people: peopleAnswerTranslations,
   daily_routines: dailyroutinesAnswerTranslations,
   business: businessAnswerTranslations,
-  weather: weatherAnswerTranslations,
+  environment: environmentAnswerTranslations,
 };
 
 /**
@@ -73,7 +73,7 @@ export const translations = {
   ...peopleAnswerTranslations,
   ...dailyroutinesAnswerTranslations,
   ...businessAnswerTranslations,
-  ...weatherAnswerTranslations,
+  ...environmentAnswerTranslations,
   ...foodAnswerTranslations,  // Moved to last to take precedence for shared keys like "el kiwi"
 };
 
