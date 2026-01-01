@@ -16,6 +16,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'environment_002',
@@ -28,6 +29,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'sad',
   },
   {
     id: 'environment_003',
@@ -40,6 +42,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'environment_005',
@@ -52,6 +55,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'environment_006',
@@ -64,6 +68,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'angry',
   },
   {
     id: 'environment_007',
@@ -76,6 +81,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'afraid',
   },
   {
     id: 'environment_008',
@@ -88,6 +94,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'afraid',
   },
   {
     id: 'environment_009',
@@ -100,6 +107,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'surprised',
   },
   {
     id: 'environment_010',
@@ -112,6 +120,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'environment_011',
@@ -124,6 +133,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'confused',
   },
   {
     id: 'environment_013',
@@ -136,6 +146,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'afraid',
   },
   {
     id: 'environment_014',
@@ -148,6 +159,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'environment_015',
@@ -160,6 +172,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'environment_016',
@@ -172,6 +185,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'environment_017',
@@ -184,6 +198,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_018',
@@ -196,6 +211,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
 
   // Seasons (21-30)
@@ -210,6 +226,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'environment_022',
@@ -222,6 +239,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'environment_023',
@@ -234,6 +252,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'environment_024',
@@ -246,6 +265,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'environment_025',
@@ -258,6 +278,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'environment_026',
@@ -270,6 +291,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'environment_027',
@@ -282,6 +304,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'environment_028',
@@ -294,6 +317,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'environment_029',
@@ -306,6 +330,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'environment_030',
@@ -318,6 +343,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
   // Climate & Geography (31-45)
@@ -332,6 +358,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'hurt',
   },
   {
     id: 'environment_032',
@@ -344,6 +371,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'environment_033',
@@ -356,6 +384,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'environment_034',
@@ -368,6 +397,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'environment_035',
@@ -380,6 +410,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'afraid',
   },
   {
     id: 'environment_036',
@@ -392,6 +423,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'environment_037',
@@ -404,6 +436,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'environment_038',
@@ -416,6 +449,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'environment_039',
@@ -428,6 +462,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_040',
@@ -440,6 +475,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'environment_041',
@@ -452,6 +488,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_042',
@@ -464,6 +501,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'environment_043',
@@ -476,6 +514,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'environment_044',
@@ -488,6 +527,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'environment_045',
@@ -500,6 +540,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
 
   // Natural Phenomena (46-60)
@@ -514,6 +555,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'afraid',
   },
   {
     id: 'environment_047',
@@ -526,6 +568,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'afraid',
   },
   {
     id: 'environment_048',
@@ -538,6 +581,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'afraid',
   },
   {
     id: 'environment_049',
@@ -550,6 +594,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'afraid',
   },
   {
     id: 'environment_050',
@@ -562,6 +607,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'environment_051',
@@ -574,6 +620,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'environment_052',
@@ -586,6 +633,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'sad',
   },
   {
     id: 'environment_053',
@@ -598,6 +646,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'surprised',
   },
   {
     id: 'environment_054',
@@ -610,6 +659,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'surprised',
   },
   {
     id: 'environment_055',
@@ -622,6 +672,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'surprised',
   },
   {
     id: 'environment_056',
@@ -634,6 +685,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'environment_057',
@@ -646,6 +698,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_058',
@@ -658,6 +711,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'environment_059',
@@ -670,6 +724,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_060',
@@ -682,6 +737,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 
   // Environmental Protection (61-75)
@@ -696,6 +752,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'environment_062',
@@ -708,6 +765,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'environment_063',
@@ -720,6 +778,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'environment_064',
@@ -732,6 +791,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'environment_065',
@@ -744,6 +804,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'environment_066',
@@ -756,6 +817,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'environment_067',
@@ -768,6 +830,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'environment_068',
@@ -780,6 +843,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'environment_069',
@@ -792,6 +856,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'environment_070',
@@ -804,6 +869,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_071',
@@ -816,6 +882,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'sad',
   },
   {
     id: 'environment_072',
@@ -828,6 +895,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'disgusted',
   },
   {
     id: 'environment_074',
@@ -840,6 +908,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'angry',
   },
   {
     id: 'environment_075',
@@ -852,6 +921,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'happy',
   },
 
   // Water Cycle & Nature (76-90)
@@ -866,6 +936,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_077',
@@ -878,6 +949,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_078',
@@ -890,6 +962,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_079',
@@ -902,6 +975,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'environment_080',
@@ -914,6 +988,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_081',
@@ -926,6 +1001,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_082',
@@ -938,6 +1014,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_083',
@@ -950,6 +1027,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'environment_084',
@@ -962,6 +1040,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'environment_087',
@@ -974,6 +1053,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'environment_088',
@@ -986,6 +1066,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'environment_089',
@@ -998,6 +1079,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'environment_090',
@@ -1010,6 +1092,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
 
   // Advanced Weather & Climate (91-100)
@@ -1024,6 +1107,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'environment_094',
@@ -1036,6 +1120,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'environment_095',
@@ -1048,6 +1133,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'environment_097',
@@ -1060,6 +1146,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_098',
@@ -1072,6 +1159,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'environment_099',
@@ -1084,6 +1172,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_100',
@@ -1096,6 +1185,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_102',
@@ -1108,6 +1198,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'environment_103',
@@ -1132,6 +1223,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'environment_105',
@@ -1144,6 +1236,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'environment_106',
@@ -1156,6 +1249,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_107',
@@ -1168,6 +1262,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'environment_108',
@@ -1180,6 +1275,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'environment_109',
@@ -1192,6 +1288,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'environment_110',
@@ -1204,6 +1301,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'hard',
+    emotion: 'surprised',
   },
   {
     id: 'environment_111',
@@ -1216,6 +1314,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_112',
@@ -1228,6 +1327,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'hurt',
   },
   {
     id: 'environment_113',
@@ -1240,6 +1340,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'environment_114',
@@ -1252,6 +1353,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'environment_115',
@@ -1264,6 +1366,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'environment_116',
@@ -1276,6 +1379,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'environment_117',
@@ -1288,6 +1392,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_118',
@@ -1300,6 +1405,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'surprised',
   },
   {
     id: 'environment_119',
@@ -1312,6 +1418,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'environment_120',
@@ -1324,6 +1431,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'angry',
   },
   {
     id: 'environment_121',
@@ -1336,6 +1444,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'environment_122',
@@ -1348,6 +1457,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'afraid',
   },
   {
     id: 'environment_123',
@@ -1360,6 +1470,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'environment_124',
@@ -1372,6 +1483,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_125',
@@ -1384,6 +1496,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'environment_126',
@@ -1396,6 +1509,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'environment_127',
@@ -1408,6 +1522,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'environment_128',
@@ -1420,6 +1535,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'environment_129',
@@ -1432,6 +1548,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'hard',
+    emotion: 'surprised',
   },
   {
     id: 'environment_130',
@@ -1444,6 +1561,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'environment_131',
@@ -1456,6 +1574,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'environment_132',
@@ -1468,6 +1587,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'environment_133',
@@ -1480,6 +1600,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'environment_134',
@@ -1492,6 +1613,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'environment_135',
@@ -1504,6 +1626,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'environment_136',
@@ -1516,6 +1639,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'environment_137',
@@ -1528,6 +1652,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'environment_138',
@@ -1540,6 +1665,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_139',
@@ -1552,6 +1678,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'environment_140',
@@ -1564,6 +1691,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'hard',
+    emotion: 'calm',
   },
   {
     id: 'environment_141',
@@ -1576,6 +1704,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_142',
@@ -1588,6 +1717,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'environment_143',
@@ -1600,6 +1730,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'environment_144',
@@ -1612,6 +1743,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_145',
@@ -1624,6 +1756,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'hard',
+    emotion: 'surprised',
   },
   {
     id: 'environment_146',
@@ -1636,6 +1769,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_147',
@@ -1648,6 +1782,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'environment_148',
@@ -1660,6 +1795,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_149',
@@ -1672,6 +1808,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'afraid',
   },
   {
     id: 'environment_150',
@@ -1684,6 +1821,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'environment_151',
@@ -1696,6 +1834,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_152',
@@ -1708,6 +1847,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'afraid',
   },
   {
     id: 'environment_153',
@@ -1720,6 +1860,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'afraid',
   },
   {
     id: 'environment_154',
@@ -1732,6 +1873,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'environment_155',
@@ -1744,6 +1886,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'medium',
+    emotion: 'afraid',
   },
   {
     id: 'environment_156',
@@ -1756,6 +1899,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'environment_157',
@@ -1768,6 +1912,7 @@ export const environmentQuestions = [
     points: 10,
     category: 'environment',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'environment_158',
@@ -1780,6 +1925,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'afraid',
   },
   {
     id: 'environment_159',
@@ -1792,6 +1938,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'environment_160',
@@ -1804,6 +1951,7 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'environment_161',
@@ -1816,5 +1964,6 @@ export const environmentQuestions = [
     points: 5,
     category: 'environment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 ];

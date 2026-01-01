@@ -61,7 +61,6 @@ export const flashCardsConfig = {
   availableCharacters: ['asuka', 'emma', 'steamboatwillie', 'elvis'],
   
   // Default assets for dynamic card generation
-  defaultBackground: 'purple.png',
   defaultCharacter: 'emma',
   defaultEmotion: 'happy.png',
   
@@ -154,7 +153,7 @@ export const getFlashCardData = (category, cardIndex, selectedCharacter = null) 
     englishPosition: undefined,
     // Image paths for dynamic composition
     images: {
-      background: flashCardsConfig.defaultBackground,
+      background: undefined,
       character: characterToUse,
       emotion: emotionFile,
       object: undefined,

@@ -35,7 +35,6 @@ Each card object contains:
 
 ### Optional Fields
 - `emotion` - Overrides default emotion (defaults to `happy.png`)
-- `background` - Overrides default background (defaults to `purple.png`)
 - `character` - Overrides default character (defaults to `emma`)
 
 ## Adding a New Category
