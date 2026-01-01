@@ -15,6 +15,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_002',
@@ -27,6 +28,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_003',
@@ -39,6 +41,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_004',
@@ -51,6 +54,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_005',
@@ -63,6 +67,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_006',
@@ -75,6 +80,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_007',
@@ -87,6 +93,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_008',
@@ -99,6 +106,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_009',
@@ -111,6 +119,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_010',
@@ -123,6 +132,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
 
   // Numbers 10-20 (10 questions)
@@ -137,6 +147,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_012',
@@ -149,6 +160,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_013',
@@ -161,6 +173,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_014',
@@ -173,6 +186,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_015',
@@ -185,6 +199,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_016',
@@ -197,6 +212,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_017',
@@ -209,6 +225,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_018',
@@ -221,6 +238,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_019',
@@ -233,6 +251,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_020',
@@ -245,6 +264,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
   // Larger Numbers (10 questions)
@@ -259,6 +279,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_022',
@@ -271,6 +292,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_023',
@@ -283,6 +305,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_024',
@@ -295,6 +318,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_025',
@@ -307,6 +331,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_026',
@@ -319,6 +344,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_027',
@@ -331,6 +357,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_028',
@@ -343,6 +370,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_029',
@@ -355,6 +383,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_030',
@@ -367,6 +396,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
   // Days of the Week (7 questions)
@@ -381,6 +411,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_032',
@@ -393,6 +424,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_033',
@@ -405,6 +437,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_034',
@@ -417,6 +450,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_035',
@@ -429,6 +463,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_036',
@@ -441,6 +476,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_037',
@@ -453,6 +489,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
 
   // Months of the Year (12 questions)
@@ -467,6 +504,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_039',
@@ -479,6 +517,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_040',
@@ -491,6 +530,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_041',
@@ -503,6 +543,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_042',
@@ -515,6 +556,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_043',
@@ -527,6 +569,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_044',
@@ -539,6 +582,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_045',
@@ -551,6 +595,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_046',
@@ -563,6 +608,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_047',
@@ -575,6 +621,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_048',
@@ -587,6 +634,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_049',
@@ -599,6 +647,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
   // Time Expressions (11 questions)
@@ -613,6 +662,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_051',
@@ -625,6 +675,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_052',
@@ -637,6 +688,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_053',
@@ -649,6 +701,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_054',
@@ -661,6 +714,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_055',
@@ -673,6 +727,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_056',
@@ -685,6 +740,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_057',
@@ -697,6 +753,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_058',
@@ -709,6 +766,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_059',
@@ -721,6 +779,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_060',
@@ -733,6 +792,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
 
   // Colors (15 questions)
@@ -747,6 +807,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_062',
@@ -759,6 +820,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_063',
@@ -771,6 +833,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_064',
@@ -783,6 +846,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_065',
@@ -795,6 +859,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_066',
@@ -807,6 +872,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_067',
@@ -819,6 +885,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_068',
@@ -831,6 +898,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_069',
@@ -843,6 +911,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_070',
@@ -855,6 +924,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_071',
@@ -867,6 +937,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_072',
@@ -879,6 +950,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_073',
@@ -891,6 +963,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_074',
@@ -903,6 +976,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_075',
@@ -915,6 +989,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_076',
@@ -927,6 +1002,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'numbers_077',
@@ -939,6 +1015,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'numbers_078',
@@ -951,6 +1028,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'numbers_079',
@@ -963,6 +1041,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
 
   // Ordinal Numbers & More (21 questions)
@@ -977,6 +1056,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'numbers_081',
@@ -989,6 +1069,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'numbers_082',
@@ -1001,6 +1082,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'numbers_083',
@@ -1013,6 +1095,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'numbers_084',
@@ -1025,6 +1108,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'numbers_085',
@@ -1037,6 +1121,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_086',
@@ -1049,6 +1134,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_087',
@@ -1061,6 +1147,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_088',
@@ -1073,6 +1160,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_089',
@@ -1085,6 +1173,7 @@ export const numbersQuestions = [
     points: 15,
     category: 'numbers',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'numbers_090',
@@ -1097,6 +1186,7 @@ export const numbersQuestions = [
     points: 15,
     category: 'numbers',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'numbers_091',
@@ -1109,6 +1199,7 @@ export const numbersQuestions = [
     points: 15,
     category: 'numbers',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'numbers_092',
@@ -1121,6 +1212,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_093',
@@ -1133,6 +1225,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_094',
@@ -1145,6 +1238,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_095',
@@ -1157,6 +1251,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_096',
@@ -1169,6 +1264,7 @@ export const numbersQuestions = [
     points: 5,
     category: 'numbers',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_097',
@@ -1181,6 +1277,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_098',
@@ -1193,6 +1290,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_099',
@@ -1205,6 +1303,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'numbers_100',
@@ -1217,6 +1316,7 @@ export const numbersQuestions = [
     points: 10,
     category: 'numbers',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
 ];

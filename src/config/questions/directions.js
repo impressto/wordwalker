@@ -15,6 +15,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'directions_002',
@@ -27,6 +28,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'directions_003',
@@ -39,6 +41,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'directions_004',
@@ -51,6 +54,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'directions_005',
@@ -63,6 +67,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'directions_006',
@@ -75,6 +80,7 @@ export const directionsQuestions = [
     points: 10,
     category: 'directions',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'directions_007',
@@ -87,6 +93,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'directions_008',
@@ -99,6 +106,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'directions_009',
@@ -111,6 +119,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'directions_010',
@@ -123,6 +132,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'directions_011',
@@ -135,6 +145,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'directions_012',
@@ -147,6 +158,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'directions_013',
@@ -159,6 +171,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'directions_014',
@@ -171,6 +184,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'directions_015',
@@ -183,6 +197,7 @@ export const directionsQuestions = [
     points: 10,
     category: 'directions',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
 
   // Giving Directions (15 questions)
@@ -197,6 +212,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'directions_017',
@@ -209,6 +225,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'directions_018',
@@ -221,6 +238,7 @@ export const directionsQuestions = [
     points: 10,
     category: 'directions',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'directions_019',
@@ -233,6 +251,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'directions_020',
@@ -245,6 +264,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'directions_021',
@@ -257,6 +277,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'directions_022',
@@ -269,6 +290,7 @@ export const directionsQuestions = [
     points: 10,
     category: 'directions',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'directions_023',
@@ -281,6 +303,7 @@ export const directionsQuestions = [
     points: 10,
     category: 'directions',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'directions_024',
@@ -293,6 +316,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'directions_025',
@@ -305,6 +329,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'directions_026',
@@ -317,6 +342,7 @@ export const directionsQuestions = [
     points: 10,
     category: 'directions',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'directions_027',
@@ -329,6 +355,7 @@ export const directionsQuestions = [
     points: 10,
     category: 'directions',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'directions_028',
@@ -341,6 +368,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'directions_029',
@@ -353,6 +381,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'directions_030',
@@ -365,6 +394,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 
   // Locations & Landmarks (20 questions)
@@ -379,6 +409,7 @@ export const directionsQuestions = [
     points: 10,
     category: 'directions',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'directions_032',
@@ -391,6 +422,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'directions_033',
@@ -403,6 +435,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'directions_034',
@@ -415,6 +448,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'directions_035',
@@ -427,6 +461,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'directions_036',
@@ -439,6 +474,7 @@ export const directionsQuestions = [
     points: 10,
     category: 'directions',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'directions_037',
@@ -451,6 +487,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'directions_038',
@@ -463,6 +500,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'directions_039',
@@ -475,6 +513,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'directions_040',
@@ -487,6 +526,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'directions_041',
@@ -499,6 +539,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'directions_042',
@@ -511,6 +552,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'directions_043',
@@ -523,6 +565,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'directions_044',
@@ -535,6 +578,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'directions_045',
@@ -547,6 +591,7 @@ export const directionsQuestions = [
     points: 10,
     category: 'directions',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'directions_046',
@@ -559,6 +604,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'directions_047',
@@ -571,6 +617,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'directions_048',
@@ -583,6 +630,7 @@ export const directionsQuestions = [
     points: 10,
     category: 'directions',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'directions_049',
@@ -595,6 +643,7 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'directions_050',
@@ -607,5 +656,6 @@ export const directionsQuestions = [
     points: 5,
     category: 'directions',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 ];

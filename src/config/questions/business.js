@@ -17,6 +17,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'determined',
   },
 
   {
@@ -30,6 +31,7 @@ export const businessQuestions = [
     points: 5,
     category: 'business',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 
   {
@@ -43,6 +45,7 @@ export const businessQuestions = [
     points: 5,
     category: 'business',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 
   {
@@ -56,6 +59,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
   {
@@ -69,6 +73,7 @@ export const businessQuestions = [
     points: 5,
     category: 'business',
     difficulty: 'easy',
+    emotion: 'calm',
   },
 
   {
@@ -82,6 +87,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
 
   {
@@ -95,6 +101,7 @@ export const businessQuestions = [
     points: 5,
     category: 'business',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 
   {
@@ -108,6 +115,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
   {
@@ -121,6 +129,7 @@ export const businessQuestions = [
     points: 5,
     category: 'business',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 
   {
@@ -134,6 +143,7 @@ export const businessQuestions = [
     points: 5,
     category: 'business',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 
   {
@@ -147,6 +157,7 @@ export const businessQuestions = [
     points: 5,
     category: 'business',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 
   {
@@ -160,6 +171,7 @@ export const businessQuestions = [
     points: 5,
     category: 'business',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 
   {
@@ -173,6 +185,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'determined',
   },
 
   {
@@ -186,6 +199,7 @@ export const businessQuestions = [
     points: 5,
     category: 'business',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 
   {
@@ -199,6 +213,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
   {
@@ -212,6 +227,7 @@ export const businessQuestions = [
     points: 5,
     category: 'business',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 
   {
@@ -225,6 +241,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
 
   {
@@ -238,6 +255,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
 
   {
@@ -251,6 +269,7 @@ export const businessQuestions = [
     points: 5,
     category: 'business',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 
   {
@@ -264,6 +283,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
   {
@@ -277,6 +297,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
 
   {
@@ -290,6 +311,7 @@ export const businessQuestions = [
     points: 5,
     category: 'business',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 
   {
@@ -303,6 +325,7 @@ export const businessQuestions = [
     points: 5,
     category: 'business',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 
   {
@@ -316,6 +339,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'determined',
   },
 
   {
@@ -329,6 +353,7 @@ export const businessQuestions = [
     points: 5,
     category: 'business',
     difficulty: 'easy',
+    emotion: 'determined',
   },
 
   {
@@ -342,6 +367,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
 
   {
@@ -355,6 +381,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
   {
@@ -368,6 +395,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'disgusted',
   },
 
   {
@@ -381,6 +409,7 @@ export const businessQuestions = [
     points: 15,
     category: 'business',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
 
   {
@@ -394,6 +423,7 @@ export const businessQuestions = [
     points: 15,
     category: 'business',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
 
   {
@@ -407,6 +437,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'calm',
   },
 
   {
@@ -420,6 +451,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
   {
@@ -433,6 +465,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
 
   {
@@ -446,6 +479,7 @@ export const businessQuestions = [
     points: 15,
     category: 'business',
     difficulty: 'hard',
+    emotion: 'anxious',
   },
 
   {
@@ -459,6 +493,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'excited',
   },
 
   {
@@ -472,6 +507,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'determined',
   },
 
   {
@@ -485,6 +521,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
   {
@@ -498,6 +535,7 @@ export const businessQuestions = [
     points: 15,
     category: 'business',
     difficulty: 'hard',
+    emotion: 'excited',
   },
 
   {
@@ -511,6 +549,7 @@ export const businessQuestions = [
     points: 15,
     category: 'business',
     difficulty: 'hard',
+    emotion: 'anxious',
   },
 
   {
@@ -524,6 +563,7 @@ export const businessQuestions = [
     points: 15,
     category: 'business',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
 
   {
@@ -537,6 +577,7 @@ export const businessQuestions = [
     points: 15,
     category: 'business',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
 
   {
@@ -550,6 +591,7 @@ export const businessQuestions = [
     points: 15,
     category: 'business',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
 
   {
@@ -563,6 +605,7 @@ export const businessQuestions = [
     points: 15,
     category: 'business',
     difficulty: 'hard',
+    emotion: 'excited',
   },
 
   {
@@ -576,6 +619,7 @@ export const businessQuestions = [
     points: 5,
     category: 'business',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 
   {
@@ -589,6 +633,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'excited',
   },
 
   {
@@ -602,6 +647,7 @@ export const businessQuestions = [
     points: 15,
     category: 'business',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
 
   {
@@ -615,6 +661,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
 
   {
@@ -628,6 +675,7 @@ export const businessQuestions = [
     points: 10,
     category: 'business',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
 
   {
@@ -641,6 +689,7 @@ export const businessQuestions = [
     points: 15,
     category: 'business',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
 
   {
@@ -654,6 +703,7 @@ export const businessQuestions = [
     points: 15,
     category: 'business',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
 
 ];

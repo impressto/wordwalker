@@ -15,6 +15,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'accommodation_002',
@@ -27,6 +28,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'accommodation_003',
@@ -39,6 +41,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_004',
@@ -51,6 +54,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_005',
@@ -63,6 +67,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_006',
@@ -75,6 +80,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'accommodation_007',
@@ -87,6 +93,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'accommodation_008',
@@ -100,6 +107,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_009',
@@ -112,6 +120,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'accommodation_010',
@@ -124,6 +133,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_011',
@@ -136,6 +146,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_012',
@@ -148,6 +159,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_013',
@@ -160,6 +172,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_014',
@@ -172,6 +185,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_015',
@@ -184,6 +198,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_016',
@@ -196,6 +211,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_017',
@@ -208,6 +224,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_018',
@@ -220,6 +237,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'accommodation_019',
@@ -232,6 +250,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_020',
@@ -244,6 +263,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 
   // Hotel Rooms & Types (30 questions)
@@ -258,6 +278,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_023',
@@ -270,6 +291,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_024',
@@ -282,6 +304,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'accommodation_025',
@@ -294,6 +317,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_027',
@@ -306,6 +330,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_028',
@@ -318,6 +343,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'accommodation_029',
@@ -330,6 +356,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_030',
@@ -343,6 +370,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'accommodation_031',
@@ -355,6 +383,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'accommodation_032',
@@ -367,6 +396,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_033',
@@ -379,6 +409,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'accommodation_034',
@@ -391,6 +422,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_035',
@@ -403,6 +435,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_036',
@@ -415,6 +448,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_037',
@@ -427,6 +461,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_038',
@@ -439,6 +474,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'accommodation_039',
@@ -451,6 +487,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'accommodation_040',
@@ -464,6 +501,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_041',
@@ -476,6 +514,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_042',
@@ -488,6 +527,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_043',
@@ -500,6 +540,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_044',
@@ -512,6 +553,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_045',
@@ -524,6 +566,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_046',
@@ -536,6 +579,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_047',
@@ -548,6 +592,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_048',
@@ -560,6 +605,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_049',
@@ -572,6 +618,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_050',
@@ -584,6 +631,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
 
   // Hotel Services & Amenities (40 questions)
@@ -598,6 +646,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_052',
@@ -610,6 +659,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_053',
@@ -622,6 +672,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_054',
@@ -634,6 +685,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_055',
@@ -646,6 +698,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_056',
@@ -658,6 +711,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_057',
@@ -670,6 +724,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_058',
@@ -682,6 +737,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_059',
@@ -694,6 +750,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_060',
@@ -707,6 +764,7 @@ export const accommodationQuestions = [
     points: 15,
     category: 'accommodation',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_061',
@@ -719,6 +777,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'accommodation_062',
@@ -731,6 +790,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_063',
@@ -743,6 +803,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'accommodation_064',
@@ -755,6 +816,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_065',
@@ -767,6 +829,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_066',
@@ -779,6 +842,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_067',
@@ -791,6 +855,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_068',
@@ -803,6 +868,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_069',
@@ -815,6 +881,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_070',
@@ -828,6 +895,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'accommodation_071',
@@ -840,10 +908,11 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_072',
-    emoji: '🪜',
+    emoji: 'stairs.png',
     question: '¿Qué subes si el ascensor no funciona?',
     translation: 'What do you climb if the elevator doesn\'t work?',
     options: ['las escaleras', 'la escalera', 'los escalones'],
@@ -852,6 +921,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_073',
@@ -864,6 +934,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_074',
@@ -876,6 +947,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_075',
@@ -888,6 +960,7 @@ export const accommodationQuestions = [
     points: 15,
     category: 'accommodation',
     difficulty: 'hard',
+    emotion: 'excited',
   },
   {
     id: 'accommodation_076',
@@ -900,6 +973,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_077',
@@ -912,6 +986,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_078',
@@ -924,6 +999,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'accommodation_079',
@@ -936,6 +1012,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_080',
@@ -948,6 +1025,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_081',
@@ -960,6 +1038,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_082',
@@ -972,6 +1051,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'accommodation_083',
@@ -984,6 +1064,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'accommodation_084',
@@ -996,6 +1077,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'accommodation_085',
@@ -1008,6 +1090,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_086',
@@ -1020,6 +1103,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_087',
@@ -1032,6 +1116,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_088',
@@ -1044,6 +1129,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_089',
@@ -1056,6 +1142,7 @@ export const accommodationQuestions = [
     points: 15,
     category: 'accommodation',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_090',
@@ -1068,6 +1155,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 
   // Booking & Check-in/out (30 questions)
@@ -1082,6 +1170,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_092',
@@ -1094,6 +1183,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_093',
@@ -1106,6 +1196,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_094',
@@ -1118,6 +1209,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_095',
@@ -1130,6 +1222,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_096',
@@ -1142,6 +1235,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_097',
@@ -1154,6 +1248,7 @@ export const accommodationQuestions = [
     points: 15,
     category: 'accommodation',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_098',
@@ -1166,6 +1261,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_099',
@@ -1178,6 +1274,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_100',
@@ -1190,6 +1287,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_101',
@@ -1202,6 +1300,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_102',
@@ -1214,6 +1313,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_103',
@@ -1226,6 +1326,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_104',
@@ -1238,6 +1339,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_105',
@@ -1250,6 +1352,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'accommodation_106',
@@ -1263,6 +1366,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_107',
@@ -1275,10 +1379,11 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'accommodation_108',
-    emoji: '🛣️',
+    emoji: 'motel.png',
     question: '¿Qué alojamiento está en la carretera?',
     translation: 'What accommodation is on the highway?',
     options: ['el motel', 'el motor hotel', 'el hotel de carretera'],
@@ -1287,6 +1392,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_109',
@@ -1299,6 +1405,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_110',
@@ -1311,6 +1418,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'accommodation_111',
@@ -1323,6 +1431,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_112',
@@ -1335,6 +1444,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'accommodation_113',
@@ -1347,6 +1457,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_114',
@@ -1359,6 +1470,7 @@ export const accommodationQuestions = [
     points: 15,
     category: 'accommodation',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_115',
@@ -1371,6 +1483,7 @@ export const accommodationQuestions = [
     points: 15,
     category: 'accommodation',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_116',
@@ -1383,6 +1496,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'accommodation_117',
@@ -1395,6 +1509,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'sad',
   },
   {
     id: 'accommodation_118',
@@ -1407,6 +1522,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_119',
@@ -1419,6 +1535,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_120',
@@ -1431,7 +1548,8 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
-  },
+    emotion: 'neutral',
+  },,
 
   // Problems & Complaints (30 questions)
   {
@@ -1445,6 +1563,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'accommodation_122',
@@ -1457,6 +1576,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'accommodation_123',
@@ -1469,6 +1589,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'accommodation_124',
@@ -1481,6 +1602,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'accommodation_125',
@@ -1493,6 +1615,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'accommodation_126',
@@ -1505,6 +1628,7 @@ export const accommodationQuestions = [
     points: 15,
     category: 'accommodation',
     difficulty: 'hard',
+    emotion: 'anxious',
   },
   {
     id: 'accommodation_127',
@@ -1517,6 +1641,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'accommodation_128',
@@ -1529,6 +1654,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'disgusted',
   },
   {
     id: 'accommodation_129',
@@ -1541,6 +1667,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'disgusted',
   },
   {
     id: 'accommodation_130',
@@ -1554,6 +1681,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'accommodation_131',
@@ -1566,6 +1694,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'accommodation_132',
@@ -1578,6 +1707,7 @@ export const accommodationQuestions = [
     points: 15,
     category: 'accommodation',
     difficulty: 'hard',
+    emotion: 'anxious',
   },
   {
     id: 'accommodation_133',
@@ -1590,6 +1720,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'accommodation_134',
@@ -1602,6 +1733,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_135',
@@ -1614,6 +1746,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'disgusted',
   },
   {
     id: 'accommodation_136',
@@ -1626,6 +1759,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'accommodation_137',
@@ -1638,6 +1772,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'accommodation_138',
@@ -1650,6 +1785,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'accommodation_139',
@@ -1662,6 +1798,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'accommodation_140',
@@ -1674,6 +1811,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'angry',
   },
   {
     id: 'accommodation_141',
@@ -1686,6 +1824,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'accommodation_142',
@@ -1698,6 +1837,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'angry',
   },
   {
     id: 'accommodation_143',
@@ -1710,6 +1850,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_144',
@@ -1722,6 +1863,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'accommodation_145',
@@ -1734,6 +1876,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_146',
@@ -1746,6 +1889,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_147',
@@ -1758,6 +1902,7 @@ export const accommodationQuestions = [
     points: 15,
     category: 'accommodation',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_148',
@@ -1770,6 +1915,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'accommodation_149',
@@ -1782,6 +1928,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_150',
@@ -1794,6 +1941,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
 
   // Additional Accommodation Phrases (5 questions)
@@ -1808,6 +1956,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_152',
@@ -1820,6 +1969,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_153',
@@ -1832,7 +1982,8 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
-  },
+    emotion: 'neutral',
+  },,
   {
     id: 'accommodation_154',
     emoji: '🚕',
@@ -1844,6 +1995,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_155',
@@ -1856,6 +2008,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_156',
@@ -1868,6 +2021,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_157',
@@ -1880,6 +2034,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'disgusted',
   },
   {
     id: 'accommodation_158',
@@ -1892,6 +2047,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'disgusted',
   },
   {
     id: 'accommodation_159',
@@ -1904,6 +2060,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'accommodation_160',
@@ -1916,6 +2073,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_161',
@@ -1928,6 +2086,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_162',
@@ -1940,6 +2099,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'accommodation_163',
@@ -1952,6 +2112,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_164',
@@ -1964,7 +2125,8 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
-  },
+    emotion: 'pleased',
+  },,
   {
     id: 'accommodation_165',
     emoji: 'massage-chair.png',
@@ -1976,6 +2138,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_166',
@@ -1988,6 +2151,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_167',
@@ -2000,6 +2164,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'accommodation_168',
@@ -2012,6 +2177,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_169',
@@ -2024,6 +2190,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_170',
@@ -2036,6 +2203,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_171',
@@ -2048,6 +2216,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_172',
@@ -2060,6 +2229,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_173',
@@ -2072,6 +2242,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_174',
@@ -2084,6 +2255,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_175',
@@ -2096,6 +2268,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_176',
@@ -2108,7 +2281,8 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
-  },
+    emotion: 'pleased',
+  },,
   {
     id: 'accommodation_177',
     emoji: 'door-handle.png',
@@ -2120,6 +2294,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_178',
@@ -2132,6 +2307,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_179',
@@ -2144,6 +2320,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_180',
@@ -2156,6 +2333,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'accommodation_181',
@@ -2168,6 +2346,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_182',
@@ -2180,6 +2359,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_183',
@@ -2192,6 +2372,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_184',
@@ -2204,6 +2385,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_185',
@@ -2216,6 +2398,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_186',
@@ -2228,6 +2411,7 @@ export const accommodationQuestions = [
     points: 15,
     category: 'accommodation',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_187',
@@ -2240,6 +2424,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'accommodation_188',
@@ -2252,6 +2437,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_189',
@@ -2264,6 +2450,7 @@ export const accommodationQuestions = [
     points: 15,
     category: 'accommodation',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_190',
@@ -2276,6 +2463,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_191',
@@ -2288,6 +2476,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_192',
@@ -2300,6 +2489,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_193',
@@ -2312,6 +2502,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_194',
@@ -2324,6 +2515,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_195',
@@ -2336,6 +2528,7 @@ export const accommodationQuestions = [
     points: 15,
     category: 'accommodation',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_196',
@@ -2348,6 +2541,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_197',
@@ -2360,6 +2554,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_198',
@@ -2372,6 +2567,7 @@ export const accommodationQuestions = [
     points: 15,
     category: 'accommodation',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_199',
@@ -2384,6 +2580,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'accommodation_200',
@@ -2396,6 +2593,7 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_201',
@@ -2408,6 +2606,7 @@ export const accommodationQuestions = [
     points: 10,
     category: 'accommodation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'accommodation_202',
@@ -2420,5 +2619,6 @@ export const accommodationQuestions = [
     points: 5,
     category: 'accommodation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 ];

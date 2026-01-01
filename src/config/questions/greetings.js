@@ -15,6 +15,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'greetings_002',
@@ -26,6 +27,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'greetings_003',
@@ -37,6 +39,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'greetings_004',
@@ -48,6 +51,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'greetings_005',
@@ -59,6 +63,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'sad',
   },
   {
     id: 'greetings_006',
@@ -70,6 +75,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'greetings_007',
@@ -81,6 +87,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'greetings_008',
@@ -92,6 +99,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'greetings_009',
@@ -103,6 +111,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'greetings_010',
@@ -114,6 +123,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'happy',
   },
 
   // Politeness & Courtesy (10 questions)
@@ -127,6 +137,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'greetings_012',
@@ -138,6 +149,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'greetings_013',
@@ -149,6 +161,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'greetings_014',
@@ -160,6 +173,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'greetings_015',
@@ -171,6 +185,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'sad',
   },
   {
     id: 'greetings_016',
@@ -182,6 +197,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'greetings_017',
@@ -193,6 +209,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'greetings_018',
@@ -204,6 +221,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'greetings_019',
@@ -215,6 +233,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'greetings_020',
@@ -226,6 +245,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'determined',
   },
 
   // Common Questions (10 questions)
@@ -239,6 +259,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'greetings_022',
@@ -250,6 +271,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'greetings_023',
@@ -261,6 +283,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'greetings_024',
@@ -272,6 +295,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'greetings_025',
@@ -283,6 +307,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'greetings_026',
@@ -294,6 +319,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'greetings_027',
@@ -305,6 +331,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'greetings_028',
@@ -316,6 +343,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'greetings_029',
@@ -327,6 +355,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'greetings_030',
@@ -338,6 +367,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'confused',
   },
 
   // Conversation Basics (10 questions)
@@ -351,6 +381,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'greetings_032',
@@ -362,6 +393,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'greetings_033',
@@ -373,6 +405,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'greetings_034',
@@ -384,6 +417,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'greetings_035',
@@ -395,6 +429,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'greetings_036',
@@ -406,6 +441,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'greetings_037',
@@ -417,6 +453,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'greetings_038',
@@ -428,6 +465,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'confused',
   },
   {
     id: 'greetings_039',
@@ -439,6 +477,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'afraid',
   },
   {
     id: 'greetings_040',
@@ -450,6 +489,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
 
   // Special Occasions (10 questions)
@@ -463,6 +503,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'greetings_042',
@@ -474,6 +515,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'greetings_043',
@@ -485,6 +527,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'greetings_044',
@@ -496,6 +539,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'greetings_045',
@@ -507,6 +551,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'greetings_046',
@@ -518,6 +563,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'greetings_047',
@@ -529,6 +575,7 @@ export const greetingsQuestions = [
     points: 5,
     category: 'greetings',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'greetings_048',
@@ -540,6 +587,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'hurt',
   },
   {
     id: 'greetings_049',
@@ -551,6 +599,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'greetings_050',
@@ -562,6 +611,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'sad',
   },
 
   // Additional Conversation Phrases (4 questions)
@@ -575,6 +625,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'greetings_052',
@@ -586,6 +637,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'greetings_053',
@@ -597,6 +649,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'greetings_054',
@@ -608,6 +661,7 @@ export const greetingsQuestions = [
     points: 10,
     category: 'greetings',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
 ];

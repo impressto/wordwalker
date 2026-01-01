@@ -16,6 +16,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_002',
@@ -28,6 +29,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_003',
@@ -40,6 +42,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_004',
@@ -52,6 +55,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_005',
@@ -64,6 +68,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_006',
@@ -76,6 +81,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_007',
@@ -88,6 +94,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_008',
@@ -100,6 +107,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
 
   // Verb "SER" (to be) - Present Tense (7 questions)
@@ -114,6 +122,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'confused',
   },
   {
     id: 'grammar_010',
@@ -126,6 +135,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'confused',
   },
   {
     id: 'grammar_011',
@@ -138,6 +148,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'confused',
   },
   {
     id: 'grammar_012',
@@ -150,6 +161,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'confused',
   },
   {
     id: 'grammar_013',
@@ -162,6 +174,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_014',
@@ -174,6 +187,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_015',
@@ -186,6 +200,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
 
   // Verb "ESTAR" (to be) - Present Tense (7 questions)
@@ -200,6 +215,9 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
+    category: 'grammar',
+    difficulty: 'medium',
   },
   {
     id: 'grammar_017',
@@ -212,6 +230,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_018',
@@ -224,6 +243,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_019',
@@ -236,6 +256,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_020',
@@ -248,6 +269,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_021',
@@ -260,6 +282,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_022',
@@ -272,6 +295,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
 
   // Regular -AR Verbs (5 questions)
@@ -286,6 +310,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_024',
@@ -298,6 +323,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_025',
@@ -310,6 +336,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_026',
@@ -322,6 +349,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_027',
@@ -334,6 +362,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
   // Regular -ER Verbs (3 questions)
@@ -348,6 +377,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_029',
@@ -360,6 +390,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_030',
@@ -372,6 +403,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
   // Regular -IR Verbs (3 questions)
@@ -386,6 +418,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_032',
@@ -398,6 +431,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_033',
@@ -410,6 +444,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
   // Articles & Gender (6 questions)
@@ -424,6 +459,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_035',
@@ -436,6 +472,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_036',
@@ -448,6 +485,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_037',
@@ -460,6 +498,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_038',
@@ -472,6 +511,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_039',
@@ -484,6 +524,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
   // Question Words (6 questions)
@@ -498,6 +539,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_041',
@@ -510,6 +552,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_042',
@@ -522,6 +565,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_043',
@@ -534,6 +578,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_044',
@@ -546,6 +591,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_045',
@@ -558,6 +604,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 
   // Possessive Adjectives (5 questions)
@@ -572,6 +619,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_047',
@@ -584,6 +632,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_048',
@@ -596,6 +645,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_049',
@@ -608,6 +658,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_050',
@@ -620,6 +671,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
 
   // PRETERITE TENSE (Past - Completed Actions) - 10 questions
@@ -634,6 +686,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'grammar_052',
@@ -646,6 +699,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'grammar_053',
@@ -658,6 +712,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'grammar_054',
@@ -670,6 +725,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_055',
@@ -682,6 +738,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_056',
@@ -694,6 +751,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_057',
@@ -706,6 +764,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'grammar_058',
@@ -718,6 +777,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_059',
@@ -730,6 +790,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_060',
@@ -742,6 +803,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
 
   // IMPERFECT TENSE (Past - Ongoing/Habitual) - 10 questions
@@ -756,6 +818,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_062',
@@ -768,6 +831,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_063',
@@ -780,6 +844,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_064',
@@ -792,6 +857,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_065',
@@ -804,6 +870,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_066',
@@ -816,6 +883,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_067',
@@ -828,6 +896,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_068',
@@ -840,6 +909,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_069',
@@ -852,6 +922,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_070',
@@ -864,6 +935,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
 
   // FUTURE TENSE - 10 questions
@@ -878,6 +950,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'grammar_072',
@@ -890,6 +963,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'grammar_073',
@@ -902,6 +976,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'grammar_074',
@@ -914,6 +989,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_075',
@@ -926,6 +1002,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_076',
@@ -938,6 +1015,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_077',
@@ -950,6 +1028,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_078',
@@ -962,6 +1041,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'grammar_079',
@@ -974,6 +1054,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_080',
@@ -986,6 +1067,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
 
   // PRESENT PROGRESSIVE (estar + gerund) - 8 questions
@@ -1000,6 +1082,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_082',
@@ -1012,6 +1095,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_083',
@@ -1024,6 +1108,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_084',
@@ -1036,6 +1121,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_085',
@@ -1048,6 +1134,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_086',
@@ -1060,6 +1147,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'grammar_087',
@@ -1072,6 +1160,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_088',
@@ -1084,6 +1173,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
 
   // CONDITIONAL TENSE (would) - 8 questions
@@ -1098,6 +1188,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_090',
@@ -1110,6 +1201,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_091',
@@ -1122,6 +1214,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_092',
@@ -1134,6 +1227,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_093',
@@ -1146,6 +1240,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_094',
@@ -1158,6 +1253,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_095',
@@ -1170,6 +1266,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_096',
@@ -1182,6 +1279,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
 
   // SUBJUNCTIVE BASICS (Present) - 14 questions
@@ -1196,6 +1294,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_098',
@@ -1208,6 +1307,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_099',
@@ -1220,6 +1320,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_100',
@@ -1232,6 +1333,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_101',
@@ -1244,6 +1346,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_102',
@@ -1256,6 +1359,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_103',
@@ -1268,6 +1372,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_104',
@@ -1280,6 +1385,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_105',
@@ -1292,6 +1398,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_106',
@@ -1304,6 +1411,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_107',
@@ -1316,6 +1424,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_108',
@@ -1328,6 +1437,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_109',
@@ -1340,6 +1450,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_110',
@@ -1352,6 +1463,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
 
   // Direct and Indirect Object Pronouns (10 questions)
@@ -1366,6 +1478,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_112',
@@ -1378,6 +1491,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_113',
@@ -1390,6 +1504,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_114',
@@ -1402,6 +1517,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_115',
@@ -1414,6 +1530,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_116',
@@ -1426,6 +1543,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_117',
@@ -1438,6 +1556,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_118',
@@ -1450,6 +1569,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_119',
@@ -1462,6 +1582,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_120',
@@ -1474,6 +1595,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
 
   // Reflexive Verbs (10 questions)
@@ -1488,6 +1610,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_122',
@@ -1500,6 +1623,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_123',
@@ -1512,6 +1636,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_124',
@@ -1524,6 +1649,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_125',
@@ -1536,6 +1662,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_126',
@@ -1548,6 +1675,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_127',
@@ -1560,6 +1688,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_128',
@@ -1572,6 +1701,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_129',
@@ -1584,6 +1714,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_130',
@@ -1596,6 +1727,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
   // Comparatives and Superlatives (10 questions)
@@ -1610,6 +1742,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_132',
@@ -1622,6 +1755,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_133',
@@ -1634,6 +1768,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_134',
@@ -1646,6 +1781,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_135',
@@ -1658,6 +1794,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_136',
@@ -1670,6 +1807,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_137',
@@ -1682,6 +1820,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_138',
@@ -1694,6 +1833,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_139',
@@ -1706,6 +1846,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_140',
@@ -1718,6 +1859,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
   // Por vs Para (10 questions)
@@ -1732,6 +1874,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_142',
@@ -1744,6 +1887,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_143',
@@ -1756,6 +1900,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_144',
@@ -1768,6 +1913,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_145',
@@ -1780,6 +1926,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_146',
@@ -1792,6 +1939,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_147',
@@ -1804,6 +1952,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_148',
@@ -1816,6 +1965,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_149',
@@ -1828,6 +1978,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_150',
@@ -1840,6 +1991,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
 
   // Commands (Imperative) (10 questions)
@@ -1854,6 +2006,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'grammar_152',
@@ -1866,6 +2019,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'grammar_153',
@@ -1878,6 +2032,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'grammar_154',
@@ -1890,6 +2045,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'grammar_155',
@@ -1902,6 +2058,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'grammar_156',
@@ -1914,6 +2071,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'grammar_157',
@@ -1926,6 +2084,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'grammar_158',
@@ -1938,6 +2097,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'grammar_159',
@@ -1950,6 +2110,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'grammar_160',
@@ -1962,6 +2123,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'determined',
   },
 
   // Prepositions (10 questions)
@@ -1976,6 +2138,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_162',
@@ -1988,6 +2151,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_163',
@@ -2000,6 +2164,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_164',
@@ -2012,6 +2177,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_165',
@@ -2024,6 +2190,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_166',
@@ -2036,6 +2203,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_167',
@@ -2048,6 +2216,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_168',
@@ -2060,6 +2229,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_169',
@@ -2072,6 +2242,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'grammar_170',
@@ -2084,6 +2255,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
 
   // Perfect Tenses (10 questions)
@@ -2098,6 +2270,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_172',
@@ -2110,6 +2283,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_173',
@@ -2122,6 +2296,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_174',
@@ -2134,6 +2309,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_175',
@@ -2146,6 +2322,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_176',
@@ -2158,6 +2335,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_177',
@@ -2170,6 +2348,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_178',
@@ -2182,6 +2361,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_179',
@@ -2194,6 +2374,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_180',
@@ -2206,6 +2387,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
 
   // Advanced Grammar Concepts (10 questions)
@@ -2220,6 +2402,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_182',
@@ -2232,6 +2415,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_183',
@@ -2244,6 +2428,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_184',
@@ -2256,6 +2441,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_185',
@@ -2268,6 +2454,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_186',
@@ -2280,6 +2467,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_187',
@@ -2292,6 +2480,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'grammar_188',
@@ -2304,6 +2493,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_189',
@@ -2316,6 +2506,7 @@ export const grammarQuestions = [
     points: 15,
     category: 'grammar',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'grammar_190',
@@ -2328,6 +2519,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'confused',
   },
 
   // Mixed Review (10 questions)
@@ -2342,6 +2534,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_192',
@@ -2354,6 +2547,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_193',
@@ -2366,6 +2560,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_194',
@@ -2378,6 +2573,7 @@ export const grammarQuestions = [
     points: 5,
     category: 'grammar',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_195',
@@ -2390,6 +2586,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_196',
@@ -2402,6 +2599,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_197',
@@ -2414,6 +2612,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_198',
@@ -2426,6 +2625,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_199',
@@ -2438,6 +2638,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'grammar_200',
@@ -2450,6 +2651,7 @@ export const grammarQuestions = [
     points: 10,
     category: 'grammar',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
  
 ];

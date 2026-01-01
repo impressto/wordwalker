@@ -15,6 +15,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_002',
@@ -27,6 +28,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_003',
@@ -39,6 +41,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_004',
@@ -51,6 +54,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_005',
@@ -63,6 +67,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_006',
@@ -75,6 +80,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'entertainment_007',
@@ -87,6 +93,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_008',
@@ -99,6 +106,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_010',
@@ -111,6 +119,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_011',
@@ -123,6 +132,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_012',
@@ -135,6 +145,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'entertainment_013',
@@ -147,6 +158,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_014',
@@ -159,6 +171,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_015',
@@ -171,6 +184,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'entertainment_017',
@@ -183,6 +197,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_019',
@@ -195,6 +210,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_020',
@@ -207,6 +223,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
   // More Musical Instruments (20 questions)
@@ -221,6 +238,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_022',
@@ -233,6 +251,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_023',
@@ -245,6 +264,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_024',
@@ -257,6 +277,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_025',
@@ -269,6 +290,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_026',
@@ -281,6 +303,7 @@ export const entertainmentQuestions = [
     points: 15,
     category: 'entertainment',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_027',
@@ -293,6 +316,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_028',
@@ -305,6 +329,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'entertainment_029',
@@ -317,6 +342,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_030',
@@ -329,6 +355,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'entertainment_031',
@@ -341,6 +368,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'entertainment_032',
@@ -353,6 +381,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'entertainment_033',
@@ -365,6 +394,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_034',
@@ -377,6 +407,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'entertainment_035',
@@ -389,6 +420,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_036',
@@ -401,6 +433,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_037',
@@ -413,6 +446,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_038',
@@ -425,6 +459,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_039',
@@ -437,6 +472,7 @@ export const entertainmentQuestions = [
     points: 15,
     category: 'entertainment',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_040',
@@ -449,6 +485,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
 
   // Sports & Activities (30 questions)
@@ -463,6 +500,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_042',
@@ -475,6 +513,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_043',
@@ -487,6 +526,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_044',
@@ -499,6 +539,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_045',
@@ -511,6 +552,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_046',
@@ -523,6 +565,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_047',
@@ -535,6 +578,7 @@ export const entertainmentQuestions = [
     points: 15,
     category: 'entertainment',
     difficulty: 'hard',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_048',
@@ -547,6 +591,7 @@ export const entertainmentQuestions = [
     points: 15,
     category: 'entertainment',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_049',
@@ -559,6 +604,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_050',
@@ -571,6 +617,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_051',
@@ -583,6 +630,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_052',
@@ -595,6 +643,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_053',
@@ -607,6 +656,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'entertainment_054',
@@ -619,6 +669,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_056',
@@ -631,6 +682,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_057',
@@ -643,6 +695,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'entertainment_058',
@@ -655,6 +708,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_059',
@@ -667,6 +721,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_060',
@@ -679,6 +734,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_061',
@@ -691,6 +747,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_063',
@@ -703,6 +760,7 @@ export const entertainmentQuestions = [
     points: 15,
     category: 'entertainment',
     difficulty: 'hard',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_064',
@@ -715,6 +773,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'entertainment_065',
@@ -727,6 +786,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'entertainment_066',
@@ -739,6 +799,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_067',
@@ -751,6 +812,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_068',
@@ -763,6 +825,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_069',
@@ -775,6 +838,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_070',
@@ -787,6 +851,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
 
   // Movies & Cinema (25 questions)
@@ -801,6 +866,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_072',
@@ -813,6 +879,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'entertainment_073',
@@ -825,6 +892,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'entertainment_074',
@@ -837,6 +905,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_075',
@@ -849,6 +918,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_076',
@@ -861,6 +931,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_077',
@@ -873,6 +944,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_078',
@@ -885,6 +957,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_079',
@@ -897,6 +970,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_081',
@@ -909,6 +983,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'entertainment_082',
@@ -921,6 +996,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'afraid',
   },
   {
     id: 'entertainment_083',
@@ -933,6 +1009,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_084',
@@ -945,6 +1022,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_085',
@@ -957,6 +1035,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_086',
@@ -969,6 +1048,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_087',
@@ -981,6 +1061,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'entertainment_088',
@@ -993,6 +1074,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_089',
@@ -1005,6 +1087,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_090',
@@ -1017,6 +1100,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_091',
@@ -1029,6 +1113,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_092',
@@ -1041,6 +1126,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_093',
@@ -1053,6 +1139,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'entertainment_094',
@@ -1065,6 +1152,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_095',
@@ -1077,6 +1165,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 
   // Hobbies & Leisure (25 questions)
@@ -1091,6 +1180,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_097',
@@ -1103,6 +1193,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_098',
@@ -1115,6 +1206,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_099',
@@ -1127,6 +1219,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'entertainment_100',
@@ -1139,6 +1232,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_101',
@@ -1151,6 +1245,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_102',
@@ -1163,6 +1258,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_103',
@@ -1175,6 +1271,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'entertainment_104',
@@ -1187,6 +1284,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'entertainment_105',
@@ -1199,6 +1297,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_106',
@@ -1211,6 +1310,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'entertainment_107',
@@ -1223,6 +1323,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_108',
@@ -1235,6 +1336,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_109',
@@ -1247,6 +1349,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'entertainment_110',
@@ -1259,6 +1362,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_111',
@@ -1271,6 +1375,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_112',
@@ -1283,6 +1388,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_113',
@@ -1295,6 +1401,7 @@ export const entertainmentQuestions = [
     points: 15,
     category: 'entertainment',
     difficulty: 'hard',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_114',
@@ -1307,6 +1414,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_115',
@@ -1319,6 +1427,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_116',
@@ -1331,6 +1440,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'entertainment_117',
@@ -1343,6 +1453,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'entertainment_118',
@@ -1355,6 +1466,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_119',
@@ -1367,6 +1479,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_120',
@@ -1379,6 +1492,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'happy',
   },
 
   // Games & Cards (15 questions)
@@ -1393,6 +1507,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_122',
@@ -1405,6 +1520,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'entertainment_123',
@@ -1417,6 +1533,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_124',
@@ -1429,6 +1546,7 @@ export const entertainmentQuestions = [
     points: 15,
     category: 'entertainment',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_125',
@@ -1441,6 +1559,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_126',
@@ -1453,6 +1572,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_127',
@@ -1465,6 +1585,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_128',
@@ -1477,6 +1598,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_129',
@@ -1489,6 +1611,7 @@ export const entertainmentQuestions = [
     points: 15,
     category: 'entertainment',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_130',
@@ -1501,6 +1624,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_131',
@@ -1513,6 +1637,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_132',
@@ -1525,6 +1650,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'entertainment_133',
@@ -1537,6 +1663,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_134',
@@ -1549,6 +1676,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_135',
@@ -1561,6 +1689,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
 
   // Dance & Performance (15 questions)
@@ -1575,6 +1704,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_137',
@@ -1587,6 +1717,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_138',
@@ -1599,6 +1730,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_139',
@@ -1611,6 +1743,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_140',
@@ -1623,6 +1756,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_141',
@@ -1635,6 +1769,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'entertainment_142',
@@ -1647,6 +1782,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_143',
@@ -1659,6 +1795,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_144',
@@ -1671,6 +1808,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_145',
@@ -1683,6 +1821,7 @@ export const entertainmentQuestions = [
     points: 15,
     category: 'entertainment',
     difficulty: 'hard',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_146',
@@ -1695,6 +1834,7 @@ export const entertainmentQuestions = [
     points: 15,
     category: 'entertainment',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_147',
@@ -1707,6 +1847,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_149',
@@ -1719,6 +1860,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_150',
@@ -1727,10 +1869,11 @@ export const entertainmentQuestions = [
     translation: 'What play is very sad?',
     options: ['la tragedia', 'el drama', 'la obra trágica'],
     correctAnswer: 'la tragedia',
-    hint: 'Tragedy - serious drama with sad ending, Greek origin like Sophocles',
+    hint: 'Tragedy - sad dramatic play, Greek origin with unhappy ending',
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'sad',
   },
   {
     id: 'entertainment_151',
@@ -1743,6 +1886,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'entertainment_152',
@@ -1755,6 +1899,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_153',
@@ -1767,6 +1912,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'surprised',
   },
   {
     id: 'entertainment_154',
@@ -1779,6 +1925,7 @@ export const entertainmentQuestions = [
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_155',
@@ -1791,6 +1938,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_156',
@@ -1803,6 +1951,7 @@ export const entertainmentQuestions = [
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'entertainment_157',
@@ -1812,6 +1961,7 @@ export const entertainmentQuestions = [
     options: ['la máscara', 'el disfraz', 'el maquillaje'],
     correctAnswer: 'la máscara',
     hint: 'Mask - worn by actors to cover face, used in theater and performances',
+    emotion: 'neutral',
     points: 5,
     category: 'entertainment',
     difficulty: 'easy',

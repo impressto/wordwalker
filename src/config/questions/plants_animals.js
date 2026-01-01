@@ -15,6 +15,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_002',
@@ -27,6 +28,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_003',
@@ -39,6 +41,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'afraid',
   },
   {
     id: 'plants_animals_004',
@@ -51,6 +54,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_005',
@@ -63,6 +67,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_006',
@@ -75,6 +80,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_007',
@@ -87,6 +93,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_008',
@@ -99,6 +106,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_009',
@@ -111,6 +119,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_010',
@@ -123,6 +132,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_011',
@@ -135,6 +145,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_012',
@@ -147,6 +158,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'plants_animals_013',
@@ -159,6 +171,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_014',
@@ -171,6 +184,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_015',
@@ -183,6 +197,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_016',
@@ -195,6 +210,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_017',
@@ -207,6 +223,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'plants_animals_018',
@@ -219,6 +236,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_019',
@@ -231,6 +249,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_020',
@@ -243,6 +262,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_021',
@@ -255,6 +275,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_022',
@@ -267,6 +288,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_023',
@@ -279,6 +301,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'plants_animals_024',
@@ -291,6 +314,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_025',
@@ -303,6 +327,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_026',
@@ -315,6 +340,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_027',
@@ -327,6 +353,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'plants_animals_028',
@@ -339,6 +366,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_029',
@@ -351,6 +379,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_030',
@@ -363,6 +392,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_031',
@@ -375,6 +405,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_032',
@@ -387,6 +418,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_033',
@@ -399,6 +431,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'surprised',
   },
   {
     id: 'plants_animals_034',
@@ -411,6 +444,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_035',
@@ -423,6 +457,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'afraid',
   },
   {
     id: 'plants_animals_036',
@@ -435,6 +470,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'surprised',
   },
   {
     id: 'plants_animals_037',
@@ -447,6 +483,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_038',
@@ -459,6 +496,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_039',
@@ -471,6 +509,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'surprised',
   },
   {
     id: 'plants_animals_040',
@@ -483,6 +522,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_041',
@@ -495,6 +535,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'afraid',
   },
   {
     id: 'plants_animals_042',
@@ -507,6 +548,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_043',
@@ -519,6 +561,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'surprised',
   },
   {
     id: 'plants_animals_044',
@@ -531,6 +574,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_045',
@@ -543,6 +587,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_046',
@@ -555,6 +600,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_047',
@@ -567,6 +613,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'surprised',
   },
   {
     id: 'plants_animals_048',
@@ -579,6 +626,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_049',
@@ -591,6 +639,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_050',
@@ -603,6 +652,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_051',
@@ -615,6 +665,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'surprised',
   },
   {
     id: 'plants_animals_052',
@@ -627,6 +678,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_053',
@@ -639,6 +691,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_054',
@@ -651,6 +704,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_055',
@@ -663,6 +717,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'surprised',
   },
   {
     id: 'plants_animals_056',
@@ -675,6 +730,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_057',
@@ -687,6 +743,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_058',
@@ -699,6 +756,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_059',
@@ -711,6 +769,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'surprised',
   },
   {
     id: 'plants_animals_060',
@@ -723,6 +782,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_061',
@@ -735,6 +795,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'disgusted',
   },
   {
     id: 'plants_animals_062',
@@ -747,6 +808,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'afraid',
   },
   {
     id: 'plants_animals_063',
@@ -759,6 +821,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'disgusted',
   },
   {
     id: 'plants_animals_064',
@@ -771,6 +834,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'surprised',
   },
   {
     id: 'plants_animals_065',
@@ -783,6 +847,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_066',
@@ -795,6 +860,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'disgusted',
   },
   {
     id: 'plants_animals_067',
@@ -807,6 +873,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'surprised',
   },
   {
     id: 'plants_animals_068',
@@ -819,6 +886,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_069',
@@ -831,6 +899,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'disgusted',
   },
   {
     id: 'plants_animals_070',
@@ -843,6 +912,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'afraid',
   },
   {
     id: 'plants_animals_071',
@@ -855,6 +925,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_072',
@@ -867,6 +938,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'surprised',
   },
   {
     id: 'plants_animals_073',
@@ -879,6 +951,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'disgusted',
   },
   {
     id: 'plants_animals_074',
@@ -891,6 +964,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_075',
@@ -903,6 +977,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'surprised',
   },
   {
     id: 'plants_animals_076',
@@ -915,6 +990,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_077',
@@ -927,6 +1003,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'disgusted',
   },
   {
     id: 'plants_animals_078',
@@ -939,6 +1016,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'surprised',
   },
   {
     id: 'plants_animals_079',
@@ -951,6 +1029,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_080',
@@ -963,6 +1042,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'disgusted',
   },
   {
     id: 'plants_animals_081',
@@ -975,6 +1055,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_082',
@@ -987,6 +1068,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'surprised',
   },
   {
     id: 'plants_animals_083',
@@ -999,6 +1081,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_084',
@@ -1011,6 +1094,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'disgusted',
   },
   {
     id: 'plants_animals_085',
@@ -1023,6 +1107,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_086',
@@ -1035,6 +1120,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'surprised',
   },
   {
     id: 'plants_animals_087',
@@ -1047,6 +1133,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_088',
@@ -1059,6 +1146,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'disgusted',
   },
   {
     id: 'plants_animals_089',
@@ -1071,6 +1159,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'surprised',
   },
   {
     id: 'plants_animals_090',
@@ -1083,6 +1172,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_091',
@@ -1095,6 +1185,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_092',
@@ -1107,6 +1198,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_093',
@@ -1119,6 +1211,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'plants_animals_094',
@@ -1131,6 +1224,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_095',
@@ -1143,6 +1237,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'plants_animals_096',
@@ -1155,6 +1250,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_097',
@@ -1167,6 +1263,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'plants_animals_098',
@@ -1179,6 +1276,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_099',
@@ -1191,6 +1289,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'plants_animals_100',
@@ -1203,6 +1302,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_101',
@@ -1215,6 +1315,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_102',
@@ -1227,6 +1328,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'plants_animals_103',
@@ -1239,6 +1341,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_104',
@@ -1251,6 +1354,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'plants_animals_105',
@@ -1263,6 +1367,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_106',
@@ -1275,6 +1380,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'plants_animals_107',
@@ -1287,6 +1393,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_108',
@@ -1299,6 +1406,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_109',
@@ -1311,6 +1419,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'plants_animals_110',
@@ -1323,6 +1432,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_111',
@@ -1335,6 +1445,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_112',
@@ -1347,6 +1458,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'plants_animals_113',
@@ -1359,6 +1471,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_114',
@@ -1371,6 +1484,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_115',
@@ -1383,6 +1497,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'plants_animals_116',
@@ -1395,6 +1510,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_117',
@@ -1407,6 +1523,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_118',
@@ -1419,6 +1536,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'plants_animals_119',
@@ -1431,6 +1549,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_120',
@@ -1443,6 +1562,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_121',
@@ -1455,6 +1575,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'plants_animals_122',
@@ -1467,6 +1588,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_123',
@@ -1479,6 +1601,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'plants_animals_124',
@@ -1491,6 +1614,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_125',
@@ -1503,6 +1627,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_126',
@@ -1515,6 +1640,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_127',
@@ -1527,6 +1653,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'plants_animals_128',
@@ -1539,6 +1666,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_129',
@@ -1551,6 +1679,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'plants_animals_130',
@@ -1563,6 +1692,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_131',
@@ -1575,6 +1705,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_132',
@@ -1587,6 +1718,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'plants_animals_133',
@@ -1599,6 +1731,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_134',
@@ -1611,6 +1744,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_135',
@@ -1623,6 +1757,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'plants_animals_136',
@@ -1635,6 +1770,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_137',
@@ -1647,6 +1783,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_138',
@@ -1659,6 +1796,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'plants_animals_139',
@@ -1671,6 +1809,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_140',
@@ -1683,6 +1822,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'plants_animals_141',
@@ -1695,6 +1835,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_142',
@@ -1707,6 +1848,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'plants_animals_143',
@@ -1719,6 +1861,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_144',
@@ -1731,6 +1874,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_145',
@@ -1743,6 +1887,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'plants_animals_146',
@@ -1755,6 +1900,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_147',
@@ -1767,6 +1913,7 @@ export const plantsAnimalsQuestions = [
     points: 5,
     category: 'plants_animals',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_148',
@@ -1779,6 +1926,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'plants_animals_149',
@@ -1791,6 +1939,7 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'plants_animals_150',
@@ -1803,5 +1952,6 @@ export const plantsAnimalsQuestions = [
     points: 10,
     category: 'plants_animals',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 ];

@@ -16,6 +16,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'daily_002',
@@ -28,6 +29,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_003',
@@ -40,6 +42,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_004',
@@ -52,6 +55,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_005',
@@ -64,6 +68,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_006',
@@ -76,6 +81,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_007',
@@ -88,6 +94,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_008',
@@ -100,6 +107,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'daily_009',
@@ -112,6 +120,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_010',
@@ -124,6 +133,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'daily_011',
@@ -136,6 +146,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_012',
@@ -148,6 +159,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'daily_013',
@@ -160,6 +172,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_014',
@@ -172,6 +185,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_015',
@@ -184,6 +198,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_016',
@@ -196,6 +211,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'daily_017',
@@ -208,6 +224,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_018',
@@ -220,6 +237,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'daily_019',
@@ -232,6 +250,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_020',
@@ -244,6 +263,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
 
   // Work/School Day (21-40)
@@ -258,6 +278,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'daily_022',
@@ -270,6 +291,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'daily_023',
@@ -282,6 +304,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'daily_025',
@@ -294,6 +317,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_026',
@@ -306,6 +330,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_027',
@@ -318,6 +343,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'daily_029',
@@ -330,6 +356,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_031',
@@ -342,6 +369,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_032',
@@ -354,6 +382,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_034',
@@ -366,6 +395,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_035',
@@ -378,6 +408,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_036',
@@ -390,6 +421,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'daily_037',
@@ -402,6 +434,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_038',
@@ -414,6 +447,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_039',
@@ -426,6 +460,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'daily_040',
@@ -438,6 +473,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
 
   // Afternoon/Evening (41-60)
@@ -452,6 +488,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_042',
@@ -464,6 +501,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_043',
@@ -476,6 +514,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_044',
@@ -488,6 +527,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_045',
@@ -500,6 +540,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_046',
@@ -512,6 +553,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_047',
@@ -524,6 +566,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_048',
@@ -536,6 +579,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'daily_049',
@@ -548,6 +592,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_050',
@@ -560,6 +605,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_051',
@@ -572,6 +618,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'daily_052',
@@ -584,6 +631,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'daily_053',
@@ -596,6 +644,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'daily_054',
@@ -608,6 +657,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_055',
@@ -620,6 +670,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_056',
@@ -632,6 +683,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_057',
@@ -644,6 +696,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_058',
@@ -656,6 +709,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'daily_059',
@@ -668,6 +722,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'daily_060',
@@ -680,6 +735,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
 
   // Night Routine (61-80)
@@ -694,6 +750,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_062',
@@ -706,6 +763,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_063',
@@ -718,6 +776,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_064',
@@ -730,6 +789,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'daily_065',
@@ -742,6 +802,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_066',
@@ -754,6 +815,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_067',
@@ -766,6 +828,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_068',
@@ -778,6 +841,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_069',
@@ -790,6 +854,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_070',
@@ -802,6 +867,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_071',
@@ -814,6 +880,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_072',
@@ -826,6 +893,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_073',
@@ -838,6 +906,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_074',
@@ -850,6 +919,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_075',
@@ -862,6 +932,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_076',
@@ -874,6 +945,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'daily_077',
@@ -886,6 +958,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_078',
@@ -898,6 +971,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_079',
@@ -910,6 +984,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_080',
@@ -922,6 +997,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'happy',
   },
 
   // Weekend & Special Activities (81-100)
@@ -936,6 +1012,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_082',
@@ -948,6 +1025,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_083',
@@ -960,6 +1038,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'daily_084',
@@ -972,6 +1051,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_085',
@@ -984,6 +1064,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'daily_086',
@@ -996,6 +1077,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_087',
@@ -1008,6 +1090,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'daily_088',
@@ -1020,6 +1103,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_089',
@@ -1032,6 +1116,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'daily_090',
@@ -1044,6 +1129,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_091',
@@ -1056,6 +1142,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_092',
@@ -1068,6 +1155,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'daily_093',
@@ -1080,6 +1168,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_094',
@@ -1092,6 +1181,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_095',
@@ -1104,6 +1194,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_096',
@@ -1116,6 +1207,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_097',
@@ -1128,6 +1220,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_098',
@@ -1140,6 +1233,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_099',
@@ -1152,6 +1246,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_100',
@@ -1164,6 +1259,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_101',
@@ -1176,6 +1272,7 @@ export const dailyRoutinesQuestions = [
     points: 10,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_102',
@@ -1188,6 +1285,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_103',
@@ -1200,6 +1298,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_104',
@@ -1212,6 +1311,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_105',
@@ -1224,6 +1324,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'daily_106',
@@ -1236,6 +1337,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'daily_107',
@@ -1248,6 +1350,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_108',
@@ -1260,6 +1363,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_109',
@@ -1272,6 +1376,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_110',
@@ -1284,6 +1389,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'daily_111',
@@ -1296,6 +1402,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'daily_112',
@@ -1308,6 +1415,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_113',
@@ -1320,6 +1428,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_114',
@@ -1332,6 +1441,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'daily_115',
@@ -1344,6 +1454,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'daily_116',
@@ -1356,6 +1467,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'daily_117',
@@ -1368,6 +1480,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'disgusted',
   },
   {
     id: 'daily_118',
@@ -1380,6 +1493,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_119',
@@ -1392,6 +1506,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'daily_120',
@@ -1404,6 +1519,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_121',
@@ -1416,6 +1532,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_122',
@@ -1428,6 +1545,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_123',
@@ -1440,6 +1558,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'daily_124',
@@ -1452,6 +1571,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_125',
@@ -1464,6 +1584,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'daily_126',
@@ -1476,6 +1597,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'disgusted',
   },
   {
     id: 'daily_127',
@@ -1488,6 +1610,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_128',
@@ -1500,6 +1623,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_129',
@@ -1512,6 +1636,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_130',
@@ -1524,6 +1649,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'daily_131',
@@ -1536,6 +1662,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'daily_132',
@@ -1548,6 +1675,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_133',
@@ -1560,6 +1688,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_134',
@@ -1572,6 +1701,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'daily_135',
@@ -1584,6 +1714,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_136',
@@ -1596,6 +1727,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_137',
@@ -1608,6 +1740,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_138',
@@ -1620,6 +1753,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_139',
@@ -1632,6 +1766,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_140',
@@ -1644,6 +1779,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_141',
@@ -1656,6 +1792,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_142',
@@ -1668,6 +1805,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_143',
@@ -1680,6 +1818,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_144',
@@ -1692,6 +1831,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'daily_145',
@@ -1704,6 +1844,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_146',
@@ -1716,6 +1857,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_147',
@@ -1728,6 +1870,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'daily_148',
@@ -1740,6 +1883,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_149',
@@ -1752,6 +1896,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_150',
@@ -1764,6 +1909,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_151',
@@ -1776,6 +1922,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'daily_152',
@@ -1788,6 +1935,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_153',
@@ -1800,6 +1948,7 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'daily_154',
@@ -1812,5 +1961,6 @@ export const dailyRoutinesQuestions = [
     points: 5,
     category: 'daily_routines',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
 ];

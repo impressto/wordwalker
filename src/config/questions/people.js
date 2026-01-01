@@ -16,6 +16,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_002',
@@ -28,6 +29,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'people_003',
@@ -40,6 +42,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_004',
@@ -52,6 +55,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_005',
@@ -64,6 +68,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'people_006',
@@ -76,6 +81,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'people_007',
@@ -88,6 +94,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_008',
@@ -100,6 +107,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_009',
@@ -112,6 +120,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_010',
@@ -124,6 +133,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_011',
@@ -136,6 +146,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_012',
@@ -148,6 +159,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_013',
@@ -160,6 +172,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'people_014',
@@ -172,6 +185,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'people_015',
@@ -184,6 +198,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'people_016',
@@ -196,6 +211,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'people_017',
@@ -208,6 +224,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'people_018',
@@ -220,6 +237,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'people_019',
@@ -232,6 +250,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'people_020',
@@ -244,6 +263,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'happy',
   },
 
   // Professions (30 questions)
@@ -258,6 +278,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'people_022',
@@ -270,6 +291,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'people_023',
@@ -282,6 +304,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_024',
@@ -294,6 +317,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_025',
@@ -306,6 +330,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'people_026',
@@ -318,6 +343,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'people_027',
@@ -330,6 +356,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'people_028',
@@ -342,6 +369,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'people_029',
@@ -354,6 +382,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_030',
@@ -366,6 +395,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_031',
@@ -378,6 +408,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'people_032',
@@ -390,6 +421,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'people_033',
@@ -402,6 +434,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'people_034',
@@ -414,6 +447,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'people_035',
@@ -426,6 +460,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'people_036',
@@ -438,6 +473,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'people_037',
@@ -450,6 +486,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'people_038',
@@ -462,6 +499,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'people_039',
@@ -474,6 +512,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'people_040',
@@ -486,6 +525,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'people_041',
@@ -498,6 +538,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'people_042',
@@ -510,6 +551,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'people_043',
@@ -522,6 +564,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'people_044',
@@ -534,6 +577,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'people_045',
@@ -546,6 +590,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_046',
@@ -558,6 +603,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_047',
@@ -570,6 +616,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'people_048',
@@ -582,6 +629,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'people_049',
@@ -594,6 +642,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'people_050',
@@ -606,6 +655,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'determined',
   },
 
   // Physical Descriptions (25 questions)
@@ -620,6 +670,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'people_052',
@@ -632,6 +683,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'people_053',
@@ -644,6 +696,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_054',
@@ -656,6 +709,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'people_055',
@@ -668,6 +722,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'people_056',
@@ -680,6 +735,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'hurt',
   },
   {
     id: 'people_057',
@@ -692,6 +748,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_058',
@@ -704,6 +761,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'sad',
   },
   {
     id: 'people_059',
@@ -716,6 +774,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'people_060',
@@ -728,6 +787,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'sad',
   },
   {
     id: 'people_061',
@@ -740,6 +800,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'angry',
   },
   {
     id: 'people_062',
@@ -752,6 +813,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'hurt',
   },
   {
     id: 'people_063',
@@ -764,6 +826,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_064',
@@ -776,6 +839,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_065',
@@ -788,6 +852,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'angry',
   },
   {
     id: 'people_066',
@@ -800,6 +865,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'people_067',
@@ -812,6 +878,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'people_068',
@@ -824,6 +891,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'surprised',
   },
   {
     id: 'people_069',
@@ -836,6 +904,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'people_070',
@@ -848,6 +917,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'people_071',
@@ -860,6 +930,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'people_072',
@@ -872,6 +943,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'people_073',
@@ -884,6 +956,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'people_074',
@@ -896,6 +969,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'people_075',
@@ -908,6 +982,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
 
   // Personality & Character Traits (15 questions)
@@ -922,6 +997,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'people_077',
@@ -934,6 +1010,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'people_078',
@@ -946,6 +1023,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'people_079',
@@ -958,6 +1036,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'people_080',
@@ -970,6 +1049,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'people_081',
@@ -982,6 +1062,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'people_082',
@@ -994,6 +1075,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'people_083',
@@ -1006,6 +1088,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'people_084',
@@ -1018,6 +1101,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'people_085',
@@ -1030,6 +1114,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'people_086',
@@ -1042,6 +1127,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'people_087',
@@ -1054,6 +1140,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'people_088',
@@ -1066,6 +1153,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'people_089',
@@ -1078,6 +1166,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'angry',
   },
   {
     id: 'people_090',
@@ -1090,6 +1179,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
 
   // Age & Life Stages (10 questions)
@@ -1104,6 +1194,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_092',
@@ -1116,6 +1207,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_093',
@@ -1128,6 +1220,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_094',
@@ -1140,6 +1233,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'people_095',
@@ -1152,6 +1246,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'people_096',
@@ -1164,6 +1259,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'people_097',
@@ -1176,6 +1272,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'people_098',
@@ -1188,6 +1285,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'people_099',
@@ -1200,6 +1298,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'people_100',
@@ -1212,6 +1311,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'people_101',
@@ -1224,6 +1324,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'people_102',
@@ -1236,6 +1337,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'people_103',
@@ -1248,6 +1350,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_104',
@@ -1260,6 +1363,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'people_105',
@@ -1272,6 +1376,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'sad',
   },
   {
     id: 'people_107',
@@ -1284,6 +1389,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'people_108',
@@ -1296,6 +1402,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'sad',
   },
   {
     id: 'people_109',
@@ -1308,6 +1415,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'angry',
   },
   {
     id: 'people_110',
@@ -1320,6 +1428,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'people_111',
@@ -1332,6 +1441,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_112',
@@ -1344,6 +1454,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   // Emotions and Emotional Relationships (38 questions)
   {
@@ -1357,6 +1468,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'people_114',
@@ -1369,6 +1481,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'sad',
   },
   {
     id: 'people_115',
@@ -1381,6 +1494,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'people_116',
@@ -1393,6 +1507,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'sad',
   },
   {
     id: 'people_117',
@@ -1405,6 +1520,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'afraid',
   },
   {
     id: 'people_118',
@@ -1417,6 +1533,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'angry',
   },
   {
     id: 'people_119',
@@ -1429,6 +1546,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'angry',
   },
   {
     id: 'people_120',
@@ -1441,6 +1559,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'disgusted',
   },
   {
     id: 'people_121',
@@ -1453,6 +1572,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'afraid',
   },
   {
     id: 'people_122',
@@ -1465,6 +1585,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'people_123',
@@ -1477,6 +1598,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'people_124',
@@ -1489,6 +1611,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'people_125',
@@ -1501,6 +1624,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'angry',
   },
   {
     id: 'people_126',
@@ -1513,6 +1637,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'angry',
   },
   {
     id: 'people_127',
@@ -1525,6 +1650,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'sad',
   },
   {
     id: 'people_128',
@@ -1537,6 +1663,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'people_129',
@@ -1549,6 +1676,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'people_130',
@@ -1561,6 +1689,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'people_131',
@@ -1573,6 +1702,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'people_132',
@@ -1585,6 +1715,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'sad',
   },
   {
     id: 'people_133',
@@ -1597,6 +1728,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'sad',
   },
   {
     id: 'people_134',
@@ -1609,6 +1741,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'people_135',
@@ -1621,6 +1754,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'sad',
   },
   {
     id: 'people_136',
@@ -1633,6 +1767,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'angry',
   },
   {
     id: 'people_137',
@@ -1645,6 +1780,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'people_138',
@@ -1657,6 +1793,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'people_139',
@@ -1669,6 +1806,7 @@ export const peopleQuestions = [
     points: 15,
     category: 'people',
     difficulty: 'hard',
+    emotion: 'angry',
   },
   {
     id: 'people_140',
@@ -1681,6 +1819,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'people_141',
@@ -1693,6 +1832,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'people_142',
@@ -1705,6 +1845,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'angry',
   },
   {
     id: 'people_143',
@@ -1717,6 +1858,7 @@ export const peopleQuestions = [
     points: 15,
     category: 'people',
     difficulty: 'hard',
+    emotion: 'sad',
   },
   {
     id: 'people_144',
@@ -1729,6 +1871,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'people_145',
@@ -1741,6 +1884,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'people_146',
@@ -1753,6 +1897,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'people_147',
@@ -1765,6 +1910,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'people_148',
@@ -1777,6 +1923,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'surprised',
   },
   {
     id: 'people_149',
@@ -1789,6 +1936,7 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'angry',
   },
   {
     id: 'people_150',
@@ -1801,6 +1949,7 @@ export const peopleQuestions = [
     points: 5,
     category: 'people',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'people_151',
@@ -1813,5 +1962,6 @@ export const peopleQuestions = [
     points: 10,
     category: 'people',
     difficulty: 'medium',
+    emotion: 'afraid',
   },
 ];

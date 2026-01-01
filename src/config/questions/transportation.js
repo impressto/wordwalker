@@ -15,6 +15,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_002',
@@ -27,6 +28,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_003',
@@ -39,6 +41,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'transportation_004',
@@ -51,6 +54,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'transportation_005',
@@ -63,6 +67,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_006',
@@ -75,6 +80,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_007',
@@ -87,6 +93,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'transportation_008',
@@ -99,6 +106,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_009',
@@ -111,6 +119,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_010',
@@ -123,6 +132,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_011',
@@ -135,6 +145,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_012',
@@ -147,6 +158,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'transportation_013',
@@ -159,6 +171,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_014',
@@ -171,6 +184,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_015',
@@ -183,6 +197,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
 
   // Public Transportation (30 questions)
@@ -197,6 +212,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_017',
@@ -209,6 +225,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_018',
@@ -221,6 +238,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_019',
@@ -233,6 +251,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_020',
@@ -245,6 +264,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_021',
@@ -257,6 +277,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'transportation_022',
@@ -269,6 +290,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_023',
@@ -281,6 +303,7 @@ export const transportationQuestions = [
     points: 15,
     category: 'transportation',
     difficulty: 'hard',
+    emotion: 'surprised',
   },
   {
     id: 'transportation_024',
@@ -293,6 +316,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_025',
@@ -305,6 +329,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'transportation_026',
@@ -317,6 +342,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_027',
@@ -329,6 +355,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_028',
@@ -341,6 +368,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_029',
@@ -353,6 +381,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_030',
@@ -365,6 +394,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'confused',
   },
   {
     id: 'transportation_031',
@@ -377,6 +407,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_032',
@@ -389,6 +420,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'transportation_033',
@@ -401,6 +433,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'transportation_034',
@@ -413,6 +446,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_035',
@@ -425,6 +459,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_036',
@@ -437,6 +472,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_037',
@@ -449,6 +485,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_038',
@@ -461,6 +498,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_039',
@@ -473,6 +511,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_040',
@@ -485,6 +524,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_041',
@@ -497,6 +537,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_042',
@@ -509,6 +550,7 @@ export const transportationQuestions = [
     points: 15,
     category: 'transportation',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_043',
@@ -521,6 +563,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_044',
@@ -533,6 +576,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'transportation_045',
@@ -545,6 +589,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
   // Airport & Air Travel (35 questions)
@@ -559,6 +604,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'transportation_047',
@@ -571,6 +617,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'transportation_048',
@@ -583,6 +630,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_049',
@@ -595,6 +643,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'transportation_050',
@@ -607,6 +656,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'transportation_051',
@@ -619,6 +669,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_052',
@@ -631,6 +682,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_053',
@@ -643,6 +695,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_054',
@@ -655,6 +708,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_055',
@@ -667,6 +721,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'transportation_056',
@@ -679,6 +734,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'transportation_057',
@@ -691,6 +747,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_058',
@@ -703,6 +760,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_059',
@@ -715,6 +773,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'transportation_060',
@@ -727,6 +786,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_061',
@@ -739,6 +799,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_062',
@@ -751,6 +812,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'transportation_063',
@@ -763,6 +825,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_064',
@@ -775,6 +838,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'angry',
   },
   {
     id: 'transportation_065',
@@ -787,6 +851,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'transportation_066',
@@ -799,6 +864,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_067',
@@ -811,6 +877,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_068',
@@ -823,6 +890,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_069',
@@ -835,6 +903,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'transportation_070',
@@ -847,6 +916,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_071',
@@ -859,6 +929,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'transportation_072',
@@ -871,6 +942,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_073',
@@ -883,6 +955,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_074',
@@ -895,6 +968,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_075',
@@ -907,6 +981,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'transportation_076',
@@ -919,6 +994,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_077',
@@ -931,6 +1007,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_078',
@@ -943,6 +1020,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'transportation_079',
@@ -955,6 +1033,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'transportation_080',
@@ -967,6 +1046,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
 
   // Cars & Road Travel (35 questions)
@@ -981,6 +1061,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_082',
@@ -993,6 +1074,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_083',
@@ -1005,6 +1087,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_084',
@@ -1017,6 +1100,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_085',
@@ -1029,6 +1113,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'transportation_086',
@@ -1041,6 +1126,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_087',
@@ -1053,6 +1139,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'afraid',
   },
   {
     id: 'transportation_088',
@@ -1065,6 +1152,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_089',
@@ -1077,6 +1165,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_090',
@@ -1089,6 +1178,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'transportation_091',
@@ -1101,6 +1191,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_092',
@@ -1113,6 +1204,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'transportation_093',
@@ -1125,6 +1217,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_094',
@@ -1137,6 +1230,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_095',
@@ -1149,6 +1243,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_096',
@@ -1161,6 +1256,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_097',
@@ -1173,6 +1269,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'transportation_098',
@@ -1185,6 +1282,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'transportation_099',
@@ -1197,6 +1295,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'transportation_100',
@@ -1209,6 +1308,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'transportation_101',
@@ -1221,6 +1321,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_102',
@@ -1233,6 +1334,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'transportation_103',
@@ -1245,6 +1347,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'transportation_104',
@@ -1257,6 +1360,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'transportation_105',
@@ -1269,6 +1373,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'angry',
   },
   {
     id: 'transportation_106',
@@ -1281,6 +1386,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_107',
@@ -1293,6 +1399,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_108',
@@ -1305,6 +1412,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'transportation_109',
@@ -1317,6 +1425,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_110',
@@ -1329,6 +1438,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'transportation_111',
@@ -1341,6 +1451,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'angry',
   },
   {
     id: 'transportation_112',
@@ -1353,6 +1464,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'transportation_113',
@@ -1365,6 +1477,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'transportation_114',
@@ -1377,6 +1490,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_115',
@@ -1389,6 +1503,7 @@ export const transportationQuestions = [
     points: 15,
     category: 'transportation',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
 
   // Water & Other Transport (35 questions)
@@ -1403,6 +1518,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_117',
@@ -1415,6 +1531,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'transportation_118',
@@ -1427,6 +1544,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_119',
@@ -1439,6 +1557,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'transportation_120',
@@ -1451,6 +1570,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'transportation_121',
@@ -1463,6 +1583,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_122',
@@ -1475,6 +1596,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_123',
@@ -1487,6 +1609,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'transportation_124',
@@ -1499,6 +1622,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_125',
@@ -1511,6 +1635,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'transportation_126',
@@ -1523,6 +1648,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'afraid',
   },
   {
     id: 'transportation_127',
@@ -1535,6 +1661,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_128',
@@ -1547,6 +1674,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'transportation_129',
@@ -1559,6 +1687,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_130',
@@ -1571,6 +1700,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'transportation_131',
@@ -1583,6 +1713,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_132',
@@ -1595,6 +1726,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'transportation_133',
@@ -1607,6 +1739,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'transportation_134',
@@ -1619,6 +1752,7 @@ export const transportationQuestions = [
     points: 15,
     category: 'transportation',
     difficulty: 'hard',
+    emotion: 'surprised',
   },
   {
     id: 'transportation_135',
@@ -1631,6 +1765,7 @@ export const transportationQuestions = [
     points: 15,
     category: 'transportation',
     difficulty: 'hard',
+    emotion: 'surprised',
   },
   {
     id: 'transportation_136',
@@ -1643,6 +1778,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_137',
@@ -1655,6 +1791,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'surprised',
   },
   {
     id: 'transportation_138',
@@ -1667,6 +1804,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'transportation_139',
@@ -1679,6 +1817,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'transportation_140',
@@ -1691,6 +1830,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'transportation_141',
@@ -1703,6 +1843,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_142',
@@ -1715,6 +1856,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_143',
@@ -1727,6 +1869,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_144',
@@ -1739,6 +1882,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_145',
@@ -1751,6 +1895,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_146',
@@ -1763,6 +1908,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'transportation_147',
@@ -1775,6 +1921,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'transportation_148',
@@ -1787,6 +1934,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_149',
@@ -1799,6 +1947,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_150',
@@ -1811,6 +1960,7 @@ export const transportationQuestions = [
     points: 15,
     category: 'transportation',
     difficulty: 'hard',
+    emotion: 'surprised',
   },
   {
     id: 'transportation_151',
@@ -1823,6 +1973,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_152',
@@ -1835,6 +1986,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_153',
@@ -1847,6 +1999,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'transportation_154',
@@ -1859,6 +2012,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_155',
@@ -1871,6 +2025,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'transportation_156',
@@ -1883,6 +2038,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_157',
@@ -1895,6 +2051,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'transportation_158',
@@ -1907,6 +2064,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'transportation_159',
@@ -1919,6 +2077,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_160',
@@ -1931,6 +2090,7 @@ export const transportationQuestions = [
     points: 15,
     category: 'transportation',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'transportation_161',
@@ -1943,6 +2103,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'transportation_162',
@@ -1955,6 +2116,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_163',
@@ -1967,6 +2129,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'transportation_164',
@@ -1979,6 +2142,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'transportation_165',
@@ -1991,6 +2155,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_166',
@@ -2003,6 +2168,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'transportation_167',
@@ -2015,6 +2181,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_168',
@@ -2027,6 +2194,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_169',
@@ -2039,6 +2207,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'transportation_170',
@@ -2051,6 +2220,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_171',
@@ -2063,6 +2233,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'transportation_172',
@@ -2075,6 +2246,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_173',
@@ -2087,6 +2259,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_174',
@@ -2099,6 +2272,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_175',
@@ -2111,6 +2285,7 @@ export const transportationQuestions = [
     points: 15,
     category: 'transportation',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_176',
@@ -2123,6 +2298,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_177',
@@ -2135,6 +2311,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'transportation_178',
@@ -2147,6 +2324,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'transportation_179',
@@ -2159,6 +2337,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'transportation_180',
@@ -2171,6 +2350,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_181',
@@ -2183,6 +2363,7 @@ export const transportationQuestions = [
     points: 15,
     category: 'transportation',
     difficulty: 'hard',
+    emotion: 'surprised',
   },
   {
     id: 'transportation_182',
@@ -2195,6 +2376,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'transportation_183',
@@ -2207,6 +2389,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'transportation_184',
@@ -2219,6 +2402,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_185',
@@ -2231,6 +2415,7 @@ export const transportationQuestions = [
     points: 15,
     category: 'transportation',
     difficulty: 'hard',
+    emotion: 'surprised',
   },
   {
     id: 'transportation_186',
@@ -2243,6 +2428,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_187',
@@ -2255,6 +2441,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'transportation_188',
@@ -2267,6 +2454,7 @@ export const transportationQuestions = [
     points: 15,
     category: 'transportation',
     difficulty: 'hard',
+    emotion: 'surprised',
   },
   {
     id: 'transportation_189',
@@ -2279,6 +2467,7 @@ export const transportationQuestions = [
     points: 15,
     category: 'transportation',
     difficulty: 'hard',
+    emotion: 'surprised',
   },
   {
     id: 'transportation_190',
@@ -2291,6 +2480,7 @@ export const transportationQuestions = [
     points: 15,
     category: 'transportation',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'transportation_191',
@@ -2303,6 +2493,7 @@ export const transportationQuestions = [
     points: 15,
     category: 'transportation',
     difficulty: 'hard',
+    emotion: 'excited',
   },
   {
     id: 'transportation_192',
@@ -2315,6 +2506,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_193',
@@ -2327,6 +2519,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_194',
@@ -2339,6 +2532,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_195',
@@ -2351,6 +2545,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_196',
@@ -2363,6 +2558,7 @@ export const transportationQuestions = [
     points: 5,
     category: 'transportation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_197',
@@ -2375,6 +2571,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'transportation_198',
@@ -2387,6 +2584,7 @@ export const transportationQuestions = [
     points: 10,
     category: 'transportation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_199',
@@ -2399,6 +2597,7 @@ export const transportationQuestions = [
     points: 15,
     category: 'transportation',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'transportation_200',
@@ -2411,5 +2610,6 @@ export const transportationQuestions = [
     points: 15,
     category: 'transportation',
     difficulty: 'hard',
+    emotion: 'excited',
   },
 ];

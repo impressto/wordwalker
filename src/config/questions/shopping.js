@@ -15,6 +15,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_002',
@@ -27,6 +28,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_003',
@@ -39,6 +41,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'shopping_004',
@@ -51,6 +54,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_005',
@@ -63,6 +67,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_006',
@@ -75,6 +80,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_007',
@@ -87,6 +93,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'shopping_008',
@@ -99,6 +106,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_009',
@@ -111,6 +119,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_010',
@@ -123,6 +132,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_011',
@@ -135,6 +145,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'shopping_012',
@@ -147,6 +158,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_013',
@@ -159,6 +171,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'shopping_014',
@@ -171,6 +184,7 @@ export const shoppingQuestions = [
     points: 15,
     category: 'shopping',
     difficulty: 'hard',
+    emotion: 'surprised',
   },
   {
     id: 'shopping_015',
@@ -183,6 +197,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_016',
@@ -195,6 +210,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_017',
@@ -207,6 +223,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'shopping_018',
@@ -219,6 +236,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_019',
@@ -231,6 +249,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_020',
@@ -243,6 +262,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
 
   // More Clothing Items (35 questions)
@@ -257,6 +277,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'shopping_022',
@@ -269,6 +290,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'shopping_023',
@@ -281,6 +303,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'shopping_024',
@@ -293,6 +316,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'shopping_025',
@@ -305,6 +329,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'shopping_026',
@@ -317,6 +342,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_027',
@@ -329,6 +355,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'shopping_028',
@@ -341,6 +368,7 @@ export const shoppingQuestions = [
     points: 15,
     category: 'shopping',
     difficulty: 'hard',
+    emotion: 'surprised',
   },
   {
     id: 'shopping_029',
@@ -353,6 +381,7 @@ export const shoppingQuestions = [
     points: 15,
     category: 'shopping',
     difficulty: 'hard',
+    emotion: 'surprised',
   },
   {
     id: 'shopping_030',
@@ -365,6 +394,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'shopping_031',
@@ -377,6 +407,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'shopping_032',
@@ -389,6 +420,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_033',
@@ -401,6 +433,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'shopping_034',
@@ -413,6 +446,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_035',
@@ -425,6 +459,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_036',
@@ -437,6 +472,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'shopping_037',
@@ -449,6 +485,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_038',
@@ -461,6 +498,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'shopping_039',
@@ -473,6 +511,7 @@ export const shoppingQuestions = [
     points: 15,
     category: 'shopping',
     difficulty: 'hard',
+    emotion: 'determined',
   },
   {
     id: 'shopping_040',
@@ -485,6 +524,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'shopping_041',
@@ -497,6 +537,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'shopping_042',
@@ -509,6 +550,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'shopping_043',
@@ -521,6 +563,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_044',
@@ -533,6 +576,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'shopping_045',
@@ -545,6 +589,7 @@ export const shoppingQuestions = [
     points: 15,
     category: 'shopping',
     difficulty: 'hard',
+    emotion: 'excited',
   },
   {
     id: 'shopping_046',
@@ -557,6 +602,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_047',
@@ -569,6 +615,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'shopping_048',
@@ -581,6 +628,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_049',
@@ -593,6 +641,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'shopping_050',
@@ -605,6 +654,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'shopping_051',
@@ -617,6 +667,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_052',
@@ -629,6 +680,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'shopping_053',
@@ -641,6 +693,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'shopping_054',
@@ -653,6 +706,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'shopping_055',
@@ -665,6 +719,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
 
   // Accessories & Jewelry (25 questions)
@@ -679,6 +734,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_057',
@@ -691,6 +747,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_058',
@@ -703,6 +760,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'shopping_059',
@@ -715,6 +773,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'shopping_060',
@@ -727,6 +786,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_061',
@@ -739,6 +799,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_062',
@@ -751,6 +812,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_063',
@@ -763,6 +825,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_064',
@@ -775,6 +838,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_065',
@@ -787,6 +851,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'shopping_066',
@@ -799,6 +864,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'shopping_067',
@@ -811,6 +877,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_068',
@@ -823,6 +890,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_069',
@@ -835,6 +903,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'shopping_070',
@@ -847,6 +916,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_071',
@@ -859,6 +929,7 @@ export const shoppingQuestions = [
     points: 15,
     category: 'shopping',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_072',
@@ -871,6 +942,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_073',
@@ -883,6 +955,7 @@ export const shoppingQuestions = [
     points: 15,
     category: 'shopping',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_074',
@@ -895,6 +968,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'shopping_075',
@@ -907,6 +981,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_076',
@@ -919,6 +994,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_077',
@@ -931,6 +1007,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_078',
@@ -943,6 +1020,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'shopping_079',
@@ -955,6 +1033,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'shopping_080',
@@ -967,6 +1046,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'determined',
   },
 
   // Shopping Actions & Store (30 questions)
@@ -981,6 +1061,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_082',
@@ -993,6 +1074,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_083',
@@ -1005,6 +1087,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_084',
@@ -1017,6 +1100,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_085',
@@ -1029,6 +1113,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_086',
@@ -1041,6 +1126,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_087',
@@ -1053,6 +1139,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_088',
@@ -1065,6 +1152,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'shopping_089',
@@ -1077,6 +1165,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_090',
@@ -1089,6 +1178,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_091',
@@ -1101,6 +1191,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_092',
@@ -1113,6 +1204,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_093',
@@ -1125,6 +1217,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_094',
@@ -1137,6 +1230,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'confused',
   },
   {
     id: 'shopping_095',
@@ -1149,6 +1243,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_096',
@@ -1161,6 +1256,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_097',
@@ -1173,6 +1269,7 @@ export const shoppingQuestions = [
     points: 15,
     category: 'shopping',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'shopping_098',
@@ -1185,6 +1282,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'shopping_099',
@@ -1197,6 +1295,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_100',
@@ -1209,6 +1308,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'shopping_101',
@@ -1221,6 +1321,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_102',
@@ -1233,6 +1334,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_103',
@@ -1245,6 +1347,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'shopping_104',
@@ -1257,6 +1360,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_105',
@@ -1269,6 +1373,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'shopping_106',
@@ -1281,6 +1386,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'shopping_107',
@@ -1293,6 +1399,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_108',
@@ -1305,6 +1412,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'shopping_109',
@@ -1317,6 +1425,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'shopping_110',
@@ -1329,6 +1438,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'confused',
   },
 
   // Sizes & Fit (20 questions)
@@ -1343,6 +1453,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_112',
@@ -1355,6 +1466,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_113',
@@ -1367,6 +1479,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_114',
@@ -1379,6 +1492,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'shopping_115',
@@ -1391,6 +1505,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'shopping_116',
@@ -1403,6 +1518,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'shopping_117',
@@ -1415,6 +1531,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_118',
@@ -1427,6 +1544,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_119',
@@ -1439,6 +1557,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_120',
@@ -1451,6 +1570,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_121',
@@ -1463,6 +1583,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'shopping_122',
@@ -1475,6 +1596,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'confused',
   },
   {
     id: 'shopping_123',
@@ -1487,6 +1609,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'shopping_124',
@@ -1499,6 +1622,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_125',
@@ -1511,6 +1635,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'shopping_126',
@@ -1523,6 +1648,7 @@ export const shoppingQuestions = [
     points: 15,
     category: 'shopping',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'shopping_127',
@@ -1535,6 +1661,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_128',
@@ -1547,6 +1674,7 @@ export const shoppingQuestions = [
     points: 15,
     category: 'shopping',
     difficulty: 'hard',
+    emotion: 'confused',
   },
   {
     id: 'shopping_129',
@@ -1559,6 +1687,7 @@ export const shoppingQuestions = [
     points: 15,
     category: 'shopping',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_130',
@@ -1571,6 +1700,7 @@ export const shoppingQuestions = [
     points: 15,
     category: 'shopping',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
 
   // Materials & Care (20 questions)
@@ -1585,6 +1715,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_132',
@@ -1597,6 +1728,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'shopping_133',
@@ -1609,6 +1741,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'shopping_134',
@@ -1621,6 +1754,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_135',
@@ -1633,6 +1767,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_136',
@@ -1645,6 +1780,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_137',
@@ -1657,6 +1793,7 @@ export const shoppingQuestions = [
     points: 15,
     category: 'shopping',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_138',
@@ -1669,6 +1806,7 @@ export const shoppingQuestions = [
     points: 15,
     category: 'shopping',
     difficulty: 'hard',
+    emotion: 'determined',
   },
   {
     id: 'shopping_139',
@@ -1681,6 +1819,7 @@ export const shoppingQuestions = [
     points: 15,
     category: 'shopping',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_140',
@@ -1693,6 +1832,7 @@ export const shoppingQuestions = [
     points: 15,
     category: 'shopping',
     difficulty: 'hard',
+    emotion: 'excited',
   },
   {
     id: 'shopping_141',
@@ -1705,6 +1845,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_142',
@@ -1717,6 +1858,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'shopping_143',
@@ -1729,6 +1871,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_145',
@@ -1741,6 +1884,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_146',
@@ -1753,6 +1897,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_147',
@@ -1765,6 +1910,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_148',
@@ -1777,6 +1923,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_149',
@@ -1789,6 +1936,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_150',
@@ -1801,6 +1949,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'shopping_151',
@@ -1813,6 +1962,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_152',
@@ -1825,6 +1975,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_153',
@@ -1837,6 +1988,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'disgusted',
   },
   {
     id: 'shopping_154',
@@ -1849,6 +2001,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_155',
@@ -1861,6 +2014,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_156',
@@ -1873,6 +2027,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'shopping_157',
@@ -1885,6 +2040,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_158',
@@ -1897,6 +2053,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_159',
@@ -1909,6 +2066,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_160',
@@ -1921,6 +2079,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_161',
@@ -1933,6 +2092,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_162',
@@ -1945,6 +2105,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_163',
@@ -1957,6 +2118,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_164',
@@ -1969,6 +2131,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_165',
@@ -1981,6 +2144,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'shopping_166',
@@ -1993,6 +2157,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_168',
@@ -2005,6 +2170,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'surprised',
   },
   {
     id: 'shopping_169',
@@ -2017,6 +2183,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'shopping_170',
@@ -2029,6 +2196,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_171',
@@ -2041,6 +2209,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_172',
@@ -2053,6 +2222,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_173',
@@ -2065,6 +2235,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'shopping_174',
@@ -2077,6 +2248,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_175',
@@ -2089,6 +2261,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_176',
@@ -2101,6 +2274,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'disgusted',
   },
   {
     id: 'shopping_177',
@@ -2113,6 +2287,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_178',
@@ -2125,6 +2300,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_179',
@@ -2137,6 +2313,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'shopping_180',
@@ -2149,6 +2326,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_181',
@@ -2161,6 +2339,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_182',
@@ -2173,6 +2352,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'shopping_183',
@@ -2185,6 +2365,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_184',
@@ -2197,6 +2378,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'shopping_185',
@@ -2209,6 +2391,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_186',
@@ -2221,6 +2404,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_187',
@@ -2233,6 +2417,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_188',
@@ -2245,6 +2430,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'shopping_189',
@@ -2257,6 +2443,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'shopping_190',
@@ -2269,6 +2456,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'shopping_191',
@@ -2281,6 +2469,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_192',
@@ -2293,6 +2482,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_193',
@@ -2305,6 +2495,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_194',
@@ -2317,6 +2508,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'shopping_195',
@@ -2329,6 +2521,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'shopping_196',
@@ -2341,6 +2534,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_197',
@@ -2353,6 +2547,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_198',
@@ -2365,6 +2560,7 @@ export const shoppingQuestions = [
     points: 5,
     category: 'shopping',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'shopping_199',
@@ -2377,6 +2573,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'shopping_200',
@@ -2389,6 +2586,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'shopping_201',
@@ -2401,6 +2599,7 @@ export const shoppingQuestions = [
     points: 10,
     category: 'shopping',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'shopping_202',

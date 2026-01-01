@@ -1796,9 +1796,8 @@ export const foodQuestions = [
     correctAnswer: 'la seta',
   hint: 'Edible wild mushroom; “seta” is a generic term for mushrooms.',
     points: 10,
-    category: 'food',
     difficulty: 'medium',
-    emotion: 'neutral'
+    emotion: 'neutral',
   },
   {
     id: 'food_140',

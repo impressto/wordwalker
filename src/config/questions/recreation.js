@@ -15,6 +15,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'recreation_002',
@@ -27,6 +28,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'recreation_003',
@@ -39,6 +41,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'recreation_004',
@@ -51,6 +54,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'recreation_005',
@@ -63,6 +67,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'recreation_006',
@@ -75,6 +80,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_007',
@@ -87,6 +93,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'recreation_008',
@@ -99,6 +106,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_009',
@@ -111,6 +119,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'recreation_010',
@@ -123,6 +132,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'recreation_011',
@@ -135,6 +145,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'recreation_012',
@@ -147,6 +158,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'recreation_013',
@@ -159,6 +171,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'recreation_014',
@@ -171,6 +184,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_015',
@@ -183,6 +197,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   
   // Water Activities (20 questions)
@@ -197,6 +212,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'recreation_017',
@@ -209,6 +225,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'recreation_018',
@@ -221,6 +238,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'recreation_019',
@@ -233,6 +251,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'recreation_020',
@@ -245,6 +264,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'recreation_021',
@@ -257,6 +277,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_022',
@@ -269,6 +290,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'recreation_023',
@@ -281,6 +303,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'recreation_024',
@@ -293,6 +316,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_025',
@@ -305,6 +329,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'recreation_026',
@@ -317,6 +342,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'recreation_027',
@@ -329,6 +355,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_028',
@@ -341,6 +368,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_029',
@@ -353,6 +381,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_030',
@@ -365,6 +394,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'recreation_031',
@@ -377,6 +407,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'recreation_032',
@@ -389,6 +420,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'recreation_033',
@@ -401,6 +433,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'recreation_034',
@@ -413,6 +446,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_035',
@@ -425,6 +459,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   
   // Beach Equipment & Items (20 questions)
@@ -439,6 +474,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'recreation_037',
@@ -451,6 +487,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_038',
@@ -463,6 +500,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_039',
@@ -475,6 +513,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_040',
@@ -487,6 +526,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'recreation_041',
@@ -499,6 +539,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'recreation_042',
@@ -511,6 +552,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'recreation_043',
@@ -523,6 +565,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_044',
@@ -535,6 +578,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_045',
@@ -547,6 +591,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'recreation_046',
@@ -559,6 +604,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'recreation_047',
@@ -571,6 +617,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_048',
@@ -583,6 +630,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'recreation_049',
@@ -595,6 +643,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_050',
@@ -607,6 +656,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'recreation_051',
@@ -619,6 +669,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_052',
@@ -631,6 +682,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'recreation_053',
@@ -643,6 +695,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_054',
@@ -655,6 +708,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_055',
@@ -667,6 +721,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   
   // Nature & Environment (20 questions)
@@ -681,6 +736,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'recreation_057',
@@ -693,6 +749,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_058',
@@ -705,6 +762,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'recreation_059',
@@ -717,6 +775,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_060',
@@ -729,6 +788,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'recreation_061',
@@ -741,6 +801,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'recreation_062',
@@ -753,6 +814,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_063',
@@ -765,6 +827,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_064',
@@ -777,6 +840,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'recreation_065',
@@ -789,6 +853,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_066',
@@ -801,6 +866,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_067',
@@ -813,6 +879,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'recreation_068',
@@ -825,6 +892,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_069',
@@ -837,6 +905,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_070',
@@ -849,6 +918,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'recreation_071',
@@ -861,6 +931,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_072',
@@ -873,6 +944,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_073',
@@ -885,6 +957,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'recreation_074',
@@ -897,6 +970,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_075',
@@ -909,6 +983,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   
   // Outdoor Activities & Sports (25 questions)
@@ -923,6 +998,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'recreation_077',
@@ -935,6 +1011,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_078',
@@ -947,6 +1024,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_079',
@@ -959,6 +1037,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'recreation_080',
@@ -971,6 +1050,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_081',
@@ -983,6 +1063,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_082',
@@ -995,6 +1076,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'recreation_083',
@@ -1007,6 +1089,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_084',
@@ -1019,6 +1102,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_085',
@@ -1031,6 +1115,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'recreation_086',
@@ -1043,6 +1128,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_087',
@@ -1055,6 +1141,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_088',
@@ -1067,6 +1154,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'recreation_089',
@@ -1079,6 +1167,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_090',
@@ -1091,6 +1180,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_091',
@@ -1103,6 +1193,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'recreation_092',
@@ -1115,6 +1206,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'recreation_093',
@@ -1127,6 +1219,7 @@ export const recreationQuestions = [
     points: 15,
     category: 'recreation',
     difficulty: 'hard',
+    emotion: 'excited',
   },
   {
     id: 'recreation_094',
@@ -1139,6 +1232,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'recreation_095',
@@ -1151,6 +1245,7 @@ export const recreationQuestions = [
     points: 15,
     category: 'recreation',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_096',
@@ -1163,6 +1258,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'recreation_097',
@@ -1175,6 +1271,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'recreation_098',
@@ -1187,6 +1284,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_099',
@@ -1199,6 +1297,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'recreation_100',
@@ -1211,6 +1310,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'recreation_101',
@@ -1223,6 +1323,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'recreation_102',
@@ -1235,6 +1336,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_103',
@@ -1247,6 +1349,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'recreation_104',
@@ -1259,6 +1362,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'recreation_105',
@@ -1271,6 +1375,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_106',
@@ -1283,6 +1388,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'recreation_107',
@@ -1295,6 +1401,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'recreation_108',
@@ -1307,6 +1414,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_109',
@@ -1319,6 +1427,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'recreation_110',
@@ -1331,6 +1440,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'recreation_111',
@@ -1343,6 +1453,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_112',
@@ -1355,6 +1466,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'recreation_113',
@@ -1367,6 +1479,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'recreation_114',
@@ -1379,6 +1492,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_115',
@@ -1391,6 +1505,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'recreation_116',
@@ -1403,6 +1518,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'excited',
   },
   {
     id: 'recreation_117',
@@ -1415,6 +1531,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_118',
@@ -1427,6 +1544,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'recreation_119',
@@ -1439,6 +1557,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'excited',
   },
   {
     id: 'recreation_120',
@@ -1451,6 +1570,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_121',
@@ -1463,6 +1583,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'recreation_122',
@@ -1475,6 +1596,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_123',
@@ -1487,6 +1609,7 @@ export const recreationQuestions = [
     points: 15,
     category: 'recreation',
     difficulty: 'hard',
+    emotion: 'calm',
   },
   {
     id: 'recreation_124',
@@ -1499,6 +1622,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_125',
@@ -1511,6 +1635,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'recreation_126',
@@ -1523,6 +1648,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_127',
@@ -1535,6 +1661,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'recreation_128',
@@ -1547,6 +1674,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_129',
@@ -1559,6 +1687,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'recreation_130',
@@ -1571,6 +1700,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_131',
@@ -1583,6 +1713,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'recreation_132',
@@ -1595,6 +1726,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_133',
@@ -1607,6 +1739,7 @@ export const recreationQuestions = [
     points: 15,
     category: 'recreation',
     difficulty: 'hard',
+    emotion: 'calm',
   },
   {
     id: 'recreation_134',
@@ -1619,6 +1752,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_135',
@@ -1631,6 +1765,7 @@ export const recreationQuestions = [
     points: 15,
     category: 'recreation',
     difficulty: 'hard',
+    emotion: 'happy',
   },
   {
     id: 'recreation_136',
@@ -1643,6 +1778,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_137',
@@ -1655,6 +1791,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'recreation_138',
@@ -1667,6 +1804,7 @@ export const recreationQuestions = [
     points: 15,
     category: 'recreation',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_139',
@@ -1679,6 +1817,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'recreation_140',
@@ -1691,6 +1830,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'recreation_141',
@@ -1703,6 +1843,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_142',
@@ -1715,6 +1856,7 @@ export const recreationQuestions = [
     points: 15,
     category: 'recreation',
     difficulty: 'hard',
+    emotion: 'calm',
   },
   {
     id: 'recreation_143',
@@ -1727,6 +1869,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_144',
@@ -1739,6 +1882,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'recreation_145',
@@ -1751,6 +1895,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'recreation_146',
@@ -1763,6 +1908,7 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_147',
@@ -1775,6 +1921,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'happy',
   },
   {
     id: 'recreation_148',
@@ -1787,6 +1934,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'recreation_149',
@@ -1799,6 +1947,7 @@ export const recreationQuestions = [
     points: 10,
     category: 'recreation',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'recreation_150',
@@ -1811,5 +1960,6 @@ export const recreationQuestions = [
     points: 5,
     category: 'recreation',
     difficulty: 'easy',
+    emotion: 'happy',
   },
 ];

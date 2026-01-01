@@ -15,6 +15,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'medical_002',
@@ -27,6 +28,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'medical_003',
@@ -39,6 +41,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'medical_004',
@@ -51,6 +54,7 @@ export const medicalQuestions = [
     points: 15,
     category: 'medical',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'medical_005',
@@ -63,6 +67,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'medical_006',
@@ -75,6 +80,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'medical_007',
@@ -87,6 +93,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'medical_008',
@@ -99,6 +106,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'hurt',
   },
   {
     id: 'medical_009',
@@ -111,6 +119,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'hurt',
   },
   {
     id: 'medical_010',
@@ -123,6 +132,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'medical_011',
@@ -135,6 +145,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'medical_012',
@@ -147,6 +158,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'medical_013',
@@ -159,6 +171,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'medical_014',
@@ -171,6 +184,7 @@ export const medicalQuestions = [
     points: 15,
     category: 'medical',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'medical_015',
@@ -183,6 +197,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
 
   // Emergency Situations & Responses (15 questions)
@@ -197,6 +212,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'medical_017',
@@ -209,6 +225,7 @@ export const medicalQuestions = [
     points: 15,
     category: 'medical',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'medical_018',
@@ -221,6 +238,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'medical_019',
@@ -233,6 +251,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'medical_020',
@@ -245,6 +264,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'medical_021',
@@ -257,6 +277,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'afraid',
   },
   {
     id: 'medical_022',
@@ -269,6 +290,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'medical_023',
@@ -281,6 +303,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'medical_024',
@@ -293,6 +316,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'medical_025',
@@ -305,6 +329,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'medical_026',
@@ -317,6 +342,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'medical_027',
@@ -329,6 +355,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'determined',
   },
   {
     id: 'medical_028',
@@ -341,6 +368,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'medical_029',
@@ -353,6 +381,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'medical_030',
@@ -365,6 +394,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
 
   // Medical Symptoms & Conditions (20 questions)
@@ -379,6 +409,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'hurt',
   },
   {
     id: 'medical_032',
@@ -391,6 +422,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'hurt',
   },
   {
     id: 'medical_033',
@@ -403,6 +435,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'medical_034',
@@ -415,6 +448,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'disgusted',
   },
   {
     id: 'medical_035',
@@ -427,6 +461,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'hurt',
   },
   {
     id: 'medical_036',
@@ -439,6 +474,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'hurt',
   },
   {
     id: 'medical_037',
@@ -451,6 +487,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'medical_038',
@@ -463,6 +500,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'medical_039',
@@ -475,6 +513,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'hurt',
   },
   {
     id: 'medical_040',
@@ -487,6 +526,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'hurt',
   },
   {
     id: 'medical_041',
@@ -499,6 +539,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'medical_042',
@@ -511,6 +552,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'medical_043',
@@ -523,6 +565,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'happy',
   },
   {
     id: 'medical_044',
@@ -535,6 +578,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'medical_045',
@@ -547,6 +591,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'pleased',
   },
   {
     id: 'medical_046',
@@ -559,6 +604,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'anxious',
   },
   {
     id: 'medical_047',
@@ -571,6 +617,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'medical_048',
@@ -583,6 +630,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'hurt',
   },
   {
     id: 'medical_049',
@@ -595,6 +643,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'hurt',
   },
   {
     id: 'medical_050',
@@ -607,6 +656,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'medical_051',
@@ -619,6 +669,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'anxious',
   },
   {
     id: 'medical_052',
@@ -643,6 +694,7 @@ export const medicalQuestions = [
     points: 15,
     category: 'medical',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'medical_054',
@@ -655,6 +707,7 @@ export const medicalQuestions = [
     points: 15,
     category: 'medical',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'medical_055',
@@ -667,6 +720,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'medical_056',
@@ -679,6 +733,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'calm',
   },
   {
     id: 'medical_057',
@@ -691,6 +746,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'hurt',
   },
   {
     id: 'medical_058',
@@ -703,6 +759,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'determined',
   },
   {
     id: 'medical_059',
@@ -715,6 +772,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'medical_060',
@@ -727,6 +785,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'medical_061',
@@ -739,6 +798,7 @@ export const medicalQuestions = [
     points: 15,
     category: 'medical',
     difficulty: 'hard',
+    emotion: 'anxious',
   },
   {
     id: 'medical_062',
@@ -751,6 +811,7 @@ export const medicalQuestions = [
     points: 15,
     category: 'medical',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'medical_063',
@@ -763,6 +824,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'calm',
   },
   {
     id: 'medical_064',
@@ -775,6 +837,7 @@ export const medicalQuestions = [
     points: 15,
     category: 'medical',
     difficulty: 'hard',
+    emotion: 'anxious',
   },
   {
     id: 'medical_065',
@@ -787,6 +850,7 @@ export const medicalQuestions = [
     points: 15,
     category: 'medical',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'medical_066',
@@ -799,6 +863,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'medical_067',
@@ -811,6 +876,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'medical_068',
@@ -823,6 +889,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'medical_069',
@@ -835,6 +902,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'medical_070',
@@ -847,6 +915,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'medical_071',
@@ -859,6 +928,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'medical_072',
@@ -871,6 +941,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'medical_073',
@@ -883,6 +954,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'medical_074',
@@ -895,6 +967,7 @@ export const medicalQuestions = [
     points: 15,
     category: 'medical',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'medical_075',
@@ -907,6 +980,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'neutral',
   },
   {
     id: 'medical_076',
@@ -919,6 +993,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'medical_077',
@@ -931,6 +1006,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'medical_078',
@@ -943,6 +1019,7 @@ export const medicalQuestions = [
     points: 15,
     category: 'medical',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'medical_079',
@@ -955,6 +1032,7 @@ export const medicalQuestions = [
     points: 15,
     category: 'medical',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'medical_080',
@@ -967,6 +1045,7 @@ export const medicalQuestions = [
     points: 15,
     category: 'medical',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'medical_081',
@@ -979,6 +1058,7 @@ export const medicalQuestions = [
     points: 15,
     category: 'medical',
     difficulty: 'hard',
+    emotion: 'pleased',
   },
   {
     id: 'medical_082',
@@ -991,6 +1071,7 @@ export const medicalQuestions = [
     points: 15,
     category: 'medical',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'medical_083',
@@ -1003,6 +1084,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'medical_084',
@@ -1015,6 +1097,7 @@ export const medicalQuestions = [
     points: 15,
     category: 'medical',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'medical_085',
@@ -1027,6 +1110,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'hurt',
   },
   {
     id: 'medical_086',
@@ -1039,6 +1123,7 @@ export const medicalQuestions = [
     points: 15,
     category: 'medical',
     difficulty: 'hard',
+    emotion: 'neutral',
   },
   {
     id: 'medical_087',
@@ -1051,6 +1136,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'medical_088',
@@ -1063,6 +1149,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'medical_089',
@@ -1075,6 +1162,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'medical_090',
@@ -1087,6 +1175,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'neutral',
   },
   {
     id: 'medical_091',
@@ -1099,6 +1188,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'medical_092',
@@ -1111,6 +1201,7 @@ export const medicalQuestions = [
     points: 15,
     category: 'medical',
     difficulty: 'hard',
+    emotion: 'calm',
   },
   {
     id: 'medical_093',
@@ -1123,6 +1214,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'hurt',
   },
   {
     id: 'medical_094',
@@ -1135,6 +1227,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'hurt',
   },
   {
     id: 'medical_095',
@@ -1147,6 +1240,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'medical_096',
@@ -1159,6 +1253,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'hurt',
   },
   {
     id: 'medical_097',
@@ -1171,6 +1266,7 @@ export const medicalQuestions = [
     points: 15,
     category: 'medical',
     difficulty: 'hard',
+    emotion: 'happy',
   },
   {
     id: 'medical_098',
@@ -1183,6 +1279,7 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'pleased',
   },
   {
     id: 'medical_099',
@@ -1195,6 +1292,7 @@ export const medicalQuestions = [
     points: 5,
     category: 'medical',
     difficulty: 'easy',
+    emotion: 'hurt',
   },
   {
     id: 'medical_100',
@@ -1207,5 +1305,6 @@ export const medicalQuestions = [
     points: 10,
     category: 'medical',
     difficulty: 'medium',
+    emotion: 'pleased',
   }
 ];
