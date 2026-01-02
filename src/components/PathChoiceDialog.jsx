@@ -16,7 +16,16 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
   const [dialogTop, setDialogTop] = useState('100px');
   
   // Game mode selection: 'multichoice' or 'flashcard'
-  const [gameMode, setGameMode] = useState('multichoice');
+  // Load saved game mode from localStorage or default to 'multichoice'
+  const [gameMode, setGameMode] = useState(() => {
+    try {
+      const savedMode = localStorage.getItem('gameMode');
+      return savedMode && (savedMode === 'multichoice' || savedMode === 'flashcard') ? savedMode : 'multichoice';
+    } catch (error) {
+      console.error('Error loading saved game mode:', error);
+      return 'multichoice';
+    }
+  });
   
   // Load saved page from localStorage or default to 0
   const [currentPage, setCurrentPage] = useState(() => {
@@ -257,7 +266,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
           gap: '8px',
           alignItems: 'center',
         }}>
-          <div style={{
+          <div id="game-mode-toggle" style={{
             display: 'flex',
             backgroundColor: '#f0f0f0',
             borderRadius: '12px',
@@ -267,7 +276,10 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
             maxWidth: '300px',
           }}>
             <button
-              onClick={() => setGameMode('multichoice')}
+              onClick={() => {
+                setGameMode('multichoice');
+                localStorage.setItem('gameMode', 'multichoice');
+              }}
               style={{
                 flex: 1,
                 padding: '10px 16px',
@@ -289,7 +301,10 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
               <span>Multichoice</span>
             </button>
             <button
-              onClick={() => setGameMode('flashcard')}
+              onClick={() => {
+                setGameMode('flashcard');
+                localStorage.setItem('gameMode', 'flashcard');
+              }}
               style={{
                 flex: 1,
                 padding: '10px 16px',

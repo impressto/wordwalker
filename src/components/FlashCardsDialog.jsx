@@ -528,9 +528,9 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
           />
           
           {/* Debug: Display character name */}
-          <div className="flash-card-debug-character">
+          {/* <div className="flash-card-debug-character">
             {selectedCharacter}
-          </div>
+          </div> */}
         </div>
 
         <div className="flash-cards-buttons">
