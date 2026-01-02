@@ -309,9 +309,9 @@ const parallaxThemes = {
     // Flash card mini parallax configuration for Paris theme
     flashCardParallax: {
       layerOffsets: {
-        layer3: 60,   // Sidewalk with tables
-        layer4: 30,   // River with boats
-        layer5: 10,   // Buildings on far bank
+        layer3: 80,   // Sidewalk with tables
+        layer4: 40,   // River with boats
+        layer5: 20,   // Buildings on far bank
         layer6: 15,   // Eiffel tower
         layer7: 0,    // Sky
       },

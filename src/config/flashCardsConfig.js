@@ -72,7 +72,7 @@ export const flashCardsConfig = {
     
     // Spanish text configuration (main text)
     spanish: {
-      fontSize: 36,
+      fontSize: 34,
       fontFamily: 'Arial, sans-serif',
       fontWeight: 'bold',
       color: '#FFFFFF',
@@ -81,10 +81,10 @@ export const flashCardsConfig = {
     },
     // English text configuration (translation below)
     english: {
-      fontSize: 24,
+      fontSize: 25,
       fontFamily: 'Arial, sans-serif',
       fontWeight: 'normal',
-      color: '#a7dcf1ff',
+      color: '#b4ebffff',
       maxWidth: 350, // Adjusted to match Spanish
       lineHeight: 1.2,
     },
