@@ -238,4 +238,245 @@ export const businessAnswerTranslations = {
   
   // business_050
   "la pulidora de pisos": "the floor polisher",
+  
+  // business_051
+  "la grabadora láser": "the laser engraver",
+  "la impresora": "the printer",
+  "la copiadora": "the copier",
+  
+  // business_052
+  "la lijadora orbital": "the orbital sander",
+  "el taladro": "the drill",
+  "la sierra": "the saw",
+  
+  // business_053
+  "la antena parabólica": "the satellite dish",
+  "la antena de radio": "the radio antenna",
+  "el router": "the router",
+  
+  // business_054
+  "la impresora 3D": "the 3D printer",
+  "la fotocopiadora": "the photocopier",
+  "el escáner": "the scanner",
+  
+  // business_055
+  "la tarjeta de acceso": "the access badge",
+  "la tarjeta de crédito": "the credit card",
+  "la licencia de conducir": "the driver's license",
+  
+  // business_056
+  "la contabilidad": "the accounting",
+  "el almacén": "the warehouse",
+  "el marketing": "the marketing",
+  
+  // business_057
+  "el compresor de aire": "the air compressor",
+  "el ventilador": "the fan",
+  "la bomba de agua": "the water pump",
+  
+  // business_058
+  "la sierra de banda": "the band saw",
+  "la sierra circular": "the circular saw",
+  "la sierra de mano": "the hand saw",
+  
+  // business_059
+  "la lijadora de banda": "the belt sander",
+  "la lijadora orbital": "the orbital sander",
+  "el papel de lija": "the sandpaper",
+  
+  // business_060
+  "la cizalla": "the bolt cutter",
+  "las tijeras": "the scissors",
+  "el martillo": "the hammer",
+  
+  // business_061
+  "la motosierra": "the chainsaw",
+  "la sierra de mano": "the hand saw",
+  "el hacha": "the axe",
+  
+  // business_062
+  "el cincel": "the chisel",
+  "el martillo": "the hammer",
+  "el destornillador": "the screwdriver",
+  
+  // business_063
+  "la banda transportadora": "the conveyor belt",
+  "la carretilla": "the wheelbarrow",
+  "el montacargas": "the forklift",
+  
+  // business_064
+  "la ciberseguridad": "the cybersecurity",
+  "el antivirus": "the antivirus",
+  "el firewall": "the firewall",
+  
+  // business_065
+  "el centro de datos": "the datacenter",
+  "la biblioteca": "the library",
+  "la oficina": "the office",
+  
+  // business_066
+  "los protectores auditivos": "the ear protectors",
+  "los audífonos": "the headphones",
+  "los lentes": "the glasses",
+  
+  // business_067
+  "la máquina de bordar": "the embroidery machine",
+  "la máquina de coser": "the sewing machine",
+  "la plancha": "the iron",
+  
+  // business_068
+  "el gato hidráulico": "the floor jack",
+  "la grúa": "the crane",
+  
+  // business_069
+  "el montacargas": "the forklift",
+  "el camión": "the truck",
+  
+  // business_070
+  "el generador": "the generator",
+  "la batería": "the battery",
+  "el panel solar": "the solar panel",
+  
+  // business_071
+  "el taladro percutor": "the hammer drill",
+  "el taladro normal": "the normal drill",
+  "el destornillador eléctrico": "the electric screwdriver",
+  
+  // business_072
+  "la llave": "the wrench",
+  
+  // business_073
+  "la pistola de calor": "the heat gun",
+  "el secador de pelo": "the hair dryer",
+  "la plancha": "the iron",
+  
+  // business_074
+  "la prensa hidráulica": "the hydraulic press",
+  "el tornillo de banco": "the vise",
+  "el martillo": "the hammer",
+  
+  // business_075
+  "el nivel láser": "the laser level",
+  "el nivel de burbuja": "the bubble level",
+  "la regla": "the ruler",
+  
+  // business_076
+  "la sopladora de hojas": "the leaf blower",
+  "la aspiradora": "the vacuum",
+  "el rastrillo": "the rake",
+  
+  // business_077
+  "el nivel de burbuja": "the level",
+  "la cinta métrica": "the measuring tape",
+  
+  // business_078
+  "en el vestíbulo": "in the lobby",
+  "en el baño": "in the bathroom",
+  "en el estacionamiento": "in the parking lot",
+  
+  // business_079
+  "la lima de metal": "the metalworking file",
+  "el papel de lija": "the sandpaper",
+  "la sierra": "the saw",
+  
+  // business_080
+  "el microscopio": "the microscope",
+  "el telescopio": "the telescope",
+  "la lupa": "the magnifying glass",
+  
+  // business_081
+  "la contadora de dinero": "the money counter",
+  "la caja registradora": "the cash register",
+  "la calculadora": "the calculator",
+  
+  // business_082
+  "la tuerca y el perno": "the nut and bolt",
+  "el clavo y el martillo": "the nail and hammer",
+  "el tornillo y el destornillador": "the screw and screwdriver",
+  
+  // business_083
+  "la brida de tubería": "the pipe flange",
+  "la tuerca": "the nut",
+  "el perno": "the bolt",
+  
+  // business_084
+  "el cavador de postes": "the post hole digger",
+  "la pala": "the shovel",
+  "el pico": "the pickaxe",
+  
+  // business_085
+  "la remachadora": "the rivet gun",
+  "la grapadora": "the stapler",
+  
+  // business_086
+  "la renovación de techo": "the roof renovation",
+  "la pintura exterior": "the exterior painting",
+  "la instalación eléctrica": "the electrical installation",
+  
+  // business_087
+  "la bocina de seguridad": "the safety air horn",
+  "la alarma de incendios": "the fire alarm",
+  "el silbato": "the whistle",
+  
+  // business_088
+  "el espejo de seguridad": "the safety mirror",
+  "el espejo de baño": "the bathroom mirror",
+  "el espejo retrovisor": "the rearview mirror",
+  
+  // business_089
+  "la arenadora": "the sandblaster",
+  "la pulidora": "the polisher",
+  "la lijadora": "the sander",
+  
+  // business_090
+  "la plataforma de tijera": "the scissor lift",
+  "la escalera": "the ladder",
+  "el andamio": "the scaffolding",
+  
+  // business_091
+  "el tornillo": "the screw",
+  "el clavo": "the nail",
+  
+  // business_092
+  "el contenedor de carga": "the shipping container",
+  "el camión": "the truck",
+  "la caja de cartón": "the cardboard box",
+  
+  // business_093
+  "la viga de acero": "the steel I-beam",
+  "el tubo": "the pipe",
+  "la columna": "the column",
+  
+  // business_094
+  "el macho de roscar": "the tap wrench",
+  
+  // business_095
+  "la cámara térmica": "the thermal camera",
+  "la cámara digital": "the digital camera",
+  "la cámara de seguridad": "the security camera",
+  
+  // business_096
+  "el carrito basculante": "the tilt truck",
+  "la carretilla": "the wheelbarrow",
+  "el carrito de compras": "the shopping cart",
+  
+  // business_097
+  "el transistor": "the transistor",
+  "el capacitor": "the capacitor",
+  "la resistencia": "the resistor",
+  
+  // business_098
+  "el delantal de soldadura": "the welding apron",
+  "el chaleco reflectante": "the reflective vest",
+  "el cinturón de herramientas": "the tool belt",
+  
+  // business_099
+  "el banco de trabajo": "the workbench",
+  "el escritorio": "the desk",
+  "el mostrador": "the counter",
+  
+  // business_100
+  "la llave": "the wrench",
+  "el destornillador": "the screwdriver",
+  "el martillo": "the hammer",
 };
