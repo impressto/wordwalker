@@ -16,7 +16,8 @@ const QuestionDialog = ({
   incorrectAnswers = [], 
   onAnswerChoice,
   onHintClick,
-  questionTranslation
+  questionTranslation,
+  onClose
 }) => {
   const [dialogTop, setDialogTop] = useState('100px');
   const [isTranslationVisible, setIsTranslationVisible] = useState(true);
@@ -153,6 +154,44 @@ const QuestionDialog = ({
       minWidth: '300px',
       maxWidth: 'min(85vw, 380px)',
     }}>
+      {/* Close button */}
+      {onClose && (
+        <button
+          onClick={onClose}
+          title="Close question"
+          aria-label="Close"
+          style={{
+            position: 'absolute',
+            top: '10px',
+            right: '10px',
+            width: '30px',
+            height: '30px',
+            border: 'none',
+            borderRadius: '50%',
+            backgroundColor: 'rgba(0, 0, 0, 0.1)',
+            color: '#333',
+            fontSize: '18px',
+            fontWeight: 'bold',
+            cursor: 'pointer',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            transition: 'all 0.2s',
+            lineHeight: '1',
+            padding: '0',
+          }}
+          onMouseEnter={(e) => {
+            e.target.style.backgroundColor = 'rgba(211, 47, 47, 0.8)';
+            e.target.style.color = 'white';
+          }}
+          onMouseLeave={(e) => {
+            e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
+            e.target.style.color = '#333';
+          }}
+        >
+          ✕
+        </button>
+      )}
       <div id="question-emoji" style={{ 
         animation: 'fadeInScale 0.6s ease-out',
       }}>

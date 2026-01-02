@@ -1369,6 +1369,19 @@ const PathCanvas = () => {
     }
   };
 
+  // Handle closing question dialog
+  const handleCloseQuestion = () => {
+    setShowQuestion(false);
+    setCurrentQuestion(null);
+    setQuestionAnswered(false);
+    setFirstAttempt(true);
+    setIncorrectAnswers([]);
+    setShowTranslation(false);
+    setShowHint(false);
+    setHintUsed(false);
+    setShowChoice(true); // Return to path choice
+  };
+
   // Use the answer handling hook
   const { handleAnswerChoice, answeredQuestionRef } = useAnswerHandling({
     // Current state
@@ -1977,6 +1990,7 @@ const PathCanvas = () => {
             onAnswerChoice={handleAnswerChoice}
             onHintClick={handleHintClick}
             questionTranslation={currentQuestion.translation}
+            onClose={handleCloseQuestion}
           />
         </div>
       )}
