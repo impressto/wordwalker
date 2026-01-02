@@ -2,6 +2,46 @@
 // Read version from package.json for cache busting
 $packageJson = json_decode(file_get_contents(__DIR__ . '/package.json'), true);
 $version = $packageJson['version'] ?? '1.0.0';
+
+// Category metadata for SEO deep linking
+$categories = [
+    'food' => ['name' => 'Food & Dining', 'description' => 'Learn Spanish food vocabulary including fruits, vegetables, meals, and dining phrases', 'emoji' => '🍕'],
+    'shopping' => ['name' => 'Shopping', 'description' => 'Master Spanish shopping vocabulary for stores, clothes, prices, and transactions', 'emoji' => '🛒'],
+    'entertainment' => ['name' => 'Entertainment', 'description' => 'Learn Spanish entertainment vocabulary for movies, music, sports, and leisure activities', 'emoji' => '🎬'],
+    'accommodation' => ['name' => 'Accommodation', 'description' => 'Study Spanish hotel and lodging vocabulary for bookings, rooms, and amenities', 'emoji' => '🏨'],
+    'transportation' => ['name' => 'Transportation', 'description' => 'Learn Spanish transportation vocabulary for cars, buses, trains, and travel', 'emoji' => '🚌'],
+    'directions' => ['name' => 'Directions', 'description' => 'Master Spanish direction vocabulary to navigate and give directions in Spanish', 'emoji' => '🧭'],
+    'medical' => ['name' => 'Medical & Health', 'description' => 'Learn essential Spanish medical vocabulary for doctors, hospitals, and health', 'emoji' => '🏥'],
+    'greetings' => ['name' => 'Greetings', 'description' => 'Master Spanish greetings, introductions, and common courtesy phrases', 'emoji' => '👋'],
+    'numbers' => ['name' => 'Numbers', 'description' => 'Learn Spanish numbers, counting, and basic math vocabulary', 'emoji' => '🔢'],
+    'grammar' => ['name' => 'Grammar', 'description' => 'Study essential Spanish grammar terms and language concepts', 'emoji' => '📚'],
+    'recreation' => ['name' => 'Recreation', 'description' => 'Learn Spanish vocabulary for hobbies, sports, and recreational activities', 'emoji' => '⚽'],
+    'plants_animals' => ['name' => 'Plants & Animals', 'description' => 'Master Spanish vocabulary for animals, pets, plants, and nature', 'emoji' => '🐾'],
+    'environment' => ['name' => 'Environment', 'description' => 'Learn Spanish environmental vocabulary for nature, weather, and ecology', 'emoji' => '🌍'],
+    'daily_routines' => ['name' => 'Daily Routines', 'description' => 'Study Spanish vocabulary for daily activities, schedules, and routines', 'emoji' => '⏰'],
+    'people' => ['name' => 'People & Family', 'description' => 'Learn Spanish vocabulary for family members, relationships, and people', 'emoji' => '👨‍👩‍👧'],
+    'emergencies' => ['name' => 'Emergencies', 'description' => 'Master essential Spanish emergency vocabulary for safety and urgent situations', 'emoji' => '🚨'],
+    'business' => ['name' => 'Business', 'description' => 'Learn Spanish business vocabulary for work, office, and professional settings', 'emoji' => '💼'],
+    'restaurant' => ['name' => 'Restaurant', 'description' => 'Study Spanish restaurant vocabulary for ordering food, menus, and dining out', 'emoji' => '🍽️']
+];
+
+// Check for category parameter in URL
+$category = isset($_GET['category']) ? $_GET['category'] : null;
+$categoryData = $category && isset($categories[$category]) ? $categories[$category] : null;
+
+// Set page title and description based on category
+$pageTitle = $categoryData 
+    ? "Learn Spanish {$categoryData['name']} Vocabulary - WordWalker Flashcards" 
+    : "WordWalker - Learn Spanish Vocabulary";
+$pageDescription = $categoryData 
+    ? "{$categoryData['description']}. Interactive flashcards with audio pronunciation. Free Spanish learning game." 
+    : "Learn Spanish vocabulary through an interactive walking game! Master 200+ words across 18 categories with audio pronunciation, flashcards, and themed landscapes. Free online Spanish learning game.";
+$pageUrl = $categoryData 
+    ? "https://wordwalker.ca/?category={$category}" 
+    : "https://wordwalker.ca/";
+$pageKeywords = $categoryData 
+    ? "Spanish {$categoryData['name']}, learn Spanish {$categoryData['name']} vocabulary, Spanish flashcards, Spanish pronunciation, Spanish learning game" 
+    : "learn Spanish online, Spanish vocabulary game, Spanish learning app, language learning game, educational Spanish game, Spanish flashcards, Spanish pronunciation, free Spanish lessons, interactive Spanish learning, Spanish for beginners";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,21 +56,21 @@ $version = $packageJson['version'] ?? '1.0.0';
     <meta charset="UTF-8" />
     
     <!-- SEO Optimization -->
-    <link rel="canonical" href="https://wordwalker.ca/" />
+    <link rel="canonical" href="<?php echo $pageUrl; ?>" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
     <meta name="author" content="WordWalker" />
     
     <!-- PWA Mobile Optimization -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <meta name="theme-color" content="#4CAF50" />
-    <meta name="description" content="Learn Spanish vocabulary through an interactive walking game! Master 200+ words across 14 categories with audio pronunciation, flashcards, and themed landscapes. Free online Spanish learning game." />
-    <meta name="keywords" content="learn Spanish online, Spanish vocabulary game, Spanish learning app, language learning game, educational Spanish game, Spanish flashcards, Spanish pronunciation, free Spanish lessons, interactive Spanish learning, Spanish for beginners" />
+    <meta name="description" content="<?php echo htmlspecialchars($pageDescription); ?>" />
+    <meta name="keywords" content="<?php echo htmlspecialchars($pageKeywords); ?>" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://wordwalker.ca/" />
-    <meta property="og:title" content="WordWalker - Learn Spanish Vocabulary Through Interactive Gaming" />
-    <meta property="og:description" content="Master Spanish vocabulary with 200+ words across 14 categories. Features audio pronunciation, flashcards, and beautiful themed landscapes. Start learning Spanish free!" />
+    <meta property="og:url" content="<?php echo $pageUrl; ?>" />
+    <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle); ?>" />
+    <meta property="og:description" content="<?php echo htmlspecialchars($pageDescription); ?>" />
     <meta property="og:image" content="https://wordwalker.ca/dist/images/word-walker.jpg" />
     <meta property="og:image:alt" content="WordWalker Spanish Learning Game Screenshot" />
     <meta property="og:locale" content="en_US" />
@@ -38,9 +78,9 @@ $version = $packageJson['version'] ?? '1.0.0';
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://wordwalker.ca/" />
-    <meta property="twitter:title" content="WordWalker - Learn Spanish Vocabulary Through Interactive Gaming" />
-    <meta property="twitter:description" content="Master Spanish vocabulary with 200+ words across 14 categories. Features audio pronunciation, flashcards, and beautiful themed landscapes. Start learning Spanish free!" />
+    <meta property="twitter:url" content="<?php echo $pageUrl; ?>" />
+    <meta property="twitter:title" content="<?php echo htmlspecialchars($pageTitle); ?>" />
+    <meta property="twitter:description" content="<?php echo htmlspecialchars($pageDescription); ?>" />
     <meta property="twitter:image" content="https://wordwalker.ca/dist/images/word-walker.jpg" />
     <meta property="twitter:image:alt" content="WordWalker Spanish Learning Game Screenshot" />
     
@@ -74,7 +114,7 @@ $version = $packageJson['version'] ?? '1.0.0';
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     
-    <title>WordWalker - Learn Spanish Vocabulary</title>
+    <title><?php echo htmlspecialchars($pageTitle); ?></title>
     <link rel="stylesheet" href="dist/assets/index.css?v=<?php echo $version; ?>">
     
     <!-- Google tag (gtag.js) -->
@@ -92,9 +132,9 @@ $version = $packageJson['version'] ?? '1.0.0';
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "WordWalker",
-      "url": "https://wordwalker.ca/",
-      "description": "Learn Spanish vocabulary through an interactive walking game with audio pronunciation, flashcards, and themed landscapes.",
+      "name": "<?php echo $categoryData ? "WordWalker - {$categoryData['name']}" : "WordWalker"; ?>",
+      "url": "<?php echo $pageUrl; ?>",
+      "description": "<?php echo htmlspecialchars($pageDescription); ?>",
       "applicationCategory": "EducationalApplication",
       "operatingSystem": "Web Browser, iOS, Android",
       "offers": {
@@ -108,7 +148,7 @@ $version = $packageJson['version'] ?? '1.0.0';
         "url": "https://impressto.ca/"
       },
       "inLanguage": ["en", "es"],
-      "keywords": "Spanish learning, vocabulary game, language education, Spanish flashcards, pronunciation practice",
+      "keywords": "<?php echo htmlspecialchars($pageKeywords); ?>",
       "screenshot": "https://wordwalker.ca/dist/images/word-walker.jpg",
       "softwareVersion": "<?php echo $version; ?>",
       "aggregateRating": {
@@ -120,14 +160,17 @@ $version = $packageJson['version'] ?? '1.0.0';
       },
       "featureList": [
         "200+ Spanish vocabulary words",
-        "14 themed categories",
+        "18 themed categories",
         "Audio pronunciation",
         "Interactive flashcards",
         "Progress tracking",
         "Offline support",
         "Multiple character themes",
         "Background music and themes"
-      ]
+      ]<?php if ($categoryData): ?>,
+      "educationalLevel": "Beginner to Intermediate",
+      "teaches": "Spanish <?php echo $categoryData['name']; ?> Vocabulary"
+      <?php endif; ?>
     }
     </script>
 
@@ -215,16 +258,36 @@ $version = $packageJson['version'] ?? '1.0.0';
       <div id="root">
         <!-- This content will be replaced by React but helps SEO crawlers -->
         <main style="display: none;">
+          <?php if ($categoryData): ?>
+          <h1>Learn Spanish <?php echo htmlspecialchars($categoryData['name']); ?> Vocabulary <?php echo $categoryData['emoji']; ?></h1>
+          <h2>Interactive Spanish <?php echo htmlspecialchars($categoryData['name']); ?> Flashcards</h2>
+          <p><?php echo htmlspecialchars($categoryData['description']); ?>. Practice with audio pronunciation and interactive flashcards in the WordWalker Spanish learning game.</p>
+          
+          <h3>Study Spanish <?php echo htmlspecialchars($categoryData['name']); ?> Words</h3>
+          <p>Master essential Spanish <?php echo strtolower($categoryData['name']); ?> vocabulary through our interactive flashcard system. Each word includes:</p>
+          <ul>
+            <li>Native Spanish pronunciation audio</li>
+            <li>English translation</li>
+            <li>Interactive flashcard practice</li>
+            <li>Visual learning aids</li>
+            <li>Progress tracking</li>
+          </ul>
+          
+          <h3>How to Practice <?php echo htmlspecialchars($categoryData['name']); ?> Vocabulary</h3>
+          <p>Click on the category to start learning Spanish <?php echo strtolower($categoryData['name']); ?> words. Listen to the pronunciation, study the flashcards, and test your knowledge. Track your progress as you master each word.</p>
+          
+          <p><a href="https://wordwalker.ca/">← Back to all Spanish vocabulary categories</a></p>
+          <?php else: ?>
           <h1>WordWalker - Interactive Spanish Vocabulary Learning Game</h1>
           <h2>Learn Spanish Through Gaming</h2>
-          <p>Master Spanish vocabulary with WordWalker, a free interactive educational game featuring over 200 Spanish words across 14 categories. Perfect for beginners and intermediate learners.</p>
+          <p>Master Spanish vocabulary with WordWalker, a free interactive educational game featuring over 200 Spanish words across 18 categories. Perfect for beginners and intermediate learners.</p>
           
           <h3>Key Features</h3>
           <ul>
             <li>200+ Spanish vocabulary words with English translations</li>
             <li>Audio pronunciation for every word</li>
             <li>Interactive flashcard system</li>
-            <li>14 themed categories: Greetings, Numbers, Food, Transportation, Environment, and more</li>
+            <li>18 themed categories: Greetings, Numbers, Food, Transportation, Environment, and more</li>
             <li>Beautiful parallax themed landscapes</li>
             <li>Progress tracking and achievements</li>
             <li>Works offline as a Progressive Web App (PWA)</li>
@@ -232,13 +295,18 @@ $version = $packageJson['version'] ?? '1.0.0';
           </ul>
           
           <h3>Learning Categories</h3>
-          <p>Study Spanish vocabulary across diverse topics including daily routines, restaurant phrases, shopping, medical terms, entertainment, recreation, animals, accommodation, directions, grammar, and people.</p>
+          <ul>
+            <?php foreach ($categories as $catId => $catData): ?>
+            <li><a href="?category=<?php echo $catId; ?>"><?php echo $catData['emoji']; ?> <?php echo htmlspecialchars($catData['name']); ?></a> - <?php echo htmlspecialchars($catData['description']); ?></li>
+            <?php endforeach; ?>
+          </ul>
           
           <h3>How It Works</h3>
           <p>Walk through beautiful landscapes while answering Spanish vocabulary questions. Each correct answer moves your character forward. Use flashcards to study before playing, listen to native pronunciation, and track your progress as you master new words.</p>
           
           <h3>Perfect for Spanish Learners</h3>
           <p>Whether you're just starting to learn Spanish or looking to expand your vocabulary, WordWalker makes language learning fun and engaging. Play for free in your web browser or install as an app on your mobile device.</p>
+          <?php endif; ?>
         </main>
       </div>
     </div>

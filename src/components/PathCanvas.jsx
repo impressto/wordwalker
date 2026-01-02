@@ -328,6 +328,29 @@ const PathCanvas = () => {
     };
   }, [audioInitialized, soundEnabled, volume]);
 
+  // Handle URL parameters to open specific categories (for SEO deep linking)
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryParam = urlParams.get('category');
+    const modeParam = urlParams.get('mode') || 'flashcard'; // Default to flashcard for direct links
+    
+    if (categoryParam && !showChoice && !showFlashCards && !selectedPath) {
+      // Validate category exists
+      const categoryData = getCategoryById(categoryParam);
+      if (categoryData) {
+        // Set up the category for flash cards
+        setCategoryForFlashCards(categoryParam);
+        setStreakAtCompletion(0);
+        setShowFlashCards(true);
+        setIsPaused(true);
+        
+        // Update URL to remove parameters (clean state after opening)
+        const cleanUrl = window.location.pathname;
+        window.history.replaceState({}, '', cleanUrl);
+      }
+    }
+  }, []); // Only run once on mount
+
   // Handle background music pause/resume when search dialog opens/closes
   useEffect(() => {
     if (showSearch) {
