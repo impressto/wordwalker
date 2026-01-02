@@ -1549,7 +1549,7 @@ export const accommodationQuestions = [
     category: 'accommodation',
     difficulty: 'medium',
     emotion: 'neutral',
-  },,
+  },
 
   // Problems & Complaints (30 questions)
   {
@@ -1983,7 +1983,7 @@ export const accommodationQuestions = [
     category: 'accommodation',
     difficulty: 'medium',
     emotion: 'neutral',
-  },,
+  },
   {
     id: 'accommodation_154',
     emoji: '🚕',
@@ -2126,7 +2126,7 @@ export const accommodationQuestions = [
     category: 'accommodation',
     difficulty: 'medium',
     emotion: 'pleased',
-  },,
+  },
   {
     id: 'accommodation_165',
     emoji: 'massage-chair.png',
@@ -2282,7 +2282,7 @@ export const accommodationQuestions = [
     category: 'accommodation',
     difficulty: 'medium',
     emotion: 'pleased',
-  },,
+  },
   {
     id: 'accommodation_177',
     emoji: 'door-handle.png',

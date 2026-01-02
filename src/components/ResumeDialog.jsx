@@ -79,6 +79,11 @@ const ResumeDialog = ({ onResume, onNewGame, savedStats }) => {
           <a href="https://github.com/impressto/wordwalker" target="_blank" rel="noopener noreferrer">
             ⭐ View Source Code on GitHub
           </a>
+          
+          &nbsp; <a href="https://wordwalker.ca/contact.php" target="_blank" rel="noopener noreferrer">
+            💬 Contact Support
+          </a>
+          
           <div className="version-info">v{packageJson.version}</div>
         </div>
       </div>
