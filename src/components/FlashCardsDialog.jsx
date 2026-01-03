@@ -181,7 +181,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
       const objectFileName = cardData.images.object;
       // Only load if it's a PNG file (skip SVG)
       if (objectFileName.toLowerCase().endsWith('.png')) {
-        const objPath = `${basePath}images/flash-cards/objects/${objectFileName}`;
+        const objPath = `${basePath}images/objects/${objectFileName}`;
         const objImg = new Image();
         imagePromises.push(
           new Promise((resolve) => {
