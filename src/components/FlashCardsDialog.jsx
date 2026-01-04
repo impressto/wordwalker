@@ -86,6 +86,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
   const [isVisible, setIsVisible] = useState(false);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [audioAvailable, setAudioAvailable] = useState(false);
+  const [audioLoading, setAudioLoading] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [autoPlayEnabled, setAutoPlayEnabled] = useState(() => {
@@ -269,7 +270,12 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
 
   // Check if audio file exists for current card
   useEffect(() => {
+    setAudioLoading(true);
+    setAudioAvailable(false);
+    setIsPlaying(false); // Reset playing state when card changes
+
     if (!isOnline) {
+      setAudioLoading(false);
       setAudioAvailable(false);
       return;
     }
@@ -277,6 +283,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
     // Get the question data for the current card
     const categoryQuestions = getQuestionsByCategory(category);
     if (!categoryQuestions || actualCardIndex >= categoryQuestions.length) {
+      setAudioLoading(false);
       setAudioAvailable(false);
       return;
     }
@@ -289,9 +296,10 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
       
       if (isMounted) {
         setAudioAvailable(exists);
+        setAudioLoading(false);
         // Preload if available for faster playback
         if (exists) {
-          pronunciationAudio.preloadAudio(currentQuestion);
+          await pronunciationAudio.preloadAudio(currentQuestion);
         }
       }
     };
@@ -305,15 +313,15 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
 
   // Auto-play audio when enabled and audio is available
   useEffect(() => {
-    if (autoPlayEnabled && audioAvailable && isOnline && !isPlaying) {
-      // Small delay to ensure card is visible before playing
+    if (autoPlayEnabled && audioAvailable && !audioLoading && isOnline && !isPlaying) {
+      // Small delay to ensure audio is preloaded
       const timer = setTimeout(() => {
         handlePlayAudio();
-      }, 300);
+      }, 400);
 
       return () => clearTimeout(timer);
     }
-  }, [actualCardIndex, audioAvailable, autoPlayEnabled, isOnline]);
+  }, [actualCardIndex, audioAvailable, audioLoading, autoPlayEnabled, isOnline]);
 
   const handlePlayAudio = async () => {
     if (isPlaying) return; // Prevent multiple clicks
@@ -633,7 +641,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
         </div>
 
         {/* Audio play button - only show if online and audio exists */}
-        {audioAvailable && isOnline && (
+        {(audioAvailable || audioLoading) && isOnline && (
           <div className="flash-card-audio-container">
             <label className="autoplay-checkbox-label">
               <input
@@ -641,17 +649,18 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
                 checked={autoPlayEnabled}
                 onChange={handleAutoPlayToggle}
                 className="autoplay-checkbox"
+                disabled={audioLoading}
               />
               <span className="autoplay-label-text">Auto-play pronunciation</span>
             </label>
             <button
               onClick={handlePlayAudio}
-              disabled={isPlaying}
+              disabled={isPlaying || audioLoading}
               className="btn-pronunciation"
-              title={isPlaying ? 'Playing...' : 'Hear Pronunciation'}
+              title={audioLoading ? 'Loading audio...' : (isPlaying ? 'Playing...' : 'Hear Pronunciation')}
             >
               <span className="pronunciation-icon">
-                {isPlaying ? '🔊' : '🔉'}
+                {audioLoading ? '⏳' : (isPlaying ? '🔊' : '🔉')}
               </span>
             </button>
           </div>
