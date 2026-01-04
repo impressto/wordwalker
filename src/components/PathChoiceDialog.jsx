@@ -177,7 +177,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
         disabled={isDisabled}
         title={titleMessage}
         style={{
-          padding: '10px 15px',
+          padding: window.innerWidth < 380 ? '8px 10px' : '10px 15px',
           fontSize: '18px',
           fontWeight: 'bold',
           backgroundColor: isDisabled ? '#9e9e9e' : '#4CAF50',
@@ -191,7 +191,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
           flexDirection: 'column',
           alignItems: 'center',
           gap: '4px',
-          minWidth: '140px',
+          minWidth: window.innerWidth < 380 ? '120px' : '140px',
           opacity: isDisabled ? 0.6 : 1,
           position: 'relative',
         }}
@@ -248,11 +248,11 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
       left: '50%',
       transform: 'translateX(-50%)',
       backgroundColor: 'rgba(255, 255, 255, 0.85)',
-      padding: '12px',
+      padding: window.innerWidth < 380 ? '8px' : '12px',
       borderRadius: '15px',
       boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
       zIndex: 1010,
-      minWidth: '280px',
+      minWidth: window.innerWidth < 380 ? '260px' : '280px',
       maxWidth: 'min(85vw, 380px)',
       display: 'flex',
       flexDirection: 'column',
@@ -352,6 +352,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
         display: 'flex',
         alignItems: 'center',
         marginBottom: '12px',
+        gap: window.innerWidth < 380 ? '2px' : '4px',
       }}>
         {/* Previous Button */}
         <button
@@ -396,7 +397,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
         <div id="categories-grid" style={{
           display: 'grid',
           gridTemplateColumns: 'repeat(2, 1fr)',
-          gap: '8px',
+          gap: window.innerWidth < 380 ? '4px' : '8px',
           flex: 1,
         }}>
           {currentPageCategories.map(categoryId => createButton(categoryId))}
