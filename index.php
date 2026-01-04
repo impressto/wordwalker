@@ -35,7 +35,7 @@ $pageTitle = $categoryData
     : "WordWalker - Learn Spanish Vocabulary";
 $pageDescription = $categoryData 
     ? "{$categoryData['description']}. Interactive flashcards with audio pronunciation. Free Spanish learning game." 
-    : "Learn Spanish vocabulary through an interactive walking game! Master 200+ words across 18 categories with audio pronunciation, flashcards, and themed landscapes. Free online Spanish learning game.";
+    : "Learn Spanish vocabulary through an interactive walking game! Master 2500+ words across 16 categories with audio pronunciation, flashcards, and themed landscapes. Free online Spanish learning game.";
 $pageUrl = $categoryData 
     ? "https://wordwalker.ca/?category={$category}" 
     : "https://wordwalker.ca/";

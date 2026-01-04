@@ -3,6 +3,8 @@ import './FlashCardsDialog.css';
 import { getFlashCardConfig, getFlashCardData, getCategoryCardCount, flashCardsConfig } from '../config/flashCardsConfig';
 import { isEmojiSvg, getEmojiSvgPath } from '../utils/emojiUtils.jsx';
 import FlashCardsParallax from './FlashCardsParallax';
+import pronunciationAudio from '../utils/pronunciationAudio';
+import { getQuestionsByCategory } from '../config/questions/index';
 
 /**
  * Helper function to check if an image is loaded and ready to draw
@@ -83,6 +85,14 @@ const shuffleArray = (array) => {
 const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme = 'default' }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
+  const [audioAvailable, setAudioAvailable] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
+  const [autoPlayEnabled, setAutoPlayEnabled] = useState(() => {
+    // Load autoplay preference from localStorage
+    const saved = localStorage.getItem('flashCardAutoPlay');
+    return saved === 'true';
+  });
   const canvasRef = useRef(null);
   const imagesRef = useRef({});
   const animationFrameRef = useRef(null);
@@ -242,6 +252,95 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
 
     return () => clearTimeout(timer);
   }, []);
+
+  // Listen for online/offline status changes
+  useEffect(() => {
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+
+  // Check if audio file exists for current card
+  useEffect(() => {
+    if (!isOnline) {
+      setAudioAvailable(false);
+      return;
+    }
+
+    // Get the question data for the current card
+    const categoryQuestions = getQuestionsByCategory(category);
+    if (!categoryQuestions || actualCardIndex >= categoryQuestions.length) {
+      setAudioAvailable(false);
+      return;
+    }
+
+    const currentQuestion = categoryQuestions[actualCardIndex];
+    let isMounted = true;
+
+    const checkAudio = async () => {
+      const exists = await pronunciationAudio.checkAudioExists(currentQuestion);
+      
+      if (isMounted) {
+        setAudioAvailable(exists);
+        // Preload if available for faster playback
+        if (exists) {
+          pronunciationAudio.preloadAudio(currentQuestion);
+        }
+      }
+    };
+
+    checkAudio();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [actualCardIndex, category, isOnline]);
+
+  // Auto-play audio when enabled and audio is available
+  useEffect(() => {
+    if (autoPlayEnabled && audioAvailable && isOnline && !isPlaying) {
+      // Small delay to ensure card is visible before playing
+      const timer = setTimeout(() => {
+        handlePlayAudio();
+      }, 300);
+
+      return () => clearTimeout(timer);
+    }
+  }, [actualCardIndex, audioAvailable, autoPlayEnabled, isOnline]);
+
+  const handlePlayAudio = async () => {
+    if (isPlaying) return; // Prevent multiple clicks
+    
+    // Get the question data for the current card
+    const categoryQuestions = getQuestionsByCategory(category);
+    if (!categoryQuestions || actualCardIndex >= categoryQuestions.length) {
+      return;
+    }
+
+    const currentQuestion = categoryQuestions[actualCardIndex];
+    
+    setIsPlaying(true);
+    await pronunciationAudio.playPronunciation(currentQuestion);
+    
+    // Reset playing state after a short delay (assume 2-3 seconds for most pronunciations)
+    setTimeout(() => {
+      setIsPlaying(false);
+    }, 3000);
+  };
+
+  const handleAutoPlayToggle = () => {
+    const newValue = !autoPlayEnabled;
+    setAutoPlayEnabled(newValue);
+    // Save preference to localStorage
+    localStorage.setItem('flashCardAutoPlay', newValue.toString());
+  };
 
   const handleNext = () => {
     if (currentCardIndex < totalCards - 1) {
@@ -532,6 +631,31 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
             {selectedCharacter}
           </div> */}
         </div>
+
+        {/* Audio play button - only show if online and audio exists */}
+        {audioAvailable && isOnline && (
+          <div className="flash-card-audio-container">
+            <label className="autoplay-checkbox-label">
+              <input
+                type="checkbox"
+                checked={autoPlayEnabled}
+                onChange={handleAutoPlayToggle}
+                className="autoplay-checkbox"
+              />
+              <span className="autoplay-label-text">Auto-play pronunciation</span>
+            </label>
+            <button
+              onClick={handlePlayAudio}
+              disabled={isPlaying}
+              className="btn-pronunciation"
+              title={isPlaying ? 'Playing...' : 'Hear Pronunciation'}
+            >
+              <span className="pronunciation-icon">
+                {isPlaying ? '🔊' : '🔉'}
+              </span>
+            </button>
+          </div>
+        )}
 
         <div className="flash-cards-buttons">
           <button

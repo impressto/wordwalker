@@ -129,6 +129,69 @@
   pointer-events: none;
 }
 
+.flash-card-audio-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin: 15px 0;
+}
+
+.autoplay-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.autoplay-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: #2196F3;
+}
+
+.autoplay-label-text {
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+
+.btn-pronunciation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  background-color: rgba(33, 150, 243, 0.9);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  border-radius: 50%;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.btn-pronunciation:hover:not(:disabled) {
+  background-color: rgba(33, 150, 243, 1);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.btn-pronunciation:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  background-color: rgba(33, 150, 243, 0.6);
+}
+
+.pronunciation-icon {
+  font-size: 18px;
+}
+
 .flash-cards-buttons {
   display: flex;
   gap: 10px;
