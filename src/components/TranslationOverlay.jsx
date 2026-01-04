@@ -10,7 +10,7 @@ import gameSettings, { getStreakColor, getStreakGradientColor } from '../config/
 import pronunciationAudio from '../utils/pronunciationAudio';
 import EmojiDisplay from './EmojiDisplay';
 
-const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, hintUsed = false }) => {
+const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, hintUsed = false, volume = 0.7 }) => {
   const [audioAvailable, setAudioAvailable] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
@@ -92,7 +92,7 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, 
     if (isPlaying) return; // Prevent multiple clicks
     
     setIsPlaying(true);
-    const success = await pronunciationAudio.playPronunciation(currentQuestion);
+    const success = await pronunciationAudio.playPronunciation(currentQuestion, volume);
     
     // Reset playing state after a short delay (assume 2-3 seconds for most pronunciations)
     setTimeout(() => {

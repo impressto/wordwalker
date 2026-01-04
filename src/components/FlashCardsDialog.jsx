@@ -82,7 +82,7 @@ const shuffleArray = (array) => {
  * Shows flash cards after completing a category
  * Rendered on canvas with mini parallax background
  */
-const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme = 'default' }) => {
+const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme = 'default', volume = 0.7 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [audioAvailable, setAudioAvailable] = useState(false);
@@ -335,7 +335,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
     const currentQuestion = categoryQuestions[actualCardIndex];
     
     setIsPlaying(true);
-    await pronunciationAudio.playPronunciation(currentQuestion);
+    await pronunciationAudio.playPronunciation(currentQuestion, volume);
     
     // Reset playing state after a short delay (assume 2-3 seconds for most pronunciations)
     setTimeout(() => {
@@ -641,7 +641,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
         </div>
 
         {/* Audio play button - only show if online and audio exists */}
-        {(audioAvailable || audioLoading) && isOnline && (
+        {audioAvailable && isOnline && (
           <div className="flash-card-audio-container">
             <label className="autoplay-checkbox-label">
               <input

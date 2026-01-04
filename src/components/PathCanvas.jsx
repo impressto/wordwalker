@@ -2025,6 +2025,7 @@ const PathCanvas = () => {
           firstAttempt={firstAttempt}
           streak={streak}
           hintUsed={hintUsed}
+          volume={volume}
         />
       )}
 
@@ -2081,6 +2082,7 @@ const PathCanvas = () => {
           onComplete={handleFlashCardsComplete}
           onClose={handleFlashCardsClose}
           currentTheme={currentTheme}
+          volume={volume}
         />
       )}
     </div>
