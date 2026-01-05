@@ -135,6 +135,7 @@
   align-items: center;
   gap: 15px;
   margin: 15px 0;
+  min-height: 44px; /* Match button height to maintain consistent spacing */
 }
 
 .autoplay-checkbox-label {

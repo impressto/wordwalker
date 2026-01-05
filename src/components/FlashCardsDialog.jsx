@@ -641,30 +641,32 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
         </div>
 
         {/* Audio play button - only show if online and audio exists */}
-        {audioAvailable && isOnline && (
-          <div className="flash-card-audio-container">
-            <label className="autoplay-checkbox-label">
-              <input
-                type="checkbox"
-                checked={autoPlayEnabled}
-                onChange={handleAutoPlayToggle}
-                className="autoplay-checkbox"
-                disabled={audioLoading}
-              />
-              <span className="autoplay-label-text">Auto-play pronunciation</span>
-            </label>
-            <button
-              onClick={handlePlayAudio}
-              disabled={isPlaying || audioLoading}
-              className="btn-pronunciation"
-              title={audioLoading ? 'Loading audio...' : (isPlaying ? 'Playing...' : 'Hear Pronunciation')}
-            >
-              <span className="pronunciation-icon">
-                {audioLoading ? '⏳' : (isPlaying ? '🔊' : '🔉')}
-              </span>
-            </button>
-          </div>
-        )}
+        <div className="flash-card-audio-container">
+          {audioAvailable && isOnline && (
+            <>
+              <label className="autoplay-checkbox-label">
+                <input
+                  type="checkbox"
+                  checked={autoPlayEnabled}
+                  onChange={handleAutoPlayToggle}
+                  className="autoplay-checkbox"
+                  disabled={audioLoading}
+                />
+                <span className="autoplay-label-text">Auto-play pronunciation</span>
+              </label>
+              <button
+                onClick={handlePlayAudio}
+                disabled={isPlaying || audioLoading}
+                className="btn-pronunciation"
+                title={audioLoading ? 'Loading audio...' : (isPlaying ? 'Playing...' : 'Hear Pronunciation')}
+              >
+                <span className="pronunciation-icon">
+                  {audioLoading ? '⏳' : (isPlaying ? '🔊' : '🔉')}
+                </span>
+              </button>
+            </>
+          )}
+        </div>
 
         <div className="flash-cards-buttons">
           <button

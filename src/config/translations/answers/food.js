@@ -433,7 +433,7 @@ export const foodAnswerTranslations = {
   "la panera": "the bread box",
   "la lata de bebida": "the beverage can",
   "la cervecería": "the brewery",
-  "las coles de Bruselas": "the Brussels sprouts",
+  "las coles de bruselas": "the brussels sprouts",
   "la manzana acaramelada": "the caramel apple",
   "las palomitas acarameladas": "the caramel popcorn",
   "el recipiente de cereal": "the cereal container",
