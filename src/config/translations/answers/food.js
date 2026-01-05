@@ -491,7 +491,7 @@ export const foodAnswerTranslations = {
   "el jugo de manzana": "the apple juice",
   "la arepa": "the arepa",
   "el queso artesanal": "the artisan cheese",
-  "la nuez de Brasil": "the Brazil nut",
+  "la nuez de brasil": "the brazil nut",
   "el rollo de col": "the cabbage roll",
   "las sardinas enlatadas": "the canned sardines",
   "el atún enlatado": "the canned tuna",
