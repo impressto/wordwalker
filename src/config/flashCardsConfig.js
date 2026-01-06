@@ -93,6 +93,18 @@ export const flashCardsConfig = {
     // Top margin for text
     topMargin: 7, // Reduced to move text closer to top
   },
+  
+  // Speech bubble configuration (for usage examples)
+  speechBubble: {
+    size: 55, // Size of the clickable area (in pixels)
+    offsetX: -20, // Horizontal offset from character edge when character is on RIGHT (reversed layout)
+    offsetXLeft: -50, // Horizontal offset from character edge when character is on LEFT (normal layout)
+    offsetY: 20, // Vertical offset from character top (negative = above character)
+    imageScale: 1.5, // Scale multiplier for the speech bubble image relative to size
+    earIconOffsetY: -5, // Fine-tune vertical position of ear icon (positive = down, negative = up)    
+    opacity: 0.7 // Transparency of speech bubble (0 = fully transparent, 1 = fully opaque)
+  },  
+    
 };
 
 /**
@@ -144,6 +156,7 @@ export const getFlashCardData = (category, cardIndex, selectedCharacter = null) 
     spanish: spanish,
     english: english,
     emoji: question.emoji, // Use the emoji from the question
+    usageExample: question.usageExample, // Optional usage example
     emojiPosition: undefined, // Use default positioning
     textAlign: undefined, // Use default from config
     leftMargin: undefined,

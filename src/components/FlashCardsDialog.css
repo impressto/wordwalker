@@ -30,6 +30,7 @@
   animation: slideIn 0.3s ease-out;
   margin-top: 100px;
   pointer-events: auto; /* Only the content card captures clicks */
+  position: relative; /* Anchor for absolutely positioned children */
 }
 
 @keyframes slideIn {
@@ -51,8 +52,8 @@
 }
 
 .flash-cards-header h2 {
-  margin: 0 0 5px 0;
-  font-size: 24px;
+  margin: 0 32px 5px 0;
+  font-size: 18px;
   text-shadow: none;
 }
 
@@ -283,5 +284,101 @@
 
   .flash-cards-buttons button {
     width: 100%;
+  }
+}
+
+/* Usage Example Modal */
+.usage-modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  border-radius: 15px;
+  padding: 25px;
+  max-width: 400px;
+  width: calc(100% - 40px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  z-index: 3000;
+  animation: slideInModal 0.3s ease-out;
+}
+
+@keyframes slideInModal {
+  from {
+    transform: translate(-50%, -50%) translateY(-30px) scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: translate(-50%, -50%) translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.usage-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  color: #333;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  padding: 0;
+}
+
+.usage-modal-close:hover {
+  background: rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+}
+
+.usage-modal-close:active {
+  transform: scale(0.95);
+}
+
+.usage-modal-title {
+  margin: 0 0 15px 0;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+}
+
+.usage-modal-text {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #555;
+  text-align: center;
+  font-style: italic;
+}
+
+.usage-modal-translation {
+  margin: 12px 0 0 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #888;
+  text-align: center;
+  font-style: normal;
+}
+
+@media (max-width: 600px) {
+  .usage-modal-content {
+    padding: 20px;
+  }
+
+  .usage-modal-title {
+    font-size: 18px;
+  }
+
+  .usage-modal-text {
+    font-size: 16px;
   }
 }

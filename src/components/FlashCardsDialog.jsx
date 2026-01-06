@@ -4,7 +4,8 @@ import { getFlashCardConfig, getFlashCardData, getCategoryCardCount, flashCardsC
 import { isEmojiSvg, getEmojiSvgPath } from '../utils/emojiUtils.jsx';
 import FlashCardsParallax from './FlashCardsParallax';
 import pronunciationAudio from '../utils/pronunciationAudio';
-import { getQuestionsByCategory } from '../config/questions/index';
+import { getQuestionsByCategory, getCategoryById } from '../config/questions/index';
+import { exampleTranslations } from '../config/translations/example_translations';
 
 /**
  * Helper function to check if an image is loaded and ready to draw
@@ -94,6 +95,8 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
     const saved = localStorage.getItem('flashCardAutoPlay');
     return saved === 'true';
   });
+  const [showUsageModal, setShowUsageModal] = useState(false);
+  const [speechBalloonBounds, setSpeechBalloonBounds] = useState(null);
   const canvasRef = useRef(null);
   const imagesRef = useRef({});
   const animationFrameRef = useRef(null);
@@ -233,6 +236,25 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
       }
     }
 
+    // Load speech bubble image if usageExample exists
+    if (cardData.usageExample) {
+      const speechBubblePath = `${basePath}images/flash-cards/speech-bubble.png`;
+      const speechBubbleImg = new Image();
+      imagePromises.push(
+        new Promise((resolve) => {
+          speechBubbleImg.onload = () => {
+            imagesToLoad.speechBubble = speechBubbleImg;
+            resolve();
+          };
+          speechBubbleImg.onerror = (error) => {
+            console.warn(`Failed to load speech bubble: ${speechBubblePath}`, error);
+            resolve(); // Continue even if image fails
+          };
+          speechBubbleImg.src = speechBubblePath;
+        })
+      );
+    }
+
     // Wait for all images to load (or fail)
     Promise.all(imagePromises).then(() => {
       imagesRef.current = imagesToLoad;
@@ -360,6 +382,41 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
       } else {
         onComplete();
       }
+    }
+  };
+
+  const handleCanvasClick = (e) => {
+    if (!speechBalloonBounds) return;
+
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const rect = canvas.getBoundingClientRect();
+    
+    // Handle both mouse and touch events
+    let clientX, clientY;
+    if (e.type === 'touchend') {
+      // For touch events, use the last touch position
+      const touch = e.changedTouches[0];
+      clientX = touch.clientX - rect.left;
+      clientY = touch.clientY - rect.top;
+    } else {
+      // For mouse events
+      clientX = e.clientX - rect.left;
+      clientY = e.clientY - rect.top;
+    }
+
+    // Scale click coordinates to canvas coordinate system
+    // Canvas may be scaled by CSS (e.g., 280px display vs 400px actual)
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+    const x = clientX * scaleX;
+    const y = clientY * scaleY;
+
+    // Check if click is within speech balloon bounds
+    const { x: bx, y: by, width: bw, height: bh } = speechBalloonBounds;
+    if (x >= bx && x <= bx + bw && y >= by && y <= by + bh) {
+      setShowUsageModal(true);
     }
   };
 
@@ -587,6 +644,100 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
         ctx.restore();
       }
 
+      // 5. Draw speech balloon with ear icon if usageExample exists
+      if (cardData.usageExample) {
+        // Position the speech balloon near the character's head
+        const balloonSize = config.speechBubble?.size || 45;
+        const offsetXLeft = config.speechBubble?.offsetXLeft || -10;
+        const offsetXRight = config.speechBubble?.offsetX || 50;
+        const offsetY = config.speechBubble?.offsetY || -15;
+        const imageScale = config.speechBubble?.imageScale || 1.5;
+        const earIconOffsetY = config.speechBubble?.earIconOffsetY || 0;
+        const opacity = config.speechBubble?.opacity !== undefined ? config.speechBubble.opacity : 1;
+        
+        // Calculate character position (same logic as character drawing)
+        const baseWidth = config.characterWidth || 220;
+        const baseHeight = config.characterHeight || 220;
+        const scale = config.characterScale || 0.8;
+        const charWidth = baseWidth * scale;
+        const charHeight = baseHeight * scale;
+        const charMargin = 10;
+        const charX = isReversedLayout
+          ? canvas.width - charWidth - charMargin
+          : charMargin;
+        const charY = canvas.height - charHeight;
+        
+        // Position balloon relative to character using appropriate offset for layout
+        const balloonX = isReversedLayout
+          ? charX + offsetXRight  // Character on right - use offsetX (offsetXRight)
+          : charX + charWidth + offsetXLeft;   // Character on left - use offsetXLeft
+        const balloonY = charY + offsetY;
+        
+        // Store bounds for click detection
+        setSpeechBalloonBounds({
+          x: balloonX,
+          y: balloonY,
+          width: balloonSize,
+          height: balloonSize
+        });
+        
+        // Draw speech balloon using PNG image
+        if (imagesRef.current.speechBubble) {
+          ctx.save();
+          
+          const img = imagesRef.current.speechBubble;
+          const imgWidth = balloonSize * imageScale;
+          const imgHeight = balloonSize * imageScale;
+          const imgX = balloonX - (imgWidth - balloonSize) / 2;
+          const imgY = balloonY - (imgHeight - balloonSize) / 2;
+          
+          // Set opacity for speech bubble
+          ctx.globalAlpha = opacity;
+          
+          // Flip horizontally if layout is reversed (right side)
+          if (isReversedLayout) {
+            ctx.translate(imgX + imgWidth, imgY);
+            ctx.scale(-1, 1);
+            ctx.drawImage(img, 0, 0, imgWidth, imgHeight);
+          } else {
+            ctx.drawImage(img, imgX, imgY, imgWidth, imgHeight);
+          }
+          
+          // Reset opacity for ear icon
+          ctx.globalAlpha = 1;
+          
+          ctx.restore();
+          
+          // Draw ear icon in the center
+          ctx.save();
+          ctx.font = `${balloonSize * 0.5}px Arial`;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('👂', balloonX + balloonSize/2, balloonY + balloonSize/2 + earIconOffsetY);
+          ctx.restore();
+        } else {
+          // Fallback: Draw speech balloon background (circle) if image not loaded
+          ctx.save();
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
+          ctx.strokeStyle = '#666';
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.arc(balloonX + balloonSize/2, balloonY + balloonSize/2, balloonSize/2, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+          
+          // Draw ear icon
+          ctx.font = `${balloonSize * 0.6}px Arial`;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('👂', balloonX + balloonSize/2, balloonY + balloonSize/2 + earIconOffsetY);
+          ctx.restore();
+        }
+      } else {
+        // No usage example - clear bounds
+        setSpeechBalloonBounds(null);
+      }
+
       // Continue animation
       animationFrameRef.current = requestAnimationFrame(drawCard);
     };
@@ -600,11 +751,15 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
     };
   }, [actualCardIndex, config, category]);
 
+  // Get category display name
+  const categoryData = getCategoryById(category);
+  const categoryDisplayName = categoryData?.displayName || categoryData?.name || category;
+
   return (
     <div className={`flash-cards-dialog ${isVisible ? 'visible' : ''}`}>
       <div className="flash-cards-content">
         <div className="flash-cards-header">
-          <h2>🎓 Flash Cards</h2>
+          <h2>🎓 Flash Cards - {categoryDisplayName}</h2>
           <button
             className="btn-close"
             onClick={onClose || onComplete}
@@ -632,6 +787,9 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
             width={config.canvasWidth}
             height={config.canvasHeight}
             className="flash-card-canvas"
+            onClick={handleCanvasClick}
+            onTouchEnd={handleCanvasClick}
+            style={{ cursor: speechBalloonBounds ? 'pointer' : 'default' }}
           />
           
           {/* Debug: Display character name */}
@@ -684,6 +842,28 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
             {currentCardIndex < totalCards - 1 ? 'Next →' : 'Finish ✓'}
           </button>
         </div>
+
+        {/* Usage Example Modal */}
+        {showUsageModal && (() => {
+          const cardData = getFlashCardData(category, actualCardIndex, selectedCharacter);
+          const englishTranslation = cardData?.usageExample ? exampleTranslations[cardData.usageExample] : null;
+          return cardData?.usageExample ? (
+            <div className="usage-modal-content">
+              <button
+                className="usage-modal-close"
+                onClick={() => setShowUsageModal(false)}
+                aria-label="Close"
+              >
+                ✕
+              </button>
+              <h3 className="usage-modal-title">💬 Usage Example</h3>
+              <p className="usage-modal-text">{cardData.usageExample}</p>
+              {englishTranslation && (
+                <p className="usage-modal-translation">{englishTranslation}</p>
+              )}
+            </div>
+          ) : null;
+        })()}
       </div>
     </div>
   );
