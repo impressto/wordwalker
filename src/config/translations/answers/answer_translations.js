@@ -336,6 +336,11 @@ export const translations = {
     "los videojuegos": "the video games",
     "los fuegos artificiales": "the fireworks",
     "la máscara": "the mask",
+    "el espectáculo aéreo": "the air show",
+    "el bingo": "the bingo",
+    "la gala": "the gala",
+    "las carreras de caballos": "the horse races",
+    "la rueda de premios": "the prize wheel",
 
   // ========== ACCOMMODATION ==========
   "hotel": "hotel",
