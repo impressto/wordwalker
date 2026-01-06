@@ -713,7 +713,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
           ctx.font = `${balloonSize * 0.5}px Arial`;
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
-          ctx.fillText('👂', balloonX + balloonSize/2, balloonY + balloonSize/2 + earIconOffsetY);
+          ctx.fillText('...', balloonX + balloonSize/2, balloonY + balloonSize/2 + earIconOffsetY);
           ctx.restore();
         } else {
           // Fallback: Draw speech balloon background (circle) if image not loaded
@@ -730,7 +730,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
           ctx.font = `${balloonSize * 0.6}px Arial`;
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
-          ctx.fillText('👂', balloonX + balloonSize/2, balloonY + balloonSize/2 + earIconOffsetY);
+          ctx.fillText('...', balloonX + balloonSize/2, balloonY + balloonSize/2 + earIconOffsetY);
           ctx.restore();
         }
       } else {
