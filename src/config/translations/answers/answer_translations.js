@@ -212,6 +212,7 @@ export const translations = {
     "el teatro": "the theater",
     "la pintura": "the painting",
     "el piano": "the piano",
+    "el piano de cola": "the grand piano",
     "el micrófono": "the microphone",
     "el circo": "the circus",
     "los dardos": "the darts",

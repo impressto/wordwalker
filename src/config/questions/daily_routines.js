@@ -2054,4 +2054,19 @@ export const dailyRoutinesQuestions = [
     difficulty: 'easy',
     emotion: 'pleased',
   },
+
+    {
+    id: 'daily_162',
+    emoji: '🖍️',
+    question: '¿Con qué dibujan los niños?',
+    translation: 'What do children draw with?',
+    options: ['el crayón', 'la crayola', 'el color'],
+    correctAnswer: 'el crayón',
+    hint: 'Crayon - wax sticks in colors, "crayola" brand name commonly used',
+    points: 5,
+    category: 'daily_routines',
+    difficulty: 'easy',
+    emotion: 'happy',
+  },
+
 ];

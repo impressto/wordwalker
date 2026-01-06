@@ -2378,4 +2378,19 @@ export const recreationQuestions = [
     difficulty: 'medium',
     emotion: 'excited',
   },
+
+    {
+    id: 'recreation_192',
+    emoji: '🏕️',
+    question: '¿Qué haces cuando duermes en tienda en la naturaleza?',
+    translation: 'What do you do when you sleep in a tent in nature?',
+    options: ['acampar', 'ir de camping', 'el campamento'],
+    correctAnswer: 'acampar',
+    hint: 'Camping - outdoor sleeping in tent, "campamento" is campsite',
+    points: 5,
+    category: 'recreation',
+    difficulty: 'easy',
+    emotion: 'excited',
+  },
+
 ];
