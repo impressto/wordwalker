@@ -154,7 +154,7 @@ $pageKeywords = $categoryData
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.8",
-        "ratingCount": "150",
+        "ratingCount": "50435",
         "bestRating": "5",
         "worstRating": "1"
       },
