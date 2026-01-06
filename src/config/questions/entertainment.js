@@ -729,7 +729,7 @@ export const entertainmentQuestions = [
   },
   {
     id: 'entertainment_113',
-    emoji: 'hacer malabares.png',
+    emoji: 'juggling.png',
     question: '¿Qué haces cuando practicas malabarismo?',
     translation: 'What do you do when you practice juggling?',
     options: ['hacer malabares', 'malabarear', 'el malabarismo'],
