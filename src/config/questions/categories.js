@@ -34,21 +34,20 @@ export const categories = {
     description: 'Learn shopping and clothing vocabulary',
   },
 
-
-    entertainment: {
-    id: 'entertainment',
-    name: 'Entertainment',
-    displayName: 'Entretenimiento',
-    emoji: 'entertainment.png',
-    description: 'Learn entertainment and hobby vocabulary',
-  },
-
   recreation: {
     id: 'recreation',
     name: 'Recreation',
     displayName: 'Recreación',
     emoji: 'recreation.png',
     description: 'Learn leisure, beach, and outdoor activity vocabulary',
+  },
+
+  entertainment: {
+    id: 'entertainment',
+    name: 'Entertainment',
+    displayName: 'Entretenimiento',
+    emoji: 'entertainment.png',
+    description: 'Learn entertainment and hobby vocabulary',
   },
 
   plants_animals: {
