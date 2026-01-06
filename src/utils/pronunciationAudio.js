@@ -3,8 +3,8 @@
  * Handles remote audio playback for word pronunciations
  * Only fetches audio when online and checks for file existence before displaying play button
  * 
- * Files are organized by category: /audio-samples/{category}/{correctAnswer}.mp3
- * Example: https://impressto.ca/wordwalker/audio-samples/grammar/yo.mp3
+ * Files are organized by category: /audio-samples/answers/{category}/{correctAnswer}.mp3
+ * Example: https://impressto.ca/wordwalker/audio-samples/answers/grammar/yo.mp3
  */
 
 import audioConfig from '../config/audioConfig';

@@ -30,7 +30,7 @@ if [ -z "$1" ]; then
 fi
 
 CATEGORY="$1"
-AUDIO_DIR="audio-samples/${CATEGORY}"
+AUDIO_DIR="audio-samples/answers/${CATEGORY}"
 CONFIG_FILE="src/config/questions/${CATEGORY}.js"
 OUTPUT_FILE="work/missing-${CATEGORY}-audio.md"
 TEMP_DIR="/tmp/missing-audio-$$"
@@ -163,7 +163,7 @@ Please save all audio files in a folder named \`${CATEGORY}\` and zip it for del
 
 ---
 
-**Note:** All audio files should be placed in the \`audio-samples/${CATEGORY}/\` directory once completed.
+**Note:** All audio files should be placed in the \`audio-samples/answers/${CATEGORY}/\` directory once completed.
 EOF
 
 # Clean up temp files

@@ -83,7 +83,7 @@
     <h2>Configuration</h2>
     <div>
       <label>Server URL:</label>
-      <input type="text" id="server-url" value="https://impressto.ca/wordwalker/audio-samples/" style="width: 500px;">
+      <input type="text" id="server-url" value="https://impressto.ca/wordwalker/audio-samples/answers/" style="width: 500px;">
       <button onclick="updateServerUrl()">Update</button>
     </div>
     <div style="margin-top: 10px;">
@@ -127,7 +127,7 @@
   <script type="module">
     // Simple implementation for testing (without React)
     class PronunciationAudioManager {
-      constructor(baseUrl = 'https://impressto.ca/wordwalker/audio-samples/') {
+      constructor(baseUrl = 'https://impressto.ca/wordwalker/audio-samples/answers/') {
         this.baseUrl = baseUrl;
         this.audioCache = new Map();
         this.existenceCache = new Map();
