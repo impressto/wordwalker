@@ -342,6 +342,9 @@ export const translations = {
     "la gala": "the gala",
     "las carreras de caballos": "the horse races",
     "la rueda de premios": "the prize wheel",
+    "el arco de globos": "the balloon arch",
+    "el matasuegras": "the party blower",
+    "el desfile de modas": "the fashion show",
 
   // ========== ACCOMMODATION ==========
   "hotel": "hotel",
