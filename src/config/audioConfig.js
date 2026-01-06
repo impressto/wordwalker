@@ -21,11 +21,34 @@ const getAudioBaseUrl = () => {
   return `${protocol}//${hostname}/wordwalker/audio-samples/answers/`;
 };
 
+/**
+ * Get the appropriate base URL for example audio files based on current domain
+ * Example files are in /audio-samples/examples/{category}/{usageExample}.mp3
+ */
+const getExampleAudioBaseUrl = () => {
+  const hostname = window.location.hostname;
+  const protocol = window.location.protocol;
+  
+  // For wordwalker.ca domain
+  if (hostname === 'wordwalker.ca' || hostname === 'www.wordwalker.ca') {
+    return `${protocol}//wordwalker.ca/audio-samples/examples/`;
+  }
+  
+  // For impressto.ca domain (or localhost development)
+  // Default to impressto.ca path structure
+  return `${protocol}//${hostname}/wordwalker/audio-samples/examples/`;
+};
+
 const audioConfig = {
   // Base URL for pronunciation audio files
   // Files are organized by category: /audio-samples/answers/{category}/{correctAnswer}.mp3
   // Dynamically determined based on current domain to avoid CORS issues
   pronunciationBaseUrl: getAudioBaseUrl(),
+  
+  // Base URL for example audio files
+  // Files are organized by category: /audio-samples/examples/{category}/{usageExample}.mp3
+  // Dynamically determined based on current domain to avoid CORS issues
+  exampleAudioBaseUrl: getExampleAudioBaseUrl(),
   
   // File format for pronunciation audio
   pronunciationFormat: 'mp3',

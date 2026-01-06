@@ -97,6 +97,9 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
   });
   const [showUsageModal, setShowUsageModal] = useState(false);
   const [speechBalloonBounds, setSpeechBalloonBounds] = useState(null);
+  const [exampleAudioAvailable, setExampleAudioAvailable] = useState(false);
+  const [exampleAudioLoading, setExampleAudioLoading] = useState(false);
+  const [isPlayingExample, setIsPlayingExample] = useState(false);
   const canvasRef = useRef(null);
   const imagesRef = useRef({});
   const animationFrameRef = useRef(null);
@@ -345,6 +348,48 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
     }
   }, [actualCardIndex, audioAvailable, audioLoading, autoPlayEnabled, isOnline]);
 
+  // Check if example audio exists when modal opens
+  useEffect(() => {
+    if (!showUsageModal) {
+      setExampleAudioAvailable(false);
+      setExampleAudioLoading(false);
+      setIsPlayingExample(false);
+      return;
+    }
+
+    const cardData = getFlashCardData(category, actualCardIndex, selectedCharacter);
+    if (!cardData?.usageExample || !isOnline) {
+      setExampleAudioAvailable(false);
+      setExampleAudioLoading(false);
+      return;
+    }
+
+    setExampleAudioLoading(true);
+    let isMounted = true;
+
+    const checkExampleAudio = async () => {
+      const exists = await pronunciationAudio.checkExampleAudioExists(
+        cardData.usageExample,
+        category
+      );
+      
+      if (isMounted) {
+        setExampleAudioAvailable(exists);
+        setExampleAudioLoading(false);
+        // Preload if available
+        if (exists) {
+          await pronunciationAudio.preloadExample(cardData.usageExample, category);
+        }
+      }
+    };
+
+    checkExampleAudio();
+
+    return () => {
+      isMounted = false;
+    };
+  }, [showUsageModal, category, actualCardIndex, selectedCharacter, isOnline]);
+
   const handlePlayAudio = async () => {
     if (isPlaying) return; // Prevent multiple clicks
     
@@ -370,6 +415,23 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
     setAutoPlayEnabled(newValue);
     // Save preference to localStorage
     localStorage.setItem('flashCardAutoPlay', newValue.toString());
+  };
+
+  const handlePlayExample = async () => {
+    if (isPlayingExample) return; // Prevent multiple clicks
+    
+    const cardData = getFlashCardData(category, actualCardIndex, selectedCharacter);
+    if (!cardData?.usageExample) {
+      return;
+    }
+    
+    setIsPlayingExample(true);
+    await pronunciationAudio.playExample(cardData.usageExample, category, volume);
+    
+    // Reset playing state after a delay (example sentences are typically longer)
+    setTimeout(() => {
+      setIsPlayingExample(false);
+    }, 5000);
   };
 
   const handleNext = () => {
@@ -860,6 +922,21 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
               <p className="usage-modal-text">{cardData.usageExample}</p>
               {englishTranslation && (
                 <p className="usage-modal-translation">{englishTranslation}</p>
+              )}
+              {/* Example audio play button */}
+              {exampleAudioAvailable && isOnline && (
+                <div className="usage-modal-audio">
+                  <button
+                    onClick={handlePlayExample}
+                    disabled={isPlayingExample || exampleAudioLoading}
+                    className="btn-pronunciation"
+                    title={exampleAudioLoading ? 'Loading audio...' : (isPlayingExample ? 'Playing...' : 'Hear Example')}
+                  >
+                    <span className="pronunciation-icon">
+                      {exampleAudioLoading ? '⏳' : (isPlayingExample ? '🔊' : '🔉')}
+                    </span>
+                  </button>
+                </div>
               )}
             </div>
           ) : null;
