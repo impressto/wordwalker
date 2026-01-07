@@ -519,7 +519,7 @@ export const entertainmentQuestions = [
   },
   {
     id: 'entertainment_082',
-    emoji: '😱',
+    emoji: 'terror.png',
     question: '¿Qué película te da miedo?',
     translation: 'What movie scares you?',
     options: ['el terror', 'el horror', 'la película de miedo'],
