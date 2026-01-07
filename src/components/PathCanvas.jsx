@@ -180,6 +180,9 @@ const PathCanvas = () => {
 
   // Track checkpoint bounds for click detection
   const checkpointBoundsRef = useRef({ x: 0, y: 0, size: 0 });
+  
+  // Track if user came from a URL parameter (to skip showing path choice on flash cards close)
+  const [openedFromUrl, setOpenedFromUrl] = useState(false);
 
   // Easter egg - preview mode when walker is held
   const [isPreviewMode, setIsPreviewMode] = useState(false);
@@ -343,6 +346,7 @@ const PathCanvas = () => {
         setStreakAtCompletion(0);
         setShowFlashCards(true);
         setIsPaused(true);
+        setOpenedFromUrl(true); // Track that we opened from URL
         
         // Update URL to remove parameters (clean state after opening)
         const cleanUrl = window.location.pathname;
@@ -1668,19 +1672,28 @@ const PathCanvas = () => {
   };
 
   const handleFlashCardsClose = () => {
-    // User clicked close button - return to path choice dialog
+    // User clicked close button
     setShowFlashCards(false);
-    setIsPaused(true);
     
-    // Return to fork/category selection
-    setTimeout(() => {
-      const canvas = canvasRef.current;
-      if (canvas) {
-        offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
-      }
-      setShowChoice(true);
-      setSelectedPath(null);
-    }, 100);
+    // If opened from URL, don't show path choice - just close
+    if (openedFromUrl) {
+      setOpenedFromUrl(false); // Reset the flag
+      setIsPaused(false); // Unpause the game
+      // Don't show path choice dialog - user can use category selector if they want
+    } else {
+      // Normal flow - return to path choice dialog
+      setIsPaused(true);
+      
+      // Return to fork/category selection
+      setTimeout(() => {
+        const canvas = canvasRef.current;
+        if (canvas) {
+          offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
+        }
+        setShowChoice(true);
+        setSelectedPath(null);
+      }, 100);
+    }
   };
 
   // Debug handler to open flash cards directly from category selector

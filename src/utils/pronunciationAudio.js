@@ -56,7 +56,7 @@ class PronunciationAudioManager {
   /**
    * Get the full URL for an example audio file based on usage example text
    * Uses the usageExample text as the filename (preserves original capitalization)
-   * Removes ¡, !, ¿, ? characters to match actual file naming
+   * Removes ¡, !, ¿, ?, . characters and leading em dashes to match actual file naming
    * @param {string} usageExample - The usage example text
    * @param {string} category - The category for the example
    * @returns {string} The full URL to the example audio file
@@ -69,8 +69,10 @@ class PronunciationAudioManager {
       return null;
     }
     
-    // Remove ¡, !, ¿, ? characters from filename to match actual file names
-    const filename = usageExample.replace(/[¡!¿?]/g, '');
+    // Remove ¡, !, ¿, ?, . characters from filename to match actual file names
+    let filename = usageExample.replace(/[¡!¿?.]/g, '');
+    // Remove leading em dashes and spaces
+    filename = filename.replace(/^—\s*/, '');
     
     const url = `${this.exampleBaseUrl}${category}/${filename}.${this.fileFormat}`;
     console.log('📍 Generated example URL:', url);
