@@ -496,12 +496,16 @@ const PathCanvas = () => {
       
       // Position camera to show fork and trigger the choice dialog
       // We'll use a small delay to ensure the canvas is ready
+      // Skip showing choice dialog if flash cards are already showing (from URL parameter)
       setTimeout(() => {
         const canvas = canvasRef.current;
         if (canvas) {
           offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
         }
-        setShowChoice(true);
+        // Only show choice dialog if not showing flash cards
+        if (!showFlashCards) {
+          setShowChoice(true);
+        }
       }, 100);
       
       setShowResumeDialog(false);
