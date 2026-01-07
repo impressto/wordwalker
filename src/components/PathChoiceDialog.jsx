@@ -178,7 +178,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
         title={titleMessage}
         style={{
           padding: window.innerWidth < 380 ? '8px 10px' : '10px 15px',
-          fontSize: '18px',
+          fontSize: window.innerWidth < 380 ? '12px' : '18px',
           fontWeight: 'bold',
           backgroundColor: isDisabled ? '#9e9e9e' : '#4CAF50',
           color: 'white',
@@ -191,9 +191,11 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
           flexDirection: 'column',
           alignItems: 'center',
           gap: '4px',
-          minWidth: window.innerWidth < 380 ? '120px' : '140px',
+          width: '100%',
+          minWidth: 0,
           opacity: isDisabled ? 0.6 : 1,
           position: 'relative',
+          boxSizing: 'border-box',
         }}
         onMouseEnter={(e) => {
           if (!isDisabled) {
@@ -220,11 +222,11 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
             }}
           />
         ) : (
-          <span style={{ fontSize: '32px' }}>{category.emoji}</span>
+          <span style={{ fontSize: window.innerWidth < 380 ? '24px' : '32px' }}>{category.emoji}</span>
         )}
-        <span style={{ fontSize: '14px', textAlign: 'center' }}>{category.displayName}</span>
+        <span style={{ fontSize: window.innerWidth < 380 ? '11px' : '14px', textAlign: 'center' }}>{category.displayName}</span>
         <span style={{ 
-          fontSize: '11px', 
+          fontSize: window.innerWidth < 380 ? '9px' : '11px', 
           textAlign: 'center',
           opacity: 0.9,
           marginTop: '2px'
@@ -252,10 +254,11 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
       borderRadius: '15px',
       boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
       zIndex: 1010,
-      minWidth: window.innerWidth < 380 ? '260px' : '280px',
-      maxWidth: 'min(85vw, 380px)',
+      width: window.innerWidth <= 360 ? 'calc(100% - 20px)' : window.innerWidth < 500 ? 'calc(100% - 40px)' : 'calc(100% - 60px)',
+      maxWidth: '420px',
       display: 'flex',
       flexDirection: 'column',
+      boxSizing: 'border-box',
     }}>
       {/* Game Mode Toggle (only shown when flashCards feature is enabled) */}
       {gameSettings.flashCards.enabled ? (
@@ -399,6 +402,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
           gridTemplateColumns: 'repeat(2, 1fr)',
           gap: window.innerWidth < 380 ? '4px' : '8px',
           flex: 1,
+          minWidth: 0,
         }}>
           {currentPageCategories.map(categoryId => createButton(categoryId))}
         </div>
