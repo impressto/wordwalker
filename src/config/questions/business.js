@@ -1596,20 +1596,6 @@ export const businessQuestions = [
     emotion: 'pleased',
   },
 
-  {
-    id: 'business_107',
-    emoji: 'cement mixer.png',
-    question: '¿Qué máquina gira constantemente para mezclar concreto?',
-    translation: 'What machine rotates constantly to mix concrete?',
-    options: ['la mezcladora de cemento', 'el bulldózer', 'la excavadora'],
-    correctAnswer: 'la mezcladora de cemento',
-    hint: 'Rotating drum machine used on construction sites to mix cement, sand, and water',
-    usageExample: 'La mezcladora de cemento gira todo el día en la obra.',
-    points: 10,
-    category: 'business',
-    difficulty: 'medium',
-    emotion: 'neutral',
-  },
 
   {
     id: 'business_108',
@@ -1643,7 +1629,7 @@ export const businessQuestions = [
 
   {
     id: 'business_110',
-    emoji: 'circular saw.png',
+    emoji: 'circular-saw.png',
     question: '¿Qué sierra tiene una hoja redonda que gira rápidamente?',
     translation: 'What saw has a round blade that spins rapidly?',
     options: ['la sierra circular', 'la sierra de mano', 'la sierra de calar'],
@@ -1718,7 +1704,7 @@ export const businessQuestions = [
 
   {
     id: 'business_115',
-    emoji: 'drain snake.png',
+    emoji: 'drain-snake.png',
     question: '¿Con qué herramienta flexible destapar tuberías obstruidas?',
     translation: 'What flexible tool do you use to unclog blocked pipes?',
     options: ['la serpiente de drenaje', 'el destapador', 'la llave inglesa'],
