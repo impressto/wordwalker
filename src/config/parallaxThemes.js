@@ -106,19 +106,19 @@ const parallaxThemes = {
     layerPositions: {
       layer1: 0,      // Foreground - sand dune
       layer2: 0,      // beach level
-      layer3: -40,    // unbrellas
+      layer3: 25,    // unbrellas
       layer4: 40,      // surf
-      layer5: -15,      // cruise ship
-      layer6: 0,      // mountains
+      layer5: -10,      // cruise ship
+      layer6: 10,      // mountains
       layer7: 0,      // Sky/rear
     },
     layerSpeeds: {
       layer1: 1.4,    // Foreground (closest) - fastest movement
       layer2: 1.0,    // Mid-foreground
-      layer3: 0.5,    // Mid layer
-      layer4: 0.4,    // Mid-distant
-      layer5: 0.2,    // Distant layer
-      layer6: 0.15,   // Background
+      layer3: 0.8,    // Mid layer
+      layer4: 0.2,    // Mid-distant
+      layer5: 0.15,    // Distant layer
+      layer6: 0.1,   // Background
       layer7: 0.0,    // Static background
     },
     positioning: {
@@ -164,10 +164,10 @@ const parallaxThemes = {
     layerPositions: {
       layer1: 0,      // Foreground - adjust as needed
       layer2: 0,      // Grass/street level - adjust as needed
-      layer3: -25,    // Buildings/structures - adjust as needed
-      layer4: -140,   // Mid-distant buildings - adjust as needed
-      layer5: -90,    // high rises in the distance - adjust as needed
-      layer6: 80,   // mountains- adjust as needed
+      layer3: 20,    // Buildings/structures - adjust as needed
+      layer4: -150,   // Mid-distant buildings - adjust as needed
+      layer5: -100,    // high rises in the distance - adjust as needed
+      layer6: 50,   // mountains- adjust as needed
       layer7: 0,      // Sky/rear - adjust as needed
     },
     layerSpeeds: {
@@ -175,7 +175,7 @@ const parallaxThemes = {
       layer2: 1.0,    // Mid-foreground
       layer3: 0.6,    // Mid layer
       layer4: 0.4,    // Mid-distant
-      layer5: 0.2,    // Distant layer
+      layer5: 0.5,    // Distant layer
       layer6: 0.1,   // Background
       layer7: 0.0,    // Static background
     },
@@ -223,11 +223,11 @@ const parallaxThemes = {
     layerPositions: {
       layer1: 0,      // Foreground - marigolds/flowers
       layer2: 0,      // Ground level
-      layer3: -30,    // Altars/decorations
-      layer4: -100,     // buildings
+      layer3: 0,    // Altars/decorations
+      layer4: -60,     // buildings
       layer5: 40,    // grave yard
-      layer6: 20,      // mountains
-      layer7: 0,      // Sky/rear
+      layer6: 40,      // mountains
+      layer7: -50,      // Sky/rear
     },
     layerSpeeds: {
       layer1: 1.4,    // Foreground (closest) - fastest movement
@@ -346,10 +346,10 @@ const parallaxThemes = {
     layerSpeeds: {
       layer1: 1.4,    // Foreground (closest) - fastest movement
       layer2: 1.0,    // Beach sand level
-      layer3: 0.6,    // Mid-ground elements
-      layer4: 0.45,   // Pirates/treasure
-      layer5: 0.2,   // ship
-      layer6: 0.1,    // Ocean/horizon
+      layer3: 0.3,    // Mid-ground elements
+      layer4: 0.4,   // Pirates/treasure
+      layer5: 0.5,   // ship
+      layer6: 0.2,    // Ocean/horizon
       layer7: 0.0,    // Static night sky
     },
     positioning: {
