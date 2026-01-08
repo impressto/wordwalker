@@ -2840,9 +2840,247 @@ export const translations = {
     "el destornillador": "the screwdriver",
     "el martillo": "the hammer",
 
-  // ========== ENVIRONMENT ==========
-  "hace sol": "it's sunny",
-    "llueve": "it's raining",
+    // business_101
+    "el arquitecto": "the architect",
+    "el ingeniero": "the engineer",
+    "el diseñador": "the designer",
+
+    // business_102
+    "la fábrica de automóviles": "the automobile factory",
+    "el taller mecánico": "the mechanic shop",
+    "el concesionario": "the dealership",
+
+    // business_103
+    "el detallador automotriz": "the automotive detailer",
+    "el mecánico": "the mechanic",
+    "el lavador de autos": "the car washer",
+
+    // business_104
+    "el bulldózer": "the bulldozer",
+    "la excavadora": "the excavator",
+    "el tractor": "the tractor",
+
+    // business_105
+    "el hombre de negocios": "the businessman",
+    "el cliente": "the client",
+    "el vendedor": "the salesperson",
+
+    // business_106
+    "el carpintero": "the carpenter",
+    "el albañil": "the mason",
+    "el pintor": "the painter",
+
+  // business_107
+  "la mezcladora de cemento": "the cement mixer",
+  "el bulldózer": "the bulldozer",
+  "la excavadora": "the excavator",
+
+  // business_108
+  "el polipasto de cadena": "the chain block",
+  "la grúa": "the crane",
+  "el gato hidráulico": "the hydraulic jack",
+
+  // business_109
+  "el panel de interruptores": "the circuit breaker panel",
+  "el enchufe": "the outlet",
+  "el medidor eléctrico": "the electric meter",
+
+  // business_110
+  "la sierra circular": "the circular saw",
+  "la sierra de mano": "the hand saw",
+  "la sierra de calar": "the jigsaw",
+
+  // business_111
+  "el ingeniero informático": "the computer engineer",
+  "el electricista": "the electrician",
+  "el técnico de soporte": "the support technician",
+
+  // business_112
+  "la hormigonera": "the concrete mixer",
+  "la excavadora": "the excavator",
+  "el bulldózer": "the bulldozer",
+
+  // business_113
+  "el trabajador de construcción": "the construction worker",
+  "el arquitecto": "the architect",
+  "el ingeniero": "the engineer",
+
+  // business_114
+  "el diseñador": "the designer",
+  "el contador": "the accountant",
+  "el abogado": "the lawyer",
+
+  // business_115
+  "la serpiente de drenaje": "the drain snake",
+  "el destapador": "the plunger",
+  "la llave inglesa": "the wrench",
+
+  // business_116
+  "el colector de polvo": "the dust collector",
+  "la aspiradora doméstica": "the household vacuum",
+  "el ventilador": "the fan",
+
+  // business_117
+  "la cinta pescacables": "the fish tape",
+  "la cinta métrica": "the measuring tape",
+  "la cinta adhesiva": "the adhesive tape",
+
+  // business_118
+  "el electricista": "the electrician",
+  "el plomero": "the plumber",
+  "el carpintero": "the carpenter",
+
+  // business_119
+  "la excavadora": "the excavator",
+  "el bulldózer": "the bulldozer",
+  "la grúa": "the crane",
+
+  // business_120
+  "el agricultor": "the farmer",
+  "el jardinero": "the gardener",
+  "el ganadero": "the rancher",
+
+  // business_121
+  "la fragua": "the forge",
+  "el horno": "the oven",
+  "el taller": "the workshop",
+
+  // business_122
+  "la cargadora frontal": "the front-end loader",
+  "la excavadora": "the excavator",
+  "el bulldózer": "the bulldozer",
+
+  // business_123
+  "el diseñador gráfico": "the graphic designer",
+  "el ilustrador": "the illustrator",
+  "el fotógrafo": "the photographer",
+
+  // business_124
+  "el pintor": "the painter",
+
+  // business_125
+  "el diseñador de interiores": "the interior designer",
+  "el arquitecto": "the architect",
+  "el constructor": "the builder",
+
+  // business_126
+  "el inventor": "the inventor",
+  "el mecánico": "the mechanic",
+  "el vendedor": "the seller",
+
+  // business_127
+  "el inversionista": "the investor",
+  "el empleado": "the employee",
+  "el cliente": "the customer",
+
+  // business_128
+  "la cabina de aislamiento": "the isolation cabinet",
+  "el estudio": "the studio",
+  "el armario": "the closet",
+
+  // business_129
+  "el abogado": "the lawyer",
+  "el juez": "the judge",
+  "el notario": "the notary",
+
+  // business_130
+  "el pintor de autos": "the auto painter",
+
+  // business_131
+  "la prensa de metal": "the metal press machine",
+  "la soldadora": "the welder",
+
+  // business_132
+  "el micrómetro": "the micrometer",
+  "la cinta métrica": "the measuring tape",
+  "la regla": "the ruler",
+
+  // business_133
+  "el instalador de gas natural": "the natural gas installer",
+  "el plomero": "the plumber",
+
+  // business_134
+  "la mezcladora de pintura": "the paint mixing machine",
+  "la licuadora": "the blender",
+  "la batidora": "the mixer",
+
+  // business_135
+  "el gato hidráulico de paletas": "the pallet jack",
+  "la carretilla": "the wheelbarrow",
+
+  // business_136
+  "la lámina de plástico": "the plastic sheeting",
+  "la lona": "the tarp",
+  "el papel": "the paper",
+
+  // business_137
+  "el plomero": "the plumber",
+  "el electricista": "the electrician",
+  "el carpintero": "the carpenter",
+
+  // business_138
+  "la niveladora de caminos": "the road grader",
+  "la aplanadora": "the steamroller",
+
+  // business_139
+  "la escalera rodante": "the rolling ladder",
+  "la escalera de tijera": "the step ladder",
+  "la escalera fija": "the fixed ladder",
+
+  // business_140
+  "el arnés de seguridad": "the safety harness",
+  "el cinturón": "the belt",
+  "la cuerda": "the rope",
+
+  // business_141
+  "el caballete de trabajo": "the sawhorse",
+  "la mesa": "the table",
+
+  // business_142
+  "el andamio": "the scaffolding",
+  "la escalera": "the ladder",
+  "la plataforma de tijera": "the scissor lift",
+
+  // business_143
+  "la piedra de afilar": "the sharpening stone",
+  "el papel de lija": "the sandpaper",
+  "la lima": "the file",
+
+  // business_144
+  "la báscula de envío": "the shipping scale",
+  "la báscula de baño": "the bathroom scale",
+  "la báscula de cocina": "the kitchen scale",
+
+  // business_145
+  "el dispensador de jabón": "the soap dispenser",
+  "el secador de manos": "the hand dryer",
+  "el toallero": "the towel rack",
+
+  // business_146
+  "el desarrollador de software": "the software developer",
+  "el técnico de soporte": "the support technician",
+
+  // business_147
+  "la sierra de mesa": "the table saw",
+  "la sierra de mano": "the hand saw",
+
+  // business_148
+  "el urbanista": "the urban planner",
+  "el ingeniero civil": "the civil engineer",
+
+  // business_149
+  "el diseñador UX": "the UX designer",
+  "el programador": "the programmer",
+  "el gerente de proyecto": "the project manager",
+
+  // business_150
+  "el estante de almacén": "the warehouse rack",
+  "la mesa de trabajo": "the work table",
+
+  // business_151
+  "la cortina de soldadura": "the welding curtain",
+  "la pantalla": "the screen",
+
     "nieve": "snow",
     "hace viento": "it's windy",
     "nubes": "clouds",
