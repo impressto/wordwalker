@@ -129,6 +129,14 @@ const gameSettings = {
     },
   },
   
+  // PWA (Progressive Web App) Settings
+  pwa: {
+    // Show/hide the "Install App" button
+    // Set to false to hide the button (useful when offline features need work)
+    // Set to true to show the button when PWA installation is available
+    showInstallButton: false,
+  },
+  
   // Other game settings can be added here as needed
 };
 

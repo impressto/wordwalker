@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
+import gameSettings from '../config/gameSettings';
 
 /**
  * InstallPrompt Component
  * Shows an install button for PWA when installation is available
+ * Controlled by gameSettings.pwa.showInstallButton config
  */
 const InstallPrompt = () => {
   const [deferredPrompt, setDeferredPrompt] = useState(null);
@@ -47,7 +49,8 @@ const InstallPrompt = () => {
     setShowInstallButton(false);
   };
 
-  if (!showInstallButton) {
+  // Don't show button if disabled in config or if no install prompt available
+  if (!showInstallButton || !gameSettings.pwa.showInstallButton) {
     return null;
   }
 
