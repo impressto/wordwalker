@@ -6,6 +6,7 @@ import FlashCardsParallax from './FlashCardsParallax';
 import pronunciationAudio from '../utils/pronunciationAudio';
 import { getQuestionsByCategory, getCategoryById } from '../config/questions/index';
 import { exampleTranslations } from '../config/translations/example_translations';
+import EmojiDisplay from './EmojiDisplay';
 
 /**
  * Helper function to check if an image is loaded and ready to draw
@@ -930,6 +931,15 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
                 ✕
               </button>
               <h3 className="usage-modal-title">💬 Usage Example</h3>
+              {cardData.emoji && (
+                <div style={{ textAlign: 'center', margin: '10px 0' }}>
+                  <EmojiDisplay 
+                    emoji={cardData.emoji} 
+                    category={category} 
+                    size="48px"
+                  />
+                </div>
+              )}
               <p className="usage-modal-text">{cardData.usageExample}</p>
               {englishTranslation && (
                 <p className="usage-modal-translation">{englishTranslation}</p>

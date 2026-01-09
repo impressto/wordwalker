@@ -39,9 +39,12 @@ export default function EmojiDisplay({ emoji, category, size = '60px', style = {
         className={className}
         onError={(e) => {
           console.error(`Failed to load image emoji: ${svgPath}`);
-          // Fallback to question mark emoji if image fails to load
+          // Fallback: replace image with question mark emoji
           e.target.style.display = 'none';
-          e.target.parentElement.insertAdjacentHTML('afterbegin', '<span style="font-size: ' + size + '">❓</span>');
+          const fallback = document.createElement('span');
+          fallback.style.fontSize = size;
+          fallback.textContent = '❓';
+          e.target.parentNode.replaceChild(fallback, e.target);
         }}
       />
     );
