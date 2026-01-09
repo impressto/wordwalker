@@ -77,8 +77,8 @@ const parallaxThemes = {
       layerSpeeds: {
         layer3: 0.5,   // Bushes - foreground
         layer4: 0.4,   // Trees
-        layer5: 0.3,   // Far trees
-        layer6: 0.15,  // Mountains
+        layer5: 0.2,   // Far trees
+        layer6: 0.1,  // Mountains
         layer7: 0.0,   // Sky - no movement
       },
       // Scale adjustment for better fit in smaller canvas

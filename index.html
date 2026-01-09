@@ -4,6 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <title>wordwalker</title>
+    <style>
+      /* Sunken gradient effect on app container edges */
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 600px;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+        box-shadow: 
+          inset 20px 0 30px -10px rgba(0, 0, 0, 0.9),
+          inset -20px 0 30px -10px rgba(0, 0, 0, 0.9);
+      }
+    </style>
     <!-- Favicon files -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

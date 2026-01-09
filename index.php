@@ -188,6 +188,23 @@ $pageKeywords = $categoryData
             background-color: #000000;
         }
         
+        /* Sunken gradient effect on app container edges */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 600px;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            box-shadow: 
+                inset 20px 0 30px -10px rgba(0, 0, 0, 0.9),
+                inset -20px 0 30px -10px rgba(0, 0, 0, 0.9);
+        }
+        
         #wordwalk-game-root, #root {
             width: 100%;
             height: 100%;
