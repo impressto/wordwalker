@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { isEmojiSvg, getEmojiSvgPath } from '../utils/emojiUtils.jsx';
 
 /**
@@ -11,6 +11,8 @@ import { isEmojiSvg, getEmojiSvgPath } from '../utils/emojiUtils.jsx';
  * @param {string} props.className - Additional CSS class names
  */
 export default function EmojiDisplay({ emoji, category, size = '60px', style = {}, className = '' }) {
+  const [imageError, setImageError] = useState(false);
+  
   if (!emoji) {
     return <span style={{ fontSize: size, ...style }} className={className}>❓</span>;
   }
@@ -18,6 +20,11 @@ export default function EmojiDisplay({ emoji, category, size = '60px', style = {
   // Check if this is an SVG/PNG file
   if (isEmojiSvg(emoji)) {
     const svgPath = getEmojiSvgPath(emoji, category);
+    
+    // If image failed to load, show fallback emoji
+    if (imageError) {
+      return <span style={{ fontSize: size, ...style }} className={className}>❓</span>;
+    }
     
     // PNG images (150x150px) need to be rendered larger to match text emoji size
     // Apply 1.4x scale for PNG images to appear similar to regular emojis
@@ -37,14 +44,9 @@ export default function EmojiDisplay({ emoji, category, size = '60px', style = {
           ...style
         }}
         className={className}
-        onError={(e) => {
+        onError={() => {
           console.error(`Failed to load image emoji: ${svgPath}`);
-          // Fallback: replace image with question mark emoji
-          e.target.style.display = 'none';
-          const fallback = document.createElement('span');
-          fallback.style.fontSize = size;
-          fallback.textContent = '❓';
-          e.target.parentNode.replaceChild(fallback, e.target);
+          setImageError(true);
         }}
       />
     );
