@@ -12,6 +12,17 @@ The WordWalker app sends the following events to GTM's dataLayer:
 | `question_answered` | Fired when user answers a question | `category_id`, `category_name`, `correct`, `first_attempt`, `streak` |
 | `category_completed` | Fired when user completes all questions in a category | `category_id`, `category_name`, `streak` |
 
+### Experiment Tracking (New!)
+
+The app also pushes experiment data to the dataLayer on initialization:
+
+| Variable | Description | Possible Values |
+|----------|-------------|-----------------|
+| `experiment_group` | User's A/B test group for theme gifting | `'theme-gift'`, `'control'`, `'existing-user'` |
+| `gifted_theme` | Theme ID gifted to new users (if applicable) | Theme ID (e.g., `'hong-kong'`) or `null` |
+
+This data is automatically available for segmenting all events by experiment group. See [Step 1a](#step-1a-experiment-tracking-variables) for setup.
+
 ---
 
 ## Step 1: Create Data Layer Variables
@@ -23,31 +34,51 @@ Data Layer Variables allow you to capture the event parameters sent from the app
 1. Go to **Variables** → **User-Defined Variables** → **New**
 2. Create the following variables (one at a time):
 
-#### Variable 1: Category ID
+### Step 1a: Experiment Tracking Variables
+
+These variables capture the A/B testing experiment data that's automatically pushed on page load.
+
+#### Variable 1: Experiment Group
+- **Variable Name**: `DL - Experiment Group`
+- **Variable Type**: Data Layer Variable
+- **Data Layer Variable Name**: `experiment_group`
+- **Data Layer Version**: Version 2
+
+#### Variable 2: Gifted Theme
+- **Variable Name**: `DL - Gifted Theme`
+- **Variable Type**: Data Layer Variable
+- **Data Layer Variable Name**: `gifted_theme`
+- **Data Layer Version**: Version 2
+
+> **Use Case**: Add these variables to any tag to segment performance by experiment group (e.g., compare retention between users who received a gifted theme vs. control group).
+
+### Step 1b: Event Data Variables
+
+#### Variable 3: Category ID
 - **Variable Name**: `DL - Category ID`
 - **Variable Type**: Data Layer Variable
 - **Data Layer Variable Name**: `category_id`
 - **Data Layer Version**: Version 2
 
-#### Variable 2: Category Name
+#### Variable 4: Category Name
 - **Variable Name**: `DL - Category Name`
 - **Variable Type**: Data Layer Variable
 - **Data Layer Variable Name**: `category_name`
 - **Data Layer Version**: Version 2
 
-#### Variable 3: Correct Answer
+#### Variable 5: Correct Answer
 - **Variable Name**: `DL - Correct`
 - **Variable Type**: Data Layer Variable
 - **Data Layer Variable Name**: `correct`
 - **Data Layer Version**: Version 2
 
-#### Variable 4: First Attempt
+#### Variable 6: First Attempt
 - **Variable Name**: `DL - First Attempt`
 - **Variable Type**: Data Layer Variable
 - **Data Layer Variable Name**: `first_attempt`
 - **Data Layer Version**: Version 2
 
-#### Variable 5: Streak
+#### Variable 7: Streak
 - **Variable Name**: `DL - Streak`
 - **Variable Type**: Data Layer Variable
 - **Data Layer Variable Name**: `streak`
@@ -106,6 +137,8 @@ These tags send the event data to Google Analytics 4.
    - **Event Parameters**:
      - Parameter Name: `category_id` → Value: `{{DL - Category ID}}`
      - Parameter Name: `category_name` → Value: `{{DL - Category Name}}`
+     - Parameter Name: `experiment_group` → Value: `{{DL - Experiment Group}}`
+     - Parameter Name: `gifted_theme` → Value: `{{DL - Gifted Theme}}`
 3. Configure Triggering:
    - Select trigger: `CE - Category Selected`
 4. Save
@@ -124,6 +157,8 @@ These tags send the event data to Google Analytics 4.
      - Parameter Name: `correct` → Value: `{{DL - Correct}}`
      - Parameter Name: `first_attempt` → Value: `{{DL - First Attempt}}`
      - Parameter Name: `streak` → Value: `{{DL - Streak}}`
+     - Parameter Name: `experiment_group` → Value: `{{DL - Experiment Group}}`
+     - Parameter Name: `gifted_theme` → Value: `{{DL - Gifted Theme}}`
 3. Configure Triggering:
    - Select trigger: `CE - Question Answered`
 4. Save
@@ -140,6 +175,8 @@ These tags send the event data to Google Analytics 4.
      - Parameter Name: `category_id` → Value: `{{DL - Category ID}}`
      - Parameter Name: `category_name` → Value: `{{DL - Category Name}}`
      - Parameter Name: `streak` → Value: `{{DL - Streak}}`
+     - Parameter Name: `experiment_group` → Value: `{{DL - Experiment Group}}`
+     - Parameter Name: `gifted_theme` → Value: `{{DL - Gifted Theme}}`
 3. Configure Triggering:
    - Select trigger: `CE - Category Completed`
 4. Save
@@ -228,9 +265,40 @@ After events are flowing, you can create custom reports:
 4. **Filters**: Event name = `category_completed`
 5. See which categories users achieve highest streaks
 
+#### Experiment Group Analysis (Theme Gifting A/B Test)
+
+1. Go to **Explore** → **Create a blank exploration**
+2. **Dimensions**: Add `experiment_group`, `Event name`
+3. **Metrics**: Add `Event count`, `User count`, `Sessions per user`
+4. Compare engagement metrics between:
+   - `theme-gift` (users who received a random theme)
+   - `control` (users with default theme only)
+   - `existing-user` (users from before experiment)
+5. **Key Questions to Answer**:
+   - Do users in `theme-gift` group answer more questions?
+   - Is retention higher for users with gifted themes?
+   - Do gifted theme users complete more categories?
+
 ---
 
 ## Event Reference
+
+### Initialization (Automatic)
+
+On app load, experiment data is automatically pushed to the dataLayer:
+
+```javascript
+// Pushed automatically in PathCanvas.jsx on mount
+dataLayer.push({
+  experiment_group: 'theme-gift',    // User's experiment group
+  gifted_theme: 'hong-kong'          // Theme gifted (or null)
+});
+```
+
+**Experiment Groups:**
+- `'theme-gift'` - New users who received a random premium theme
+- `'control'` - New users who only have default theme
+- `'existing-user'` - Users from before the experiment feature
 
 ### Category Selected Event
 ```javascript
@@ -292,6 +360,75 @@ dataLayer.push({
 2. Check real-time reports in GA4 for immediate verification
 3. Verify GA4 Measurement ID is correct in your GA4 Configuration tag
 4. Ensure ad blockers are disabled during testing
+
+---
+
+## Theme Gifting Experiment Tracking
+
+### What Is This?
+
+WordWalker includes an A/B test that randomly gifts premium themes to new users. The experiment data is automatically tracked in GTM so you can measure the impact on engagement and retention.
+
+### How It Works
+
+1. **On Page Load**: Experiment data is pushed to `dataLayer`
+2. **All Events Include**: `experiment_group` and `gifted_theme` parameters
+3. **Segmentation**: Analyze any metric by experiment group
+
+### Key Metrics to Track
+
+| Metric | How to Measure | Expected Impact |
+|--------|----------------|-----------------|
+| **Retention** | Compare returning users by `experiment_group` | +10-20% for theme-gift group |
+| **Engagement** | Questions answered per user (first 7 days) | +15% for theme-gift group |
+| **Category Completion** | `category_completed` events by group | Higher for theme-gift group |
+| **Session Length** | Average session duration by group | Longer for theme-gift group |
+
+### Creating Experiment Reports in GA4
+
+#### 1. Retention by Experiment Group
+
+```
+Dimensions: experiment_group, Date
+Metrics: Active users, New users, Returning users
+Time Range: Last 30 days
+```
+
+Compare day 1, 7, and 30 retention between groups.
+
+#### 2. Engagement by Experiment Group
+
+```
+Dimensions: experiment_group
+Metrics: 
+  - Events per user
+  - Sessions per user
+  - Average session duration
+Custom Metric: question_answered events per user
+```
+
+#### 3. Theme Impact Analysis
+
+```
+Dimensions: gifted_theme, experiment_group
+Metrics: Event count, User count
+Filter: experiment_group = 'theme-gift'
+```
+
+See which gifted themes correlate with highest engagement.
+
+### Testing the Experiment Tracking
+
+1. **Clear localStorage**: `localStorage.clear()`
+2. **Reload page** as new user
+3. **Open GTM Preview**: Check dataLayer contains `experiment_group` and `gifted_theme`
+4. **Answer questions**: Verify events include experiment parameters
+5. **Check GA4 Real-time**: See events with experiment dimensions
+
+### Related Documentation
+
+- [Theme Gifting Experiment Guide](THEME-GIFTING-EXPERIMENT.md) - Full experiment documentation
+- [Theme Gifting Quick Reference](THEME-GIFTING-QUICK-REF.md) - Testing and configuration
 
 ---
 

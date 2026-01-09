@@ -2,6 +2,11 @@ import { useState, useEffect } from 'react';
 import gameSettings from '../config/gameSettings';
 import { getCharacterFileMap } from '../config/characterConfig';
 import { setActiveTheme } from '../utils/themeManager';
+import { 
+  isFirstTimeUser, 
+  markUserInitialized, 
+  giftRandomTheme 
+} from '../utils/themeGifting';
 
 /**
  * Custom hook for managing character and theme state
@@ -68,6 +73,30 @@ export const useCharacterAndTheme = () => {
 
     loadWalkerVariants();
   }, []);
+
+  // Random theme gifting for new users (A/B testing experiment)
+  useEffect(() => {
+    // Only run once on mount
+    if (isFirstTimeUser()) {
+      // Gift a random theme to this new user
+      const { giftedTheme, updatedOwnedThemes } = giftRandomTheme(ownedThemes);
+      
+      if (giftedTheme) {
+        // Update owned themes state
+        setOwnedThemes(updatedOwnedThemes);
+        
+        // Also set the gifted theme as the active theme
+        setCurrentTheme(giftedTheme);
+        localStorage.setItem('wordwalker-current-theme', giftedTheme);
+        setActiveTheme(giftedTheme);
+        
+        console.log(`🎁 Welcome! You've been gifted the "${giftedTheme}" theme!`);
+      }
+      
+      // Mark user as initialized
+      markUserInitialized();
+    }
+  }, []); // Empty dependency array - only run once on mount
 
   // Update walker sprite sheet when current character changes
   const getWalkerSpriteSheet = () => {

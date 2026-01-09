@@ -3,6 +3,22 @@
  * Provides consistent event tracking throughout the app
  */
 
+import { getUserExperimentGroup, getGiftedThemeInfo } from './themeGifting';
+
+/**
+ * Initialize GTM data layer with experiment data
+ * Call this once when the app loads
+ */
+export const initializeDataLayer = () => {
+  if (typeof window !== 'undefined') {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      experiment_group: getUserExperimentGroup(),
+      gifted_theme: getGiftedThemeInfo()?.theme || null
+    });
+  }
+};
+
 /**
  * Send an event to Google Tag Manager
  * @param {string} event - Event name

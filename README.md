@@ -25,6 +25,7 @@ WordWalker is a gamified Spanish language learning application that transforms v
 - **Sound Effects & Animations** - Audio feedback for correct/incorrect answers and streak milestones
 - **Character Shop** - Unlock and purchase different walking characters with points earned
 - **Theme Shop** - Buy and switch between stunning parallax themes (4 themes available: Forest, Hong Kong, Jamaica, Día de los Muertos)
+- **Random Theme Gifting** - New users automatically receive a random premium theme to test stickiness impact
 - **Visual Feedback** - Emoji illustrations, animations, and progress tracking
 
 ### **Learning Support**
@@ -337,6 +338,8 @@ Comprehensive guides are available in the `docs/` directory:
 - **[PARALLAX-THEMES-OVERVIEW.md](docs/PARALLAX-THEMES-OVERVIEW.md)** - Comprehensive theming guide
 - **[PARALLAX-THEMES-QUICK-REF.md](docs/PARALLAX-THEMES-QUICK-REF.md)** - Quick reference for theme configuration
 - **[THEME-SELECTOR-EXAMPLES.md](docs/THEME-SELECTOR-EXAMPLES.md)** - Theme implementation examples
+- **[THEME-GIFTING-EXPERIMENT.md](docs/THEME-GIFTING-EXPERIMENT.md)** - Random theme gifting for A/B testing
+- **[THEME-GIFTING-QUICK-REF.md](docs/THEME-GIFTING-QUICK-REF.md)** - Quick reference for theme gifting
 
 ### Persistence & State Management
 - **[GAME-STATE-PERSISTENCE.md](docs/GAME-STATE-PERSISTENCE.md)** - Technical persistence details

@@ -12,7 +12,7 @@ import { isEmojiSvg, getEmojiSvgPath } from '../utils/emojiUtils.jsx';
 import { loadGameState, saveGameState, clearGameState, hasSavedGameState, convertLoadedState } from '../utils/gameStatePersistence';
 import { useCharacterAndTheme } from '../hooks/useCharacterAndTheme';
 import { useAnswerHandling } from '../hooks/useAnswerHandling';
-import { trackCategorySelection, trackQuestionAnswer, trackCategoryCompletion } from '../utils/gtm';
+import { initializeDataLayer, trackCategorySelection, trackQuestionAnswer, trackCategoryCompletion } from '../utils/gtm';
 import ScoreDisplay from './ScoreDisplay';
 import PathChoiceDialog from './PathChoiceDialog';
 import QuestionDialog from './QuestionDialog';
@@ -197,6 +197,9 @@ const PathCanvas = () => {
   const [audioInitialized, setAudioInitialized] = useState(false);
   
   useEffect(() => {
+    // Initialize GTM data layer with experiment data
+    initializeDataLayer();
+    
     // Initialize with current theme to avoid preloading wrong theme sounds
     soundManagerRef.current = new SoundManager(currentTheme);
     return () => {

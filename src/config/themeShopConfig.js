@@ -18,7 +18,7 @@ const themeShopConfig = {
       id: 'hong-kong',
       name: 'Hong Kong Harbor',
       description: 'Urban harbor landscape',
-      cost: 10,
+      cost: 200,
       thumbnail: 'scene.jpg', // Located at public/images/themes/hong-kong/scene.jpg
       enabled: true,
     },
@@ -26,7 +26,7 @@ const themeShopConfig = {
       id: 'jamaica',
       name: 'Jamaica Beach',
       description: 'Tropical beach landscape',
-      cost: 10,
+      cost: 400,
       thumbnail: 'scene.jpg', // Located at public/images/themes/jamaica/scene.jpg
       enabled: true,
     },
@@ -34,7 +34,7 @@ const themeShopConfig = {
       id: 'dia-de-los-muertos',
       name: 'Día de los Muertos',
       description: 'Colorful Day of the Dead celebration',
-      cost: 10,
+      cost: 600,
       thumbnail: 'scene.jpg', // Located at public/images/themes/dia-de-los-muertos/scene.jpg
       enabled: true,
     },
@@ -42,7 +42,7 @@ const themeShopConfig = {
       id: 'paris',
       name: 'Paris',
       description: 'Iconic Parisian cityscape',
-      cost: 10,
+      cost: 800,
       thumbnail: 'scene.jpg', // Located at public/images/themes/paris/scene.jpg
       enabled: true,
     },
@@ -50,7 +50,7 @@ const themeShopConfig = {
       id: 'nassau',
       name: 'Nassau Nights',
       description: 'Pirates burying treasure on a Bahamian beach at night',
-      cost: 10,
+      cost: 1000,
       thumbnail: 'scene.jpg', // Located at public/images/themes/nassau/scene.jpg
       enabled: true,
     },
