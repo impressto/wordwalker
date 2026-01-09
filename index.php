@@ -201,8 +201,8 @@ $pageKeywords = $categoryData
             pointer-events: none;
             z-index: 9999;
             box-shadow: 
-                inset 20px 0 30px -10px rgba(0, 0, 0, 0.9),
-                inset -20px 0 30px -10px rgba(0, 0, 0, 0.9);
+              inset 10px 0 10px -10px rgba(0, 0, 0, 0.95), 
+              inset -10px 0 10px -10px rgba(0, 0, 0, 0.95);
         }
         
         #wordwalk-game-root, #root {

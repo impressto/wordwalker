@@ -106,18 +106,18 @@ const parallaxThemes = {
     layerPositions: {
       layer1: 0,      // Foreground - sand dune
       layer2: 0,      // beach level
-      layer3: 25,    // unbrellas
-      layer4: 40,      // surf
-      layer5: -10,      // cruise ship
-      layer6: 10,      // mountains
+      layer3: -20,    // unbrellas
+      layer4: 95,      // surf
+      layer5: 10,      // cruise ship
+      layer6: 25,      // mountains
       layer7: 0,      // Sky/rear
     },
     layerSpeeds: {
       layer1: 1.4,    // Foreground (closest) - fastest movement
       layer2: 1.0,    // Mid-foreground
-      layer3: 0.8,    // Mid layer
+      layer3: 0.4,    // Mid layer
       layer4: 0.2,    // Mid-distant
-      layer5: 0.15,    // Distant layer
+      layer5: 0.13,    // Distant layer
       layer6: 0.1,   // Background
       layer7: 0.0,    // Static background
     },
@@ -135,12 +135,21 @@ const parallaxThemes = {
     // Flash card mini parallax configuration for Jamaica theme
     flashCardParallax: {
       layerOffsets: {
-        layer3: 65,   // Umbrellas - move down more for beach scene
+        layer3: 80,   // Umbrellas - move down more for beach scene
         layer4: 15,   // Surf
         layer5: -10,   // Cruise ship
         layer6: 10,   // Mountains
         layer7: 0,    // Sky
       },
+
+      layerSpeeds: {
+        layer3: 0.8,   // Umbrellas - move down more for beach scene
+        layer4: 0.3,   // Surf
+        layer5: 0.2,   // Cruise ship
+        layer6: 0.1,  // Mountains
+        layer7: 0.0,   // Sky
+      },
+
       scaleAdjustment: 0.25,
          layer7Scale: 4.375,
       horizonY: 0.5,

@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <title>wordwalker</title>
     <style>
+
+    /* Prevent scrolling and ensure fullscreen on mobile */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+           /* overflow: hidden; messed up edge gradient */
+            position: fixed;
+            touch-action: none;
+            -webkit-overflow-scrolling: touch;
+            background-color: #000000;
+        }
+        
+
       /* Sunken gradient effect on app container edges */
       body::before {
         content: '';
@@ -18,8 +33,8 @@
         pointer-events: none;
         z-index: 9999;
         box-shadow: 
-          inset 20px 0 30px -10px rgba(0, 0, 0, 0.9),
-          inset -20px 0 30px -10px rgba(0, 0, 0, 0.9);
+          inset 10px 0 10px -10px rgba(0, 0, 0, 0.95), 
+          inset -10px 0 10px -10px rgba(0, 0, 0, 0.95);
       }
     </style>
     <!-- Favicon files -->
