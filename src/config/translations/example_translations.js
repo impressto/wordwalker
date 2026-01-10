@@ -503,6 +503,7 @@ export const exampleTranslations = {
   "Durante el embarazo visitó al médico mensualmente.": "During pregnancy she visited the doctor monthly.",
   "La herida sangraba y perdió mucha sangre.": "The wound bled and he lost a lot of blood.",
   "Siempre guardo la medicina en el botiquín.": "I always keep the medicine in the first-aid kit.",
+  "Guardamos el botiquín de primeros auxilios en un lugar accesible.": "We keep the first-aid kit in an accessible place.",
   "Me dieron la inyección para prevenir la infección.": "They gave me the injection to prevent infection.",
   "Puso el termómetro bajo la lengua para medir la fiebre.": "He placed the thermometer under the tongue to measure the fever.",
   "El hueso se fracturó y le pusieron un yeso.": "The bone fractured and they put a cast on him.",
@@ -579,4 +580,17 @@ export const exampleTranslations = {
   "El psicólogo recomendó técnicas para manejar la ansiedad.": "The psychologist recommended techniques to manage anxiety.",
   "El científico presentó los resultados del estudio clínico.": "The scientist presented the results of the clinical study.",
   "El cirujano utilizó el fórceps para extraer el tejido con cuidado.": "The surgeon used the forceps to extract the tissue carefully."
-};
+  ,
+  // Translations for added medical-words usage examples
+  "Me dolía el pecho después de subir las escaleras.": "My chest hurt after climbing the stairs.",
+  "Me corté el dedo con el papel.": "I cut my finger with the paper.",
+  "Se pintó los labios antes de salir.": "She painted her lips before going out.",
+  "Siento rigidez en el cuello por dormir mal.": "I feel stiffness in my neck from sleeping badly.",
+  "Me quemé la palma al tocar la olla caliente.": "I burned my palm touching the hot pot.",
+  "Me duelen los dientes cuando como helado.": "My teeth hurt when I eat ice cream.",
+  "Usa el pulgar para presionar el botón.": "Use the thumb to press the button.",
+  "Me lastimé el dedo del pie con la puerta.": "I hurt my toe on the door.",
+  "La lengua me ardía por comer algo muy picante.": "My tongue burned from eating something very spicy.",
+  "Tras la operación, usó la silla de ruedas temporalmente.": "After the operation, he used the wheelchair temporarily.",
+  "Se torció la muñeca jugando baloncesto.": "He sprained his wrist playing basketball."
+ };

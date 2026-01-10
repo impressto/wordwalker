@@ -296,11 +296,12 @@
 /* Responsive design */
 @media (max-width: 600px) {
   .flash-cards-content {
-    padding: 20px;
+    padding: 20px 20px 40px 20px;
   }
 
   .flash-cards-header h2 {
-    font-size: 24px;
+    font-size: 20px;
+    line-height: 20px;
   }
 
   .flash-card-canvas {

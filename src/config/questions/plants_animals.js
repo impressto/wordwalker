@@ -162,7 +162,7 @@ export const plantsAnimalsQuestions = [
   },
   {
     id: 'plants_animals_013',
-    emoji: '🦏',
+    emoji: 'rhinoceros.png',
     question: '¿Qué animal tiene un cuerno en la nariz?',
     translation: 'What animal has a horn on its nose?',
     options: ['el rinoceronte', 'el alce', 'el búfalo'],

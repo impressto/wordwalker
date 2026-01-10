@@ -202,12 +202,21 @@ const parallaxThemes = {
     // Flash card mini parallax configuration for Hong Kong theme
     flashCardParallax: {
       layerOffsets: {
-        layer3: 65,   // Buildings - adjust for urban scene
-        layer4: 60,   // Mid-distant buildings
-        layer5: 25,   // High rises
-        layer6: 20,   // Mountains
+        layer3: 85,   // Buildings - adjust for urban scene
+        layer4: 75,   // Mid-distant buildings
+        layer5: 45,   // High rises
+        layer6: 40,   // Mountains
         layer7: 0,    // Sky
       },
+
+      layerSpeeds: {
+        layer3: 0.7,   // Buildings - adjust for urban scene
+        layer4: 0.5,   // Mid-distant buildings
+        layer5: 0.3,   // High rises
+        layer6: 0.1,  // Mountains
+        layer7: 0.0,   // Sky - no movement
+      },
+      
       scaleAdjustment: 0.25,
           layer7Scale: 7.5,
       horizonY: 0.5,
@@ -261,12 +270,21 @@ const parallaxThemes = {
     // Flash card mini parallax configuration for Día de los Muertos theme
     flashCardParallax: {
       layerOffsets: {
-        layer3: 55,   // Altars/decorations
-        layer4: 22,   // Buildings
+        layer3: 70,   // Altars/decorations
+        layer4: 30,   // Buildings
         layer5: -10,   // Graveyard
         layer6: 20,   // Mountains
         layer7: 20,    // Sky
       },
+
+      layerSpeeds: {
+        layer3: 0.8,   // Altars/decorations
+        layer4: 0.5,   // Buildings
+        layer5: 0.3,   // Graveyard
+        layer6: 0.1,  // Mountains
+        layer7: 0.0,   // Night sky - no movement
+      },
+
       scaleAdjustment: 0.4,
         layer7Scale: 1.75,
       horizonY: 0.5,

@@ -2044,7 +2044,7 @@ export const translations = {
     "la oreja": "the ear",
     "la mano": "the hand",
     "la pierna": "the leg",
-    "el pie": "the pie",
+    "el pie": "the foot",
     "amistoso": "friendly",
     "gracioso": "funny",
     "tímido": "shy",
@@ -3457,7 +3457,6 @@ export const translations = {
     "el helado": "the ice cream",
     "el flan": "the flan",
     "las galletas": "the cookies",
-    "el pie": "the pie",
     "el chocolate": "the chocolate",
     "el cupcake": "the cupcake",
     "la dona": "the donut",
@@ -3804,5 +3803,17 @@ export const translations = {
   "el psicólogo": "the psychologist",
   "el científico": "the scientist"
   ,
+  // additions from medical_123..medical_133
+  "el pecho": "the chest",
+  "el dedo": "the finger",
+  "los labios": "the lips",
+  "el cuello": "the neck",
+  "la palma": "the palm (of the hand)",
+  "los dientes": "the teeth",
+  "el pulgar": "the thumb",
+  "el dedo del pie": "the toe",
+  "la silla de ruedas": "the wheelchair",
+  "la muñeca": "the wrist",
+  "el botiquín de primeros auxilios": "the first-aid kit",
   "el fórceps": "the forceps"
 };
