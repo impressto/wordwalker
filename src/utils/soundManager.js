@@ -1,3 +1,5 @@
+import audioConfig from '../config/audioConfig.js';
+
 class SoundManager {
   constructor(initialTheme = 'default') {
     // Audio files in public/audio folder
@@ -121,7 +123,7 @@ class SoundManager {
     
     // Update background music volume
     if (this.backgroundMusic) {
-      this.backgroundMusic.volume = this.masterVolume * 0.3; // Background at 30% of master
+      this.backgroundMusic.volume = this.masterVolume * audioConfig.backgroundMusicVolume;
       if (this.masterVolume === 0 || !this.musicEnabled) {
         this.backgroundMusic.pause();
       } else if (this.backgroundMusic.paused) {
@@ -205,7 +207,7 @@ class SoundManager {
     const backgroundPath = `${this.baseUrl}themes/${this.currentTheme}/background.${this.fileFormat}`;
     this.backgroundMusic = new Audio(backgroundPath);
     this.backgroundMusic.loop = true;
-    this.backgroundMusic.volume = this.masterVolume * 0.3; // 30% volume for background
+    this.backgroundMusic.volume = this.masterVolume * audioConfig.backgroundMusicVolume;
     this.backgroundMusic.preload = 'auto';
     
     this.backgroundMusic.play().catch(() => {

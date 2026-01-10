@@ -823,7 +823,7 @@ const PathCanvas = () => {
         const layer5TilesNeeded = Math.ceil(width / layer5Width) + 2;
         
         // Position layer 5 at horizon with theme offset
-        const layer5Y = getLayerY(horizonY - layer5Height * 0.3 - 30, 'layer5'); // Slightly overlap with layer 6
+        const layer5Y = getLayerY(horizonY - layer5Height * 0.3, 'layer5'); // Slightly overlap with layer 6
         
         // Draw layer 5 tiles horizontally
         for (let i = -1; i < layer5TilesNeeded; i++) {
@@ -845,7 +845,7 @@ const PathCanvas = () => {
         const layer4TilesNeeded = Math.ceil(width / layer4Width) + 2;
         
         // Position layer 4 with theme offset
-        const layer4Y = getLayerY(horizonY - 15, 'layer4');
+        const layer4Y = getLayerY(horizonY, 'layer4');
         
         // Draw layer 4 tiles horizontally
         for (let i = -1; i < layer4TilesNeeded; i++) {
@@ -875,7 +875,7 @@ const PathCanvas = () => {
         const layer3TilesNeeded = Math.ceil(width / layer3Width) + 2;
         
         // Position layer 3 just above the path with theme offset
-        const layer3Y = getLayerY(pathTop - layer3Height * 0.5 - 20, 'layer3'); // Overlap slightly with path area
+        const layer3Y = getLayerY(pathTop - layer3Height * 0.5, 'layer3'); // Overlap slightly with path area
         
         // Draw layer 3 tiles horizontally
         for (let i = -1; i < layer3TilesNeeded; i++) {

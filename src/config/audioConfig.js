@@ -58,6 +58,11 @@ const audioConfig = {
   
   // Default volume for pronunciation playback (0.0 to 1.0)
   pronunciationVolume: 0.7,
+  
+  // Background music volume multiplier relative to master volume (0.0 to 1.0)
+  // This multiplier is applied to the master volume to keep background music
+  // at a lower level than sound effects. Default: 0.3 (30% of master volume)
+  backgroundMusicVolume: 0.2,
 };
 
 export default audioConfig;

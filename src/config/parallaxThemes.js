@@ -26,9 +26,9 @@ const parallaxThemes = {
     layerPositions: {
       layer1: 0,      // Foreground grass - no adjustment
       layer2: 0,      // Grass/midground - no adjustment
-      layer3: 10,    // Bushes - 20 pixels up from calculated position
-      layer4: -100,    // trees - 15 pixels up
-      layer5: -40,    // pine tree - 30 pixels up
+      layer3: -10,    // Bushes - position relative to path (removed hardcoded -20, kept +10 offset = -10 net)
+      layer4: -115,    // trees - position relative to horizon (removed hardcoded -15, kept -100 = -115 net)
+      layer5: -70,    // pine tree - position relative to horizon (removed hardcoded -30, kept -40 = -70 net)
       layer6: -30,      // Mountains - at horizon
       layer7: 0,      // Sky/rear - no adjustment
     },
@@ -109,7 +109,7 @@ const parallaxThemes = {
       layer3: -20,    // unbrellas
       layer4: 95,      // surf
       layer5: 10,      // cruise ship
-      layer6: 25,      // mountains
+      layer6: 55,      // mountains
       layer7: 0,      // Sky/rear
     },
     layerSpeeds: {
@@ -172,10 +172,10 @@ const parallaxThemes = {
     // These values should be adjusted based on the actual Hong Kong artwork
     layerPositions: {
       layer1: 0,      // Foreground - adjust as needed
-      layer2: 0,      // Grass/street level - adjust as needed
-      layer3: 20,    // Buildings/structures - adjust as needed
-      layer4: -150,   // Mid-distant buildings - adjust as needed
-      layer5: -100,    // high rises in the distance - adjust as needed
+      layer2: 50,      // Grass/street level - adjust as needed
+      layer3: -40,    // Buildings/structures - adjust as needed
+      layer4: -130,   // Mid-distant buildings - adjust as needed
+      layer5: -110,    // high rises in the distance - adjust as needed
       layer6: 50,   // mountains- adjust as needed
       layer7: 0,      // Sky/rear - adjust as needed
     },
@@ -184,7 +184,7 @@ const parallaxThemes = {
       layer2: 1.0,    // Mid-foreground
       layer3: 0.6,    // Mid layer
       layer4: 0.4,    // Mid-distant
-      layer5: 0.5,    // Distant layer
+      layer5: 0.3,    // Distant layer
       layer6: 0.1,   // Background
       layer7: 0.0,    // Static background
     },
@@ -232,8 +232,8 @@ const parallaxThemes = {
     layerPositions: {
       layer1: 0,      // Foreground - marigolds/flowers
       layer2: 0,      // Ground level
-      layer3: 0,    // Altars/decorations
-      layer4: -60,     // buildings
+      layer3: -60,    // Altars/decorations
+      layer4: -100,     // buildings
       layer5: 40,    // grave yard
       layer6: 40,      // mountains
       layer7: -50,      // Sky/rear
@@ -289,8 +289,8 @@ const parallaxThemes = {
     layerPositions: {
       layer1: 0,      // fence with flowers
       layer2: 0,      // street
-      layer3: -40,    // sidewalk with tables and musicians
-      layer4: -20,     // river with boats
+      layer3: -60,    // sidewalk with tables and musicians
+      layer4: 10,     // river with boats
       layer5: -100,    // buildings on far bank
       layer6: -30,    // eiffel tower and otherbackground buildings
       layer7: 0,      // Sky/rear
@@ -346,19 +346,19 @@ const parallaxThemes = {
     layerPositions: {
       layer1: 0,      // Foreground - beach elements
       layer2: -100,      // pathway
-      layer3: 30,    // pirates burying treasure
+      layer3: 20,    // pirates burying treasure
       layer4: 70,    // shoreline
-      layer5: -140,    // ship
+      layer5: -160,    // ship
       layer6: 120,    // Ocean/horizon
       layer7: 0,      // Night sky/stars
     },
     layerSpeeds: {
       layer1: 1.4,    // Foreground (closest) - fastest movement
       layer2: 1.0,    // Beach sand level
-      layer3: 0.3,    // Mid-ground elements
+      layer3: 0.5,    // Mid-ground elements
       layer4: 0.4,   // Pirates/treasure
-      layer5: 0.5,   // ship
-      layer6: 0.2,    // Ocean/horizon
+      layer5: 0.25,   // ship
+      layer6: 0.18,    // Ocean/horizon
       layer7: 0.0,    // Static night sky
     },
     positioning: {
