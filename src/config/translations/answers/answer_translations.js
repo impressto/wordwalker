@@ -3787,4 +3787,22 @@ export const translations = {
     "el filete wagyu": "the wagyu steak",
     "el vaso de whisky": "the whisky glass",
     "la botella de vino": "the wine bottle"
+  ,
+  // ========== MEDICAL: additions from work/medical-words.csv ==========
+  "el kit de prueba de alergia": "the allergy test kit",
+  "el carro de paro": "the crash cart",
+  "los cubrezapatos desechables": "the disposable shoe covers",
+  "el dispensador de guantes": "the glove dispenser",
+  "la almohadilla térmica": "the heating pad",
+  "el laboratorio": "the laboratory",
+  "la masajista": "the masseuse",
+  "la pulsera de identificación médica": "the medical ID bracelet",
+  "el concentrador de oxígeno": "the oxygen concentrator",
+  "el paramédico": "the paramedic",
+  "el pediatra": "the pediatrician",
+  "la prótesis": "the prosthetic",
+  "el psicólogo": "the psychologist",
+  "el científico": "the scientist"
+  ,
+  "el fórceps": "the forceps"
 };
