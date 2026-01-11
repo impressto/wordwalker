@@ -122,7 +122,6 @@ session_start();
 // Get parameters from URL
 $categoryParam = isset($_GET['category']) ? trim($_GET['category']) : '';
 $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
-$shuffle = isset($_GET['shuffle']) ? (bool)$_GET['shuffle'] : false;
 $reset = isset($_GET['reset']) ? (bool)$_GET['reset'] : false;
 
 // Parse multiple categories (comma-separated)
@@ -145,9 +144,18 @@ if (empty($selectedCategories)) {
 // Create category key for session/display
 $categoryKey = implode(',', $selectedCategories);
 
+// Determine shuffle state - default to true for first-time visitors
+$seedKey = 'shuffle_seed_' . $categoryKey;
+if (isset($_GET['shuffle'])) {
+    // Explicit shuffle parameter from URL takes precedence
+    $shuffle = (bool)$_GET['shuffle'];
+} else {
+    // Default to shuffled for new visitors (no seed in session)
+    $shuffle = true;
+}
+
 // Handle shuffle reset
 if ($reset && $shuffle) {
-    $seedKey = 'shuffle_seed_' . $categoryKey;
     unset($_SESSION[$seedKey]);
     // Redirect to remove reset parameter
     header("Location: ?category=" . urlencode($categoryKey) . "&page=1&shuffle=1");
@@ -356,21 +364,11 @@ $version = $packageJson['version'] ?? '1.0.0';
             
             <!-- Shuffle Controls -->
             <div class="shuffle-controls">
-                <?php if ($shuffle): ?>
-                    <span class="shuffle-status">🔀 Shuffled</span>
-                    <a href="?category=<?php echo urlencode($categoryKey); ?>&page=1" class="shuffle-btn">
-                        📋 Show Original Order
-                    </a>
-                    <a href="?category=<?php echo urlencode($categoryKey); ?>&page=1&shuffle=1&reset=1" 
-                       onclick="return confirm('Reset shuffle order for this category?');" 
-                       class="shuffle-btn">
-                        🔄 New Shuffle Order
-                    </a>
-                <?php else: ?>
-                    <a href="?category=<?php echo urlencode($categoryKey); ?>&page=1&shuffle=1" class="shuffle-btn">
-                        🔀 Shuffle Cards
-                    </a>
-                <?php endif; ?>
+                <a href="?category=<?php echo urlencode($categoryKey); ?>&page=1&shuffle=1&reset=1" 
+                   onclick="return confirm('Reset shuffle order for this category?');" 
+                   class="shuffle-btn">
+                    🔄 New Shuffle Order
+                </a>
                 <label class="autoplay-control">
                     <input type="checkbox" id="autoplay-toggle" onchange="toggleAutoplay()">
                     <span>🔊 Auto-play audio</span>
