@@ -114,6 +114,68 @@ $categories = [
 ];
 
 /**
+ * Parse example translations from JavaScript file
+ */
+function parseExampleTranslations($filePath) {
+    if (!file_exists($filePath)) {
+        return [];
+    }
+    
+    $content = file_get_contents($filePath);
+    $translations = [];
+    
+    // Find the exampleTranslations object
+    if (preg_match('/exampleTranslations\s*=\s*\{(.*?)\};/s', $content, $match)) {
+        $objContent = $match[1];
+        
+        // Extract key-value pairs: "Spanish": "English"
+        preg_match_all('/"([^"]+)":\s*"([^"]+)"/s', $objContent, $matches, PREG_SET_ORDER);
+        
+        foreach ($matches as $match) {
+            $spanish = $match[1];
+            $english = $match[2];
+            // Handle escaped quotes
+            $spanish = str_replace('\\"', '"', $spanish);
+            $english = str_replace('\\"', '"', $english);
+            $translations[$spanish] = $english;
+        }
+    }
+    
+    return $translations;
+}
+
+/**
+ * Parse answer translations from JavaScript file
+ */
+function parseAnswerTranslations($filePath) {
+    if (!file_exists($filePath)) {
+        return [];
+    }
+    
+    $content = file_get_contents($filePath);
+    $translations = [];
+    
+    // Find the translations object
+    if (preg_match('/translations\s*=\s*\{(.*?)\};/s', $content, $match)) {
+        $objContent = $match[1];
+        
+        // Extract key-value pairs: "Spanish": "English"
+        preg_match_all('/"([^"]+)":\s*"([^"]+)"/s', $objContent, $matches, PREG_SET_ORDER);
+        
+        foreach ($matches as $match) {
+            $spanish = $match[1];
+            $english = $match[2];
+            // Handle escaped quotes
+            $spanish = str_replace('\\"', '"', $spanish);
+            $english = str_replace('\\"', '"', $english);
+            $translations[$spanish] = $english;
+        }
+    }
+    
+    return $translations;
+}
+
+/**
  * Get the image path for an emoji based on category
  */
 function getEmojiImagePath($emoji, $category) {
@@ -241,6 +303,11 @@ function parseQuestionsFromJS($filePath) {
                 $question['usageExample'] = $uMatch[1];
             }
             
+            // Extract example translation
+            if (preg_match('/exampleTranslation:\s*[\'"]([^\'"]+)[\'"]/', $objectString, $etMatch)) {
+                $question['exampleTranslation'] = $etMatch[1];
+            }
+            
             // Extract difficulty
             if (preg_match('/difficulty:\s*[\'"]([^\'"]+)[\'"]/', $objectString, $dMatch)) {
                 $question['difficulty'] = $dMatch[1];
@@ -266,6 +333,14 @@ if (empty($category) || !isset($categories[$category])) {
 
 $categoryInfo = $categories[$category];
 $categoryFile = $dataPath . $category . '.js';
+
+// Load answer translations
+$answerTranslationsFile = __DIR__ . '/src/config/translations/answers/answer_translations.js';
+$answerTranslations = parseAnswerTranslations($answerTranslationsFile);
+
+// Load example translations
+$translationsFile = __DIR__ . '/src/config/translations/example_translations.js';
+$exampleTranslations = parseExampleTranslations($translationsFile);
 
 // Load questions from JavaScript file
 $allQuestions = parseQuestionsFromJS($categoryFile);
@@ -439,7 +514,7 @@ $version = $packageJson['version'] ?? '1.0.0';
         }
         
         .flashcard-emoji {
-            font-size: 2.5em;
+            font-size: 4em;
             margin-bottom: 10px;
             display: block;
         }
@@ -490,6 +565,19 @@ $version = $packageJson['version'] ?? '1.0.0';
             align-items: center;
             justify-content: space-between;
             gap: 10px;
+        }
+        
+        .flashcard-answer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .flashcard-answer-translation {
+            font-size: 0.75em;
+            font-weight: 400;
+            opacity: 0.9;
+            font-style: italic;
         }
         
         .audio-player {
@@ -543,6 +631,18 @@ $version = $packageJson['version'] ?? '1.0.0';
             align-items: center;
             justify-content: space-between;
             gap: 10px;
+        }
+        
+        .flashcard-example-content {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .flashcard-example-translation {
+            font-size: 0.85em;
+            color: #38a169;
+            opacity: 0.85;
         }
         
         .example-audio-player {
@@ -804,7 +904,18 @@ $version = $packageJson['version'] ?? '1.0.0';
                         <?php endif; ?>
                         
                         <div class="flashcard-answer">
-                            <span>✓ <?php echo htmlspecialchars($question['correctAnswer']); ?></span>
+                            <div class="flashcard-answer-content">
+                                <span>✓ <?php echo htmlspecialchars($question['correctAnswer']); ?></span>
+                                <?php 
+                                // Get the translation for the correct answer
+                                $answerTranslation = isset($answerTranslations[$question['correctAnswer']]) 
+                                    ? $answerTranslations[$question['correctAnswer']] 
+                                    : null;
+                                
+                                if (!empty($answerTranslation)): ?>
+                                    <span class="flashcard-answer-translation"><?php echo htmlspecialchars($answerTranslation); ?></span>
+                                <?php endif; ?>
+                            </div>
                             <?php 
                             $answerAudio = getAnswerAudioPath($question['correctAnswer'], $category);
                             if ($answerAudio): ?>
@@ -823,10 +934,20 @@ $version = $packageJson['version'] ?? '1.0.0';
                         
                         <?php if (!empty($question['usageExample'])): ?>
                             <div class="flashcard-example">
-                                <span><strong>Example:</strong> <?php echo htmlspecialchars($question['usageExample']); ?></span>
+                                <div class="flashcard-example-content">
+                                    <span><strong>Example:</strong> <?php echo htmlspecialchars($question['usageExample']); ?></span>
+                                    <?php 
+                                    // Check for translation in the exampleTranslations array
+                                    $translation = isset($exampleTranslations[$question['usageExample']]) 
+                                        ? $exampleTranslations[$question['usageExample']] 
+                                        : (isset($question['exampleTranslation']) ? $question['exampleTranslation'] : null);
+                                    
+                                    if (!empty($translation)): ?>
+                                        <span class="flashcard-example-translation"><?php echo htmlspecialchars($translation); ?></span>
+                                    <?php endif; ?>
+                                </div>
                                 <?php 
                                 $exampleAudio = getExampleAudioPath($question['usageExample'], $category);
-                                echo $exampleAudio;
                                 if ($exampleAudio): ?>
                                     <button class="example-audio-player" 
                                             onclick="playAudio('<?php echo htmlspecialchars($exampleAudio); ?>')"

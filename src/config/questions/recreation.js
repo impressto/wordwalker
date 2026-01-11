@@ -6,7 +6,7 @@
 export const recreationQuestions = [
 {
     id: 'recreation_001',
-    emoji: 'billiards-table.png',
+    emoji: 'pool-table.png',
     question: '¿En qué mesa juegas con tacos y bolas?',
     translation: 'On what table do you play with cues and balls?',
     options: ['la mesa de billar', 'la mesa de ping pong', 'la mesa de juegos'],
