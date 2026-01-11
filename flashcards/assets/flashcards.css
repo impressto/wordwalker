@@ -111,6 +111,36 @@ h1 {
     box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
 }
 
+.autoplay-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9em;
+    padding: 8px 12px;
+    margin-left: 15px;
+    background: #f0f4f8;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.autoplay-control:hover {
+    background: #e2e8f0;
+}
+
+.autoplay-control input[type="checkbox"] {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+}
+
+.autoplay-control span {
+    color: #2d3748;
+}
+
 .flashcards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));

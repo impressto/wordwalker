@@ -266,7 +266,7 @@ $version = $packageJson['version'] ?? '1.0.0';
     <meta property="twitter:image:alt" content="WordWalker Spanish Flash Cards" />
     
     <!-- PWA Manifest -->
-    <link rel="manifest" href="dist/manifest.json" />
+    <link rel="manifest" href="../dist/manifest.json" />
     
     <!-- Favicon files -->
     <link rel="icon" type="image/x-icon" href="https://wordwalker.ca/dist/favicon.ico" />
@@ -371,6 +371,10 @@ $version = $packageJson['version'] ?? '1.0.0';
                         🔀 Shuffle Cards
                     </a>
                 <?php endif; ?>
+                <label class="autoplay-control">
+                    <input type="checkbox" id="autoplay-toggle" onchange="toggleAutoplay()">
+                    <span>🔊 Auto-play audio</span>
+                </label>
             </div>
             
             <div class="page-info">
