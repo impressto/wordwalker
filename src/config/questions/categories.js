@@ -56,7 +56,7 @@ export const categories = {
     id: "daily_routines",
     name: "Daily Routines",
     displayName: "Rutinas Diarias",
-    emoji: "routines.png",
+    emoji: "daily_routines.png",
     description: "Learn daily activities and reflexive verbs",
   },
 
