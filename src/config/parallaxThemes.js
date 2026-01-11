@@ -66,9 +66,9 @@ const parallaxThemes = {
       // Vertical positioning offsets for each layer (in pixels)
       // Positive values move layers down, negative values move them up
       layerOffsets: {
-        layer3: 70,   // Bushes - move down to be more visible
-        layer4: 30,   // Trees - move down slightly
-        layer5: -10,   // Far trees - move down slightly
+        layer3: 80,   // Bushes - move down to be more visible
+        layer4: 40,   // Trees - move down slightly
+        layer5: 0,   // Far trees - move down slightly
         layer6: 10,   // Mountains - move down slightly
         layer7: 0,    // Sky - no offset
       },
@@ -336,11 +336,18 @@ const parallaxThemes = {
     // Flash card mini parallax configuration for Paris theme
     flashCardParallax: {
       layerOffsets: {
-        layer3: 80,   // Sidewalk with tables
+        layer3: 85,   // Sidewalk with tables
         layer4: 40,   // River with boats
-        layer5: 20,   // Buildings on far bank
-        layer6: 15,   // Eiffel tower
+        layer5: 30,   // Buildings on far bank
+        layer6: 30,   // Eiffel tower
         layer7: 0,    // Sky
+      },
+       layerSpeeds: {
+        layer3: 0.8,   // Sidewalk with tables
+        layer4: 0.5,   // River with boats
+        layer5: 0.3,   // Buildings on far bank
+        layer6: 0.1,  // Eiffel tower
+        layer7: 0.0,   // Sky - no movement
       },
       scaleAdjustment: 0.3,
         layer7Scale: 2.875,

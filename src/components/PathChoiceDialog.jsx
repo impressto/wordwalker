@@ -16,11 +16,11 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
   const [dialogTop, setDialogTop] = useState('100px');
   
   // Game mode selection: 'multichoice' or 'flashcard'
-  // Load saved game mode from localStorage or default to 'flashcard'
+  // Load saved game mode from localStorage or default to 'multichoice'
   const [gameMode, setGameMode] = useState(() => {
     try {
       const savedMode = localStorage.getItem('gameMode');
-      return savedMode && (savedMode === 'multichoice' || savedMode === 'flashcard') ? savedMode : 'flashcard';
+      return savedMode && (savedMode === 'multichoice' || savedMode === 'flashcard') ? savedMode : 'multichoice';
     } catch (error) {
       console.error('Error loading saved game mode:', error);
       return 'multichoice';
@@ -280,31 +280,6 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
           }}>
             <button
               onClick={() => {
-                setGameMode('flashcard');
-                localStorage.setItem('gameMode', 'flashcard');
-              }}
-              style={{
-                flex: 1,
-                padding: '10px 16px',
-                fontSize: '14px',
-                fontWeight: gameMode === 'flashcard' ? 'bold' : 'normal',
-                backgroundColor: gameMode === 'flashcard' ? '#9C27B0' : 'transparent',
-                color: gameMode === 'flashcard' ? 'white' : '#333',
-                border: 'none',
-                borderRadius: '8px',
-                cursor: 'pointer',
-                transition: 'all 0.2s',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '6px',
-              }}
-            >
-              <span>🎴</span>
-              <span>Flash Cards</span>
-            </button>
-            <button
-              onClick={() => {
                 setGameMode('multichoice');
                 localStorage.setItem('gameMode', 'multichoice');
               }}
@@ -327,6 +302,31 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
             >
               <span>☑️</span>
               <span>Multichoice</span>
+            </button>
+            <button
+              onClick={() => {
+                setGameMode('flashcard');
+                localStorage.setItem('gameMode', 'flashcard');
+              }}
+              style={{
+                flex: 1,
+                padding: '10px 16px',
+                fontSize: '14px',
+                fontWeight: gameMode === 'flashcard' ? 'bold' : 'normal',
+                backgroundColor: gameMode === 'flashcard' ? '#9C27B0' : 'transparent',
+                color: gameMode === 'flashcard' ? 'white' : '#333',
+                border: 'none',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '6px',
+              }}
+            >
+              <span>🎴</span>
+              <span>Flash Cards</span>
             </button>
           </div>
           <div style={{
