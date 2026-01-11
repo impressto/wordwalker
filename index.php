@@ -264,6 +264,13 @@ $pageKeywords = $categoryData
         <span class="material-icons" style="font-size: 18px;">arrow_back</span>
         Arcade
     </a>
+
+    <a href="https://wordwalker.ca/flashcards/" class="go-to-flashcards back-to-arcade" style="top: 55px;">
+        <span class="material-icons" style="font-size: 18px;">arrow_back</span>
+        Spanish Flashcards
+    </a>
+    
+
     <noscript>
       <h1>WordWalker - Learn Spanish Vocabulary</h1>
       <p>You need to enable JavaScript to run this interactive Spanish learning game.</p>

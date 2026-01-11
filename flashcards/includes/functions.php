@@ -84,9 +84,9 @@ function getEmojiImagePath($emoji, $category) {
         'accommodation' => 'accommodation',
         'shopping' => 'shopping',
         'people' => 'people',
-        'daily_routines' => 'routines',
+        'daily_routines' => 'daily_routines',
         'grammar' => 'grammar',
-        'plants_animals' => 'animals',
+        'plants_animals' => 'plants_animals',
         'environment' => 'environment',
         'business' => 'business',
         'medical' => 'medical',
@@ -97,7 +97,7 @@ function getEmojiImagePath($emoji, $category) {
     ];
     
     $folder = isset($categoryFolders[$category]) ? $categoryFolders[$category] : 'food';
-    return "https://impressto.ca/wordwalker/dist/images/objects/{$folder}/{$emoji}";
+    return "https://wordwalker.ca/dist/images/objects/{$folder}/{$emoji}";
 }
 
 /**
