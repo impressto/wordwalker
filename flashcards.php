@@ -8,7 +8,7 @@
 
 // Build the new URL with query parameters
 $queryString = $_SERVER['QUERY_STRING'] ?? '';
-$newUrl = 'https://impressto.ca/flashcards' . ($queryString ? '?' . $queryString : '');
+$newUrl = 'https://impressto.ca/wordwalker/flashcards' . ($queryString ? '?' . $queryString : '');
 
 // Send 301 Permanent Redirect
 header('HTTP/1.1 301 Moved Permanently');
