@@ -171,14 +171,14 @@ function parseQuestionsFromJS($filePath) {
                 $question['emoji'] = $emojiMatch[1];
             }
             
-            // Extract question text (handles Spanish characters)
-            if (preg_match('/question:\s*[\'"]([^\'"]+)[\'"]/', $objectString, $qMatch)) {
-                $question['question'] = $qMatch[1];
+            // Extract question text (handles Spanish characters and nested quotes)
+            if (preg_match('/question:\s*[\'"](.+?)[\'"],/s', $objectString, $qMatch)) {
+                $question['question'] = str_replace(["\\'", '\\"'], ["'", '"'], $qMatch[1]);
             }
             
-            // Extract translation
-            if (preg_match('/translation:\s*[\'"]([^\'"]+)[\'"]/', $objectString, $tMatch)) {
-                $question['translation'] = $tMatch[1];
+            // Extract translation (handles nested quotes)
+            if (preg_match('/translation:\s*[\'"](.+?)[\'"],/s', $objectString, $tMatch)) {
+                $question['translation'] = str_replace(["\\'", '\\"'], ["'", '"'], $tMatch[1]);
             }
             
             // Extract correct answer
@@ -186,19 +186,19 @@ function parseQuestionsFromJS($filePath) {
                 $question['correctAnswer'] = $aMatch[1];
             }
             
-            // Extract hint
-            if (preg_match('/hint:\s*[\'"]([^\'"]+)[\'"]/', $objectString, $hMatch)) {
-                $question['hint'] = $hMatch[1];
+            // Extract hint (handles nested quotes)
+            if (preg_match('/hint:\s*[\'"](.+?)[\'"],/s', $objectString, $hMatch)) {
+                $question['hint'] = str_replace(["\\'", '\\"'], ["'", '"'], $hMatch[1]);
             }
             
-            // Extract usage example
-            if (preg_match('/usageExample:\s*[\'"]([^\'"]+)[\'"]/', $objectString, $uMatch)) {
-                $question['usageExample'] = $uMatch[1];
+            // Extract usage example (handles nested quotes)
+            if (preg_match('/usageExample:\s*[\'"](.+?)[\'"],/s', $objectString, $uMatch)) {
+                $question['usageExample'] = str_replace(["\\'", '\\"'], ["'", '"'], $uMatch[1]);
             }
             
-            // Extract example translation
-            if (preg_match('/exampleTranslation:\s*[\'"]([^\'"]+)[\'"]/', $objectString, $etMatch)) {
-                $question['exampleTranslation'] = $etMatch[1];
+            // Extract example translation (handles nested quotes)
+            if (preg_match('/exampleTranslation:\s*[\'"](.+?)[\'"],/s', $objectString, $etMatch)) {
+                $question['exampleTranslation'] = str_replace(["\\'", '\\"'], ["'", '"'], $etMatch[1]);
             }
             
             // Extract difficulty
