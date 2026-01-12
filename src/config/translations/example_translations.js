@@ -592,5 +592,27 @@ export const exampleTranslations = {
   "Me lastimé el dedo del pie con la puerta.": "I hurt my toe on the door.",
   "La lengua me ardía por comer algo muy picante.": "My tongue burned from eating something very spicy.",
   "Tras la operación, usó la silla de ruedas temporalmente.": "After the operation, he used the wheelchair temporarily.",
-  "Se torció la muñeca jugando baloncesto.": "He sprained his wrist playing basketball."
+  "Se torció la muñeca jugando baloncesto.": "He sprained his wrist playing basketball.",
+
+  // Recreation Category
+  "Me gusta jugar al bádminton en el parque los fines de semana.": "I like to play badminton in the park on weekends.",
+  "La pesca en hielo es muy popular en Canadá durante el invierno.": "Ice fishing is very popular in Canada during the winter.",
+  "El jugador lanzó el balón y anotó en la canasta.": "The player threw the ball and scored in the basket.",
+  "Fuimos a la jaula de bateo para mejorar nuestro swing.": "We went to the batting cage to improve our swing.",
+  "La cuerda de escalada es esencial para la seguridad en la montaña.": "The climbing rope is essential for safety in the mountain.",
+  "Alquilamos un hidropedal para pasear por el lago.": "We rented a paddleboat to cruise around the lake.",
+  "Tenemos una mesa de ping pong en el sótano para jugar.": "We have a ping pong table in the basement to play.",
+  "La red de voleibol debe estar a 2.43 metros de altura para hombres.": "The volleyball net must be 2.43 meters high for men.",
+  "El marcador de paintball dispara bolas de pintura a alta velocidad.": "The paintball marker shoots paint balls at high speed.",
+  "Entreno todos los días para correr mi primer maratón.": "I train every day to run my first marathon.",
+  "Llevamos un bote inflable para explorar la costa.": "We took an inflatable boat to explore the coast.",
+  "Llevé mi silla de camping para sentarme junto a la fogata.": "I brought my camping chair to sit by the campfire.",
+  "Los escaladores usan la bolsa de magnesio para mejorar el agarre.": "Climbers use the chalk bag to improve their grip.",
+  "Mi hermano compitió con su moto de motocross en el campeonato.": "My brother competed with his motocross bike in the championship.",
+  "Alquilamos un buggy de dunas para explorar el desierto.": "We rented a dune buggy to explore the desert.",
+  "El planeador flotó silenciosamente sobre las montañas.": "The glider floated silently over the mountains.",
+  "Compré una bicicleta de montaña para andar por los senderos.": "I bought a mountain bike to ride on the trails.",
+  "El escalador colocó la cinta exprés en el anclaje de roca.": "The climber placed the quickdraw on the rock anchor.",
+  "La exploración urbana requiere precaución y respeto por la propiedad.": "Urban exploring requires caution and respect for property.",
+  "Me gusta caminar por el parque todas las mañanas.": "I like to walk in the park every morning."
  };
