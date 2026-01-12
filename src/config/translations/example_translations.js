@@ -614,5 +614,10 @@ export const exampleTranslations = {
   "Compré una bicicleta de montaña para andar por los senderos.": "I bought a mountain bike to ride on the trails.",
   "El escalador colocó la cinta exprés en el anclaje de roca.": "The climber placed the quickdraw on the rock anchor.",
   "La exploración urbana requiere precaución y respeto por la propiedad.": "Urban exploring requires caution and respect for property.",
-  "Me gusta caminar por el parque todas las mañanas.": "I like to walk in the park every morning."
+  "Me gusta caminar por el parque todas las mañanas.": "I like to walk in the park every morning.",
+  "La fotografía con dron ofrece perspectivas únicas del paisaje.": "Drone photography offers unique perspectives of the landscape.",
+  "La observación de aves es popular en reservas naturales.": "Bird watching is popular in nature reserves.",
+  "La astrofotografía requiere exposiciones largas y cielos oscuros.": "Astrophotography requires long exposures and dark skies.",
+  "La radioafición me permite hablar con personas de todo el mundo.": "Ham radio allows me to talk to people from all over the world.",
+  "El croquet es un juego popular en fiestas de jardín.": "Croquet is a popular game at garden parties."
  };
