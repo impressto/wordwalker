@@ -51,6 +51,7 @@ const parallaxThemes = {
       pathTopAdditional: 90, // Additional pixel offset for path top
       pathYOffset: 25,        // Additional Y offset for path tiles only (independent of layers)
       belowHorizonStart: 0.4, // Where to start rendering belowHorizon color (0.5 = center, 0.75 = 75% down)
+      checkpointYPosition: 0.4, // Checkpoint vertical position on path (0.0 = top, 0.5 = center, 1.0 = bottom)
     },
     // Layer 2 vertical stretch control (for grass/street level)
     // 1.0 = full stretch from path to bottom of canvas
@@ -127,7 +128,8 @@ const parallaxThemes = {
       pathTopOffset: 0.55,   // Path on sand
       pathTopAdditional: 90,
       pathYOffset: 20,        // Additional Y offset for path tiles only (independent of layers)
-      belowHorizonStart: 0.6, // Where to start rendering belowHorizon color (0.5 = center, 0.75 = 75% down)
+      belowHorizonStart: 0.5, // Where to start rendering belowHorizon color (0.5 = center, 0.75 = 75% down)
+      checkpointYPosition: 0.45, // Checkpoint vertical position on path (0.0 = top, 0.5 = center, 1.0 = bottom)
     },
     // Layer 2 vertical stretch control
     layer2StretchFactor: 0.8,
@@ -147,13 +149,13 @@ const parallaxThemes = {
       layerSpeeds: {
         layer3: 0.8,   // Umbrellas - move down more for beach scene
         layer4: 0.3,   // Surf
-        layer5: 0.2,   // Cruise ship
-        layer6: 0.1,  // Mountains
+        layer5: 0.25,   // Cruise ship
+        layer6: 0.06,  // Mountains
         layer7: 0.0,   // Sky
       },
 
       scaleAdjustment: 0.25,
-         layer7Scale: 4.375,
+      layer7Scale: 4.375,
       horizonY: 0.5,
     },
   },
@@ -196,6 +198,7 @@ const parallaxThemes = {
       pathTopAdditional: 90,
       pathYOffset: 0,        // Additional Y offset for path tiles only (independent of layers)
       belowHorizonStart: 0.4, // Where to start rendering belowHorizon color (0.5 = center, 0.75 = 75% down)
+      checkpointYPosition: 0.45, // Checkpoint vertical position on path (0.0 = top, 0.5 = center, 1.0 = bottom)
     },
     // Layer 2 vertical stretch control
     layer2StretchFactor: 0.6,
@@ -265,6 +268,7 @@ const parallaxThemes = {
       pathTopAdditional: 90, // Additional pixel offset for path top
       pathYOffset: 20,        // Additional Y offset for path tiles only (independent of layers)
       belowHorizonStart: 0.4, // Where to start rendering belowHorizon color (0.5 = center, 0.75 = 75% down)
+      checkpointYPosition: 0.45, // Checkpoint vertical position on path (0.0 = top, 0.5 = center, 1.0 = bottom)
     },
     // Layer 2 vertical stretch control
     layer2StretchFactor: 0.8,
@@ -332,6 +336,7 @@ const parallaxThemes = {
       pathTopAdditional: 90, // Additional pixel offset for path top
       pathYOffset: 0,        // Additional Y offset for path tiles only (independent of layers)
       belowHorizonStart: 0.4, // Where to start rendering belowHorizon color (0.5 = center, 0.75 = 75% down)
+      checkpointYPosition: 0.45, // Checkpoint vertical position on path (0.0 = top, 0.5 = center, 1.0 = bottom)
     },
     // Layer 2 vertical stretch control
     layer2StretchFactor: 0.8,
@@ -397,6 +402,7 @@ const parallaxThemes = {
       pathTopAdditional: 90, // Additional pixel offset for path top
       pathYOffset: 20,       // Additional Y offset for path tiles only
       belowHorizonStart: 0.4, // Where to start rendering belowHorizon color (0.5 = center, 0.75 = 75% down)
+      checkpointYPosition: 0.4, // Checkpoint vertical position on path (0.0 = top, 0.5 = center, 1.0 = bottom)
     },
     // Layer 2 vertical stretch control
     layer2StretchFactor: 0.8,

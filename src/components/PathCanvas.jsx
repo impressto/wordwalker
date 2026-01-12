@@ -1010,7 +1010,9 @@ const PathCanvas = () => {
         
         // Draw checkpoint emoji if it's visible on screen
         if (checkpointScreenX < width && checkpointScreenX > -100) {
-          const checkpointY = pathTop + (pathBottom - pathTop) * 0.5 - 30 + characterYOffset; // Positioned on the path, adjusted by character yOffset
+          // Use theme's configurable checkpoint position (0.0 = top, 0.5 = center, 1.0 = bottom)
+          const checkpointYPosition = theme.positioning.checkpointYPosition ?? 0.5;
+          const checkpointY = pathTop + (pathBottom - pathTop) * checkpointYPosition - 30 + characterYOffset;
           const checkpointSize = 60;
           
           // Initialize fade-in start time if not set
