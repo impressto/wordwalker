@@ -553,6 +553,9 @@ const PathCanvas = () => {
   };
 
   useEffect(() => {
+    // Track whether this effect is still active (for cleanup)
+    let isMounted = true;
+    
     // Get base path for assets (handles subdirectory deployments)
     const basePath = import.meta.env.BASE_URL || '/';
     
@@ -564,7 +567,9 @@ const PathCanvas = () => {
     const parallaxLayer2 = new Image();
     parallaxLayer2.src = `${themePath}parallax-layer2.png`;
     parallaxLayer2.onload = () => {
-      setParallaxLayer2Image(parallaxLayer2);
+      if (isMounted) {
+        setParallaxLayer2Image(parallaxLayer2);
+      }
     };
     
     // Only load path images if theme uses them
@@ -573,14 +578,18 @@ const PathCanvas = () => {
       const path = new Image();
       path.src = `${themePath}path.png`;
       path.onload = () => {
-        setPathImage(path);
+        if (isMounted) {
+          setPathImage(path);
+        }
       };
       
       // Load path fork image
       const pathFork = new Image();
       pathFork.src = `${themePath}path-fork.png`;
       pathFork.onload = () => {
-        setPathForkImage(pathFork);
+        if (isMounted) {
+          setPathForkImage(pathFork);
+        }
       };
     } else {
       // Clear path images if theme doesn't use them
@@ -592,42 +601,59 @@ const PathCanvas = () => {
     const parallaxLayer6 = new Image();
     parallaxLayer6.src = `${themePath}parallax-layer6.png`;
     parallaxLayer6.onload = () => {
-      setParallaxLayer6Image(parallaxLayer6);
+      if (isMounted) {
+        setParallaxLayer6Image(parallaxLayer6);
+      }
     };
     
     // Load parallax-layer1 image (foreground layer)
     const parallaxLayer1 = new Image();
     parallaxLayer1.src = `${themePath}parallax-layer1.png`;
     parallaxLayer1.onload = () => {
-      setParallaxLayer1Image(parallaxLayer1);
+      if (isMounted) {
+        setParallaxLayer1Image(parallaxLayer1);
+      }
     };
     
     // Load parallax-layer4 image (mid-distant layer)
     const parallaxLayer4 = new Image();
     parallaxLayer4.src = `${themePath}parallax-layer4.png`;
     parallaxLayer4.onload = () => {
-      setParallaxLayer4Image(parallaxLayer4);
+      if (isMounted) {
+        setParallaxLayer4Image(parallaxLayer4);
+      }
     };
     
     // Load parallax-layer5 image (far layer)
     const parallaxLayer5 = new Image();
     parallaxLayer5.src = `${themePath}parallax-layer5.png`;
     parallaxLayer5.onload = () => {
-      setParallaxLayer5Image(parallaxLayer5);
+      if (isMounted) {
+        setParallaxLayer5Image(parallaxLayer5);
+      }
     };
     
     // Load parallax-layer3 image (bushes layer)
     const parallaxLayer3 = new Image();
     parallaxLayer3.src = `${themePath}parallax-layer3.png`;
     parallaxLayer3.onload = () => {
-      setParallaxLayer3Image(parallaxLayer3);
+      if (isMounted) {
+        setParallaxLayer3Image(parallaxLayer3);
+      }
     };
     
     // Load parallax-layer7 image (rear layer at infinite distance, no parallax)
     const parallaxLayer7 = new Image();
     parallaxLayer7.src = `${themePath}parallax-layer7.png`;
     parallaxLayer7.onload = () => {
-      setParallaxLayer7Image(parallaxLayer7);
+      if (isMounted) {
+        setParallaxLayer7Image(parallaxLayer7);
+      }
+    };
+    
+    // Cleanup function to prevent setting state with stale images
+    return () => {
+      isMounted = false;
     };
   }, [currentTheme]);
 

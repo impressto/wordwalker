@@ -39,6 +39,9 @@ const FlashCardsParallax = ({
 
   // Load parallax images for layers 3-7
   useEffect(() => {
+    // Track whether this effect is still active (for cleanup)
+    let isMounted = true;
+    
     const theme = getTheme(currentTheme);
     const themePath = `${basePath}images/themes/${theme.imagePath}/`;
     const images = {};
@@ -62,8 +65,16 @@ const FlashCardsParallax = ({
     });
 
     Promise.all(loadPromises).then(() => {
-      setParallaxImages(images);
+      // Only update state if this effect is still active
+      if (isMounted) {
+        setParallaxImages(images);
+      }
     });
+    
+    // Cleanup function to prevent setting state with stale images
+    return () => {
+      isMounted = false;
+    };
   }, [currentTheme, basePath]);
 
   // Animation loop

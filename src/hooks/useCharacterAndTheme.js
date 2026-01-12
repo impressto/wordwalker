@@ -85,10 +85,9 @@ export const useCharacterAndTheme = () => {
         // Update owned themes state
         setOwnedThemes(updatedOwnedThemes);
         
-        // Also set the gifted theme as the active theme
+        // Set the gifted theme as the active theme
+        // The useEffect on line 47-50 will handle syncing to localStorage
         setCurrentTheme(giftedTheme);
-        localStorage.setItem('wordwalker-current-theme', giftedTheme);
-        setActiveTheme(giftedTheme);
         
         console.log(`🎁 Welcome! You've been gifted the "${giftedTheme}" theme!`);
       }
