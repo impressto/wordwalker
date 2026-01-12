@@ -1679,6 +1679,7 @@ export const translations = {
     "la astrofotografía": "the astrophotography",
     "la radioafición": "the ham radio",
     "el croquet": "the croquet",
+    "la esterilla de yoga": "the yoga mat",
     "la palmera": "the palm tree",
     "el coco": "the coconut",
     "la pesca en hielo": "the ice fishing",

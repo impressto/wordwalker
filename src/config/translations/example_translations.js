@@ -619,5 +619,6 @@ export const exampleTranslations = {
   "La observación de aves es popular en reservas naturales.": "Bird watching is popular in nature reserves.",
   "La astrofotografía requiere exposiciones largas y cielos oscuros.": "Astrophotography requires long exposures and dark skies.",
   "La radioafición me permite hablar con personas de todo el mundo.": "Ham radio allows me to talk to people from all over the world.",
-  "El croquet es un juego popular en fiestas de jardín.": "Croquet is a popular game at garden parties."
+  "El croquet es un juego popular en fiestas de jardín.": "Croquet is a popular game at garden parties.",
+  "Necesito mi esterilla de yoga para la clase de esta tarde.": "I need my yoga mat for this afternoon's class."
  };
