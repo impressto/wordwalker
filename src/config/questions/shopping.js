@@ -806,7 +806,7 @@ export const shoppingQuestions = [
     emoji: '🕶️',
     question: '¿Qué proteges tus ojos del sol?',
     translation: 'What protects your eyes from the sun?',
-    options: ['las gafas de sol', 'los anteojos oscuros', 'los lentes de sol'],
+    options: ['las gafas de sol', 'los anteojos oscuros', 'el sombrero'],
     correctAnswer: 'las gafas de sol',
     hint: 'Protect eyes from bright light',
     points: 5,

@@ -68,10 +68,36 @@ export const questions = [
 /**
  * Helper function to get questions by category
  * @param {string} category - The category to filter by
- * @returns {Array} Array of questions in that category
+ * @returns {Array} Array of questions in that category, filtered by difficulty setting
  */
 export const getQuestionsByCategory = (category) => {
-  return questions.filter(q => q.category === category);
+  // Get difficulty setting from localStorage (default to 'hard' if not set)
+  let difficulty = 'hard';
+  try {
+    const savedDifficulty = localStorage.getItem('gameDifficulty');
+    if (savedDifficulty && ['easy', 'medium', 'hard'].includes(savedDifficulty)) {
+      difficulty = savedDifficulty;
+    }
+  } catch (error) {
+    console.error('Error loading difficulty setting:', error);
+  }
+  
+  // Filter questions by category
+  let categoryQuestions = questions.filter(q => q.category === category);
+  
+  // Apply difficulty filter
+  if (difficulty === 'easy') {
+    // Only easy questions
+    categoryQuestions = categoryQuestions.filter(q => q.difficulty === 'easy');
+  } else if (difficulty === 'medium') {
+    // Easy and medium questions
+    categoryQuestions = categoryQuestions.filter(q => 
+      q.difficulty === 'easy' || q.difficulty === 'medium'
+    );
+  }
+  // For 'hard', return all questions (no additional filtering needed)
+  
+  return categoryQuestions;
 };
 
 /**

@@ -11,9 +11,25 @@ import { isCategoryFullyMastered, getCategoryCorrectAnswerCount, getCategoryQues
 import { FLASH_CARDS_ENABLED } from '../config/flashCardsConfig';
 import { getCategoryIconPath, isEmojiSvg } from '../utils/emojiUtils';
 import gameSettings from '../config/gameSettings';
+import DifficultySelector from './DifficultySelector';
 
 const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpenShop, onOpenFlashCards, currentCategory = null, correctAnswersByCategory = {}, completedCategories = new Set() }) => {
   const [dialogTop, setDialogTop] = useState('100px');
+  
+  // Difficulty selection state: 'easy', 'medium', or 'hard'
+  // Load saved difficulty from localStorage or default to 'hard'
+  const [difficulty, setDifficulty] = useState(() => {
+    try {
+      const savedDifficulty = localStorage.getItem('gameDifficulty');
+      return savedDifficulty && ['easy', 'medium', 'hard'].includes(savedDifficulty) ? savedDifficulty : 'hard';
+    } catch (error) {
+      console.error('Error loading saved difficulty:', error);
+      return 'hard';
+    }
+  });
+  
+  // Show difficulty selection modal
+  const [showDifficultyModal, setShowDifficultyModal] = useState(false);
   
   // Game mode selection: 'multichoice' or 'flashcard'
   // Load saved game mode from localStorage or default to 'multichoice'
@@ -519,37 +535,75 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
               margin: '0 auto',
             }}
           />
-          <button
-            onClick={onOpenShop}
-            style={{
-              position: 'absolute',
-              bottom: '5px',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              padding: '8px 20px',
-              fontSize: '12px',
-              fontWeight: 'bold',
-              backgroundColor: '#FF9800',
-              color: 'white',
-              border: 'none',
-              borderRadius: '20px',
-              cursor: 'pointer',
-              boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
-              transition: 'all 0.2s',
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.transform = 'translateX(-50%) scale(1.1)';
-              e.target.style.backgroundColor = '#FB8C00';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.transform = 'translateX(-50%) scale(1)';
-              e.target.style.backgroundColor = '#FF9800';
-            }}
-          >
-            💰 TRADE
-          </button>
+          <div style={{
+            position: 'absolute',
+            bottom: '5px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            display: 'flex',
+            gap: '8px',
+          }}>
+            <button
+              onClick={() => setShowDifficultyModal(true)}
+              style={{
+                padding: '8px 16px',
+                fontSize: '12px',
+                fontWeight: 'bold',
+                backgroundColor: '#2196F3',
+                color: 'white',
+                border: 'none',
+                borderRadius: '20px',
+                cursor: 'pointer',
+                boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
+                transition: 'all 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = 'scale(1.1)';
+                e.target.style.backgroundColor = '#1976D2';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = 'scale(1)';
+                e.target.style.backgroundColor = '#2196F3';
+              }}
+            >
+              🎯 DIFFICULTY
+            </button>
+            <button
+              onClick={onOpenShop}
+              style={{
+                padding: '8px 16px',
+                fontSize: '12px',
+                fontWeight: 'bold',
+                backgroundColor: '#FF9800',
+                color: 'white',
+                border: 'none',
+                borderRadius: '20px',
+                cursor: 'pointer',
+                boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
+                transition: 'all 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = 'scale(1.1)';
+                e.target.style.backgroundColor = '#FB8C00';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = 'scale(1)';
+                e.target.style.backgroundColor = '#FF9800';
+              }}
+            >
+              💰 TRADE/SETTINGS
+            </button>
+          </div>
         </div>
       </div>
+      
+      {/* Difficulty Selection Modal */}
+      <DifficultySelector
+        isOpen={showDifficultyModal}
+        onClose={() => setShowDifficultyModal(false)}
+        difficulty={difficulty}
+        onSelectDifficulty={setDifficulty}
+      />
     </div>
   );
 };
