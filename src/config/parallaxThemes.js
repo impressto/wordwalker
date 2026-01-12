@@ -50,6 +50,7 @@ const parallaxThemes = {
       pathTopOffset: 0.55,   // Path top as proportion of canvas height
       pathTopAdditional: 90, // Additional pixel offset for path top
       pathYOffset: 25,        // Additional Y offset for path tiles only (independent of layers)
+      belowHorizonStart: 0.4, // Where to start rendering belowHorizon color (0.5 = center, 0.75 = 75% down)
     },
     // Layer 2 vertical stretch control (for grass/street level)
     // 1.0 = full stretch from path to bottom of canvas
@@ -99,7 +100,7 @@ const parallaxThemes = {
     usePathImages: true,
     // Canvas background colors for fallback when layer images aren't loaded
     canvasColors: {
-      aboveHorizon: '#b7dbed',  // Light blue tropical sky
+      aboveHorizon: '#c0e3eb',  // Light blue tropical sky
       belowHorizon: '#fae19e',  // Sandy beach color
     },
     // Layer positions for Jamaica theme
@@ -126,6 +127,7 @@ const parallaxThemes = {
       pathTopOffset: 0.55,   // Path on sand
       pathTopAdditional: 90,
       pathYOffset: 20,        // Additional Y offset for path tiles only (independent of layers)
+      belowHorizonStart: 0.6, // Where to start rendering belowHorizon color (0.5 = center, 0.75 = 75% down)
     },
     // Layer 2 vertical stretch control
     layer2StretchFactor: 0.8,
@@ -193,6 +195,7 @@ const parallaxThemes = {
       pathTopOffset: 0.55,
       pathTopAdditional: 90,
       pathYOffset: 0,        // Additional Y offset for path tiles only (independent of layers)
+      belowHorizonStart: 0.4, // Where to start rendering belowHorizon color (0.5 = center, 0.75 = 75% down)
     },
     // Layer 2 vertical stretch control
     layer2StretchFactor: 0.6,
@@ -261,6 +264,7 @@ const parallaxThemes = {
       pathTopOffset: 0.55,   // Path top as proportion of canvas height
       pathTopAdditional: 90, // Additional pixel offset for path top
       pathYOffset: 20,        // Additional Y offset for path tiles only (independent of layers)
+      belowHorizonStart: 0.4, // Where to start rendering belowHorizon color (0.5 = center, 0.75 = 75% down)
     },
     // Layer 2 vertical stretch control
     layer2StretchFactor: 0.8,
@@ -327,6 +331,7 @@ const parallaxThemes = {
       pathTopOffset: 0.55,   // Path top as proportion of canvas height
       pathTopAdditional: 90, // Additional pixel offset for path top
       pathYOffset: 0,        // Additional Y offset for path tiles only (independent of layers)
+      belowHorizonStart: 0.4, // Where to start rendering belowHorizon color (0.5 = center, 0.75 = 75% down)
     },
     // Layer 2 vertical stretch control
     layer2StretchFactor: 0.8,
@@ -391,6 +396,7 @@ const parallaxThemes = {
       pathTopOffset: 0.55,   // Path on sandy beach
       pathTopAdditional: 90, // Additional pixel offset for path top
       pathYOffset: 20,       // Additional Y offset for path tiles only
+      belowHorizonStart: 0.4, // Where to start rendering belowHorizon color (0.5 = center, 0.75 = 75% down)
     },
     // Layer 2 vertical stretch control
     layer2StretchFactor: 0.8,

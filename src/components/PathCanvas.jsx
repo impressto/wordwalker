@@ -807,9 +807,11 @@ const PathCanvas = () => {
       }
       
       // Fill bottom portion with theme below-horizon color to avoid white showing behind parallax trees
-      // Move 100 pixels higher and drawn on top of above-horizon rectangle
+      // Use configurable belowHorizonStart from theme (defaults to 0.4 = 40% down from top)
+      const belowHorizonStart = theme.positioning.belowHorizonStart || 0.4;
+      const belowHorizonY = height * belowHorizonStart;
       ctx.fillStyle = theme.canvasColors.belowHorizon;
-      ctx.fillRect(0, height * 0.5 - 100, width, height * 0.5 + 100);
+      ctx.fillRect(0, belowHorizonY, width, height - belowHorizonY);
       
       // Draw mountains at the horizon (tiled horizontally with parallax)
       if (parallaxLayer6Image) {
