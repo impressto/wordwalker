@@ -141,7 +141,7 @@ export default function SearchDialog({ isOpen, onClose }) {
 
         <div className="search-dialog-footer">
           <p className="search-info">
-            Searching {Object.keys(translations).length} words from your WordWalker vocabulary
+            Searching {Object.keys(translations).length} terms from your WordWalker vocabulary
           </p>
         </div>
       </div>
