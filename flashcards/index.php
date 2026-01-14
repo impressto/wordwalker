@@ -288,6 +288,24 @@ $version = $packageJson['version'] ?? '1.0.0';
     
     <title><?php echo htmlspecialchars($pageTitle); ?></title>
     
+    <!-- Structured Data / Schema.org -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EducationalOccupationalProgram",
+        "name": "WordWalker Spanish Flash Cards",
+        "description": "Interactive Spanish language learning flash cards with audio pronunciation",
+        "provider": {
+            "@type": "Organization",
+            "name": "WordWalker",
+            "url": "https://wordwalker.ca"
+        },
+        "educationalLevel": "Beginner to Intermediate",
+        "teaches": "Spanish Language",
+        "inLanguage": ["en", "es"]
+    }
+    </script>
+    
     <!-- External Stylesheet -->
     <link rel="stylesheet" href="assets/flashcards.css">
     <style>
@@ -314,21 +332,22 @@ $version = $packageJson['version'] ?? '1.0.0';
       
 
             <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 20px auto;">
-                <img src="https://impressto.ca/wordwalker/public/images/walkers/walker-dog-avatar.png" alt="Dog walker character" style="max-width: 100px; height: auto;">
-                <img src="https://impressto.ca/wordwalker/flashcards-logo.png" alt="WordWalker Flash Cards" style="max-width: 400px; height: auto;">
-                <img src="https://impressto.ca/wordwalker/public/images/walkers/walker-default-avatar.png" alt="Default walker character" style="max-width: 60px; height: auto;">
+                <img src="https://impressto.ca/wordwalker/public/images/walkers/walker-dog-avatar.png" alt="Dog walker character" width="100" height="100" style="max-width: 100px; height: auto;">
+                <img src="https://impressto.ca/wordwalker/flashcards-logo.png" alt="WordWalker Flash Cards" width="400" height="120" style="max-width: 400px; height: auto;">
+                <img src="https://impressto.ca/wordwalker/public/images/walkers/walker-default-avatar.png" alt="Default walker character" width="60" height="60" style="max-width: 60px; height: auto;">
             </div>
             <?php if (count($selectedCategories) === 1): ?>
                 <?php $categoryInfo = $categories[$selectedCategories[0]]; ?>
                 <div class="category-emoji">
                     <img src="https://impressto.ca/wordwalker/dist/images/categories/<?php echo urlencode($selectedCategories[0]); ?>.png" 
                          alt="<?php echo htmlspecialchars($categoryInfo['name']); ?>" 
+                         width="120" height="120"
                          onerror="this.style.display='none'">
                 </div>
-                <div class="category-name"><?php echo htmlspecialchars($categoryInfo['displayName']); ?></div>
+                <h1 class="category-name" lang="es"><?php echo htmlspecialchars($categoryInfo['displayName']); ?></h1>
                 <div class="category-description"><?php echo htmlspecialchars($categoryInfo['description']); ?></div>
             <?php else: ?>
-                <div class="category-name">Multiple Categories</div>
+                <h1 class="category-name">Multiple Categories</h1>
                 <div class="category-description">
                     <?php 
                     $names = array_map(function($cat) use ($categories) {
@@ -470,7 +489,7 @@ $version = $packageJson['version'] ?? '1.0.0';
                         
                         <div class="flashcard-answer">
                             <div class="flashcard-answer-content">
-                                <span>✓ <?php echo htmlspecialchars($question['correctAnswer']); ?></span>
+                                <span lang="es">✓ <?php echo htmlspecialchars($question['correctAnswer']); ?></span>
                                 <?php 
                                 // Get the translation for the correct answer
                                 $answerTranslation = isset($answerTranslations[$question['correctAnswer']]) 
@@ -478,7 +497,7 @@ $version = $packageJson['version'] ?? '1.0.0';
                                     : null;
                                 
                                 if (!empty($answerTranslation)): ?>
-                                    <span class="flashcard-answer-translation"><?php echo htmlspecialchars($answerTranslation); ?></span>
+                                    <span class="flashcard-answer-translation" lang="en"><?php echo htmlspecialchars($answerTranslation); ?></span>
                                 <?php endif; ?>
                             </div>
                             <?php 
@@ -501,7 +520,7 @@ $version = $packageJson['version'] ?? '1.0.0';
                         <?php if (!empty($question['usageExample'])): ?>
                             <div class="flashcard-example">
                                 <div class="flashcard-example-content">
-                                    <span><strong>Example:</strong> <?php echo htmlspecialchars($question['usageExample']); ?></span>
+                                    <span lang="es"><strong>Example:</strong> <?php echo htmlspecialchars($question['usageExample']); ?></span>
                                     <?php 
                                     // Check for translation in the exampleTranslations array
                                     $translation = isset($exampleTranslations[$question['usageExample']]) 
@@ -509,7 +528,7 @@ $version = $packageJson['version'] ?? '1.0.0';
                                         : (isset($question['exampleTranslation']) ? $question['exampleTranslation'] : null);
                                     
                                     if (!empty($translation)): ?>
-                                        <span class="flashcard-example-translation"><?php echo htmlspecialchars($translation); ?></span>
+                                        <span class="flashcard-example-translation" lang="en"><?php echo htmlspecialchars($translation); ?></span>
                                     <?php endif; ?>
                                 </div>
                                 <?php 
