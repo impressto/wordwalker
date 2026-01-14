@@ -12,20 +12,20 @@ export const categories = {
     description: "Learn food, dining, and restaurant vocabulary",
   },
 
-  recreation: {
-    id: "recreation",
-    name: "Recreation",
-    displayName: "Recreación",
-    emoji: "recreation.png",
-    description: "Learn leisure, beach, and outdoor activity vocabulary",
-  },
-
   transportation: {
     id: "transportation",
     name: "Transportation",
     displayName: "Transporte",
     emoji: "transportation.png",
     description: "Learn transportation and travel vocabulary",
+  },
+
+  recreation: {
+    id: "recreation",
+    name: "Recreation",
+    displayName: "Recreación",
+    emoji: "recreation.png",
+    description: "Learn leisure, beach, and outdoor activity vocabulary",
   },
 
   accommodation: {
