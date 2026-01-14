@@ -30,7 +30,7 @@ $version = $packageJson['version'] ?? '1.0.0';
         
         body {
             font-family: 'Quicksand', system-ui, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
             min-height: 100vh;
             padding: 20px;
             position: relative;
@@ -135,7 +135,7 @@ $version = $packageJson['version'] ?? '1.0.0';
         }
         
         h2 {
-            color: #667eea;
+            color: #4CAF50;
             font-size: 1.8rem;
             margin-bottom: 20px;
             display: flex;
@@ -144,7 +144,7 @@ $version = $packageJson['version'] ?? '1.0.0';
         }
         
         h3 {
-            color: #764ba2;
+            color: #2E7D32;
             font-size: 1.4rem;
             margin-top: 25px;
             margin-bottom: 15px;
@@ -198,8 +198,8 @@ $version = $packageJson['version'] ?? '1.0.0';
         
         .resource-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-            border-color: #667eea;
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+            border-color: #4CAF50;
         }
         
         .resource-icon {
@@ -209,7 +209,7 @@ $version = $packageJson['version'] ?? '1.0.0';
         }
         
         .resource-name {
-            color: #667eea;
+            color: #4CAF50;
             font-size: 1.2rem;
             font-weight: 700;
             margin-bottom: 8px;
@@ -253,13 +253,13 @@ $version = $packageJson['version'] ?? '1.0.0';
         }
         
         .btn-secondary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
             color: white;
         }
         
         .btn-secondary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+            box-shadow: 0 8px 25px rgba(76, 175, 80, 0.4);
         }
         
         .github-link {
