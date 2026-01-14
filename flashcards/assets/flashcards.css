@@ -480,9 +480,17 @@ h1 {
     object-fit: contain;
 }
 
-.feedback-link {
-    text-align: center;
+.links-container {
+    display: flex;
+    gap: 15px;
     margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.feedback-link {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
     padding: 20px;
     background: #f7fafc;
     border-radius: 12px;
@@ -508,8 +516,9 @@ h1 {
 }
 
 .about-link {
+    flex: 1;
+    min-width: 300px;
     text-align: center;
-    margin-top: 20px;
     padding: 20px;
     background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
     border-radius: 12px;
@@ -532,6 +541,86 @@ h1 {
     background: linear-gradient(135deg, #5568d3 0%, #653a8b 100%);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.back-to-app {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 2px solid #e2e8f0;
+}
+
+/* Social Sharing */
+.social-sharing {
+    margin-top: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, #f7fafc 0%, #e9ecef 100%);
+    border-radius: 16px;
+    border: 2px solid #e2e8f0;
+    text-align: center;
+}
+
+.social-sharing h3 {
+    color: #4CAF50;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.social-sharing p {
+    color: #666;
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.social-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+.social-btn.facebook {
+    background: linear-gradient(135deg, #1877f2 0%, #0d65d9 100%);
+}
+
+.social-btn.twitter {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+}
+
+.social-btn.linkedin {
+    background: linear-gradient(135deg, #0077b5 0%, #005582 100%);
+}
+
+.social-btn.whatsapp {
+    background: linear-gradient(135deg, #25d366 0%, #1da851 100%);
+}
+
+.social-btn.email {
+    background: linear-gradient(135deg, #ea4335 0%, #c5221f 100%);
 }
 
 .back-to-app {
@@ -584,5 +673,9 @@ h1 {
     
     .flashcards-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .walker-avatar {
+        display: none;
     }
 }
