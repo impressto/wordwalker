@@ -226,7 +226,7 @@ if (count($selectedCategories) === 1) {
     $pageTitle = "Spanish Flash Cards - {$categoriesText} - Page {$page} | WordWalker";
     $pageDescription = "Learn Spanish vocabulary across multiple categories: {$categoriesText}. Page {$page} of {$totalPages}.";
 }
-$canonicalUrl = "https://wordwalker.ca/flashcards.php?category={$categoryKey}&page={$page}";
+$canonicalUrl = "https://wordwalker.ca/flashcards/?category={$categoryKey}&page={$page}";
 
 // Read version from package.json
 $packageJson = json_decode(file_get_contents(__DIR__ . '/../package.json'), true);
@@ -306,6 +306,17 @@ $version = $packageJson['version'] ?? '1.0.0';
     }
     </script>
     
+    <!-- Organization Schema for Google Logo -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "WordWalker Spanish",
+      "url": "https://wordwalker.ca",
+      "logo": "https://wordwalker.ca/images/wordalker-logo-720-720.png"
+    }
+    </script>
+    
     <!-- External Stylesheet -->
     <link rel="stylesheet" href="assets/flashcards.css">
     <style>
@@ -316,6 +327,7 @@ $version = $packageJson['version'] ?? '1.0.0';
         @media (max-width: 500px) { .github-corner:hover .octo-arm { animation: none; } .github-corner .octo-arm { animation: octocat-wave 560ms ease-in-out; } }
         .container { position: relative; }
     </style>
+    
 </head>
 <body>
     <div class="container">
@@ -333,7 +345,7 @@ $version = $packageJson['version'] ?? '1.0.0';
 
             <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 20px auto;">
                 <img src="https://impressto.ca/wordwalker/public/images/walkers/walker-dog-avatar.png" alt="Dog walker character" width="100" height="100" class="walker-avatar" style="max-width: 100px; height: auto;">
-                <img src="https://impressto.ca/wordwalker/flashcards-logo.png" alt="WordWalker Flash Cards" width="400" height="120" style="max-width: 400px; height: auto;">
+                <img src="https://impressto.ca/wordwalker/flashcards-logo.png" alt="WordWalker Flash Cards" width="400" height="120" class="flashcards-logo" style="max-width: 400px; height: auto;">
                 <img src="https://impressto.ca/wordwalker/public/images/walkers/walker-default-avatar.png" alt="Default walker character" width="60" height="60" class="walker-avatar" style="max-width: 60px; height: auto;">
             </div>
             <?php if (count($selectedCategories) === 1): ?>

@@ -254,6 +254,17 @@ $pageKeywords = $categoryData
             }
         }
     </style>
+    
+    <!-- Organization Schema for Google Logo -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "WordWalker Spanish",
+      "url": "https://wordwalker.ca",
+      "logo": "https://wordwalker.ca/images/wordalker-logo-720-720.png"
+    }
+    </script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->

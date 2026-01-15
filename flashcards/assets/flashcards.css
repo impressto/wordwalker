@@ -678,4 +678,27 @@ h1 {
     .walker-avatar {
         display: none;
     }
+    
+    .flashcards-logo {
+        max-width: 90% !important;
+        width: 90% !important;
+    }
+    
+    .links-container {
+        flex-direction: column;
+    }
+    
+    .feedback-link,
+    .about-link {
+        min-width: 100%;
+        padding: 15px;
+    }
+    
+    .feedback-link a,
+    .about-link a {
+        font-size: 0.9em;
+        padding: 10px 15px;
+        display: block;
+        word-wrap: break-word;
+    }
 }
