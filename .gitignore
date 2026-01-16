@@ -32,3 +32,5 @@ google-play/*
 audio-samples/*
 
 contact.php
+public/service-worker.js
+service-worker.js

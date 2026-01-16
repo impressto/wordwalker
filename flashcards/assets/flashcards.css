@@ -400,6 +400,13 @@ h1 {
     flex-wrap: wrap;
 }
 
+.pagination-prev-next,
+.pagination-position {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
 .pagination a,
 .pagination span {
     display: inline-block;
@@ -433,9 +440,51 @@ h1 {
     margin-bottom: 30px;
 }
 
+.category-selector-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
 .category-selector h3 {
     color: #2d3748;
     margin-bottom: 15px;
+    flex: 1;
+}
+
+.category-toggle-btn {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.category-toggle-btn:hover {
+    background: #45a049;
+    transform: translateY(-1px);
+}
+
+.category-toggle-btn:active {
+    transform: translateY(0);
+}
+
+.toggle-icon {
+    transition: transform 0.3s ease;
+    font-size: 0.8em;
+}
+
+.category-selector.expanded .toggle-icon {
+    transform: rotate(180deg);
 }
 
 .category-links {
@@ -478,6 +527,31 @@ h1 {
     width: 24px;
     height: 24px;
     object-fit: contain;
+}
+
+/* Mobile optimization for category selector */
+@media (max-width: 768px) {
+    .category-toggle-btn {
+        display: flex;
+    }
+    
+    .category-selector h3 {
+        margin-bottom: 0;
+    }
+    
+    .category-links {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s ease, opacity 0.3s ease, margin-top 0.3s ease;
+        margin-top: 0;
+    }
+    
+    .category-selector.expanded .category-links {
+        max-height: 800px;
+        opacity: 1;
+        margin-top: 15px;
+    }
 }
 
 .links-container {
@@ -700,5 +774,24 @@ h1 {
         padding: 10px 15px;
         display: block;
         word-wrap: break-word;
+    }
+    
+    /* Pagination mobile layout */
+    .pagination {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .pagination-prev-next {
+        order: 1;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .pagination-position {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 }

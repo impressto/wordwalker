@@ -17,8 +17,8 @@ function parseExampleTranslations($filePath) {
     $content = file_get_contents($filePath);
     $translations = [];
     
-    // Find the exampleTranslations object
-    if (preg_match('/exampleTranslations\s*=\s*\{(.*?)\};/s', $content, $match)) {
+    // Find the exampleTranslations object (handles both }; and } endings)
+    if (preg_match('/exampleTranslations\s*=\s*\{(.*?)\};?/s', $content, $match)) {
         $objContent = $match[1];
         
         // Extract key-value pairs: "Spanish": "English"
@@ -48,8 +48,8 @@ function parseAnswerTranslations($filePath) {
     $content = file_get_contents($filePath);
     $translations = [];
     
-    // Find the translations object
-    if (preg_match('/translations\s*=\s*\{(.*?)\};/s', $content, $match)) {
+    // Find the translations object (handles both }; and } endings)
+    if (preg_match('/translations\s*=\s*\{(.*?)\};?/s', $content, $match)) {
         $objContent = $match[1];
         
         // Extract key-value pairs: "Spanish": "English"

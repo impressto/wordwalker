@@ -30,6 +30,14 @@ function toggleAutoplay() {
     localStorage.setItem('flashcard-autoplay', autoplayEnabled);
 }
 
+// Toggle category selector on mobile
+function toggleCategories() {
+    const selector = document.querySelector('.category-selector');
+    selector.classList.toggle('expanded');
+    // Save state to localStorage
+    localStorage.setItem('category-selector-expanded', selector.classList.contains('expanded'));
+}
+
 // Flip card functionality
 function flipCard(card) {
     const wasFlipped = card.classList.contains('flipped');
@@ -69,6 +77,15 @@ document.addEventListener('DOMContentLoaded', function() {
         if (toggle) {
             toggle.checked = true;
             autoplayEnabled = true;
+        }
+    }
+    
+    // Restore category selector state on mobile
+    const savedExpanded = localStorage.getItem('category-selector-expanded');
+    if (savedExpanded === 'true') {
+        const selector = document.querySelector('.category-selector');
+        if (selector) {
+            selector.classList.add('expanded');
         }
     }
 });

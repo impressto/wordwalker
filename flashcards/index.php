@@ -372,8 +372,14 @@ $version = $packageJson['version'] ?? '1.0.0';
         </header>
         
         <div class="category-selector">
-            <h3>Choose Categories: <span style="font-size: 0.85em; color: #666;">(Click to add/remove)</span></h3>
-            <div class="category-links">
+            <div class="category-selector-header">
+                <h3>Choose Categories: <span style="font-size: 0.85em; color: #666;">(Click to add/remove)</span></h3>
+                <button class="category-toggle-btn" onclick="toggleCategories()" aria-label="Toggle category selector">
+                    <span class="toggle-text">Select Categories</span>
+                    <span class="toggle-icon">▼</span>
+                </button>
+            </div>
+            <div class="category-links" id="category-links">
                 <?php foreach ($categories as $catId => $catInfo): 
                     $isSelected = in_array($catId, $selectedCategories);
                     
@@ -530,7 +536,11 @@ $version = $packageJson['version'] ?? '1.0.0';
                         <?php endif; ?>
                         
                         <?php if (!empty($question['usageExample'])): ?>
-                            <div class="flashcard-example">
+                            <?php 
+                            $questionCategory = $question['sourceCategory'] ?? $selectedCategories[0];
+                            $exampleAudio = getExampleAudioPath($question['usageExample'], $questionCategory);
+                            ?>
+                            <div class="flashcard-example"<?php if ($exampleAudio): ?> onclick="event.stopPropagation(); playAudio('<?php echo htmlspecialchars($exampleAudio); ?>');" style="cursor: pointer;" title="Click to play example"<?php endif; ?>>
                                 <div class="flashcard-example-content">
                                     <span lang="es"><strong>Example:</strong> <?php echo htmlspecialchars($question['usageExample']); ?></span>
                                     <?php 
@@ -543,12 +553,9 @@ $version = $packageJson['version'] ?? '1.0.0';
                                         <span class="flashcard-example-translation" lang="en"><?php echo htmlspecialchars($translation); ?></span>
                                     <?php endif; ?>
                                 </div>
-                                <?php 
-                                $questionCategory = $question['sourceCategory'] ?? $selectedCategories[0];
-                                $exampleAudio = getExampleAudioPath($question['usageExample'], $questionCategory);
-                                if ($exampleAudio): ?>
+                                <?php if ($exampleAudio): ?>
                                     <button class="example-audio-player" 
-                                            onclick="playAudio('<?php echo htmlspecialchars($exampleAudio); ?>')"
+                                            onclick="event.stopPropagation(); playAudio('<?php echo htmlspecialchars($exampleAudio); ?>')"
                                             title="Play example"
                                             aria-label="Play example sentence"></button>
                                 <?php endif; ?>
@@ -571,23 +578,37 @@ $version = $packageJson['version'] ?? '1.0.0';
                 <?php 
                 $shuffleParam = $shuffle ? '&shuffle=1' : '';
                 ?>
-                <?php if ($page > 1): ?>
-                    <a href="?category=<?php echo urlencode($categoryKey); ?>&page=1<?php echo $shuffleParam; ?>#flashcards-start">« First</a>
-                    <a href="?category=<?php echo urlencode($categoryKey); ?>&page=<?php echo $page - 1; ?><?php echo $shuffleParam; ?>#flashcards-start">‹ Previous</a>
-                <?php else: ?>
-                    <span class="disabled">« First</span>
-                    <span class="disabled">‹ Previous</span>
-                <?php endif; ?>
+                <!-- Previous/Next group (shown first on mobile) -->
+                <div class="pagination-prev-next">
+                    <?php if ($page > 1): ?>
+                        <a href="?category=<?php echo urlencode($categoryKey); ?>&page=<?php echo $page - 1; ?><?php echo $shuffleParam; ?>#flashcards-start">‹ Previous</a>
+                    <?php else: ?>
+                        <span class="disabled">‹ Previous</span>
+                    <?php endif; ?>
+                    
+                    <?php if ($page < $totalPages): ?>
+                        <a href="?category=<?php echo urlencode($categoryKey); ?>&page=<?php echo $page + 1; ?><?php echo $shuffleParam; ?>#flashcards-start">Next ›</a>
+                    <?php else: ?>
+                        <span class="disabled">Next ›</span>
+                    <?php endif; ?>
+                </div>
                 
-                <span class="current-page">Page <?php echo $page; ?> of <?php echo $totalPages; ?></span>
-                
-                <?php if ($page < $totalPages): ?>
-                    <a href="?category=<?php echo urlencode($categoryKey); ?>&page=<?php echo $page + 1; ?><?php echo $shuffleParam; ?>#flashcards-start">Next ›</a>
-                    <a href="?category=<?php echo urlencode($categoryKey); ?>&page=<?php echo $totalPages; ?><?php echo $shuffleParam; ?>#flashcards-start">Last »</a>
-                <?php else: ?>
-                    <span class="disabled">Next ›</span>
-                    <span class="disabled">Last »</span>
-                <?php endif; ?>
+                <!-- First/Current/Last group (shown second on mobile) -->
+                <div class="pagination-position">
+                    <?php if ($page > 1): ?>
+                        <a href="?category=<?php echo urlencode($categoryKey); ?>&page=1<?php echo $shuffleParam; ?>#flashcards-start">« First</a>
+                    <?php else: ?>
+                        <span class="disabled">« First</span>
+                    <?php endif; ?>
+                    
+                    <span class="current-page">Page <?php echo $page; ?> of <?php echo $totalPages; ?></span>
+                    
+                    <?php if ($page < $totalPages): ?>
+                        <a href="?category=<?php echo urlencode($categoryKey); ?>&page=<?php echo $totalPages; ?><?php echo $shuffleParam; ?>#flashcards-start">Last »</a>
+                    <?php else: ?>
+                        <span class="disabled">Last »</span>
+                    <?php endif; ?>
+                </div>
             </nav>
         <?php endif; ?>
         
