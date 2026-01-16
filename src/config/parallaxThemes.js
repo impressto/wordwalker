@@ -393,7 +393,7 @@ const parallaxThemes = {
       layer3: 0.5,    // Mid-ground elements
       layer4: 0.4,   // Pirates/treasure
       layer5: 0.25,   // ship
-      layer6: 0.18,    // Ocean/horizon
+      layer6: 0.15,    // Ocean/horizon
       layer7: 0.0,    // Static night sky
     },
     positioning: {
