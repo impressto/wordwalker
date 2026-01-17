@@ -353,7 +353,7 @@ $version = $packageJson['version'] ?? '1.0.0';
         
         <!-- Language Toggle -->
         <div class="language-toggle" style="position: absolute; top: 100px; right: 20px; z-index: 100;">
-            <button onclick="toggleLanguage()" class="language-toggle-btn" 
+            <button onclick="toggleLanguage('<?php echo $currentLang; ?>')" class="language-toggle-btn" 
                     aria-label="<?php echo t('language'); ?>"
                     title="<?php echo t('language'); ?>">
                 <span class="lang-icon">🌐</span>
@@ -490,10 +490,12 @@ $version = $packageJson['version'] ?? '1.0.0';
                    class="shuffle-btn">
                     <?php echo t('new_shuffle'); ?>
                 </a>
+                <?php if ($currentLang === 'en'): ?>
                 <label class="autoplay-control">
                     <input type="checkbox" id="autoplay-toggle" onchange="toggleAutoplay()">
                     <span><?php echo t('autoplay_audio'); ?></span>
                 </label>
+                <?php endif; ?>
             </div>
             
             <div class="page-info">
@@ -601,7 +603,7 @@ $version = $packageJson['version'] ?? '1.0.0';
                             <?php 
                             $questionCategory = $question['sourceCategory'] ?? $selectedCategories[0];
                             $answerAudio = getAnswerAudioPath($question['correctAnswer'], $questionCategory);
-                            if ($answerAudio): ?>
+                            if ($answerAudio && $currentLang === 'en'): ?>
                                 <button class="audio-player" 
                                         onclick="playAudio('<?php echo htmlspecialchars($answerAudio); ?>')"
                                         title="Play pronunciation"
@@ -634,14 +636,14 @@ $version = $packageJson['version'] ?? '1.0.0';
                                 $displayExampleTranslation = $exampleTranslation;
                             }
                             ?>
-                            <div class="flashcard-example"<?php if ($exampleAudio): ?> onclick="event.stopPropagation(); playAudio('<?php echo htmlspecialchars($exampleAudio); ?>');" style="cursor: pointer;" title="<?php echo t('play_example'); ?>"<?php endif; ?>>
+                            <div class="flashcard-example"<?php if ($exampleAudio && $currentLang === 'en'): ?> onclick="event.stopPropagation(); playAudio('<?php echo htmlspecialchars($exampleAudio); ?>');" style="cursor: pointer;" title="<?php echo t('play_example'); ?>"<?php endif; ?>>
                                 <div class="flashcard-example-content">
                                     <span><strong><?php echo t('example_label'); ?></strong> <?php echo htmlspecialchars($displayExample); ?></span>
                                     <?php if (!empty($displayExampleTranslation)): ?>
                                         <span class="flashcard-example-translation"><?php echo htmlspecialchars($displayExampleTranslation); ?></span>
                                     <?php endif; ?>
                                 </div>
-                                <?php if ($exampleAudio): ?>
+                                <?php if ($exampleAudio && $currentLang === 'en'): ?>
                                     <button class="example-audio-player" 
                                             onclick="event.stopPropagation(); playAudio('<?php echo htmlspecialchars($exampleAudio); ?>')"
                                             title="<?php echo t('play_example'); ?>"
@@ -780,15 +782,5 @@ $version = $packageJson['version'] ?? '1.0.0';
     
     <!-- External JavaScript -->
     <script src="assets/flashcards.js"></script>
-    <script>
-        // Language toggle function
-        function toggleLanguage() {
-            const currentUrl = new URL(window.location.href);
-            const currentLang = currentUrl.searchParams.get('lang') || 'en';
-            const newLang = currentLang === 'en' ? 'es' : 'en';
-            currentUrl.searchParams.set('lang', newLang);
-            window.location.href = currentUrl.toString();
-        }
-    </script>
 </body>
 </html>

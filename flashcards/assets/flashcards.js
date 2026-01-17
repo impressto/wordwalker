@@ -38,6 +38,18 @@ function toggleCategories() {
     localStorage.setItem('category-selector-expanded', selector.classList.contains('expanded'));
 }
 
+// Language toggle function
+function toggleLanguage(currentLang) {
+    // Use the language passed from PHP (which knows about session state)
+    currentLang = currentLang || 'en';
+    const currentUrl = new URL(window.location.href);
+    const newLang = currentLang === 'en' ? 'es' : 'en';
+    currentUrl.searchParams.set('lang', newLang);
+    // Reset to page 1 when switching languages to ensure clean state
+    currentUrl.searchParams.set('page', '1');
+    window.location.href = currentUrl.toString();
+}
+
 // Flip card functionality
 function flipCard(card) {
     const wasFlipped = card.classList.contains('flipped');
