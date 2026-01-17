@@ -13,8 +13,7 @@ export const foodQuestions = [
     options: ["la sandía", "la fresa", "la cereza"],
     correctAnswer: "la sandía",
     hint: "Summer fruit with green rind and red, juicy flesh; often eaten in slices.",
-    usageExample:
-      "Me encanta comer la sandía fría en los días calurosos de verano.",
+    usageExample: "Me encanta comer la sandía fría en los días calurosos de verano.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -56,8 +55,7 @@ export const foodQuestions = [
     options: ["la naranja", "el limón", "la mandarina"],
     correctAnswer: "la naranja",
     hint: "Citrus fruit known for vitamin C; round with a bright peel and segments inside.",
-    usageExample:
-      "Bebo jugo de la naranja todos los días para obtener vitamina C.",
+    usageExample: "Bebo jugo de la naranja todos los días para obtener vitamina C.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -71,8 +69,7 @@ export const foodQuestions = [
     options: ["las uvas", "las ciruelas", "las moras"],
     correctAnswer: "las uvas",
     hint: "Small round fruits that grow in bunches; pressed to make wine.",
-    usageExample:
-      "En esta región, cultivan las uvas para producir vino de alta calidad.",
+    usageExample: "En esta región, cultivan las uvas para producir vino de alta calidad.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -90,8 +87,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "los fideos instantáneos",
     hint: "Instant noodles - quick meal prepared by adding hot water to dried noodles",
-    usageExample:
-      "Cuando tengo prisa, preparo los fideos instantáneos en solo tres minutos.",
+    usageExample: "Cuando tengo prisa, preparo los fideos instantáneos en solo tres minutos.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -105,8 +101,7 @@ export const foodQuestions = [
     options: ["la piña", "el mango", "la guayaba"],
     correctAnswer: "la piña",
     hint: "Tropical fruit with spiky skin and a sweet, yellow interior; often cut in rings.",
-    usageExample:
-      "Me gusta comer la piña fresca en rebanadas con un poco de sal.",
+    usageExample: "Me gusta comer la piña fresca en rebanadas con un poco de sal.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -120,8 +115,7 @@ export const foodQuestions = [
     options: ["el kiwi", "la guayaba", "la papaya"],
     correctAnswer: "el kiwi",
     hint: "Small fruit with brown fuzzy skin and bright green flesh dotted with tiny black seeds.",
-    usageExample:
-      "Siempre agrego el kiwi a mi ensalada de frutas por su sabor único.",
+    usageExample: "Siempre agrego el kiwi a mi ensalada de frutas por su sabor único.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -177,8 +171,7 @@ export const foodQuestions = [
     options: ["el coco", "la almendra", "la avena"],
     correctAnswer: "el coco",
     hint: "Large tropical fruit with hard shell and white flesh; used to make dairy-free milk.",
-    usageExample:
-      "Uso leche de el coco en mi café porque no tolero los lácteos.",
+    usageExample: "Uso leche de el coco en mi café porque no tolero los lácteos.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -206,8 +199,7 @@ export const foodQuestions = [
     options: ["el arándano", "la mora", "la ciruela"],
     correctAnswer: "el arándano",
     hint: "Small round blue berries; often used in muffins and breakfast bowls.",
-    usageExample:
-      "Compré el arándano fresco para preparar muffins esta mañana.",
+    usageExample: "Compré el arándano fresco para preparar muffins esta mañana.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -250,8 +242,7 @@ export const foodQuestions = [
     options: ["la aceituna", "la nuez", "el aguacate"],
     correctAnswer: "la aceituna",
     hint: "Olive oil comes from a small, bitter fruit; widely grown around the Mediterranean.",
-    usageExample:
-      "Prensan la aceituna para extraer el aceite de oliva virgen extra.",
+    usageExample: "Prensan la aceituna para extraer el aceite de oliva virgen extra.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -266,8 +257,7 @@ export const foodQuestions = [
     options: ["la berenjena", "la remolacha", "la col morada"],
     correctAnswer: "la berenjena",
     hint: "Purple vegetable with glossy skin; often roasted or used in Mediterranean dishes.",
-    usageExample:
-      "Aso la berenjena con aceite de oliva y hierbas para la cena.",
+    usageExample: "Aso la berenjena con aceite de oliva y hierbas para la cena.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -283,8 +273,7 @@ export const foodQuestions = [
     options: ["la zanahoria", "la calabaza", "el boniato"],
     correctAnswer: "la zanahoria",
     hint: "Orange root vegetable, good for eyes",
-    usageExample:
-      "Rallo la zanahoria cruda para añadir a mi ensalada favorita.",
+    usageExample: "Rallo la zanahoria cruda para añadir a mi ensalada favorita.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -495,8 +484,7 @@ export const foodQuestions = [
     options: ["la hamburguesa", "el sándwich", "el bocadillo"],
     correctAnswer: "la hamburguesa",
     hint: "Ground meat patty in a bun, often with cheese, lettuce, and tomato.",
-    usageExample:
-      "Como la hamburguesa con queso y papas fritas los fines de semana.",
+    usageExample: "Como la hamburguesa con queso y papas fritas los fines de semana.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -540,8 +528,7 @@ export const foodQuestions = [
     options: ["el burrito", "la enchilada", "el taco"],
     correctAnswer: "el burrito",
     hint: "Large rolled flatbread wrapped around a hearty filling.",
-    usageExample:
-      "Enrollo el burrito con frijoles, arroz y carne para el almuerzo.",
+    usageExample: "Enrollo el burrito con frijoles, arroz y carne para el almuerzo.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -556,8 +543,7 @@ export const foodQuestions = [
     options: ["la pita", "el naan", "la tortilla"],
     correctAnswer: "la pita",
     hint: "Flatbread with a pocket for fillings like vegetables or proteins.",
-    usageExample:
-      "Relleno la pita con falafel y ensalada para un almuerzo ligero.",
+    usageExample: "Relleno la pita con falafel y ensalada para un almuerzo ligero.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -572,8 +558,7 @@ export const foodQuestions = [
     options: ["el sándwich", "el bocadillo", "el emparedado"],
     correctAnswer: "el sándwich",
     hint: "Ingredients layered between two slices of bread; portable meal.",
-    usageExample:
-      "Preparo el sándwich de jamón y queso para llevar al trabajo.",
+    usageExample: "Preparo el sándwich de jamón y queso para llevar al trabajo.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -618,8 +603,7 @@ export const foodQuestions = [
     options: ["el tocino", "el jamón", "la panceta"],
     correctAnswer: "el tocino",
     hint: "Crispy smoked strips commonly served at breakfast.",
-    usageExample:
-      "Frío el tocino crujiente para acompañar los huevos revueltos.",
+    usageExample: "Frío el tocino crujiente para acompañar los huevos revueltos.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -649,8 +633,7 @@ export const foodQuestions = [
     options: ["el ramen", "el pho", "el udon"],
     correctAnswer: "el ramen",
     hint: "Noodle soup with savory broth and toppings like egg or pork.",
-    usageExample:
-      "Pido el ramen con huevo y cerdo en mi restaurante japonés favorito.",
+    usageExample: "Pido el ramen con huevo y cerdo en mi restaurante japonés favorito.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -680,8 +663,7 @@ export const foodQuestions = [
     options: ["el guiso", "el estofado", "el cocido"],
     correctAnswer: "el guiso",
     hint: "Hearty one-pot dish with mixed ingredients simmered together.",
-    usageExample:
-      "Preparo el guiso de carne con verduras para calentar en el invierno.",
+    usageExample: "Preparo el guiso de carne con verduras para calentar en el invierno.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -695,8 +677,7 @@ export const foodQuestions = [
     options: ["la paella", "el arroz con pollo", "el risotto"],
     correctAnswer: "la paella",
     hint: "Spanish rice dish cooked in a wide pan; often includes seafood or meats.",
-    usageExample:
-      "Cocino la paella valenciana con mariscos frescos para la fiesta.",
+    usageExample: "Cocino la paella valenciana con mariscos frescos para la fiesta.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -818,8 +799,7 @@ export const foodQuestions = [
     options: ["la tortilla", "la pita", "el naan"],
     correctAnswer: "la tortilla",
     hint: "Thin flatbread made from corn or wheat; used in many dishes.",
-    usageExample:
-      "Caliento la tortilla de maíz en el comal antes de hacer tacos.",
+    usageExample: "Caliento la tortilla de maíz en el comal antes de hacer tacos.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -834,8 +814,7 @@ export const foodQuestions = [
     options: ["los panqueques", "las crepes", "los waffles"],
     correctAnswer: "los panqueques",
     hint: "Flat, sweet breakfast cakes often served with syrup or honey.",
-    usageExample:
-      "Preparo los panqueques esponjosos con miel y frutas frescas.",
+    usageExample: "Preparo los panqueques esponjosos con miel y frutas frescas.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -849,8 +828,7 @@ export const foodQuestions = [
     options: ["el waffle", "el panqueque", "la crepe"],
     correctAnswer: "el waffle",
     hint: "Grid-patterned breakfast pastry; crispy pockets hold syrup.",
-    usageExample:
-      "Cocino el waffle dorado con jarabe de arce para el desayuno.",
+    usageExample: "Cocino el waffle dorado con jarabe de arce para el desayuno.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -982,8 +960,7 @@ export const foodQuestions = [
     options: ["el flan", "el pudín", "la natilla"],
     correctAnswer: "el flan",
     hint: "Caramel-topped custard dessert popular in many countries.",
-    usageExample:
-      "Preparo el flan casero con caramelo para el postre familiar.",
+    usageExample: "Preparo el flan casero con caramelo para el postre familiar.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -1059,8 +1036,7 @@ export const foodQuestions = [
     options: ["té de burbujas", "boba", "té con leche"],
     correctAnswer: "té de burbujas",
     hint: "Tea with chewy tapioca pearls; popular Taiwanese drink.",
-    usageExample:
-      "Bebo el té de burbujas frío con perlas de tapioca masticables.",
+    usageExample: "Bebo el té de burbujas frío con perlas de tapioca masticables.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -1164,8 +1140,7 @@ export const foodQuestions = [
     options: ["el mate", "el tereré", "la yerba"],
     correctAnswer: "el mate",
     hint: "Traditional infusion sipped through a metal straw in a shared cup.",
-    usageExample:
-      "Comparto el mate con amigos mientras conversamos en el parque.",
+    usageExample: "Comparto el mate con amigos mientras conversamos en el parque.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -1193,8 +1168,7 @@ export const foodQuestions = [
     options: ["el pastel", "la tarta", "el bizcocho"],
     correctAnswer: "el pastel",
     hint: "Dessert topped with candles that you blow out to make a wish.",
-    usageExample:
-      "Soplo las velas del pastel mientras todos cantan cumpleaños feliz.",
+    usageExample: "Soplo las velas del pastel mientras todos cantan cumpleaños feliz.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -1253,8 +1227,7 @@ export const foodQuestions = [
     options: ["el caramelo", "la paleta", "el chicle"],
     correctAnswer: "el caramelo",
     hint: "Small hard candy; also refers to melted sugar sauce in desserts.",
-    usageExample:
-      "Chupo el caramelo de fresa lentamente para disfrutar el sabor.",
+    usageExample: "Chupo el caramelo de fresa lentamente para disfrutar el sabor.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -1284,8 +1257,7 @@ export const foodQuestions = [
     options: ["la galleta", "la cookie", "el biscocho"],
     correctAnswer: "la galleta",
     hint: "Small baked dessert; often has chocolate chips for crunch.",
-    usageExample:
-      "Horneo la galleta con chispas de chocolate para la merienda.",
+    usageExample: "Horneo la galleta con chispas de chocolate para la merienda.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -1316,8 +1288,7 @@ export const foodQuestions = [
     options: ["las palomitas", "los nachos", "las papas fritas"],
     correctAnswer: "las palomitas",
     hint: "Puffed corn kernels enjoyed as a crunchy movie snack.",
-    usageExample:
-      "Como las palomitas con mantequilla mientras veo la película.",
+    usageExample: "Como las palomitas con mantequilla mientras veo la película.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -1336,8 +1307,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "la galleta de la fortuna",
     hint: "Crispy cookie that contains a small paper message inside.",
-    usageExample:
-      "Rompo la galleta de la fortuna para leer mi mensaje de suerte.",
+    usageExample: "Rompo la galleta de la fortuna para leer mi mensaje de suerte.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -1351,8 +1321,7 @@ export const foodQuestions = [
     options: ["la tostada", "el pan tostado", "el toast"],
     correctAnswer: "la tostada",
     hint: "Toast - toasted bread commonly eaten at breakfast with butter or spreads",
-    usageExample:
-      "Preparo la tostada con aguacate y huevo para un desayuno saludable.",
+    usageExample: "Preparo la tostada con aguacate y huevo para un desayuno saludable.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -1366,8 +1335,7 @@ export const foodQuestions = [
     options: ["el pastel de luna", "el mooncake", "el pastel chino"],
     correctAnswer: "el pastel de luna",
     hint: "Dense round pastry eaten during the Mid-Autumn Festival; sweet filling inside.",
-    usageExample:
-      "Comparto el pastel de luna con mi familia en el Festival de Medio Otoño.",
+    usageExample: "Comparto el pastel de luna con mi familia en el Festival de Medio Otoño.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -1411,8 +1379,7 @@ export const foodQuestions = [
     options: ["el puesto de comida", "el restaurante", "la cocina"],
     correctAnswer: "el puesto de comida",
     hint: "A temporary stand or booth where food is sold at carnivals and fairs.",
-    usageExample:
-      "Compro algodón de azúcar en el puesto de comida del carnaval.",
+    usageExample: "Compro algodón de azúcar en el puesto de comida del carnaval.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -1482,8 +1449,7 @@ export const foodQuestions = [
     options: ["el melón", "la sandía", "la guayaba"],
     correctAnswer: "el melón",
     hint: "Green-skinned melon with sweet, juicy interior.",
-    usageExample:
-      "Corto el melón en cubos para la ensalada de frutas refrescante.",
+    usageExample: "Corto el melón en cubos para la ensalada de frutas refrescante.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -1515,8 +1481,7 @@ export const foodQuestions = [
     options: ["la langosta", "el bogavante", "el cangrejo"],
     correctAnswer: "la langosta",
     hint: "Shellfish with large claws; turns bright red when cooked.",
-    usageExample:
-      "Pido la langosta fresca con mantequilla derretida en el restaurante.",
+    usageExample: "Pido la langosta fresca con mantequilla derretida en el restaurante.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -1531,8 +1496,7 @@ export const foodQuestions = [
     options: ["el cangrejo", "la jaiba", "el centollo"],
     correctAnswer: "el cangrejo",
     hint: "Crustacean that scuttles sideways; hard shell and two claws.",
-    usageExample:
-      "Rompo las pinzas del cangrejo para sacar la carne deliciosa.",
+    usageExample: "Rompo las pinzas del cangrejo para sacar la carne deliciosa.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -1547,8 +1511,7 @@ export const foodQuestions = [
     options: ["el calamar", "el pulpo", "la sepia"],
     correctAnswer: "el calamar",
     hint: "Sea creature with long arms; commonly grilled or fried.",
-    usageExample:
-      "Frito el calamar en anillos hasta que quede crujiente y dorado.",
+    usageExample: "Frito el calamar en anillos hasta que quede crujiente y dorado.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -1593,8 +1556,7 @@ export const foodQuestions = [
     options: ["la chuleta", "la costilla", "el filete"],
     correctAnswer: "la chuleta",
     hint: "Meat cut with a bone attached; often grilled or pan-seared.",
-    usageExample:
-      "Aso la chuleta de cerdo en la parrilla hasta que esté jugosa.",
+    usageExample: "Aso la chuleta de cerdo en la parrilla hasta que esté jugosa.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -1624,8 +1586,7 @@ export const foodQuestions = [
     options: ["el muslo", "la pechuga", "el ala"],
     correctAnswer: "el muslo",
     hint: "Juicy poultry cut often fried or roasted; flavorful and tender.",
-    usageExample:
-      "Empanizo el muslo de pollo y lo frito hasta que quede dorado.",
+    usageExample: "Empanizo el muslo de pollo y lo frito hasta que quede dorado.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -1640,8 +1601,7 @@ export const foodQuestions = [
     options: ["el tocino", "la panceta", "el jamón"],
     correctAnswer: "el tocino",
     hint: "Thin smoked pork slices that crisp when fried; breakfast favorite.",
-    usageExample:
-      "Frito el tocino crujiente para acompañar los huevos del desayuno.",
+    usageExample: "Frito el tocino crujiente para acompañar los huevos del desayuno.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -1674,8 +1634,7 @@ export const foodQuestions = [
     options: ["la salchicha", "el chorizo", "la longaniza"],
     correctAnswer: "la salchicha",
     hint: "Seasoned meat stuffed into a casing; eaten in a bun or with sides.",
-    usageExample:
-      "Pongo la salchicha caliente en el pan con mostaza y cebolla.",
+    usageExample: "Pongo la salchicha caliente en el pan con mostaza y cebolla.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -1704,8 +1663,7 @@ export const foodQuestions = [
     options: ["la enchilada", "el burrito", "la chimichanga"],
     correctAnswer: "la enchilada",
     hint: "Rolled flatbread covered in a spicy sauce; baked or served warm.",
-    usageExample:
-      "Preparo la enchilada rellena de pollo con salsa verde picante.",
+    usageExample: "Preparo la enchilada rellena de pollo con salsa verde picante.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -1797,8 +1755,7 @@ export const foodQuestions = [
     options: ["la mantequilla", "la margarina", "la manteca"],
     correctAnswer: "la mantequilla",
     hint: "Yellow dairy fat used as a spread or for cooking.",
-    usageExample:
-      "Unto la mantequilla suave en la tostada caliente del desayuno.",
+    usageExample: "Unto la mantequilla suave en la tostada caliente del desayuno.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -1813,8 +1770,7 @@ export const foodQuestions = [
     options: ["el jengibre", "la cúrcuma", "el rábano"],
     correctAnswer: "el jengibre",
     hint: "Spicy, aromatic root used fresh or dried in cooking.",
-    usageExample:
-      "Rallo el jengibre fresco para agregar sabor picante al salteado.",
+    usageExample: "Rallo el jengibre fresco para agregar sabor picante al salteado.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -1904,8 +1860,7 @@ export const foodQuestions = [
     correctAnswer: "la seta",
     hint: "Edible wild mushroom; “seta” is a generic term for mushrooms.",
     points: 10,
-    usageExample:
-      "Recojo la seta fresca del bosque para cocinar con ajo y perejil.",
+    usageExample: "Recojo la seta fresca del bosque para cocinar con ajo y perejil.",
     category: "food",
     difficulty: "medium",
     emotion: "neutral",
@@ -1950,8 +1905,7 @@ export const foodQuestions = [
     options: ["el narutomaki", "el kamaboko", "el surimi"],
     correctAnswer: "el narutomaki",
     hint: "White-and-pink fish cake with a spiral; commonly served in ramen.",
-    usageExample:
-      "Agrego el narutomaki en espiral como decoración al tazón de ramen.",
+    usageExample: "Agrego el narutomaki en espiral como decoración al tazón de ramen.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -1979,8 +1933,7 @@ export const foodQuestions = [
     options: ["el estofado", "el cocido", "el potaje"],
     correctAnswer: "el estofado",
     hint: "Slow-cooked pot dish with meat and vegetables in broth.",
-    usageExample:
-      "Preparo el estofado de carne con verduras en la olla lentamente.",
+    usageExample: "Preparo el estofado de carne con verduras en la olla lentamente.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -2008,8 +1961,7 @@ export const foodQuestions = [
     options: ["el espagueti", "los tallarines", "los fideos"],
     correctAnswer: "el espagueti",
     hint: "Long thin pasta noodles",
-    usageExample:
-      "Enrollo el espagueti largo en el tenedor con la salsa de tomate.",
+    usageExample: "Enrollo el espagueti largo en el tenedor con la salsa de tomate.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -2024,8 +1976,7 @@ export const foodQuestions = [
     correctAnswer: "la césar",
     hint: "Classic salad with romaine, croutons, cheese, and a tangy dressing.",
     points: 10,
-    usageExample:
-      "Preparo la ensalada César con lechuga romana, crutones crujientes y queso parmesano.",
+    usageExample: "Preparo la ensalada César con lechuga romana, crutones crujientes y queso parmesano.",
     category: "food",
     difficulty: "medium",
     emotion: "pleased",
@@ -2067,8 +2018,7 @@ export const foodQuestions = [
     options: ["el falafel", "el taameya", "la kofta"],
     correctAnswer: "el falafel",
     hint: "Deep-fried chickpea or fava bean balls; vegetarian.",
-    usageExample:
-      "Pongo el falafel crujiente dentro del pan pita con verduras frescas.",
+    usageExample: "Pongo el falafel crujiente dentro del pan pita con verduras frescas.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -2084,8 +2034,7 @@ export const foodQuestions = [
     options: ["las especias", "la sal", "el condimento"],
     correctAnswer: "las especias",
     hint: "Spices - powdered or dried seasonings like cumin, paprika, etc.",
-    usageExample:
-      "Añado las especias aromáticas al guiso para mejorar el sabor.",
+    usageExample: "Añado las especias aromáticas al guiso para mejorar el sabor.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -2099,8 +2048,7 @@ export const foodQuestions = [
     options: ["la salsa picante", "la salsa de tomate", "la salsa de chile"],
     correctAnswer: "la salsa picante",
     hint: "Hot sauce - spicy condiment made from peppers, adds heat to dishes",
-    usageExample:
-      "Pongo la salsa picante en mis tacos para darles un toque de calor.",
+    usageExample: "Pongo la salsa picante en mis tacos para darles un toque de calor.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -2128,8 +2076,7 @@ export const foodQuestions = [
     options: ["los guisantes", "los chícharos", "las arvejas"],
     correctAnswer: "los guisantes",
     hint: 'Peas - small green legumes in pods, "chícharos" in Mexico, "arvejas" in South America',
-    usageExample:
-      "Saco los guisantes verdes de la vaina para cocinarlos al vapor.",
+    usageExample: "Saco los guisantes verdes de la vaina para cocinarlos al vapor.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -2219,8 +2166,7 @@ export const foodQuestions = [
     options: ["hacer una reserva", "pagar una cuenta", "leer el menú"],
     correctAnswer: "hacer una reserva",
     hint: "Make a reservation - book ahead",
-    usageExample:
-      "Llamo por teléfono para hacer una reserva en el restaurante.",
+    usageExample: "Llamo por teléfono para hacer una reserva en el restaurante.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -2290,8 +2236,7 @@ export const foodQuestions = [
     options: ["los cubiertos", "las servilletas", "los vasos"],
     correctAnswer: "los cubiertos",
     hint: "Cutlery/silverware - fork, knife, spoon",
-    usageExample:
-      "Uso los cubiertos de plata para comer la comida elegantemente.",
+    usageExample: "Uso los cubiertos de plata para comer la comida elegantemente.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -2319,8 +2264,7 @@ export const foodQuestions = [
     options: ["en el plato", "en el vaso", "en la servilleta"],
     correctAnswer: "en el plato",
     hint: "Plate/dish - where food is served",
-    usageExample:
-      "El mesero presenta la comida hermosamente en el plato blanco.",
+    usageExample: "El mesero presenta la comida hermosamente en el plato blanco.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -2340,8 +2284,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "quisiera una hamburguesa",
     hint: "Polite ordering phrase",
-    usageExample:
-      "Le digo al mesero: quisiera una hamburguesa con papas fritas.",
+    usageExample: "Le digo al mesero: quisiera una hamburguesa con papas fritas.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -2373,8 +2316,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "¿me puede dar un cuchillo?",
     hint: 'Can I have a knife? - "me puede dar" (can you give me), "cuchillo" (knife), essential utensil',
-    usageExample:
-      "Pregunto al mesero: ¿me puede dar un cuchillo para cortar la carne?",
+    usageExample: "Pregunto al mesero: ¿me puede dar un cuchillo para cortar la carne?",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -2434,8 +2376,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "¿me puede dar una cuchara?",
     hint: 'Can I have a spoon? - "me puede dar" (can you give me), "cuchara" (spoon - feminine), for soup/dessert',
-    usageExample:
-      "Pregunto al mesero: ¿me puede dar una cuchara para el postre?",
+    usageExample: "Pregunto al mesero: ¿me puede dar una cuchara para el postre?",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -2495,8 +2436,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "¿me puede dar un tenedor?",
     hint: 'Can I have a fork? - "me puede dar" (can you give me), "tenedor" (fork), polite restaurant request',
-    usageExample:
-      "Pregunto al mesero: ¿me puede dar un tenedor limpio, por favor?",
+    usageExample: "Pregunto al mesero: ¿me puede dar un tenedor limpio, por favor?",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -2510,8 +2450,7 @@ export const foodQuestions = [
     options: ["los palillos", "los palillos chinos", "los hashi"],
     correctAnswer: "los palillos",
     hint: 'Chopsticks - "palillos" or "palillos chinos", used for Asian food',
-    usageExample:
-      "Uso los palillos para comer sushi en el restaurante japonés.",
+    usageExample: "Uso los palillos para comer sushi en el restaurante japonés.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -2543,8 +2482,7 @@ export const foodQuestions = [
     options: ["el bento", "el obento", "el ekiben"],
     correctAnswer: "el bento",
     hint: 'Bento box - Japanese lunch box with varied food compartments, also called "obento"',
-    usageExample:
-      "Preparo el bento con arroz, pescado y vegetales para el almuerzo.",
+    usageExample: "Preparo el bento con arroz, pescado y vegetales para el almuerzo.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -2728,8 +2666,7 @@ export const foodQuestions = [
     options: ["té de burbujas", "café", "cerveza"],
     correctAnswer: "té de burbujas",
     hint: "Bubble tea - boba drink",
-    usageExample:
-      "Compro té de burbujas con perlas de tapioca en la cafetería asiática.",
+    usageExample: "Compro té de burbujas con perlas de tapioca en la cafetería asiática.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -2759,8 +2696,7 @@ export const foodQuestions = [
     options: ["el pastel", "la sopa", "la ensalada"],
     correctAnswer: "el pastel",
     hint: "Cake - sweet dessert",
-    usageExample:
-      "Ordeno el pastel de chocolate con glaseado para mi cumpleaños.",
+    usageExample: "Ordeno el pastel de chocolate con glaseado para mi cumpleaños.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -2774,8 +2710,7 @@ export const foodQuestions = [
     options: ["el helado", "el café", "la sopa"],
     correctAnswer: "el helado",
     hint: "Ice cream - frozen dessert",
-    usageExample:
-      "Como el helado de vainilla refrescante bajo el calor del verano.",
+    usageExample: "Como el helado de vainilla refrescante bajo el calor del verano.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -2789,8 +2724,7 @@ export const foodQuestions = [
     options: ["el flan", "la pizza", "la sopa"],
     correctAnswer: "el flan",
     hint: "Flan - caramel custard",
-    usageExample:
-      "Pido el flan casero con caramelo para terminar la comida española.",
+    usageExample: "Pido el flan casero con caramelo para terminar la comida española.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -2846,8 +2780,7 @@ export const foodQuestions = [
     options: ["el cupcake", "la pizza", "la sopa"],
     correctAnswer: "el cupcake",
     hint: 'Cupcake - small cake, "magdalena" in Spanish',
-    usageExample:
-      "Compro el cupcake decorado con glaseado de colores para la fiesta.",
+    usageExample: "Compro el cupcake decorado con glaseado de colores para la fiesta.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -2861,8 +2794,7 @@ export const foodQuestions = [
     options: ["la dona", "la ensalada", "la sopa"],
     correctAnswer: "la dona",
     hint: 'Donut - "donas" in Latin America',
-    usageExample:
-      "Compro la dona glaseada con chispas de colores en la panadería.",
+    usageExample: "Compro la dona glaseada con chispas de colores en la panadería.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -2920,8 +2852,7 @@ export const foodQuestions = [
     options: ["la cafetería", "la carnicería", "la pescadería"],
     correctAnswer: "la cafetería",
     hint: "Café - coffee shop",
-    usageExample:
-      "Me encuentro con mis amigos en la cafetería para tomar café.",
+    usageExample: "Me encuentro con mis amigos en la cafetería para tomar café.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -2935,8 +2866,7 @@ export const foodQuestions = [
     options: ["comida rápida", "comida gourmet", "comida casera"],
     correctAnswer: "comida rápida",
     hint: "Fast food - quick service",
-    usageExample:
-      "Compro comida rápida en el centro comercial cuando tengo prisa.",
+    usageExample: "Compro comida rápida en el centro comercial cuando tengo prisa.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -2964,8 +2894,7 @@ export const foodQuestions = [
     options: ["para comer aquí", "para llevar", "para mañana"],
     correctAnswer: "para comer aquí",
     hint: "Dine in - eat at restaurant",
-    usageExample:
-      "Decido comer para comer aquí en el restaurante con mi familia.",
+    usageExample: "Decido comer para comer aquí en el restaurante con mi familia.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -2979,8 +2908,7 @@ export const foodQuestions = [
     options: ["restaurante fino", "comida rápida", "cafetería"],
     correctAnswer: "restaurante fino",
     hint: "Fine dining - upscale restaurant",
-    usageExample:
-      "Reservo una mesa en el restaurante fino para celebrar nuestro aniversario.",
+    usageExample: "Reservo una mesa en el restaurante fino para celebrar nuestro aniversario.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -2994,8 +2922,7 @@ export const foodQuestions = [
     options: ["el buffet", "la pizzería", "la cafetería"],
     correctAnswer: "el buffet",
     hint: "Buffet - all-you-can-eat",
-    usageExample:
-      "Voy al buffet de comida internacional para probar muchos platos diferentes.",
+    usageExample: "Voy al buffet de comida internacional para probar muchos platos diferentes.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3013,8 +2940,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "restaurante asiático",
     hint: "Asian restaurant - serves Asian cuisine",
-    usageExample:
-      "Como en el restaurante asiático cuando quiero fideos y arroz frito.",
+    usageExample: "Como en el restaurante asiático cuando quiero fideos y arroz frito.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3032,8 +2958,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "restaurante mexicano",
     hint: "Mexican restaurant",
-    usageExample:
-      "Voy al restaurante mexicano para comer tacos auténticos con guacamole.",
+    usageExample: "Voy al restaurante mexicano para comer tacos auténticos con guacamole.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -3051,8 +2976,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "restaurante italiano",
     hint: "Italian restaurant",
-    usageExample:
-      "Ceno en el restaurante italiano y pido pasta carbonara deliciosa.",
+    usageExample: "Ceno en el restaurante italiano y pido pasta carbonara deliciosa.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -3070,8 +2994,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "restaurante español",
     hint: "Spanish restaurant",
-    usageExample:
-      "Visito el restaurante español para probar la paella valenciana auténtica.",
+    usageExample: "Visito el restaurante español para probar la paella valenciana auténtica.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3089,8 +3012,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "restaurante japonés",
     hint: "Japanese restaurant",
-    usageExample:
-      "Pido sushi fresco y sashimi en el restaurante japonés del centro.",
+    usageExample: "Pido sushi fresco y sashimi en el restaurante japonés del centro.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3108,8 +3030,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "restaurante francés",
     hint: "French restaurant",
-    usageExample:
-      "Desayuno en el restaurante francés con croissants recién horneados.",
+    usageExample: "Desayuno en el restaurante francés con croissants recién horneados.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3125,8 +3046,7 @@ export const foodQuestions = [
     options: ["comida vegetariana", "comida con carne", "solo carne"],
     correctAnswer: "comida vegetariana",
     hint: "Vegetarian food - no meat",
-    usageExample:
-      "Siempre pido comida vegetariana con muchas verduras frescas y legumbres.",
+    usageExample: "Siempre pido comida vegetariana con muchas verduras frescas y legumbres.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3140,8 +3060,7 @@ export const foodQuestions = [
     options: ["soy alérgico a", "me gusta", "quisiera más"],
     correctAnswer: "soy alérgico a",
     hint: "Allergic to - important health info",
-    usageExample:
-      "Le digo al mesero que soy alérgico a los maníes antes de ordenar.",
+    usageExample: "Le digo al mesero que soy alérgico a los maníes antes de ordenar.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -3183,8 +3102,7 @@ export const foodQuestions = [
     options: ["bien caliente", "frío", "congelado"],
     correctAnswer: "bien caliente",
     hint: "Very hot - temperature request",
-    usageExample:
-      "Pido la sopa bien caliente porque me gusta quemar la lengua.",
+    usageExample: "Pido la sopa bien caliente porque me gusta quemar la lengua.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3254,8 +3172,7 @@ export const foodQuestions = [
     options: ["un popote", "un plato", "un tenedor"],
     correctAnswer: "un popote",
     hint: 'Straw - "pajita" in Spain, "bombilla" in some regions',
-    usageExample:
-      "Pido un popote de papel para beber mi refresco sin tocar el vaso.",
+    usageExample: "Pido un popote de papel para beber mi refresco sin tocar el vaso.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -3269,8 +3186,7 @@ export const foodQuestions = [
     options: ["sin hielo", "con hielo", "mucho hielo"],
     correctAnswer: "sin hielo",
     hint: "Without ice - drink preference",
-    usageExample:
-      "Pido el agua sin hielo porque me duelen los dientes con el frío.",
+    usageExample: "Pido el agua sin hielo porque me duelen los dientes con el frío.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3284,8 +3200,7 @@ export const foodQuestions = [
     options: ["limón", "carne", "pescado"],
     correctAnswer: "limón",
     hint: "Lemon - for tea",
-    usageExample:
-      "Pido limón fresco para agregar a mi té caliente de la mañana.",
+    usageExample: "Pido limón fresco para agregar a mi té caliente de la mañana.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -3301,8 +3216,7 @@ export const foodQuestions = [
     options: ["está delicioso", "está horrible", "está frío"],
     correctAnswer: "está delicioso",
     hint: "It's delicious - compliment",
-    usageExample:
-      "Le digo al chef que el plato está delicioso y pido la receta.",
+    usageExample: "Le digo al chef que el plato está delicioso y pido la receta.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -3316,8 +3230,7 @@ export const foodQuestions = [
     options: ["tengo hambre", "tengo sed", "tengo sueño"],
     correctAnswer: "tengo hambre",
     hint: "I'm hungry - need food",
-    usageExample:
-      "Después de cinco horas sin comer, tengo hambre y busco un restaurante.",
+    usageExample: "Después de cinco horas sin comer, tengo hambre y busco un restaurante.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -3345,8 +3258,7 @@ export const foodQuestions = [
     options: ["gracias", "hola", "adiós"],
     correctAnswer: "gracias",
     hint: "Thank you - show appreciation",
-    usageExample:
-      "Al terminar la cena, le digo gracias al mesero por el excelente servicio.",
+    usageExample: "Al terminar la cena, le digo gracias al mesero por el excelente servicio.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -3360,8 +3272,7 @@ export const foodQuestions = [
     options: ["por favor", "ahora", "nunca"],
     correctAnswer: "por favor",
     hint: "Please - polite request",
-    usageExample:
-      'Siempre digo "un café, por favor" cuando ordeno en la cafetería.',
+    usageExample:  'Siempre digo "un café, por favor" cuando ordeno en la cafetería.',
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -3376,8 +3287,7 @@ export const foodQuestions = [
     options: ["más, por favor", "menos, por favor", "nada más"],
     correctAnswer: "más, por favor",
     hint: "More, please - want additional",
-    usageExample:
-      'La comida está tan rica que pido "más, por favor" al mesero.',
+    usageExample:  'La comida está tan rica que pido "más, por favor" al mesero.',
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3391,8 +3301,7 @@ export const foodQuestions = [
     options: ["no más, gracias", "más, por favor", "todo"],
     correctAnswer: "no más, gracias",
     hint: "No more, thanks - satisfied",
-    usageExample:
-      'Después de tres platos, digo "no más, gracias" porque estoy lleno.',
+    usageExample:  'Después de tres platos, digo "no más, gracias" porque estoy lleno.',
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3406,8 +3315,7 @@ export const foodQuestions = [
     options: ["disculpe", "adiós", "hola"],
     correctAnswer: "disculpe",
     hint: "Excuse me - get attention",
-    usageExample:
-      'Levanto la mano y digo "disculpe" para pedir la cuenta al mesero.',
+    usageExample:  'Levanto la mano y digo "disculpe" para pedir la cuenta al mesero.',
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3421,8 +3329,7 @@ export const foodQuestions = [
     options: ["¿cuánto cuesta?", "¿qué me recomienda?", "¿dónde está?"],
     correctAnswer: "¿cuánto cuesta?",
     hint: "How much does it cost? - price question",
-    usageExample:
-      'Antes de ordenar el plato especial, pregunto "¿cuánto cuesta?" al mesero.',
+    usageExample:  'Antes de ordenar el plato especial, pregunto "¿cuánto cuesta?" al mesero.',
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3436,8 +3343,7 @@ export const foodQuestions = [
     options: ["¿dónde está el baño?", "¿cuánto cuesta?", "¿qué me recomienda?"],
     correctAnswer: "¿dónde está el baño?",
     hint: "Where is the bathroom? - important question",
-    usageExample:
-      'Cuando llego al restaurante, pregunto "¿dónde está el baño?" al mesero.',
+    usageExample:  'Cuando llego al restaurante, pregunto "¿dónde está el baño?" al mesero.',
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3451,8 +3357,7 @@ export const foodQuestions = [
     options: ["¡buen provecho!", "¡adiós!", "¡hola!"],
     correctAnswer: "¡buen provecho!",
     hint: "Enjoy your meal! - dining greeting",
-    usageExample:
-      'Cuando sirven el plato, el mesero dice "¡buen provecho!" con una sonrisa.',
+    usageExample:  'Cuando sirven el plato, el mesero dice "¡buen provecho!" con una sonrisa.',
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3466,8 +3371,7 @@ export const foodQuestions = [
     options: ["la báscula de cocina", "la taza medidora", "la cuchara"],
     correctAnswer: "la báscula de cocina",
     hint: "Kitchen tool for measuring precise weight of ingredients",
-    usageExample:
-      "Uso la báscula de cocina digital para pesar exactamente 500 gramos de harina.",
+    usageExample: "Uso la báscula de cocina digital para pesar exactamente 500 gramos de harina.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3481,8 +3385,7 @@ export const foodQuestions = [
     options: ["el exprimidor de limones", "el cuchillo", "la licuadora"],
     correctAnswer: "el exprimidor de limones",
     hint: "Kitchen tool specifically designed for squeezing citrus fruits",
-    usageExample:
-      "Utilizo el exprimidor de limones manual para hacer limonada fresca.",
+    usageExample: "Utilizo el exprimidor de limones manual para hacer limonada fresca.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3496,8 +3399,7 @@ export const foodQuestions = [
     options: ["la freidora de aire", "el horno", "la estufa"],
     correctAnswer: "la freidora de aire",
     hint: "Modern appliance that fries food using circulating hot air instead of oil",
-    usageExample:
-      "Cocino papas fritas crujientes en la freidora de aire sin usar aceite.",
+    usageExample: "Cocino papas fritas crujientes en la freidora de aire sin usar aceite.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3511,8 +3413,7 @@ export const foodQuestions = [
     options: ["las anchoas", "las sardinas", "el atún"],
     correctAnswer: "las anchoas",
     hint: "Small, salty fish often used as a pizza topping",
-    usageExample:
-      "A algunos les gusta agregar las anchoas saladas como topping de pizza.",
+    usageExample: "A algunos les gusta agregar las anchoas saladas como topping de pizza.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -3530,8 +3431,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el pay de manzana",
     hint: "Classic baked dessert with apple filling and pastry crust",
-    usageExample:
-      "Horneo el pay de manzana con canela para el postre de Acción de Gracias.",
+    usageExample: "Horneo el pay de manzana con canela para el postre de Acción de Gracias.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3549,8 +3449,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "las rodajas de manzana",
     hint: "Apples cut into thin pieces for snacking",
-    usageExample:
-      "Preparo las rodajas de manzana frescas con mantequilla de maní para merendar.",
+    usageExample: "Preparo las rodajas de manzana frescas con mantequilla de maní para merendar.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -3564,8 +3463,7 @@ export const foodQuestions = [
     options: ["la bandeja para hornear", "el plato", "el tazón"],
     correctAnswer: "la bandeja para hornear",
     hint: "Flat metal pan used for baking cookies and roasting",
-    usageExample:
-      "Coloco las galletas en la bandeja para hornear antes de meterlas al horno.",
+    usageExample: "Coloco las galletas en la bandeja para hornear antes de meterlas al horno.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3579,8 +3477,7 @@ export const foodQuestions = [
     options: ["la vaporera de bambú", "el wok", "la olla arrocera"],
     correctAnswer: "la vaporera de bambú",
     hint: "Traditional bamboo basket used for steaming dumplings and vegetables",
-    usageExample:
-      "Cocino dim sum y verduras al vapor en la vaporera de bambú tradicional.",
+    usageExample: "Cocino dim sum y verduras al vapor en la vaporera de bambú tradicional.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -3594,8 +3491,7 @@ export const foodQuestions = [
     options: ["el pan de plátano", "el pan de maíz", "el pan integral"],
     correctAnswer: "el pan de plátano",
     hint: "Moist sweet bread made from overripe bananas",
-    usageExample:
-      "Horneo el pan de plátano húmedo usando los plátanos muy maduros.",
+    usageExample: "Horneo el pan de plátano húmedo usando los plátanos muy maduros.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3609,8 +3505,7 @@ export const foodQuestions = [
     options: ["la banana split", "el sundae", "el helado de vainilla"],
     correctAnswer: "la banana split",
     hint: "Classic ice cream dessert with split banana, toppings, and whipped cream",
-    usageExample:
-      "Ordeno la banana split con tres bolas de helado y crema batida.",
+    usageExample: "Ordeno la banana split con tres bolas de helado y crema batida.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3624,8 +3519,7 @@ export const foodQuestions = [
     options: ["la parrilla", "el horno", "la estufa"],
     correctAnswer: "la parrilla",
     hint: "Outdoor cooking device for grilling meat and vegetables",
-    usageExample:
-      "Enciendo la parrilla de carbón para asar las carnes en el jardín.",
+    usageExample: "Enciendo la parrilla de carbón para asar las carnes en el jardín.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -3639,8 +3533,7 @@ export const foodQuestions = [
     options: ["el barril de cerveza", "la botella", "la lata"],
     correctAnswer: "el barril de cerveza",
     hint: "Large barrel used to serve draft beer at events",
-    usageExample:
-      "Pedimos el barril de cerveza grande para la fiesta de graduación.",
+    usageExample: "Pedimos el barril de cerveza grande para la fiesta de graduación.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -3658,8 +3551,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el pastel de cumpleaños",
     hint: "Decorated cake with candles for birthday celebrations",
-    usageExample:
-      "Soplo las velas del pastel de cumpleaños mientras todos cantan.",
+    usageExample: "Soplo las velas del pastel de cumpleaños mientras todos cantan.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -3673,8 +3565,7 @@ export const foodQuestions = [
     options: ["el bloody mary", "la margarita", "el mojito"],
     correctAnswer: "el bloody mary",
     hint: "Vodka cocktail with tomato juice and spices, popular at brunch",
-    usageExample:
-      "Ordeno el bloody mary picante con apio durante el brunch dominical.",
+    usageExample: "Ordeno el bloody mary picante con apio durante el brunch dominical.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -3692,8 +3583,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "los panqueques de arándano y plátano",
     hint: "Breakfast pancakes with blueberries and banana",
-    usageExample:
-      "Preparo los panqueques de arándano y plátano con miel para el desayuno.",
+    usageExample: "Preparo los panqueques de arándano y plátano con miel para el desayuno.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3707,8 +3597,7 @@ export const foodQuestions = [
     options: ["el batido de arándanos", "el jugo de naranja", "el té helado"],
     correctAnswer: "el batido de arándanos",
     hint: "Blended drink made with blueberries and other ingredients",
-    usageExample:
-      "Tomo el batido de arándanos cremoso con yogurt después del gimnasio.",
+    usageExample: "Tomo el batido de arándanos cremoso con yogurt después del gimnasio.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3736,8 +3625,7 @@ export const foodQuestions = [
     options: ["la caja de chocolates", "las flores", "la tarjeta"],
     correctAnswer: "la caja de chocolates",
     hint: "Assorted chocolates packaged in a decorative box",
-    usageExample:
-      "Regalo la caja de chocolates en forma de corazón a mi pareja.",
+    usageExample: "Regalo la caja de chocolates en forma de corazón a mi pareja.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -3751,8 +3639,7 @@ export const foodQuestions = [
     options: ["el queso brie", "el queso cheddar", "el queso suizo"],
     correctAnswer: "el queso brie",
     hint: "Soft French cheese with white rind and creamy interior",
-    usageExample:
-      "Sirvo el queso brie suave con galletas y uvas en la tabla de quesos.",
+    usageExample: "Sirvo el queso brie suave con galletas y uvas en la tabla de quesos.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -3766,8 +3653,7 @@ export const foodQuestions = [
     options: ["la bruschetta", "la pizza", "la focaccia"],
     correctAnswer: "la bruschetta",
     hint: "Italian appetizer of grilled bread topped with tomatoes and basil",
-    usageExample:
-      "Preparo la bruschetta italiana con tomates frescos y albahaca en el pan.",
+    usageExample: "Preparo la bruschetta italiana con tomates frescos y albahaca en el pan.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -3781,8 +3667,7 @@ export const foodQuestions = [
     options: ["en la fogata", "en el restaurante", "en el microondas"],
     correctAnswer: "en la fogata",
     hint: "Cooking over an open fire outdoors while camping",
-    usageExample:
-      "Asamos malvaviscos en la fogata bajo las estrellas en el bosque.",
+    usageExample: "Asamos malvaviscos en la fogata bajo las estrellas en el bosque.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3796,8 +3681,7 @@ export const foodQuestions = [
     options: ["la manzana acaramelada", "la manzana verde", "la manzana roja"],
     correctAnswer: "la manzana acaramelada",
     hint: "Apple on a stick covered in hard candy coating",
-    usageExample:
-      "Compro la manzana acaramelada roja brillante en la feria del pueblo.",
+    usageExample: "Compro la manzana acaramelada roja brillante en la feria del pueblo.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3825,8 +3709,7 @@ export const foodQuestions = [
     options: ["el frasco de dulces", "la caja", "el refrigerador"],
     correctAnswer: "el frasco de dulces",
     hint: "Glass container for storing and displaying candy",
-    usageExample:
-      "Lleno el frasco de dulces de cristal con caramelos de colores.",
+    usageExample: "Lleno el frasco de dulces de cristal con caramelos de colores.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3844,8 +3727,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "los duraznos enlatados",
     hint: "Peaches preserved in a can with syrup",
-    usageExample:
-      "Abro la lata de los duraznos enlatados en almíbar para el postre.",
+    usageExample: "Abro la lata de los duraznos enlatados en almíbar para el postre.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3859,8 +3741,7 @@ export const foodQuestions = [
     options: ["las alcaparras", "las aceitunas", "los pepinillos"],
     correctAnswer: "las alcaparras",
     hint: "Small pickled flower buds used in Mediterranean cooking",
-    usageExample:
-      "Agrego las alcaparras saladas a la salsa de pescado mediterránea.",
+    usageExample: "Agrego las alcaparras saladas a la salsa de pescado mediterránea.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -3878,8 +3759,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el pastel de lodo de caramelo y chocolate",
     hint: "Dense, moist chocolate cake with caramel topping",
-    usageExample:
-      "Ordeno el pastel de lodo de caramelo y chocolate húmedo en la panadería.",
+    usageExample: "Ordeno el pastel de lodo de caramelo y chocolate húmedo en la panadería.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -3897,8 +3777,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el jugo de zanahoria",
     hint: "Nutritious orange juice made from carrots",
-    usageExample:
-      "Bebo el jugo de zanahoria fresco con jengibre cada mañana para la salud.",
+    usageExample: "Bebo el jugo de zanahoria fresco con jengibre cada mañana para la salud.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3912,8 +3791,7 @@ export const foodQuestions = [
     options: ["el rallador de queso", "el cuchillo", "la tabla de cortar"],
     correctAnswer: "el rallador de queso",
     hint: "Kitchen tool with sharp holes for shredding cheese",
-    usageExample:
-      "Uso el rallador de queso para hacer tiras finas de parmesano sobre la pasta.",
+    usageExample: "Uso el rallador de queso para hacer tiras finas de parmesano sobre la pasta.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3927,8 +3805,7 @@ export const foodQuestions = [
     options: ["el pay de cereza", "el pay de manzana", "el pay de limón"],
     correctAnswer: "el pay de cereza",
     hint: "Fruit pie made with cherries in a pastry crust",
-    usageExample:
-      "Horneo el pay de cereza con cerezas frescas para el 4 de julio.",
+    usageExample: "Horneo el pay de cereza con cerezas frescas para el 4 de julio.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3946,8 +3823,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el sándwich de pollo",
     hint: "Sandwich made with chicken breast or fried chicken",
-    usageExample:
-      "Ordeno el sándwich de pollo a la parrilla con lechuga y tomate.",
+    usageExample: "Ordeno el sándwich de pollo a la parrilla con lechuga y tomate.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -3961,8 +3837,7 @@ export const foodQuestions = [
     options: ["los garbanzos", "los frijoles", "las lentejas"],
     correctAnswer: "los garbanzos",
     hint: "Round, beige legumes used in Mediterranean and Middle Eastern cooking",
-    usageExample:
-      "Cocino los garbanzos suaves para hacer hummus cremoso con tahini.",
+    usageExample: "Cocino los garbanzos suaves para hacer hummus cremoso con tahini.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -3990,8 +3865,7 @@ export const foodQuestions = [
     options: ["los chocolates kiss", "los chocolates en barra", "los bombones"],
     correctAnswer: "los chocolates kiss",
     hint: "Small, foil-wrapped chocolate drops with a distinctive shape",
-    usageExample:
-      "Desenvuelvo los chocolates kiss de papel aluminio para decorar el pastel.",
+    usageExample: "Desenvuelvo los chocolates kiss de papel aluminio para decorar el pastel.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4009,8 +3883,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el jarabe de chocolate",
     hint: "Sweet chocolate sauce for drizzling on desserts",
-    usageExample:
-      "Vierto el jarabe de chocolate espeso sobre el helado de vainilla.",
+    usageExample: "Vierto el jarabe de chocolate espeso sobre el helado de vainilla.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4024,8 +3897,7 @@ export const foodQuestions = [
     options: ["el chocolatero", "el panadero", "el cocinero"],
     correctAnswer: "el chocolatero",
     hint: "Professional craftsperson who makes fine chocolate confections",
-    usageExample:
-      "El chocolatero experto crea bombones de chocolate belga a mano.",
+    usageExample: "El chocolatero experto crea bombones de chocolate belga a mano.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -4039,8 +3911,7 @@ export const foodQuestions = [
     options: ["el churro", "el donut", "la rosquilla"],
     correctAnswer: "el churro",
     hint: "Fried dough pastry rolled in cinnamon sugar, popular in Spain",
-    usageExample:
-      "Mojo el churro caliente y crujiente en chocolate espeso para desayunar.",
+    usageExample: "Mojo el churro caliente y crujiente en chocolate espeso para desayunar.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4054,8 +3925,7 @@ export const foodQuestions = [
     options: ["el cilantro", "el perejil", "la albahaca"],
     correctAnswer: "el cilantro",
     hint: "Fresh herb with a distinctive flavor, common in Mexican cuisine",
-    usageExample:
-      "Pico el cilantro fresco para agregar a los tacos de pescado.",
+    usageExample: "Pico el cilantro fresco para agregar a los tacos de pescado.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4069,8 +3939,7 @@ export const foodQuestions = [
     options: ["los granos de café", "los frijoles", "las habas"],
     correctAnswer: "los granos de café",
     hint: "Roasted seeds that are ground to make coffee",
-    usageExample:
-      "Muelo los granos de café tostados para hacer espresso fresco.",
+    usageExample: "Muelo los granos de café tostados para hacer espresso fresco.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4084,8 +3953,7 @@ export const foodQuestions = [
     options: ["el frasco de galletas", "la caja", "el refrigerador"],
     correctAnswer: "el frasco de galletas",
     hint: "Container specifically for keeping cookies fresh",
-    usageExample:
-      "Guardo las galletas recién horneadas en el frasco de galletas de cerámica.",
+    usageExample: "Guardo las galletas recién horneadas en el frasco de galletas de cerámica.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -4099,8 +3967,7 @@ export const foodQuestions = [
     options: ["los utensilios de cocina", "los platos", "las tazas"],
     correctAnswer: "los utensilios de cocina",
     hint: "Tools like spoons, spatulas, and whisks used for cooking",
-    usageExample:
-      "Organizo los utensilios de cocina como cucharas y espátulas en el cajón.",
+    usageExample: "Organizo los utensilios de cocina como cucharas y espátulas en el cajón.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4114,8 +3981,7 @@ export const foodQuestions = [
     options: ["el pan de maíz", "el pan blanco", "el pan integral"],
     correctAnswer: "el pan de maíz",
     hint: "Southern-style bread made from cornmeal",
-    usageExample:
-      "Horneo el pan de maíz dulce para acompañar el chile con carne.",
+    usageExample: "Horneo el pan de maíz dulce para acompañar el chile con carne.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4129,8 +3995,7 @@ export const foodQuestions = [
     options: ["la máquina de algodón de azúcar", "la licuadora", "el horno"],
     correctAnswer: "la máquina de algodón de azúcar",
     hint: "Spinning machine that creates fluffy spun sugar",
-    usageExample:
-      "La máquina de algodón de azúcar gira rápido para crear dulces esponjosos.",
+    usageExample: "La máquina de algodón de azúcar gira rápido para crear dulces esponjosos.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -4144,8 +4009,7 @@ export const foodQuestions = [
     options: ["el algodón de azúcar", "las palomitas", "los churros"],
     correctAnswer: "el algodón de azúcar",
     hint: "Spun sugar treat that looks like fluffy clouds",
-    usageExample:
-      "Compro el algodón de azúcar rosado y esponjoso en el carnaval.",
+    usageExample: "Compro el algodón de azúcar rosado y esponjoso en el carnaval.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4163,8 +4027,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el jugo de arándano rojo",
     hint: "Tart juice made from cranberries, often used for health",
-    usageExample:
-      "Bebo el jugo de arándano rojo ácido para prevenir infecciones urinarias.",
+    usageExample: "Bebo el jugo de arándano rojo ácido para prevenir infecciones urinarias.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4206,8 +4069,7 @@ export const foodQuestions = [
     options: ["la freidora", "el horno", "la sartén"],
     correctAnswer: "la freidora",
     hint: "Appliance filled with hot oil for frying food",
-    usageExample:
-      "Frío las papas en la freidora llena de aceite caliente y burbujeante.",
+    usageExample: "Frío las papas en la freidora llena de aceite caliente y burbujeante.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4221,8 +4083,7 @@ export const foodQuestions = [
     options: ["el eneldo seco", "el orégano", "el tomillo"],
     correctAnswer: "el eneldo seco",
     hint: "Dried herb with a distinctive flavor, commonly paired with fish",
-    usageExample:
-      "Espolvoreo el eneldo seco aromático sobre el salmón horneado.",
+    usageExample: "Espolvoreo el eneldo seco aromático sobre el salmón horneado.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -4236,8 +4097,7 @@ export const foodQuestions = [
     options: ["el lavaplatos", "el mesero", "el chef"],
     correctAnswer: "el lavaplatos",
     hint: "Restaurant worker responsible for washing dishes and kitchenware",
-    usageExample:
-      "El lavaplatos del restaurante trabaja rápido limpiando ollas y platos sucios.",
+    usageExample: "El lavaplatos del restaurante trabaja rápido limpiando ollas y platos sucios.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4255,8 +4115,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "la hamburguesa doble con queso",
     hint: "Burger with two beef patties and double cheese",
-    usageExample:
-      "Pido la hamburguesa doble con queso con tocino y papas fritas.",
+    usageExample: "Pido la hamburguesa doble con queso con tocino y papas fritas.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4270,8 +4129,7 @@ export const foodQuestions = [
     options: ["el agua potable", "el agua salada", "el agua sucia"],
     correctAnswer: "el agua potable",
     hint: "Clean, safe water suitable for drinking",
-    usageExample:
-      "Bebo el agua potable filtrada para mantenerme hidratado todo el día.",
+    usageExample: "Bebo el agua potable filtrada para mantenerme hidratado todo el día.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -4299,8 +4157,7 @@ export const foodQuestions = [
     options: ["el alga comestible", "la lechuga", "el pepino"],
     correctAnswer: "el alga comestible",
     hint: "Edible seaweed used to wrap sushi rolls",
-    usageExample:
-      "Envuelvo los rollos de sushi con el alga comestible verde oscuro.",
+    usageExample: "Envuelvo los rollos de sushi con el alga comestible verde oscuro.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -4314,8 +4171,7 @@ export const foodQuestions = [
     options: ["la empanada", "la arepa", "el tamal"],
     correctAnswer: "la empanada",
     hint: "Stuffed pastry popular throughout Latin America",
-    usageExample:
-      "Como la empanada caliente rellena de carne y pasas en Argentina.",
+    usageExample: "Como la empanada caliente rellena de carne y pasas en Argentina.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4333,8 +4189,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el desayuno inglés",
     hint: "Traditional full breakfast from England with multiple items",
-    usageExample:
-      "Desayuno el desayuno inglés completo con huevos, salchichas y frijoles horneados.",
+    usageExample: "Desayuno el desayuno inglés completo con huevos, salchichas y frijoles horneados.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -4348,8 +4203,7 @@ export const foodQuestions = [
     options: ["el muffin inglés", "el croissant", "el bagel"],
     correctAnswer: "el muffin inglés",
     hint: "Round, flat bread roll split and toasted for breakfast",
-    usageExample:
-      "Tuesto el muffin inglés para hacer un sándwich de huevo y queso.",
+    usageExample: "Tuesto el muffin inglés para hacer un sándwich de huevo y queso.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4363,8 +4217,7 @@ export const foodQuestions = [
     options: ["la máquina de espresso", "la licuadora", "la tostadora"],
     correctAnswer: "la máquina de espresso",
     hint: "Machine that brews concentrated coffee using pressure",
-    usageExample:
-      "Preparo un espresso doble en la máquina de espresso italiana.",
+    usageExample: "Preparo un espresso doble en la máquina de espresso italiana.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4378,8 +4231,7 @@ export const foodQuestions = [
     options: ["el queso feta", "el queso mozzarella", "el queso cheddar"],
     correctAnswer: "el queso feta",
     hint: "Crumbly white cheese from Greece, often in salads",
-    usageExample:
-      "Desmorono el queso feta salado sobre la ensalada griega con aceitunas.",
+    usageExample: "Desmorono el queso feta salado sobre la ensalada griega con aceitunas.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -4393,8 +4245,7 @@ export const foodQuestions = [
     options: ["el fish and chips", "el pescado a la plancha", "el sushi"],
     correctAnswer: "el fish and chips",
     hint: "Classic British meal of battered fish with french fries",
-    usageExample:
-      "Pido el fish and chips crujiente con vinagre de malta en Londres.",
+    usageExample: "Pido el fish and chips crujiente con vinagre de malta en Londres.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4408,8 +4259,7 @@ export const foodQuestions = [
     options: ["las tortillas de harina", "el pan", "las tostadas"],
     correctAnswer: "las tortillas de harina",
     hint: "Soft, flat bread made from wheat flour, used in Mexican food",
-    usageExample:
-      "Caliento las tortillas de harina suaves para hacer burritos de frijoles.",
+    usageExample: "Caliento las tortillas de harina suaves para hacer burritos de frijoles.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4437,8 +4287,7 @@ export const foodQuestions = [
     options: ["la base de galletas graham", "la masa hojaldre", "el pan"],
     correctAnswer: "la base de galletas graham",
     hint: "Crushed graham cracker base used for pies and cheesecakes",
-    usageExample:
-      "Presiono la base de galletas graham con mantequilla en el molde.",
+    usageExample: "Presiono la base de galletas graham con mantequilla en el molde.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -4466,8 +4315,7 @@ export const foodQuestions = [
     options: ["la toronja", "la naranja", "el limón"],
     correctAnswer: "la toronja",
     hint: "Large citrus fruit with pink or yellow flesh, tarter than orange",
-    usageExample:
-      "Corto la toronja rosada por la mitad para desayunar con azúcar.",
+    usageExample: "Corto la toronja rosada por la mitad para desayunar con azúcar.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4495,8 +4343,7 @@ export const foodQuestions = [
     options: ["el guacamole", "la salsa verde", "el pico de gallo"],
     correctAnswer: "el guacamole",
     hint: "Mexican dip made from mashed avocados with lime and spices",
-    usageExample:
-      "Machaco aguacates frescos para hacer el guacamole con cilantro y limón.",
+    usageExample: "Machaco aguacates frescos para hacer el guacamole con cilantro y limón.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4542,8 +4389,7 @@ export const foodQuestions = [
     options: ["el queso havarti", "el queso gouda", "el queso brie"],
     correctAnswer: "el queso havarti",
     hint: "Mild, creamy cheese from Denmark with small holes",
-    usageExample:
-      "Derrito el queso havarti suave danés en el sándwich tostado.",
+    usageExample: "Derrito el queso havarti suave danés en el sándwich tostado.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -4557,8 +4403,7 @@ export const foodQuestions = [
     options: ["la máquina de helados", "la licuadora", "el congelador"],
     correctAnswer: "la máquina de helados",
     hint: "Commercial machine that dispenses soft-serve ice cream",
-    usageExample:
-      "Sirvo helado suave de vainilla de la máquina de helados en conos.",
+    usageExample: "Sirvo helado suave de vainilla de la máquina de helados en conos.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4572,8 +4417,7 @@ export const foodQuestions = [
     options: ["el sándwich de helado", "el helado en cono", "el sundae"],
     correctAnswer: "el sándwich de helado",
     hint: "Frozen dessert with ice cream sandwiched between two cookies",
-    usageExample:
-      "Compro el sándwich de helado de chocolate entre galletas crujientes.",
+    usageExample: "Compro el sándwich de helado de chocolate entre galletas crujientes.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4587,8 +4431,7 @@ export const foodQuestions = [
     options: ["el papad", "el naan", "la tortilla"],
     correctAnswer: "el papad",
     hint: "Thin, crispy Indian flatbread often served as appetizer",
-    usageExample:
-      "Frío el papad delgado en aceite hasta que quede crujiente y dorado.",
+    usageExample: "Frío el papad delgado en aceite hasta que quede crujiente y dorado.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -4602,8 +4445,7 @@ export const foodQuestions = [
     options: ["el condimento italiano", "la sal", "la pimienta"],
     correctAnswer: "el condimento italiano",
     hint: "Herb blend with basil, oregano, and other Italian herbs",
-    usageExample:
-      "Espolvoreo el condimento italiano con albahaca y orégano sobre la salsa.",
+    usageExample: "Espolvoreo el condimento italiano con albahaca y orégano sobre la salsa.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4617,8 +4459,7 @@ export const foodQuestions = [
     options: ["el frasco de mermelada", "la botella", "la caja"],
     correctAnswer: "el frasco de mermelada",
     hint: "Glass jar specifically for storing jam or jelly",
-    usageExample:
-      "Abro el frasco de mermelada de fresa para untar en el pan tostado.",
+    usageExample: "Abro el frasco de mermelada de fresa para untar en el pan tostado.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -4632,8 +4473,7 @@ export const foodQuestions = [
     options: ["el extractor de jugos", "la licuadora", "el cuchillo"],
     correctAnswer: "el extractor de jugos",
     hint: "Appliance that separates juice from fruit pulp",
-    usageExample:
-      "Uso el extractor de jugos para hacer jugo fresco de naranjas y zanahorias.",
+    usageExample: "Uso el extractor de jugos para hacer jugo fresco de naranjas y zanahorias.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4647,8 +4487,7 @@ export const foodQuestions = [
     options: ["el kimchi", "el tofu", "el arroz"],
     correctAnswer: "el kimchi",
     hint: "Spicy fermented cabbage, a Korean staple",
-    usageExample:
-      "Sirvo el kimchi picante fermentado como acompañamiento del arroz.",
+    usageExample: "Sirvo el kimchi picante fermentado como acompañamiento del arroz.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -4662,8 +4501,7 @@ export const foodQuestions = [
     options: ["el puerro", "la cebolla", "el cebollino"],
     correctAnswer: "el puerro",
     hint: "Long vegetable related to onions with white and green parts",
-    usageExample:
-      "Corto el puerro largo en rodajas para agregar a la sopa cremosa.",
+    usageExample: "Corto el puerro largo en rodajas para agregar a la sopa cremosa.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -4677,8 +4515,7 @@ export const foodQuestions = [
     options: ["el té de limón", "el cilantro", "la albahaca"],
     correctAnswer: "el té de limón",
     hint: "Grass-like herb used in Asian cooking with citrus flavor",
-    usageExample:
-      "Machaco el té de limón fresco para dar sabor cítrico al curry.",
+    usageExample: "Machaco el té de limón fresco para dar sabor cítrico al curry.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -4692,8 +4529,7 @@ export const foodQuestions = [
     options: ["los arándanos rojos", "las fresas", "las frambuesas"],
     correctAnswer: "los arándanos rojos",
     hint: "Tart red berries popular in Scandinavian cuisine",
-    usageExample:
-      "Preparo salsa con los arándanos rojos ácidos para las albóndigas suecas.",
+    usageExample: "Preparo salsa con los arándanos rojos ácidos para las albóndigas suecas.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -4707,8 +4543,7 @@ export const foodQuestions = [
     options: ["la raíz de loto", "la zanahoria", "el rábano"],
     correctAnswer: "la raíz de loto",
     hint: "Aquatic vegetable root with distinctive hole pattern",
-    usageExample:
-      "Rebano la raíz de loto para mostrar los hoyos decorativos en el salteado.",
+    usageExample: "Rebano la raíz de loto para mostrar los hoyos decorativos en el salteado.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -4722,8 +4557,7 @@ export const foodQuestions = [
     options: ["la lonchera", "la bolsa", "la mochila"],
     correctAnswer: "la lonchera",
     hint: "Container specifically designed for carrying lunch",
-    usageExample:
-      "Empaco mi sándwich y fruta en la lonchera para llevar al trabajo.",
+    usageExample: "Empaco mi sándwich y fruta en la lonchera para llevar al trabajo.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -4751,8 +4585,7 @@ export const foodQuestions = [
     options: ["los macarrones con queso", "los espaguetis", "los ravioles"],
     correctAnswer: "los macarrones con queso",
     hint: "Comfort food of elbow pasta in creamy cheese sauce",
-    usageExample:
-      "Preparo los macarrones con queso cremoso que les encantan a los niños.",
+    usageExample: "Preparo los macarrones con queso cremoso que les encantan a los niños.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4766,8 +4599,7 @@ export const foodQuestions = [
     options: ["el filete de caballa ahumada", "el atún", "el salmón"],
     correctAnswer: "el filete de caballa ahumada",
     hint: "Smoked oily fish fillet, high in healthy fats",
-    usageExample:
-      "Desayuno el filete de caballa ahumada rico en omega-3 con tostadas.",
+    usageExample: "Desayuno el filete de caballa ahumada rico en omega-3 con tostadas.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -4781,8 +4613,7 @@ export const foodQuestions = [
     options: ["la caballa", "el atún", "el salmón"],
     correctAnswer: "la caballa",
     hint: "Small oily fish with distinctive markings, rich in nutrients",
-    usageExample:
-      "Aso la caballa fresca a la parrilla con limón y aceite de oliva.",
+    usageExample: "Aso la caballa fresca a la parrilla con limón y aceite de oliva.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -4796,8 +4627,7 @@ export const foodQuestions = [
     options: ["la margarita", "el mojito", "la piña colada"],
     correctAnswer: "la margarita",
     hint: "Popular cocktail with tequila, lime juice, and salt rim",
-    usageExample:
-      "Tomo la margarita helada con tequila, lima y sal en el borde.",
+    usageExample: "Tomo la margarita helada con tequila, lima y sal en el borde.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4815,8 +4645,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el helado de matcha",
     hint: "Ice cream flavored with Japanese green tea powder",
-    usageExample:
-      "Pruebo el helado de matcha verde con sabor a té verde japonés.",
+    usageExample: "Pruebo el helado de matcha verde con sabor a té verde japonés.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -4830,8 +4659,7 @@ export const foodQuestions = [
     options: ["el matcha latte helado", "el té verde", "el jugo verde"],
     correctAnswer: "el matcha latte helado",
     hint: "Iced latte made with matcha green tea powder and milk",
-    usageExample:
-      "Bebo el matcha latte helado con espuma de leche y polvo de té verde.",
+    usageExample: "Bebo el matcha latte helado con espuma de leche y polvo de té verde.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -4849,8 +4677,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "la barra de chocolate con leche",
     hint: "Solid chocolate bar made with milk, sweeter than dark chocolate",
-    usageExample:
-      "Rompo la barra de chocolate con leche para compartir con los amigos.",
+    usageExample: "Rompo la barra de chocolate con leche para compartir con los amigos.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -4864,8 +4691,7 @@ export const foodQuestions = [
     options: ["la menta seca", "el orégano", "el tomillo"],
     correctAnswer: "la menta seca",
     hint: "Dried mint leaves used for making refreshing tea",
-    usageExample:
-      "Preparo té caliente con la menta seca aromática para relajarme.",
+    usageExample: "Preparo té caliente con la menta seca aromática para relajarme.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4879,8 +4705,7 @@ export const foodQuestions = [
     options: ["las morillas", "los champiñones", "las setas"],
     correctAnswer: "las morillas",
     hint: "Prized mushrooms with distinctive honeycomb texture",
-    usageExample:
-      "Salteo las morillas exóticas con mantequilla y ajo para la pasta.",
+    usageExample: "Salteo las morillas exóticas con mantequilla y ajo para la pasta.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -4894,8 +4719,7 @@ export const foodQuestions = [
     options: ["el pan naan", "la tortilla", "el pan pita"],
     correctAnswer: "el pan naan",
     hint: "Leavened flatbread from India, often brushed with butter",
-    usageExample:
-      "Mojo el pan naan caliente con mantequilla en el curry picante.",
+    usageExample: "Mojo el pan naan caliente con mantequilla en el curry picante.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4909,8 +4733,7 @@ export const foodQuestions = [
     options: ["la col napa", "la lechuga", "el repollo"],
     correctAnswer: "la col napa",
     hint: "Oblong cabbage used in Asian cooking, milder than regular cabbage",
-    usageExample:
-      "Corto la col napa alargada para hacer kimchi fermentado casero.",
+    usageExample: "Corto la col napa alargada para hacer kimchi fermentado casero.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -4924,8 +4747,7 @@ export const foodQuestions = [
     options: ["el colador de fideos", "la olla", "el plato"],
     correctAnswer: "el colador de fideos",
     hint: "Kitchen tool with holes for draining water from pasta",
-    usageExample:
-      "Escurro los espaguetis cocidos en el colador de fideos de metal.",
+    usageExample: "Escurro los espaguetis cocidos en el colador de fideos de metal.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4939,8 +4761,7 @@ export const foodQuestions = [
     options: ["el cascanueces", "el cuchillo", "el martillo"],
     correctAnswer: "el cascanueces",
     hint: "Tool designed specifically for cracking hard nut shells",
-    usageExample:
-      "Uso el cascanueces de metal para romper las cáscaras duras de nueces.",
+    usageExample: "Uso el cascanueces de metal para romper las cáscaras duras de nueces.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4954,8 +4775,7 @@ export const foodQuestions = [
     options: ["el orégano seco", "la albahaca", "el tomillo"],
     correctAnswer: "el orégano seco",
     hint: "Dried herb essential in Italian cooking, especially pizza",
-    usageExample:
-      "Espolvoreo el orégano seco italiano sobre la pizza recién horneada.",
+    usageExample: "Espolvoreo el orégano seco italiano sobre la pizza recién horneada.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -4987,8 +4807,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el plátano muy maduro",
     hint: "Brown, spotted banana perfect for baking banana bread",
-    usageExample:
-      "Machaco el plátano muy maduro con manchas marrones para el pan de plátano.",
+    usageExample: "Machaco el plátano muy maduro con manchas marrones para el pan de plátano.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5002,8 +4821,7 @@ export const foodQuestions = [
     options: ["el pastrami", "el jamón", "el tocino"],
     correctAnswer: "el pastrami",
     hint: "Seasoned, smoked beef often used in deli sandwiches",
-    usageExample:
-      "Apilo rebanadas gruesas de el pastrami ahumado en pan de centeno.",
+    usageExample: "Apilo rebanadas gruesas de el pastrami ahumado en pan de centeno.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -5017,8 +4835,7 @@ export const foodQuestions = [
     options: ["el turrón de cacahuate", "el chocolate", "el caramelo"],
     correctAnswer: "el turrón de cacahuate",
     hint: "Hard candy made with peanuts in caramelized sugar",
-    usageExample:
-      "Rompo el turrón de cacahuate duro en pedazos pequeños para comer.",
+    usageExample: "Rompo el turrón de cacahuate duro en pedazos pequeños para comer.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5032,8 +4849,7 @@ export const foodQuestions = [
     options: ["el pepperoni", "el jamón", "el tocino"],
     correctAnswer: "el pepperoni",
     hint: "Spicy cured sausage, most popular pizza topping",
-    usageExample:
-      "Cubro la pizza con rodajas de el pepperoni picante antes de hornear.",
+    usageExample: "Cubro la pizza con rodajas de el pepperoni picante antes de hornear.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5047,8 +4863,7 @@ export const foodQuestions = [
     options: ["el pesto", "la salsa marinara", "la salsa alfredo"],
     correctAnswer: "el pesto",
     hint: "Italian sauce made from basil, garlic, pine nuts, and olive oil",
-    usageExample:
-      "Mezclo el pesto fresco de albahaca y piñones con pasta caliente.",
+    usageExample: "Mezclo el pesto fresco de albahaca y piñones con pasta caliente.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5062,8 +4877,7 @@ export const foodQuestions = [
     options: ["los pistachos", "las almendras", "las nueces"],
     correctAnswer: "los pistachos",
     hint: "Green nut in beige shell, popular snack from Middle East",
-    usageExample:
-      "Abro las cáscaras de los pistachos salados para comerlos mientras miro TV.",
+    usageExample: "Abro las cáscaras de los pistachos salados para comerlos mientras miro TV.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5091,8 +4905,7 @@ export const foodQuestions = [
     options: ["la caja de pizza", "la bolsa", "el plato"],
     correctAnswer: "la caja de pizza",
     hint: "Cardboard box designed for delivering hot pizza",
-    usageExample:
-      "Abro la caja de pizza caliente recién entregada a domicilio.",
+    usageExample: "Abro la caja de pizza caliente recién entregada a domicilio.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -5106,8 +4919,7 @@ export const foodQuestions = [
     options: ["las chips de plátano", "las papas fritas", "las tortilla chips"],
     correctAnswer: "las chips de plátano",
     hint: "Crispy fried slices of plantain, popular Latin American snack",
-    usageExample:
-      "Como las chips de plátano crujientes y saladas como aperitivo.",
+    usageExample: "Como las chips de plátano crujientes y saladas como aperitivo.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5121,8 +4933,7 @@ export const foodQuestions = [
     options: ["el plátano macho", "el plátano normal", "la banana"],
     correctAnswer: "el plátano macho",
     hint: "Starchy cooking banana that must be cooked before eating",
-    usageExample:
-      "Frío el plátano macho en rodajas para hacer tostones crujientes.",
+    usageExample: "Frío el plátano macho en rodajas para hacer tostones crujientes.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5150,8 +4961,7 @@ export const foodQuestions = [
     options: ["la granada", "la fresa", "la cereza"],
     correctAnswer: "la granada",
     hint: "Round fruit filled with juicy red seeds, high in antioxidants",
-    usageExample:
-      "Abro la granada para sacar las semillas jugosas y brillantes.",
+    usageExample: "Abro la granada para sacar las semillas jugosas y brillantes.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -5169,8 +4979,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "las semillas de amapola",
     hint: "Tiny dark blue seeds used as topping on breads and pastries",
-    usageExample:
-      "Espolvoreo las semillas de amapola azules sobre los panecillos antes de hornear.",
+    usageExample: "Espolvoreo las semillas de amapola azules sobre los panecillos antes de hornear.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -5198,8 +5007,7 @@ export const foodQuestions = [
     options: ["las ciruelas pasas", "las pasas", "los dátiles"],
     correctAnswer: "las ciruelas pasas",
     hint: "Dried plums known for digestive health benefits",
-    usageExample:
-      "Como las ciruelas pasas dulces cada mañana para mejorar mi digestión.",
+    usageExample: "Como las ciruelas pasas dulces cada mañana para mejorar mi digestión.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5213,8 +5021,7 @@ export const foodQuestions = [
     options: ["el pay de calabaza", "el pay de manzana", "el pay de cereza"],
     correctAnswer: "el pay de calabaza",
     hint: "Traditional Thanksgiving dessert made with pumpkin",
-    usageExample:
-      "Sirvo el pay de calabaza con crema batida en el día de Acción de Gracias.",
+    usageExample: "Sirvo el pay de calabaza con crema batida en el día de Acción de Gracias.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5242,8 +5049,7 @@ export const foodQuestions = [
     options: ["las pasas", "las uvas frescas", "las ciruelas"],
     correctAnswer: "las pasas",
     hint: "Dried grapes, sweet and wrinkled, used in baking or as snack",
-    usageExample:
-      "Agrego las pasas dulces y arrugadas a la avena del desayuno.",
+    usageExample: "Agrego las pasas dulces y arrugadas a la avena del desayuno.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5257,8 +5063,7 @@ export const foodQuestions = [
     options: ["la lechuga de hoja roja", "la lechuga iceberg", "la espinaca"],
     correctAnswer: "la lechuga de hoja roja",
     hint: "Lettuce variety with reddish-purple tinged leaves",
-    usageExample:
-      "Lavo la lechuga de hoja roja fresca para preparar una ensalada colorida.",
+    usageExample: "Lavo la lechuga de hoja roja fresca para preparar una ensalada colorida.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5272,8 +5077,7 @@ export const foodQuestions = [
     options: ["el ruibarbo", "el apio", "el espárrago"],
     correctAnswer: "el ruibarbo",
     hint: "Tart pink stalks used in pies and desserts, toxic leaves",
-    usageExample:
-      "Cocino el ruibarbo ácido con azúcar para hacer relleno de pay.",
+    usageExample: "Cocino el ruibarbo ácido con azúcar para hacer relleno de pay.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -5301,8 +5105,7 @@ export const foodQuestions = [
     options: ["la arrocera", "la olla normal", "el microondas"],
     correctAnswer: "la arrocera",
     hint: "Electric appliance designed specifically for cooking rice",
-    usageExample:
-      "Pongo el arroz con agua en la arrocera eléctrica para cocinarlo perfecto.",
+    usageExample: "Pongo el arroz con agua en la arrocera eléctrica para cocinarlo perfecto.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5316,8 +5119,7 @@ export const foodQuestions = [
     options: ["los fideos de arroz", "los espaguetis", "los fideos de trigo"],
     correctAnswer: "los fideos de arroz",
     hint: "Noodles made from rice flour, common in Asian cuisine",
-    usageExample:
-      "Salteo los fideos de arroz suaves con vegetales y salsa de soya.",
+    usageExample: "Salteo los fideos de arroz suaves con vegetales y salsa de soya.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5335,8 +5137,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "los fideos de arroz vermicelli",
     hint: "Very thin rice noodles used in soups and spring rolls",
-    usageExample:
-      "Agrego los fideos de arroz vermicelli ultra delgados a la sopa vietnamita.",
+    usageExample: "Agrego los fideos de arroz vermicelli ultra delgados a la sopa vietnamita.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -5350,8 +5151,7 @@ export const foodQuestions = [
     options: ["el romero", "el orégano", "la albahaca"],
     correctAnswer: "el romero",
     hint: "Needle-like herb with strong aroma, pairs well with roasted meats",
-    usageExample:
-      "Froto el romero fresco aromático sobre el cordero antes de asarlo.",
+    usageExample: "Froto el romero fresco aromático sobre el cordero antes de asarlo.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5365,8 +5165,7 @@ export const foodQuestions = [
     options: ["la salvia seca", "el romero", "el tomillo"],
     correctAnswer: "la salvia seca",
     hint: "Dried herb commonly used in Thanksgiving turkey stuffing",
-    usageExample:
-      "Mezclo la salvia seca con pan rallado para el relleno del pavo.",
+    usageExample: "Mezclo la salvia seca con pan rallado para el relleno del pavo.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -5380,8 +5179,7 @@ export const foodQuestions = [
     options: ["el salami", "el jamón", "el tocino"],
     correctAnswer: "el salami",
     hint: "Italian cured sausage with distinctive spices and fat",
-    usageExample:
-      "Rebano el salami italiano curado fino para el sándwich submarino.",
+    usageExample: "Rebano el salami italiano curado fino para el sándwich submarino.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5395,8 +5193,7 @@ export const foodQuestions = [
     options: ["la samosa", "la empanada", "el taco"],
     correctAnswer: "la samosa",
     hint: "Triangular fried pastry filled with spiced potatoes, popular in India",
-    usageExample:
-      "Muerdo la samosa triangular caliente rellena de papas especiadas.",
+    usageExample: "Muerdo la samosa triangular caliente rellena de papas especiadas.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -5410,8 +5207,7 @@ export const foodQuestions = [
     options: ["la bolsa para sándwich", "la mochila", "el plato"],
     correctAnswer: "la bolsa para sándwich",
     hint: "Plastic or reusable bag designed for packing sandwiches",
-    usageExample:
-      "Envuelvo mi sándwich de jamón en la bolsa para sándwich plástica.",
+    usageExample: "Envuelvo mi sándwich de jamón en la bolsa para sándwich plástica.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -5439,8 +5235,7 @@ export const foodQuestions = [
     options: ["las vieiras crudas", "las almejas", "los mejillones"],
     correctAnswer: "las vieiras crudas",
     hint: "Sweet, tender shellfish often seared or eaten raw",
-    usageExample:
-      "Sello las vieiras crudas grandes en mantequilla hasta dorar por fuera.",
+    usageExample: "Sello las vieiras crudas grandes en mantequilla hasta dorar por fuera.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -5454,8 +5249,7 @@ export const foodQuestions = [
     options: ["el carrito de servicio", "la bandeja", "el plato"],
     correctAnswer: "el carrito de servicio",
     hint: "Wheeled cart used for tableside service in fine dining",
-    usageExample:
-      "El mesero trae el carrito de servicio con postres a la mesa.",
+    usageExample: "El mesero trae el carrito de servicio con postres a la mesa.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -5595,8 +5389,7 @@ export const foodQuestions = [
     options: ["el camote", "la papa normal", "la zanahoria"],
     correctAnswer: "el camote",
     hint: "Orange-fleshed root vegetable, sweeter than regular potato",
-    usageExample:
-      "Horneo el camote con canela y mantequilla para el Día de Acción de Gracias.",
+    usageExample: "Horneo el camote con canela y mantequilla para el Día de Acción de Gracias.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5750,8 +5543,7 @@ export const foodQuestions = [
     options: ["la wafflera", "la tostadora", "el horno"],
     correctAnswer: "la wafflera",
     hint: "Electric appliance with grid pattern for making waffles",
-    usageExample:
-      "Preparo waffles dorados en la wafflera eléctrica los domingos.",
+    usageExample: "Preparo waffles dorados en la wafflera eléctrica los domingos.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5765,8 +5557,7 @@ export const foodQuestions = [
     options: ["las nueces", "las almendras", "los cacahuates"],
     correctAnswer: "las nueces",
     hint: "Brain-shaped nut often added to baked goods",
-    usageExample:
-      "Añado las nueces picadas a la masa de brownies de chocolate.",
+    usageExample: "Añado las nueces picadas a la masa de brownies de chocolate.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5784,8 +5575,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "la barra de chocolate blanco",
     hint: "Sweet confection made from cocoa butter, milk, and sugar",
-    usageExample:
-      "Derrito la barra de chocolate blanco para hacer postres cremosos.",
+    usageExample: "Derrito la barra de chocolate blanco para hacer postres cremosos.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5799,8 +5589,7 @@ export const foodQuestions = [
     options: ["el barril de vino", "la botella", "la copa"],
     correctAnswer: "el barril de vino",
     hint: "Wooden barrel used for aging and storing wine",
-    usageExample:
-      "El vino tinto descansa en el barril de vino de roble durante meses.",
+    usageExample: "El vino tinto descansa en el barril de vino de roble durante meses.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5828,8 +5617,7 @@ export const foodQuestions = [
     options: ["el sacacorchos", "el cuchillo", "las tijeras"],
     correctAnswer: "el sacacorchos",
     hint: "Tool with spiral and levers for removing wine corks",
-    usageExample:
-      "Uso el sacacorchos con palancas para abrir la botella de vino tinto.",
+    usageExample: "Uso el sacacorchos con palancas para abrir la botella de vino tinto.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5857,8 +5645,7 @@ export const foodQuestions = [
     options: ["el chef", "el mesero", "el lavaplatos"],
     correctAnswer: "el chef",
     hint: "Professional cook who leads the kitchen in a restaurant",
-    usageExample:
-      "El chef prepara platos gourmet en la cocina del restaurante.",
+    usageExample: "El chef prepara platos gourmet en la cocina del restaurante.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -5890,8 +5677,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el cortador de pizza",
     hint: "Round blade tool with a handle, rolls across pizza to cut it into slices",
-    usageExample:
-      "Corto la pizza en 8 rebanadas con el cortador de pizza circular.",
+    usageExample: "Corto la pizza en 8 rebanadas con el cortador de pizza circular.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5909,8 +5695,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el horno del panadero",
     hint: "Large commercial oven specifically designed for baking bread and pastries",
-    usageExample:
-      "El panadero hornea pan fresco en el horno del panadero todas las mañanas.",
+    usageExample: "El panadero hornea pan fresco en el horno del panadero todas las mañanas.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5928,8 +5713,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el juego de repostería",
     hint: "Complete collection of tools including measuring cups, spatulas, and mixing bowls for baking",
-    usageExample:
-      "Compro el juego de repostería completo con moldes y espátulas.",
+    usageExample: "Compro el juego de repostería completo con moldes y espátulas.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -5943,8 +5727,7 @@ export const foodQuestions = [
     options: ["la cecina de res", "el charqui", "la carne seca"],
     correctAnswer: "la cecina de res",
     hint: "Dried, seasoned strips of beef, chewy texture, popular portable protein snack",
-    usageExample:
-      "Llevo la cecina de res como snack durante las excursiones de montaña.",
+    usageExample: "Llevo la cecina de res como snack durante las excursiones de montaña.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -6023,8 +5806,7 @@ export const foodQuestions = [
     options: ["la cervecería", "la microcervecería", "la fábrica de cerveza"],
     correctAnswer: "la cervecería",
     hint: "Facility with large tanks and equipment for brewing beer, often offers tours and tastings",
-    usageExample:
-      "Visitamos la cervecería local y probamos sus cervezas artesanales.",
+    usageExample: "Visitamos la cervecería local y probamos sus cervezas artesanales.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -6038,8 +5820,7 @@ export const foodQuestions = [
     options: ["las coles de bruselas", "el repollo bebé", "la col china"],
     correctAnswer: "las coles de bruselas",
     hint: "Small, round green vegetables that grow on stalks, often roasted or steamed",
-    usageExample:
-      "Asar las coles de bruselas con aceite de oliva y sal marina.",
+    usageExample: "Asar las coles de bruselas con aceite de oliva y sal marina.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -6057,8 +5838,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "la manzana acaramelada",
     hint: "Whole apple on a stick coated in sweet caramel, popular autumn treat",
-    usageExample:
-      "Compro la manzana acaramelada en un palito en la feria de otoño.",
+    usageExample: "Compro la manzana acaramelada en un palito en la feria de otoño.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -6094,8 +5874,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el recipiente de cereal",
     hint: "Airtight container designed to keep cereal fresh and crunchy, often made of plastic",
-    usageExample:
-      "Guardo el cereal crujiente en el recipiente de cereal hermético.",
+    usageExample: "Guardo el cereal crujiente en el recipiente de cereal hermético.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -6113,8 +5892,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "las alitas de pollo",
     hint: "Small pieces of chicken, often served with buffalo sauce, popular appetizer at sports bars",
-    usageExample:
-      "Pido las alitas de pollo con salsa picante y apio en el bar.",
+    usageExample: "Pido las alitas de pollo con salsa picante y apio en el bar.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -6150,8 +5928,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el molino de café",
     hint: "Device that crushes whole coffee beans into grounds for brewing, can be manual or electric",
-    usageExample:
-      "Muelo los granos tostados en el molino de café antes de prepararlo.",
+    usageExample: "Muelo los granos tostados en el molino de café antes de prepararlo.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -6169,8 +5946,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el tostador de café",
     hint: "Specialized machine that heats green coffee beans to develop flavor and aroma",
-    usageExample:
-      "Tuesto los granos verdes en el tostador de café hasta que estén marrones.",
+    usageExample: "Tuesto los granos verdes en el tostador de café hasta que estén marrones.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -6206,8 +5982,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "la cerveza artesanal",
     hint: "Beer made by independent breweries in small quantities with unique flavors",
-    usageExample:
-      "Pruebo la cerveza artesanal de sabores únicos en la cervecería local.",
+    usageExample: "Pruebo la cerveza artesanal de sabores únicos en la cervecería local.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -6243,8 +6018,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el tapete escurridor",
     hint: "Absorbent mat placed next to the sink where dishes dry after washing",
-    usageExample:
-      "Coloco los platos limpios sobre el tapete escurridor junto al fregadero.",
+    usageExample: "Coloco los platos limpios sobre el tapete escurridor junto al fregadero.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -6262,8 +6036,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el batidor de huevos",
     hint: "Hand-cranked tool with rotating blades used to whip eggs and cream",
-    usageExample:
-      "Bato los huevos para el pastel con el batidor de huevos manual.",
+    usageExample: "Bato los huevos para el pastel con el batidor de huevos manual.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -6281,8 +6054,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el escalfador de huevos",
     hint: "Special pan with cups that hold eggs over simmering water to poach them gently",
-    usageExample:
-      "Preparo huevos benedict en el escalfador de huevos todas las mañanas.",
+    usageExample: "Preparo huevos benedict en el escalfador de huevos todas las mañanas.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -6296,8 +6068,7 @@ export const foodQuestions = [
     options: ["el cernidor de harina", "el tamiz de harina", "el cedazo"],
     correctAnswer: "el cernidor de harina",
     hint: "Kitchen tool with fine mesh that removes lumps from flour for baking",
-    usageExample:
-      "Cierno la harina con el cernidor de harina antes de mezclarla.",
+    usageExample: "Cierno la harina con el cernidor de harina antes de mezclarla.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -6315,8 +6086,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el recipiente de comida",
     hint: "Plastic or glass container with lid used to store food in the refrigerator",
-    usageExample:
-      "Guardo las sobras de la cena en el recipiente de comida en el refrigerador.",
+    usageExample: "Guardo las sobras de la cena en el recipiente de comida en el refrigerador.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -6330,8 +6100,7 @@ export const foodQuestions = [
     options: ["el pollo frito", "el pollo empanizado", "el pollo crocante"],
     correctAnswer: "el pollo frito",
     hint: "Chicken pieces coated in seasoned batter and deep-fried until golden and crispy",
-    usageExample:
-      "Compro el pollo frito crujiente para la cena familiar del domingo.",
+    usageExample: "Compro el pollo frito crujiente para la cena familiar del domingo.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -6345,8 +6114,7 @@ export const foodQuestions = [
     options: ["el rollo de fruta", "la lámina de fruta", "la fruta prensada"],
     correctAnswer: "el rollo de fruta",
     hint: "Chewy fruit snack made from pureed and dried fruit, rolled into thin sheets",
-    usageExample:
-      "Los niños disfrutan el rollo de fruta dulce en sus loncheras.",
+    usageExample: "Los niños disfrutan el rollo de fruta dulce en sus loncheras.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -6378,8 +6146,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el gusano de goma",
     hint: "Long, chewy candy shaped like a worm, often in bright colors with sour coating",
-    usageExample:
-      "Comparto los gusanos de goma ácidos con mis amigos en el cine.",
+    usageExample: "Comparto los gusanos de goma ácidos con mis amigos en el cine.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -6397,8 +6164,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "la cucharilla para helado",
     hint: "Specialized spoon with a release mechanism to form perfect round balls of ice cream",
-    usageExample:
-      "Sirvo bolas perfectas de helado con la cucharilla para helado.",
+    usageExample: "Sirvo bolas perfectas de helado con la cucharilla para helado.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -6416,8 +6182,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "la máquina de hielo",
     hint: "Appliance that continuously makes ice cubes and stores them, common in restaurants",
-    usageExample:
-      "La máquina de hielo produce cubos frescos todo el día en el restaurante.",
+    usageExample: "La máquina de hielo produce cubos frescos todo el día en el restaurante.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -6473,8 +6238,7 @@ export const foodQuestions = [
     options: ["la cocina", "la cocineta", "el cuarto de cocinar"],
     correctAnswer: "la cocina",
     hint: "Room in the house where you cook and prepare meals",
-    usageExample:
-      "Paso mucho tiempo en la cocina preparando comidas deliciosas.",
+    usageExample: "Paso mucho tiempo en la cocina preparando comidas deliciosas.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -6488,8 +6252,7 @@ export const foodQuestions = [
     options: ["el lassi", "el batido de yogur", "el smoothie de yogur"],
     correctAnswer: "el lassi",
     hint: "Traditional Indian drink made with yogurt, water, spices and sometimes fruit",
-    usageExample:
-      "Tomo el lassi de mango refrescante con comida india picante.",
+    usageExample: "Tomo el lassi de mango refrescante con comida india picante.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -6508,8 +6271,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "las cucharas medidoras",
     hint: "Small spoons used for measuring precise amounts of ingredients while cooking",
-    usageExample:
-      "Uso las cucharas medidoras para agregar exactamente una cucharadita de sal.",
+    usageExample: "Uso las cucharas medidoras para agregar exactamente una cucharadita de sal.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -6556,8 +6318,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el molde para muffins",
     hint: "Metal baking pan with multiple cup-shaped indentations for making muffins",
-    usageExample:
-      "Hornear 12 cupcakes al mismo tiempo en el molde para muffins.",
+    usageExample: "Hornear 12 cupcakes al mismo tiempo en el molde para muffins.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -6576,8 +6337,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "los nachos",
     hint: "Tortilla chips topped with melted cheese, often served with toppings like jalapenos",
-    usageExample:
-      "Comparto los nachos con queso fundido mientras veo el partido.",
+    usageExample: "Comparto los nachos con queso fundido mientras veo el partido.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -6613,8 +6373,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "los aros de cebolla",
     hint: "Deep-fried onion slices coated in batter, served as a side dish or appetizer",
-    usageExample:
-      "Pido los aros de cebolla crujientes como entrada en el restaurante.",
+    usageExample: "Pido los aros de cebolla crujientes como entrada en el restaurante.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -6650,8 +6409,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "la manga pastelera",
     hint: "Cone-shaped bag with a nozzle used for piping frosting and decorating desserts",
-    usageExample:
-      "Decoro el pastel con la manga pastelera llena de crema de mantequilla.",
+    usageExample: "Decoro el pastel con la manga pastelera llena de crema de mantequilla.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -6670,8 +6428,7 @@ export const foodQuestions = [
     correctAnswer: "la taza de crema de cacahuate",
     hint: "Chocolate cup-shaped candy with peanut butter filling, often made by Reese's",
     points: 10,
-    usageExample:
-      "Como la taza de crema de cacahuate como postre dulce y delicioso.",
+    usageExample: "Como la taza de crema de cacahuate como postre dulce y delicioso.",
     category: "food",
     difficulty: "medium",
     emotion: "happy",
@@ -6685,8 +6442,7 @@ export const foodQuestions = [
     options: ["el pesto", "la salsa genovesa", "el pesto alla genovese"],
     correctAnswer: "el pesto",
     hint: "Italian sauce made from crushed basil, garlic, pine nuts, Parmesan cheese and olive oil",
-    usageExample:
-      "Mezclo el pesto fresco con pasta caliente y queso parmesano.",
+    usageExample: "Mezclo el pesto fresco con pasta caliente y queso parmesano.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -6704,8 +6460,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "la proteína en polvo",
     hint: "Powdered supplement high in protein, often used in fitness shakes for muscle building",
-    usageExample:
-      "Añado la proteína en polvo a mi batido después del gimnasio.",
+    usageExample: "Añado la proteína en polvo a mi batido después del gimnasio.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -6783,8 +6538,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el rollo de salchicha",
     hint: "British pastry snack with sausage meat wrapped in flaky puff pastry",
-    usageExample:
-      "Como el rollo de salchicha caliente recién horneado de la panadería.",
+    usageExample: "Como el rollo de salchicha caliente recién horneado de la panadería.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -6798,8 +6552,7 @@ export const foodQuestions = [
     options: ["el shawarma", "el kebab", "el döner"],
     correctAnswer: "el shawarma",
     hint: "Middle Eastern wrap with spit-roasted meat, vegetables, and tahini sauce in pita",
-    usageExample:
-      "Pido el shawarma de cordero con salsa de tahini y vegetales.",
+    usageExample: "Pido el shawarma de cordero con salsa de tahini y vegetales.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -6817,8 +6570,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "la alita de pollo picante",
     hint: "Fried chicken wing coated in spicy hot sauce, often served with ranch or blue cheese",
-    usageExample:
-      "Como la alita de pollo picante con salsa picante y aderezo ranch.",
+    usageExample: "Como la alita de pollo picante con salsa picante y aderezo ranch.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -6850,8 +6602,7 @@ export const foodQuestions = [
     options: ["el sushi", "el maki", "el nigiri"],
     correctAnswer: "el sushi",
     hint: "Japanese dish of vinegared rice topped with raw fish or rolled with seaweed",
-    usageExample:
-      "Pido el sushi variado de salmón y atún en el restaurante japonés.",
+    usageExample: "Pido el sushi variado de salmón y atún en el restaurante japonés.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -6865,8 +6616,7 @@ export const foodQuestions = [
     options: ["la tostadora", "el tostador", "la máquina de tostar"],
     correctAnswer: "la tostadora",
     hint: "Kitchen appliance that heats and browns slices of bread",
-    usageExample:
-      "Tuesto dos rebanadas de pan en la tostadora para el desayuno.",
+    usageExample: "Tuesto dos rebanadas de pan en la tostadora para el desayuno.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -6880,8 +6630,7 @@ export const foodQuestions = [
     options: ["las pinzas", "las tenazas", "las pinzas de cocina"],
     correctAnswer: "las pinzas",
     hint: "Kitchen tool with two arms for gripping and turning food while cooking",
-    usageExample:
-      "Volteo la carne en la parrilla con las pinzas de acero inoxidable.",
+    usageExample: "Volteo la carne en la parrilla con las pinzas de acero inoxidable.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -6909,8 +6658,7 @@ export const foodQuestions = [
     options: ["el panadero", "el pastelero", "el repostero"],
     correctAnswer: "el panadero",
     hint: "Professional who makes bread, rolls, and baked goods in a bakery",
-    usageExample:
-      "El panadero se levanta temprano para hornear pan fresco todos los días.",
+    usageExample: "El panadero se levanta temprano para hornear pan fresco todos los días.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -6924,8 +6672,7 @@ export const foodQuestions = [
     options: ["el carnicero", "el cortador de carne", "el vendedor de carne"],
     correctAnswer: "el carnicero",
     hint: "Professional who prepares and sells fresh meat and poultry",
-    usageExample:
-      "El carnicero corta la carne de res en filetes gruesos para mí.",
+    usageExample: "El carnicero corta la carne de res en filetes gruesos para mí.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -7009,8 +6756,7 @@ export const foodQuestions = [
     options: ["el rollo de col", "el rollo de lechuga", "el rollo de espinaca"],
     correctAnswer: "el rollo de col",
     hint: "Cabbage leaves stuffed with meat and rice, popular in Eastern European cuisine",
-    usageExample:
-      "Cocino el rollo de col relleno de carne y arroz en salsa de tomate.",
+    usageExample: "Cocino el rollo de col relleno de carne y arroz en salsa de tomate.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -7028,8 +6774,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "las sardinas enlatadas",
     hint: "Small, oily fish often preserved in tins, popular on crackers or toast",
-    usageExample:
-      "Abro las sardinas enlatadas y las pongo sobre galletas saladas.",
+    usageExample: "Abro las sardinas enlatadas y las pongo sobre galletas saladas.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -7057,8 +6802,7 @@ export const foodQuestions = [
     options: ["la pasta carbonara", "la pasta alfredo", "la pasta bolognesa"],
     correctAnswer: "la pasta carbonara",
     hint: "Creamy Italian pasta dish with eggs, Pecorino cheese, and guanciale or bacon",
-    usageExample:
-      "Preparo la pasta carbonara con huevos frescos y queso pecorino.",
+    usageExample: "Preparo la pasta carbonara con huevos frescos y queso pecorino.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -7086,8 +6830,7 @@ export const foodQuestions = [
     options: ["el rollo de canela", "el pan de nuez", "el pan dulce"],
     correctAnswer: "el rollo de canela",
     hint: "Sweet pastry with cinnamon filling, often topped with icing",
-    usageExample:
-      "Horneo el rollo de canela fresco con glaseado de queso crema.",
+    usageExample: "Horneo el rollo de canela fresco con glaseado de queso crema.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -7101,8 +6844,7 @@ export const foodQuestions = [
     options: ["la copa de cóctel", "la copa de vino", "la copa de champán"],
     correctAnswer: "la copa de cóctel",
     hint: "V-shaped glass typically used for martinis and other mixed drinks",
-    usageExample:
-      "Sirvo el martini en la copa de cóctel fría con una aceituna.",
+    usageExample: "Sirvo el martini en la copa de cóctel fría con una aceituna.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -7116,8 +6858,7 @@ export const foodQuestions = [
     options: ["la nevera portátil", "la caja térmica", "la heladera portátil"],
     correctAnswer: "la nevera portátil",
     hint: "Insulated container for keeping food and drinks cold during picnics or trips",
-    usageExample:
-      "Lleno la nevera portátil con hielo y refrescos para el picnic.",
+    usageExample: "Lleno la nevera portátil con hielo y refrescos para el picnic.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -7131,8 +6872,7 @@ export const foodQuestions = [
     options: ["el tapón de corcho", "el tapón de plástico", "el tapón de goma"],
     correctAnswer: "el tapón de corcho",
     hint: "Natural stopper made from tree bark, traditionally used to seal wine bottles",
-    usageExample:
-      "Saco el tapón de corcho de la botella de vino con el sacacorchos.",
+    usageExample: "Saco el tapón de corcho de la botella de vino con el sacacorchos.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -7150,8 +6890,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "la marisquería de playa",
     hint: "Casual seafood restaurant, often near the coast serving crab and other shellfish",
-    usageExample:
-      "Como cangrejos frescos en la marisquería de playa junto al muelle.",
+    usageExample: "Como cangrejos frescos en la marisquería de playa junto al muelle.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -7169,8 +6908,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el croissant de jamón y mantequilla",
     hint: "Savory French pastry filled with butter and ham, popular for breakfast",
-    usageExample:
-      "Compro el croissant de jamón y mantequilla caliente en la panadería francesa.",
+    usageExample: "Compro el croissant de jamón y mantequilla caliente en la panadería francesa.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -7188,8 +6926,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "los huevos rellenos",
     hint: "Hard-boiled eggs cut in half and filled with yolk mixture, often with mayo",
-    usageExample:
-      "Preparo los huevos rellenos con yema, mayonesa y mostaza para la fiesta.",
+    usageExample: "Preparo los huevos rellenos con yema, mayonesa y mostaza para la fiesta.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -7241,8 +6978,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el ponche de huevo",
     hint: "Traditional holiday drink made with milk, cream, eggs, sugar, and spices",
-    usageExample:
-      "Sirvo el ponche de huevo con nuez moscada en la fiesta de Navidad.",
+    usageExample: "Sirvo el ponche de huevo con nuez moscada en la fiesta de Navidad.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -7260,8 +6996,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "la bolsa de entrega de comida",
     hint: "Insulated bag used by delivery drivers to keep food hot during transport",
-    usageExample:
-      "El repartidor lleva la pizza caliente en la bolsa de entrega de comida.",
+    usageExample: "El repartidor lleva la pizza caliente en la bolsa de entrega de comida.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -7275,8 +7010,7 @@ export const foodQuestions = [
     options: ["la coliflor frita", "el brócoli frito", "la col frita"],
     correctAnswer: "la coliflor frita",
     hint: "White cruciferous vegetable that becomes crispy and golden when fried",
-    usageExample:
-      "Preparo la coliflor frita crujiente con especias y salsa de búfalo.",
+    usageExample: "Preparo la coliflor frita crujiente con especias y salsa de búfalo.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -7294,8 +7028,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el panqueque de cebolleta frito",
     hint: "Chinese savory flatbread made with scallions and pan-fried until crispy",
-    usageExample:
-      "Disfruto el panqueque de cebolleta frito caliente con salsa de soya.",
+    usageExample: "Disfruto el panqueque de cebolleta frito caliente con salsa de soya.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -7309,8 +7042,7 @@ export const foodQuestions = [
     options: ["el pan de ajo", "el pan tostado", "el pan con mantequilla"],
     correctAnswer: "el pan de ajo",
     hint: "Bread topped with garlic butter and herbs, then toasted until crispy",
-    usageExample:
-      "Sirvo el pan de ajo caliente como acompañamiento de la pasta.",
+    usageExample: "Sirvo el pan de ajo caliente como acompañamiento de la pasta.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -7328,8 +7060,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "los camarones al ajillo",
     hint: "Shrimp sauteed in garlic butter sauce, often served as an appetizer",
-    usageExample:
-      "Preparo los camarones al ajillo con mucho ajo y perejil fresco.",
+    usageExample: "Preparo los camarones al ajillo con mucho ajo y perejil fresco.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -7347,8 +7078,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "la bolsa de compras",
     hint: "Bag used to carry groceries and shopping items from the store",
-    usageExample:
-      "Llevo la bolsa de compras reutilizable al supermercado todas las semanas.",
+    usageExample: "Llevo la bolsa de compras reutilizable al supermercado todas las semanas.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -7362,8 +7092,7 @@ export const foodQuestions = [
     options: ["el hot pot", "el shabu shabu", "el sukiyaki"],
     correctAnswer: "el hot pot",
     hint: "Chinese communal dining where ingredients are cooked in simmering broth at the table",
-    usageExample:
-      "Disfrutamos el hot pot en familia cocinando verduras y carne en el caldo.",
+    usageExample: "Disfrutamos el hot pot en familia cocinando verduras y carne en el caldo.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -7377,8 +7106,7 @@ export const foodQuestions = [
     options: ["el BBQ coreano", "el BBQ americano", "el BBQ argentino"],
     correctAnswer: "el BBQ coreano",
     hint: "Korean dining style where meat is grilled at the table on a built-in grill",
-    usageExample:
-      "Disfrutamos el BBQ coreano asando carne marinada en la parrilla de la mesa.",
+    usageExample: "Disfrutamos el BBQ coreano asando carne marinada en la parrilla de la mesa.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -7392,8 +7120,7 @@ export const foodQuestions = [
     options: ["la lasaña", "los canelones", "los ravioles"],
     correctAnswer: "la lasaña",
     hint: "Italian baked dish with layered pasta sheets, meat sauce, and cheese",
-    usageExample:
-      "Horneo la lasaña casera con capas de carne, queso ricotta y salsa de tomate.",
+    usageExample: "Horneo la lasaña casera con capas de carne, queso ricotta y salsa de tomate.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -7407,8 +7134,7 @@ export const foodQuestions = [
     options: ["la tarta de limón", "la tarta de manzana", "la tarta de crema"],
     correctAnswer: "la tarta de limón",
     hint: "French pastry with sweet-tart lemon filling in a crisp pastry shell",
-    usageExample:
-      "Preparo la tarta de limón con crema ácida y merengue tostado encima.",
+    usageExample: "Preparo la tarta de limón con crema ácida y merengue tostado encima.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -7426,8 +7152,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "la papa al horno cargada",
     hint: "Baked potato loaded with toppings like cheese, bacon, sour cream, and chives",
-    usageExample:
-      "Como la papa al horno cargada con queso cheddar, tocino crujiente y crema agria.",
+    usageExample: "Como la papa al horno cargada con queso cheddar, tocino crujiente y crema agria.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -7441,8 +7166,7 @@ export const foodQuestions = [
     options: ["el dátil medjool", "el higo seco", "la pasa"],
     correctAnswer: "el dátil medjool",
     hint: "Large, sweet variety of date prized for its caramel-like flavor and soft texture",
-    usageExample:
-      "Relleno el dátil medjool con queso de cabra y nueces para un aperitivo.",
+    usageExample: "Relleno el dátil medjool con queso de cabra y nueces para un aperitivo.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -7456,8 +7180,7 @@ export const foodQuestions = [
     options: ["el microondas", "el horno", "la estufa"],
     correctAnswer: "el microondas",
     hint: "Kitchen appliance that uses electromagnetic waves to heat food quickly",
-    usageExample:
-      "Caliento las sobras de la cena en el microondas por dos minutos.",
+    usageExample: "Caliento las sobras de la cena en el microondas por dos minutos.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -7471,8 +7194,7 @@ export const foodQuestions = [
     options: ["la pasta de miso", "la pasta de soya", "la pasta de tamarindo"],
     correctAnswer: "la pasta de miso",
     hint: "Fermented soybean paste used as a base for Japanese miso soup and marinades",
-    usageExample:
-      "Disuelvo la pasta de miso en caldo caliente para hacer sopa japonesa.",
+    usageExample: "Disuelvo la pasta de miso en caldo caliente para hacer sopa japonesa.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -7486,8 +7208,7 @@ export const foodQuestions = [
     options: ["la sopa de miso", "la sopa de ramen", "la sopa de udon"],
     correctAnswer: "la sopa de miso",
     hint: "Traditional Japanese soup made with miso paste, tofu, and seaweed",
-    usageExample:
-      "Tomo la sopa de miso caliente con tofu y algas marinas en el desayuno.",
+    usageExample: "Tomo la sopa de miso caliente con tofu y algas marinas en el desayuno.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -7505,8 +7226,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el queso mozzarella",
     hint: "Soft white Italian cheese known for its stretchy texture when melted on pizza",
-    usageExample:
-      "Rallo el queso mozzarella fresco sobre la pizza antes de hornearla.",
+    usageExample: "Rallo el queso mozzarella fresco sobre la pizza antes de hornearla.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -7520,8 +7240,7 @@ export const foodQuestions = [
     options: ["la servilleta", "el pañuelo", "la toalla"],
     correctAnswer: "la servilleta",
     hint: "Paper or cloth used to wipe your mouth and hands during a meal",
-    usageExample:
-      "Uso la servilleta de tela para limpiarme la boca después de comer.",
+    usageExample: "Uso la servilleta de tela para limpiarme la boca después de comer.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -7539,8 +7258,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el arenque encurtido",
     hint: "Scandinavian delicacy of herring preserved in vinegar and spices",
-    usageExample:
-      "Como el arenque encurtido con cebolla y crema agria en la fiesta navideña.",
+    usageExample: "Como el arenque encurtido con cebolla y crema agria en la fiesta navideña.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -7554,8 +7272,7 @@ export const foodQuestions = [
     options: ["el prensapapas", "el machacador", "el triturador"],
     correctAnswer: "el prensapapas",
     hint: "Kitchen tool with a grid or wavy plate used to mash boiled potatoes",
-    usageExample:
-      "Uso el prensapapas para hacer puré de papas cremoso y suave.",
+    usageExample: "Uso el prensapapas para hacer puré de papas cremoso y suave.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -7569,8 +7286,7 @@ export const foodQuestions = [
     options: ["el praliné", "el toffée", "el caramelo"],
     correctAnswer: "el praliné",
     hint: "French confection of nuts coated in caramelized sugar, often clustered together",
-    usageExample:
-      "Compro el praliné de avellanas cubierto con chocolate belga.",
+    usageExample: "Compro el praliné de avellanas cubierto con chocolate belga.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -7588,8 +7304,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "los palitos de queso inflados",
     hint: "Crunchy puffed snack sticks with cheese flavor, similar to cheese puffs",
-    usageExample:
-      "Como los palitos de queso inflados crujientes mientras veo televisión.",
+    usageExample: "Como los palitos de queso inflados crujientes mientras veo televisión.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -7607,8 +7322,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "las chips de maíz morado",
     hint: "Tortilla chips made from purple corn, offering a unique color and flavor",
-    usageExample:
-      "Sirvo las chips de maíz morado con guacamole y salsa picante.",
+    usageExample: "Sirvo las chips de maíz morado con guacamole y salsa picante.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -7622,8 +7336,7 @@ export const foodQuestions = [
     options: ["la receta", "el menú", "el libro"],
     correctAnswer: "la receta",
     hint: "Written instructions that list ingredients and steps for preparing a dish",
-    usageExample:
-      "Sigo la receta paso a paso para cocinar el pastel de chocolate perfecto.",
+    usageExample: "Sigo la receta paso a paso para cocinar el pastel de chocolate perfecto.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -7637,8 +7350,7 @@ export const foodQuestions = [
     options: ["las papas asadas", "las papas fritas", "las papas hervidas"],
     correctAnswer: "las papas asadas",
     hint: "Potatoes roasted in the oven with oil and seasonings until crispy outside",
-    usageExample:
-      "Horneo las papas asadas con romero, ajo y aceite de oliva hasta dorarlas.",
+    usageExample: "Horneo las papas asadas con romero, ajo y aceite de oliva hasta dorarlas.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -7656,8 +7368,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "el helado de caramelo salado",
     hint: "Ice cream with sweet caramel flavor enhanced by a touch of sea salt",
-    usageExample:
-      "Disfruto el helado de caramelo salado con trocitos de chocolate oscuro.",
+    usageExample: "Disfruto el helado de caramelo salado con trocitos de chocolate oscuro.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -7675,8 +7386,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "las almendras de pimentón ahumado",
     hint: "Roasted almonds seasoned with Spanish smoked paprika for a smoky flavor",
-    usageExample:
-      "Como las almendras de pimentón ahumado español como aperitivo con cerveza.",
+    usageExample: "Como las almendras de pimentón ahumado español como aperitivo con cerveza.",
     points: 15,
     category: "food",
     difficulty: "hard",
@@ -7690,8 +7400,7 @@ export const foodQuestions = [
     options: ["la espátula", "la cuchara", "el tenedor"],
     correctAnswer: "la espátula",
     hint: "Flat kitchen tool used to flip pancakes, eggs, and burgers while cooking",
-    usageExample:
-      "Uso la espátula para voltear las tortitas sin que se rompan.",
+    usageExample: "Uso la espátula para voltear las tortitas sin que se rompan.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -7709,8 +7418,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "los rollitos de primavera",
     hint: "Asian appetizer with vegetables wrapped in thin pastry and deep-fried",
-    usageExample:
-      "Sirvo los rollitos de primavera crujientes con salsa agridulce.",
+    usageExample: "Sirvo los rollitos de primavera crujientes con salsa agridulce.",
     points: 5,
     category: "food",
     difficulty: "easy",
@@ -7726,8 +7434,7 @@ export const foodQuestions = [
     options: ["el tempura", "el tonkatsu", "el karaage"],
     correctAnswer: "el tempura",
     hint: "Japanese dish of seafood or vegetables coated in light batter and deep-fried",
-    usageExample:
-      "Preparo el tempura de camarones y vegetales con masa ligera y crujiente.",
+    usageExample: "Preparo el tempura de camarones y vegetales con masa ligera y crujiente.",
     points: 10,
     category: "food",
     difficulty: "medium",
@@ -7745,8 +7452,7 @@ export const foodQuestions = [
     ],
     correctAnswer: "la comida congelada lista",
     hint: "Pre-packaged frozen meal in a tray, heated in oven or microwave",
-    usageExample:
-      "Compro la comida congelada lista para las noches ocupadas cuando no tengo tiempo.",
+    usageExample: "Compro la comida congelada lista para las noches ocupadas cuando no tengo tiempo.",
     points: 5,
     category: "food",
     difficulty: "easy",
