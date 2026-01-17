@@ -414,7 +414,6 @@ export const foodQuestions = [
   {
     id: 'food_032',
     emoji: '🍄',
-    
     question: '¿Qué crece en lugares húmedos?',
     translation: 'What grows in humid places?',
     options: ['el champiñón', 'la seta', 'el hongo'],
@@ -1460,6 +1459,7 @@ export const foodQuestions = [
     correctAnswer: 'el pescado',
     hint: 'Seafood commonly eaten grilled or baked; high in protein.',
     points: 5,
+    usageExample: 'Como el pescado fresco a la parrilla con limón y hierbas.',
     category: 'food',
     difficulty: 'easy',
     emotion: 'neutral'
@@ -1842,13 +1842,14 @@ export const foodQuestions = [
   {
     id: 'food_139',
     emoji: '🍄',
-    
     question: '¿Qué hongo comestible crece en bosques?',
     translation: 'What edible fungus grows in forests?',
     options: ['la seta', 'el champiñón', 'el portobello'],
     correctAnswer: 'la seta',
   hint: 'Edible wild mushroom; “seta” is a generic term for mushrooms.',
     points: 10,
+    usageExample: 'Recojo la seta fresca del bosque para cocinar con ajo y perejil.',
+    category: 'food',
     difficulty: 'medium',
     emotion: 'neutral',
   },
@@ -1873,27 +1874,12 @@ export const foodQuestions = [
   {
     id: 'food_142',
     emoji: '🍙',
-    
     question: '¿Qué triángulo de arroz japonés tiene alga?',
     translation: 'What Japanese rice triangle has seaweed?',
     options: ['el onigiri', 'el musubi', 'el maki'],
     correctAnswer: 'el onigiri',
     hint: 'Rice triangle wrapped with seaweed; typically has a simple filling.',
     usageExample: 'Envuelvo el onigiri de atún con alga nori para el almuerzo.',
-    points: 15,
-    category: 'food',
-    difficulty: 'hard',
-    emotion: 'surprised'
-  },
-  {
-    id: 'food_143',
-    emoji: '🍘',
-    question: '¿Qué galleta japonesa de arroz es crujiente?',
-    translation: 'What Japanese rice cracker is crunchy?',
-    options: ['el senbei', 'el arare', 'el okaki'],
-    correctAnswer: 'el senbei',
-    hint: 'Crispy Japanese rice cracker; sometimes flavored with soy sauce.',
-    usageExample: 'Muerdo el senbei crujiente mientras tomo té verde.',
     points: 15,
     category: 'food',
     difficulty: 'hard',
@@ -6182,6 +6168,7 @@ export const foodQuestions = [
     correctAnswer: 'la taza de crema de cacahuate',
     hint: 'Chocolate cup-shaped candy with peanut butter filling, often made by Reese\'s',
     points: 10,
+    usageExample: 'Como la taza de crema de cacahuate como postre dulce y delicioso.',
     category: 'food',
     difficulty: 'medium',
     emotion: 'happy'
