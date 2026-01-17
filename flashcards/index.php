@@ -11,6 +11,7 @@
 
 // Load helper functions
 require_once __DIR__ . '/includes/functions.php';
+require_once __DIR__ . '/includes/search_functions.php';
 
 // Configuration
 $cardsPerPage = 9;
@@ -123,6 +124,7 @@ session_start();
 $categoryParam = isset($_GET['category']) ? trim($_GET['category']) : '';
 $page = isset($_GET['page']) ? max(1, intval($_GET['page'])) : 1;
 $reset = isset($_GET['reset']) ? (bool)$_GET['reset'] : false;
+$searchTerm = isset($_GET['search']) ? trim($_GET['search']) : '';
 
 // Parse multiple categories (comma-separated)
 $selectedCategories = [];
@@ -200,6 +202,12 @@ if ($shuffle) {
     shuffle($allQuestions);
     mt_srand(); // Reset random seed
 }
+
+// Track total before filtering for proper messaging
+$totalQuestionsBeforeSearch = count($allQuestions);
+
+// Filter questions based on search term
+$allQuestions = filterQuestionsBySearch($allQuestions, $searchTerm, $answerTranslations);
 
 $totalQuestions = count($allQuestions);
 $totalPages = ceil($totalQuestions / $cardsPerPage);
@@ -414,7 +422,8 @@ $version = $packageJson['version'] ?? '1.0.0';
             </div>
         </div>
         
-        <?php if (empty($questionsOnPage)): ?>
+        <?php if ($totalQuestionsBeforeSearch === 0): ?>
+            <!-- No cards exist in this category at all -->
             <div class="no-questions">
                 <h2>No flash cards available</h2>
                 <p>There are no flash cards available for this category yet.</p>
@@ -422,7 +431,43 @@ $version = $packageJson['version'] ?? '1.0.0';
         <?php else: ?>
             <div id="flashcards-start"></div>
             
-            <!-- Shuffle Controls -->
+            <!-- Search Box -->
+            <div class="search-container">
+                <form method="get" action="" class="search-form">
+                    <input type="hidden" name="category" value="<?php echo htmlspecialchars($categoryKey); ?>">
+                    <input type="hidden" name="shuffle" value="<?php echo $shuffle ? '1' : '0'; ?>">
+                    <div class="search-input-wrapper">
+                        <input 
+                            type="text" 
+                            name="search" 
+                            id="search-input"
+                            placeholder="🔍 Search cards by Spanish or English..." 
+                            value="<?php echo htmlspecialchars($searchTerm); ?>"
+                            class="search-input"
+                        >
+                        <?php if (!empty($searchTerm)): ?>
+                            <a href="?category=<?php echo urlencode($categoryKey); ?>&page=1<?php echo $shuffle ? '&shuffle=1' : ''; ?>" 
+                               class="search-clear" 
+                               title="Clear search"
+                               aria-label="Clear search">✕</a>
+                        <?php endif; ?>
+                    </div>
+                    <button type="submit" class="search-button">Search</button>
+                </form>
+                <?php if (!empty($searchTerm)): ?>
+                    <div class="search-results-info">
+                        <?php echo getSearchResultsSummary($totalQuestions, $searchTerm); ?>
+                    </div>
+                <?php endif; ?>
+            </div>
+            
+            <?php if (empty($questionsOnPage)): ?>
+                <!-- Search returned no results -->
+                <div class="no-questions">
+                    <h2>No results found</h2>
+                    <p>No flash cards match your search term "<strong><?php echo htmlspecialchars($searchTerm); ?></strong>". Try a different search term or <a href="?category=<?php echo urlencode($categoryKey); ?>&page=1<?php echo $shuffle ? '&shuffle=1' : ''; ?>">clear the search</a>.</p>
+                </div>
+            <?php else: ?>
             <div class="shuffle-controls">
                 <a href="?category=<?php echo urlencode($categoryKey); ?>&page=1&shuffle=1&reset=1" 
                    onclick="return confirm('Reset shuffle order for this category?');" 
@@ -577,17 +622,18 @@ $version = $packageJson['version'] ?? '1.0.0';
             <nav class="pagination" role="navigation" aria-label="Flash cards pagination">
                 <?php 
                 $shuffleParam = $shuffle ? '&shuffle=1' : '';
+                $searchParam = getSearchParam($searchTerm);
                 ?>
                 <!-- Previous/Next group (shown first on mobile) -->
                 <div class="pagination-prev-next">
                     <?php if ($page > 1): ?>
-                        <a href="?category=<?php echo urlencode($categoryKey); ?>&page=<?php echo $page - 1; ?><?php echo $shuffleParam; ?>#flashcards-start">‹ Previous</a>
+                        <a href="?category=<?php echo urlencode($categoryKey); ?>&page=<?php echo $page - 1; ?><?php echo $shuffleParam . $searchParam; ?>#flashcards-start">‹ Previous</a>
                     <?php else: ?>
                         <span class="disabled">‹ Previous</span>
                     <?php endif; ?>
                     
                     <?php if ($page < $totalPages): ?>
-                        <a href="?category=<?php echo urlencode($categoryKey); ?>&page=<?php echo $page + 1; ?><?php echo $shuffleParam; ?>#flashcards-start">Next ›</a>
+                        <a href="?category=<?php echo urlencode($categoryKey); ?>&page=<?php echo $page + 1; ?><?php echo $shuffleParam . $searchParam; ?>#flashcards-start">Next ›</a>
                     <?php else: ?>
                         <span class="disabled">Next ›</span>
                     <?php endif; ?>
@@ -596,7 +642,7 @@ $version = $packageJson['version'] ?? '1.0.0';
                 <!-- First/Current/Last group (shown second on mobile) -->
                 <div class="pagination-position">
                     <?php if ($page > 1): ?>
-                        <a href="?category=<?php echo urlencode($categoryKey); ?>&page=1<?php echo $shuffleParam; ?>#flashcards-start">« First</a>
+                        <a href="?category=<?php echo urlencode($categoryKey); ?>&page=1<?php echo $shuffleParam . $searchParam; ?>#flashcards-start">« First</a>
                     <?php else: ?>
                         <span class="disabled">« First</span>
                     <?php endif; ?>
@@ -604,12 +650,13 @@ $version = $packageJson['version'] ?? '1.0.0';
                     <span class="current-page">Page <?php echo $page; ?> of <?php echo $totalPages; ?></span>
                     
                     <?php if ($page < $totalPages): ?>
-                        <a href="?category=<?php echo urlencode($categoryKey); ?>&page=<?php echo $totalPages; ?><?php echo $shuffleParam; ?>#flashcards-start">Last »</a>
+                        <a href="?category=<?php echo urlencode($categoryKey); ?>&page=<?php echo $totalPages; ?><?php echo $shuffleParam . $searchParam; ?>#flashcards-start">Last »</a>
                     <?php else: ?>
                         <span class="disabled">Last »</span>
                     <?php endif; ?>
                 </div>
             </nav>
+        <?php endif; ?>
         <?php endif; ?>
         
         <div class="links-container">
