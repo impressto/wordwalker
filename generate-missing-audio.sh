@@ -63,6 +63,10 @@ echo -e "${YELLOW}Extracting correct answers from config...${NC}"
 grep "correctAnswer:" "$CONFIG_FILE" | \
     sed "s/.*correctAnswer: '//" | \
     sed "s/',$//" | \
+    sed "s/correctAnswer://g" | \
+    sed "s/['\"]//g" | \
+    sed 's/,$//' | \
+    sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | \
     sort -u > "$TEMP_DIR/correct_answers.txt"
 
 TOTAL_ANSWERS=$(wc -l < "$TEMP_DIR/correct_answers.txt")
@@ -112,6 +116,10 @@ echo -e "${YELLOW}Extracting usage examples from config...${NC}"
 grep "usageExample:" "$CONFIG_FILE" | \
     sed "s/.*usageExample: '//" | \
     sed "s/',$//" | \
+    sed "s/usageExample://g" | \
+    sed "s/['\"]//g" | \
+    sed 's/,$//' | \
+    sed 's/^[[:space:]]*//;s/[[:space:]]*$//' | \
     sort -u > "$TEMP_DIR/usage_examples.txt"
 
 TOTAL_EXAMPLES=$(wc -l < "$TEMP_DIR/usage_examples.txt")
@@ -441,11 +449,13 @@ if [ "$MISSING_COUNT" -gt 0 ]; then
 EOF
 
     while IFS= read -r item; do
-        # Escape HTML special characters and quotes for JavaScript
-        escaped_item=$(echo "$item" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'\''/\&#39;/g')
+        # Escape for HTML display
+        html_item=$(echo "$item" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g')
+        # Escape for JavaScript string (replace single quotes)
+        js_item=$(echo "$item" | sed "s/'/\\\\'/g")
         cat >> "$OUTPUT_FILE" << EOF
-                    <div class="item" onclick="copyToClipboard(this, '${escaped_item}')">
-                        <span class="item-text">${escaped_item}</span>
+                    <div class="item" onclick="copyToClipboard(this, '${js_item}')">
+                        <span class="item-text">${html_item}</span>
                         <span class="copy-icon">📋</span>
                     </div>
 EOF
@@ -475,11 +485,13 @@ if [ "$MISSING_EXAMPLES_COUNT" -gt 0 ]; then
 EOF
 
     while IFS= read -r item; do
-        # Escape HTML special characters and quotes for JavaScript
-        escaped_item=$(echo "$item" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g; s/"/\&quot;/g; s/'\''/\&#39;/g')
+        # Escape for HTML display
+        html_item=$(echo "$item" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g')
+        # Escape for JavaScript string (replace single quotes)
+        js_item=$(echo "$item" | sed "s/'/\\\\'/g")
         cat >> "$OUTPUT_FILE" << EOF
-                    <div class="item" onclick="copyToClipboard(this, '${escaped_item}')">
-                        <span class="item-text">${escaped_item}</span>
+                    <div class="item" onclick="copyToClipboard(this, '${js_item}')">
+                        <span class="item-text">${html_item}</span>
                         <span class="copy-icon">📋</span>
                     </div>
 EOF
