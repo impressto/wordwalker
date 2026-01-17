@@ -19,6 +19,10 @@ function getTranslations($lang = 'en') {
             // Search
             'search_placeholder' => '🔍 Search cards by Spanish or English...',
             'search_button' => 'Search',
+            'search_all_categories' => 'Search all categories',
+            'across_all_categories' => 'across all categories',
+            'all_categories' => 'All Categories',
+            'all_categories_desc' => 'Browse flash cards from all available categories',
             'clear_search' => 'Clear search',
             'no_results' => 'No results found',
             'no_results_text' => 'No flash cards match your search term',
@@ -115,6 +119,10 @@ function getTranslations($lang = 'en') {
             // Search
             'search_placeholder' => '🔍 Buscar tarjetas en español o inglés...',
             'search_button' => 'Buscar',
+            'search_all_categories' => 'Buscar en todas las categorías',
+            'across_all_categories' => 'en todas las categorías',
+            'all_categories' => 'Todas las Categorías',
+            'all_categories_desc' => 'Explora tarjetas de todas las categorías disponibles',
             'clear_search' => 'Limpiar búsqueda',
             'no_results' => 'No se encontraron resultados',
             'no_results_text' => 'No hay tarjetas que coincidan con tu búsqueda',

@@ -209,6 +209,42 @@ h1 {
     flex-wrap: wrap;
 }
 
+.search-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.search-all-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: white;
+    border-radius: 8px;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s ease;
+    white-space: nowrap;
+}
+
+.search-all-checkbox:hover {
+    background: #f0f0f0;
+}
+
+.search-all-checkbox input[type="checkbox"] {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+}
+
+.search-all-checkbox span {
+    font-size: 0.95em;
+    color: #333;
+}
+
 .search-input-wrapper {
     flex: 1;
     min-width: 250px;

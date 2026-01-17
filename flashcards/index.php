@@ -132,7 +132,13 @@ $searchTerm = isset($_GET['search']) ? trim($_GET['search']) : '';
 
 // Parse multiple categories (comma-separated)
 $selectedCategories = [];
-if (!empty($categoryParam)) {
+$searchAllCategories = false;
+
+if ($categoryParam === 'all') {
+    // Search all categories
+    $searchAllCategories = true;
+    $selectedCategories = array_keys($categories);
+} elseif (!empty($categoryParam)) {
     $categoryList = explode(',', $categoryParam);
     foreach ($categoryList as $cat) {
         $cat = trim($cat);
@@ -226,7 +232,10 @@ $startIndex = ($page - 1) * $cardsPerPage;
 $questionsOnPage = array_slice($allQuestions, $startIndex, $cardsPerPage);
 
 // SEO metadata for multiple categories
-if (count($selectedCategories) === 1) {
+if ($searchAllCategories) {
+    $pageTitle = "Spanish Flash Cards - All Categories - Page {$page} | WordWalker";
+    $pageDescription = "Learn Spanish vocabulary across all categories. Browse all available flash cards. Page {$page} of {$totalPages}.";
+} elseif (count($selectedCategories) === 1) {
     $categoryInfo = $categories[$selectedCategories[0]];
     $pageTitle = "Spanish {$categoryInfo['name']} Flash Cards - Page {$page} | WordWalker";
     $pageDescription = "{$categoryInfo['description']}. Learn Spanish vocabulary with interactive flash cards. Page {$page} of {$totalPages}.";
@@ -371,7 +380,10 @@ $version = $packageJson['version'] ?? '1.0.0';
                 <img src="https://impressto.ca/wordwalker/images/wordwalker-flashcards-logo-<?php echo $currentLang; ?>.png" alt="WordWalker Flash Cards" width="400" height="120" class="flashcards-logo" style="max-width: 400px; height: auto;">
                 <img src="https://impressto.ca/wordwalker/public/images/walkers/walker-default-avatar.png" alt="Default walker character" width="60" height="60" class="walker-avatar" style="max-width: 60px; height: auto;">
             </div>
-            <?php if (count($selectedCategories) === 1): ?>
+            <?php if ($searchAllCategories): ?>
+                <h1 class="category-name"><?php echo t('all_categories'); ?></h1>
+                <div class="category-description"><?php echo t('all_categories_desc'); ?></div>
+            <?php elseif (count($selectedCategories) === 1): ?>
                 <?php $categoryInfo = $categories[$selectedCategories[0]]; ?>
                 <div class="category-emoji">
                     <img src="https://impressto.ca/wordwalker/dist/images/categories/<?php echo urlencode($selectedCategories[0]); ?>.png" 
@@ -449,7 +461,7 @@ $version = $packageJson['version'] ?? '1.0.0';
             <!-- Search Box -->
             <div class="search-container">
                 <form method="get" action="" class="search-form">
-                    <input type="hidden" name="category" value="<?php echo htmlspecialchars($categoryKey); ?>">
+                    <input type="hidden" name="category" value="<?php echo htmlspecialchars($searchAllCategories ? 'all' : $categoryKey); ?>" id="category-input">
                     <input type="hidden" name="shuffle" value="<?php echo $shuffle ? '1' : '0'; ?>">
                     <input type="hidden" name="lang" value="<?php echo htmlspecialchars($currentLang); ?>">
                     <div class="search-input-wrapper">
@@ -462,17 +474,34 @@ $version = $packageJson['version'] ?? '1.0.0';
                             class="search-input"
                         >
                         <?php if (!empty($searchTerm)): ?>
-                            <a href="?category=<?php echo urlencode($categoryKey); ?>&page=1<?php echo $shuffle ? '&shuffle=1' : ''; ?>&lang=<?php echo $currentLang; ?>" 
+                            <a href="?category=<?php echo urlencode($searchAllCategories ? 'all' : $categoryKey); ?>&page=1<?php echo $shuffle ? '&shuffle=1' : ''; ?>&lang=<?php echo $currentLang; ?>" 
                                class="search-clear" 
                                title="<?php echo t('clear_search'); ?>"
                                aria-label="<?php echo t('clear_search'); ?>">✕</a>
                         <?php endif; ?>
                     </div>
-                    <button type="submit" class="search-button"><?php echo t('search_button'); ?></button>
+                    <div class="search-controls">
+                        <label class="search-all-checkbox">
+                            <input type="checkbox" 
+                                   id="search-all-categories" 
+                                   name="search_all" 
+                                   value="1"
+                                   <?php echo $searchAllCategories ? 'checked' : ''; ?>
+                                   onchange="document.getElementById('category-input').value = this.checked ? 'all' : '<?php echo htmlspecialchars($categoryKey); ?>';">
+                            <span><?php echo t('search_all_categories'); ?></span>
+                        </label>
+                        <button type="submit" class="search-button"><?php echo t('search_button'); ?></button>
+                    </div>
                 </form>
                 <?php if (!empty($searchTerm)): ?>
                     <div class="search-results-info">
-                        <?php echo getSearchResultsSummary($totalQuestions, $searchTerm); ?>
+                        <?php 
+                        if ($searchAllCategories) {
+                            echo getSearchResultsSummary($totalQuestions, $searchTerm) . ' ' . t('across_all_categories');
+                        } else {
+                            echo getSearchResultsSummary($totalQuestions, $searchTerm);
+                        }
+                        ?>
                     </div>
                 <?php endif; ?>
             </div>
