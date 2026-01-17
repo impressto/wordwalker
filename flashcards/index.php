@@ -368,7 +368,7 @@ $version = $packageJson['version'] ?? '1.0.0';
 
             <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 20px auto;">
                 <img src="https://impressto.ca/wordwalker/public/images/walkers/walker-dog-avatar.png" alt="Dog walker character" width="100" height="100" class="walker-avatar" style="max-width: 100px; height: auto;">
-                <img src="https://impressto.ca/wordwalker/flashcards-logo.png" alt="WordWalker Flash Cards" width="400" height="120" class="flashcards-logo" style="max-width: 400px; height: auto;">
+                <img src="https://impressto.ca/wordwalker/images/wordwalker-flashcards-logo-<?php echo $currentLang; ?>.png" alt="WordWalker Flash Cards" width="400" height="120" class="flashcards-logo" style="max-width: 400px; height: auto;">
                 <img src="https://impressto.ca/wordwalker/public/images/walkers/walker-default-avatar.png" alt="Default walker character" width="60" height="60" class="walker-avatar" style="max-width: 60px; height: auto;">
             </div>
             <?php if (count($selectedCategories) === 1): ?>
@@ -503,6 +503,16 @@ $version = $packageJson['version'] ?? '1.0.0';
             
             <div class="flashcards-grid">
                 <?php foreach ($questionsOnPage as $index => $question): ?>
+                    <?php
+                    // Swap question and translation when interface is in Spanish
+                    if ($currentLang === 'es' && !empty($question['translation'])) {
+                        $displayQuestion = $question['translation'];
+                        $displayTranslation = $question['question'];
+                    } else {
+                        $displayQuestion = $question['question'];
+                        $displayTranslation = !empty($question['translation']) ? $question['translation'] : null;
+                    }
+                    ?>
                     <article class="flashcard" onclick="flipCard(this)">
                         <div class="flashcard-inner">
                             <!-- Front of card (Question side) -->
@@ -516,7 +526,7 @@ $version = $packageJson['version'] ?? '1.0.0';
                                     if ($emojiPath): ?>
                                         <!-- Emoji is an image file -->
                                         <img src="<?php echo htmlspecialchars($emojiPath); ?>" 
-                                             alt="<?php echo htmlspecialchars($question['question']); ?>"
+                                             alt="<?php echo htmlspecialchars($displayQuestion); ?>"
                                              class="flashcard-emoji-img"
                                              onerror="this.style.display='none'">
                                     <?php else: ?>
@@ -528,10 +538,10 @@ $version = $packageJson['version'] ?? '1.0.0';
                                 <?php endif; ?>
                                 
                                 <div class="flashcard-question">
-                                    <?php echo htmlspecialchars($question['question']); ?>
+                                    <?php echo htmlspecialchars($displayQuestion); ?>
                                 </div>
                                 
-                                <div class="flip-instruction">👆 Click to reveal answer</div>
+                                <div class="flip-instruction"><?php echo t('flip_instruction'); ?></div>
                             </div>
                             
                             <!-- Back of card (Answer side) -->
@@ -545,7 +555,7 @@ $version = $packageJson['version'] ?? '1.0.0';
                                     if ($emojiPath): ?>
                                         <!-- Emoji is an image file -->
                                         <img src="<?php echo htmlspecialchars($emojiPath); ?>" 
-                                             alt="<?php echo htmlspecialchars($question['question']); ?>"
+                                             alt="<?php echo htmlspecialchars($displayQuestion); ?>"
                                              class="flashcard-emoji-img"
                                              onerror="this.style.display='none'">
                                     <?php else: ?>
@@ -557,26 +567,35 @@ $version = $packageJson['version'] ?? '1.0.0';
                                 <?php endif; ?>
                                 
                                 <div class="flashcard-question">
-                                    <?php echo htmlspecialchars($question['question']); ?>
+                                    <?php echo htmlspecialchars($displayQuestion); ?>
                                 </div>
                                 
-                                <?php if (!empty($question['translation'])): ?>
+                                <?php if ($displayTranslation): ?>
                                     <div class="flashcard-translation">
-                                        <?php echo htmlspecialchars($question['translation']); ?>
+                                        <?php echo htmlspecialchars($displayTranslation); ?>
                                     </div>
                                 <?php endif; ?>
                         
                         <div class="flashcard-answer">
                             <div class="flashcard-answer-content">
-                                <span lang="es">✓ <?php echo htmlspecialchars($question['correctAnswer']); ?></span>
                                 <?php 
                                 // Get the translation for the correct answer
                                 $answerTranslation = isset($answerTranslations[$question['correctAnswer']]) 
                                     ? $answerTranslations[$question['correctAnswer']] 
                                     : null;
                                 
-                                if (!empty($answerTranslation)): ?>
-                                    <span class="flashcard-answer-translation" lang="en"><?php echo htmlspecialchars($answerTranslation); ?></span>
+                                // Swap answer and translation when interface is in Spanish
+                                if ($currentLang === 'es' && !empty($answerTranslation)) {
+                                    $displayAnswer = $answerTranslation;
+                                    $displayAnswerTranslation = $question['correctAnswer'];
+                                } else {
+                                    $displayAnswer = $question['correctAnswer'];
+                                    $displayAnswerTranslation = $answerTranslation;
+                                }
+                                ?>
+                                <span>✓ <?php echo htmlspecialchars($displayAnswer); ?></span>
+                                <?php if (!empty($displayAnswerTranslation)): ?>
+                                    <span class="flashcard-answer-translation"><?php echo htmlspecialchars($displayAnswerTranslation); ?></span>
                                 <?php endif; ?>
                             </div>
                             <?php 
@@ -590,7 +609,7 @@ $version = $packageJson['version'] ?? '1.0.0';
                             <?php endif; ?>
                         </div>
                         
-                        <?php if (!empty($question['hint'])): ?>
+                        <?php if (!empty($question['hint']) && $currentLang === 'en'): ?>
                             <div class="flashcard-hint">
                                 <strong>💡 Hint:</strong> <?php echo htmlspecialchars($question['hint']); ?>
                             </div>
@@ -600,18 +619,26 @@ $version = $packageJson['version'] ?? '1.0.0';
                             <?php 
                             $questionCategory = $question['sourceCategory'] ?? $selectedCategories[0];
                             $exampleAudio = getExampleAudioPath($question['usageExample'], $questionCategory);
+                            
+                            // Check for translation in the exampleTranslations array
+                            $exampleTranslation = isset($exampleTranslations[$question['usageExample']]) 
+                                ? $exampleTranslations[$question['usageExample']] 
+                                : (isset($question['exampleTranslation']) ? $question['exampleTranslation'] : null);
+                            
+                            // Swap example and translation when interface is in Spanish
+                            if ($currentLang === 'es' && !empty($exampleTranslation)) {
+                                $displayExample = $exampleTranslation;
+                                $displayExampleTranslation = $question['usageExample'];
+                            } else {
+                                $displayExample = $question['usageExample'];
+                                $displayExampleTranslation = $exampleTranslation;
+                            }
                             ?>
                             <div class="flashcard-example"<?php if ($exampleAudio): ?> onclick="event.stopPropagation(); playAudio('<?php echo htmlspecialchars($exampleAudio); ?>');" style="cursor: pointer;" title="<?php echo t('play_example'); ?>"<?php endif; ?>>
                                 <div class="flashcard-example-content">
-                                    <span lang="es"><strong>Example:</strong> <?php echo htmlspecialchars($question['usageExample']); ?></span>
-                                    <?php 
-                                    // Check for translation in the exampleTranslations array
-                                    $translation = isset($exampleTranslations[$question['usageExample']]) 
-                                        ? $exampleTranslations[$question['usageExample']] 
-                                        : (isset($question['exampleTranslation']) ? $question['exampleTranslation'] : null);
-                                    
-                                    if (!empty($translation)): ?>
-                                        <span class="flashcard-example-translation" lang="en"><?php echo htmlspecialchars($translation); ?></span>
+                                    <span><strong><?php echo t('example_label'); ?></strong> <?php echo htmlspecialchars($displayExample); ?></span>
+                                    <?php if (!empty($displayExampleTranslation)): ?>
+                                        <span class="flashcard-example-translation"><?php echo htmlspecialchars($displayExampleTranslation); ?></span>
                                     <?php endif; ?>
                                 </div>
                                 <?php if ($exampleAudio): ?>
@@ -625,7 +652,7 @@ $version = $packageJson['version'] ?? '1.0.0';
                         
                                 <?php if (!empty($question['difficulty'])): ?>
                                     <span class="flashcard-difficulty difficulty-<?php echo htmlspecialchars($question['difficulty']); ?>">
-                                        <?php echo strtoupper(htmlspecialchars($question['difficulty'])); ?>
+                                        <?php echo t('difficulty_' . strtolower($question['difficulty'])); ?>
                                     </span>
                                 <?php endif; ?>
                             </div>

@@ -46,6 +46,13 @@ function getTranslations($lang = 'en') {
             // Flashcard labels
             'play_audio' => 'Play audio',
             'play_example' => 'Play example',
+            'flip_instruction' => '👆 Click to reveal answer',
+            'example_label' => 'Example:',
+            
+            // Difficulty levels
+            'difficulty_easy' => 'EASY',
+            'difficulty_medium' => 'MEDIUM',
+            'difficulty_hard' => 'HARD',
             
             // Links
             'report_error' => '💬 Report error or make suggestions',
@@ -135,6 +142,13 @@ function getTranslations($lang = 'en') {
             // Flashcard labels
             'play_audio' => 'Reproducir audio',
             'play_example' => 'Reproducir ejemplo',
+            'flip_instruction' => '👆 Haz clic para ver la respuesta',
+            'example_label' => 'Ejemplo:',
+            
+            // Difficulty levels
+            'difficulty_easy' => 'FÁCIL',
+            'difficulty_medium' => 'MEDIO',
+            'difficulty_hard' => 'DIFÍCIL',
             
             // Links
             'report_error' => '💬 Reportar error o hacer sugerencias',
