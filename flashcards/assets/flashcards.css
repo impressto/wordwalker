@@ -111,6 +111,58 @@ h1 {
     box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
 }
 
+/* Language Toggle Styles */
+.language-toggle {
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    z-index: 100;
+}
+
+.language-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: #fff;
+    color: #2E7D32;
+    border: 2px solid #4CAF50;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.95em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.language-toggle-btn:hover {
+    background: #4CAF50;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.language-toggle-btn .lang-icon {
+    font-size: 1.2em;
+}
+
+.language-toggle-btn .lang-text {
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .language-toggle {
+        position: static;
+        display: flex;
+        justify-content: center;
+        margin: 10px 0 20px 0;
+    }
+    
+    .language-toggle-btn {
+        width: auto;
+    }
+}
+
 .autoplay-control {
     display: inline-flex;
     align-items: center;

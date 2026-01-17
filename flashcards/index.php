@@ -12,6 +12,10 @@
 // Load helper functions
 require_once __DIR__ . '/includes/functions.php';
 require_once __DIR__ . '/includes/search_functions.php';
+require_once __DIR__ . '/includes/translations.php';
+
+// Get current language
+$currentLang = getCurrentLanguage();
 
 // Configuration
 $cardsPerPage = 9;
@@ -346,6 +350,17 @@ $version = $packageJson['version'] ?? '1.0.0';
                 <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
             </svg>
         </a>
+        
+        <!-- Language Toggle -->
+        <div class="language-toggle" style="position: absolute; top: 100px; right: 20px; z-index: 100;">
+            <button onclick="toggleLanguage()" class="language-toggle-btn" 
+                    aria-label="<?php echo t('language'); ?>"
+                    title="<?php echo t('language'); ?>">
+                <span class="lang-icon">🌐</span>
+                <span class="lang-text"><?php echo $currentLang === 'en' ? t('switch_to_spanish') : t('switch_to_english'); ?></span>
+            </button>
+        </div>
+        
         <header>
 
    
@@ -364,14 +379,14 @@ $version = $packageJson['version'] ?? '1.0.0';
                          width="120" height="120"
                          onerror="this.style.display='none'">
                 </div>
-                <h1 class="category-name" lang="es"><?php echo htmlspecialchars($categoryInfo['displayName']); ?></h1>
-                <div class="category-description"><?php echo htmlspecialchars($categoryInfo['description']); ?></div>
+                <h1 class="category-name"><?php echo htmlspecialchars(t('category_' . $selectedCategories[0])); ?></h1>
+                <div class="category-description"><?php echo htmlspecialchars(t('category_' . $selectedCategories[0] . '_desc')); ?></div>
             <?php else: ?>
-                <h1 class="category-name">Multiple Categories</h1>
+                <h1 class="category-name"><?php echo t('multiple_categories'); ?></h1>
                 <div class="category-description">
                     <?php 
-                    $names = array_map(function($cat) use ($categories) {
-                        return $categories[$cat]['displayName'];
+                    $names = array_map(function($cat) {
+                        return t('category_' . $cat);
                     }, $selectedCategories);
                     echo htmlspecialchars(implode(' • ', $names));
                     ?>
@@ -381,9 +396,9 @@ $version = $packageJson['version'] ?? '1.0.0';
         
         <div class="category-selector">
             <div class="category-selector-header">
-                <h3>Choose Categories: <span style="font-size: 0.85em; color: #666;">(Click to add/remove)</span></h3>
-                <button class="category-toggle-btn" onclick="toggleCategories()" aria-label="Toggle category selector">
-                    <span class="toggle-text">Select Categories</span>
+                <h3><?php echo t('choose_categories'); ?> <span style="font-size: 0.85em; color: #666;"><?php echo t('click_to_toggle'); ?></span></h3>
+                <button class="category-toggle-btn" onclick="toggleCategories()" aria-label="<?php echo t('select_categories'); ?>">
+                    <span class="toggle-text"><?php echo t('select_categories'); ?></span>
                     <span class="toggle-icon">▼</span>
                 </button>
             </div>
@@ -407,16 +422,16 @@ $version = $packageJson['version'] ?? '1.0.0';
                     }
                     $newCategoryParam = implode(',', $newCategories);
                 ?>
-                    <a href="?category=<?php echo urlencode($newCategoryParam); ?>&page=1" 
+                    <a href="?category=<?php echo urlencode($newCategoryParam); ?>&page=1&lang=<?php echo $currentLang; ?>" 
                        class="<?php echo $isSelected ? 'active' : ''; ?>">
                         <?php if ($isSelected): ?>
                             <span class="category-check">✓</span>
                         <?php endif; ?>
                         <img src="https://impressto.ca/wordwalker/dist/images/categories/<?php echo urlencode($catId); ?>.png" 
-                             alt="<?php echo htmlspecialchars($catInfo['name']); ?>" 
+                             alt="<?php echo htmlspecialchars(t('category_' . $catId)); ?>" 
                              class="category-icon"
                              onerror="this.style.display='none'">
-                        <span><?php echo htmlspecialchars($catInfo['name']); ?></span>
+                        <span><?php echo htmlspecialchars(t('category_' . $catId)); ?></span>
                     </a>
                 <?php endforeach; ?>
             </div>
@@ -425,8 +440,8 @@ $version = $packageJson['version'] ?? '1.0.0';
         <?php if ($totalQuestionsBeforeSearch === 0): ?>
             <!-- No cards exist in this category at all -->
             <div class="no-questions">
-                <h2>No flash cards available</h2>
-                <p>There are no flash cards available for this category yet.</p>
+                <h2><?php echo t('no_cards'); ?></h2>
+                <p><?php echo t('no_cards_text'); ?></p>
             </div>
         <?php else: ?>
             <div id="flashcards-start"></div>
@@ -436,23 +451,24 @@ $version = $packageJson['version'] ?? '1.0.0';
                 <form method="get" action="" class="search-form">
                     <input type="hidden" name="category" value="<?php echo htmlspecialchars($categoryKey); ?>">
                     <input type="hidden" name="shuffle" value="<?php echo $shuffle ? '1' : '0'; ?>">
+                    <input type="hidden" name="lang" value="<?php echo htmlspecialchars($currentLang); ?>">
                     <div class="search-input-wrapper">
                         <input 
                             type="text" 
                             name="search" 
                             id="search-input"
-                            placeholder="🔍 Search cards by Spanish or English..." 
+                            placeholder="<?php echo t('search_placeholder'); ?>" 
                             value="<?php echo htmlspecialchars($searchTerm); ?>"
                             class="search-input"
                         >
                         <?php if (!empty($searchTerm)): ?>
-                            <a href="?category=<?php echo urlencode($categoryKey); ?>&page=1<?php echo $shuffle ? '&shuffle=1' : ''; ?>" 
+                            <a href="?category=<?php echo urlencode($categoryKey); ?>&page=1<?php echo $shuffle ? '&shuffle=1' : ''; ?>&lang=<?php echo $currentLang; ?>" 
                                class="search-clear" 
-                               title="Clear search"
-                               aria-label="Clear search">✕</a>
+                               title="<?php echo t('clear_search'); ?>"
+                               aria-label="<?php echo t('clear_search'); ?>">✕</a>
                         <?php endif; ?>
                     </div>
-                    <button type="submit" class="search-button">Search</button>
+                    <button type="submit" class="search-button"><?php echo t('search_button'); ?></button>
                 </form>
                 <?php if (!empty($searchTerm)): ?>
                     <div class="search-results-info">
@@ -464,25 +480,25 @@ $version = $packageJson['version'] ?? '1.0.0';
             <?php if (empty($questionsOnPage)): ?>
                 <!-- Search returned no results -->
                 <div class="no-questions">
-                    <h2>No results found</h2>
-                    <p>No flash cards match your search term "<strong><?php echo htmlspecialchars($searchTerm); ?></strong>". Try a different search term or <a href="?category=<?php echo urlencode($categoryKey); ?>&page=1<?php echo $shuffle ? '&shuffle=1' : ''; ?>">clear the search</a>.</p>
+                    <h2><?php echo t('no_results'); ?></h2>
+                    <p><?php echo t('no_results_text'); ?> "<strong><?php echo htmlspecialchars($searchTerm); ?></strong>". <?php echo t('try_different'); ?> <a href="?category=<?php echo urlencode($categoryKey); ?>&page=1<?php echo $shuffle ? '&shuffle=1' : ''; ?>&lang=<?php echo $currentLang; ?>"><?php echo t('clear_the_search'); ?></a>.</p>
                 </div>
             <?php else: ?>
             <div class="shuffle-controls">
-                <a href="?category=<?php echo urlencode($categoryKey); ?>&page=1&shuffle=1&reset=1" 
-                   onclick="return confirm('Reset shuffle order for this category?');" 
+                <a href="?category=<?php echo urlencode($categoryKey); ?>&page=1&shuffle=1&reset=1&lang=<?php echo $currentLang; ?>" 
+                   onclick="return confirm('<?php echo t('shuffle_confirm'); ?>');" 
                    class="shuffle-btn">
-                    🔄 New Shuffle Order
+                    <?php echo t('new_shuffle'); ?>
                 </a>
                 <label class="autoplay-control">
                     <input type="checkbox" id="autoplay-toggle" onchange="toggleAutoplay()">
-                    <span>🔊 Auto-play audio</span>
+                    <span><?php echo t('autoplay_audio'); ?></span>
                 </label>
             </div>
             
             <div class="page-info">
-                <strong>Page <?php echo $page; ?> of <?php echo $totalPages; ?></strong>
-                (<?php echo $totalQuestions; ?> total flash cards)
+                <strong><?php echo t('page_of'); ?> <?php echo $page; ?> <?php echo t('of'); ?> <?php echo $totalPages; ?></strong>
+                (<?php echo $totalQuestions; ?> <?php echo t('total_cards'); ?>)
             </div>
             
             <div class="flashcards-grid">
@@ -585,7 +601,7 @@ $version = $packageJson['version'] ?? '1.0.0';
                             $questionCategory = $question['sourceCategory'] ?? $selectedCategories[0];
                             $exampleAudio = getExampleAudioPath($question['usageExample'], $questionCategory);
                             ?>
-                            <div class="flashcard-example"<?php if ($exampleAudio): ?> onclick="event.stopPropagation(); playAudio('<?php echo htmlspecialchars($exampleAudio); ?>');" style="cursor: pointer;" title="Click to play example"<?php endif; ?>>
+                            <div class="flashcard-example"<?php if ($exampleAudio): ?> onclick="event.stopPropagation(); playAudio('<?php echo htmlspecialchars($exampleAudio); ?>');" style="cursor: pointer;" title="<?php echo t('play_example'); ?>"<?php endif; ?>>
                                 <div class="flashcard-example-content">
                                     <span lang="es"><strong>Example:</strong> <?php echo htmlspecialchars($question['usageExample']); ?></span>
                                     <?php 
@@ -601,8 +617,8 @@ $version = $packageJson['version'] ?? '1.0.0';
                                 <?php if ($exampleAudio): ?>
                                     <button class="example-audio-player" 
                                             onclick="event.stopPropagation(); playAudio('<?php echo htmlspecialchars($exampleAudio); ?>')"
-                                            title="Play example"
-                                            aria-label="Play example sentence"></button>
+                                            title="<?php echo t('play_example'); ?>"
+                                            aria-label="<?php echo t('play_example'); ?>"></button>
                                 <?php endif; ?>
                             </div>
                         <?php endif; ?>
@@ -623,36 +639,37 @@ $version = $packageJson['version'] ?? '1.0.0';
                 <?php 
                 $shuffleParam = $shuffle ? '&shuffle=1' : '';
                 $searchParam = getSearchParam($searchTerm);
+                $langParam = '&lang=' . $currentLang;
                 ?>
                 <!-- Previous/Next group (shown first on mobile) -->
                 <div class="pagination-prev-next">
                     <?php if ($page > 1): ?>
-                        <a href="?category=<?php echo urlencode($categoryKey); ?>&page=<?php echo $page - 1; ?><?php echo $shuffleParam . $searchParam; ?>#flashcards-start">‹ Previous</a>
+                        <a href="?category=<?php echo urlencode($categoryKey); ?>&page=<?php echo $page - 1; ?><?php echo $shuffleParam . $searchParam . $langParam; ?>#flashcards-start"><?php echo t('previous'); ?></a>
                     <?php else: ?>
-                        <span class="disabled">‹ Previous</span>
+                        <span class="disabled"><?php echo t('previous'); ?></span>
                     <?php endif; ?>
                     
                     <?php if ($page < $totalPages): ?>
-                        <a href="?category=<?php echo urlencode($categoryKey); ?>&page=<?php echo $page + 1; ?><?php echo $shuffleParam . $searchParam; ?>#flashcards-start">Next ›</a>
+                        <a href="?category=<?php echo urlencode($categoryKey); ?>&page=<?php echo $page + 1; ?><?php echo $shuffleParam . $searchParam . $langParam; ?>#flashcards-start"><?php echo t('next'); ?></a>
                     <?php else: ?>
-                        <span class="disabled">Next ›</span>
+                        <span class="disabled"><?php echo t('next'); ?></span>
                     <?php endif; ?>
                 </div>
                 
                 <!-- First/Current/Last group (shown second on mobile) -->
                 <div class="pagination-position">
                     <?php if ($page > 1): ?>
-                        <a href="?category=<?php echo urlencode($categoryKey); ?>&page=1<?php echo $shuffleParam . $searchParam; ?>#flashcards-start">« First</a>
+                        <a href="?category=<?php echo urlencode($categoryKey); ?>&page=1<?php echo $shuffleParam . $searchParam . $langParam; ?>#flashcards-start"><?php echo t('first'); ?></a>
                     <?php else: ?>
-                        <span class="disabled">« First</span>
+                        <span class="disabled"><?php echo t('first'); ?></span>
                     <?php endif; ?>
                     
-                    <span class="current-page">Page <?php echo $page; ?> of <?php echo $totalPages; ?></span>
+                    <span class="current-page"><?php echo t('page_of'); ?> <?php echo $page; ?> <?php echo t('of'); ?> <?php echo $totalPages; ?></span>
                     
                     <?php if ($page < $totalPages): ?>
-                        <a href="?category=<?php echo urlencode($categoryKey); ?>&page=<?php echo $totalPages; ?><?php echo $shuffleParam . $searchParam; ?>#flashcards-start">Last »</a>
+                        <a href="?category=<?php echo urlencode($categoryKey); ?>&page=<?php echo $totalPages; ?><?php echo $shuffleParam . $searchParam . $langParam; ?>#flashcards-start"><?php echo t('last'); ?></a>
                     <?php else: ?>
-                        <span class="disabled">Last »</span>
+                        <span class="disabled"><?php echo t('last'); ?></span>
                     <?php endif; ?>
                 </div>
             </nav>
@@ -661,18 +678,18 @@ $version = $packageJson['version'] ?? '1.0.0';
         
         <div class="links-container">
             <div class="feedback-link">
-                <a href="/contact.php">💬 Report error or make suggestions</a>
+                <a href="/contact.php"><?php echo t('report_error'); ?></a>
             </div>
             
             <div class="about-link">
-                <a href="/about.php">📖 Learn more about the mission</a>
+                <a href="/about.php"><?php echo t('learn_more'); ?></a>
             </div>
         </div>
         
         <!-- Social Sharing -->
         <div class="social-sharing">
-            <h3>📢 Share These Flash Cards</h3>
-            <p>Help others learn Spanish! Share with friends and family:</p>
+            <h3><?php echo t('share_cards'); ?></h3>
+            <p><?php echo t('share_text'); ?></p>
             <div class="social-buttons">
                 <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode($canonicalUrl); ?>" 
                    target="_blank" 
@@ -730,11 +747,21 @@ $version = $packageJson['version'] ?? '1.0.0';
         </div>
         
         <div class="back-to-app">
-            <a href="https://wordwalker.ca">🎮 Try the WordWalker Game (Learning Spanish for Kids)</a>
+            <a href="https://wordwalker.ca"><?php echo t('back_to_app'); ?></a>
         </div>
     </div>
     
     <!-- External JavaScript -->
     <script src="assets/flashcards.js"></script>
+    <script>
+        // Language toggle function
+        function toggleLanguage() {
+            const currentUrl = new URL(window.location.href);
+            const currentLang = currentUrl.searchParams.get('lang') || 'en';
+            const newLang = currentLang === 'en' ? 'es' : 'en';
+            currentUrl.searchParams.set('lang', newLang);
+            window.location.href = currentUrl.toString();
+        }
+    </script>
 </body>
 </html>
