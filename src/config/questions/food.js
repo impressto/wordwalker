@@ -1274,16 +1274,16 @@ export const foodQuestions = [
   },
   {
     id: 'food_105',
-    emoji: '🥝',
-    question: '¿Qué fruta peluda es verde por dentro?',
-    translation: 'What fuzzy fruit is green inside?',
-    options: ['el kiwi', 'la guayaba', 'la papaya'],
-    correctAnswer: 'el kiwi',
-    hint: 'Small fruit with brown fuzzy skin and bright green flesh with tiny seeds.',
+    emoji: 'carnival-food-stand.png',
+    question: '¿Dónde puedes comprar comida en el carnaval?',
+    translation: 'Where can you buy food at the carnival?',
+    options: ['el puesto de comida', 'el restaurante', 'la cocina'],
+    correctAnswer: 'el puesto de comida',
+    hint: 'A temporary stand or booth where food is sold at carnivals and fairs.',
     points: 5,
     category: 'food',
     difficulty: 'easy',
-    emotion: 'pleased'
+    emotion: 'excited'
   },
   {
     id: 'food_106',

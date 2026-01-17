@@ -877,6 +877,7 @@ export const translations = {
     "el kiwi": "the kiwi bird",
     "el kiwi": "the kiwi",
     "el koala": "the koala",
+    "el puesto de comida": "the food stand",
     "el laboratorio": "the laboratory",
     "el lagarto": "the lizard",
     "el lanzamiento de hachas": "the axe throwing",
