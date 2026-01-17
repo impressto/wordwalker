@@ -103,7 +103,8 @@ const PathCanvas = () => {
     return parseFloat(localStorage.getItem('wordwalker-volume') || '0.7');
   });
   const [musicEnabled, setMusicEnabled] = useState(() => {
-    return localStorage.getItem('wordwalker-music-enabled') !== 'false';
+    const saved = localStorage.getItem('wordwalker-music-enabled');
+    return saved === 'true'; // Default to false, only true if explicitly saved
   });
   
   // Game state persistence
@@ -214,12 +215,15 @@ const PathCanvas = () => {
   useEffect(() => {
     const initializeAudio = () => {
       if (!audioInitialized && soundManagerRef.current && soundEnabled && volume > 0) {
-        soundManagerRef.current.startBackgroundMusic();
+        // Only start background music if musicEnabled is true
+        if (musicEnabled) {
+          soundManagerRef.current.startBackgroundMusic();
+        }
         setAudioInitialized(true);
       }
     };
 
-    // Listen for first user interaction to start background music
+    // Listen for first user interaction to initialize audio
     document.addEventListener('click', initializeAudio, { once: true });
     document.addEventListener('touchstart', initializeAudio, { once: true });
     document.addEventListener('keydown', initializeAudio, { once: true });
@@ -229,7 +233,7 @@ const PathCanvas = () => {
       document.removeEventListener('touchstart', initializeAudio);
       document.removeEventListener('keydown', initializeAudio);
     };
-  }, [audioInitialized, soundEnabled, volume]);
+  }, [audioInitialized, soundEnabled, volume, musicEnabled]);
 
   // Update sound manager volume when sound is toggled or volume changes
   useEffect(() => {
@@ -239,14 +243,14 @@ const PathCanvas = () => {
       
       // Only start/stop background music if audio has been initialized by user interaction
       if (audioInitialized) {
-        if (soundEnabled && volume > 0) {
+        if (soundEnabled && volume > 0 && musicEnabled) {
           soundManagerRef.current.startBackgroundMusic();
         } else {
           soundManagerRef.current.stopBackgroundMusic();
         }
       }
     }
-  }, [soundEnabled, volume, audioInitialized]);
+  }, [soundEnabled, volume, audioInitialized, musicEnabled]);
 
   // Save volume to localStorage when it changes
   useEffect(() => {
@@ -283,7 +287,7 @@ const PathCanvas = () => {
         }
       } else {
         // Page is visible again - resume background music if enabled
-        if (soundManagerRef.current && audioInitialized && soundEnabled && volume > 0) {
+        if (soundManagerRef.current && audioInitialized && soundEnabled && volume > 0 && musicEnabled) {
           soundManagerRef.current.startBackgroundMusic();
         }
       }
@@ -298,7 +302,7 @@ const PathCanvas = () => {
 
     // Handle window focus (user comes back)
     const handleWindowFocus = () => {
-      if (soundManagerRef.current && audioInitialized && soundEnabled && volume > 0) {
+      if (soundManagerRef.current && audioInitialized && soundEnabled && volume > 0 && musicEnabled) {
         soundManagerRef.current.startBackgroundMusic();
       }
     };
@@ -367,11 +371,11 @@ const PathCanvas = () => {
       }
     } else {
       // Search dialog closed - resume background music if enabled
-      if (soundManagerRef.current && audioInitialized && soundEnabled && volume > 0) {
+      if (soundManagerRef.current && audioInitialized && soundEnabled && volume > 0 && musicEnabled) {
         soundManagerRef.current.startBackgroundMusic();
       }
     }
-  }, [showSearch, audioInitialized, soundEnabled, volume]);
+  }, [showSearch, audioInitialized, soundEnabled, volume, musicEnabled]);
 
   // Check for saved game state on component mount
   useEffect(() => {

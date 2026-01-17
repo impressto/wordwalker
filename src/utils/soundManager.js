@@ -8,7 +8,7 @@ class SoundManager {
     this.baseUrl = `${baseUrl}audio/`;
     this.fileFormat = 'mp3';
     this.masterVolume = 1;
-    this.musicEnabled = true; // Separate control for background music
+    this.musicEnabled = false; // Separate control for background music - default to false
     this.audioUnlocked = false;
     this.backgroundMusic = null;
     this.currentTheme = initialTheme; // Track current theme for background music
