@@ -51,6 +51,15 @@ export const categories = {
     emoji: "people.png",
     description: "Learn family, professions, and describing people",
   },
+  
+  grammar: {
+    id: "grammar",
+    name: "Grammar",
+    displayName: "Gramática",
+    emoji: "grammar.png",
+    description:
+      "Learn Spanish grammar, verb conjugations, and sentence structure",
+  },
 
   daily_routines: {
     id: "daily_routines",
@@ -60,14 +69,6 @@ export const categories = {
     description: "Learn daily activities and reflexive verbs",
   },
 
-  grammar: {
-    id: "grammar",
-    name: "Grammar",
-    displayName: "Gramática",
-    emoji: "grammar.png",
-    description:
-      "Learn Spanish grammar, verb conjugations, and sentence structure",
-  },
 
   plants_animals: {
     id: "plants_animals",
