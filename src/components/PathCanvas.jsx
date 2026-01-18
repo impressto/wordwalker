@@ -2068,6 +2068,7 @@ const PathCanvas = () => {
             onHintClick={handleHintClick}
             questionTranslation={currentQuestion.translation}
             onClose={handleCloseQuestion}
+            gameMode={gameMode}
           />
         </div>
       )}

@@ -17,7 +17,8 @@ const QuestionDialog = ({
   onAnswerChoice,
   onHintClick,
   questionTranslation,
-  onClose
+  onClose,
+  gameMode
 }) => {
   const [dialogTop, setDialogTop] = useState('100px');
   const [isTranslationVisible, setIsTranslationVisible] = useState(true);
@@ -211,6 +212,20 @@ const QuestionDialog = ({
       }}>
         {currentQuestion.question}
       </div>
+      
+      {/* Display hint below question when hintIsQuestion is true in multichoice mode */}
+      {gameMode === 'multichoice' && currentQuestion.hintIsQuestion && currentQuestion.hint && (
+        <div style={{
+          fontSize: '14px',
+          color: '#666',
+          textAlign: 'center',
+          fontStyle: 'italic',
+          marginTop: '-5px',
+          marginBottom: '5px',
+        }}>
+          {currentQuestion.hint}
+        </div>
+      )}
       
       {/* Hint Button and English Translation */}
       {firstAttempt && !showHint && questionTranslation && (
