@@ -444,6 +444,15 @@ h1 {
     margin-bottom: 8px;
 }
 
+.flashcard-question-hint {
+    font-size: 0.9em;
+    color: #718096;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    font-style: italic;
+    line-height: 1.4;
+}
+
 .flashcard-translation {
     font-size: 1em;
     color: #4a5568;

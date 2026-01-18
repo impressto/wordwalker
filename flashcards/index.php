@@ -572,6 +572,12 @@ $version = $packageJson['version'] ?? '1.0.0';
                                     <?php echo htmlspecialchars($displayQuestion); ?>
                                 </div>
                                 
+                                <?php if (!empty($question['hint']) && !empty($question['hintIsQuestion']) && $currentLang === 'en'): ?>
+                                    <div class="flashcard-question-hint">
+                                        <?php echo htmlspecialchars($question['hint']); ?>
+                                    </div>
+                                <?php endif; ?>
+                                
                                 <div class="flip-instruction"><?php echo t('flip_instruction'); ?></div>
                             </div>
                             
