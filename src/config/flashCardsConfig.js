@@ -84,7 +84,7 @@ export const flashCardsConfig = {
       fontSize: 25,
       fontFamily: 'Arial, sans-serif',
       fontWeight: 'normal',
-      color: '#b4ebffff',
+      color: '#4caf50',
       maxWidth: 350, // Adjusted to match Spanish
       lineHeight: 1.2,
     },
@@ -103,6 +103,29 @@ export const flashCardsConfig = {
     imageScale: 1.5, // Scale multiplier for the speech bubble image relative to size
     earIconOffsetY: -5, // Fine-tune vertical position of ear icon (positive = down, negative = up)    
     opacity: 0.7 // Transparency of speech bubble (0 = fully transparent, 1 = fully opaque)
+  },
+  
+  // Theme-specific text color overrides
+  // Allows customizing English translation color per theme for better visibility
+  themeColors: {
+    default: {
+      english: '#99f7ef', // Green - matches config above
+    },
+    jamaica: {
+      english: '#FFD700', // Gold - stands out against Jamaica's vibrant colors
+    },
+    'hong-kong': {
+      english: '#ecc09c', // Coral red - contrasts with Hong Kong cityscape
+    },
+    'dia-de-los-muertos': {
+      english: '#e1b0ee', // Dark turquoise - pops against Day of the Dead colors
+    },
+    paris: {
+      english: '#4244a3', // Deep pink - contrasts with Paris romantic tones
+    },
+    nassau: {
+      english: '#FFE66D', // Light yellow - visible against Nassau's tropical blues
+    },
   },  
     
 };
@@ -122,9 +145,10 @@ export const getFlashCardConfig = (category) => {
  * @param {string} category - The category ID
  * @param {number} cardIndex - The index of the card (0-based)
  * @param {string} selectedCharacter - Optional character name to use (if not provided, uses default)
+ * @param {string} theme - Optional theme name for color overrides (defaults to 'default')
  * @returns {Object|null} Object with spanish text, english text, emoji, and image paths, or null if not found
  */
-export const getFlashCardData = (category, cardIndex, selectedCharacter = null) => {
+export const getFlashCardData = (category, cardIndex, selectedCharacter = null, theme = 'default') => {
   // Get questions for this category
   const categoryQuestions = getQuestionsByCategory(category);
   
@@ -152,6 +176,9 @@ export const getFlashCardData = (category, cardIndex, selectedCharacter = null) 
   // Use selected character if provided, otherwise use default
   const characterToUse = selectedCharacter || flashCardsConfig.defaultCharacter;
   
+  // Get theme-specific color overrides
+  const themeConfig = flashCardsConfig.themeColors[theme] || flashCardsConfig.themeColors.default;
+  
   return {
     spanish: spanish,
     english: english,
@@ -160,8 +187,8 @@ export const getFlashCardData = (category, cardIndex, selectedCharacter = null) 
     emojiPosition: undefined, // Use default positioning
     textAlign: undefined, // Use default from config
     leftMargin: undefined,
-    spanishColor: undefined,
-    englishColor: undefined,
+    spanishColor: question.spanishColor, // Optional per-question override
+    englishColor: question.englishColor || themeConfig.english, // Use question override, theme override, or default
     spanishPosition: undefined,
     englishPosition: undefined,
     // Image paths for dynamic composition

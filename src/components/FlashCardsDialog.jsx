@@ -147,7 +147,8 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
     const cardData = getFlashCardData(
       category, 
       actualCardIndex,
-      selectedCharacter
+      selectedCharacter,
+      currentTheme
     );
     
     if (!cardData || !cardData.images) return;
@@ -358,7 +359,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
       return;
     }
 
-    const cardData = getFlashCardData(category, actualCardIndex, selectedCharacter);
+    const cardData = getFlashCardData(category, actualCardIndex, selectedCharacter, currentTheme);
     if (!cardData?.usageExample || !isOnline) {
       setExampleAudioAvailable(false);
       setExampleAudioLoading(false);
@@ -421,7 +422,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
   const handlePlayExample = async () => {
     if (isPlayingExample) return; // Prevent multiple clicks
     
-    const cardData = getFlashCardData(category, actualCardIndex, selectedCharacter);
+    const cardData = getFlashCardData(category, actualCardIndex, selectedCharacter, currentTheme);
     if (!cardData?.usageExample) {
       return;
     }
@@ -504,7 +505,8 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
       const cardData = getFlashCardData(
         category, 
         actualCardIndex,
-        selectedCharacter
+        selectedCharacter,
+        currentTheme
       );
       
       if (!cardData) {
@@ -622,7 +624,101 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
         );
       }
       
-      // 4. Draw text overlay
+      // 4. Draw speech balloon with ear icon if usageExample exists (BEFORE text so text renders on top)
+      if (cardData.usageExample) {
+        // Position the speech balloon near the character's head
+        const balloonSize = config.speechBubble?.size || 45;
+        const offsetXLeft = config.speechBubble?.offsetXLeft || -10;
+        const offsetXRight = config.speechBubble?.offsetX || 50;
+        const offsetY = config.speechBubble?.offsetY || -15;
+        const imageScale = config.speechBubble?.imageScale || 1.5;
+        const earIconOffsetY = config.speechBubble?.earIconOffsetY || 0;
+        const opacity = config.speechBubble?.opacity !== undefined ? config.speechBubble.opacity : 1;
+        
+        // Calculate character position (same logic as character drawing)
+        const baseWidth = config.characterWidth || 220;
+        const baseHeight = config.characterHeight || 220;
+        const scale = config.characterScale || 0.8;
+        const charWidth = baseWidth * scale;
+        const charHeight = baseHeight * scale;
+        const charMargin = 10;
+        const charX = isReversedLayout
+          ? canvas.width - charWidth - charMargin
+          : charMargin;
+        const charY = canvas.height - charHeight;
+        
+        // Position balloon relative to character using appropriate offset for layout
+        const balloonX = isReversedLayout
+          ? charX + offsetXRight  // Character on right - use offsetX (offsetXRight)
+          : charX + charWidth + offsetXLeft;   // Character on left - use offsetXLeft
+        const balloonY = charY + offsetY;
+        
+        // Store bounds for click detection
+        setSpeechBalloonBounds({
+          x: balloonX,
+          y: balloonY,
+          width: balloonSize,
+          height: balloonSize
+        });
+        
+        // Draw speech balloon using PNG image
+        if (imagesRef.current.speechBubble) {
+          ctx.save();
+          ctx.globalCompositeOperation = 'source-over';
+          
+          const img = imagesRef.current.speechBubble;
+          const imgWidth = balloonSize * imageScale;
+          const imgHeight = balloonSize * imageScale;
+          const imgX = balloonX - (imgWidth - balloonSize) / 2;
+          const imgY = balloonY - (imgHeight - balloonSize) / 2;
+          
+          // Set opacity for speech bubble
+          ctx.globalAlpha = opacity;
+          
+          // Flip horizontally if layout is reversed (right side)
+          if (isReversedLayout) {
+            ctx.translate(imgX + imgWidth, imgY);
+            ctx.scale(-1, 1);
+            ctx.drawImage(img, 0, 0, imgWidth, imgHeight);
+          } else {
+            ctx.drawImage(img, imgX, imgY, imgWidth, imgHeight);
+          }
+          
+          ctx.restore(); // Restore BEFORE drawing dots
+          
+          // Draw dots in center of balloon to indicate interactivity (in new context)
+          ctx.save();
+          ctx.globalAlpha = 1; // Full opacity for dots
+          ctx.font = `${balloonSize * 0.5}px Arial`;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillStyle = '#333'; // Ensure dots have a color
+          ctx.fillText('...', balloonX + balloonSize/2, balloonY + balloonSize/2 + earIconOffsetY);
+          ctx.restore();
+        } else {
+          // Fallback: Draw speech balloon background (circle) if image not loaded
+          ctx.save();
+          ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
+          ctx.strokeStyle = '#666';
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.arc(balloonX + balloonSize/2, balloonY + balloonSize/2, balloonSize/2, 0, Math.PI * 2);
+          ctx.fill();
+          ctx.stroke();
+          
+          // Draw ear icon
+          ctx.font = `${balloonSize * 0.6}px Arial`;
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+          ctx.fillText('...', balloonX + balloonSize/2, balloonY + balloonSize/2 + earIconOffsetY);
+          ctx.restore();
+        }
+      } else {
+        // No usage example - clear bounds
+        setSpeechBalloonBounds(null);
+      }
+
+      // 5. Draw text overlay (AFTER speech balloon so text is always on top and fully visible)
       if (cardData) {
         const textConfig = config.text || {};
         const spanishConfig = textConfig.spanish || {};
@@ -654,6 +750,8 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
         
         // Draw Spanish text (main text)
         ctx.save();
+        // Ensure text is drawn on top using source-over (default, but explicit)
+        ctx.globalCompositeOperation = 'source-over';
         ctx.textAlign = canvasTextAlign;
         ctx.textBaseline = 'top';
         ctx.font = `${spanishConfig.fontWeight || 'bold'} ${spanishConfig.fontSize || 28}px ${spanishConfig.fontFamily || 'Arial'}`;
@@ -705,100 +803,6 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
         );
         
         ctx.restore();
-      }
-
-      // 5. Draw speech balloon with ear icon if usageExample exists
-      if (cardData.usageExample) {
-        // Position the speech balloon near the character's head
-        const balloonSize = config.speechBubble?.size || 45;
-        const offsetXLeft = config.speechBubble?.offsetXLeft || -10;
-        const offsetXRight = config.speechBubble?.offsetX || 50;
-        const offsetY = config.speechBubble?.offsetY || -15;
-        const imageScale = config.speechBubble?.imageScale || 1.5;
-        const earIconOffsetY = config.speechBubble?.earIconOffsetY || 0;
-        const opacity = config.speechBubble?.opacity !== undefined ? config.speechBubble.opacity : 1;
-        
-        // Calculate character position (same logic as character drawing)
-        const baseWidth = config.characterWidth || 220;
-        const baseHeight = config.characterHeight || 220;
-        const scale = config.characterScale || 0.8;
-        const charWidth = baseWidth * scale;
-        const charHeight = baseHeight * scale;
-        const charMargin = 10;
-        const charX = isReversedLayout
-          ? canvas.width - charWidth - charMargin
-          : charMargin;
-        const charY = canvas.height - charHeight;
-        
-        // Position balloon relative to character using appropriate offset for layout
-        const balloonX = isReversedLayout
-          ? charX + offsetXRight  // Character on right - use offsetX (offsetXRight)
-          : charX + charWidth + offsetXLeft;   // Character on left - use offsetXLeft
-        const balloonY = charY + offsetY;
-        
-        // Store bounds for click detection
-        setSpeechBalloonBounds({
-          x: balloonX,
-          y: balloonY,
-          width: balloonSize,
-          height: balloonSize
-        });
-        
-        // Draw speech balloon using PNG image
-        if (imagesRef.current.speechBubble) {
-          ctx.save();
-          
-          const img = imagesRef.current.speechBubble;
-          const imgWidth = balloonSize * imageScale;
-          const imgHeight = balloonSize * imageScale;
-          const imgX = balloonX - (imgWidth - balloonSize) / 2;
-          const imgY = balloonY - (imgHeight - balloonSize) / 2;
-          
-          // Set opacity for speech bubble
-          ctx.globalAlpha = opacity;
-          
-          // Flip horizontally if layout is reversed (right side)
-          if (isReversedLayout) {
-            ctx.translate(imgX + imgWidth, imgY);
-            ctx.scale(-1, 1);
-            ctx.drawImage(img, 0, 0, imgWidth, imgHeight);
-          } else {
-            ctx.drawImage(img, imgX, imgY, imgWidth, imgHeight);
-          }
-          
-          // Reset opacity for ear icon
-          ctx.globalAlpha = 1;
-          
-          ctx.restore();
-          
-          // Draw ear icon in the center
-          ctx.save();
-          ctx.font = `${balloonSize * 0.5}px Arial`;
-          ctx.textAlign = 'center';
-          ctx.textBaseline = 'middle';
-          ctx.fillText('...', balloonX + balloonSize/2, balloonY + balloonSize/2 + earIconOffsetY);
-          ctx.restore();
-        } else {
-          // Fallback: Draw speech balloon background (circle) if image not loaded
-          ctx.save();
-          ctx.fillStyle = 'rgba(255, 255, 255, 0.95)';
-          ctx.strokeStyle = '#666';
-          ctx.lineWidth = 2;
-          ctx.beginPath();
-          ctx.arc(balloonX + balloonSize/2, balloonY + balloonSize/2, balloonSize/2, 0, Math.PI * 2);
-          ctx.fill();
-          ctx.stroke();
-          
-          // Draw ear icon
-          ctx.font = `${balloonSize * 0.6}px Arial`;
-          ctx.textAlign = 'center';
-          ctx.textBaseline = 'middle';
-          ctx.fillText('...', balloonX + balloonSize/2, balloonY + balloonSize/2 + earIconOffsetY);
-          ctx.restore();
-        }
-      } else {
-        // No usage example - clear bounds
-        setSpeechBalloonBounds(null);
       }
 
       // Continue animation
@@ -919,7 +923,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
 
         {/* Usage Example Modal */}
         {showUsageModal && (() => {
-          const cardData = getFlashCardData(category, actualCardIndex, selectedCharacter);
+          const cardData = getFlashCardData(category, actualCardIndex, selectedCharacter, currentTheme);
           const englishTranslation = cardData?.usageExample ? exampleTranslations[cardData.usageExample] : null;
           return cardData?.usageExample ? (
             <div className="usage-modal-content">
