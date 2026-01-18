@@ -64,10 +64,42 @@ fi
 echo -e "${CYAN}Found ${TOTAL_FILES} MP3 files${NC}"
 echo ""
 
+# First pass: Remove duplicates with old format (..mp3 or ...mp3)
+echo -e "${BLUE}Checking for duplicates with old filename format...${NC}"
+DUPLICATE_COUNT=0
+
+while IFS= read -r filepath; do
+    filename=$(basename "$filepath")
+    
+    # Check if this is an old format file (has ..mp3 or ...mp3)
+    if [[ "$filename" =~ \.\.mp3$ ]] || [[ "$filename" =~ \.\.\.mp3$ ]]; then
+        # Create the clean version name
+        clean_filename=$(echo "$filename" | sed 's/\.\.\.mp3$/.mp3/' | sed 's/\.\.mp3$/.mp3/')
+        clean_filepath="$(dirname "$filepath")/${clean_filename}"
+        
+        # If the clean version exists, remove this duplicate
+        if [ -f "$clean_filepath" ]; then
+            echo -e "${YELLOW}Removing duplicate:${NC} ${filename}"
+            if [ "$DRY_RUN" = false ]; then
+                rm "$filepath"
+                echo -e "  ${GREEN}✓ Deleted${NC}"
+            else
+                echo -e "  ${YELLOW}(would delete)${NC}"
+            fi
+            DUPLICATE_COUNT=$((DUPLICATE_COUNT + 1))
+        fi
+    fi
+done < <(find "$EXAMPLES_DIR" -type f -name "*.mp3")
+
+if [ "$DUPLICATE_COUNT" -gt 0 ]; then
+    echo -e "${GREEN}Removed ${DUPLICATE_COUNT} duplicate files${NC}"
+    echo ""
+fi
+
 RENAMED_COUNT=0
 SKIPPED_COUNT=0
 
-# Process each MP3 file
+# Second pass: Process each MP3 file for renaming
 while IFS= read -r filepath; do
     # Get the directory and filename
     dir=$(dirname "$filepath")
@@ -129,6 +161,7 @@ done < <(find "$EXAMPLES_DIR" -type f -name "*.mp3")
 echo "----------------------------------------"
 echo -e "${BLUE}Summary:${NC}"
 echo "  Total files processed: ${TOTAL_FILES}"
+echo "  Duplicates removed: ${DUPLICATE_COUNT}"
 echo "  Files renamed: ${RENAMED_COUNT}"
 echo "  Files skipped: ${SKIPPED_COUNT}"
 
