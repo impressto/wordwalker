@@ -191,6 +191,11 @@ function parseQuestionsFromJS($filePath) {
                 $question['hint'] = str_replace(["\\'", '\\"'], ["'", '"'], $hMatch[1]);
             }
             
+            // Extract hintIsQuestion
+            if (preg_match('/hintIsQuestion:\s*(true|false)/', $objectString, $hiqMatch)) {
+                $question['hintIsQuestion'] = ($hiqMatch[1] === 'true');
+            }
+            
             // Extract usage example (handles nested quotes)
             if (preg_match('/usageExample:\s*[\'"](.+?)[\'"],/s', $objectString, $uMatch)) {
                 $question['usageExample'] = str_replace(["\\'", '\\"'], ["'", '"'], $uMatch[1]);
