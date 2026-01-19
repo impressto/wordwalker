@@ -52,6 +52,8 @@ function getTranslations($lang = 'en') {
             'play_example' => 'Play example',
             'flip_instruction' => '👆 Click to reveal answer',
             'example_label' => 'Example:',
+            'save_image' => 'Save Image',
+            'download_card_image' => 'Download card as image',
             
             // Difficulty levels
             'difficulty_easy' => 'EASY',
@@ -152,6 +154,8 @@ function getTranslations($lang = 'en') {
             'play_example' => 'Reproducir ejemplo',
             'flip_instruction' => '👆 Haz clic para ver la respuesta',
             'example_label' => 'Ejemplo:',
+            'save_image' => 'Guardar Imagen',
+            'download_card_image' => 'Descargar tarjeta como imagen',
             
             // Difficulty levels
             'difficulty_easy' => 'FÁCIL',
@@ -215,7 +219,9 @@ function getTranslations($lang = 'en') {
  * Get the current interface language from session or default to English
  */
 function getCurrentLanguage() {
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     
     // Check URL parameter first
     if (isset($_GET['lang']) && in_array($_GET['lang'], ['en', 'es'])) {

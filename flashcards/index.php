@@ -122,7 +122,9 @@ $categories = [
 ];
 
 // Start session for randomization persistence
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
 
 // Get parameters from URL
 $categoryParam = isset($_GET['category']) ? trim($_GET['category']) : '';
@@ -337,6 +339,9 @@ $version = $packageJson['version'] ?? '1.0.0';
       "logo": "https://wordwalker.ca/images/wordalker-logo-720-720.png"
     }
     </script>
+    
+    <!-- html2canvas Library for Image Export -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
     <!-- External Stylesheet -->
     <link rel="stylesheet" href="assets/flashcards.css">
@@ -692,8 +697,18 @@ $version = $packageJson['version'] ?? '1.0.0';
                                         <?php echo t('difficulty_' . strtolower($question['difficulty'])); ?>
                                     </span>
                                 <?php endif; ?>
+                                
+                                <!-- Watermark (hidden by default, shown only during image capture) -->
+                                <div class="flashcard-watermark">wordwalker.ca/flashcards</div>
                             </div>
                         </div>
+                        
+                        <button class="download-card-btn" onclick="downloadCardImage(this)" title="<?php echo t('download_card_image'); ?>" aria-label="<?php echo t('download_card_image'); ?>">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                            </svg>
+                            <span class="download-text"><?php echo t('save_image'); ?></span>
+                        </button>
                     </article>
                 <?php endforeach; ?>
             </div>
