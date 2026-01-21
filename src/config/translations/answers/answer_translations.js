@@ -2400,6 +2400,7 @@ export const translations = {
     "la tarjeta llave": "the key card",
     "la tarjeta": "the card",
     "la tarta de limón": "the lemon tart",
+    "la tarta": "the tart",
     "la tatarabuela": "the great-great-grandmother",
     "la tataranieta": "the great-great-granddaughter",
     "la taza de crema de cacahuate": "the peanut butter cup",

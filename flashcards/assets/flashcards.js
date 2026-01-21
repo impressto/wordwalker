@@ -140,9 +140,11 @@ function downloadCardImage(button) {
     const originalFlashcardHeight = flashcard.style.height;
     const originalFlashcardMaxHeight = flashcard.style.maxHeight;
     const originalFlashcardOverflow = flashcard.style.overflow;
+    const originalFlashcardWidth = flashcard.style.width;
     const originalBackHeight = flashcardBack.style.height;
     const originalBackMaxHeight = flashcardBack.style.maxHeight;
     const originalBackOverflow = flashcardBack.style.overflow;
+    const originalBackWidth = flashcardBack.style.width;
     
     // Remove transform and expand height constraints
     flashcardInner.style.transform = 'none';
@@ -150,12 +152,17 @@ function downloadCardImage(button) {
     flashcard.style.maxHeight = 'none';
     flashcard.style.overflow = 'visible';
     
+    // Widen the flashcard by 50% for the image capture
+    flashcard.style.width = '150%';
+    flashcard.style.maxWidth = '150%';
+    
     // Make sure the back is visible and expanded
     flashcardBack.style.transform = 'rotateY(0deg)';
     flashcardBack.style.visibility = 'visible';
     flashcardBack.style.height = 'auto';
     flashcardBack.style.maxHeight = 'none';
     flashcardBack.style.overflow = 'visible';
+    flashcardBack.style.width = '100%';
     
     // Get the card number for the filename
     const cardNumber = flashcardBack.querySelector('.flashcard-number')?.textContent || 'card';
@@ -198,11 +205,14 @@ function downloadCardImage(button) {
         flashcard.style.height = originalFlashcardHeight;
         flashcard.style.maxHeight = originalFlashcardMaxHeight;
         flashcard.style.overflow = originalFlashcardOverflow;
+        flashcard.style.width = originalFlashcardWidth;
+        flashcard.style.maxWidth = '';
         flashcardBack.style.transform = '';
         flashcardBack.style.visibility = '';
         flashcardBack.style.height = originalBackHeight;
         flashcardBack.style.maxHeight = originalBackMaxHeight;
         flashcardBack.style.overflow = originalBackOverflow;
+        flashcardBack.style.width = originalBackWidth;
         button.style.display = 'flex';
         
         // Restore audio player visibility
@@ -233,11 +243,14 @@ function downloadCardImage(button) {
         flashcard.style.height = originalFlashcardHeight;
         flashcard.style.maxHeight = originalFlashcardMaxHeight;
         flashcard.style.overflow = originalFlashcardOverflow;
+        flashcard.style.width = originalFlashcardWidth;
+        flashcard.style.maxWidth = '';
         flashcardBack.style.transform = '';
         flashcardBack.style.visibility = '';
         flashcardBack.style.height = originalBackHeight;
         flashcardBack.style.maxHeight = originalBackMaxHeight;
         flashcardBack.style.overflow = originalBackOverflow;
+        flashcardBack.style.width = originalBackWidth;
         button.style.display = 'flex';
         
         // Restore audio player visibility on error

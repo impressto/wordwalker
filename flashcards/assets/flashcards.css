@@ -47,8 +47,8 @@ h1 {
 }
 
 .category-emoji img {
-    width: 80px;
-    height: 80px;
+    width: 140px;
+    height: 140px;
     object-fit: contain;
 }
 
@@ -401,8 +401,8 @@ h1 {
 }
 
 .flashcard-emoji {
-    font-size: 4em;
-    margin-bottom: 10px;
+    font-size: 6em;
+    margin-bottom: 0;
     display: block;
 }
 
@@ -418,10 +418,10 @@ h1 {
 }
 
 .flashcard-emoji-img {
-    width: 80px;
-    height: 80px;
+    width: 140px;
+    height: 140px;
     object-fit: contain;
-    margin-bottom: 10px;
+    margin-bottom: 0;
     display: block;
 }
 

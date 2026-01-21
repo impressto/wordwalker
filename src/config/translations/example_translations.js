@@ -1307,7 +1307,7 @@ export const exampleTranslations = {
   "Como el helado de vainilla refrescante bajo el calor del verano.": "I eat the refreshing vanilla ice cream under the summer heat.",
   "Pido el flan casero con caramelo para terminar la comida española.": "I order the homemade flan with caramel to finish the Spanish meal.",
   "Mojo las galletas de chocolate en el café caliente.": "I dip the chocolate cookies in the hot coffee.",
-  "Sirvo el pie caliente de manzana con helado de vainilla.": "I serve the warm apple pie with vanilla ice cream.",
+  "Sirvo la tarta caliente de manzana con helado de vainilla.": "I serve the warm apple tart with vanilla ice cream.",
   "Disfruto el chocolate negro intenso después de la cena.": "I enjoy the intense dark chocolate after dinner.",
   "Compro el cupcake decorado con glaseado de colores para la fiesta.": "I buy the cupcake decorated with colorful frosting for the party.",
   "Compro la dona glaseada con chispas de colores en la panadería.": "I buy the glazed donut with colorful sprinkles at the bakery.",
