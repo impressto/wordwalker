@@ -8,7 +8,7 @@
 import { useRef } from 'react';
 import { addToFirstTryByCategory, addCorrectAnswer } from '../utils/questionTracking';
 import { generateNewForkCategories, extractCategoryIds } from '../utils/categoryRotation';
-import { getAllCategoryIds, getCategoryById } from '../config/questions';
+import { getAllCategoryIds, getCategoryById } from '../config/questionsLoader';
 import gameSettings, { getTranslationBoxDuration } from '../config/gameSettings';
 import { FLASH_CARDS_ENABLED } from '../config/flashCardsConfig';
 import { trackQuestionAnswer, trackCategoryCompletion, trackCategorySelection } from '../utils/gtm';

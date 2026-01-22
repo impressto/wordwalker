@@ -5,8 +5,8 @@
  * Flash cards now dynamically generated from questions data
  */
 
-import { getQuestionsByCategory } from './questions/index.js';
-import { getCategoryTranslation } from './translations/answers/index.js';
+import { getQuestionsByCategory } from './questionsLoader.js';
+import { getCategoryTranslation } from './translationsLoader.js';
 
 /**
  * FEATURE FLAG: Enable/Disable Flash Cards
@@ -146,11 +146,11 @@ export const getFlashCardConfig = (category) => {
  * @param {number} cardIndex - The index of the card (0-based)
  * @param {string} selectedCharacter - Optional character name to use (if not provided, uses default)
  * @param {string} theme - Optional theme name for color overrides (defaults to 'default')
- * @returns {Object|null} Object with spanish text, english text, emoji, and image paths, or null if not found
+ * @returns {Promise<Object|null>} Object with spanish text, english text, emoji, and image paths, or null if not found
  */
-export const getFlashCardData = (category, cardIndex, selectedCharacter = null, theme = 'default') => {
+export const getFlashCardData = async (category, cardIndex, selectedCharacter = null, theme = 'default') => {
   // Get questions for this category
-  const categoryQuestions = getQuestionsByCategory(category);
+  const categoryQuestions = await getQuestionsByCategory(category);
   
   // Check if question exists at this index
   if (!categoryQuestions || cardIndex >= categoryQuestions.length) {
@@ -163,7 +163,7 @@ export const getFlashCardData = (category, cardIndex, selectedCharacter = null, 
   const spanish = question.correctAnswer;
   
   // Get English translation using the category-specific translation system
-  const english = getCategoryTranslation(spanish, category) || spanish;
+  const english = await getCategoryTranslation(spanish, category) || spanish;
   
   // Determine emotion to use:
   // 1. If question has emotion property, use it
@@ -205,10 +205,10 @@ export const getFlashCardData = (category, cardIndex, selectedCharacter = null, 
  * Get total number of cards for a category
  * Now based on the number of questions in the category
  * @param {string} category - The category ID
- * @returns {number} Number of cards in the category
+ * @returns {Promise<number>} Number of cards in the category
  */
-export const getCategoryCardCount = (category) => {
-  const categoryQuestions = getQuestionsByCategory(category);
+export const getCategoryCardCount = async (category) => {
+  const categoryQuestions = await getQuestionsByCategory(category);
   return categoryQuestions ? categoryQuestions.length : 0;
 };
 
@@ -216,14 +216,14 @@ export const getCategoryCardCount = (category) => {
  * Check if a category has flash cards configured
  * Now checks if category has questions
  * @param {string} category - The category ID
- * @returns {boolean} True if category has questions and feature is enabled
+ * @returns {Promise<boolean>} True if category has questions and feature is enabled
  */
-export const hasFlashCards = (category) => {
+export const hasFlashCards = async (category) => {
   if (!FLASH_CARDS_ENABLED) {
     console.log('[Flash Cards] Feature is DISABLED globally');
     return false;
   }
-  const categoryQuestions = getQuestionsByCategory(category);
+  const categoryQuestions = await getQuestionsByCategory(category);
   const hasQuestions = categoryQuestions && categoryQuestions.length > 0;
   console.log(`[Flash Cards] Category "${category}" has questions: ${hasQuestions}, feature enabled: ${FLASH_CARDS_ENABLED}`);
   return hasQuestions;

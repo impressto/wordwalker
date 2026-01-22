@@ -5,7 +5,7 @@
  * in category presentation across multiple game sessions
  */
 
-import { getAllCategoryIds } from '../config/questions';
+import { getAllCategoryIds } from '../config/questionsLoader';
 
 /**
  * Generate new fork categories, prioritizing unpresented categories

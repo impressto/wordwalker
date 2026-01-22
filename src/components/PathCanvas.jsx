@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { getRandomQuestionByCategory, getRandomUnusedQuestionByCategory, getUnmasteredQuestionCount, shuffleOptions, getAllCategoryIds, getCategoryById } from '../config/questions';
+import { getRandomQuestionByCategory, getRandomUnusedQuestionByCategory, getUnmasteredQuestionCount, shuffleOptions, getAllCategoryIds, getCategoryById, preloadAllCategories } from '../config/questionsLoader';
 import { isCategoryCompleted, addCorrectAnswer, addToCorrectFirstTry, addUsedQuestion, addToFirstTryByCategory } from '../utils/questionTracking';
 import { generateNewForkCategories, initializeForkCategories, extractCategoryIds } from '../utils/categoryRotation';
-import { translations } from '../config/translations/answers/index';
+import { getTranslationsObject, preloadAllTranslations } from '../config/translationsLoader';
 import gameSettings, { getStreakColor, getTranslationBoxDuration } from '../config/gameSettings';
 import { getTheme } from '../config/parallaxThemes';
 import { getSpriteSheetConfig, getCharacterById } from '../config/characterConfig';
@@ -203,6 +203,12 @@ const PathCanvas = () => {
     
     // Initialize with current theme to avoid preloading wrong theme sounds
     soundManagerRef.current = new SoundManager(currentTheme);
+    
+    // Preload all questions and translations for offline support
+    // This runs in background and doesn't block initial render
+    preloadAllCategories().catch(err => console.warn('Failed to preload questions:', err));
+    preloadAllTranslations().catch(err => console.warn('Failed to preload translations:', err));
+    
     return () => {
       // Cleanup sound manager when component unmounts
       if (soundManagerRef.current) {
@@ -1405,8 +1411,8 @@ const PathCanvas = () => {
 
   // Helper function to load a new question for the current checkpoint
   // Returns true if a question was loaded, false if no questions are available (category complete)
-  const loadNewQuestion = (category) => {
-    const question = getRandomUnusedQuestionByCategory(category, usedQuestionIds, correctAnswersByCategory);
+  const loadNewQuestion = async (category) => {
+    const question = await getRandomUnusedQuestionByCategory(category, usedQuestionIds, correctAnswersByCategory);
     if (question) {
       const shuffledOptions = shuffleOptions(question.options);
       setCurrentQuestion({
@@ -1422,7 +1428,7 @@ const PathCanvas = () => {
       // Check if this category is now completed (all questions have been used)
       // Note: We create a temporary updated state to check completion
       const updatedUsedIds = addUsedQuestion(question.id, category, usedQuestionIds);
-      if (isCategoryCompleted(category, updatedUsedIds)) {
+      if (await isCategoryCompleted(category, updatedUsedIds)) {
         setCompletedCategories(prev => new Set([...prev, category]));
       }
       return true; // Question was loaded successfully
@@ -1514,7 +1520,7 @@ const PathCanvas = () => {
     soundManagerRef,
   });
 
-  const handlePathChoice = (choice, mode = 'multichoice') => {
+  const handlePathChoice = async (choice, mode = 'multichoice') => {
     // Play choice sound
     if (soundManagerRef.current) {
       soundManagerRef.current.playChoice();
@@ -1537,12 +1543,6 @@ const PathCanvas = () => {
     setSelectedPath(choice);
     setShowChoice(false);
     
-    // In flashcard mode, keep the game paused (no walker animation)
-    // In multichoice mode, unpause to start walker movement
-    if (mode !== 'flashcard') {
-      setIsPaused(false);
-    }
-    
     setIsJustResumed(false); // Clear the just-resumed flag once user selects a path
     setCheckpointsAnswered(0); // Reset checkpoint counter for new category
     setUsedQuestionIds({}); // Reset used questions for new category
@@ -1550,7 +1550,8 @@ const PathCanvas = () => {
     
     // Calculate and set the checkpoint limit for this category
     // If less than 10 unmastered questions, use that count as the limit
-    const unmasteredCount = getUnmasteredQuestionCount(category, {}, correctAnswersByCategory);
+    const masteredIds = correctAnswersByCategory[category] || [];
+    const unmasteredCount = await getUnmasteredQuestionCount(category, masteredIds);
     const categoryCheckpointLimit = (unmasteredCount < 10 && unmasteredCount > 0) 
       ? unmasteredCount 
       : checkpointsPerCategory;
@@ -1585,7 +1586,7 @@ const PathCanvas = () => {
     }
     
     // Load the first question immediately so the correct emoji appears
-    const questionLoaded = loadNewQuestion(category);
+    const questionLoaded = await loadNewQuestion(category);
     
     // If no questions are available in this category, immediately show completion
     if (!questionLoaded) {
@@ -1593,7 +1594,11 @@ const PathCanvas = () => {
       setIsPaused(true);
       setShowChoice(true);
       setSelectedPath(null);
+      return;
     }
+    
+    // In multichoice mode, unpause to start walker movement (after question is loaded)
+    setIsPaused(false);
   };
 
 
@@ -2012,6 +2017,7 @@ const PathCanvas = () => {
       />
 
       <canvas
+        id="main-canvas"
         ref={canvasRef}
         onClick={handleCanvasClick}
         onMouseMove={handleCanvasMouseMove}
@@ -2040,8 +2046,8 @@ const PathCanvas = () => {
         />
       )}
 
-      {/* Path Choice Dialog Component */}
-      {showChoice && (
+      {/* Path Choice Dialog Component - Only show after canvas assets are loaded */}
+      {showChoice && !isLoading && (
         <PathChoiceDialog
           forkCategories={forkCategories}
           getCategoryById={getCategoryById}

@@ -30,6 +30,7 @@ const DifficultySelector = ({ isOpen, onClose, difficulty, onSelectDifficulty })
       onClick={onClose}
     >
       <div 
+        id="difficulty-selector-modal"
         style={{
           backgroundColor: 'white',
           borderRadius: '20px',

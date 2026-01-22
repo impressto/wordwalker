@@ -1,14 +1,20 @@
 import { useState, useEffect } from 'react';
-import { translations } from '../config/translations/answers/index';
+import { getTranslationsObject } from '../config/translationsLoader';
 import './SearchDialog.css';
 
 export default function SearchDialog({ isOpen, onClose }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [results, setResults] = useState([]);
   const [searchType, setSearchType] = useState('english'); // 'english' or 'spanish'
+  const [translations, setTranslations] = useState(null);
+
+  // Load translations on mount
+  useEffect(() => {
+    getTranslationsObject().then(setTranslations);
+  }, []);
 
   useEffect(() => {
-    if (searchTerm.trim() === '') {
+    if (!translations || searchTerm.trim() === '') {
       setResults([]);
       return;
     }
@@ -55,7 +61,7 @@ export default function SearchDialog({ isOpen, onClose }) {
     });
 
     setResults(matches.slice(0, 20)); // Limit to 20 results
-  }, [searchTerm, searchType]);
+  }, [searchTerm, searchType, translations]);
 
   const handleClose = () => {
     setSearchTerm('');

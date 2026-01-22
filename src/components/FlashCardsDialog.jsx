@@ -4,8 +4,8 @@ import { getFlashCardConfig, getFlashCardData, getCategoryCardCount, flashCardsC
 import { isEmojiSvg, getEmojiSvgPath } from '../utils/emojiUtils.jsx';
 import FlashCardsParallax from './FlashCardsParallax';
 import pronunciationAudio from '../utils/pronunciationAudio';
-import { getQuestionsByCategory, getCategoryById } from '../config/questions/index';
-import { exampleTranslations } from '../config/translations/example_translations';
+import { getQuestionsByCategory, getCategoryById } from '../config/questionsLoader';
+import { getExampleTranslationsObject } from '../config/translationsLoader';
 import EmojiDisplay from './EmojiDisplay';
 
 /**
@@ -101,6 +101,8 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
   const [exampleAudioAvailable, setExampleAudioAvailable] = useState(false);
   const [exampleAudioLoading, setExampleAudioLoading] = useState(false);
   const [isPlayingExample, setIsPlayingExample] = useState(false);
+  const [exampleTranslations, setExampleTranslations] = useState(null);
+  const [currentCardData, setCurrentCardData] = useState(null);
   const canvasRef = useRef(null);
   const imagesRef = useRef({});
   const animationFrameRef = useRef(null);
@@ -108,8 +110,11 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
   // Get flash card configuration (unified for all categories)
   const config = getFlashCardConfig(category);
   
-  // Get total cards for this category (now from questions)
-  const totalCards = getCategoryCardCount(category);
+  // Get total cards for this category (now from questions) - load asynchronously
+  const [totalCards, setTotalCards] = useState(0);
+  useEffect(() => {
+    getCategoryCardCount(category).then(setTotalCards);
+  }, [category]);
   
   // Randomly select a character once when component mounts
   const selectedCharacterRef = useRef(null);
@@ -119,39 +124,49 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
   }
   const selectedCharacter = selectedCharacterRef.current;
   
-  // Create a shuffled index array once when component mounts
+  // Create a shuffled index array once when totalCards is loaded
   // This ensures cards are shown in random order each time dialog opens
   const shuffledIndicesRef = useRef(null);
-  if (shuffledIndicesRef.current === null) {
-    const indices = Array.from({ length: totalCards }, (_, i) => i);
-    shuffledIndicesRef.current = shuffleArray(indices);
-  }
+  const layoutOrientationRef = useRef(null);
+  
+  useEffect(() => {
+    if (totalCards > 0 && shuffledIndicesRef.current === null) {
+      const indices = Array.from({ length: totalCards }, (_, i) => i);
+      shuffledIndicesRef.current = shuffleArray(indices);
+      // Also initialize layout orientations
+      layoutOrientationRef.current = Array.from({ length: totalCards }, () => Math.random() < 0.5);
+    }
+  }, [totalCards]);
   
   // Get the actual card index from the shuffled array
-  const actualCardIndex = shuffledIndicesRef.current[currentCardIndex];
+  const actualCardIndex = shuffledIndicesRef.current?.[currentCardIndex] ?? 0;
+  const isReversedLayout = layoutOrientationRef.current?.[currentCardIndex] ?? false;
+
+  // Load example translations on mount
+  useEffect(() => {
+    getExampleTranslationsObject().then(setExampleTranslations);
+  }, []);
   
-  // Randomly determine layout orientation for each card (50% chance)
-  // true = reversed layout (character on right, text on left)
-  // false = normal layout (character on left, text on right)
-  const layoutOrientationRef = useRef(null);
-  if (layoutOrientationRef.current === null) {
-    layoutOrientationRef.current = Array.from({ length: totalCards }, () => Math.random() < 0.5);
-  }
-  const isReversedLayout = layoutOrientationRef.current[currentCardIndex];
-  
+  // Load current card data whenever card changes
+  useEffect(() => {
+    getFlashCardData(category, actualCardIndex, selectedCharacter, currentTheme)
+      .then(setCurrentCardData);
+  }, [category, actualCardIndex, selectedCharacter, currentTheme, currentCardIndex]);
+
   // Get base path for assets
   const basePath = import.meta.env.BASE_URL || '/';
 
   // Preload all images for the current card
   useEffect(() => {
-    const cardData = getFlashCardData(
-      category, 
-      actualCardIndex,
-      selectedCharacter,
-      currentTheme
-    );
-    
-    if (!cardData || !cardData.images) return;
+    const loadCardData = async () => {
+      const cardData = await getFlashCardData(
+        category, 
+        actualCardIndex,
+        selectedCharacter,
+        currentTheme
+      );
+      
+      if (!cardData || !cardData.images) return;
 
     const imagesToLoad = {};
     const imagePromises = [];
@@ -264,13 +279,16 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
     Promise.all(imagePromises).then(() => {
       imagesRef.current = imagesToLoad;
     });
+    };
+    
+    loadCardData();
 
     return () => {
       if (animationFrameRef.current) {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [actualCardIndex, category, basePath, currentTheme]);
+  }, [actualCardIndex, category, basePath, currentTheme, selectedCharacter]);
 
   // Add a small delay before showing the dialog to allow DOM layout calculation
   useEffect(() => {
@@ -297,45 +315,38 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
 
   // Check if audio file exists for current card
   useEffect(() => {
-    setAudioLoading(true);
-    setAudioAvailable(false);
-    setIsPlaying(false); // Reset playing state when card changes
-
-    if (!isOnline) {
-      setAudioLoading(false);
+    const checkAudioAsync = async () => {
+      setAudioLoading(true);
       setAudioAvailable(false);
-      return;
-    }
+      setIsPlaying(false); // Reset playing state when card changes
 
-    // Get the question data for the current card
-    const categoryQuestions = getQuestionsByCategory(category);
-    if (!categoryQuestions || actualCardIndex >= categoryQuestions.length) {
-      setAudioLoading(false);
-      setAudioAvailable(false);
-      return;
-    }
+      if (!isOnline) {
+        setAudioLoading(false);
+        setAudioAvailable(false);
+        return;
+      }
 
-    const currentQuestion = categoryQuestions[actualCardIndex];
-    let isMounted = true;
+      // Get the question data for the current card
+      const categoryQuestions = await getQuestionsByCategory(category);
+      if (!categoryQuestions || actualCardIndex >= categoryQuestions.length) {
+        setAudioLoading(false);
+        setAudioAvailable(false);
+        return;
+      }
 
-    const checkAudio = async () => {
+      const currentQuestion = categoryQuestions[actualCardIndex];
+      
       const exists = await pronunciationAudio.checkAudioExists(currentQuestion);
       
-      if (isMounted) {
-        setAudioAvailable(exists);
-        setAudioLoading(false);
-        // Preload if available for faster playback
-        if (exists) {
-          await pronunciationAudio.preloadAudio(currentQuestion);
-        }
+      setAudioAvailable(exists);
+      setAudioLoading(false);
+      // Preload if available for faster playback
+      if (exists) {
+        await pronunciationAudio.preloadAudio(currentQuestion);
       }
     };
 
-    checkAudio();
-
-    return () => {
-      isMounted = false;
-    };
+    checkAudioAsync();
   }, [actualCardIndex, category, isOnline]);
 
   // Auto-play audio when enabled and audio is available
@@ -359,44 +370,37 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
       return;
     }
 
-    const cardData = getFlashCardData(category, actualCardIndex, selectedCharacter, currentTheme);
-    if (!cardData?.usageExample || !isOnline) {
-      setExampleAudioAvailable(false);
-      setExampleAudioLoading(false);
-      return;
-    }
+    const checkExampleAudioAsync = async () => {
+      const cardData = await getFlashCardData(category, actualCardIndex, selectedCharacter, currentTheme);
+      if (!cardData?.usageExample || !isOnline) {
+        setExampleAudioAvailable(false);
+        setExampleAudioLoading(false);
+        return;
+      }
 
-    setExampleAudioLoading(true);
-    let isMounted = true;
+      setExampleAudioLoading(true);
 
-    const checkExampleAudio = async () => {
       const exists = await pronunciationAudio.checkExampleAudioExists(
         cardData.usageExample,
         category
       );
       
-      if (isMounted) {
-        setExampleAudioAvailable(exists);
-        setExampleAudioLoading(false);
-        // Preload if available
-        if (exists) {
-          await pronunciationAudio.preloadExample(cardData.usageExample, category);
-        }
+      setExampleAudioAvailable(exists);
+      setExampleAudioLoading(false);
+      // Preload if available
+      if (exists) {
+        await pronunciationAudio.preloadExample(cardData.usageExample, category);
       }
     };
 
-    checkExampleAudio();
-
-    return () => {
-      isMounted = false;
-    };
-  }, [showUsageModal, category, actualCardIndex, selectedCharacter, isOnline]);
+    checkExampleAudioAsync();
+  }, [showUsageModal, category, actualCardIndex, selectedCharacter, currentTheme, isOnline]);
 
   const handlePlayAudio = async () => {
     if (isPlaying) return; // Prevent multiple clicks
     
     // Get the question data for the current card
-    const categoryQuestions = getQuestionsByCategory(category);
+    const categoryQuestions = await getQuestionsByCategory(category);
     if (!categoryQuestions || actualCardIndex >= categoryQuestions.length) {
       return;
     }
@@ -422,7 +426,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
   const handlePlayExample = async () => {
     if (isPlayingExample) return; // Prevent multiple clicks
     
-    const cardData = getFlashCardData(category, actualCardIndex, selectedCharacter, currentTheme);
+    const cardData = await getFlashCardData(category, actualCardIndex, selectedCharacter, currentTheme);
     if (!cardData?.usageExample) {
       return;
     }
@@ -493,7 +497,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
   // Draw flash card on canvas
   useEffect(() => {
     const canvas = canvasRef.current;
-    if (!canvas) return;
+    if (!canvas || !currentCardData) return;
 
     const ctx = canvas.getContext('2d');
     
@@ -501,13 +505,8 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
       // Clear canvas
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Get flash card data (Spanish and English text, and image paths)
-      const cardData = getFlashCardData(
-        category, 
-        actualCardIndex,
-        selectedCharacter,
-        currentTheme
-      );
+      // Use the pre-loaded card data from state
+      const cardData = currentCardData;
       
       if (!cardData) {
         animationFrameRef.current = requestAnimationFrame(drawCard);
@@ -816,7 +815,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [actualCardIndex, config, category]);
+  }, [actualCardIndex, config, category, currentCardData, currentCardIndex, isReversedLayout]);
 
   // Get category display name
   const categoryData = getCategoryById(category);
@@ -922,10 +921,9 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
         </a>
 
         {/* Usage Example Modal */}
-        {showUsageModal && (() => {
-          const cardData = getFlashCardData(category, actualCardIndex, selectedCharacter, currentTheme);
-          const englishTranslation = cardData?.usageExample ? exampleTranslations[cardData.usageExample] : null;
-          return cardData?.usageExample ? (
+        {showUsageModal && currentCardData?.usageExample && (() => {
+          const englishTranslation = exampleTranslations?.[currentCardData.usageExample];
+          return (
             <div className="usage-modal-content">
               <button
                 className="usage-modal-close"
@@ -935,16 +933,16 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
                 ✕
               </button>
               <h3 className="usage-modal-title">💬 Usage Example</h3>
-              {cardData.emoji && (
+              {currentCardData.emoji && (
                 <div style={{ textAlign: 'center', margin: '10px 0' }}>
                   <EmojiDisplay 
-                    emoji={cardData.emoji} 
+                    emoji={currentCardData.emoji} 
                     category={category} 
                     size="48px"
                   />
                 </div>
               )}
-              <p className="usage-modal-text">{cardData.usageExample}</p>
+              <p className="usage-modal-text">{currentCardData.usageExample}</p>
               {englishTranslation && (
                 <p className="usage-modal-translation">{englishTranslation}</p>
               )}
@@ -964,7 +962,7 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
                 </div>
               )}
             </div>
-          ) : null;
+          );
         })()}
       </div>
     </div>

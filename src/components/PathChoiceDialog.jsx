@@ -6,7 +6,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { getAllCategoryIds } from '../config/questions';
+import { getAllCategoryIds } from '../config/questionsLoader';
 import { isCategoryFullyMastered, getCategoryCorrectAnswerCount, getCategoryQuestionCount } from '../utils/questionTracking';
 import { FLASH_CARDS_ENABLED } from '../config/flashCardsConfig';
 import { getCategoryIconPath, isEmojiSvg } from '../utils/emojiUtils';
@@ -57,6 +57,9 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
   // Get all categories - we now show all of them, just disable the mastered ones
   const allCategoryIds = getAllCategoryIds();
   const categoriesToShow = allCategoryIds;
+  
+  // State to store preloaded category metadata (mastered status and counts)
+  const [categoryMetadata, setCategoryMetadata] = useState({});
   
   const categoriesPerPage = 4;
   const totalPages = Math.ceil(categoriesToShow.length / categoriesPerPage);
@@ -116,6 +119,28 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
       clearTimeout(timer);
     };
   }, []);
+  
+  // Preload category metadata (mastered status and counts)
+  // Reload when difficulty changes to update question counts
+  useEffect(() => {
+    const loadCategoryMetadata = async () => {
+      const metadata = {};
+      
+      for (const categoryId of allCategoryIds) {
+        const totalCount = await getCategoryQuestionCount(categoryId);
+        const isFullyMastered = await isCategoryFullyMastered(categoryId, correctAnswersByCategory);
+        
+        metadata[categoryId] = {
+          totalCount,
+          isFullyMastered
+        };
+      }
+      
+      setCategoryMetadata(metadata);
+    };
+    
+    loadCategoryMetadata();
+  }, [correctAnswersByCategory, difficulty]);
   // Validate forkCategories structure
   if (!forkCategories || typeof forkCategories !== 'object') {
     return (
@@ -164,17 +189,19 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
       );
     }
     
-    // Check if this category is fully mastered (all questions answered correctly on first try)
-    const isFullyMastered = isCategoryFullyMastered(categoryId, correctAnswersByCategory);
+    // Get metadata from preloaded state (default to safe values if not loaded yet)
+    const metadata = categoryMetadata[categoryId] || { totalCount: 0, isFullyMastered: false };
+    const isFullyMastered = metadata.isFullyMastered;
+    const totalCount = metadata.totalCount;
+    
     // Check if this category was just completed in this session
     const isJustCompleted = completedCategories.has(categoryId);
     const isCurrentCategory = categoryId === currentCategory;
     // Only disable if fully mastered - allow users to continue with current or just-completed categories
     const isDisabled = isFullyMastered;
     
-    // Get mastered and total question counts for this category
+    // Get mastered count (synchronous)
     const masteredCount = getCategoryCorrectAnswerCount(categoryId, correctAnswersByCategory);
-    const totalCount = getCategoryQuestionCount(categoryId);
     
     // Determine the title message
     let titleMessage = '';

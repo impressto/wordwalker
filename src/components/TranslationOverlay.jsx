@@ -5,7 +5,7 @@
  */
 
 import { useState, useEffect } from 'react';
-import { getCategoryTranslation } from '../config/translations/answers/index';
+import { getCategoryTranslation } from '../config/translationsLoader';
 import gameSettings, { getStreakColor, getStreakGradientColor } from '../config/gameSettings';
 import pronunciationAudio from '../utils/pronunciationAudio';
 import EmojiDisplay from './EmojiDisplay';
@@ -14,18 +14,20 @@ const TranslationOverlay = ({ currentQuestion, firstAttempt = true, streak = 0, 
   const [audioAvailable, setAudioAvailable] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isOnline, setIsOnline] = useState(navigator.onLine);
+  const [englishTranslation, setEnglishTranslation] = useState('');
 
   if (!currentQuestion) return null;
 
-  // Get the English translation using category-aware lookup
-  const englishTranslation = getCategoryTranslation(
-    currentQuestion.correctAnswer, 
-    currentQuestion.category
-  ) || currentQuestion.correctAnswer;
+  // Load the English translation using category-aware lookup
+  useEffect(() => {
+    getCategoryTranslation(currentQuestion.correctAnswer, currentQuestion.category)
+      .then(translation => setEnglishTranslation(translation || currentQuestion.correctAnswer));
+  }, [currentQuestion]);
+  
   const spanishWord = currentQuestion.correctAnswer;
   
   // Check if Spanish and English are the same (case-insensitive)
-  const wordsAreSame = spanishWord.toLowerCase() === englishTranslation.toLowerCase();
+  const wordsAreSame = spanishWord.toLowerCase() === (englishTranslation || '').toLowerCase();
   
   // Check if current streak is a milestone
   const isStreakMilestone = streak > 0 && streak % gameSettings.streak.bonusThreshold === 0;

@@ -5,25 +5,26 @@
  * and managing category completion status
  */
 
-import { getQuestionsByCategory } from '../config/questions';
+import { getQuestionsByCategory } from '../config/questionsLoader';
 
 /**
  * Get the total number of questions in a category
  * @param {string} category - The category to check
- * @returns {number} The total number of questions in that category
+ * @returns {Promise<number>} The total number of questions in that category
  */
-export const getCategoryQuestionCount = (category) => {
-  return getQuestionsByCategory(category).length;
+export const getCategoryQuestionCount = async (category) => {
+  const questions = await getQuestionsByCategory(category);
+  return questions.length;
 };
 
 /**
  * Check if a category is complete (all questions have been used)
  * @param {string} category - The category to check
  * @param {Object} usedQuestionIds - Object tracking used questions by category
- * @returns {boolean} True if all questions in the category have been used
+ * @returns {Promise<boolean>} True if all questions in the category have been used
  */
-export const isCategoryCompleted = (category, usedQuestionIds = {}) => {
-  const totalQuestions = getCategoryQuestionCount(category);
+export const isCategoryCompleted = async (category, usedQuestionIds = {}) => {
+  const totalQuestions = await getCategoryQuestionCount(category);
   const usedInCategory = (usedQuestionIds[category] || []).length;
   return usedInCategory >= totalQuestions;
 };
@@ -330,10 +331,10 @@ export const getTotalMasteredQuestions = (correctAnswersByCategory = {}) => {
  * Check if all questions in a category have been answered correctly on first try (fully mastered)
  * @param {string} category - The category name
  * @param {Object} correctAnswersByCategory - Tracking object with permanent correct answers
- * @returns {boolean} True if all questions in the category have been answered correctly
+ * @returns {Promise<boolean>} True if all questions in the category have been answered correctly
  */
-export const isCategoryFullyMastered = (category, correctAnswersByCategory = {}) => {
-  const totalQuestions = getCategoryQuestionCount(category);
+export const isCategoryFullyMastered = async (category, correctAnswersByCategory = {}) => {
+  const totalQuestions = await getCategoryQuestionCount(category);
   const masteredInCategory = (correctAnswersByCategory[category] || []).length;
   return masteredInCategory >= totalQuestions;
 };

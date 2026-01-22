@@ -1,11 +1,11 @@
 {
   "name": "wordwalker",
   "private": true,
-  "version": "1.8.15",
+  "version": "1.9.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp dist/service-worker.js service-worker.js",
+    "build": "vite build && node scripts/update-sw-chunks.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
