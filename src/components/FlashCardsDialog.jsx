@@ -423,6 +423,19 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
     localStorage.setItem('flashCardAutoPlay', newValue.toString());
   };
 
+  const stopAllAudio = () => {
+    // Stop any currently playing audio by pausing all cached audio elements
+    pronunciationAudio.audioCache.forEach((audio) => {
+      if (!audio.paused) {
+        audio.pause();
+        audio.currentTime = 0;
+      }
+    });
+    // Reset playing states
+    setIsPlaying(false);
+    setIsPlayingExample(false);
+  };
+
   const handlePlayExample = async () => {
     if (isPlayingExample) return; // Prevent multiple clicks
     
@@ -441,6 +454,9 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
   };
 
   const handleNext = () => {
+    // Stop any playing audio before navigating
+    stopAllAudio();
+    
     if (currentCardIndex < totalCards - 1) {
       setCurrentCardIndex(currentCardIndex + 1);
     } else {
@@ -489,6 +505,9 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
   };
 
   const handlePrevious = () => {
+    // Stop any playing audio before navigating
+    stopAllAudio();
+    
     if (currentCardIndex > 0) {
       setCurrentCardIndex(currentCardIndex - 1);
     }

@@ -1,5 +1,5 @@
 // Service Worker for WordWalker PWA
-const CACHE_NAME = 'wordwalker-v1.9.1';
+const CACHE_NAME = 'wordwalker-v1.9.3';
 const ASSETS_CACHE = 'wordwalker-assets-v1';
 const AUDIO_CACHE = 'wordwalker-audio-v1';
 const IMAGE_CACHE = 'wordwalker-images-v3';
@@ -18,7 +18,7 @@ const CORE_ASSETS = [
   '/wordwalker/dist/assets/q-business-DUj4ke3T.js',
   '/wordwalker/dist/assets/q-categories-Iec5VeT5.js',
   '/wordwalker/dist/assets/q-daily-routines-BuizTEek.js',
-  '/wordwalker/dist/assets/q-directions-DjhHRfPJ.js',
+  '/wordwalker/dist/assets/q-directions-CQgsr0bH.js',
   '/wordwalker/dist/assets/q-entertainment-CedMNc4t.js',
   '/wordwalker/dist/assets/q-environment-Dj94Ad4W.js',
   '/wordwalker/dist/assets/q-food-VMc26Ewn.js',
@@ -32,7 +32,7 @@ const CORE_ASSETS = [
   '/wordwalker/dist/assets/q-shopping-BcxWoK9G.js',
   '/wordwalker/dist/assets/q-transportation-CgbrOXuH.js',
   '/wordwalker/dist/assets/translations-answers-suTb856O.js',
-  '/wordwalker/dist/assets/translations-examples-1SG5VSyq.js',
+  '/wordwalker/dist/assets/translations-examples-Dvw7ZYp2.js',
   // Essential icons
   '/wordwalker/dist/images/icon-192x192.png',
   '/wordwalker/dist/images/icon-512x512.png',

@@ -102,6 +102,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// Stop audio when navigating away from the page
+window.addEventListener('beforeunload', function() {
+    if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        currentAudio = null;
+    }
+});
+
 // Download flashcard as image
 function downloadCardImage(button) {
     // Stop event propagation to prevent card flip
