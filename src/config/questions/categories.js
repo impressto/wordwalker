@@ -112,8 +112,8 @@ export const categories = {
 
   numbers: {
     id: "numbers",
-    name: "Numbers, Dates & Time",
-    displayName: "Números, Fechas y Hora",
+    name: "Numbers, Colors & Time",
+    displayName: "Números, Colores y Hora",
     emoji: "numbers.png",
     description: "Learn numbers, dates, times, and calendar vocabulary",
   },
