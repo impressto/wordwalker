@@ -42,7 +42,7 @@ All 16 WordWalker categories are supported:
 - Work and Business 💼
 - Medical & Emergencies 🏥
 - Entertainment 🎬
-- Numbers, Dates & Time 🔢
+- Numbers, Colors & Time 🔢
 - Greetings & Conversations 👋
 - Places and Directions 🧭
 

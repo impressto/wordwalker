@@ -102,8 +102,8 @@ $categories = [
         'emoji' => '🎬'
     ],
     'numbers' => [
-        'name' => 'Numbers, Dates & Time',
-        'displayName' => 'Números, Fechas y Hora',
+        'name' => 'Numbers, Colors & Time',
+        'displayName' => 'Números, Colores y Hora',
         'description' => 'Learn numbers, dates, times, and calendar vocabulary',
         'emoji' => '🔢'
     ],

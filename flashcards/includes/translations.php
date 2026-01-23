@@ -86,7 +86,7 @@ function getTranslations($lang = 'en') {
             'category_business' => 'Work and Business',
             'category_medical' => 'Medical & Emergencies',
             'category_entertainment' => 'Entertainment',
-            'category_numbers' => 'Numbers, Dates & Time',
+            'category_numbers' => 'Numbers, Colors & Time',
             'category_greetings' => 'Greetings & Conversations',
             'category_directions' => 'Places and Directions',
             
@@ -188,7 +188,7 @@ function getTranslations($lang = 'en') {
             'category_business' => 'Negocios y Trabajo',
             'category_medical' => 'Médico y Emergencias',
             'category_entertainment' => 'Entretenimiento',
-            'category_numbers' => 'Números, Fechas y Hora',
+            'category_numbers' => 'Números, Colores y Hora',
             'category_greetings' => 'Saludos y Conversaciones',
             'category_directions' => 'Lugares y Direcciones',
             
