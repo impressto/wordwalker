@@ -180,7 +180,7 @@ function downloadCardImage(button) {
     // Create a sanitized filename
     const filename = `wordwalker-${cardNumber.replace('#', '')}-${questionText.substring(0, 30).replace(/[^a-z0-9]/gi, '-')}.png`;
     
-    // Wait for all images to load
+    // Wait for all images to load and convert external images to data URLs
     const images = flashcardBack.querySelectorAll('img');
     const imagePromises = Array.from(images).map(function(img) {
         if (img.complete) {
@@ -189,24 +189,81 @@ function downloadCardImage(button) {
         return new Promise(function(resolve, reject) {
             img.onload = resolve;
             img.onerror = resolve; // Resolve even on error to not block capture
-            // Timeout after 3 seconds
-            setTimeout(resolve, 3000);
+            // Increased timeout for slow connections (e.g., satellite internet)
+            setTimeout(resolve, 10000);
         });
     });
     
-    // Small delay to ensure styles are applied and layout is recalculated
-    Promise.all(imagePromises).then(function() {
-        return new Promise(function(resolve) {
-            setTimeout(resolve, 300);
+    // Convert external images to data URLs to avoid CORS issues
+    const convertImagesToDataURLs = function() {
+        const emojiImages = flashcardBack.querySelectorAll('.flashcard-emoji-img');
+        const conversionPromises = Array.from(emojiImages).map(function(img) {
+            return new Promise(function(resolve) {
+                if (!img.src || img.src.startsWith('data:')) {
+                    resolve();
+                    return;
+                }
+                
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                const image = new Image();
+                
+                image.crossOrigin = 'anonymous';
+                
+                // Set timeout for conversion process
+                const timeoutId = setTimeout(function() {
+                    console.warn('Image conversion timeout for:', img.src);
+                    resolve();
+                }, 10000);
+                
+                image.onload = function() {
+                    clearTimeout(timeoutId);
+                    canvas.width = image.width;
+                    canvas.height = image.height;
+                    ctx.drawImage(image, 0, 0);
+                    try {
+                        const dataURL = canvas.toDataURL('image/png');
+                        img.src = dataURL;
+                        console.log('Successfully converted image to data URL');
+                        resolve();
+                    } catch (e) {
+                        console.warn('Could not convert image to data URL:', e);
+                        resolve();
+                    }
+                };
+                image.onerror = function(e) {
+                    clearTimeout(timeoutId);
+                    console.warn('Could not load image for conversion:', img.src, e);
+                    resolve();
+                };
+                
+                // Trigger image load
+                image.src = img.src;
+            });
         });
-    }).then(function() {
+        return Promise.all(conversionPromises);
+    };
+    
+    // Small delay to ensure styles are applied and layout is recalculated
+    Promise.all(imagePromises)
+        .then(function() {
+            console.log('All images loaded, converting to data URLs...');
+            return convertImagesToDataURLs();
+        })
+        .then(function() {
+            console.log('Image conversion complete, waiting for layout...');
+            return new Promise(function(resolve) {
+                setTimeout(resolve, 500);
+            });
+        }).then(function() {
+            console.log('Starting canvas capture...');
         // Use html2canvas to capture the flashcard back
         return html2canvas(flashcardBack, {
             backgroundColor: '#ffffff',
             scale: 2,
             logging: false,
             useCORS: true,
-            allowTaint: true
+            allowTaint: false
         });
     }).then(function(canvas) {
         // Restore original styles

@@ -2104,7 +2104,26 @@ export const exampleTranslations = {
   "Enciendo el ventilador cuando hace calor para refrescar la habitación.": "I turn on the fan when it's hot to cool the room.",
   "Cada habitación de la casa tiene su propia función específica.": "Each room in the house has its own specific function.",
   "Pongo el tope de puerta para mantenerla abierta mientras entran los invitados.": "I put the door stopper to keep it open while guests enter.",
-  "Me lavo las manos en el lavabo del baño antes de comer.": "I wash my hands in the bathroom sink before eating."
+  "Me lavo las manos en el lavabo del baño antes de comer.": "I wash my hands in the bathroom sink before eating.",
+  "Cuelgo mi chaqueta en la percha del armario para que no se arrugue.": "I hang my jacket on the coat hanger in the closet so it doesn't wrinkle.",
+  "Retiro efectivo del cajero automático cuando necesito dinero en efectivo.": "I withdraw cash from the ATM when I need cash.",
+  "Mi dormitorio es el lugar más tranquilo de la casa para descansar.": "My bedroom is the quietest place in the house to rest.",
+  "Uso el cortauñas cada semana para mantener mis uñas cortas y limpias.": "I use the nail clipper every week to keep my nails short and clean.",
+  "Uso el hilo dental todas las noches para mantener mis dientes saludables.": "I use dental floss every night to keep my teeth healthy.",
+  "Nado en la piscina cubierta del hotel incluso cuando llueve afuera.": "I swim in the hotel's indoor pool even when it's raining outside.",
+  "Uso la mesa para laptop cuando trabajo desde mi cama por las mañanas.": "I use the lap desk when I work from my bed in the mornings.",
+  "Voy a la lavandería del barrio cada domingo a lavar mi ropa.": "I go to the neighborhood laundromat every Sunday to wash my clothes.",
+  "Paso el rodillo quitapelusas por mi traje negro antes de salir.": "I run the lint roller over my black suit before leaving.",
+  "Tomo toallas del dispensador de toallas de papel para secarme las manos.": "I take towels from the paper towel dispenser to dry my hands.",
+  "El servicio de limpieza viene a mi habitación todos los días a las diez.": "The cleaning service comes to my room every day at ten.",
+  "Toco la campanilla de servicio en el mostrador cuando no hay nadie.": "I ring the service bell at the counter when no one is there.",
+  "Pongo mi teléfono y mis lentes en la mesita de noche antes de dormir.": "I put my phone and glasses on the bedside table before sleeping.",
+  "Me pongo el desodorante después de ducharme para mantenerme fresco todo el día.": "I put on deodorant after showering to stay fresh all day.",
+  "Necesito un adaptador de corriente para usar mi laptop en Europa.": "I need a power adapter to use my laptop in Europe.",
+  "El portero del hotel me saludó amablemente y abrió la puerta cuando llegué.": "The hotel doorman greeted me kindly and opened the door when I arrived.",
+  "El barman del hotel me recomendó un cóctel delicioso.": "The hotel bartender recommended a delicious cocktail to me.",
+  "El conserje del hotel me ayudó a reservar una mesa en el mejor restaurante de la ciudad.": "The hotel concierge helped me reserve a table at the best restaurant in the city.",
+  "Uso el servicio de lavandería del hotel para que laven y planchen mis camisas.": "I use the hotel's laundry service to have my shirts washed and ironed."
 }
 
 

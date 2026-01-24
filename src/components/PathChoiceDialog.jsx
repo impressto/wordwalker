@@ -618,7 +618,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
                 e.target.style.backgroundColor = '#FF9800';
               }}
             >
-              💰 TRADE/SETTINGS
+              ⚙️ SETTINGS
             </button>
           </div>
         </div>
