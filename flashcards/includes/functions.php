@@ -211,6 +211,11 @@ function parseQuestionsFromJS($filePath) {
                 $question['difficulty'] = $dMatch[1];
             }
             
+            // Extract emotion
+            if (preg_match('/emotion:\s*[\'"]([^\'"]+)[\'"]/', $objectString, $eMatch)) {
+                $question['emotion'] = $eMatch[1];
+            }
+            
             if (isset($question['id']) && isset($question['question'])) {
                 $questions[] = $question;
             }

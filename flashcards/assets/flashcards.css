@@ -474,6 +474,22 @@ h1 {
     gap: 10px;
 }
 
+/* Emotion-based color variations */
+.flashcard-answer.emotion-afraid { background: #9C27B0; } /* Deep purple */
+.flashcard-answer.emotion-angry { background: #E53935; } /* Red */
+.flashcard-answer.emotion-anxious { background: #FF6F00; } /* Deep orange */
+.flashcard-answer.emotion-calm { background: #0097A7; } /* Cyan */
+.flashcard-answer.emotion-confused { background: #8D6E63; } /* Brown */
+.flashcard-answer.emotion-determined { background: #1976D2; } /* Blue */
+.flashcard-answer.emotion-disgusted { background: #558B2F; } /* Dark green */
+.flashcard-answer.emotion-excited { background: #F57C00; } /* Orange */
+.flashcard-answer.emotion-happy { background: #FDD835; color: #333; } /* Yellow with dark text */
+.flashcard-answer.emotion-hurt { background: #D32F2F; } /* Dark red */
+.flashcard-answer.emotion-neutral { background: #757575; } /* Grey */
+.flashcard-answer.emotion-pleased { background: #7CB342; } /* Light green */
+.flashcard-answer.emotion-sad { background: #5C6BC0; } /* Indigo */
+.flashcard-answer.emotion-surprised { background: #EC407A; } /* Pink */
+
 .flashcard-answer-content {
     display: flex;
     flex-direction: column;

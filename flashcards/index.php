@@ -618,7 +618,7 @@ $version = $packageJson['version'] ?? '1.0.0';
                                     </div>
                                 <?php endif; ?>
                         
-                        <div class="flashcard-answer">
+                        <div class="flashcard-answer<?php echo isset($question['emotion']) ? ' emotion-' . htmlspecialchars($question['emotion']) : ''; ?>">
                             <div class="flashcard-answer-content">
                                 <?php 
                                 // Get the translation for the correct answer
