@@ -153,9 +153,10 @@ function parseQuestionsFromJS($filePath) {
     if (preg_match('/Questions\s*=\s*\[(.*)\];/s', $content, $arrayMatch)) {
         $arrayContent = $arrayMatch[1];
         
-        // Split by objects - look for patterns like },\s*{
+        // Split by objects - look for patterns like },\s*{ (with optional comments in between)
         // First, temporarily replace the closing of one object and opening of next
-        $arrayContent = preg_replace('/\},\s*\{/', '}|||{', $arrayContent);
+        // This pattern handles optional whitespace and comments between } and {
+        $arrayContent = preg_replace('/\},\s*(?:\/\/[^\n]*\n\s*)*\{/', '}|||{', $arrayContent);
         $objectStrings = explode('|||', $arrayContent);
         
         foreach ($objectStrings as $objectString) {

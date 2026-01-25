@@ -144,7 +144,7 @@ if ($categoryParam === 'all') {
     $categoryList = explode(',', $categoryParam);
     foreach ($categoryList as $cat) {
         $cat = trim($cat);
-        if (isset($categories[$cat])) {
+        if (isset($categories[$cat]) && !in_array($cat, $selectedCategories)) {
             $selectedCategories[] = $cat;
         }
     }
@@ -186,6 +186,7 @@ $exampleTranslations = parseExampleTranslations($translationsFile);
 
 // Load questions from all selected categories
 $allQuestions = [];
+$seenIds = []; // Track question IDs to prevent duplicates
 foreach ($selectedCategories as $cat) {
     $categoryFile = $dataPath . $cat . '.js';
     $questions = parseQuestionsFromJS($categoryFile);
@@ -194,9 +195,13 @@ foreach ($selectedCategories as $cat) {
     foreach ($questions as &$question) {
         $question['sourceCategory'] = $cat;
         $question['sourceCategoryInfo'] = $categories[$cat];
+        
+        // Only add question if ID hasn't been seen before
+        if (!isset($seenIds[$question['id']])) {
+            $seenIds[$question['id']] = true;
+            $allQuestions[] = $question;
+        }
     }
-    
-    $allQuestions = array_merge($allQuestions, $questions);
 }
 
 // Handle randomization with persistent seed per user per category combination
