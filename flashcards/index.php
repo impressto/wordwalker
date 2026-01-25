@@ -240,19 +240,19 @@ $questionsOnPage = array_slice($allQuestions, $startIndex, $cardsPerPage);
 
 // SEO metadata for multiple categories
 if ($searchAllCategories) {
-    $pageTitle = "Spanish Flash Cards - All Categories - Page {$page} | WordWalker";
-    $pageDescription = "Learn Spanish vocabulary across all categories. Browse all available flash cards. Page {$page} of {$totalPages}.";
+    $pageTitle = "Free Spanish Flash Cards - All Categories - Page {$page} | WordWalker";
+    $pageDescription = "Free Spanish flashcards for learning vocabulary across all categories. No cost, no subscription - always free. Browse all available flash cards. Page {$page} of {$totalPages}.";
 } elseif (count($selectedCategories) === 1) {
     $categoryInfo = $categories[$selectedCategories[0]];
-    $pageTitle = "Spanish {$categoryInfo['name']} Flash Cards - Page {$page} | WordWalker";
-    $pageDescription = "{$categoryInfo['description']}. Learn Spanish vocabulary with interactive flash cards. Page {$page} of {$totalPages}.";
+    $pageTitle = "Free Spanish {$categoryInfo['name']} Flash Cards - Page {$page} | WordWalker";
+    $pageDescription = "{$categoryInfo['description']}. Learn Spanish vocabulary with free interactive flash cards. No cost ever - 100% free forever. Page {$page} of {$totalPages}.";
 } else {
     $categoryNames = array_map(function($cat) use ($categories) {
         return $categories[$cat]['name'];
     }, $selectedCategories);
     $categoriesText = implode(', ', $categoryNames);
-    $pageTitle = "Spanish Flash Cards - {$categoriesText} - Page {$page} | WordWalker";
-    $pageDescription = "Learn Spanish vocabulary across multiple categories: {$categoriesText}. Page {$page} of {$totalPages}.";
+    $pageTitle = "Free Spanish Flash Cards - {$categoriesText} - Page {$page} | WordWalker";
+    $pageDescription = "Free Spanish flashcards across multiple categories: {$categoriesText}. No cost, no subscription - always free. Page {$page} of {$totalPages}.";
 }
 $canonicalUrl = "https://wordwalker.ca/flashcards/?category={$categoryKey}&page={$page}";
 
@@ -281,7 +281,7 @@ $version = $packageJson['version'] ?? '1.0.0';
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
     <meta name="theme-color" content="#4CAF50" />
     <meta name="description" content="<?php echo htmlspecialchars($pageDescription); ?>" />
-    <meta name="keywords" content="Spanish flashcards, learn Spanish, Spanish vocabulary, Spanish learning, Spanish pronunciation" />
+    <meta name="keywords" content="free Spanish flashcards, free Spanish learning, Spanish vocabulary free, learn Spanish free, Spanish flashcards online free, no cost Spanish learning, free Spanish pronunciation, always free Spanish flashcards" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -320,9 +320,9 @@ $version = $packageJson['version'] ?? '1.0.0';
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "EducationalOccupationalProgram",
-        "name": "WordWalker Spanish Flash Cards",
-        "description": "Interactive Spanish language learning flash cards with audio pronunciation",
+        "@type": "Course",
+        "name": "WordWalker Free Spanish Flash Cards",
+        "description": "Free interactive Spanish language learning flash cards with audio pronunciation. No cost, no subscription - always free.",
         "provider": {
             "@type": "Organization",
             "name": "WordWalker",
@@ -330,7 +330,19 @@ $version = $packageJson['version'] ?? '1.0.0';
         },
         "educationalLevel": "Beginner to Intermediate",
         "teaches": "Spanish Language",
-        "inLanguage": ["en", "es"]
+        "inLanguage": ["en", "es"],
+        "isAccessibleForFree": true,
+        "hasCourseInstance": {
+            "@type": "CourseInstance",
+            "courseMode": "online",
+            "isAccessibleForFree": true
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        }
     }
     </script>
     
@@ -387,8 +399,12 @@ $version = $packageJson['version'] ?? '1.0.0';
 
             <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 20px auto;">
                 <img src="https://impressto.ca/wordwalker/public/images/walkers/walker-dog-avatar.png" alt="Dog walker character" width="100" height="100" class="walker-avatar" style="max-width: 100px; height: auto;">
-                <img src="https://impressto.ca/wordwalker/images/wordwalker-flashcards-logo-<?php echo $currentLang; ?>.png" alt="WordWalker Flash Cards" width="400" height="120" class="flashcards-logo" style="max-width: 400px; height: auto;">
+                <img src="https://impressto.ca/wordwalker/images/wordwalker-flashcards-logo-<?php echo $currentLang; ?>.png" alt="WordWalker Free Flash Cards" width="400" height="120" class="flashcards-logo" style="max-width: 400px; height: auto;">
                 <img src="https://impressto.ca/wordwalker/public/images/walkers/walker-default-avatar.png" alt="Default walker character" width="60" height="60" class="walker-avatar" style="max-width: 60px; height: auto;">
+            </div>
+            <div style="text-align: center; margin: -10px 0 20px 0;">
+                <p style="font-size: 1.2em; color: #4CAF50; font-weight: bold; margin: 0;">100% Free Forever • No Cost • No Subscription • Community Driven</p>
+                <p style="font-size: 0.95em; color: #666; margin: 5px 0 0 0;">Learn Spanish with free interactive flashcards and audio pronunciation</p>
             </div>
             <?php if ($searchAllCategories): ?>
                 <h1 class="category-name"><?php echo t('all_categories'); ?></h1>
@@ -786,7 +802,7 @@ $version = $packageJson['version'] ?? '1.0.0';
                     Facebook
                 </a>
                 
-                <a href="https://twitter.com/intent/tweet?url=<?php echo urlencode($canonicalUrl); ?>&text=<?php echo urlencode('Check out these Spanish flash cards on WordWalker!'); ?>" 
+                <a href="https://twitter.com/intent/tweet?url=<?php echo urlencode($canonicalUrl); ?>&text=<?php echo urlencode('Learn Spanish FREE with WordWalker flashcards - 100% free forever!'); ?>" 
                    target="_blank" 
                    rel="noopener noreferrer" 
                    class="social-btn twitter"
@@ -808,7 +824,7 @@ $version = $packageJson['version'] ?? '1.0.0';
                     LinkedIn
                 </a>
                 
-                <a href="https://wa.me/?text=<?php echo urlencode('Check out these Spanish flash cards on WordWalker: ' . $canonicalUrl); ?>" 
+                <a href="https://wa.me/?text=<?php echo urlencode('Learn Spanish FREE with WordWalker flashcards - 100% free forever! ' . $canonicalUrl); ?>" 
                    target="_blank" 
                    rel="noopener noreferrer" 
                    class="social-btn whatsapp"
@@ -819,7 +835,7 @@ $version = $packageJson['version'] ?? '1.0.0';
                     WhatsApp
                 </a>
                 
-                <a href="mailto:?subject=<?php echo urlencode('Spanish Flash Cards - WordWalker'); ?>&body=<?php echo urlencode('Check out these Spanish flash cards: ' . $canonicalUrl); ?>" 
+                <a href="mailto:?subject=<?php echo urlencode('Free Spanish Flash Cards - WordWalker'); ?>&body=<?php echo urlencode('Learn Spanish with 100% free flashcards: ' . $canonicalUrl); ?>" 
                    class="social-btn email"
                    aria-label="Share via Email">
                     <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
@@ -833,6 +849,41 @@ $version = $packageJson['version'] ?? '1.0.0';
         <div class="back-to-app">
             <a href="https://wordwalker.ca"><?php echo t('back_to_app'); ?></a>
         </div>
+        
+        <!-- SEO Footer Section -->
+        <footer class="seo-footer" style="margin-top: 40px; padding: 30px 20px; background: linear-gradient(to bottom, #f8f9fa, #ffffff); border-top: 2px solid #e0e0e0; border-radius: 8px;">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2 style="color: #4CAF50; font-size: 1.8em; margin-bottom: 15px;">100% Free Spanish Flashcards - Always Free</h2>
+                <p style="font-size: 1.1em; line-height: 1.6; color: #333; margin-bottom: 20px;">
+                    <strong>WordWalker offers completely free Spanish flashcards</strong> with no hidden costs, no subscriptions, and no premium tiers. 
+                    Our commitment is simple: <strong>free Spanish learning for everyone, forever</strong>.
+                </p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0; text-align: left;">
+                    <div style="padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <h3 style="color: #4CAF50; font-size: 1.1em; margin-bottom: 10px;">✓ No Cost Ever</h3>
+                        <p style="color: #666; font-size: 0.95em;">All flashcards, audio pronunciation, and features are 100% free. No payments required.</p>
+                    </div>
+                    <div style="padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <h3 style="color: #4CAF50; font-size: 1.1em; margin-bottom: 10px;">✓ No Subscription</h3>
+                        <p style="color: #666; font-size: 0.95em;">Never worry about monthly fees or trial periods. Access everything freely anytime.</p>
+                    </div>
+                    <div style="padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <h3 style="color: #4CAF50; font-size: 1.1em; margin-bottom: 10px;">✓ Always Free</h3>
+                        <p style="color: #666; font-size: 0.95em;">Our promise: these Spanish flashcards will remain free forever, for everyone.</p>
+                    </div>
+                </div>
+                <p style="font-size: 1em; color: #555; line-height: 1.6; margin-top: 20px;">
+                    Unlike other flashcard platforms that charge for premium features, <strong>WordWalker provides free Spanish vocabulary practice</strong> 
+                    with audio pronunciation across all categories. Learn Spanish at your own pace with our <strong>free interactive flashcards</strong> 
+                    covering food, travel, business, grammar, and more - all without spending a penny.
+                </p>
+                <div style="margin-top: 25px; padding: 15px; background: #e8f5e9; border-radius: 8px; border-left: 4px solid #4CAF50;">
+                    <p style="color: #2e7d32; font-size: 1em; margin: 0; font-weight: 500;">
+                        🎓 Start learning Spanish today with our free flashcards - no registration, no credit card, no catch. Just 100% free forever Spanish learning.
+                    </p>
+                </div>
+            </div>
+        </footer>
     </div>
     
     <!-- External JavaScript -->

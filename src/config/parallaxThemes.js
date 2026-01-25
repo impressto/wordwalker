@@ -234,7 +234,7 @@ const parallaxThemes = {
   // Día de los Muertos theme - Day of the Dead celebration
   'dia-de-los-muertos': {
     name: 'Día de los Muertos',
-    description: 'Colorful Day of the Dead celebration',
+    description: 'Day of the Dead celebration',
     imagePath: 'dia-de-los-muertos',
     // Whether to use separate path.png and path-fork.png images
     usePathImages: true,
@@ -368,7 +368,7 @@ const parallaxThemes = {
   // Nassau theme - Pirates burying treasure on beach at night in the Bahamas
   'nassau': {
     name: 'Nassau Nights',
-    description: 'Pirates burying treasure on a Bahamian beach at night',
+    description: 'Pirates bury treasure at night',
     imagePath: 'nassau',
     // Whether to use separate path.png and path-fork.png images
     usePathImages: false,
