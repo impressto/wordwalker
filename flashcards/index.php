@@ -9,6 +9,12 @@
  * as static HTML for SEO and accessibility purposes.
  */
 
+// Handle export requests
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'export') {
+    require_once __DIR__ . '/includes/export-proxy.php';
+    exit;
+}
+
 // Load helper functions
 require_once __DIR__ . '/includes/functions.php';
 require_once __DIR__ . '/includes/search_functions.php';
@@ -403,8 +409,8 @@ $version = $packageJson['version'] ?? '1.0.0';
                 <img src="https://impressto.ca/wordwalker/public/images/walkers/walker-default-avatar.png" alt="Default walker character" width="60" height="60" class="walker-avatar" style="max-width: 60px; height: auto;">
             </div>
             <div style="text-align: center; margin: -10px 0 20px 0;">
-                <p style="font-size: 1.2em; color: #4CAF50; font-weight: bold; margin: 0;">100% Free Forever • No Cost • No Subscription • Community Driven</p>
-                <p style="font-size: 0.95em; color: #666; margin: 5px 0 0 0;">Learn Spanish with free interactive flashcards and audio pronunciation</p>
+                <p style="font-size: 1.2em; color: #4CAF50; font-weight: bold; margin: 0;"><?php echo t('free_forever_tagline'); ?></p>
+                <p style="font-size: 0.95em; color: #666; margin: 5px 0 0 0;"><?php echo t('free_flashcards_desc'); ?></p>
             </div>
             <?php if ($searchAllCategories): ?>
                 <h1 class="category-name"><?php echo t('all_categories'); ?></h1>
@@ -714,9 +720,18 @@ $version = $packageJson['version'] ?? '1.0.0';
                         <?php endif; ?>
                         
                                 <?php if (!empty($question['difficulty'])): ?>
-                                    <span class="flashcard-difficulty difficulty-<?php echo htmlspecialchars($question['difficulty']); ?>">
-                                        <?php echo t('difficulty_' . strtolower($question['difficulty'])); ?>
-                                    </span>
+                                    <div class="difficulty-deck-container">
+                                        <span class="flashcard-difficulty difficulty-<?php echo htmlspecialchars($question['difficulty']); ?>">
+                                            <?php echo t('difficulty_' . strtolower($question['difficulty'])); ?>
+                                        </span>
+                                        <button class="add-to-deck-btn" 
+                                                onclick="event.stopPropagation(); toggleDeck('<?php echo htmlspecialchars($question['id']); ?>', this)" 
+                                                data-card-id="<?php echo htmlspecialchars($question['id']); ?>"
+                                                title="Add to deck" 
+                                                aria-label="Add to deck">
+                                            <span class="deck-btn-text">+ deck</span>
+                                        </button>
+                                    </div>
                                 <?php endif; ?>
                                 
                                 <!-- Watermark (hidden by default, shown only during image capture) -->
@@ -783,6 +798,15 @@ $version = $packageJson['version'] ?? '1.0.0';
             
             <div class="about-link">
                 <a href="/about.php"><?php echo t('learn_more'); ?></a>
+            </div>
+            
+            <div class="deck-link">
+                <button id="generate-deck-btn" onclick="showExportDialog()" style="display: none;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 6px;">
+                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                    </svg>
+                    Generate Deck (<span id="deck-count">0</span>)
+                </button>
             </div>
         </div>
         
@@ -853,37 +877,67 @@ $version = $packageJson['version'] ?? '1.0.0';
         <!-- SEO Footer Section -->
         <footer class="seo-footer" style="margin-top: 40px; padding: 30px 20px; background: linear-gradient(to bottom, #f8f9fa, #ffffff); border-top: 2px solid #e0e0e0; border-radius: 8px;">
             <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                <h2 style="color: #4CAF50; font-size: 1.8em; margin-bottom: 15px;">100% Free Spanish Flashcards - Always Free</h2>
+                <h2 style="color: #4CAF50; font-size: 1.8em; margin-bottom: 15px;"><?php echo t('seo_footer_title'); ?></h2>
                 <p style="font-size: 1.1em; line-height: 1.6; color: #333; margin-bottom: 20px;">
-                    <strong>WordWalker offers completely free Spanish flashcards</strong> with no hidden costs, no subscriptions, and no premium tiers. 
-                    Our commitment is simple: <strong>free Spanish learning for everyone, forever</strong>.
+                    <strong><?php echo t('seo_footer_intro'); ?></strong> <?php echo t('seo_footer_intro_detail'); ?> 
+                    <strong><?php echo t('seo_footer_commitment'); ?></strong>.
                 </p>
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin: 30px 0; text-align: left;">
                     <div style="padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        <h3 style="color: #4CAF50; font-size: 1.1em; margin-bottom: 10px;">✓ No Cost Ever</h3>
-                        <p style="color: #666; font-size: 0.95em;">All flashcards, audio pronunciation, and features are 100% free. No payments required.</p>
+                        <h3 style="color: #4CAF50; font-size: 1.1em; margin-bottom: 10px;"><?php echo t('seo_no_cost_title'); ?></h3>
+                        <p style="color: #666; font-size: 0.95em;"><?php echo t('seo_no_cost_text'); ?></p>
                     </div>
                     <div style="padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        <h3 style="color: #4CAF50; font-size: 1.1em; margin-bottom: 10px;">✓ No Subscription</h3>
-                        <p style="color: #666; font-size: 0.95em;">Never worry about monthly fees or trial periods. Access everything freely anytime.</p>
+                        <h3 style="color: #4CAF50; font-size: 1.1em; margin-bottom: 10px;"><?php echo t('seo_no_subscription_title'); ?></h3>
+                        <p style="color: #666; font-size: 0.95em;"><?php echo t('seo_no_subscription_text'); ?></p>
                     </div>
                     <div style="padding: 15px; background: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        <h3 style="color: #4CAF50; font-size: 1.1em; margin-bottom: 10px;">✓ Always Free</h3>
-                        <p style="color: #666; font-size: 0.95em;">Our promise: these Spanish flashcards will remain free forever, for everyone.</p>
+                        <h3 style="color: #4CAF50; font-size: 1.1em; margin-bottom: 10px;"><?php echo t('seo_always_free_title'); ?></h3>
+                        <p style="color: #666; font-size: 0.95em;"><?php echo t('seo_always_free_text'); ?></p>
                     </div>
                 </div>
                 <p style="font-size: 1em; color: #555; line-height: 1.6; margin-top: 20px;">
-                    Unlike other flashcard platforms that charge for premium features, <strong>WordWalker provides free Spanish vocabulary practice</strong> 
-                    with audio pronunciation across all categories. Learn Spanish at your own pace with our <strong>free interactive flashcards</strong> 
-                    covering food, travel, business, grammar, and more - all without spending a penny.
+                    <?php echo t('seo_comparison_text'); ?> <strong><?php echo t('seo_wordwalker_provides'); ?></strong> 
+                    <?php echo t('seo_with_audio'); ?> <strong><?php echo t('seo_free_interactive'); ?></strong> 
+                    <?php echo t('seo_covering'); ?>
                 </p>
                 <div style="margin-top: 25px; padding: 15px; background: #e8f5e9; border-radius: 8px; border-left: 4px solid #4CAF50;">
                     <p style="color: #2e7d32; font-size: 1em; margin: 0; font-weight: 500;">
-                        🎓 Start learning Spanish today with our free flashcards - no registration, no credit card, no catch. Just 100% free forever Spanish learning.
+                        <?php echo t('seo_start_learning'); ?>
                     </p>
                 </div>
             </div>
         </footer>
+    </div>
+    
+    <!-- Export Dialog -->
+    <div id="export-dialog" class="export-dialog" style="display: none;">
+        <div class="export-dialog-content">
+            <h3>Export Your Deck</h3>
+            <p>You have <strong><span id="dialog-deck-count">0</span> flashcard(s)</strong> in your deck.</p>
+            <p>Choose your export format:</p>
+            <div class="export-buttons">
+                <button class="export-btn export-zip" onclick="exportDeck('zip')">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M14,17H7V15H14M17,13H7V11H17M17,9H7V7H17M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z"/>
+                    </svg>
+                    <div>
+                        <strong>ZIP File</strong>
+                        <small>Individual JPG images</small>
+                    </div>
+                </button>
+                <button class="export-btn export-pdf" onclick="exportDeck('pdf')">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
+                    </svg>
+                    <div>
+                        <strong>PDF File</strong>
+                        <small>Single document (3 columns)</small>
+                    </div>
+                </button>
+            </div>
+            <button class="export-close" onclick="hideExportDialog()">Cancel</button>
+        </div>
     </div>
     
     <!-- External JavaScript -->

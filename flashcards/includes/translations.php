@@ -72,6 +72,10 @@ function getTranslations($lang = 'en') {
             'switch_to_spanish' => 'Español',
             'switch_to_english' => 'English',
             
+            // Free forever tagline
+            'free_forever_tagline' => '100% Free Forever • No Cost • No Subscription • Community Driven',
+            'free_flashcards_desc' => 'Learn Spanish with free interactive flashcards and audio pronunciation',
+            
             // Category names
             'category_food' => 'Food and Dining',
             'category_recreation' => 'Recreation',
@@ -107,6 +111,24 @@ function getTranslations($lang = 'en') {
             'category_numbers_desc' => 'Learn numbers, dates, times, and calendar vocabulary',
             'category_greetings_desc' => 'Learn greetings, farewells, and common conversation phrases',
             'category_directions_desc' => 'Learn sightseeing & landmarks vocabulary',
+            
+            // SEO Footer
+            'seo_footer_title' => '100% Free Spanish Flashcards - Always Free',
+            'seo_footer_intro' => 'WordWalker offers completely free Spanish flashcards',
+            'seo_footer_intro_detail' => 'with no hidden costs, no subscriptions, and no premium tiers. Our commitment is simple:',
+            'seo_footer_commitment' => 'free Spanish learning for everyone, forever',
+            'seo_no_cost_title' => '✓ No Cost Ever',
+            'seo_no_cost_text' => 'All flashcards, audio pronunciation, and features are 100% free. No payments required.',
+            'seo_no_subscription_title' => '✓ No Subscription',
+            'seo_no_subscription_text' => 'Never worry about monthly fees or trial periods. Access everything freely anytime.',
+            'seo_always_free_title' => '✓ Always Free',
+            'seo_always_free_text' => 'Our promise: these Spanish flashcards will remain free forever, for everyone.',
+            'seo_comparison_text' => 'Unlike other flashcard platforms that charge for premium features,',
+            'seo_wordwalker_provides' => 'WordWalker provides free Spanish vocabulary practice',
+            'seo_with_audio' => 'with audio pronunciation across all categories. Learn Spanish at your own pace with our',
+            'seo_free_interactive' => 'free interactive flashcards',
+            'seo_covering' => 'covering food, travel, business, grammar, and more - all without spending a penny.',
+            'seo_start_learning' => '🎓 Start learning Spanish today with our free flashcards - no registration, no credit card, no catch. Just 100% free forever Spanish learning.',
         ],
         'es' => [
             // Header
@@ -174,6 +196,10 @@ function getTranslations($lang = 'en') {
             'switch_to_spanish' => 'Español',
             'switch_to_english' => 'English',
             
+            // Free forever tagline
+            'free_forever_tagline' => '100% Gratis Para Siempre • Sin Costo • Sin Suscripción • Impulsado por la Comunidad',
+            'free_flashcards_desc' => 'Aprende español con tarjetas interactivas gratuitas y pronunciación de audio',
+            
             // Category names
             'category_food' => 'Comida y Restaurantes',
             'category_recreation' => 'Recreación',
@@ -209,6 +235,24 @@ function getTranslations($lang = 'en') {
             'category_numbers_desc' => 'Aprende números, fechas, horas y vocabulario de calendario',
             'category_greetings_desc' => 'Aprende saludos, despedidas y frases comunes de conversación',
             'category_directions_desc' => 'Aprende vocabulario de turismo y lugares de interés',
+            
+            // SEO Footer
+            'seo_footer_title' => '100% Tarjetas de Español Gratis - Siempre Gratis',
+            'seo_footer_intro' => 'WordWalker ofrece tarjetas de español completamente gratuitas',
+            'seo_footer_intro_detail' => 'sin costos ocultos, sin suscripciones y sin niveles premium. Nuestro compromiso es simple:',
+            'seo_footer_commitment' => 'aprendizaje de español gratuito para todos, para siempre',
+            'seo_no_cost_title' => '✓ Sin Costo Nunca',
+            'seo_no_cost_text' => 'Todas las tarjetas, pronunciación de audio y características son 100% gratuitas. No se requieren pagos.',
+            'seo_no_subscription_title' => '✓ Sin Suscripción',
+            'seo_no_subscription_text' => 'Nunca te preocupes por tarifas mensuales o períodos de prueba. Accede a todo libremente en cualquier momento.',
+            'seo_always_free_title' => '✓ Siempre Gratis',
+            'seo_always_free_text' => 'Nuestra promesa: estas tarjetas de español permanecerán gratis para siempre, para todos.',
+            'seo_comparison_text' => 'A diferencia de otras plataformas de tarjetas que cobran por características premium,',
+            'seo_wordwalker_provides' => 'WordWalker proporciona práctica de vocabulario en español gratuita',
+            'seo_with_audio' => 'con pronunciación de audio en todas las categorías. Aprende español a tu propio ritmo con nuestras',
+            'seo_free_interactive' => 'tarjetas interactivas gratuitas',
+            'seo_covering' => 'que cubren comida, viajes, negocios, gramática y más - todo sin gastar un centavo.',
+            'seo_start_learning' => '🎓 Comienza a aprender español hoy con nuestras tarjetas gratuitas - sin registro, sin tarjeta de crédito, sin trucos. Solo aprendizaje de español 100% gratis para siempre.',
         ]
     ];
     
