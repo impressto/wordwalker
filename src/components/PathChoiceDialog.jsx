@@ -508,7 +508,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
         gap: '10px',
         marginTop: '6px',
         borderTop: '2px solid #ddd',
-        paddingTop: '10px',
+        paddingTop: '40px',
       }}>
         {/* Debug Flash Cards Button */}
         {FLASH_CARDS_ENABLED && onOpenFlashCards && (
@@ -551,17 +551,6 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
           position: 'relative',
           flex: 1,
         }}>
-          <img 
-            src={`${import.meta.env.BASE_URL || '/'}images/vendor.png`}
-            alt="Vendor"
-            style={{
-              width: '30%',
-              height: 'auto',
-              borderRadius: '8px',
-              display: 'block',
-              margin: '0 auto',
-            }}
-          />
           <div style={{
             position: 'absolute',
             bottom: '5px',
