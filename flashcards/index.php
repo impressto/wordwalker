@@ -800,8 +800,8 @@ $version = $packageJson['version'] ?? '1.0.0';
                 <a href="/about.php"><?php echo t('learn_more'); ?></a>
             </div>
             
-            <div class="deck-link">
-                <button id="generate-deck-btn" onclick="showExportDialog()" style="display: none;">
+            <div class="deck-link" style="display: none;">
+                <button id="generate-deck-btn" onclick="showExportDialog()">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 6px;">
                         <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
                     </svg>

@@ -405,6 +405,7 @@ function updateDeckUI() {
     const countElement = document.getElementById('deck-count');
     const dialogCountElement = document.getElementById('dialog-deck-count');
     const generateButton = document.getElementById('generate-deck-btn');
+    const deckLinkElement = document.querySelector('.deck-link');
     
     if (countElement) {
         countElement.textContent = deckCount;
@@ -414,6 +415,9 @@ function updateDeckUI() {
     }
     if (generateButton) {
         generateButton.style.display = deckCount > 0 ? 'flex' : 'none';
+    }
+    if (deckLinkElement) {
+        deckLinkElement.style.display = deckCount > 0 ? 'block' : 'none';
     }
     
     // Update all "+ deck" buttons to show correct state
@@ -521,10 +525,10 @@ function exportDeck(format) {
         window.URL.revokeObjectURL(url);
         document.body.removeChild(a);
         
-        // Reset buttons
+        // Restore buttons to original state
         exportButtons.forEach(function(btn) {
             btn.disabled = false;
-            btn.textContent = 'Download PDF';
+            btn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/></svg><div><strong>Download PDF</strong><small>Printable 3-column layout</small></div>';
         });
         
         hideExportDialog();

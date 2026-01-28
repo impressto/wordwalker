@@ -79,6 +79,38 @@ $exampleTranslations = parseExampleTranslations($exampleTranslationsFile);
 exportAsPdf($selectedQuestions);
 
 /**
+ * Convert an emoji character to its Unicode codepoint(s) in hex format
+ * 
+ * Replicates JavaScript's: punycode.ucs2.decode(char).map(num => num.toString(16)).join("-")
+ * 
+ * @param string $emoji The emoji character(s) to convert
+ * @return string Hex codepoints joined by hyphens (e.g., "1f912" or "1f468-200d-1f469-200d-1f467")
+ */
+function emojiToCodepoint($emoji) {
+    $codepoints = [];
+    $length = mb_strlen($emoji, 'UTF-8');
+    
+    for ($i = 0; $i < $length; $i++) {
+        $char = mb_substr($emoji, $i, 1, 'UTF-8');
+        $code = unpack('V', iconv('UTF-8', 'UCS-4LE', $char))[1];
+        $codepoints[] = dechex($code);
+    }
+    
+    return implode('-', $codepoints);
+}
+
+/**
+ * Get the emoji image URL for an emoji character
+ * 
+ * @param string $emoji The emoji character(s)
+ * @return string The emoji image URL from wordwalker.ca
+ */
+function getEmojiImageUrl($emoji) {
+    $codepoint = emojiToCodepoint($emoji);
+    return "https://wordwalker.ca/emoji-images/{$codepoint}.png";
+}
+
+/**
  * Export flashcards as PDF with 3-column layout
  */
 function exportAsPdf($questions) {
@@ -315,27 +347,17 @@ function exportAsPdf($questions) {
                 if ($category) {
                     $emojiUrl = 'https://impressto.ca/wordwalker/dist/images/objects/' . $category . '/' . $emoji;
                     $html .= '<div style="text-align: center; margin-bottom: 15px;">';
-                    $html .= '<img src="' . htmlspecialchars($emojiUrl) . '" alt="emoji" style="width: 80px; height: 80px; object-fit: contain;" />';
+                    $html .= '<img src="' . htmlspecialchars($emojiUrl) . '" alt="emoji" style="width: 100px; height: 100px; object-fit: contain;" />';
                     $html .= '</div>';
                 }
             } else {
-                // It's an actual emoji character, convert to Twemoji image URL for better PDF rendering
-                
-                // Convert emoji to Unicode codepoint for Twemoji URL
-                $codepoint = '';
-                $length = mb_strlen($emoji, 'UTF-8');
-                for ($i = 0; $i < $length; $i++) {
-                    $char = mb_substr($emoji, $i, 1, 'UTF-8');
-                    $code = unpack('V', iconv('UTF-8', 'UCS-4LE', $char))[1];
-                    if ($codepoint !== '') $codepoint .= '-';
-                    $codepoint .= dechex($code);
-                }
-                
-                // Use Twemoji CDN (more reliable for PDFs than emoji fonts)
-                $twemojiUrl = 'https://cdn.jsdelivr.net/gh/twitter/twemoji@latest/assets/72x72/' . $codepoint . '.png';
+                // It's an actual emoji character, use self-hosted emoji images for better PDF rendering
+                $codepoint = emojiToCodepoint($emoji);
+                $emojiImageUrl = getEmojiImageUrl($emoji);
                 
                 $html .= '<div style="text-align: center; margin-bottom: 15px;">';
-                $html .= '<img src="' . htmlspecialchars($twemojiUrl) . '" alt="emoji" style="width: 80px; height: 80px; object-fit: contain;" />';
+                $html .= '<img src="' . htmlspecialchars($emojiImageUrl) . '" alt="emoji" style="width: 80px; height: 80px; object-fit: contain;" />';
+                $html .= '<div style="font-size: 0.65em; color: #999; margin-top: 4px; font-family: monospace;">' . htmlspecialchars($codepoint) . '</div>';
                 $html .= '</div>';
             }
         }
@@ -386,7 +408,6 @@ function exportAsPdf($questions) {
     
     <div class="footer">
         <p><strong>100% Free Spanish Learning at wordwalker.ca</strong></p>
-        <p>Print this page to PDF using your browser\'s print function (Ctrl+P or Cmd+P)</p>
     </div>
 </body>
 </html>';
