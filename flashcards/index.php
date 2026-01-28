@@ -915,24 +915,15 @@ $version = $packageJson['version'] ?? '1.0.0';
         <div class="export-dialog-content">
             <h3>Export Your Deck</h3>
             <p>You have <strong><span id="dialog-deck-count">0</span> flashcard(s)</strong> in your deck.</p>
-            <p>Choose your export format:</p>
+            <p>Export as printable PDF:</p>
             <div class="export-buttons">
-                <button class="export-btn export-zip" onclick="exportDeck('zip')">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M14,17H7V15H14M17,13H7V11H17M17,9H7V7H17M19,3H5C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5C21,3.89 20.1,3 19,3Z"/>
-                    </svg>
-                    <div>
-                        <strong>ZIP File</strong>
-                        <small>Individual JPG images</small>
-                    </div>
-                </button>
                 <button class="export-btn export-pdf" onclick="exportDeck('pdf')">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                         <path d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20Z"/>
                     </svg>
                     <div>
-                        <strong>PDF File</strong>
-                        <small>Single document (3 columns)</small>
+                        <strong>Download PDF</strong>
+                        <small>Printable 3-column layout</small>
                     </div>
                 </button>
             </div>

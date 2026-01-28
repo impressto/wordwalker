@@ -1331,3 +1331,71 @@ h1 {
         flex-wrap: wrap;
     }
 }
+/* Print Styles - Prevent page breaks within cards */
+@media print {
+    /* Prevent page breaks inside flashcards */
+    .flashcard {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    
+    /* Prevent page breaks inside card inner content */
+    .flashcard-inner,
+    .flashcard-front,
+    .flashcard-back {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    
+    /* Keep card elements together */
+    .flashcard-answer,
+    .flashcard-hint,
+    .flashcard-example {
+        page-break-inside: avoid;
+        break-inside: avoid;
+    }
+    
+    /* Optional: Show both sides of the card in print */
+    .flashcard-inner {
+        transform: none !important;
+    }
+    
+    .flashcard-back {
+        transform: none !important;
+        position: relative !important;
+        margin-top: 20px;
+    }
+    
+    /* Hide interactive elements */
+    .audio-player,
+    .flip-instruction {
+        display: none;
+    }
+    
+    /* Adjust margins for better page breaks */
+    .flashcard {
+        page-break-after: auto;
+        margin-bottom: 30px;
+    }
+    
+    /* Hide unnecessary elements for printing */
+    .shuffle-controls,
+    .pagination,
+    .back-to-app,
+    .language-toggle,
+    .social-share,
+    header nav,
+    .export-controls {
+        display: none;
+    }
+    
+    /* Optimize spacing */
+    body {
+        padding: 0;
+    }
+    
+    .container {
+        box-shadow: none;
+        max-width: 100%;
+    }
+}

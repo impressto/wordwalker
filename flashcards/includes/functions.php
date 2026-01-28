@@ -172,6 +172,11 @@ function parseQuestionsFromJS($filePath) {
                 $question['emoji'] = $emojiMatch[1];
             }
             
+            // Extract category
+            if (preg_match('/category:\s*[\'"]([^\'"]+)[\'"]/', $objectString, $categoryMatch)) {
+                $question['category'] = $categoryMatch[1];
+            }
+            
             // Extract question text (handles Spanish characters and nested quotes)
             if (preg_match('/question:\s*[\'"](.+?)[\'"],/s', $objectString, $qMatch)) {
                 $question['question'] = str_replace(["\\'", '\\"'], ["'", '"'], $qMatch[1]);

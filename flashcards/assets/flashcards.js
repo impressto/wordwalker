@@ -463,7 +463,7 @@ function hideExportDialog() {
 }
 
 /**
- * Export deck as ZIP or PDF
+ * Export deck as PDF
  */
 function exportDeck(format) {
     if (userDeck.length === 0) {
@@ -481,7 +481,7 @@ function exportDeck(format) {
     // Prepare form data
     const formData = new FormData();
     formData.append('action', 'export');
-    formData.append('format', format);
+    formData.append('format', 'pdf');
     formData.append('cards', JSON.stringify(userDeck));
     
     // Test with impressto.ca URL
@@ -515,7 +515,7 @@ function exportDeck(format) {
         const url = window.URL.createObjectURL(blob);
         const a = document.createElement('a');
         a.href = url;
-        a.download = 'wordwalker-deck-' + new Date().toISOString().split('T')[0] + '.' + format;
+        a.download = 'wordwalker-deck-' + new Date().toISOString().split('T')[0] + '.pdf';
         document.body.appendChild(a);
         a.click();
         window.URL.revokeObjectURL(url);
@@ -524,7 +524,7 @@ function exportDeck(format) {
         // Reset buttons
         exportButtons.forEach(function(btn) {
             btn.disabled = false;
-            btn.textContent = btn.classList.contains('zip-btn') ? 'ZIP (Images)' : 'PDF (Printable)';
+            btn.textContent = 'Download PDF';
         });
         
         hideExportDialog();
@@ -536,7 +536,7 @@ function exportDeck(format) {
         // Reset buttons
         exportButtons.forEach(function(btn) {
             btn.disabled = false;
-            btn.textContent = btn.classList.contains('zip-btn') ? 'ZIP (Images)' : 'PDF (Printable)';
+            btn.textContent = 'Download PDF';
         });
     });
 }
