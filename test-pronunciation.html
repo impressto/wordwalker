@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pronunciation Audio - Test Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+    h1 {
+      color: #4CAF50;
+    }
+    .test-section {
+      margin: 30px 0;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    .status {
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+    }
+    .online {
+      background-color: #d4edda;
+      color: #155724;
+    }
+    .offline {
+      background-color: #f8d7da;
+      color: #721c24;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    button:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+    }
+    input {
+      padding: 8px;
+      margin: 5px;
+      width: 300px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+    .result {
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #f0f0f0;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    code {
+      background-color: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎙️ Pronunciation Audio - Test Page</h1>
+  
+  <div class="test-section">
+    <h2>Online Status</h2>
+    <div id="online-status" class="status">Checking...</div>
+  </div>
+
+  <div class="test-section">
+    <h2>Configuration</h2>
+    <div>
+      <label>Server URL:</label>
+      <input type="text" id="server-url" value="https://impressto.ca/wordwalker/audio-samples/answers/" style="width: 500px;">
+      <button onclick="updateServerUrl()">Update</button>
+    </div>
+    <div style="margin-top: 10px;">
+      <small>Current: <span id="current-url"></span></small>
+    </div>
+  </div>
+
+  <div class="test-section">
+    <h2>Test Question</h2>
+    <div>
+      <label>Question ID:</label>
+      <input type="text" id="test-id" value="grammar_001" placeholder="e.g., grammar_001">
+      <label>Category:</label>
+      <input type="text" id="test-category" value="grammar" placeholder="e.g., grammar">
+      <button onclick="checkFileExists()">Check if File Exists</button>
+      <button onclick="playAudio()">Play Audio</button>
+    </div>
+    <div id="check-result" class="result" style="display: none;"></div>
+    <div id="filename" class="result" style="display: none;"></div>
+  </div>
+
+  <div class="test-section">
+    <h2>Common Test Questions</h2>
+    <div>
+      <button onclick="testQuestion('grammar_001', 'grammar')">grammar_001</button>
+      <button onclick="testQuestion('food_001', 'food')">food_001</button>
+      <button onclick="testQuestion('beach_001', 'beach')">beach_001</button>
+      <button onclick="testQuestion('shopping_001', 'shopping')">shopping_001</button>
+    </div>
+  </div>
+
+  <div class="test-section">
+    <h2>Cache Status</h2>
+    <div>
+      <button onclick="showCacheStatus()">Show Cache Status</button>
+      <button onclick="clearCaches()">Clear All Caches</button>
+    </div>
+    <div id="cache-status" class="result" style="display: none;"></div>
+  </div>
+
+  <script type="module">
+    // Simple implementation for testing (without React)
+    class PronunciationAudioManager {
+      constructor(baseUrl = 'https://impressto.ca/wordwalker/audio-samples/answers/') {
+        this.baseUrl = baseUrl;
+        this.audioCache = new Map();
+        this.existenceCache = new Map();
+        this.fileFormat = 'mp3';
+        this.checkTimeout = 5000;
+      }
+
+      isOnline() {
+        return navigator.onLine;
+      }
+
+      getAudioUrl(question) {
+        if (!question || !question.correctAnswer || !question.category) {
+          return null;
+        }
+        return `${this.baseUrl}${question.category}/${question.correctAnswer}.${this.fileFormat}`;
+      }
+
+      async checkAudioExists(question) {
+        if (!this.isOnline()) {
+          return false;
+        }
+
+        const url = this.getAudioUrl(question);
+        
+        if (!url) {
+          return false;
+        }
+        
+        if (this.existenceCache.has(url)) {
+          return this.existenceCache.get(url);
+        }
+
+        try {
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), this.checkTimeout);
+
+          const response = await fetch(url, {
+            method: 'HEAD',
+            signal: controller.signal,
+          });
+
+          clearTimeout(timeoutId);
+
+          const exists = response.ok;
+          this.existenceCache.set(url, exists);
+          return exists;
+        } catch (error) {
+          this.existenceCache.set(url, false);
+          return false;
+        }
+      }
+
+      async playPronunciation(question, volume = 0.7) {
+        if (!this.isOnline()) {
+          console.log('Cannot play pronunciation audio while offline');
+          return false;
+        }
+
+        const url = this.getAudioUrl(question);
+        
+        if (!url) {
+          console.log('Cannot generate audio URL for question');
+          return false;
+        }
+
+        try {
+          let audio = this.audioCache.get(url);
+
+          if (!audio) {
+            audio = new Audio(url);
+            audio.volume = volume;
+            this.audioCache.set(url, audio);
+          } else {
+            audio.currentTime = 0;
+            audio.volume = volume;
+          }
+
+          await audio.play();
+          return true;
+        } catch (error) {
+          console.error('Error playing pronunciation audio:', error);
+          this.audioCache.delete(url);
+          return false;
+        }
+      }
+
+      clearCache() {
+        this.audioCache.clear();
+        this.existenceCache.clear();
+      }
+
+      setBaseUrl(url) {
+        this.baseUrl = url.endsWith('/') ? url : `${url}/`;
+        this.clearCache();
+      }
+    }
+
+    // Create global instance
+    window.audioManager = new PronunciationAudioManager();
+
+    // Update online status
+    function updateOnlineStatus() {
+      const statusDiv = document.getElementById('online-status');
+      const isOnline = navigator.onLine;
+      statusDiv.className = `status ${isOnline ? 'online' : 'offline'}`;
+      statusDiv.textContent = isOnline ? '✅ Online - Audio can be loaded' : '❌ Offline - Audio unavailable';
+    }
+
+    window.addEventListener('online', updateOnlineStatus);
+    window.addEventListener('offline', updateOnlineStatus);
+    updateOnlineStatus();
+
+    // Update current URL display
+    document.getElementById('current-url').textContent = window.audioManager.baseUrl;
+
+    // Global functions for buttons
+    window.updateServerUrl = function() {
+      const url = document.getElementById('server-url').value;
+      window.audioManager.setBaseUrl(url);
+      document.getElementById('current-url').textContent = window.audioManager.baseUrl;
+      alert('Server URL updated and cache cleared!');
+    };
+
+    window.testQuestion = function(id, category) {
+      document.getElementById('test-id').value = id;
+      document.getElementById('test-category').value = category;
+      checkFileExists();
+    };
+
+    window.checkFileExists = async function() {
+      const id = document.getElementById('test-id').value;
+      const category = document.getElementById('test-category').value;
+      const question = { id, category };
+      
+      const resultDiv = document.getElementById('check-result');
+      const filenameDiv = document.getElementById('filename');
+      
+      resultDiv.style.display = 'block';
+      filenameDiv.style.display = 'block';
+      resultDiv.textContent = 'Checking...';
+      
+      const url = window.audioManager.getAudioUrl(question);
+      filenameDiv.textContent = `URL: ${url}`;
+      
+      const exists = await window.audioManager.checkAudioExists(question);
+      resultDiv.textContent = exists 
+        ? '✅ File exists on server!' 
+        : '❌ File not found (or offline)';
+      resultDiv.style.backgroundColor = exists ? '#d4edda' : '#f8d7da';
+      resultDiv.style.color = exists ? '#155724' : '#721c24';
+    };
+
+    window.playAudio = async function() {
+      const id = document.getElementById('test-id').value;
+      const category = document.getElementById('test-category').value;
+      const question = { id, category };
+      
+      const success = await window.audioManager.playPronunciation(question);
+      if (!success) {
+        alert('Failed to play audio. Check console for details.');
+      }
+    };
+
+    window.testSanitize = function() {
+      alert('Sanitization not needed - using question IDs directly');
+    };
+
+    window.showCacheStatus = function() {
+      const resultDiv = document.getElementById('cache-status');
+      resultDiv.style.display = 'block';
+      resultDiv.innerHTML = `
+        Audio Cache: ${window.audioManager.audioCache.size} items<br>
+        Existence Cache: ${window.audioManager.existenceCache.size} items
+      `;
+    };
+
+    window.clearCaches = function() {
+      window.audioManager.clearCache();
+      alert('All caches cleared!');
+      showCacheStatus();
+    };
+  </script>
+</body>
+</html>

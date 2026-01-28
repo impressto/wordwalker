@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>wordwalker</title>
+    <style>
+
+    /* Prevent scrolling and ensure fullscreen on mobile */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+           /* overflow: hidden; messed up edge gradient */
+            position: fixed;
+            touch-action: none;
+            -webkit-overflow-scrolling: touch;
+            background-color: #000000;
+        }
+        
+
+      /* Sunken gradient effect on app container edges */
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        max-width: 600px;
+        height: 100%;
+        pointer-events: none;
+        z-index: 9999;
+        box-shadow: 
+          inset 15px 0 15px -15px rgba(0, 0, 0, 0.95), 
+          inset -15px 0 15px -15px rgba(0, 0, 0, 0.95);
+      }
+    </style>
+    <!-- Favicon files -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

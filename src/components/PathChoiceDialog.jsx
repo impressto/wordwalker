@@ -1,0 +1,627 @@
+/**
+ * PathChoiceDialog Component
+ * Displays a dialog with category options for the user to choose
+ * Now with pagination to browse through all categories
+ * Categories are shown even if fully mastered, but disabled
+ */
+
+import { useState, useEffect } from 'react';
+import { getAllCategoryIds } from '../config/questionsLoader';
+import { isCategoryFullyMastered, getCategoryCorrectAnswerCount, getCategoryQuestionCount } from '../utils/questionTracking';
+import { FLASH_CARDS_ENABLED } from '../config/flashCardsConfig';
+import { getCategoryIconPath, isEmojiSvg } from '../utils/emojiUtils';
+import gameSettings from '../config/gameSettings';
+import DifficultySelector from './DifficultySelector';
+
+const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpenShop, onOpenFlashCards, currentCategory = null, correctAnswersByCategory = {}, completedCategories = new Set() }) => {
+  const [dialogTop, setDialogTop] = useState('100px');
+  
+  // Difficulty selection state: 'easy', 'medium', or 'hard'
+  // Load saved difficulty from localStorage or default to 'hard'
+  const [difficulty, setDifficulty] = useState(() => {
+    try {
+      const savedDifficulty = localStorage.getItem('gameDifficulty');
+      return savedDifficulty && ['easy', 'medium', 'hard'].includes(savedDifficulty) ? savedDifficulty : 'hard';
+    } catch (error) {
+      console.error('Error loading saved difficulty:', error);
+      return 'hard';
+    }
+  });
+  
+  // Show difficulty selection modal
+  const [showDifficultyModal, setShowDifficultyModal] = useState(false);
+  
+  // Game mode selection: 'multichoice' or 'flashcard'
+  // Load saved game mode from localStorage or default to 'multichoice'
+  const [gameMode, setGameMode] = useState(() => {
+    try {
+      const savedMode = localStorage.getItem('gameMode');
+      return savedMode && (savedMode === 'multichoice' || savedMode === 'flashcard') ? savedMode : 'multichoice';
+    } catch (error) {
+      console.error('Error loading saved game mode:', error);
+      return 'multichoice';
+    }
+  });
+  
+  // Load saved page from localStorage or default to 0
+  const [currentPage, setCurrentPage] = useState(() => {
+    try {
+      const savedPage = localStorage.getItem('categoryGridPage');
+      return savedPage ? parseInt(savedPage, 10) : 0;
+    } catch (error) {
+      console.error('Error loading saved category page:', error);
+      return 0;
+    }
+  });
+  
+  // Get all categories - we now show all of them, just disable the mastered ones
+  const allCategoryIds = getAllCategoryIds();
+  const categoriesToShow = allCategoryIds;
+  
+  // State to store preloaded category metadata (mastered status and counts)
+  const [categoryMetadata, setCategoryMetadata] = useState({});
+  
+  const categoriesPerPage = 4;
+  const totalPages = Math.ceil(categoriesToShow.length / categoriesPerPage);
+  
+  // Get current page categories
+  const startIndex = currentPage * categoriesPerPage;
+  const endIndex = startIndex + categoriesPerPage;
+  const currentPageCategories = categoriesToShow.slice(startIndex, endIndex);
+  
+  const handlePrevPage = () => {
+    setCurrentPage((prev) => {
+      const newPage = (prev - 1 + totalPages) % totalPages;
+      localStorage.setItem('categoryGridPage', newPage.toString());
+      return newPage;
+    });
+  };
+  
+  const handleNextPage = () => {
+    setCurrentPage((prev) => {
+      const newPage = (prev + 1) % totalPages;
+      localStorage.setItem('categoryGridPage', newPage.toString());
+      return newPage;
+    });
+  };
+
+  useEffect(() => {
+    const calculatePosition = () => {
+      // Look for the logo image by its alt text
+      const logoImg = document.querySelector('img[alt="WordWalk Logo"]');
+      if (logoImg) {
+        // Get the parent container of the logo
+        const logoContainer = logoImg.parentElement;
+        if (logoContainer) {
+          const rect = logoContainer.getBoundingClientRect();
+          // Position 10px below the logo, accounting for viewport scrolling
+          const topPosition = rect.bottom + 10 + window.scrollY;
+          setDialogTop(`${topPosition}px`);
+        }
+      }
+    };
+
+    // Calculate on mount
+    calculatePosition();
+    
+    // Recalculate on window resize
+    window.addEventListener('resize', calculatePosition);
+    
+    // Also recalculate on scroll since absolute/fixed positioning can be affected
+    window.addEventListener('scroll', calculatePosition);
+    
+    // Use a small delay to ensure everything is rendered
+    const timer = setTimeout(calculatePosition, 150);
+
+    return () => {
+      window.removeEventListener('resize', calculatePosition);
+      window.removeEventListener('scroll', calculatePosition);
+      clearTimeout(timer);
+    };
+  }, []);
+  
+  // Preload category metadata (mastered status and counts)
+  // Reload when difficulty changes to update question counts
+  useEffect(() => {
+    const loadCategoryMetadata = async () => {
+      const metadata = {};
+      
+      for (const categoryId of allCategoryIds) {
+        const totalCount = await getCategoryQuestionCount(categoryId);
+        const isFullyMastered = await isCategoryFullyMastered(categoryId, correctAnswersByCategory);
+        
+        metadata[categoryId] = {
+          totalCount,
+          isFullyMastered
+        };
+      }
+      
+      setCategoryMetadata(metadata);
+    };
+    
+    loadCategoryMetadata();
+  }, [correctAnswersByCategory, difficulty]);
+  // Validate forkCategories structure
+  if (!forkCategories || typeof forkCategories !== 'object') {
+    return (
+      <div style={{
+        position: 'fixed',
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+        backgroundColor: 'rgba(255, 0, 0, 0.2)',
+        padding: '20px',
+        borderRadius: '15px',
+        boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
+        zIndex: 1010,
+        minWidth: '280px',
+        maxWidth: 'min(85vw, 380px)',
+        display: 'flex',
+        flexDirection: 'column',
+        color: 'red',
+        fontFamily: 'monospace',
+      }}>
+        <h3>Error: Categories Missing</h3>
+        <pre style={{ margin: 0, fontSize: '12px', maxHeight: '200px', overflow: 'auto' }}>
+          {JSON.stringify({ forkCategories }, null, 2)}
+        </pre>
+      </div>
+    );
+  }
+
+  const createButton = (categoryId) => {
+    const category = getCategoryById(categoryId);
+    
+    if (!category) {
+      return (
+        <div key={categoryId} style={{
+          padding: '15px 20px',
+          fontSize: '14px',
+          backgroundColor: '#ffebee',
+          color: '#c62828',
+          border: '1px solid #c62828',
+          borderRadius: '10px',
+          minWidth: '140px',
+          textAlign: 'center',
+        }}>
+          Missing: {categoryId}
+        </div>
+      );
+    }
+    
+    // Get metadata from preloaded state (default to safe values if not loaded yet)
+    const metadata = categoryMetadata[categoryId] || { totalCount: 0, isFullyMastered: false };
+    const isFullyMastered = metadata.isFullyMastered;
+    const totalCount = metadata.totalCount;
+    
+    // Check if this category was just completed in this session
+    const isJustCompleted = completedCategories.has(categoryId);
+    const isCurrentCategory = categoryId === currentCategory;
+    // Only disable if fully mastered - allow users to continue with current or just-completed categories
+    const isDisabled = isFullyMastered;
+    
+    // Get mastered count (synchronous)
+    const masteredCount = getCategoryCorrectAnswerCount(categoryId, correctAnswersByCategory);
+    
+    // Determine the title message
+    let titleMessage = '';
+    if (isFullyMastered) {
+      titleMessage = 'Category Mastered! ✨ All questions answered correctly';
+    } else if (isCurrentCategory) {
+      titleMessage = 'Continue with this category';
+    } else if (isJustCompleted) {
+      titleMessage = 'Category Completed! 🎉 Select to continue practicing';
+    }
+    
+    return (
+      <button
+        key={categoryId}
+        onClick={() => !isDisabled && onPathChoice(categoryId, gameMode)}
+        disabled={isDisabled}
+        title={titleMessage}
+        style={{
+          padding: window.innerWidth < 380 ? '8px 10px' : '10px 15px',
+          fontSize: window.innerWidth < 380 ? '12px' : '18px',
+          fontWeight: 'bold',
+          backgroundColor: isDisabled ? '#9e9e9e' : '#4CAF50',
+          color: 'white',
+          border: 'none',
+          borderRadius: '10px',
+          cursor: isDisabled ? 'not-allowed' : 'pointer',
+          boxShadow: isDisabled ? '0 2px 3px rgba(0,0,0,0.2)' : '0 4px 6px rgba(0,0,0,0.3)',
+          transition: 'all 0.2s',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '4px',
+          width: '100%',
+          minWidth: 0,
+          opacity: isDisabled ? 0.6 : 1,
+          position: 'relative',
+          boxSizing: 'border-box',
+        }}
+        onMouseEnter={(e) => {
+          if (!isDisabled) {
+            e.target.style.transform = 'scale(1.05)';
+            e.target.style.backgroundColor = '#45a049';
+          }
+        }}
+        onMouseLeave={(e) => {
+          if (!isDisabled) {
+            e.target.style.transform = 'scale(1)';
+            e.target.style.backgroundColor = '#4CAF50';
+          }
+        }}
+      >
+        {/* Render category icon - either as image or emoji */}
+        {isEmojiSvg(category.emoji) ? (
+          <img 
+            src={getCategoryIconPath(category.emoji)} 
+            alt={category.name}
+            style={{ 
+              width: '48px', 
+              height: '48px',
+              objectFit: 'contain'
+            }}
+          />
+        ) : (
+          <span style={{ fontSize: window.innerWidth < 380 ? '24px' : '32px' }}>{category.emoji}</span>
+        )}
+        <span style={{ fontSize: window.innerWidth < 380 ? '11px' : '14px', textAlign: 'center' }}>{category.displayName}</span>
+        <span style={{ 
+          fontSize: window.innerWidth < 380 ? '9px' : '11px', 
+          textAlign: 'center',
+          opacity: 0.9,
+          marginTop: '2px'
+        }}>
+          {masteredCount}/{totalCount}
+        </span>
+        {isFullyMastered && (
+          <span style={{ fontSize: '16px', position: 'absolute', top: '5px', right: '5px' }}>✨</span>
+        )}
+        {isJustCompleted && !isFullyMastered && (
+          <span style={{ fontSize: '16px', position: 'absolute', top: '5px', right: '5px' }}>🎉</span>
+        )}
+      </button>
+    );
+  };
+
+  return (
+    <div id="path-choice-dialog" style={{
+      position: 'fixed',
+      top: dialogTop,
+      left: '50%',
+      transform: 'translateX(-50%)',
+      backgroundColor: 'rgba(255, 255, 255, 0.85)',
+      padding: window.innerWidth < 380 ? '8px' : '12px',
+      borderRadius: '15px',
+      boxShadow: '0 8px 16px rgba(0,0,0,0.3)',
+      zIndex: 1010,
+      width: window.innerWidth <= 360 ? 'calc(100% - 20px)' : window.innerWidth < 500 ? 'calc(100% - 40px)' : 'calc(100% - 60px)',
+      maxWidth: '420px',
+      display: 'flex',
+      flexDirection: 'column',
+      boxSizing: 'border-box',
+    }}>
+      {/* Game Mode Toggle (only shown when flashCards feature is enabled) */}
+      {gameSettings.flashCards.enabled ? (
+        <div style={{
+          marginBottom: '12px',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '8px',
+          alignItems: 'center',
+        }}>
+          <div id="game-mode-toggle" style={{
+            display: 'flex',
+            backgroundColor: '#f0f0f0',
+            borderRadius: '12px',
+            padding: '4px',
+            gap: '4px',
+            width: '100%',
+            maxWidth: '300px',
+          }}>
+            <button
+              onClick={() => {
+                setGameMode('multichoice');
+                localStorage.setItem('gameMode', 'multichoice');
+              }}
+              style={{
+                flex: 1,
+                padding: '10px 16px',
+                fontSize: '14px',
+                fontWeight: gameMode === 'multichoice' ? 'bold' : 'normal',
+                backgroundColor: gameMode === 'multichoice' ? '#4CAF50' : 'transparent',
+                color: gameMode === 'multichoice' ? 'white' : '#333',
+                border: 'none',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '6px',
+              }}
+            >
+              <span>☑️</span>
+              <span>Multichoice</span>
+            </button>
+            <button
+              onClick={() => {
+                setGameMode('flashcard');
+                localStorage.setItem('gameMode', 'flashcard');
+              }}
+              style={{
+                flex: 1,
+                padding: '10px 16px',
+                fontSize: '14px',
+                fontWeight: gameMode === 'flashcard' ? 'bold' : 'normal',
+                backgroundColor: gameMode === 'flashcard' ? '#9C27B0' : 'transparent',
+                color: gameMode === 'flashcard' ? 'white' : '#333',
+                border: 'none',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '6px',
+              }}
+            >
+              <span>🎴</span>
+              <span>Flash Cards</span>
+            </button>
+          </div>
+          <div style={{
+            fontSize: '12px',
+            color: '#666',
+            textAlign: 'center',
+          }}>
+            {gameMode === 'multichoice' 
+              ? 'Answer questions to progress' 
+              : 'Study with interactive flash cards'}
+          </div>
+        </div>
+      ) : (
+        <h3 style={{
+          margin: '0 0 12px 0',
+          textAlign: 'center',
+          fontSize: '22px',
+          color: '#333',
+        }}>
+          Choose Your Path 🛤️
+        </h3>
+      )}
+      
+      {/* Pagination Container */}
+      <div id="pagination-container" style={{
+        display: 'flex',
+        alignItems: 'center',
+        marginBottom: '12px',
+        gap: window.innerWidth < 380 ? '2px' : '4px',
+      }}>
+        {/* Previous Button */}
+        <button
+          onClick={handlePrevPage}
+          disabled={totalPages <= 1}
+          style={{
+            padding: '6px 10px',
+            fontSize: '18px',
+            fontWeight: 'bold',
+            backgroundColor: totalPages <= 1 ? '#ccc' : '#2196F3',
+            color: 'white',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: totalPages <= 1 ? 'not-allowed' : 'pointer',
+            boxShadow: totalPages <= 1 ? 'none' : '0 2px 4px rgba(0,0,0,0.2)',
+            transition: 'all 0.2s',
+            flexShrink: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            minWidth: '36px',
+            marginRight: '4px',
+            opacity: totalPages <= 1 ? 0.5 : 1,
+          }}
+          onMouseEnter={(e) => {
+            if (totalPages > 1) {
+              e.target.style.transform = 'scale(1.1)';
+              e.target.style.backgroundColor = '#1976D2';
+            }
+          }}
+          onMouseLeave={(e) => {
+            if (totalPages > 1) {
+              e.target.style.transform = 'scale(1)';
+              e.target.style.backgroundColor = '#2196F3';
+            }
+          }}
+        >
+          ❮
+        </button>
+        
+        {/* Categories Grid */}
+        <div id="categories-grid" style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, 1fr)',
+          gap: window.innerWidth < 380 ? '4px' : '8px',
+          flex: 1,
+          minWidth: 0,
+        }}>
+          {currentPageCategories.map(categoryId => createButton(categoryId))}
+        </div>
+        
+        {/* Next Button */}
+        <button
+          onClick={handleNextPage}
+          disabled={totalPages <= 1}
+          style={{
+            padding: '6px 10px',
+            fontSize: '18px',
+            fontWeight: 'bold',
+            backgroundColor: totalPages <= 1 ? '#ccc' : '#2196F3',
+            color: 'white',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: totalPages <= 1 ? 'not-allowed' : 'pointer',
+            boxShadow: totalPages <= 1 ? 'none' : '0 2px 4px rgba(0,0,0,0.2)',
+            transition: 'all 0.2s',
+            flexShrink: 0,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            minWidth: '36px',
+            marginLeft: '4px',
+            opacity: totalPages <= 1 ? 0.5 : 1,
+          }}
+          onMouseEnter={(e) => {
+            if (totalPages > 1) {
+              e.target.style.transform = 'scale(1.1)';
+              e.target.style.backgroundColor = '#1976D2';
+            }
+          }}
+          onMouseLeave={(e) => {
+            if (totalPages > 1) {
+              e.target.style.transform = 'scale(1)';
+              e.target.style.backgroundColor = '#2196F3';
+            }
+          }}
+        >
+          ❯
+        </button>
+      </div>
+      
+      {/* Page Indicator */}
+      {totalPages > 1 && (
+        <div style={{
+          textAlign: 'center',
+          fontSize: '12px',
+          color: '#666',
+          marginBottom: '8px',
+        }}>
+          Page {currentPage + 1} of {totalPages}
+        </div>
+      )}
+
+      {/* Debug and Vendor Section */}
+      <div id="debug-flash-cards-button" style={{
+        display: 'flex',
+        gap: '10px',
+        marginTop: '6px',
+        borderTop: '2px solid #ddd',
+        paddingTop: '40px',
+      }}>
+        {/* Debug Flash Cards Button */}
+        {FLASH_CARDS_ENABLED && onOpenFlashCards && (
+          <button
+            onClick={onOpenFlashCards}
+            style={{
+              flex: 1,
+              padding: '10px',
+              fontSize: '12px',
+              fontWeight: 'bold',
+              backgroundColor: '#9C27B0',
+              color: 'white',
+              border: 'none',
+              borderRadius: '10px',
+              cursor: 'pointer',
+              boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
+              transition: 'all 0.2s',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              gap: '4px',
+            }}
+            onMouseEnter={(e) => {
+              e.target.style.transform = 'scale(1.05)';
+              e.target.style.backgroundColor = '#7B1FA2';
+            }}
+            onMouseLeave={(e) => {
+              e.target.style.transform = 'scale(1)';
+              e.target.style.backgroundColor = '#9C27B0';
+            }}
+          >
+            <span style={{ fontSize: '20px' }}>🎴</span>
+            <span>Flash Cards</span>
+            <span style={{ fontSize: '10px', opacity: 0.8 }}>(Debug)</span>
+          </button>
+        )}
+
+        {/* Vendor Section */}
+        <div id = "vendor-section" style={{
+          position: 'relative',
+          flex: 1,
+        }}>
+          <div style={{
+            position: 'absolute',
+            bottom: '5px',
+            left: '50%',
+            transform: 'translateX(-50%)',
+            display: 'flex',
+            gap: '8px',
+          }}>
+            <button
+              onClick={() => setShowDifficultyModal(true)}
+              style={{
+                padding: '8px 16px',
+                fontSize: '12px',
+                fontWeight: 'bold',
+                backgroundColor: '#2196F3',
+                color: 'white',
+                border: 'none',
+                borderRadius: '20px',
+                cursor: 'pointer',
+                boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
+                transition: 'all 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = 'scale(1.1)';
+                e.target.style.backgroundColor = '#1976D2';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = 'scale(1)';
+                e.target.style.backgroundColor = '#2196F3';
+              }}
+            >
+              🎯 DIFFICULTY
+            </button>
+            <button
+              onClick={onOpenShop}
+              style={{
+                padding: '8px 16px',
+                fontSize: '12px',
+                fontWeight: 'bold',
+                backgroundColor: '#FF9800',
+                color: 'white',
+                border: 'none',
+                borderRadius: '20px',
+                cursor: 'pointer',
+                boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
+                transition: 'all 0.2s',
+              }}
+              onMouseEnter={(e) => {
+                e.target.style.transform = 'scale(1.1)';
+                e.target.style.backgroundColor = '#FB8C00';
+              }}
+              onMouseLeave={(e) => {
+                e.target.style.transform = 'scale(1)';
+                e.target.style.backgroundColor = '#FF9800';
+              }}
+            >
+              ⚙️ SETTINGS
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      {/* Difficulty Selection Modal */}
+      <DifficultySelector
+        isOpen={showDifficultyModal}
+        onClose={() => setShowDifficultyModal(false)}
+        difficulty={difficulty}
+        onSelectDifficulty={setDifficulty}
+      />
+    </div>
+  );
+};
+
+export default PathChoiceDialog;

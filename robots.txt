@@ -1,0 +1,27 @@
+# WordWalker robots.txt
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://wordwalker.ca/sitemap.xml
+
+# Allow crawling of all category pages
+Allow: /?category=*
+
+# Block admin and config files (if any)
+Disallow: /config/
+Disallow: /scripts/
+Disallow: /work/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Allow CSS, JS, and images for better rendering in search results
+Allow: /dist/assets/*.css
+Allow: /dist/assets/*.js
+Allow: /dist/images/
+Allow: /public/images/
+
+# Crawl delay (optional, adjust if needed)
+# Crawl-delay: 1
