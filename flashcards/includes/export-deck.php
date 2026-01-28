@@ -75,6 +75,10 @@ require_once __DIR__ . '/translations.php';
 $exampleTranslationsFile = __DIR__ . '/../../src/config/translations/example_translations.js';
 $exampleTranslations = parseExampleTranslations($exampleTranslationsFile);
 
+// Load answer translations
+$answerTranslationsFile = __DIR__ . '/../../src/config/translations/answers/answer_translations.js';
+$answerTranslations = parseAnswerTranslations($answerTranslationsFile);
+
 // Export as PDF
 exportAsPdf($selectedQuestions);
 
@@ -319,8 +323,16 @@ function exportAsPdf($questions) {
     foreach ($questions as $question) {
         global $exampleTranslations;
         
+        global $answerTranslations;
+        
         $answer = isset($question['correctAnswer']) ? $question['correctAnswer'] : '';
-        $answerTranslation = isset($question['answerTranslation']) ? $question['answerTranslation'] : '';
+        // Look up answer translation from the translations file
+        $answerTranslation = '';
+        if ($answer && isset($answerTranslations[$answer])) {
+            $answerTranslation = $answerTranslations[$answer];
+        } elseif (isset($question['answerTranslation'])) {
+            $answerTranslation = $question['answerTranslation'];
+        }
         $example = isset($question['usageExample']) ? $question['usageExample'] : '';
         // Look up example translation from the translations file
         $exampleTranslation = '';

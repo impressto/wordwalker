@@ -73,7 +73,7 @@ function getTranslations($lang = 'en') {
             'switch_to_english' => 'English',
             
             // Free forever tagline
-            'free_forever_tagline' => '100% Free Forever • No Cost • No Subscription • Community Driven',
+            'free_forever_tagline' => '100% Free Forever • No Ads • No Subscriptions • Community Driven',
             'free_flashcards_desc' => 'Learn Spanish with free interactive flashcards and audio pronunciation',
             
             // Category names
@@ -128,7 +128,7 @@ function getTranslations($lang = 'en') {
             'seo_with_audio' => 'with audio pronunciation across all categories. Learn Spanish at your own pace with our',
             'seo_free_interactive' => 'free interactive flashcards',
             'seo_covering' => 'covering food, travel, business, grammar, and more - all without spending a penny.',
-            'seo_start_learning' => '🎓 Start learning Spanish today with our free flashcards - no registration, no credit card, no catch. Just 100% free forever Spanish learning.',
+            'seo_start_learning' => '🎓 Start learning Spanish today with our free flashcards - no registration, no ads, no credit card, no catch. Just 100% free forever Spanish learning.',
         ],
         'es' => [
             // Header
