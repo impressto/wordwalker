@@ -9,6 +9,7 @@ let currentAudio = null;
 let autoplayEnabled = false;
 
 // Deck management
+const MAX_DECK_SIZE = 120;
 let userDeck = [];
 
 function playAudio(audioPath) {
@@ -387,6 +388,11 @@ function toggleDeck(cardId, button) {
         button.querySelector('.deck-btn-text').textContent = '+ deck';
         button.title = 'Add to deck';
     } else {
+        // Check if deck is at max capacity
+        if (userDeck.length >= MAX_DECK_SIZE) {
+            alert('Your deck is full! Maximum ' + MAX_DECK_SIZE + ' cards allowed. Remove some cards to add more.');
+            return;
+        }
         // Add to deck
         userDeck.push(cardId);
         button.classList.add('in-deck');
