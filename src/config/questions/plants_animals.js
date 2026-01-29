@@ -487,7 +487,7 @@ export const plantsAnimalsQuestions = [
   },
   {
     id: 'plants_animals_042',
-    emoji: '🐋',
+    emoji: 'blue-whale.png',
     question: '¿Qué animal marino es el más grande?',
     translation: 'What sea animal is the biggest?',
     options: ['la ballena', 'el tiburón', 'el delfín'],
@@ -890,7 +890,7 @@ export const plantsAnimalsQuestions = [
   },
   {
     id: 'plants_animals_077',
-    emoji: '🦫',
+    emoji: 'beaver.png',
     question: '¿Qué animal construye presas en los ríos?',
     translation: 'What animal builds dams in rivers?',
     options: ['el castor', 'la nutria', 'el tejón'],

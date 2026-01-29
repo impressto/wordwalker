@@ -873,7 +873,7 @@ export const environmentQuestions = [
   },
   {
     id: 'environment_071',
-    emoji: '🐋',
+    emoji: 'blue-whale.png',
     question: '¿Qué está en peligro de extinción?',
     translation: 'What is in danger of extinction?',
     options: ['muchas especies', 'todas las especies', 'ninguna especie'],
