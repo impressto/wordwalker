@@ -928,16 +928,6 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
           </button>
         </div>
 
-        {/* Share Link - positioned absolutely in bottom right */}
-        <a 
-          href={`/?category=${category}`}
-          className="flash-cards-share"
-          title="Share this category"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          🔗 Share
-        </a>
 
         {/* Usage Example Modal */}
         {showUsageModal && currentCardData?.usageExample && (() => {
