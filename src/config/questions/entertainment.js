@@ -124,6 +124,7 @@ export const entertainmentQuestions = [
     options: ['la discoteca', 'la piscina', 'el restaurante'],
     correctAnswer: 'la discoteca',
     hint: 'Dance club/Disco - nightclub at resort where people dance to music',
+    usageExample: 'Bailamos en la discoteca del resort hasta las tres de la mañana.',
     points: 10,
     category: 'entertainment',
     difficulty: 'medium',
