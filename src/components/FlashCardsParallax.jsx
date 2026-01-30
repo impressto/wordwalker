@@ -15,6 +15,7 @@ const FlashCardsParallax = ({
   const canvasRef = useRef(null);
   const animationFrameRef = useRef(null);
   const offsetRef = useRef(0);
+  const lastTimeRef = useRef(0); // Track last frame time for delta-time based animation
   const [parallaxImages, setParallaxImages] = useState({
     layer3: null,
     layer4: null,
@@ -85,12 +86,22 @@ const FlashCardsParallax = ({
     const ctx = canvas.getContext('2d');
     const theme = getTheme(currentTheme);
 
-    // Animation speed (pixels per frame)
-    const ANIMATION_SPEED = 0.5;
+    // Animation speed (pixels per second at 60fps baseline)
+    const ANIMATION_SPEED = 0.5; // Base speed per frame at 60fps
 
-    const animate = () => {
-      // Update offset for continuous scrolling
-      offsetRef.current += ANIMATION_SPEED;
+    const animate = (currentTime) => {
+      // Calculate delta time for frame-rate independent animation
+      if (lastTimeRef.current === 0) {
+        lastTimeRef.current = currentTime;
+      }
+      const deltaTime = Math.min((currentTime - lastTimeRef.current) / 1000, 0.1); // Cap at 100ms
+      lastTimeRef.current = currentTime;
+      
+      // Delta multiplier: normalize to 60fps baseline
+      const deltaMultiplier = deltaTime * 60;
+      
+      // Update offset for continuous scrolling (scale by delta time)
+      offsetRef.current += ANIMATION_SPEED * deltaMultiplier;
 
       // Clear canvas
       ctx.clearRect(0, 0, width, height);
@@ -239,8 +250,9 @@ const FlashCardsParallax = ({
       animationFrameRef.current = requestAnimationFrame(animate);
     };
 
-    // Start animation
-    animate();
+    // Start animation with requestAnimationFrame to get proper timestamp
+    lastTimeRef.current = 0; // Reset for fresh start
+    animationFrameRef.current = requestAnimationFrame(animate);
 
     // Cleanup
     return () => {

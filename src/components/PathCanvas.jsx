@@ -70,6 +70,8 @@ const PathCanvas = () => {
   const velocityRef = useRef(0); // Current scroll velocity for smooth acceleration/deceleration
   const targetOffsetRef = useRef(null); // Target offset for smooth camera panning (null = no target)
   const animationFrameRef = useRef(null);
+  const lastTimeRef = useRef(0); // Track last frame time for delta-time based animation
+  const frameAccumulatorRef = useRef(0); // Accumulator for sprite frame timing
   const [isPaused, setIsPaused] = useState(false);
   const [showChoice, setShowChoice] = useState(false);
   const [selectedPath, setSelectedPath] = useState(null);
@@ -768,7 +770,7 @@ const PathCanvas = () => {
       canvas.height = window.innerHeight;
     };
 
-    const drawScene = () => {
+    const drawScene = (deltaTime = 0.016667) => {
       const width = canvas.width;
       const height = canvas.height;
       
@@ -1194,16 +1196,19 @@ const PathCanvas = () => {
       }
       
       if (walkerSpriteSheet) {
-        // Update animation frame
-        // Allow animation to continue during victory animation, when actually moving, or during preview mode
-        // Stop animating when velocity is very low (nearly stopped)
+        // Update animation frame using time-based accumulation
+        // This ensures consistent animation speed regardless of monitor refresh rate
         const isMoving = velocityRef.current > 0.5;
         if ((isMoving && !isPaused) || isVictoryAnimation || isPreviewMode) {
-          walkerFrameCounterRef.current++;
+          // Accumulate time for sprite frame changes
+          frameAccumulatorRef.current += deltaTime * 1000; // Convert to milliseconds
           
-          // Change frame every 6 loops for walking animation (slowed 20%), every 12 loops for slower victory animation
-          const frameInterval = isVictoryAnimation ? 12 : 6;
-          if (walkerFrameCounterRef.current % frameInterval === 0) {
+          // Frame interval in milliseconds (at 60fps, 6 frames = ~100ms, 12 frames = ~200ms)
+          const frameIntervalMs = isVictoryAnimation ? 200 : 100;
+          
+          if (frameAccumulatorRef.current >= frameIntervalMs) {
+            frameAccumulatorRef.current -= frameIntervalMs; // Subtract instead of reset for accuracy
+            
             if (isVictoryAnimation) {
               // Victory animation (slower, more obvious)
               walkerFrameRef.current = (walkerFrameRef.current + 1) % spriteConfig.totalFrames;
@@ -1225,6 +1230,7 @@ const PathCanvas = () => {
         } else {
           // When stopped at checkpoint, use the rightmost (6th) frame for idle pose
           walkerFrameRef.current = 5; // Frame 5 is the 6th frame (0-indexed)
+          frameAccumulatorRef.current = 0; // Reset accumulator when stopped
         }
         
         // Calculate which row to use (walking or victory)
@@ -1299,7 +1305,20 @@ const PathCanvas = () => {
       }
     };
 
-    const animate = () => {
+    const animate = (currentTime) => {
+      // Calculate delta time for frame-rate independent animation
+      // This ensures consistent animation speed on 60Hz, 144Hz, and other refresh rates
+      if (lastTimeRef.current === 0) {
+        lastTimeRef.current = currentTime;
+      }
+      const deltaTime = Math.min((currentTime - lastTimeRef.current) / 1000, 0.1); // Cap at 100ms to prevent huge jumps
+      lastTimeRef.current = currentTime;
+      
+      // Delta multiplier: scales frame-based values to time-based
+      // At 60fps, each frame is ~16.67ms, so deltaTime would be ~0.01667s
+      // We normalize to 60fps as the baseline (deltaMultiplier = 1 at 60fps)
+      const deltaMultiplier = deltaTime * 60;
+      
       // Calculate if fork is fully visible on screen
       const canvas = canvasRef.current;
       if (canvas) {
@@ -1317,10 +1336,10 @@ const PathCanvas = () => {
         const distanceToCheckpoint = checkpointScreenX - personX;
         const shouldStopForCheckpoint = selectedPath && !questionAnswered && distanceToCheckpoint <= 120 && distanceToCheckpoint > 0;
         
-        // Target speed and inertia parameters
-        const targetSpeed = 4; // Maximum scroll speed (increased from 3 for faster gameplay)
-        const acceleration = 0.15; // How quickly to speed up
-        const deceleration = 0.2; // How quickly to slow down
+        // Target speed and inertia parameters (now time-based)
+        const targetSpeed = 4; // Maximum scroll speed in pixels per frame at 60fps
+        const acceleration = 0.15 * deltaMultiplier; // Scale acceleration by delta time
+        const deceleration = 0.2 * deltaMultiplier; // Scale deceleration by delta time
         
         // Apply smooth camera panning if we have a target offset (for fork repositioning)
         if (targetOffsetRef.current !== null) {
@@ -1331,8 +1350,8 @@ const PathCanvas = () => {
           if (Math.abs(distanceToTarget) < 1) {
             offsetRef.current = targetOffsetRef.current;
           } else {
-            // Smoothly move toward target
-            offsetRef.current += distanceToTarget / cameraSpeed;
+            // Smoothly move toward target (use deltaMultiplier for consistent pan speed)
+            offsetRef.current += (distanceToTarget / cameraSpeed) * deltaMultiplier;
           }
           
           // Keep velocity at zero while panning to prevent walker animation
@@ -1354,8 +1373,8 @@ const PathCanvas = () => {
             }
           }
           
-          // Apply velocity to offset
-          offsetRef.current += velocityRef.current;
+          // Apply velocity to offset (scale by deltaMultiplier for consistent movement speed)
+          offsetRef.current += velocityRef.current * deltaMultiplier;
         }
       } else {
         // Fallback if canvas not available
@@ -1366,14 +1385,14 @@ const PathCanvas = () => {
           if (Math.abs(distanceToTarget) < 1) {
             offsetRef.current = targetOffsetRef.current;
           } else {
-            offsetRef.current += distanceToTarget / cameraSpeed;
+            offsetRef.current += (distanceToTarget / cameraSpeed) * deltaMultiplier;
           }
           velocityRef.current = 0;
         } else {
           // Normal movement
           const targetSpeed = 4;
-          const acceleration = 0.15;
-          const deceleration = 0.2;
+          const acceleration = 0.15 * deltaMultiplier;
+          const deceleration = 0.2 * deltaMultiplier;
           
           if (!isPaused || isPreviewMode) {
             if (velocityRef.current < targetSpeed) {
@@ -1386,20 +1405,22 @@ const PathCanvas = () => {
           }
           
           // Note: In this fallback case, we don't have shouldStopForCheckpoint,
-          // so just apply velocity normally
-          offsetRef.current += velocityRef.current;
+          // so just apply velocity normally (scale by deltaMultiplier)
+          offsetRef.current += velocityRef.current * deltaMultiplier;
         }
       }
       
-      drawScene();
+      drawScene(deltaTime);
       animationFrameRef.current = requestAnimationFrame(animate);
     };
 
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
     
-    // Start animation
-    animate();
+    // Start animation with requestAnimationFrame to get proper timestamp
+    lastTimeRef.current = 0; // Reset for fresh start
+    frameAccumulatorRef.current = 0; // Reset frame accumulator
+    animationFrameRef.current = requestAnimationFrame(animate);
 
     return () => {
       window.removeEventListener('resize', resizeCanvas);
