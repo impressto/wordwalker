@@ -572,6 +572,10 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
                 cursor: 'pointer',
                 boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
                 transition: 'all 0.2s',
+                whiteSpace: 'nowrap',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '4px',
               }}
               onMouseEnter={(e) => {
                 e.target.style.transform = 'scale(1.1)';
@@ -582,7 +586,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
                 e.target.style.backgroundColor = '#2196F3';
               }}
             >
-              🎯 DIFFICULTY
+              <span>🎯</span><span>DIFFICULTY</span>
             </button>
             <button
               onClick={onOpenShop}
@@ -597,6 +601,10 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
                 cursor: 'pointer',
                 boxShadow: '0 4px 8px rgba(0,0,0,0.3)',
                 transition: 'all 0.2s',
+                whiteSpace: 'nowrap',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '4px',
               }}
               onMouseEnter={(e) => {
                 e.target.style.transform = 'scale(1.1)';
@@ -607,7 +615,7 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
                 e.target.style.backgroundColor = '#FF9800';
               }}
             >
-              ⚙️ SETTINGS
+              <span>⚙️</span><span>SETTINGS</span>
             </button>
           </div>
         </div>
