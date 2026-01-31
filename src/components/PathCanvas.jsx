@@ -74,6 +74,7 @@ const PathCanvas = () => {
   const frameAccumulatorRef = useRef(0); // Accumulator for sprite frame timing
   const [isPaused, setIsPaused] = useState(false);
   const [showChoice, setShowChoice] = useState(false);
+  const [isIdleAnimationMode, setIsIdleAnimationMode] = useState(false); // Walker animates while dialog is open (after 30s)
   const [selectedPath, setSelectedPath] = useState(null);
   const [showQuestion, setShowQuestion] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(null);
@@ -708,6 +709,32 @@ const PathCanvas = () => {
     }
   }, [showChoice, isPaused]);
 
+  // Start idle animation mode after 30 seconds of path choice dialog being open
+  // This keeps user engaged by showing walker animation in the background
+  useEffect(() => {
+    let idleAnimationTimer;
+    
+    if (showChoice && isPaused) {
+      // Reset idle mode when dialog opens
+      setIsIdleAnimationMode(false);
+      
+      // Start timer for 5 seconds
+      idleAnimationTimer = setTimeout(() => {
+        // console.log('⏰ Enabling idle animation mode after 5s on path choice dialog');
+        setIsIdleAnimationMode(true);
+      }, 5000); // 5 seconds
+    } else {
+      // Reset when dialog closes or game resumes
+      setIsIdleAnimationMode(false);
+    }
+    
+    return () => {
+      if (idleAnimationTimer) {
+        clearTimeout(idleAnimationTimer);
+      }
+    };
+  }, [showChoice, isPaused]);
+
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -997,7 +1024,7 @@ const PathCanvas = () => {
           if (!tileOnScreen) continue; // Skip tiles not on screen
           
           // Skip drawing the tile if fork is visible and this tile would be covered by the fork
-          if (showChoice && !selectedPath && tileScreenX >= forkScreenX) {
+          if (showChoice && !selectedPath && !isIdleAnimationMode && tileScreenX >= forkScreenX) {
             continue; // Skip tiles that would be covered by the fork
           }
           
@@ -1006,7 +1033,8 @@ const PathCanvas = () => {
         }
         
         // Draw fork at fixed screen position with right edge aligned to canvas right edge
-        if (showChoice && !selectedPath) {
+        // Hide fork during idle animation mode to show continuous path scrolling
+        if (showChoice && !selectedPath && !isIdleAnimationMode) {
           ctx.drawImage(pathForkImage, forkScreenX, pathTop + pathYOffset, tileSize, pathHeight);
         }
       }
@@ -1179,7 +1207,8 @@ const PathCanvas = () => {
       // Draw streak diamond behind the walker if streak is active
       if (streak > 0) {
         // Update diamond glow animation (smooth fade in/out)
-        if (!isPaused || isVictoryAnimation) {
+        // Continue animation during victory, idle mode, or when not paused
+        if (!isPaused || isVictoryAnimation || isIdleAnimationMode) {
           diamondGlowRef.current += 0.02; // Speed of glow animation
         }
         
@@ -1199,12 +1228,15 @@ const PathCanvas = () => {
         // Update animation frame using time-based accumulation
         // This ensures consistent animation speed regardless of monitor refresh rate
         const isMoving = velocityRef.current > 0.5;
-        if ((isMoving && !isPaused) || isVictoryAnimation || isPreviewMode) {
+        // Allow animation when: moving & not paused, OR victory animation, OR preview mode, 
+        // OR idle animation mode (walker animates while path choice dialog is open for 30+ seconds)
+        if ((isMoving && !isPaused) || isVictoryAnimation || isPreviewMode || isIdleAnimationMode) {
           // Accumulate time for sprite frame changes
           frameAccumulatorRef.current += deltaTime * 1000; // Convert to milliseconds
           
           // Frame interval in milliseconds (at 60fps, 6 frames = ~100ms, 12 frames = ~200ms)
-          const frameIntervalMs = isVictoryAnimation ? 200 : 100;
+          // Use slightly slower animation (150ms) during idle mode for a relaxed feel
+          const frameIntervalMs = isVictoryAnimation ? 200 : (isIdleAnimationMode ? 150 : 100);
           
           if (frameAccumulatorRef.current >= frameIntervalMs) {
             frameAccumulatorRef.current -= frameIntervalMs; // Subtract instead of reset for accuracy
@@ -1341,8 +1373,15 @@ const PathCanvas = () => {
         const acceleration = 0.15 * deltaMultiplier; // Scale acceleration by delta time
         const deceleration = 0.2 * deltaMultiplier; // Scale deceleration by delta time
         
-        // Apply smooth camera panning if we have a target offset (for fork repositioning)
-        if (targetOffsetRef.current !== null) {
+        // During idle animation mode, skip camera panning and use continuous scroll
+        if (isIdleAnimationMode) {
+          // During idle animation mode, use a slow constant scroll speed for parallax effect
+          // This creates gentle background movement while walker animates in place
+          const idleScrollSpeed = 1.5; // Slower than normal walking speed
+          velocityRef.current = idleScrollSpeed;
+          offsetRef.current += velocityRef.current * deltaMultiplier;
+        } else if (targetOffsetRef.current !== null) {
+          // Apply smooth camera panning if we have a target offset (for fork repositioning)
           const cameraSpeed = 8; // Speed at which camera pans to target (higher = faster)
           const distanceToTarget = targetOffsetRef.current - offsetRef.current;
           
@@ -1378,7 +1417,12 @@ const PathCanvas = () => {
         }
       } else {
         // Fallback if canvas not available
-        if (targetOffsetRef.current !== null) {
+        if (isIdleAnimationMode) {
+          // During idle animation mode, use a slow constant scroll speed for parallax effect
+          const idleScrollSpeed = 1.5;
+          velocityRef.current = idleScrollSpeed;
+          offsetRef.current += velocityRef.current * deltaMultiplier;
+        } else if (targetOffsetRef.current !== null) {
           // Smooth panning (no walker movement)
           const cameraSpeed = 8;
           const distanceToTarget = targetOffsetRef.current - offsetRef.current;
@@ -1389,7 +1433,7 @@ const PathCanvas = () => {
           }
           velocityRef.current = 0;
         } else {
-          // Normal movement
+          // Normal movement (idle animation mode already handled above)
           const targetSpeed = 4;
           const acceleration = 0.15 * deltaMultiplier;
           const deceleration = 0.2 * deltaMultiplier;
@@ -1428,7 +1472,7 @@ const PathCanvas = () => {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [parallaxLayer2Image, pathImage, pathForkImage, parallaxLayer6Image, parallaxLayer1Image, parallaxLayer4Image, parallaxLayer5Image, parallaxLayer3Image, walkerSpriteSheet, isPaused, showChoice, showQuestion, selectedPath, questionAnswered, isVictoryAnimation, currentTheme, isPreviewMode]);
+  }, [parallaxLayer2Image, pathImage, pathForkImage, parallaxLayer6Image, parallaxLayer1Image, parallaxLayer4Image, parallaxLayer5Image, parallaxLayer3Image, walkerSpriteSheet, isPaused, showChoice, showQuestion, selectedPath, questionAnswered, isVictoryAnimation, currentTheme, isPreviewMode, isIdleAnimationMode]);
 
   // Helper function to load a new question for the current checkpoint
   // Returns true if a question was loaded, false if no questions are available (category complete)
@@ -1563,6 +1607,7 @@ const PathCanvas = () => {
     
     setSelectedPath(choice);
     setShowChoice(false);
+    setIsIdleAnimationMode(false); // Reset idle animation mode when user makes a choice
     
     setIsJustResumed(false); // Clear the just-resumed flag once user selects a path
     setCheckpointsAnswered(0); // Reset checkpoint counter for new category
@@ -1769,6 +1814,7 @@ const PathCanvas = () => {
     setCategoryForFlashCards('food');
     setStreakAtCompletion(streak || 5); // Use current streak or default to 5
     setShowChoice(false);
+    setIsIdleAnimationMode(false); // Reset idle animation mode
     setShowFlashCards(true);
   };
 
