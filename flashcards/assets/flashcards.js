@@ -153,6 +153,13 @@ function downloadCardImage(button) {
         player.style.display = 'none';
     });
     
+    // Hide add-to-deck button during capture
+    const addToDeckBtn = flashcardBack.querySelector('.add-to-deck-btn');
+    const addToDeckOriginalDisplay = addToDeckBtn ? addToDeckBtn.style.display : null;
+    if (addToDeckBtn) {
+        addToDeckBtn.style.display = 'none';
+    }
+    
     // Show watermark during capture
     const watermark = flashcardBack.querySelector('.flashcard-watermark');
     const originalWatermarkDisplay = watermark ? watermark.style.display : null;
@@ -303,6 +310,11 @@ function downloadCardImage(button) {
             player.style.display = audioPlayerOriginalStyles[index];
         });
         
+        // Restore add-to-deck button visibility
+        if (addToDeckBtn) {
+            addToDeckBtn.style.display = addToDeckOriginalDisplay || '';
+        }
+        
         // Hide watermark again
         if (watermark) {
             watermark.style.display = originalWatermarkDisplay || 'none';
@@ -340,6 +352,11 @@ function downloadCardImage(button) {
         audioPlayers.forEach(function(player, index) {
             player.style.display = audioPlayerOriginalStyles[index];
         });
+        
+        // Restore add-to-deck button visibility on error
+        if (addToDeckBtn) {
+            addToDeckBtn.style.display = addToDeckOriginalDisplay || '';
+        }
         
         // Hide watermark on error
         if (watermark) {
@@ -401,6 +418,20 @@ function toggleDeck(cardId, button) {
     }
     
     saveDeck();
+}
+
+/**
+ * Clear all cards from the deck
+ */
+function clearDeck() {
+    if (userDeck.length === 0) {
+        return;
+    }
+    
+    if (confirm('Are you sure you want to clear all ' + userDeck.length + ' card(s) from your deck?')) {
+        userDeck = [];
+        saveDeck();
+    }
 }
 
 /**

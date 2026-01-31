@@ -128,7 +128,7 @@ function getTranslations($lang = 'en') {
             'seo_with_audio' => 'with audio pronunciation across all categories. Learn Spanish at your own pace with our',
             'seo_free_interactive' => 'free interactive flashcards',
             'seo_covering' => 'covering food, travel, business, grammar, and more - all without spending a penny.',
-            'seo_start_learning' => 'Start learning Spanish today with our free flashcards - visit https://www.facebook.com/groups/2642136512829821 for the latest updates.',
+            'seo_start_learning' => 'Start learning Spanish today with our free flashcards - visit <a href="https://www.facebook.com/groups/2642136512829821">our facebook group</a> for the latest updates.',
         ],
         'es' => [
             // Header
@@ -252,7 +252,7 @@ function getTranslations($lang = 'en') {
             'seo_with_audio' => 'con pronunciación de audio en todas las categorías. Aprende español a tu propio ritmo con nuestras',
             'seo_free_interactive' => 'tarjetas interactivas gratuitas',
             'seo_covering' => 'que cubren comida, viajes, negocios, gramática y más - todo sin gastar un centavo.',
-            'seo_start_learning' => 'Comienza a aprender español hoy con nuestras tarjetas gratuitas - visita https://www.facebook.com/groups/2642136512829821 para las últimas actualizaciones.',
+            'seo_start_learning' => 'Comienza a aprender español hoy con nuestras tarjetas gratuitas - visita <a href="https://www.facebook.com/groups/2642136512829821">nuestro grupo de facebook</a> para las últimas actualizaciones.',
         ]
     ];
     

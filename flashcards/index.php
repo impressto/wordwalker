@@ -801,12 +801,20 @@ $version = $packageJson['version'] ?? '1.0.0';
             </div>
             
             <div class="deck-link" style="display: none;">
-                <button id="generate-deck-btn" onclick="showExportDialog()">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="margin-right: 6px;">
-                        <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
-                    </svg>
-                    Generate Deck (<span id="deck-count">0</span>)
-                </button>
+                <div class="deck-split-button">
+                    <button id="generate-deck-btn" onclick="showExportDialog()">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+                        </svg>
+                        <span>Save Deck (<span id="deck-count">0</span>)</span>
+                    </button>
+                    <button id="clear-deck-btn" onclick="clearDeck()" title="Clear all cards from deck">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                        </svg>
+                        <span>Clear</span>
+                    </button>
+                </div>
             </div>
         </div>
         
