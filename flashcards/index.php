@@ -156,9 +156,11 @@ if ($categoryParam === 'all') {
     }
 }
 
-// Default to 'business' if no valid categories
+// Default to a random category if no valid categories selected
 if (empty($selectedCategories)) {
-    $selectedCategories = ['business'];
+    $categoryKeys = array_keys($categories);
+    $randomIndex = array_rand($categoryKeys);
+    $selectedCategories = [$categoryKeys[$randomIndex]];
 }
 
 // Create category key for session/display
