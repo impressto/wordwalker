@@ -631,7 +631,7 @@ export const entertainmentQuestions = [
     emoji: 'anime.png',
     question: '¿Qué película está dibujada?',
     translation: 'What movie is drawn?',
-    options: ['lel anime', 'la película animada', 'la animación'],
+    options: ['el anime', 'la película animada', 'la animación'],
     correctAnswer: 'el anime',
     hint: 'Anime  - Japanese animated films and series, distinct art style',
     usageExample: 'Mi hermano menor ve el anime japonés todos los fines de semana.',
