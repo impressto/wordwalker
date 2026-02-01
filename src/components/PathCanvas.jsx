@@ -13,6 +13,8 @@ import { loadGameState, saveGameState, clearGameState, hasSavedGameState, conver
 import { useCharacterAndTheme } from '../hooks/useCharacterAndTheme';
 import { useAnswerHandling } from '../hooks/useAnswerHandling';
 import { useCanvasRenderer } from '../hooks/useCanvasRenderer';
+import { useGameState } from '../hooks/useGameState';
+import { useDialogHandlers } from '../hooks/useDialogHandlers';
 import { initializeDataLayer, trackCategorySelection, trackQuestionAnswer, trackCategoryCompletion } from '../utils/gtm';
 import ScoreDisplay from './ScoreDisplay';
 import PathChoiceDialog from './PathChoiceDialog';
@@ -88,8 +90,6 @@ const PathCanvas = () => {
   const [hintUsed, setHintUsed] = useState(false); // Track if hint was used for current question
   const [streak, setStreak] = useState(0); // Track consecutive correct answers
   const [maxStreakInCategory, setMaxStreakInCategory] = useState(0); // Track highest streak achieved in current category
-  const [showSearch, setShowSearch] = useState(false); // Show search dialog
-  const [isSearchPaused, setIsSearchPaused] = useState(false); // Track if paused by search
   const [showCheckpointHint, setShowCheckpointHint] = useState(false); // Show hint popup when checkpoint is clicked
   
   // Game mode state: 'multichoice' or 'flashcard'
@@ -110,13 +110,6 @@ const PathCanvas = () => {
     const saved = localStorage.getItem('wordwalker-music-enabled');
     return saved === 'true'; // Default to false, only true if explicitly saved
   });
-  
-  // Game state persistence
-  const [showResumeDialog, setShowResumeDialog] = useState(false);
-  const [hasCheckedSavedState, setHasCheckedSavedState] = useState(false);
-  const [savedStats, setSavedStats] = useState(null);
-  const autosaveTimerRef = useRef(null);
-  const [isJustResumed, setIsJustResumed] = useState(false); // Track if game was just resumed (for emergency stop)
   
   // Walker sprite animation state
   const walkerFrameRef = useRef(0); // Current frame index
@@ -206,6 +199,132 @@ const PathCanvas = () => {
   // Initialize sound manager
   const soundManagerRef = useRef(null);
   const [audioInitialized, setAudioInitialized] = useState(false);
+  
+  // Game state persistence hook
+  const {
+    showResumeDialog,
+    setShowResumeDialog,
+    hasCheckedSavedState,
+    savedStats,
+    isJustResumed,
+    setIsJustResumed,
+    handleResumeGame,
+    handleNewGame,
+  } = useGameState({
+    // State setters
+    setTotalPoints,
+    setStreak,
+    setMaxStreakInCategory,
+    setSelectedPath,
+    setForkCategories,
+    setCompletedCategories,
+    setPresentedCategories,
+    setUsedQuestionIds,
+    setCorrectFirstTryIds,
+    setCorrectAnswersByCategory,
+    setSoundEnabled,
+    setVolume,
+    setMusicEnabled,
+    setCheckpointsAnswered,
+    setShowQuestion,
+    setCurrentQuestion,
+    setQuestionAnswered,
+    setFirstAttempt,
+    setIncorrectAnswers,
+    setShowTranslation,
+    setShowHint,
+    setHintUsed,
+    setShowChoice,
+    setIsPaused,
+    
+    // Refs
+    canvasRef,
+    offsetRef,
+    velocityRef,
+    forkPositionRef,
+    checkpointPositionRef,
+    targetOffsetRef,
+    checkpointFadeStartTimeRef,
+    checkpointSoundPlayedRef,
+    
+    // Current state values for saving
+    totalPoints,
+    streak,
+    maxStreakInCategory,
+    selectedPath,
+    checkpointsAnswered,
+    usedQuestionIds,
+    completedCategories,
+    forkCategories,
+    presentedCategories,
+    soundEnabled,
+    volume,
+    musicEnabled,
+    correctFirstTryIds,
+    correctAnswersByCategory,
+    
+    // Checkpoint config
+    checkpointSpacing,
+    
+    // Flash cards state
+    showFlashCards,
+  });
+  
+  // Dialog handlers hook
+  const {
+    showSearch,
+    isSearchPaused,
+    handleSearchClick,
+    handleSearchClose,
+    handleOpenShop,
+    handleCloseShop,
+    handlePurchaseCharacterWrapper,
+    handlePurchaseThemeWrapper,
+    handleFlashCardsAccept,
+    handleFlashCardsDecline,
+    handleFlashCardsComplete,
+    handleFlashCardsClose,
+    handleDebugOpenFlashCards,
+  } = useDialogHandlers({
+    // State
+    isPaused,
+    setIsPaused,
+    
+    // Character shop handlers
+    handleOpenCharacterShop,
+    handleCloseCharacterShop,
+    handlePurchaseCharacter,
+    handlePurchaseTheme,
+    
+    // State setters
+    setShowFlashCards,
+    setShowFlashCardsOffer,
+    setShowChoice,
+    setSelectedPath,
+    setCategoryForFlashCards,
+    setStreakAtCompletion,
+    setOpenedFromUrl,
+    setCheckpointsAnswered,
+    setIsIdleAnimationMode,
+    
+    // Refs
+    canvasRef,
+    offsetRef,
+    forkPositionRef,
+    checkpointPositionRef,
+    checkpointFadeStartTimeRef,
+    checkpointSoundPlayedRef,
+    
+    // Current state
+    streak,
+    selectedPath,
+    gameMode,
+    openedFromUrl,
+    checkpointsAnswered,
+    currentCheckpointLimit,
+    totalPoints,
+    setTotalPoints,
+  });
   
   useEffect(() => {
     // Initialize GTM data layer with experiment data
@@ -393,60 +512,6 @@ const PathCanvas = () => {
     }
   }, [showSearch, audioInitialized, soundEnabled, volume, musicEnabled]);
 
-  // Check for saved game state on component mount
-  useEffect(() => {
-    if (!hasCheckedSavedState && hasSavedGameState()) {
-      const loadedState = loadGameState();
-      if (loadedState) {
-        const statsToSet = {
-          totalPoints: loadedState.totalPoints,
-          streak: loadedState.streak,
-          checkpointsAnswered: loadedState.checkpointsAnswered,
-          correctFirstTryIds: loadedState.correctFirstTryIds || [],
-          correctAnswersByCategory: loadedState.correctAnswersByCategory || {},
-        };
-        setSavedStats(statsToSet);
-      }
-      setShowResumeDialog(true);
-      setHasCheckedSavedState(true);
-    } else {
-      setHasCheckedSavedState(true);
-    }
-  }, [hasCheckedSavedState]);
-
-  // Auto-save game state periodically
-  useEffect(() => {
-    // Only auto-save if game has started (path selected)
-    if (!selectedPath) return;
-
-    autosaveTimerRef.current = setInterval(() => {
-      const gameState = {
-        totalPoints,
-        streak,
-        maxStreakInCategory,
-        selectedPath,
-        checkpointsAnswered,
-        usedQuestionIds,
-        completedCategories,
-        forkCategories,
-        presentedCategories,
-        soundEnabled,
-        volume,
-        musicEnabled,
-        correctFirstTryIds,
-        correctAnswersByCategory,
-        offsetRef: offsetRef.current,
-      };
-      saveGameState(gameState);
-    }, 5000); // Auto-save every 5 seconds
-
-    return () => {
-      if (autosaveTimerRef.current) {
-        clearInterval(autosaveTimerRef.current);
-      }
-    };
-  }, [totalPoints, streak, maxStreakInCategory, selectedPath, checkpointsAnswered, usedQuestionIds, completedCategories, forkCategories, presentedCategories, soundEnabled, volume, musicEnabled, correctFirstTryIds, correctAnswersByCategory]);
-
   // Preload SVG emoji images when question changes
   useEffect(() => {
     if (currentQuestion && isEmojiSvg(currentQuestion.emoji)) {
@@ -473,104 +538,6 @@ const PathCanvas = () => {
       }
     }
   }, [currentQuestion]);
-
-  // Handle resume game
-  const handleResumeGame = () => {
-    const loadedState = loadGameState();
-    if (loadedState) {
-      const convertedState = convertLoadedState(loadedState);
-      setTotalPoints(convertedState.totalPoints);
-      setStreak(convertedState.streak);
-      setMaxStreakInCategory(convertedState.maxStreakInCategory || 0);
-      // Don't restore selectedPath - let the user choose category again when resuming
-      // This fixes a bug where the choice dialog wouldn't show when resuming
-      setSelectedPath(null);
-      setCheckpointsAnswered(convertedState.checkpointsAnswered);
-      setUsedQuestionIds(convertedState.usedQuestionIds);
-      setCompletedCategories(convertedState.completedCategories);
-      setForkCategories(convertedState.forkCategories);
-      setPresentedCategories(convertedState.presentedCategories || new Set());
-      setSoundEnabled(convertedState.soundEnabled);
-      setVolume(convertedState.volume);
-      setMusicEnabled(convertedState.musicEnabled !== undefined ? convertedState.musicEnabled : true);
-      setCorrectFirstTryIds(convertedState.correctFirstTryIds);
-      setCorrectAnswersByCategory(convertedState.correctAnswersByCategory);
-      
-      // Restore scroll position and calculate next checkpoint
-      offsetRef.current = convertedState.offsetRef || 0;
-      
-      // Reset velocity and target to ensure smooth forward movement from restored position
-      velocityRef.current = 0;
-      targetOffsetRef.current = null;
-      
-      // Recalculate checkpoint position based on how many checkpoints have been answered
-      const nextCheckpointIndex = convertedState.checkpointsAnswered;
-      checkpointPositionRef.current = forkPositionRef.current + 1500 + (nextCheckpointIndex * checkpointSpacing);
-      
-      // Reset checkpoint fade animation to trigger it fresh
-      checkpointFadeStartTimeRef.current = null;
-      checkpointSoundPlayedRef.current = false;
-      
-      // Set flag to indicate game was just resumed (for emergency stop safeguard)
-      setIsJustResumed(true);
-      
-      // Pause the game on resume so animation doesn't start until user selects a category
-      setIsPaused(true);
-      
-      // Position camera to show fork and trigger the choice dialog
-      // We'll use a small delay to ensure the canvas is ready
-      // Skip showing choice dialog if flash cards are already showing (from URL parameter)
-      setTimeout(() => {
-        const canvas = canvasRef.current;
-        if (canvas) {
-          offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
-        }
-        // Only show choice dialog if not showing flash cards
-        if (!showFlashCards) {
-          setShowChoice(true);
-        }
-      }, 100);
-      
-      setShowResumeDialog(false);
-    }
-  };
-
-  // Handle new game
-  const handleNewGame = () => {
-    // Load current correctAnswersByCategory before clearing state
-    const loadedState = loadGameState();
-    const persistedCorrectAnswers = loadedState?.correctAnswersByCategory || {};
-    
-    clearGameState();
-    setTotalPoints(0);
-    setStreak(0);
-    setMaxStreakInCategory(0);
-    setSelectedPath(null);
-    setCheckpointsAnswered(0);
-    setUsedQuestionIds({});
-    setCompletedCategories(new Set());
-    setPresentedCategories(new Set());
-    setCorrectFirstTryIds({});
-    setCorrectAnswersByCategory(persistedCorrectAnswers); // Preserve learned questions
-    
-    // Generate fresh fork categories for new game
-    const freshCategories = initializeForkCategories();
-    setForkCategories(freshCategories);
-    setPresentedCategories(new Set(extractCategoryIds(freshCategories)));
-    
-    setShowQuestion(false);
-    setCurrentQuestion(null);
-    setQuestionAnswered(false);
-    setFirstAttempt(true);
-    setIncorrectAnswers([]);
-    setShowTranslation(false);
-    setShowHint(false);
-    setHintUsed(false);
-    setShowChoice(false);
-    setIsPaused(false);
-    setIsJustResumed(false); // Clear the just-resumed flag
-    setShowResumeDialog(false);
-  };
 
   useEffect(() => {
     // Track whether this effect is still active (for cleanup)
@@ -1010,25 +977,6 @@ const PathCanvas = () => {
     setIsPaused(false);
   };
 
-
-  const handleSearchClick = () => {
-    // Pause the game if it's not already paused by something else
-    if (!isPaused) {
-      setIsPaused(true);
-      setIsSearchPaused(true);
-    }
-    setShowSearch(true);
-  };
-
-  const handleSearchClose = () => {
-    setShowSearch(false);
-    // Only resume if we were the ones who paused it
-    if (isSearchPaused) {
-      setIsPaused(false);
-      setIsSearchPaused(false);
-    }
-  };
-
   const handleHintClick = () => {
     if (!currentQuestion || hintUsed) return;
     
@@ -1040,125 +988,6 @@ const PathCanvas = () => {
     if (soundManagerRef.current) {
       soundManagerRef.current.playChoice(); // Reuse choice sound or add a new hint sound
     }
-  };
-
-  // Character and theme shop handlers with pause management
-  const handleOpenShop = () => {
-    handleOpenCharacterShop();
-    setIsPaused(true);
-  };
-
-  const handleCloseShop = () => {
-    handleCloseCharacterShop();
-    setIsPaused(false);
-  };
-
-  const handlePurchaseCharacterWrapper = (characterId, cost) => {
-    handlePurchaseCharacter(characterId, cost, totalPoints, setTotalPoints);
-  };
-
-  const handlePurchaseThemeWrapper = (themeId, cost) => {
-    handlePurchaseTheme(themeId, cost, totalPoints, setTotalPoints);
-  };
-
-  // Flash cards handlers
-  const handleFlashCardsAccept = () => {
-    setShowFlashCardsOffer(false);
-    setShowFlashCards(true);
-  };
-
-  const handleFlashCardsDecline = () => {
-    setShowFlashCardsOffer(false);
-    // Continue to category selector
-    // Pause immediately (should already be paused, but be explicit)
-    setIsPaused(true);
-    
-    setTimeout(() => {
-      const canvas = canvasRef.current;
-      if (canvas) {
-        offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
-      }
-      setShowChoice(true);
-    }, 100);
-  };
-
-  const handleFlashCardsComplete = () => {
-    setShowFlashCards(false);
-    
-    // Check if we're in flashcard mode as part of the game flow
-    if (gameMode === 'flashcard' && selectedPath) {
-      // Resume game and move to next checkpoint (similar to question flow)
-      setIsPaused(false);
-      setCheckpointsAnswered(prev => prev + 1);
-      
-      // Position next checkpoint
-      const canvas = canvasRef.current;
-      if (canvas) {
-        checkpointPositionRef.current = offsetRef.current + canvas.width * 0.5 + 95;
-      }
-      checkpointFadeStartTimeRef.current = null;
-      checkpointSoundPlayedRef.current = false;
-      
-      // Check if category is complete
-      if (checkpointsAnswered + 1 >= currentCheckpointLimit) {
-        // Category completed, return to fork
-        setTimeout(() => {
-          if (canvas) {
-            offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
-          }
-          setIsPaused(true);
-          setShowChoice(true);
-          setSelectedPath(null);
-        }, 100);
-      }
-    } else {
-      // Debug mode or original flow - continue to category selector
-      // Pause immediately to stop walker movement
-      setIsPaused(true);
-      
-      setTimeout(() => {
-        const canvas = canvasRef.current;
-        if (canvas) {
-          offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
-        }
-        setShowChoice(true);
-      }, 100);
-    }
-  };
-
-  const handleFlashCardsClose = () => {
-    // User clicked close button
-    setShowFlashCards(false);
-    
-    // If opened from URL, don't show path choice - just close
-    if (openedFromUrl) {
-      setOpenedFromUrl(false); // Reset the flag
-      setIsPaused(false); // Unpause the game
-      // Don't show path choice dialog - user can use category selector if they want
-    } else {
-      // Normal flow - return to path choice dialog
-      setIsPaused(true);
-      
-      // Return to fork/category selection
-      setTimeout(() => {
-        const canvas = canvasRef.current;
-        if (canvas) {
-          offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
-        }
-        setShowChoice(true);
-        setSelectedPath(null);
-      }, 100);
-    }
-  };
-
-  // Debug handler to open flash cards directly from category selector
-  const handleDebugOpenFlashCards = () => {
-    // Set default values for testing
-    setCategoryForFlashCards('food');
-    setStreakAtCompletion(streak || 5); // Use current streak or default to 5
-    setShowChoice(false);
-    setIsIdleAnimationMode(false); // Reset idle animation mode
-    setShowFlashCards(true);
   };
 
   // Check if coordinates are over checkpoint
