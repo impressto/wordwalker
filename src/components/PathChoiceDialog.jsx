@@ -268,14 +268,48 @@ const PathChoiceDialog = ({ forkCategories, getCategoryById, onPathChoice, onOpe
           <span style={{ fontSize: window.innerWidth < 380 ? '24px' : '32px' }}>{category.emoji}</span>
         )}
         <span style={{ fontSize: window.innerWidth < 380 ? '11px' : '14px', textAlign: 'center' }}>{category.displayName}</span>
-        <span style={{ 
-          fontSize: window.innerWidth < 380 ? '9px' : '11px', 
-          textAlign: 'center',
-          opacity: 0.9,
-          marginTop: '2px'
-        }}>
-          {masteredCount}/{totalCount}
-        </span>
+        <div 
+          id="mastery-count"
+          style={{ 
+            width: '90%',
+            height: window.innerWidth < 380 ? '14px' : '16px',
+            backgroundColor: 'rgba(0, 0, 0, 0.3)',
+            borderRadius: '8px',
+            marginTop: 'auto',
+            position: 'relative',
+            overflow: 'hidden',
+          }}
+        >
+          {/* Progress fill */}
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              height: '100%',
+              width: totalCount > 0 ? `${(masteredCount / totalCount) * 100}%` : '0%',
+              backgroundColor: isFullyMastered ? '#FFD700' : 'rgba(255, 255, 255, 0.4)',
+              borderRadius: '8px',
+              transition: 'width 0.3s ease',
+            }}
+          />
+          {/* Progress text */}
+          <span
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              fontSize: window.innerWidth < 380 ? '9px' : '11px',
+              fontWeight: 'bold',
+              color: 'white',
+              textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            {masteredCount}/{totalCount}
+          </span>
+        </div>
         {isFullyMastered && (
           <span style={{ fontSize: '16px', position: 'absolute', top: '5px', right: '5px' }}>✨</span>
         )}
