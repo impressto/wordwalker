@@ -190,6 +190,9 @@ const PathCanvas = () => {
   
   // Track if user came from a URL parameter (to skip showing path choice on flash cards close)
   const [openedFromUrl, setOpenedFromUrl] = useState(false);
+  
+  // Track if we should skip camera reposition when showing path choice dialog
+  const skipCameraRepositionRef = useRef(false);
 
   // Easter egg - preview mode when walker is held
   const [isPreviewMode, setIsPreviewMode] = useState(false);
@@ -700,6 +703,11 @@ const PathCanvas = () => {
   // When dialog is visible AND animation is paused, smoothly pan the fork to the right side
   useEffect(() => {
     if (showChoice && isPaused) {
+      // Check if we should skip the camera reposition (e.g., when closing question dialog)
+      if (skipCameraRepositionRef.current) {
+        skipCameraRepositionRef.current = false; // Reset the flag
+        return;
+      }
       const canvas = canvasRef.current;
       if (canvas) {
         const width = canvas.width;
@@ -1521,6 +1529,9 @@ const PathCanvas = () => {
     setShowTranslation(false);
     setShowHint(false);
     setHintUsed(false);
+    setIsPaused(true); // Pause the game
+    // Skip camera reposition - maintain current parallax position
+    skipCameraRepositionRef.current = true;
     setShowChoice(true); // Return to path choice
   };
 
