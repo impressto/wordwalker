@@ -14,6 +14,7 @@ function getTranslations($lang = 'en') {
             // Category selector
             'choose_categories' => 'Choose Categories:',
             'click_to_toggle' => '(Click to add/remove)',
+            'click_to_expand' => '(Click group to expand)',
             'select_categories' => 'Select Categories',
             
             // Search
@@ -138,6 +139,7 @@ function getTranslations($lang = 'en') {
             // Category selector
             'choose_categories' => 'Elegir Categorías:',
             'click_to_toggle' => '(Haz clic para agregar/quitar)',
+            'click_to_expand' => '(Haz clic en grupo para expandir)',
             'select_categories' => 'Seleccionar Categorías',
             
             // Search

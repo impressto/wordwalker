@@ -42,6 +42,66 @@ function toggleCategories() {
     localStorage.setItem('category-selector-expanded', selector.classList.contains('expanded'));
 }
 
+// Toggle category group expand/collapse
+function toggleCategoryGroup(groupId) {
+    const group = document.querySelector(`.category-group[data-group="${groupId}"]`);
+    if (!group) return;
+    
+    const wasExpanded = group.classList.contains('expanded');
+    
+    // Toggle this group
+    group.classList.toggle('expanded');
+    
+    // Update aria-expanded
+    const header = group.querySelector('.category-group-header');
+    if (header) {
+        header.setAttribute('aria-expanded', !wasExpanded);
+    }
+    
+    // Save expanded groups to localStorage
+    saveExpandedGroups();
+}
+
+// Save expanded groups state
+function saveExpandedGroups() {
+    const expandedGroups = [];
+    document.querySelectorAll('.category-group.expanded').forEach(function(group) {
+        expandedGroups.push(group.dataset.group);
+    });
+    localStorage.setItem('category-groups-expanded', JSON.stringify(expandedGroups));
+}
+
+// Restore expanded groups state
+function restoreExpandedGroups() {
+    try {
+        const saved = localStorage.getItem('category-groups-expanded');
+        if (saved) {
+            const expandedGroups = JSON.parse(saved);
+            expandedGroups.forEach(function(groupId) {
+                const group = document.querySelector(`.category-group[data-group="${groupId}"]`);
+                if (group) {
+                    group.classList.add('expanded');
+                    const header = group.querySelector('.category-group-header');
+                    if (header) {
+                        header.setAttribute('aria-expanded', 'true');
+                    }
+                }
+            });
+        } else {
+            // Auto-expand groups that have selected categories
+            document.querySelectorAll('.category-group.has-selected').forEach(function(group) {
+                group.classList.add('expanded');
+                const header = group.querySelector('.category-group-header');
+                if (header) {
+                    header.setAttribute('aria-expanded', 'true');
+                }
+            });
+        }
+    } catch (e) {
+        console.error('Error restoring expanded groups:', e);
+    }
+}
+
 // Language toggle function
 function toggleLanguage(currentLang) {
     // Use the language passed from PHP (which knows about session state)
@@ -104,6 +164,9 @@ document.addEventListener('DOMContentLoaded', function() {
             selector.classList.add('expanded');
         }
     }
+    
+    // Restore expanded category groups
+    restoreExpandedGroups();
     
     // Load deck from localStorage
     loadDeck();

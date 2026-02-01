@@ -127,6 +127,46 @@ $categories = [
     ]
 ];
 
+// Category groups for hierarchical navigation (Miller's Law: ~5 items per level)
+$categoryGroups = [
+    'everyday_life' => [
+        'name_en' => 'Everyday Life',
+        'name_es' => 'Vida Cotidiana',
+        'emoji' => '🏠',
+        'categories' => ['food', 'shopping', 'daily_routines']
+    ],
+    'people_conversations' => [
+        'name_en' => 'People & Conversations',
+        'name_es' => 'Gente y Conversaciones',
+        'emoji' => '👥',
+        'categories' => ['greetings', 'people']
+    ],
+    'places_travel' => [
+        'name_en' => 'Places & Travel',
+        'name_es' => 'Lugares y Viajes',
+        'emoji' => '✈️',
+        'categories' => ['transportation', 'directions', 'accommodation', 'environment']
+    ],
+    'work_practical' => [
+        'name_en' => 'Work & Practical',
+        'name_es' => 'Trabajo y Práctico',
+        'emoji' => '💼',
+        'categories' => ['business', 'medical', 'numbers']
+    ],
+    'leisure_lifestyle' => [
+        'name_en' => 'Leisure & Lifestyle',
+        'name_es' => 'Ocio y Estilo de Vida',
+        'emoji' => '🎭',
+        'categories' => ['recreation', 'entertainment', 'plants_animals']
+    ],
+    'language_grammar' => [
+        'name_en' => 'How Spanish Works',
+        'name_es' => 'Cómo Funciona el Español',
+        'emoji' => '📚',
+        'categories' => ['grammar']
+    ]
+];
+
 // Start session for randomization persistence
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
@@ -406,7 +446,7 @@ $version = $packageJson['version'] ?? '1.0.0';
       
 
             <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 20px auto;">
-                <img src="https://impressto.ca/wordwalker/public/images/walkers/walker-dog-avatar.png" alt="Dog walker character" width="100" height="100" class="walker-avatar" style="max-width: 100px; height: auto;">
+                <img src="https://impressto.ca/wordwalker/public/images/walkers/walker-dog-avatar.png" alt="Dog walker character" width="100" height="100" class="walker-avatar" style="max-width: 100px; height: auto; margin-right: 10px;">
                 <img src="https://impressto.ca/wordwalker/images/wordwalker-flashcards-logo-<?php echo $currentLang; ?>.png" alt="WordWalker Free Flash Cards" width="400" height="120" class="flashcards-logo" style="max-width: 400px; height: auto;">
                 <img src="https://impressto.ca/wordwalker/public/images/walkers/walker-default-avatar.png" alt="Default walker character" width="60" height="60" class="walker-avatar" style="max-width: 60px; height: auto;">
             </div>
@@ -442,43 +482,68 @@ $version = $packageJson['version'] ?? '1.0.0';
         
         <div class="category-selector">
             <div class="category-selector-header">
-                <h3><?php echo t('choose_categories'); ?> <span style="font-size: 0.85em; color: #666;"><?php echo t('click_to_toggle'); ?></span></h3>
+                <h3><?php echo t('choose_categories'); ?> <span style="font-size: 0.85em; color: #666;"><?php echo t('click_to_expand'); ?></span></h3>
                 <button class="category-toggle-btn" onclick="toggleCategories()" aria-label="<?php echo t('select_categories'); ?>">
                     <span class="toggle-text"><?php echo t('select_categories'); ?></span>
                     <span class="toggle-icon">▼</span>
                 </button>
             </div>
-            <div class="category-links" id="category-links">
-                <?php foreach ($categories as $catId => $catInfo): 
-                    $isSelected = in_array($catId, $selectedCategories);
+            <div class="category-groups" id="category-links">
+                <?php foreach ($categoryGroups as $groupId => $groupInfo): 
+                    $groupName = $currentLang === 'es' ? $groupInfo['name_es'] : $groupInfo['name_en'];
+                    $groupCategories = $groupInfo['categories'];
                     
-                    // Build new category list
-                    if ($isSelected) {
-                        // Remove this category
-                        $newCategories = array_filter($selectedCategories, function($c) use ($catId) {
-                            return $c !== $catId;
-                        });
-                        // If removing the last one, keep it selected
-                        if (empty($newCategories)) {
-                            $newCategories = [$catId];
+                    // Check if any category in this group is selected
+                    $hasSelectedCategory = false;
+                    $selectedCount = 0;
+                    foreach ($groupCategories as $catId) {
+                        if (in_array($catId, $selectedCategories)) {
+                            $hasSelectedCategory = true;
+                            $selectedCount++;
                         }
-                    } else {
-                        // Add this category
-                        $newCategories = array_merge($selectedCategories, [$catId]);
                     }
-                    $newCategoryParam = implode(',', $newCategories);
                 ?>
-                    <a href="?category=<?php echo urlencode($newCategoryParam); ?>&page=1&lang=<?php echo $currentLang; ?>" 
-                       class="<?php echo $isSelected ? 'active' : ''; ?>">
-                        <?php if ($isSelected): ?>
-                            <span class="category-check">✓</span>
+                <div class="category-group <?php echo $hasSelectedCategory ? 'has-selected' : ''; ?>" data-group="<?php echo $groupId; ?>">
+                    <button class="category-group-header" onclick="toggleCategoryGroup('<?php echo $groupId; ?>')" aria-expanded="false">
+                        <span class="group-emoji"><?php echo $groupInfo['emoji']; ?></span>
+                        <span class="group-name"><?php echo htmlspecialchars($groupName); ?></span>
+                        <?php if ($selectedCount > 0): ?>
+                            <span class="group-badge"><?php echo $selectedCount; ?></span>
                         <?php endif; ?>
-                        <img src="https://impressto.ca/wordwalker/dist/images/categories/<?php echo urlencode($catId); ?>.png" 
-                             alt="<?php echo htmlspecialchars(t('category_' . $catId)); ?>" 
-                             class="category-icon"
-                             onerror="this.style.display='none'">
-                        <span><?php echo htmlspecialchars(t('category_' . $catId)); ?></span>
-                    </a>
+                        <span class="group-toggle-icon">▶</span>
+                    </button>
+                    <div class="category-group-items">
+                        <?php foreach ($groupCategories as $catId): 
+                            if (!isset($categories[$catId])) continue;
+                            $isSelected = in_array($catId, $selectedCategories);
+                            
+                            // Build new category list
+                            if ($isSelected) {
+                                $newCategories = array_filter($selectedCategories, function($c) use ($catId) {
+                                    return $c !== $catId;
+                                });
+                                if (empty($newCategories)) {
+                                    $newCategories = [$catId];
+                                }
+                            } else {
+                                $newCategories = array_merge($selectedCategories, [$catId]);
+                            }
+                            $newCategoryParam = implode(',', $newCategories);
+                        ?>
+                            <a href="?category=<?php echo urlencode($newCategoryParam); ?>&page=1&lang=<?php echo $currentLang; ?>" 
+                               class="category-item <?php echo $isSelected ? 'active' : ''; ?>">
+                                <?php if ($isSelected): ?>
+                                    <span class="category-check">✓</span>
+                                <?php endif; ?>
+                                <img src="https://impressto.ca/wordwalker/dist/images/categories/<?php echo urlencode($catId); ?>.png" 
+                                     alt="<?php echo htmlspecialchars(t('category_' . $catId)); ?>" 
+                                     class="category-icon"
+                                     onerror="this.style.display='none'">
+                                <span><?php echo htmlspecialchars(t('category_' . $catId)); ?></span>
+                            </a>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
                 <?php endforeach; ?>
             </div>
         </div>
