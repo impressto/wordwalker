@@ -798,10 +798,6 @@ $version = $packageJson['version'] ?? '1.0.0';
                 <a href="/contact.php"><?php echo t('report_error'); ?></a>
             </div>
             
-            <div class="about-link">
-                <a href="/about.php"><?php echo t('learn_more'); ?></a>
-            </div>
-            
             <div class="deck-link" style="display: none;">
                 <div class="deck-split-button">
                     <button id="generate-deck-btn" onclick="showExportDialog()">

@@ -950,33 +950,7 @@ h1 {
     box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
 }
 
-.about-link {
-    flex: 1;
-    min-width: 300px;
-    text-align: center;
-    padding: 20px;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
-    border-radius: 12px;
-    border: 2px solid #e2e8f0;
-}
 
-.about-link a {
-    display: inline-block;
-    padding: 10px 24px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    text-decoration: none;
-    border-radius: 20px;
-    font-weight: 600;
-    font-size: 1em;
-    transition: all 0.3s ease;
-}
-
-.about-link a:hover {
-    background: linear-gradient(135deg, #5568d3 0%, #653a8b 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
-}
 
 /* Deck Link Styling */
 .deck-link {
@@ -1338,14 +1312,12 @@ h1 {
         flex-direction: column;
     }
     
-    .feedback-link,
-    .about-link {
+    .feedback-link {
         min-width: 100%;
         padding: 15px;
     }
     
-    .feedback-link a,
-    .about-link a {
+    .feedback-link a {
         font-size: 0.9em;
         padding: 10px 15px;
         display: block;

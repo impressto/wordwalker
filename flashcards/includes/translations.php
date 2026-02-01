@@ -37,7 +37,7 @@ function getTranslations($lang = 'en') {
             // Pagination
             'page_of' => 'Page',
             'of' => 'of',
-            'total_cards' => 'total flash cards',
+            'total_cards' => 'total flash cards for selected categories',
             'previous' => '‹ Previous',
             'next' => 'Next ›',
             'first' => '« First',
@@ -128,7 +128,7 @@ function getTranslations($lang = 'en') {
             'seo_with_audio' => 'with audio pronunciation across all categories. Learn Spanish at your own pace with our',
             'seo_free_interactive' => 'free interactive flashcards',
             'seo_covering' => 'covering food, travel, business, grammar, and more - all without spending a penny.',
-            'seo_start_learning' => 'Start learning Spanish today with our free flashcards - visit <a href="https://www.facebook.com/groups/2642136512829821">our facebook group</a> for the latest updates.',
+            'seo_start_learning' => 'Start learning Spanish today with these free flashcards - read our <a href="/about.php">about page</a> or visit <a href="https://www.facebook.com/groups/2642136512829821">our facebook group</a> for the latest updates.',
         ],
         'es' => [
             // Header
@@ -161,7 +161,7 @@ function getTranslations($lang = 'en') {
             // Pagination
             'page_of' => 'Página',
             'of' => 'de',
-            'total_cards' => 'tarjetas en total',
+            'total_cards' => 'tarjetas en total para las categorías seleccionadas',
             'previous' => '‹ Anterior',
             'next' => 'Siguiente ›',
             'first' => '« Primera',
