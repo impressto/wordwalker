@@ -1,12 +1,12 @@
 /**
  * ScoreDisplay Component
- * Displays points, streak indicator, and category progress at the bottom of the screen
+ * Displays points and streak indicator at the bottom of the screen
  */
 
 import { useState, useEffect } from 'react';
 import './ScoreDisplay.css';
 
-const ScoreDisplay = ({ totalPoints, streak, selectedPath, forkCategories, checkpointsAnswered, checkpointsPerCategory, getCategoryById, onOpenShop, hasAffordablePurchase }) => {
+const ScoreDisplay = ({ totalPoints, streak, onOpenShop, hasAffordablePurchase }) => {
   // Detect if mobile screen with reactive state
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
   
@@ -75,26 +75,6 @@ const ScoreDisplay = ({ totalPoints, streak, selectedPath, forkCategories, check
           </>
         )}
       </div>
-      
-      {/* Category Progress */}
-      {selectedPath && (
-        <div id="score-category-progress" style={{
-          padding: isMobile ? '8px 10px' : '10px 16px',
-          backgroundColor: 'rgba(33, 150, 243, 0.9)',
-          borderRadius: '8px',
-          boxShadow: '0 2px 4px rgba(0,0,0,0.2)',
-          fontSize: isMobile ? '13px' : '16px',
-          fontWeight: 'bold',
-          color: 'white',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '5px',
-          whiteSpace: 'nowrap',
-        }}>
-          <span>{getCategoryById(forkCategories[selectedPath] || selectedPath)?.displayName}</span>
-          <span>{checkpointsAnswered}/{checkpointsPerCategory}</span>
-        </div>
-      )}
     </div>
   );
 };

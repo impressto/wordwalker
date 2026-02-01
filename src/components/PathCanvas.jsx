@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { getRandomQuestionByCategory, getRandomUnusedQuestionByCategory, getUnmasteredQuestionCount, shuffleOptions, getAllCategoryIds, getCategoryById, preloadAllCategories } from '../config/questionsLoader';
-import { isCategoryCompleted, addCorrectAnswer, addToCorrectFirstTry, addUsedQuestion, addToFirstTryByCategory } from '../utils/questionTracking';
+import { isCategoryCompleted, addCorrectAnswer, addToCorrectFirstTry, addUsedQuestion, addToFirstTryByCategory, getCategoryCorrectAnswerCount, getCategoryQuestionCount } from '../utils/questionTracking';
 import { generateNewForkCategories, initializeForkCategories, extractCategoryIds } from '../utils/categoryRotation';
 import { getTranslationsObject, preloadAllTranslations } from '../config/translationsLoader';
 import gameSettings, { getStreakColor, getTranslationBoxDuration } from '../config/gameSettings';
@@ -139,6 +139,9 @@ const PathCanvas = () => {
   
   // Dynamic checkpoint limit - frozen when category is selected
   const [currentCheckpointLimit, setCurrentCheckpointLimit] = useState(checkpointsPerCategory);
+  
+  // Track total questions in current category (for progress display)
+  const [currentCategoryTotalQuestions, setCurrentCategoryTotalQuestions] = useState(0);
   
   // Track used question IDs to prevent duplicates within a category walk
   const [usedQuestionIds, setUsedQuestionIds] = useState({});
@@ -1615,14 +1618,16 @@ const PathCanvas = () => {
     setMaxStreakInCategory(0); // Reset max streak for new category
     
     // Calculate and set the checkpoint limit for this category
-    // If less than 10 unmastered questions, use that count as the limit
+    // Set the limit to the number of unmastered questions so user continues until all are mastered
     const masteredIds = correctAnswersByCategory[category] || [];
     const unmasteredCount = await getUnmasteredQuestionCount(category, masteredIds);
-    const categoryCheckpointLimit = (unmasteredCount < 10 && unmasteredCount > 0) 
-      ? unmasteredCount 
-      : checkpointsPerCategory;
+    // Use the actual unmastered count - user continues until all questions are mastered
+    const categoryCheckpointLimit = unmasteredCount > 0 ? unmasteredCount : checkpointsPerCategory;
     
-    console.log(`🎯 Setting checkpoint limit for ${category}: ${categoryCheckpointLimit} (unmastered: ${unmasteredCount})`);
+    // Get total question count for progress display
+    const totalQuestions = await getCategoryQuestionCount(category);
+    setCurrentCategoryTotalQuestions(totalQuestions);
+    
     setCurrentCheckpointLimit(categoryCheckpointLimit);
     
     // Position the first checkpoint to appear centered when walker stops
@@ -2074,11 +2079,6 @@ const PathCanvas = () => {
       <ScoreDisplay
         totalPoints={totalPoints}
         streak={streak}
-        selectedPath={selectedPath}
-        forkCategories={forkCategories}
-        checkpointsAnswered={checkpointsAnswered}
-        checkpointsPerCategory={checkpointsPerCategory}
-        getCategoryById={getCategoryById}
         onOpenShop={handleOpenShop}
         hasAffordablePurchase={hasAffordablePurchase(totalPoints)}
       />
@@ -2142,6 +2142,13 @@ const PathCanvas = () => {
             questionTranslation={currentQuestion.translation}
             onClose={handleCloseQuestion}
             gameMode={gameMode}
+            categoryProgress={{
+              answered: getCategoryCorrectAnswerCount(
+                forkCategories[selectedPath] || selectedPath,
+                correctAnswersByCategory
+              ),
+              total: currentCategoryTotalQuestions
+            }}
           />
         </div>
       )}

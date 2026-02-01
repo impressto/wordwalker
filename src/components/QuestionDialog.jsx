@@ -18,7 +18,8 @@ const QuestionDialog = ({
   onHintClick,
   questionTranslation,
   onClose,
-  gameMode
+  gameMode,
+  categoryProgress = { answered: 0, total: 0 }
 }) => {
   const [dialogTop, setDialogTop] = useState('100px');
   const [isTranslationVisible, setIsTranslationVisible] = useState(true);
@@ -462,6 +463,53 @@ const QuestionDialog = ({
               )}
             </div>
           )}
+        </div>
+      )}
+
+      {/* Progress bar showing category progress - beneath potential points */}
+      {categoryProgress.total > 0 && (
+        <div 
+          id="category-progress-bar"
+          style={{ 
+            width: '100%',
+            height: '14px',
+            backgroundColor: 'rgba(0, 0, 0, 0.2)',
+            borderRadius: '7px',
+            marginTop: '8px',
+            position: 'relative',
+            overflow: 'hidden',
+          }}
+        >
+          <div
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              height: '100%',
+              width: `${(categoryProgress.answered / categoryProgress.total) * 100}%`,
+              backgroundColor: categoryProgress.answered === categoryProgress.total
+                ? '#FFD700'
+                : '#4CAF50',
+              borderRadius: '7px',
+              transition: 'width 0.3s ease',
+            }}
+          />
+          {/* Progress text overlay */}
+          <span
+            style={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              fontSize: '10px',
+              fontWeight: 'bold',
+              color: 'white',
+              textShadow: '0 1px 2px rgba(0, 0, 0, 0.5)',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            {categoryProgress.answered}/{categoryProgress.total} mastered
+          </span>
         </div>
       )}
 

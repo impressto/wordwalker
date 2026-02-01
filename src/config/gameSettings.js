@@ -10,8 +10,9 @@ const gameSettings = {
     // This prevents accidental data loss while allowing new players frictionless experience
     confirmationThreshold: 20,
     
-    // Number of questions to answer before returning to the fork to select a new category
-    // Player must answer this many correct (or incorrect) before moving to next category
+    // Fallback number of questions when category has no unmastered questions
+    // Normally, the game continues until all questions in a category are mastered
+    // This value is only used as a fallback if the unmastered count is 0
     checkpointsPerCategory: 10,
   },
 
