@@ -350,16 +350,34 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
   }, [actualCardIndex, category, isOnline]);
 
   // Auto-play audio when enabled and audio is available
+  // If usage modal is open, play example audio instead of answer audio
   useEffect(() => {
-    if (autoPlayEnabled && audioAvailable && !audioLoading && isOnline && !isPlaying) {
-      // Small delay to ensure audio is preloaded
-      const timer = setTimeout(() => {
-        handlePlayAudio();
-      }, 400);
-
-      return () => clearTimeout(timer);
+    if (autoPlayEnabled && !audioLoading && isOnline && !isPlaying) {
+      // If usage modal is open, play example audio instead
+      if (showUsageModal && exampleAudioAvailable && !exampleAudioLoading && !isPlayingExample) {
+        const playExampleAudio = async () => {
+          const cardData = await getFlashCardData(category, actualCardIndex, selectedCharacter, currentTheme);
+          if (cardData?.usageExample) {
+            setIsPlayingExample(true);
+            await pronunciationAudio.playExample(cardData.usageExample, category, volume);
+            setTimeout(() => {
+              setIsPlayingExample(false);
+            }, 5000);
+          }
+        };
+        const timer = setTimeout(() => {
+          playExampleAudio();
+        }, 400);
+        return () => clearTimeout(timer);
+      } else if (!showUsageModal && audioAvailable) {
+        // Normal behavior: play answer audio when modal is not open
+        const timer = setTimeout(() => {
+          handlePlayAudio();
+        }, 400);
+        return () => clearTimeout(timer);
+      }
     }
-  }, [actualCardIndex, audioAvailable, audioLoading, autoPlayEnabled, isOnline]);
+  }, [actualCardIndex, audioAvailable, audioLoading, autoPlayEnabled, isOnline, showUsageModal, exampleAudioAvailable, exampleAudioLoading]);
 
   // Check if example audio exists when modal opens
   useEffect(() => {
@@ -390,6 +408,20 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
       // Preload if available
       if (exists) {
         await pronunciationAudio.preloadExample(cardData.usageExample, category);
+      }
+      
+      // Auto-play example audio when modal opens if autoplay is enabled
+      if (autoPlayEnabled && exists && isOnline) {
+        // Small delay to ensure audio is preloaded
+        setTimeout(async () => {
+          if (!isPlayingExample) {
+            setIsPlayingExample(true);
+            await pronunciationAudio.playExample(cardData.usageExample, category, volume);
+            setTimeout(() => {
+              setIsPlayingExample(false);
+            }, 5000);
+          }
+        }, 400);
       }
     };
 
