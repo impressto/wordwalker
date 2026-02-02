@@ -101,7 +101,9 @@ export const useDialogHandlers = ({
     setTimeout(() => {
       const canvas = canvasRef.current;
       if (canvas) {
-        offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
+        const dpr = window.devicePixelRatio || 1;
+        const logicalWidth = canvas.width / dpr;
+        offsetRef.current = forkPositionRef.current - (logicalWidth * 0.75);
       }
       setShowChoice(true);
     }, 100);
@@ -119,7 +121,9 @@ export const useDialogHandlers = ({
       // Position next checkpoint
       const canvas = canvasRef.current;
       if (canvas) {
-        checkpointPositionRef.current = offsetRef.current + canvas.width * 0.5 + 95;
+        const dpr = window.devicePixelRatio || 1;
+        const logicalWidth = canvas.width / dpr;
+        checkpointPositionRef.current = offsetRef.current + logicalWidth * 0.5 + 95;
       }
       checkpointFadeStartTimeRef.current = null;
       checkpointSoundPlayedRef.current = false;
@@ -130,7 +134,9 @@ export const useDialogHandlers = ({
         setTimeout(() => {
           const canvas = canvasRef.current;
           if (canvas) {
-            offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
+            const dpr = window.devicePixelRatio || 1;
+            const logicalWidth = canvas.width / dpr;
+            offsetRef.current = forkPositionRef.current - (logicalWidth * 0.75);
           }
           setIsPaused(true);
           setShowChoice(true);
@@ -145,7 +151,9 @@ export const useDialogHandlers = ({
       setTimeout(() => {
         const canvas = canvasRef.current;
         if (canvas) {
-          offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
+          const dpr = window.devicePixelRatio || 1;
+          const logicalWidth = canvas.width / dpr;
+          offsetRef.current = forkPositionRef.current - (logicalWidth * 0.75);
         }
         setShowChoice(true);
       }, 100);
@@ -173,7 +181,9 @@ export const useDialogHandlers = ({
       setTimeout(() => {
         const canvas = canvasRef.current;
         if (canvas) {
-          offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
+          const dpr = window.devicePixelRatio || 1;
+          const logicalWidth = canvas.width / dpr;
+          offsetRef.current = forkPositionRef.current - (logicalWidth * 0.75);
         }
         setShowChoice(true);
         setSelectedPath(null);

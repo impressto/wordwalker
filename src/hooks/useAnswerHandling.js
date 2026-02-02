@@ -405,7 +405,9 @@ export const useAnswerHandling = ({
         setTimeout(() => {
           const canvas = canvasRef.current;
           if (canvas) {
-            offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
+            const dpr = window.devicePixelRatio || 1;
+            const logicalWidth = canvas.width / dpr;
+            offsetRef.current = forkPositionRef.current - (logicalWidth * 0.75);
           }
           setShowChoice(true);
         }, 100);

@@ -709,6 +709,23 @@ const PathCanvas = () => {
     }
   }, [pathImage, pathForkImage, walkerSpriteSheet, isLoading, currentTheme]);
 
+  // Show path choice dialog when assets are loaded and no path is selected
+  // This is a failsafe to ensure the dialog appears even if the canvas animation timing is off
+  useEffect(() => {
+    if (!isLoading && !showChoice && !selectedPath && !showResumeDialog && !showFlashCards && !showQuestion) {
+      // Assets are loaded, no dialog is showing, and no path is selected
+      // Pause and show the path choice dialog
+      setIsPaused(true);
+      const canvas = canvasRef.current;
+      if (canvas) {
+        const dpr = window.devicePixelRatio || 1;
+        const logicalWidth = canvas.width / dpr;
+        offsetRef.current = forkPositionRef.current - (logicalWidth * 0.75);
+      }
+      setShowChoice(true);
+    }
+  }, [isLoading, showChoice, selectedPath, showResumeDialog, showFlashCards, showQuestion]);
+
   // Adjust camera position when choice dialog is shown/hidden
   // When dialog is visible AND animation is paused, smoothly pan the fork to the right side
   useEffect(() => {
@@ -720,9 +737,10 @@ const PathCanvas = () => {
       }
       const canvas = canvasRef.current;
       if (canvas) {
-        const width = canvas.width;
+        const dpr = window.devicePixelRatio || 1;
+        const logicalWidth = canvas.width / dpr;
         // Set target offset for smooth animation to position fork at 75% across the screen
-        targetOffsetRef.current = forkPositionRef.current - (width * 0.75);
+        targetOffsetRef.current = forkPositionRef.current - (logicalWidth * 0.75);
       }
     } else {
       // Clear target when dialog closes
@@ -982,7 +1000,10 @@ const PathCanvas = () => {
     // So checkpoint should be at 30% + 120px = roughly 50% for centered appearance
     const canvas = canvasRef.current;
     if (canvas) {
-      checkpointPositionRef.current = offsetRef.current + canvas.width * 0.5 + 95; // Center (50%) + 95px offset (35 + 60 adjustment)
+      // Use logical width (divide by DPR) for consistent behavior across devices
+      const dpr = window.devicePixelRatio || 1;
+      const logicalWidth = canvas.width / dpr;
+      checkpointPositionRef.current = offsetRef.current + logicalWidth * 0.5 + 95; // Center (50%) + 95px offset (35 + 60 adjustment)
     } else {
       // Fallback if canvas not available
       checkpointPositionRef.current = offsetRef.current + 1000;

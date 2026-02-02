@@ -161,7 +161,9 @@ export const useCanvasEvents = ({
       velocityRef.current = 0;
       
       // Position camera to show fork on the right side
-      offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
+      const dpr = window.devicePixelRatio || 1;
+      const logicalWidth = canvas.width / dpr;
+      offsetRef.current = forkPositionRef.current - (logicalWidth * 0.75);
       
       // Show the choice dialog
       setTimeout(() => {
@@ -247,7 +249,9 @@ export const useCanvasEvents = ({
       velocityRef.current = 0;
       
       // Position camera to show fork on the right side
-      offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
+      const dpr = window.devicePixelRatio || 1;
+      const logicalWidth = canvas.width / dpr;
+      offsetRef.current = forkPositionRef.current - (logicalWidth * 0.75);
       
       // Show the choice dialog
       setTimeout(() => {

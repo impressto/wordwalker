@@ -710,15 +710,17 @@ export function useCanvasRenderer({
       // Calculate if fork is fully visible on screen
       const canvas = canvasRef.current;
       if (canvas) {
+        const dpr = window.devicePixelRatio || 1;
+        const logicalWidth = canvas.width / dpr;
         const scrollPos = offsetRef.current;
         const forkScreenX = forkPositionRef.current - scrollPos;
         const forkTileSize = 240;
         
-        // Check if choice dialog should be shown
-        const shouldStopForChoice = forkScreenX <= canvas.width && forkScreenX > 0 && !selectedPath;
+        // Check if choice dialog should be shown (use logical width for positioning)
+        const shouldStopForChoice = forkScreenX <= logicalWidth && forkScreenX > 0 && !selectedPath;
         
         // Check if checkpoint is approaching (to start decelerating early)
-        const personX = canvas.width * 0.4;
+        const personX = logicalWidth * 0.4;
         const checkpointScreenX = checkpointPositionRef.current - scrollPos;
         const distanceToCheckpoint = checkpointScreenX - personX;
         const shouldStopForCheckpoint = selectedPath && !questionAnswered && distanceToCheckpoint <= 120 && distanceToCheckpoint > 0;
