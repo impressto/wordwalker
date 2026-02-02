@@ -146,7 +146,7 @@ export async function preloadAllCategories() {
   const categoryIds = [
     'food', 'shopping', 'entertainment', 'accommodation', 'transportation',
     'directions', 'medical', 'greetings', 'numbers', 'grammar', 'recreation',
-    'plants-animals', 'people', 'daily-routines', 'business', 'environment'
+    'plants_animals', 'people', 'daily_routines', 'business', 'environment'
   ];
 
   await Promise.all(

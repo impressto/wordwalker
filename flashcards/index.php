@@ -1,4 +1,11 @@
 <?php
+// Permanent redirect to canonical domain
+if ($_SERVER['HTTP_HOST'] !== 'wordwalker.ca') {
+    header('HTTP/1.1 301 Moved Permanently');
+    header('Location: https://wordwalker.ca/flashcards/');
+    exit;
+}
+
 /**
  * Flash Cards Static Page
  * 

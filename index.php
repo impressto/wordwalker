@@ -1,4 +1,13 @@
 <?php
+
+// Permanent redirect to canonical domain
+if ($_SERVER['HTTP_HOST'] !== 'wordwalker.ca') {
+    header('HTTP/1.1 301 Moved Permanently');
+    header('Location: https://wordwalker.ca/');
+    exit;
+}
+
+
 // Read version from package.json for cache busting
 $packageJson = json_decode(file_get_contents(__DIR__ . '/package.json'), true);
 $version = $packageJson['version'] ?? '1.0.0';
