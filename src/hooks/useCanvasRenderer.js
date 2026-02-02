@@ -89,8 +89,8 @@ export function useCanvasRenderer({
     
     // Helper to get layer speed from theme config (with fallbacks for backwards compatibility)
     const getLayerSpeed = (layerName) => {
-      if (theme.parallaxSpeeds && theme.parallaxSpeeds[layerName] !== undefined) {
-        return theme.parallaxSpeeds[layerName];
+      if (theme.layerSpeeds && theme.layerSpeeds[layerName] !== undefined) {
+        return theme.layerSpeeds[layerName];
       }
       // Default speeds for each layer
       const defaultSpeeds = {
@@ -107,8 +107,8 @@ export function useCanvasRenderer({
 
     // Helper to get layer Y offset from theme config
     const getLayerY = (baseY, layerName) => {
-      if (theme.layerOffsets && theme.layerOffsets[layerName] !== undefined) {
-        return baseY + theme.layerOffsets[layerName];
+      if (theme.layerPositions && theme.layerPositions[layerName] !== undefined) {
+        return baseY + theme.layerPositions[layerName];
       }
       return baseY;
     };
@@ -205,6 +205,23 @@ export function useCanvasRenderer({
       // Clear canvas
       ctx.clearRect(0, 0, width, height);
       
+      // Calculate horizon position for all layers
+      const horizonY = height * (theme.positioning?.horizonRatio || 0.3);
+      
+      // Always fill canvas with theme colors first as a background
+      // This prevents black showing through gaps in parallax layers
+      if (theme.canvasColors) {
+        // First fill entire canvas with above-horizon color
+        ctx.fillStyle = theme.canvasColors.aboveHorizon;
+        ctx.fillRect(0, 0, width, height);
+        
+        // Then draw below-horizon color on top with overlap to prevent gaps from subpixel rendering
+        const belowHorizonStart = theme.positioning?.belowHorizonStart || 0.4;
+        const belowHorizonY = height * belowHorizonStart;
+        ctx.fillStyle = theme.canvasColors.belowHorizon;
+        ctx.fillRect(0, belowHorizonY - 2, width, height - belowHorizonY + 2);
+      }
+      
       // Draw layer 7 (rear parallax - infinite distance, no scrolling) if available
       if (parallaxLayer7Image) {
         const layer7Width = parallaxLayer7Image.width;
@@ -216,28 +233,6 @@ export function useCanvasRenderer({
           ctx.drawImage(parallaxLayer7Image, i * layer7Width, 0, layer7Width, layer7Height);
         }
       }
-      
-      // Calculate horizon position for all layers
-      const horizonY = height * (theme.positioning?.horizonRatio || 0.3);
-      
-      // If theme has canvasColors for top/bottom (for themes without layer 7)
-      if (!parallaxLayer7Image && theme.canvasColors) {
-        // First fill entire canvas with above-horizon color
-        ctx.fillStyle = theme.canvasColors.aboveHorizon;
-        ctx.fillRect(0, 0, width, height);
-        
-        // Then draw below-horizon color on top with overlap to prevent gaps from subpixel rendering
-        const skyBottom = horizonY - 20;
-        ctx.fillStyle = theme.canvasColors.belowHorizon;
-        ctx.fillRect(0, skyBottom - 2, width, height - skyBottom + 2);
-      }
-      
-      // Fill bottom portion with theme below-horizon color to avoid white showing behind parallax trees
-      // Use configurable belowHorizonStart from theme (defaults to 0.4 = 40% down from top)
-      const belowHorizonStart = theme.positioning.belowHorizonStart || 0.4;
-      const belowHorizonY = height * belowHorizonStart;
-      ctx.fillStyle = theme.canvasColors.belowHorizon;
-      ctx.fillRect(0, belowHorizonY, width, height - belowHorizonY);
       
       // Draw mountains at the horizon (tiled horizontally with parallax)
       if (parallaxLayer6Image) {
@@ -344,7 +339,9 @@ export function useCanvasRenderer({
         // Draw layer 2 tiles - repeat horizontally, stretch vertically from pathTop to bottom
         const stretchFactor = theme.layer2StretchFactor ?? 1.0;
         const offsetY = theme.layer2OffsetY ?? 0;
-        const startY = pathTop + offsetY;
+        // Apply both layer2OffsetY and layerPositions.layer2 offset
+        const layer2PositionOffset = theme.layerPositions?.layer2 ?? 0;
+        const startY = pathTop + offsetY + layer2PositionOffset;
         const totalLayer2Height = height - startY;
         const tilesX = Math.ceil(width / tileWidth) + 1;
         

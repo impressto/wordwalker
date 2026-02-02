@@ -110,8 +110,8 @@ const parallaxThemes = {
       layer2: 0,      // beach level
       layer3: -20,    // unbrellas
       layer4: 95,      // surf
-      layer5: 10,      // cruise ship
-      layer6: 55,      // mountains
+      layer5: -20,      // cruise ship
+      layer6: 20,      // mountains
       layer7: 0,      // Sky/rear
     },
     layerSpeeds: {
@@ -176,11 +176,11 @@ const parallaxThemes = {
     // These values should be adjusted based on the actual Hong Kong artwork
     layerPositions: {
       layer1: 0,      // Foreground - adjust as needed
-      layer2: 50,      // Grass/street level - adjust as needed
-      layer3: -40,    // Buildings/structures - adjust as needed
-      layer4: -130,   // Mid-distant buildings - adjust as needed
-      layer5: -110,    // high rises in the distance - adjust as needed
-      layer6: 50,   // mountains- adjust as needed
+      layer2: 0,      // Grass/street level - adjust as needed
+      layer3: -50,    // Buildings/structures - adjust as needed
+      layer4: -100,   // Mid-distant buildings - adjust as needed
+      layer5:  -60,    // high rises in the distance - adjust as needed
+      layer6: 90,   // mountains- adjust as needed
       layer7: 0,      // Sky/rear - adjust as needed
     },
     layerSpeeds: {
@@ -248,18 +248,18 @@ const parallaxThemes = {
       layer1: 0,      // Foreground - marigolds/flowers
       layer2: 0,      // Ground level
       layer3: -60,    // Altars/decorations
-      layer4: -100,     // buildings
-      layer5: 40,    // grave yard
+      layer4: -50,     // buildings
+      layer5: 60,    // grave yard
       layer6: 40,      // mountains
-      layer7: -50,      // Sky/rear
+      layer7: -30,      // Sky/rear
     },
     layerSpeeds: {
-      layer1: 1.4,    // Foreground (closest) - fastest movement
-      layer2: 1.0,    // Mid-foreground
-      layer3: 0.5,    // Mid layer
-      layer4: 0.4,    // Mid-distant
-      layer5: 0.3,    // Distant layer
-      layer6: 0.15,   // Background
+      layer1: 1.4,    // Foreground - marigolds/flowers
+      layer2: 1.0,    // Ground level
+      layer3: 0.5,    // Altars/decorations
+      layer4: 0.4,    // buildings
+      layer5: 0.25,    // grave yard
+      layer6: 0.15,   // mountains
       layer7: 0.0,    // Static background/sky
     },
     positioning: {
@@ -314,9 +314,9 @@ const parallaxThemes = {
     // Layer positions for Paris theme
     layerPositions: {
       layer1: 0,      // fence with flowers
-      layer2: 0,      // street
-      layer3: -60,    // sidewalk with tables and musicians
-      layer4: 10,     // river with boats
+      layer2: 20,      // street
+      layer3: -40,    // sidewalk with tables and musicians
+      layer4: 30,     // river with boats
       layer5: -100,    // buildings on far bank
       layer6: -30,    // eiffel tower and otherbackground buildings
       layer7: 0,      // Sky/rear
@@ -380,20 +380,20 @@ const parallaxThemes = {
     // Layer positions for Nassau theme
     layerPositions: {
       layer1: 0,      // Foreground - beach elements
-      layer2: -100,      // pathway
-      layer3: 20,    // pirates burying treasure
-      layer4: 70,    // shoreline
-      layer5: -160,    // ship
-      layer6: 120,    // Ocean/horizon
+      layer2: -15,      // pathway
+      layer3: -15,    // pirates burying treasure
+      layer4: 120,    // shoreline
+      layer5: -140,    // ship
+      layer6: 160,    // Ocean/horizon
       layer7: 0,      // Night sky/stars
     },
     layerSpeeds: {
       layer1: 1.4,    // Foreground (closest) - fastest movement
       layer2: 1.0,    // Beach sand level
-      layer3: 0.5,    // Mid-ground elements
-      layer4: 0.4,   // Pirates/treasure
-      layer5: 0.25,   // ship
-      layer6: 0.15,    // Ocean/horizon
+      layer3: 0.5,    // Pirates/treasure
+      layer4: 0.4,   // shoreline
+      layer5: 0.2,   // ship
+      layer6: 0.13,    // Ocean/horizon
       layer7: 0.0,    // Static night sky
     },
     positioning: {

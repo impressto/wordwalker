@@ -1,21 +1,20 @@
 import { useEffect, useRef, useState } from 'react';
-import { getRandomQuestionByCategory, getRandomUnusedQuestionByCategory, getUnmasteredQuestionCount, shuffleOptions, getAllCategoryIds, getCategoryById, preloadAllCategories } from '../config/questionsLoader';
-import { isCategoryCompleted, addCorrectAnswer, addToCorrectFirstTry, addUsedQuestion, addToFirstTryByCategory, getCategoryCorrectAnswerCount, getCategoryQuestionCount } from '../utils/questionTracking';
-import { generateNewForkCategories, initializeForkCategories, extractCategoryIds } from '../utils/categoryRotation';
-import { getTranslationsObject, preloadAllTranslations } from '../config/translationsLoader';
-import gameSettings, { getStreakColor, getTranslationBoxDuration } from '../config/gameSettings';
+import { getRandomUnusedQuestionByCategory, getUnmasteredQuestionCount, shuffleOptions, getCategoryById, preloadAllCategories } from '../config/questionsLoader';
+import { isCategoryCompleted, addUsedQuestion, getCategoryCorrectAnswerCount, getCategoryQuestionCount } from '../utils/questionTracking';
+import { initializeForkCategories, extractCategoryIds } from '../utils/categoryRotation';
+import { preloadAllTranslations } from '../config/translationsLoader';
+import gameSettings from '../config/gameSettings';
 import { getTheme } from '../config/parallaxThemes';
-import { getSpriteSheetConfig, getCharacterById } from '../config/characterConfig';
-import { setActiveTheme } from '../utils/themeManager';
+import { getSpriteSheetConfig } from '../config/characterConfig';
 import SoundManager from '../utils/soundManager';
 import { isEmojiSvg, getEmojiSvgPath } from '../utils/emojiUtils.jsx';
-import { loadGameState, saveGameState, clearGameState, hasSavedGameState, convertLoadedState } from '../utils/gameStatePersistence';
 import { useCharacterAndTheme } from '../hooks/useCharacterAndTheme';
 import { useAnswerHandling } from '../hooks/useAnswerHandling';
 import { useCanvasRenderer } from '../hooks/useCanvasRenderer';
 import { useGameState } from '../hooks/useGameState';
 import { useDialogHandlers } from '../hooks/useDialogHandlers';
-import { initializeDataLayer, trackCategorySelection, trackQuestionAnswer, trackCategoryCompletion } from '../utils/gtm';
+import { useCanvasEvents } from '../hooks/useCanvasEvents';
+import { initializeDataLayer, trackCategorySelection } from '../utils/gtm';
 import ScoreDisplay from './ScoreDisplay';
 import PathChoiceDialog from './PathChoiceDialog';
 import QuestionDialog from './QuestionDialog';
@@ -324,6 +323,49 @@ const PathCanvas = () => {
     currentCheckpointLimit,
     totalPoints,
     setTotalPoints,
+  });
+  
+  // Canvas events hook
+  const {
+    handleCanvasClick,
+    handleCanvasMouseMove,
+    handleCanvasMouseDown,
+    handleCanvasMouseUp,
+    handleCanvasTouchStart,
+    handleCanvasTouchEnd,
+  } = useCanvasEvents({
+    canvasRef,
+    checkpointBoundsRef,
+    walkerBoundsRef,
+    
+    // State
+    currentQuestion,
+    selectedPath,
+    questionAnswered,
+    showQuestion,
+    showChoice,
+    isPaused,
+    isJustResumed,
+    isPreviewMode,
+    
+    // Setters
+    setIsPaused,
+    setShowChoice,
+    setShowCheckpointHint,
+    setIsPreviewMode,
+    setQuestionDialogOpacity,
+    
+    // Refs
+    velocityRef,
+    offsetRef,
+    forkPositionRef,
+    checkpointPositionRef,
+    previewStateSnapshotRef,
+    walkerPressTimerRef,
+    walkerPressStartRef,
+    
+    // Sound
+    soundManagerRef,
   });
   
   useEffect(() => {
@@ -989,237 +1031,6 @@ const PathCanvas = () => {
       soundManagerRef.current.playChoice(); // Reuse choice sound or add a new hint sound
     }
   };
-
-  // Check if coordinates are over checkpoint
-  const isOverCheckpoint = (canvasX, canvasY) => {
-    const bounds = checkpointBoundsRef.current;
-    
-    // Allow clicking checkpoint even when question dialog is shown (removed showQuestion check)
-    if (!bounds.visible || !currentQuestion || !selectedPath || questionAnswered) {
-      return false;
-    }
-    
-    // Use larger hit area - 1.5x the emoji size for easier clicking
-    const hitAreaSize = bounds.size * 1.5;
-    const halfSize = hitAreaSize / 2;
-    const distanceX = Math.abs(canvasX - bounds.x);
-    const distanceY = Math.abs(canvasY - bounds.y);
-    
-    return distanceX <= halfSize && distanceY <= halfSize;
-  };
-
-  // Handle canvas click to detect checkpoint clicks
-  const handleCanvasClick = (event) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    // Emergency stop: if game was just resumed and animation is running, stop and show category selector
-    if (isJustResumed && !selectedPath && !showChoice && !isPaused) {
-      // Stop the animation
-      setIsPaused(true);
-      velocityRef.current = 0;
-      
-      // Position camera to show fork on the right side
-      offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
-      
-      // Show the choice dialog
-      setTimeout(() => {
-        setShowChoice(true);
-      }, 50);
-      
-      return; // Don't process other click handlers
-    }
-
-    const rect = canvas.getBoundingClientRect();
-    const scaleX = canvas.width / rect.width;
-    const scaleY = canvas.height / rect.height;
-    
-    const clickX = (event.clientX - rect.left) * scaleX;
-    const clickY = (event.clientY - rect.top) * scaleY;
-
-    if (isOverCheckpoint(clickX, clickY)) {
-      // Checkpoint was clicked - show hint popup
-      setShowCheckpointHint(true);
-      
-      // Play a subtle sound effect
-      if (soundManagerRef.current) {
-        soundManagerRef.current.playChoice();
-      }
-    }
-  };
-
-  // Handle canvas mouse move to update cursor
-  const handleCanvasMouseMove = (event) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const rect = canvas.getBoundingClientRect();
-    const scaleX = canvas.width / rect.width;
-    const scaleY = canvas.height / rect.height;
-    
-    const mouseX = (event.clientX - rect.left) * scaleX;
-    const mouseY = (event.clientY - rect.top) * scaleY;
-
-    if (isOverCheckpoint(mouseX, mouseY)) {
-      canvas.style.cursor = 'pointer';
-    } else {
-      canvas.style.cursor = 'default';
-    }
-  };
-
-  // Check if coordinates are over walker (Easter egg)
-  const isOverWalker = (canvasX, canvasY) => {
-    const bounds = walkerBoundsRef.current;
-    if (!bounds.width || !bounds.height) return false;
-    
-    return (
-      canvasX >= bounds.x &&
-      canvasX <= bounds.x + bounds.width &&
-      canvasY >= bounds.y &&
-      canvasY <= bounds.y + bounds.height
-    );
-  };
-
-  // Handle walker press start (mouse/touch)
-  const handleWalkerPressStart = (canvasX, canvasY) => {
-    // Only activate if there's a question dialog showing
-    if (!showQuestion || !currentQuestion) return;
-    
-    if (isOverWalker(canvasX, canvasY)) {
-      walkerPressStartRef.current = Date.now();
-      
-      // Set timer to activate preview mode after 5 seconds
-      walkerPressTimerRef.current = setTimeout(() => {
-        // Capture current state before entering preview mode
-        previewStateSnapshotRef.current = {
-          offset: offsetRef.current,
-          velocity: velocityRef.current,
-          checkpointPosition: checkpointPositionRef.current,
-          isPaused: isPaused
-        };
-        
-        setIsPreviewMode(true);
-        // Fade out question dialog
-        let opacity = 1;
-        const fadeInterval = setInterval(() => {
-          opacity -= 0.05;
-          if (opacity <= 0) {
-            opacity = 0;
-            clearInterval(fadeInterval);
-          }
-          setQuestionDialogOpacity(opacity);
-        }, 20); // Smooth fade over ~400ms
-      }, 5000);
-    }
-  };
-
-  // Handle walker press end (mouse/touch release)
-  const handleWalkerPressEnd = () => {
-    // Clear timer if still waiting
-    if (walkerPressTimerRef.current) {
-      clearTimeout(walkerPressTimerRef.current);
-      walkerPressTimerRef.current = null;
-    }
-    
-    // If in preview mode, exit it and restore state
-    if (isPreviewMode) {
-      // Restore state from snapshot
-      if (previewStateSnapshotRef.current) {
-        offsetRef.current = previewStateSnapshotRef.current.offset;
-        velocityRef.current = previewStateSnapshotRef.current.velocity;
-        checkpointPositionRef.current = previewStateSnapshotRef.current.checkpointPosition;
-        // Note: isPaused will remain as-is since we're in a question dialog context
-        
-        // Clear the snapshot
-        previewStateSnapshotRef.current = null;
-      }
-      
-      setIsPreviewMode(false);
-      
-      // Fade question dialog back in
-      let opacity = 0;
-      const fadeInterval = setInterval(() => {
-        opacity += 0.05;
-        if (opacity >= 1) {
-          opacity = 1;
-          clearInterval(fadeInterval);
-        }
-        setQuestionDialogOpacity(opacity);
-      }, 20); // Smooth fade over ~400ms
-    }
-    
-    walkerPressStartRef.current = null;
-  };
-
-  // Handle mouse down on canvas
-  const handleCanvasMouseDown = (event) => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const rect = canvas.getBoundingClientRect();
-    const scaleX = canvas.width / rect.width;
-    const scaleY = canvas.height / rect.height;
-    
-    const x = (event.clientX - rect.left) * scaleX;
-    const y = (event.clientY - rect.top) * scaleY;
-
-    handleWalkerPressStart(x, y);
-  };
-
-  // Handle mouse up on canvas
-  const handleCanvasMouseUp = () => {
-    handleWalkerPressEnd();
-  };
-
-  // Handle touch start on canvas
-  const handleCanvasTouchStart = (event) => {
-    const canvas = canvasRef.current;
-    if (!canvas || event.touches.length === 0) return;
-
-    // Emergency stop: if game was just resumed and animation is running, stop and show category selector
-    if (isJustResumed && !selectedPath && !showChoice && !isPaused) {
-      // Prevent default touch behavior
-      event.preventDefault();
-      
-      // Stop the animation
-      setIsPaused(true);
-      velocityRef.current = 0;
-      
-      // Position camera to show fork on the right side
-      offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
-      
-      // Show the choice dialog
-      setTimeout(() => {
-        setShowChoice(true);
-      }, 50);
-      
-      return; // Don't process other touch handlers
-    }
-
-    const rect = canvas.getBoundingClientRect();
-    const scaleX = canvas.width / rect.width;
-    const scaleY = canvas.height / rect.height;
-    
-    const touch = event.touches[0];
-    const x = (touch.clientX - rect.left) * scaleX;
-    const y = (touch.clientY - rect.top) * scaleY;
-
-    handleWalkerPressStart(x, y);
-  };
-
-  // Handle touch end on canvas
-  const handleCanvasTouchEnd = () => {
-    handleWalkerPressEnd();
-  };
-
-  // Cleanup timer on unmount
-  useEffect(() => {
-    return () => {
-      if (walkerPressTimerRef.current) {
-        clearTimeout(walkerPressTimerRef.current);
-      }
-    };
-  }, []);
 
   return (
     <div style={{ position: 'relative', width: '100%', height: '100vh' }}>

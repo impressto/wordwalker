@@ -3,7 +3,7 @@
  * Handles canvas mouse, touch, and click events
  */
 
-import { useState, useRef, useCallback } from 'react';
+import { useRef, useCallback, useEffect } from 'react';
 
 export const useCanvasEvents = ({
   canvasRef,
@@ -18,11 +18,12 @@ export const useCanvasEvents = ({
   showChoice,
   isPaused,
   isJustResumed,
+  isPreviewMode,
   
   // Setters
   setIsPaused,
   setShowChoice,
-  setShowQuestion,
+  setShowCheckpointHint,
   setIsPreviewMode,
   setQuestionDialogOpacity,
   
@@ -30,16 +31,19 @@ export const useCanvasEvents = ({
   velocityRef,
   offsetRef,
   forkPositionRef,
+  checkpointPositionRef,
   previewStateSnapshotRef,
-  skipCameraRepositionRef,
+  walkerPressTimerRef,
+  walkerPressStartRef,
+  
+  // Sound
+  soundManagerRef,
 }) => {
-  const walkerPressTimerRef = useRef(null);
-  const walkerPressStartRef = useRef(null);
-
   // Check if coordinates are over checkpoint
   const isOverCheckpoint = useCallback((canvasX, canvasY) => {
     const bounds = checkpointBoundsRef.current;
     
+    // Allow clicking checkpoint even when question dialog is shown
     if (!bounds.visible || !currentQuestion || !selectedPath || questionAnswered) {
       return false;
     }
@@ -53,14 +57,97 @@ export const useCanvasEvents = ({
     return distanceX <= halfSize && distanceY <= halfSize;
   }, [checkpointBoundsRef, currentQuestion, selectedPath, questionAnswered]);
 
-  // Check if coordinates are over walker
+  // Check if coordinates are over walker (Easter egg)
   const isOverWalker = useCallback((canvasX, canvasY) => {
     const bounds = walkerBoundsRef.current;
-    return canvasX >= bounds.x && 
-           canvasX <= bounds.x + bounds.width &&
-           canvasY >= bounds.y && 
-           canvasY <= bounds.y + bounds.height;
+    if (!bounds.width || !bounds.height) return false;
+    
+    return (
+      canvasX >= bounds.x &&
+      canvasX <= bounds.x + bounds.width &&
+      canvasY >= bounds.y &&
+      canvasY <= bounds.y + bounds.height
+    );
   }, [walkerBoundsRef]);
+
+  // Handle walker press start (mouse/touch)
+  const handleWalkerPressStart = useCallback((canvasX, canvasY) => {
+    // Only activate if there's a question dialog showing
+    if (!showQuestion || !currentQuestion) return;
+    
+    if (isOverWalker(canvasX, canvasY)) {
+      walkerPressStartRef.current = Date.now();
+      
+      // Set timer to activate preview mode after 5 seconds
+      walkerPressTimerRef.current = setTimeout(() => {
+        // Capture current state before entering preview mode
+        previewStateSnapshotRef.current = {
+          offset: offsetRef.current,
+          velocity: velocityRef.current,
+          checkpointPosition: checkpointPositionRef.current,
+          isPaused: isPaused
+        };
+        
+        setIsPreviewMode(true);
+        // Fade out question dialog
+        let opacity = 1;
+        const fadeInterval = setInterval(() => {
+          opacity -= 0.05;
+          if (opacity <= 0) {
+            opacity = 0;
+            clearInterval(fadeInterval);
+          }
+          setQuestionDialogOpacity(opacity);
+        }, 20); // Smooth fade over ~400ms
+      }, 5000);
+    }
+  }, [
+    showQuestion, currentQuestion, isOverWalker, isPaused,
+    walkerPressStartRef, walkerPressTimerRef, previewStateSnapshotRef,
+    offsetRef, velocityRef, checkpointPositionRef,
+    setIsPreviewMode, setQuestionDialogOpacity
+  ]);
+
+  // Handle walker press end (mouse/touch release)
+  const handleWalkerPressEnd = useCallback(() => {
+    // Clear timer if still waiting
+    if (walkerPressTimerRef.current) {
+      clearTimeout(walkerPressTimerRef.current);
+      walkerPressTimerRef.current = null;
+    }
+    
+    // If in preview mode, exit it and restore state
+    if (isPreviewMode) {
+      // Restore state from snapshot
+      if (previewStateSnapshotRef.current) {
+        offsetRef.current = previewStateSnapshotRef.current.offset;
+        velocityRef.current = previewStateSnapshotRef.current.velocity;
+        checkpointPositionRef.current = previewStateSnapshotRef.current.checkpointPosition;
+        
+        // Clear the snapshot
+        previewStateSnapshotRef.current = null;
+      }
+      
+      setIsPreviewMode(false);
+      
+      // Fade question dialog back in
+      let opacity = 0;
+      const fadeInterval = setInterval(() => {
+        opacity += 0.05;
+        if (opacity >= 1) {
+          opacity = 1;
+          clearInterval(fadeInterval);
+        }
+        setQuestionDialogOpacity(opacity);
+      }, 20); // Smooth fade over ~400ms
+    }
+    
+    walkerPressStartRef.current = null;
+  }, [
+    walkerPressTimerRef, isPreviewMode, previewStateSnapshotRef,
+    offsetRef, velocityRef, checkpointPositionRef, walkerPressStartRef,
+    setIsPreviewMode, setQuestionDialogOpacity
+  ]);
 
   // Handle canvas click to detect checkpoint clicks
   const handleCanvasClick = useCallback((event) => {
@@ -74,137 +161,132 @@ export const useCanvasEvents = ({
       velocityRef.current = 0;
       
       // Position camera to show fork on the right side
-      const width = canvas.width;
-      offsetRef.current = forkPositionRef.current - (width * 0.75);
+      offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
       
-      // Show category selector
-      setShowChoice(true);
-      return;
+      // Show the choice dialog
+      setTimeout(() => {
+        setShowChoice(true);
+      }, 50);
+      
+      return; // Don't process other click handlers
     }
 
     const rect = canvas.getBoundingClientRect();
     const scaleX = canvas.width / rect.width;
     const scaleY = canvas.height / rect.height;
-    const canvasX = (event.clientX - rect.left) * scaleX;
-    const canvasY = (event.clientY - rect.top) * scaleY;
     
-    if (isOverCheckpoint(canvasX, canvasY)) {
-      setShowQuestion(true);
+    const clickX = (event.clientX - rect.left) * scaleX;
+    const clickY = (event.clientY - rect.top) * scaleY;
+
+    if (isOverCheckpoint(clickX, clickY)) {
+      // Checkpoint was clicked - show hint popup
+      setShowCheckpointHint(true);
+      
+      // Play a subtle sound effect
+      if (soundManagerRef.current) {
+        soundManagerRef.current.playChoice();
+      }
     }
   }, [
     canvasRef, isJustResumed, selectedPath, showChoice, isPaused,
     setIsPaused, velocityRef, offsetRef, forkPositionRef, setShowChoice,
-    isOverCheckpoint, setShowQuestion
+    isOverCheckpoint, setShowCheckpointHint, soundManagerRef
   ]);
 
-  // Handle mouse move for cursor changes
+  // Handle canvas mouse move to update cursor
   const handleCanvasMouseMove = useCallback((event) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
+
     const rect = canvas.getBoundingClientRect();
     const scaleX = canvas.width / rect.width;
     const scaleY = canvas.height / rect.height;
-    const canvasX = (event.clientX - rect.left) * scaleX;
-    const canvasY = (event.clientY - rect.top) * scaleY;
     
-    // Check if over checkpoint
-    if (isOverCheckpoint(canvasX, canvasY)) {
+    const mouseX = (event.clientX - rect.left) * scaleX;
+    const mouseY = (event.clientY - rect.top) * scaleY;
+
+    if (isOverCheckpoint(mouseX, mouseY)) {
       canvas.style.cursor = 'pointer';
-    } else if (isOverWalker(canvasX, canvasY)) {
-      canvas.style.cursor = 'grab';
     } else {
       canvas.style.cursor = 'default';
     }
-  }, [canvasRef, isOverCheckpoint, isOverWalker]);
+  }, [canvasRef, isOverCheckpoint]);
 
-  // Handle mouse down on walker for preview mode
+  // Handle mouse down on canvas
   const handleCanvasMouseDown = useCallback((event) => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    
+
     const rect = canvas.getBoundingClientRect();
     const scaleX = canvas.width / rect.width;
     const scaleY = canvas.height / rect.height;
-    const canvasX = (event.clientX - rect.left) * scaleX;
-    const canvasY = (event.clientY - rect.top) * scaleY;
     
-    if (isOverWalker(canvasX, canvasY)) {
-      walkerPressStartRef.current = Date.now();
-      
-      // Start timer for long press (500ms)
-      walkerPressTimerRef.current = setTimeout(() => {
-        // Save current state before entering preview mode
-        previewStateSnapshotRef.current = {
-          isPaused: isPaused,
-          showQuestion: showQuestion,
-        };
-        
-        // Enter preview mode
-        setIsPreviewMode(true);
-        setQuestionDialogOpacity(0.3);
-        canvas.style.cursor = 'grabbing';
-      }, 500);
-    }
-  }, [canvasRef, isOverWalker, isPaused, showQuestion, setIsPreviewMode, setQuestionDialogOpacity]);
+    const x = (event.clientX - rect.left) * scaleX;
+    const y = (event.clientY - rect.top) * scaleY;
 
-  // Handle mouse up to exit preview mode
+    handleWalkerPressStart(x, y);
+  }, [canvasRef, handleWalkerPressStart]);
+
+  // Handle mouse up on canvas
   const handleCanvasMouseUp = useCallback(() => {
-    // Clear the long press timer
-    if (walkerPressTimerRef.current) {
-      clearTimeout(walkerPressTimerRef.current);
-      walkerPressTimerRef.current = null;
-    }
-    
-    // Exit preview mode
-    setIsPreviewMode(false);
-    setQuestionDialogOpacity(1);
-    
-    const canvas = canvasRef.current;
-    if (canvas) {
-      canvas.style.cursor = 'default';
-    }
-    
-    walkerPressStartRef.current = null;
-  }, [canvasRef, setIsPreviewMode, setQuestionDialogOpacity]);
+    handleWalkerPressEnd();
+  }, [handleWalkerPressEnd]);
 
-  // Handle touch events for mobile
+  // Handle touch start on canvas
   const handleCanvasTouchStart = useCallback((event) => {
     const canvas = canvasRef.current;
-    if (!canvas || event.touches.length !== 1) return;
-    
-    const touch = event.touches[0];
+    if (!canvas || event.touches.length === 0) return;
+
+    // Emergency stop: if game was just resumed and animation is running, stop and show category selector
+    if (isJustResumed && !selectedPath && !showChoice && !isPaused) {
+      // Prevent default touch behavior
+      event.preventDefault();
+      
+      // Stop the animation
+      setIsPaused(true);
+      velocityRef.current = 0;
+      
+      // Position camera to show fork on the right side
+      offsetRef.current = forkPositionRef.current - (canvas.width * 0.75);
+      
+      // Show the choice dialog
+      setTimeout(() => {
+        setShowChoice(true);
+      }, 50);
+      
+      return; // Don't process other touch handlers
+    }
+
     const rect = canvas.getBoundingClientRect();
     const scaleX = canvas.width / rect.width;
     const scaleY = canvas.height / rect.height;
-    const canvasX = (touch.clientX - rect.left) * scaleX;
-    const canvasY = (touch.clientY - rect.top) * scaleY;
     
-    if (isOverWalker(canvasX, canvasY)) {
-      walkerPressStartRef.current = Date.now();
-      
-      // Start timer for long press (500ms)
-      walkerPressTimerRef.current = setTimeout(() => {
-        // Save current state before entering preview mode
-        previewStateSnapshotRef.current = {
-          isPaused: isPaused,
-          showQuestion: showQuestion,
-        };
-        
-        // Enter preview mode
-        setIsPreviewMode(true);
-        setQuestionDialogOpacity(0.3);
-      }, 500);
-    }
-  }, [canvasRef, isOverWalker, isPaused, showQuestion, setIsPreviewMode, setQuestionDialogOpacity]);
+    const touch = event.touches[0];
+    const x = (touch.clientX - rect.left) * scaleX;
+    const y = (touch.clientY - rect.top) * scaleY;
 
+    handleWalkerPressStart(x, y);
+  }, [
+    canvasRef, isJustResumed, selectedPath, showChoice, isPaused,
+    setIsPaused, velocityRef, offsetRef, forkPositionRef, setShowChoice,
+    handleWalkerPressStart
+  ]);
+
+  // Handle touch end on canvas
   const handleCanvasTouchEnd = useCallback(() => {
-    handleCanvasMouseUp();
-  }, [handleCanvasMouseUp]);
+    handleWalkerPressEnd();
+  }, [handleWalkerPressEnd]);
+
+  // Cleanup timer on unmount
+  useEffect(() => {
+    return () => {
+      if (walkerPressTimerRef.current) {
+        clearTimeout(walkerPressTimerRef.current);
+      }
+    };
+  }, [walkerPressTimerRef]);
 
   return {
-    walkerPressTimerRef,
-    walkerPressStartRef,
     isOverCheckpoint,
     isOverWalker,
     handleCanvasClick,

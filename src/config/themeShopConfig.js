@@ -34,7 +34,7 @@ const themeShopConfig = {
       id: 'dia-de-los-muertos',
       name: 'Día de los Muertos',
       description: 'Day of the Dead celebration',
-      cost: 600,
+      cost: 60,
       thumbnail: 'scene.jpg', // Located at public/images/themes/dia-de-los-muertos/scene.jpg
       enabled: true,
     },
@@ -42,7 +42,7 @@ const themeShopConfig = {
       id: 'paris',
       name: 'Paris',
       description: 'Iconic Parisian cityscape',
-      cost: 800,
+      cost: 80,
       thumbnail: 'scene.jpg', // Located at public/images/themes/paris/scene.jpg
       enabled: true,
     },
@@ -50,7 +50,7 @@ const themeShopConfig = {
       id: 'nassau',
       name: 'Nassau Nights',
       description: 'Pirates bury treasure at night',
-      cost: 1000,
+      cost: 100,
       thumbnail: 'scene.jpg', // Located at public/images/themes/nassau/scene.jpg
       enabled: true,
     },
