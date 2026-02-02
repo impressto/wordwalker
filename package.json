@@ -1,7 +1,7 @@
 {
   "name": "wordwalker",
   "private": true,
-  "version": "1.9.15",
+  "version": "1.10.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
