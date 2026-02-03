@@ -1151,7 +1151,7 @@ export const accommodationQuestions = [
   },
   {
     id: 'accommodation_095',
-    emoji: '🕐',
+    emoji: '🕒',
     question: '¿A qué hora puedes entrar a tu habitación?',
     translation: 'What time can you enter your room?',
     options: ['la hora de check-in', 'la hora de entrada', 'la hora de registro'],
@@ -1927,7 +1927,7 @@ export const accommodationQuestions = [
   // Additional Accommodation Phrases (5 questions)
   {
     id: 'accommodation_151',
-    emoji: '💺',
+    emoji: 'armchair.png',
     question: '¿Cómo preguntas "Can I sit here?"',
     translation: 'Can I sit here?',
     options: ['¿puedo sentarme aquí?', '¿me puedo sentar aquí?', '¿puedo estar aquí?'],
