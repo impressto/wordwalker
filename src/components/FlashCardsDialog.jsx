@@ -968,7 +968,10 @@ const FlashCardsDialog = ({ category, onComplete, onClose, streak, currentTheme 
             <div className="usage-modal-content">
               <button
                 className="usage-modal-close"
-                onClick={() => setShowUsageModal(false)}
+                onClick={() => {
+                  stopAllAudio();
+                  setShowUsageModal(false);
+                }}
                 aria-label="Close"
               >
                 ✕
