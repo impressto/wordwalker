@@ -560,7 +560,7 @@ $version = $packageJson['version'] ?? '1.0.0';
       
 
             <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 20px auto;">
-                <img src="https://impressto.ca/wordwalker/public/images/walkers/walker-dog-avatar.png" alt="Dog walker character" width="100" height="100" class="walker-avatar" style="max-width: 100px; height: auto; margin-right: 10px;">
+                <img src="https://impressto.ca/wordwalker/public/images/walkers/walker-dog-avatar.png" alt="Dog walker character" width="100" height="100" class="walker-avatar" style="max-width: 100px; height: auto; margin-right: 0;">
                 <img src="https://impressto.ca/wordwalker/images/wordwalker-flashcards-logo-<?php echo $currentLang; ?>.png" alt="WordWalker Free Flash Cards" width="400" height="120" class="flashcards-logo" style="max-width: 400px; height: auto;">
                 <img src="https://impressto.ca/wordwalker/public/images/walkers/walker-default-avatar.png" alt="Default walker character" width="60" height="60" class="walker-avatar" style="max-width: 60px; height: auto;">
             </div>
