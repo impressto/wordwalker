@@ -955,7 +955,7 @@ export const exampleTranslations = {
   "La máscara de buceo me permite ver claramente bajo el agua.": "The diving mask allows me to see clearly underwater.",
   "Las aletas me ayudan a nadar más rápido en el océano.": "The fins help me swim faster in the ocean.",
   "El salvavidas está colgado en la pared de la piscina.": "The life preserver is hanging on the pool wall.",
-  "Compramos globos de colores para la fiesta en la playa.": "We bought colorful balloons for the beach party.",
+  "Siempre uso el chaleco salvavidas cuando voy en bote.": "I always wear a life jacket when I go boating.",
   "Jugamos al frisbee en el parque esta tarde.": "We played frisbee in the park this afternoon.",
   "Volamos la cometa cuando hay mucho viento.": "We fly the kite when there's a lot of wind.",
   "Llevé mi cámara para capturar el atardecer.": "I brought my camera to capture the sunset.",

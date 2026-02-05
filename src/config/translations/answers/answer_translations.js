@@ -780,6 +780,7 @@ export const translations = {
     "el globo aerostático": "the hot air balloon",
     "el globo ocular": "the eyeball",
     "el globo": "the balloon",
+    "el chaleco salvavidas": "the life jacket",
     "el glucómetro": "the glucometer",
     "el golf": "golf",
     "el golf": "the golf",
