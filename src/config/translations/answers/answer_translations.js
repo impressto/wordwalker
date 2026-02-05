@@ -3317,5 +3317,8 @@ export const translations = {
     "el portero": "the doorman",
     "el barman": "the bartender",
     "el conserje": "the concierge",
-    "el servicio de lavandería": "the laundry service"
+    "el servicio de lavandería": "the laundry service",
+    "sin ton ni son": "without rhyme or reason",
+    "por los pelos": "by the skin of one's teeth / barely",
+    "al pie de la letra": "to the letter / exactly"
 };

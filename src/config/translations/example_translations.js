@@ -3289,4 +3289,7 @@ export const exampleTranslations = {
   "Guardo mis fotos en el disco duro externo.": "I save my photos on the external hard drive.",
   "Mi abuela me regaló un medallón con su foto.": "My grandmother gave me a medallion with her photo.",
   "Reservamos nuestras vacaciones en la agencia de viajes.": "We book our vacation at the travel agency.",
+  "Lo hizo sin ton ni son, nadie entendió por qué.": "He did it without rhyme or reason, nobody understood why.",
+  "Lo terminé por los pelos, casi no me da tiempo.": "I finished it by the skin of my teeth, I almost ran out of time.",
+  "Siguió las instrucciones al pie de la letra.": "He followed the instructions to the letter.",
 };
