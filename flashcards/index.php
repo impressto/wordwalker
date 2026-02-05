@@ -412,6 +412,113 @@ $version = $packageJson['version'] ?? '1.0.0';
     }
     </script>
     
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "WordWalker",
+                "item": "https://wordwalker.ca"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Flash Cards",
+                "item": "https://wordwalker.ca/flashcards/"
+            }
+            <?php if (count($selectedCategories) === 1): ?>
+            ,{
+                "@type": "ListItem",
+                "position": 3,
+                "name": "<?php echo htmlspecialchars($categories[$selectedCategories[0]]['name']); ?>",
+                "item": "<?php echo htmlspecialchars($canonicalUrl); ?>"
+            }
+            <?php endif; ?>
+        ]
+    }
+    </script>
+    
+    <!-- ItemList Schema for Flashcards on this page -->
+    <?php if (!empty($questionsOnPage)): ?>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "<?php echo htmlspecialchars($pageTitle); ?>",
+        "description": "<?php echo htmlspecialchars($pageDescription); ?>",
+        "numberOfItems": <?php echo $totalQuestions; ?>,
+        "itemListElement": [
+            <?php 
+            $itemListItems = [];
+            foreach ($questionsOnPage as $index => $question) {
+                $position = $startIndex + $index + 1;
+                $itemListItems[] = '{
+                "@type": "ListItem",
+                "position": ' . $position . ',
+                "item": {
+                    "@type": "LearningResource",
+                    "name": "' . addslashes(htmlspecialchars($question['question'])) . '",
+                    "description": "Spanish vocabulary flashcard: ' . addslashes(htmlspecialchars($question['correctAnswer'])) . '",
+                    "educationalLevel": "' . (isset($question['difficulty']) ? htmlspecialchars($question['difficulty']) : 'Beginner') . '",
+                    "learningResourceType": "Flashcard",
+                    "inLanguage": ["en", "es"],
+                    "isAccessibleForFree": true
+                }
+            }';
+            }
+            echo implode(",\n            ", $itemListItems);
+            ?>
+        ]
+    }
+    </script>
+    <?php endif; ?>
+    
+    <!-- FAQPage Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Are WordWalker Spanish flashcards really free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! WordWalker Spanish flashcards are 100% free forever. No subscription, no hidden costs, no premium tiers. All flashcards, audio pronunciations, and features are completely free to use."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to create an account to use the flashcards?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No account is required. You can start learning Spanish immediately without signing up. Just browse the flashcards and start learning."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What Spanish topics do the flashcards cover?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our flashcards cover 16 categories including Food & Dining, Transportation, Shopping, Greetings & Conversations, Grammar, Numbers & Time, Medical & Emergencies, and more. Each category contains vocabulary with audio pronunciation and example sentences."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do the flashcards include audio pronunciation?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes! Most flashcards include native Spanish audio pronunciation for both the answer and the example sentence, helping you learn correct pronunciation as you study."
+                }
+            }
+        ]
+    }
+    </script>
+    
     <!-- html2canvas Library for Image Export -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     
