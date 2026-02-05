@@ -85,13 +85,26 @@ fi
 TOTAL_AUDIO=$(wc -l < "$TEMP_DIR/audio_files.txt")
 echo -e "${GREEN}Found ${TOTAL_AUDIO} existing answer audio files${NC}"
 
-# For comparison, we need to create a cleaned version of answers (remove ¡¿?!)
+# For comparison, we need to create a cleaned version of answers
+# This matches the cleaning done by clean-example-filenames.sh:
+# - Remove ¡ ¿ ! ? globally (not just start/end)
+# - Remove internal dots
+# - Remove leading em dashes (—)
+# - Clean up extra spaces
 echo -e "${YELLOW}Comparing to find missing answer files...${NC}"
-sed 's/^¡//' "$TEMP_DIR/correct_answers.txt" | \
-    sed 's/!$//' | \
-    sed 's/^¿//' | \
-    sed 's/?$//' | \
-    sort -u > "$TEMP_DIR/correct_answers_cleaned.txt"
+while IFS= read -r answer; do
+    cleaned=$(echo "$answer" | \
+        sed 's/¡//g' | \
+        sed 's/¿//g' | \
+        sed 's/!//g' | \
+        sed 's/?//g' | \
+        sed 's/\.//g' | \
+        sed 's/^— *//' | \
+        sed 's/  */ /g' | \
+        sed 's/^ *//' | \
+        sed 's/ *$//')
+    echo "$cleaned"
+done < "$TEMP_DIR/correct_answers.txt" | sort -u > "$TEMP_DIR/correct_answers_cleaned.txt"
 
 comm -23 "$TEMP_DIR/correct_answers_cleaned.txt" "$TEMP_DIR/audio_files.txt" > "$TEMP_DIR/missing_answers_cleaned.txt"
 
@@ -138,13 +151,26 @@ fi
 TOTAL_EXAMPLE_AUDIO=$(wc -l < "$TEMP_DIR/example_audio_files.txt")
 echo -e "${GREEN}Found ${TOTAL_EXAMPLE_AUDIO} existing example audio files${NC}"
 
-# For comparison, we need to create a cleaned version of examples (remove ¡¿?!)
+# For comparison, we need to create a cleaned version of examples
+# This matches the cleaning done by clean-example-filenames.sh:
+# - Remove ¡ ¿ ! ? globally (not just start/end)
+# - Remove internal dots
+# - Remove leading em dashes (—)
+# - Clean up extra spaces
 echo -e "${YELLOW}Comparing to find missing example files...${NC}"
-sed 's/^¡//' "$TEMP_DIR/usage_examples.txt" | \
-    sed 's/!$//' | \
-    sed 's/^¿//' | \
-    sed 's/?$//' | \
-    sort -u > "$TEMP_DIR/usage_examples_cleaned.txt"
+while IFS= read -r example; do
+    cleaned=$(echo "$example" | \
+        sed 's/¡//g' | \
+        sed 's/¿//g' | \
+        sed 's/!//g' | \
+        sed 's/?//g' | \
+        sed 's/\.//g' | \
+        sed 's/^— *//' | \
+        sed 's/  */ /g' | \
+        sed 's/^ *//' | \
+        sed 's/ *$//')
+    echo "$cleaned"
+done < "$TEMP_DIR/usage_examples.txt" | sort -u > "$TEMP_DIR/usage_examples_cleaned.txt"
 
 comm -23 "$TEMP_DIR/usage_examples_cleaned.txt" "$TEMP_DIR/example_audio_files.txt" > "$TEMP_DIR/missing_examples_cleaned.txt"
 
